@@ -1,0 +1,54 @@
+{
+  "id": "s-000010",
+  "type": "showcase",
+  "title": "Solar Eclipse Corona 7s",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "process",
+    "bloom",
+    "glow",
+    "gradient",
+    "curve-animation",
+    "text",
+    "gpu-pipeline"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Rect",
+    "Circle",
+    "Line",
+    "Path",
+    "Text",
+    "LinearGradient",
+    "RadialGradient",
+    "Process",
+    "Tex",
+    "Pass",
+    "Present"
+  ],
+  "teaches": [
+    "Build a dramatic total solar eclipse with corona rays, solar flares, and diamond ring effect.",
+    "Chain hsla_overlay, glow_bloom, and gaussian blur in a GPU process pipeline for cinematic totality."
+  ],
+  "source_path": "showcase/s-000010",
+  "demo_url": "",
+  "related": [
+    "s-000005",
+    "s-000008"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Process",
+    "Present"
+  ]
+}

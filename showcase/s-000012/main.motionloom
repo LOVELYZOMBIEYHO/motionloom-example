@@ -1,0 +1,245 @@
+<!-- Autumn Lantern Shrine Night 7s — a Japanese shrine at night with glowing paper lanterns and falling maple leaves. Original, no licensed content. -->
+<Graph fps={30} duration="7s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#0a0820" />
+
+  <Scene id="autumn_lantern_shrine_night_7s">
+    <Defs>
+      <Font id="display" family="Avenir Next Condensed" fallback="sans-serif" />
+      <Font id="serif" family="Times New Roman" fallback="serif" />
+
+      <RadialGradient id="night_base" cx="0.50" cy="0.40" r="0.90"
+                      stops="0:#1a1444, 0.30:#12103a, 0.62:#0a0820, 1:#060418" />
+      <RadialGradient id="lantern_glow" cx="0.50" cy="0.50" r="0.60"
+                      stops="0:#fff4d0ff, 0.14:#ffdd88cc, 0.34:#ffaa4444, 0.64:#cc662218, 1:#cc662200" />
+      <RadialGradient id="lantern_halo" cx="0.50" cy="0.50" r="0.70"
+                      stops="0:#ffcc6644, 0.28:#ff993318, 0.60:#cc551108, 1:#cc551100" />
+      <RadialGradient id="incense_smoke" cx="0.50" cy="0.50" r="0.72"
+                      stops="0:#446688F2, 0.34:#334466D8, 0.70:#2233445C, 1:#22334400" />
+      <RadialGradient id="moon_halo" cx="0.50" cy="0.50" r="0.55"
+                      stops="0:#ffffffee, 0.18:#e8e0ffaa, 0.42:#a0a0cc44, 0.72:#60608818, 1:#60608800" />
+      <RadialGradient id="leaf_glow" cx="0.50" cy="0.50" r="0.50"
+                      stops="0:#ff6644aa, 0.35:#cc332244, 0.72:#66111110, 1:#66111100" />
+
+      <LinearGradient id="torii_grad" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#1a1020, 0.40:#220a18, 0.78:#2a0c1a, 1:#0a0408" />
+      <LinearGradient id="lantern_body" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#fff0c0, 0.24:#ffcc70, 0.54:#ff8830, 0.82:#cc4410, 1:#661a08" />
+      <LinearGradient id="lantern_light" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#fff8e8, 0.30:#ffe0a0, 0.62:#ffaa50, 0.86:#dd6620, 1:#883318" />
+      <LinearGradient id="leaf_red" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#ff5533, 0.40:#cc2211, 0.78:#881108, 1:#330400" />
+      <LinearGradient id="leaf_gold" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#ffaa44, 0.42:#cc7720, 0.78:#884410, 1:#332004" />
+
+      <LinearGradient id="light_scratch" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#ffffff00, 0.28:#ffcc8844, 0.64:#1a104466, 1:#ffffff00" />
+      <LinearGradient id="night_wash_left" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#00000055, 0.32:#00000022, 0.78:#00000000, 1:#00000000" />
+      <LinearGradient id="night_wash_right" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#00000000, 0.34:#ff883320, 0.74:#ffaa4412, 1:#00000044" />
+      <LinearGradient id="shrine_fold" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#00000000, 0.44:#ffaa4444, 0.52:#08041099, 0.62:#00000000, 1:#00000000" />
+      <LinearGradient id="ink_line" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#08041000, 0.24:#080410AA, 0.74:#080410AA, 1:#08041000" />
+    </Defs>
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="7s" out="hold">
+          <Layer>
+
+            <!-- ===== NIGHT SKY & SHRINE BACKGROUND ===== -->
+            <Group id="shrine_night"
+                   opacity={curve("0:1:linear, 5.5:1:linear, 7:0.7:ease_in")}>
+              <Rect x="0" y="0" width="1920" height="1080" fill="url(#night_base)" />
+              <Rect x="0" y="0" width="1920" height="1080" color="#000000" opacity={curve("0:0.22:linear, 5:0.36:ease_in_out")} />
+              <Rect x="0" y="0" width="960" height="1080" fill="url(#night_wash_left)" opacity={curve("0:0.30:linear, 5:0.46:ease_in_out")} />
+              <Rect x="960" y="0" width="960" height="1080" fill="url(#night_wash_right)" opacity={curve("0:0.16:linear, 3:0.38:ease_out, 5:0.44:linear")} />
+
+              <!-- Night dust and light scratch grain. -->
+              <Repeat id="night_dust" count="54" x="42" y="38" xStep="34" yStep="19" opacity="0.40" opacityStep="-0.002">
+                <Circle x="random(-10, 10, floor($time.sec*3)+17)" y="random(-7, 7, floor($time.sec*3)+31)" radius="1.6" color="#aaccff" opacity="0.18" blend="screen" />
+              </Repeat>
+              <Repeat id="night_scratch_field" count="13" x="145" y="-40" xStep="142" opacity="0.20" opacityStep="-0.006">
+                <Rect x="random(-18, 18, floor($time.sec*2)+91)" y="0" width="2.2" height="1160" fill="url(#light_scratch)" opacity="0.28" />
+              </Repeat>
+
+              <!-- Moon. -->
+              <Group id="moon" x={curve("0:1600:linear, 7:1620:ease_in_out")} y="180" opacity={curve("0:0:linear, 1:0.90:ease_out, 7:0.90:linear")}>
+                <Circle x="0" y="0" radius="100" fill="url(#moon_halo)" opacity="0.50" blend="screen" />
+                <Circle x="0" y="0" radius="48" fill="#f0f0ff" opacity="0.92" />
+                <Circle x="-12" y="-16" radius="10" fill="#c8c8e0" opacity="0.35" />
+                <Circle x="18" y="8" radius="7" fill="#c8c8e0" opacity="0.28" />
+              </Group>
+
+              <!-- Stars. -->
+              <Repeat id="star_field" count="50" x="80" y="60" xStep="34" yStep="24" opacity="0.60" opacityStep="-0.004">
+                <Circle x="random(-4,4,floor($time.sec*2)+51)" y="random(-3,3,floor($time.sec*2)+73)" radius={1.0 + 0.6*(0.5 + 0.5*sin($time.sec*2.0))} fill="#FFFFFF" opacity="0.70" blend="screen" />
+              </Repeat>
+
+              <!-- Central fold / shrine path light column. -->
+              <Rect x="904" y="0" width="88" height="1080" fill="url(#shrine_fold)" opacity="0.80" />
+              <Line x1="958" y1="0" x2="958" y2="1080" stroke="#080410" strokeWidth="5" opacity="0.60" />
+              <Line x1="988" y1="0" x2="988" y2="1080" stroke="#ffaa44" strokeWidth="3" opacity="0.18" />
+
+              <!-- ===== TORII GATE SILHOUETTE ===== -->
+              <Group id="torii_gate" x="960" y="540"
+                     scale={curve("0:0.90:ease_out, 2:1.0:ease_in_out, 7:1.0:linear")}
+                     opacity={curve("0:0:linear, 0.8:0.92:ease_out, 7:0.92:linear")}
+                     transformOriginX="0" transformOriginY="0">
+                <Path d="M -400 -280 L 400 -280 L 420 -240 L -420 -240 Z" fill="url(#torii_grad)" opacity="0.95" />
+                <Path d="M -440 -320 L 440 -320 L 440 -300 L -440 -300 Z" fill="url(#torii_grad)" opacity="0.95" />
+                <Rect x="-380" y="-240" width="24" height="480" fill="url(#torii_grad)" opacity="0.92" />
+                <Rect x="356" y="-240" width="24" height="480" fill="url(#torii_grad)" opacity="0.92" />
+                <Rect x="-320" y="-180" width="640" height="16" fill="url(#torii_grad)" opacity="0.88" />
+                <Rect x="-300" y="-140" width="600" height="12" fill="url(#torii_grad)" opacity="0.82" />
+              </Group>
+
+              <!-- ===== HANGING PAPER LANTERNS ===== -->
+              <Group id="lanterns"
+                     opacity={curve("0:0:linear, 0.5:0.92:ease_out, 5:0.92:linear, 7:0.75:ease_in")}
+                     scale={curve("0:0.96:ease_out, 3:1.0:ease_in_out, 7:1.0:linear")}
+                     transformOriginX="960" transformOriginY="540">
+
+                <!-- Left lanterns. -->
+                <Group id="lantern_left_1" x="380" y={curve("0:420:ease_in_out, 3:380:ease_in_out, 7:400:ease_in_out")} opacity={curve("0:0:linear, 0.8:0.95:ease_out, 7:0.80:ease_in")}>
+                  <Circle x="0" y="0" radius={curve("0:80:ease_out, 2:120:ease_in_out, 7:110:ease_in")} fill="url(#lantern_halo)" opacity={curve("0:0.30:linear, 2:0.55:ease_out, 7:0.40:ease_in")} blend="screen" />
+                  <Ellipse x="0" y="0" rx="44" ry="56" fill="url(#lantern_body)" stroke="#220600" strokeWidth="3" opacity="0.95" />
+                  <Rect x="-36" y="-10" width="72" height="6" fill="#883318" opacity="0.80" />
+                  <Rect x="-20" y="-70" width="40" height="8" fill="#883318" opacity="0.85" />
+                  <Rect x="-20" y="56" width="40" height="8" fill="#883318" opacity="0.85" />
+                  <Line x1="0" y1="-70" x2="0" y2="-200" stroke="#220600" strokeWidth="2" opacity="0.60" />
+                  <Circle x="0" y="0" radius="20" fill="url(#lantern_light)" opacity={curve("0:0.40:linear, 2:0.80:ease_out, 7:0.60:ease_in")} blend="screen" />
+                </Group>
+
+                <Group id="lantern_left_2" x="580" y={curve("0:360:ease_in_out, 3:340:ease_in_out, 7:360:ease_in_out")} opacity={curve("0:0:linear, 1.0:0.95:ease_out, 7:0.80:ease_in")}>
+                  <Circle x="0" y="0" radius={curve("0:70:ease_out, 2:110:ease_in_out, 7:100:ease_in")} fill="url(#lantern_halo)" opacity={curve("0:0.25:linear, 2:0.50:ease_out, 7:0.36:ease_in")} blend="screen" />
+                  <Ellipse x="0" y="0" rx="38" ry="50" fill="url(#lantern_body)" stroke="#220600" strokeWidth="3" opacity="0.95" />
+                  <Rect x="-30" y="-8" width="60" height="5" fill="#883318" opacity="0.80" />
+                  <Rect x="-16" y="-62" width="32" height="7" fill="#883318" opacity="0.85" />
+                  <Rect x="-16" y="50" width="32" height="7" fill="#883318" opacity="0.85" />
+                  <Line x1="0" y1="-62" x2="0" y2="-180" stroke="#220600" strokeWidth="2" opacity="0.55" />
+                  <Circle x="0" y="0" radius="16" fill="url(#lantern_light)" opacity={curve("0:0.35:linear, 2:0.75:ease_out, 7:0.55:ease_in")} blend="screen" />
+                </Group>
+
+                <!-- Center lantern — the main light source. -->
+                <Group id="lantern_center" x="960" y={curve("0:300:ease_in_out, 3:280:ease_in_out, 7:300:ease_in_out")}
+                       scale={curve("0:0.80:ease_out, 2:1.0:ease_in_out, 7:1.0:linear")}
+                       opacity={curve("0:0:linear, 0.5:1:ease_out, 5:1:linear, 7:0.85:ease_in")}
+                       transformOriginX="0" transformOriginY="0">
+                  <Circle x="0" y="0" radius={curve("0:100:ease_out, 2:180:ease_in_out, 5:200:ease_in_out, 7:170:ease_in")} fill="url(#lantern_glow)" opacity={curve("0:0.40:linear, 2:0.75:ease_out, 5:0.80:linear, 7:0.55:ease_in")} blend="screen" />
+                  <Ellipse x="0" y="0" rx="56" ry="72" fill="url(#lantern_body)" stroke="#220600" strokeWidth="4" opacity="0.96" />
+                  <Rect x="-48" y="-12" width="96" height="8" fill="#883318" opacity="0.85" />
+                  <Rect x="-28" y="-88" width="56" height="10" fill="#883318" opacity="0.90" />
+                  <Rect x="-28" y="70" width="56" height="10" fill="#883318" opacity="0.90" />
+                  <Line x1="0" y1="-88" x2="0" y2="-240" stroke="#220600" strokeWidth="3" opacity="0.65" />
+                  <Circle x="0" y="0" radius="28" fill="url(#lantern_light)" opacity={curve("0:0.40:linear, 2:0.90:ease_out, 5:0.95:linear, 7:0.70:ease_in")} blend="screen" />
+                  <!-- Lantern glow flicker. -->
+                  <Circle x="0" y="0" radius={curve("0:30:ease_out, 2:50:ease_in_out, 7:40:ease_in")} fill="#fff8e0" opacity={0.20 + 0.12*(0.5 + 0.5*sin($time.sec*4.0))} blend="screen" />
+                </Group>
+
+                <!-- Right lanterns. -->
+                <Group id="lantern_right_1" x="1340" y={curve("0:420:ease_in_out, 3:380:ease_in_out, 7:400:ease_in_out")} opacity={curve("0:0:linear, 0.8:0.95:ease_out, 7:0.80:ease_in")}>
+                  <Circle x="0" y="0" radius={curve("0:80:ease_out, 2:120:ease_in_out, 7:110:ease_in")} fill="url(#lantern_halo)" opacity={curve("0:0.30:linear, 2:0.55:ease_out, 7:0.40:ease_in")} blend="screen" />
+                  <Ellipse x="0" y="0" rx="44" ry="56" fill="url(#lantern_body)" stroke="#220600" strokeWidth="3" opacity="0.95" />
+                  <Rect x="-36" y="-10" width="72" height="6" fill="#883318" opacity="0.80" />
+                  <Rect x="-20" y="-70" width="40" height="8" fill="#883318" opacity="0.85" />
+                  <Rect x="-20" y="56" width="40" height="8" fill="#883318" opacity="0.85" />
+                  <Line x1="0" y1="-70" x2="0" y2="-200" stroke="#220600" strokeWidth="2" opacity="0.60" />
+                  <Circle x="0" y="0" radius="20" fill="url(#lantern_light)" opacity={curve("0:0.40:linear, 2:0.80:ease_out, 7:0.60:ease_in")} blend="screen" />
+                </Group>
+
+                <Group id="lantern_right_2" x="1540" y={curve("0:360:ease_in_out, 3:340:ease_in_out, 7:360:ease_in_out")} opacity={curve("0:0:linear, 1.0:0.95:ease_out, 7:0.80:ease_in")}>
+                  <Circle x="0" y="0" radius={curve("0:70:ease_out, 2:110:ease_in_out, 7:100:ease_in")} fill="url(#lantern_halo)" opacity={curve("0:0.25:linear, 2:0.50:ease_out, 7:0.36:ease_in")} blend="screen" />
+                  <Ellipse x="0" y="0" rx="38" ry="50" fill="url(#lantern_body)" stroke="#220600" strokeWidth="3" opacity="0.95" />
+                  <Rect x="-30" y="-8" width="60" height="5" fill="#883318" opacity="0.80" />
+                  <Rect x="-16" y="-62" width="32" height="7" fill="#883318" opacity="0.85" />
+                  <Rect x="-16" y="50" width="32" height="7" fill="#883318" opacity="0.85" />
+                  <Line x1="0" y1="-62" x2="0" y2="-180" stroke="#220600" strokeWidth="2" opacity="0.55" />
+                  <Circle x="0" y="0" radius="16" fill="url(#lantern_light)" opacity={curve("0:0.35:linear, 2:0.75:ease_out, 7:0.55:ease_in")} blend="screen" />
+                </Group>
+              </Group>
+
+              <!-- ===== FALLING MAPLE LEAVES ===== -->
+              <Group id="maple_leaves" opacity={curve("0:0:linear, 1.5:0.70:ease_out, 5:0.70:linear, 7:0.40:ease_in")}>
+                <Repeat id="leaves_red" count="18" x="120" y="-60" xStep="96" yStep="0" opacity="0.75" opacityStep="-0.008">
+                  <Path d="M 0 0 C -12 -8 -20 -4 -16 8 C -22 4 -28 12 -18 20 C -12 16 -8 18 -4 14 C -4 22 4 22 4 14 C 8 18 12 16 18 20 C 28 12 22 4 16 8 C 20 -4 12 -8 0 0 Z"
+                        fill="url(#leaf_red)" stroke="#330400" strokeWidth="1.5" opacity="0.80"
+                        x={curve("0:0:linear, 7:80:ease_in_out")}
+                        y={curve("0:0:linear, 7:700:ease_in")}
+                        rotation={curve("0:0:linear, 7:360:linear")} />
+                </Repeat>
+
+                <Repeat id="leaves_gold" count="14" x="240" y="-30" xStep="110" yStep="20" opacity="0.70" opacityStep="-0.010">
+                  <Path d="M 0 0 C -10 -6 -16 -3 -13 6 C -18 3 -22 10 -14 16 C -10 13 -6 14 -3 11 C -3 18 3 18 3 11 C 6 14 10 13 14 16 C 22 10 18 3 13 6 C 16 -3 10 -6 0 0 Z"
+                        fill="url(#leaf_gold)" stroke="#332004" strokeWidth="1.2" opacity="0.75"
+                        x={curve("0:0:linear, 7:-60:ease_in_out")}
+                        y={curve("0:0:linear, 7:680:ease_in")}
+                        rotation={curve("0:0:linear, 7:-320:linear")} />
+                </Repeat>
+
+                <Repeat id="leaf_glow_particles" count="12" x="180" y="100" xStep="120" yStep="50" opacity="0.50" opacityStep="-0.012">
+                  <Circle x="random(-20,20,floor($time.sec*2)+81) + 16*sin($time.sec*0.8)"
+                          y={curve("0:0:linear, 7:600:ease_in")}
+                          radius={2.0 + 1.2*(0.5 + 0.5*sin($time.sec*1.5))}
+                          fill="url(#leaf_glow)" opacity="0.50" blend="screen" />
+                </Repeat>
+              </Group>
+
+              <!-- ===== INCENSE SMOKE ===== -->
+              <Group id="incense" opacity={curve("0:0:linear, 1:0.50:ease_out, 4:0.40:ease_in_out, 7:0.20:ease_in")}>
+                <Circle x="960" y="780" radius={curve("0:80:ease_out, 4:200:ease_in_out, 7:220:ease_in")} fill="url(#incense_smoke)" opacity="0.50" blend="screen" />
+                <Circle x="920" y="820" radius={curve("0:60:ease_out, 4:160:ease_in_out, 7:180:ease_in")} fill="url(#incense_smoke)" opacity="0.40" blend="screen" />
+                <Circle x="1000" y="810" radius={curve("0:50:ease_out, 4:140:ease_in_out, 7:160:ease_in")} fill="url(#incense_smoke)" opacity="0.36" blend="screen" />
+              </Group>
+
+              <!-- ===== TITLE REVEAL — "AUTUMN LANTERN" with amber sweep ===== -->
+              <Group id="title_lockup"
+                     x={curve("0:-180:ease_out, 5.0:0:ease_out, 7:0:linear")}
+                     y={curve("0:24:ease_out, 5.5:0:ease_in_out, 7:0:linear")}
+                     scale={curve("0:1.08:ease_out, 6:1.0:ease_in_out, 7:1.0:linear")}
+                     opacity={curve("0:0:linear, 4.8:0:linear, 5.2:0.82:ease_out, 6.2:1:linear, 7:1:linear")}
+                     transformOriginX="960" transformOriginY="540">
+
+                <Text value="AUTUMN" x="center" y="530" fontFamily="Times New Roman" fontWeight="600" fontSize="232" renderScale="4x" color="#080410" opacity="0.56" />
+                <Text value="AUTUMN" x="center" y="512" fontFamily="Times New Roman" fontWeight="600" fontSize="232" renderScale="4x" color="#C7882B" opacity="0.94" />
+                <Text value="AUTUMN" x="center" y="506" fontFamily="Times New Roman" fontWeight="600" fontSize="232" renderScale="4x" color="#FFE7A3" opacity={curve("4.8:0:linear, 5.6:0.24:ease_out, 6.5:0.16:ease_in_out, 7:0.20:linear")} />
+
+                <!-- Descender cuts. -->
+                <Path d="M 540 328 L 562 742 L 588 332 Z M 1124 372 L 1140 702 L 1162 370 Z"
+                      fill="#C7882B" stroke="#4B2E08" strokeWidth="4" opacity="0.86" />
+                <Rect x="690" y="600" width="170" height="24" fill="url(#ink_line)" opacity="0.60" />
+                <Rect x="1392" y="604" width="248" height="28" fill="url(#ink_line)" opacity="0.56" />
+
+              </Group>
+
+              <!-- Subtitle. -->
+              <Group id="subtitle" opacity={curve("0:0.0:linear, 5.8:0.0:linear, 6.3:0.90:ease_out, 7:0.95:linear")}
+                     x={curve("0:0:linear, 6.3:0:ease_out, 7:0:linear")}>
+                <Text value="AND THE" x="1110" y="608" fontFamily="Times New Roman" fontSize="58" renderScale="4x" color="#A47233" opacity="0.88" />
+                <Text value="LANTERN" x="1094" y="688" fontFamily="Times New Roman" fontSize="92" renderScale="4x" color="#C7882B" opacity="0.94" />
+                <Text value="NIGHT" x="1110" y="768" fontFamily="Times New Roman" fontSize="78" renderScale="4x" color="#C7882B" opacity="0.88" />
+              </Group>
+
+              <!-- Warm flicker vignette — the signature sin-based glow. -->
+              <Rect x="0" y="0" width="1920" height="1080" color="#FFAA44" opacity="0.025 + 0.018*(0.5 + 0.5*sin($time.sec*14.0))" blend="screen" />
+              <Rect x="0" y="0" width="1920" height="1080" color="#000000" opacity={curve("0:0.10:linear, 4:0.14:ease_in_out, 7:0.22:linear")} />
+            </Group>
+
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="LanternBloomProcess">
+    <Tex id="src" fmt="rgba16f" from="scene:autumn_lantern_shrine_night_7s" />
+    <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="post_bloom" kind="compute"
+          effect="bloom"
+          in={["src"]} out={["out"]}
+          params={{ threshold: "0.13", intensity: "2.10", sigma: "18.0" }} />
+  </Process>
+
+  <Present from="LanternBloomProcess" />
+</Graph>

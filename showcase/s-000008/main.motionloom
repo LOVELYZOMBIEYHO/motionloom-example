@@ -1,0 +1,211 @@
+<!-- Aurora Borealis Symphony 8s — flowing northern lights over a mountain lake. -->
+<Graph fps={30} duration="8s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#01030f" />
+
+  <Scene id="aurora_borealis_symphony_8s">
+    <Defs>
+      <Font id="display" family="Avenir Next Condensed" fallback="sans-serif" />
+      <Font id="mono" family="Menlo" fallback="monospace" />
+
+      <LinearGradient id="sky_grad" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#01030f, 0.30:#03061e, 0.62:#060d2e, 0.85:#081238, 1:#0a1648" />
+      <LinearGradient id="lake_grad" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#0a1648, 0.35:#060d2e, 0.72:#03061e, 1:#01030f" />
+
+      <LinearGradient id="aurora_green" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#00ff8800, 0.15:#00ff8844, 0.40:#00ff88aa, 0.65:#00ccff66, 0.85:#0066ff22, 1:#0066ff00" />
+      <LinearGradient id="aurora_teal" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#00ffee00, 0.18:#00ffee55, 0.45:#00ffeeaa, 0.68:#00aaff66, 0.88:#3366ff22, 1:#3366ff00" />
+      <LinearGradient id="aurora_violet" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#aa44ff00, 0.20:#aa44ff44, 0.46:#aa44ff99, 0.66:#6644ff66, 0.86:#3322ff22, 1:#3322ff00" />
+      <LinearGradient id="aurora_pink" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#ff44aa00, 0.22:#ff44aa44, 0.48:#ff66cc77, 0.70:#aa44ff44, 0.88:#6622ff22, 1:#6622ff00" />
+
+      <RadialGradient id="moon_glow" cx="0.50" cy="0.50" r="0.55"
+                      stops="0:#ffffffee, 0.18:#e8f0ffaa, 0.42:#aaccff44, 0.72:#6688ff18, 1:#3366ff00" />
+      <RadialGradient id="star_glow" cx="0.50" cy="0.50" r="0.50"
+                      stops="0:#ffffffcc, 0.35:#ffffff44, 0.72:#ffffff11, 1:#ffffff00" />
+      <RadialGradient id="corona_glow" cx="0.50" cy="0.50" r="0.60"
+                      stops="0:#00ff8866, 0.25:#00ccff33, 0.55:#6644ff18, 1:#00000000" />
+      <RadialGradient id="vignette" cx="0.50" cy="0.50" r="0.85"
+                      stops="0:#00000000, 0.55:#00000000, 0.82:#00000022, 1:#00000066" />
+    </Defs>
+
+    <Timeline>
+      <Track id="sky_track" z="-200">
+        <Sequence from="0s" duration="8s" out="hold">
+          <Layer id="sky_layer">
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#sky_grad)" />
+
+            <Repeat id="star_field" count="90" x="40" y="30" xStep="22" yStep="18" opacity="0.80" opacityStep="-0.003">
+              <Circle x="random(-4,4,floor($time.sec*3)+11)" y="random(-3,3,floor($time.sec*3)+23)" radius={1.0 + 0.6*(0.5 + 0.5*sin($time.sec*2.5))} fill="#FFFFFF" opacity="0.90" />
+            </Repeat>
+
+            <Repeat id="bright_stars" count="14" x="120" y="60" xStep="130" yStep="60" opacity="0.90" opacityStep="-0.012">
+              <Circle x="0" y="0" radius={2.2 + 1.4*(0.5 + 0.5*sin($time.sec*1.8))} fill="url(#star_glow)" opacity={0.55 + 0.35*(0.5 + 0.5*sin($time.sec*1.5))} blend="screen" />
+            </Repeat>
+
+            <Group id="moon" x={curve("0:1600:linear, 8:1620:ease_in_out")} y="200" opacity={curve("0:0:linear, 1.5:1:ease_out, 8:1:linear")}>
+              <Circle x="0" y="0" radius="120" fill="url(#moon_glow)" opacity="0.40" blend="screen" />
+              <Circle x="0" y="0" radius="55" fill="#f0f4ff" opacity="0.96" />
+              <Circle x="-14" y="-18" radius="12" fill="#c8d4f0" opacity="0.40" />
+              <Circle x="20" y="10" radius="8" fill="#c8d4f0" opacity="0.32" />
+              <Circle x="8" y="-8" radius="6" fill="#c8d4f0" opacity="0.28" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="aurora_back_track" z="-150">
+        <Sequence from="0s" duration="8s" out="hold">
+          <Layer id="aurora_back_layer" blend="screen">
+            <Circle x="960" y="360" radius={curve("0:200:ease_out, 3:520:ease_in_out, 6:480:ease_in_out, 8:420:ease_in")} fill="url(#corona_glow)" opacity={curve("0:0.10:linear, 1.5:0.30:ease_out, 4:0.40:ease_in_out, 8:0.28:ease_in")} blend="screen" />
+
+            <Group id="aurora_curtain_green" opacity={curve("0:0:linear, 0.8:0.85:ease_out, 6.5:0.85:linear, 8:0.60:ease_in")}>
+              <Path d="M -120 120 C 120 60 360 180 600 80 C 840 -20 1080 140 1320 40 C 1560 -60 1800 100 2040 0 L 2040 500 L -120 500 Z"
+                    fill="url(#aurora_green)"
+                    opacity={curve("0:0.30:linear, 2:0.55:ease_out, 5:0.65:ease_in_out, 8:0.40:ease_in")}
+                    x={curve("0:0:linear, 8:120:ease_in_out")}
+                    y={curve("0:200:ease_out, 3:140:ease_in_out, 6:180:ease_in_out, 8:220:ease_in")} />
+              <Path d="M -180 160 C 60 100 300 220 540 120 C 780 20 1020 180 1260 80 C 1500 -20 1740 140 1980 40 L 1980 540 L -180 540 Z"
+                    fill="url(#aurora_green)"
+                    opacity={curve("0:0.20:linear, 2.5:0.40:ease_out, 5:0.50:ease_in_out, 8:0.30:ease_in")}
+                    x={curve("0:0:linear, 8:-80:ease_in_out")}
+                    y={curve("0:240:ease_out, 3:200:ease_in_out, 6:240:ease_in_out, 8:280:ease_in")} />
+            </Group>
+
+            <Group id="aurora_curtain_teal" opacity={curve("0:0:linear, 1.2:0.75:ease_out, 6.5:0.75:linear, 8:0.50:ease_in")}>
+              <Path d="M -100 140 C 180 80 420 200 660 100 C 900 0 1140 160 1380 60 C 1620 -40 1860 120 2100 20 L 2100 520 L -100 520 Z"
+                    fill="url(#aurora_teal)"
+                    opacity={curve("0:0.25:linear, 2:0.50:ease_out, 5:0.60:ease_in_out, 8:0.35:ease_in")}
+                    x={curve("0:0:linear, 8:100:ease_in_out")}
+                    y={curve("0:260:ease_out, 3:200:ease_in_out, 6:240:ease_in_out, 8:280:ease_in")} />
+              <Path d="M -160 180 C 120 120 360 240 600 140 C 840 40 1080 200 1320 100 C 1560 0 1800 160 2040 60 L 2040 560 L -160 560 Z"
+                    fill="url(#aurora_teal)"
+                    opacity={curve("0:0.18:linear, 2.5:0.38:ease_out, 5:0.48:ease_in_out, 8:0.28:ease_in")}
+                    x={curve("0:0:linear, 8:-60:ease_in_out")}
+                    y={curve("0:300:ease_out, 3:260:ease_in_out, 6:300:ease_in_out, 8:340:ease_in")} />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="aurora_mid_track" z="-120">
+        <Sequence from="0s" duration="8s" out="hold">
+          <Layer id="aurora_mid_layer" blend="screen">
+            <Group id="aurora_curtain_violet" opacity={curve("0:0:linear, 2:0.70:ease_out, 6.5:0.70:linear, 8:0.45:ease_in")}>
+              <Path d="M -80 180 C 200 120 440 240 680 140 C 920 40 1160 200 1400 100 C 1640 0 1880 160 2120 60 L 2120 560 L -80 560 Z"
+                    fill="url(#aurora_violet)"
+                    opacity={curve("0:0.22:linear, 2.5:0.48:ease_out, 5:0.58:ease_in_out, 8:0.32:ease_in")}
+                    x={curve("0:0:linear, 8:80:ease_in_out")}
+                    y={curve("0:320:ease_out, 3:280:ease_in_out, 6:320:ease_in_out, 8:360:ease_in")} />
+              <Path d="M -140 220 C 140 160 380 280 620 180 C 860 80 1100 240 1340 140 C 1580 40 1820 200 2060 100 L 2060 600 L -140 600 Z"
+                    fill="url(#aurora_violet)"
+                    opacity={curve("0:0.15:linear, 3:0.35:ease_out, 5:0.42:ease_in_out, 8:0.22:ease_in")}
+                    x={curve("0:0:linear, 8:-40:ease_in_out")}
+                    y={curve("0:360:ease_out, 3:320:ease_in_out, 6:360:ease_in_out, 8:400:ease_in")} />
+            </Group>
+
+            <Group id="aurora_curtain_pink" opacity={curve("0:0:linear, 3:0.55:ease_out, 6.5:0.55:linear, 8:0.35:ease_in")}>
+              <Path d="M -60 240 C 220 180 460 300 700 200 C 940 100 1180 260 1420 160 C 1660 60 1900 220 2140 120 L 2140 600 L -60 600 Z"
+                    fill="url(#aurora_pink)"
+                    opacity={curve("0:0.18:linear, 3.5:0.40:ease_out, 5:0.48:ease_in_out, 8:0.25:ease_in")}
+                    x={curve("0:0:linear, 8:60:ease_in_out")}
+                    y={curve("0:380:ease_out, 3:340:ease_in_out, 6:380:ease_in_out, 8:420:ease_in")} />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="aurora_rays_track" z="-100">
+        <Sequence from="0s" duration="8s" out="hold">
+          <Layer id="aurora_rays_layer" blend="screen">
+            <Group id="aurora_rays_group" x="960" y="360" opacity={curve("0:0:linear, 1.5:0.40:ease_out, 6:0.40:linear, 8:0.20:ease_in")}>
+              <Repeat id="light_rays" count="32" x="0" y="0" rotationStep="11.25" opacity="0.50" opacityStep="-0.005">
+                <Rect x="0" y="-2" width={curve("0:0:linear, 1.5:120:ease_out, 4:180:ease_in_out, 8:140:ease_in")} height="4" fill="#00ff88" opacity={curve("0:0:linear, 1.5:0.35:ease_out, 5:0.25:ease_in_out, 8:0.10:ease_in")} blend="screen" />
+              </Repeat>
+            </Group>
+
+            <Repeat id="floating_particles" count="40" x="80" y="120" xStep="44" yStep="24" opacity="0.45" opacityStep="-0.004">
+              <Circle x="random(-18,18,floor($time.sec*2)+41) + 22*sin($time.sec*0.6)"
+                      y="random(-12,12,floor($time.sec*2)+57) + 14*cos($time.sec*0.5)"
+                      radius={1.5 + 1.0*(0.5 + 0.5*sin($time.sec*1.8))}
+                      fill="#00ffaa" opacity="0.55" blend="screen" />
+            </Repeat>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="mountain_track" z="-80">
+        <Sequence from="0s" duration="8s" out="hold">
+          <Layer id="mountain_layer">
+            <Path d="M 0 720 L 0 560 L 120 520 L 200 580 L 320 480 L 420 540 L 520 460 L 640 520 L 760 440 L 880 500 L 1000 420 L 1120 490 L 1240 440 L 1360 510 L 1480 460 L 1600 520 L 1720 480 L 1840 540 L 1920 510 L 1920 720 Z"
+                  fill="#030612" opacity="0.95" />
+            <Path d="M 0 720 L 0 640 L 80 610 L 180 650 L 280 590 L 400 630 L 500 580 L 620 620 L 740 570 L 860 610 L 980 560 L 1100 600 L 1220 570 L 1340 610 L 1460 580 L 1580 620 L 1700 590 L 1820 630 L 1920 610 L 1920 720 Z"
+                  fill="#050a1e" opacity="0.90" />
+            <Path d="M 0 720 L 0 680 L 100 660 L 220 690 L 340 650 L 460 680 L 580 640 L 700 670 L 820 640 L 940 670 L 1060 650 L 1180 680 L 1300 660 L 1420 690 L 1540 670 L 1660 690 L 1780 670 L 1920 690 L 1920 720 Z"
+                  fill="#070f2a" opacity="0.92" />
+
+            <Rect x="0" y="720" width="1920" height="360" fill="url(#lake_grad)" />
+
+            <Repeat id="lake_shimmer" count="24" x="0" y="740" yStep="14" opacity="0.30" opacityStep="-0.005">
+              <Line x1={curve("0:100:ease_in_out, 4:1400:ease_in_out, 8:100:ease_in_out")} y1="0" x2={curve("0:200:ease_in_out, 4:1600:ease_in_out, 8:200:ease_in_out")} y2="0" stroke="#00ff88" strokeWidth="1.5" opacity={0.12 + 0.08*(0.5 + 0.5*sin($time.sec*3.0))} blend="screen" />
+            </Repeat>
+
+            <Group id="aurora_reflection" opacity={curve("0:0:linear, 1.5:0.35:ease_out, 6:0.35:linear, 8:0.20:ease_in")} blend="screen">
+              <Path d="M -120 740 C 120 800 360 680 600 780 C 840 880 1080 720 1320 820 C 1560 920 1800 760 2040 860 L 2040 1080 L -120 1080 Z"
+                    fill="url(#aurora_green)" opacity="0.25" />
+              <Path d="M -100 760 C 180 820 420 700 660 800 C 900 900 1140 740 1380 840 C 1620 940 1860 780 2100 880 L 2100 1080 L -100 1080 Z"
+                    fill="url(#aurora_teal)" opacity="0.20" />
+              <Path d="M -80 780 C 200 840 440 720 680 820 C 920 920 1160 760 1400 860 C 1640 960 1880 800 2120 900 L 2120 1080 L -80 1080 Z"
+                    fill="url(#aurora_violet)" opacity="0.15" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="overlay_track" z="-60">
+        <Sequence from="0s" duration="8s" out="hold">
+          <Layer id="overlay_layer">
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)" opacity={curve("0:0.20:linear, 4:0.30:ease_in_out, 8:0.40:ease_in")} />
+
+            <Rect x="0" y="0" width="1920" height="1080" color="#01030f" opacity={curve("0:0.30:linear, 1.5:0.10:ease_out, 8:0.10:linear")} />
+
+            <Group id="title_lockup" opacity={curve("0:0:linear, 5.5:0:linear, 6.0:1:ease_out, 8:1:linear")}
+                   x={curve("0:0:linear, 5.5:0:linear, 6.0:0:ease_out, 8:0:linear")}
+                   y={curve("0:20:linear, 5.5:20:linear, 6.0:0:ease_out, 8:0:linear")}>
+              <Text value="AURORA" x="center" y="860" fontFamily="Avenir Next Condensed" fontWeight="300" fontSize="120" textGap="10" renderScale="4x" color="#e8fff4" opacity="0.95" />
+              <Text value="BOREALIS" x="center" y="950" fontFamily="Avenir Next Condensed" fontWeight="700" fontSize="64" textGap="6" renderScale="4x" color="#88ffcc" opacity="0.80" />
+              <Line x1={curve("5.5:960:ease_out, 6.2:660:ease_out, 8:660:linear")} y1="910" x2={curve("5.5:960:ease_out, 6.2:1260:ease_out, 8:1260:linear")} y2="910" stroke="#00ff88" strokeWidth="2" opacity={curve("5.5:0:linear, 6.2:0.60:ease_out, 8:0.60:linear")} blend="screen" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="aurora_post">
+    <Tex id="scene_src" fmt="rgba16f" from="scene:aurora_borealis_symphony_8s" />
+    <Tex id="hsla_src" fmt="rgba16f" size={[1920,1080]} />
+    <Tex id="bloom_src" fmt="rgba16f" size={[1920,1080]} />
+
+    <Pass id="post_hsla" kind="compute" effect="hsla_overlay"
+          in={["scene_src"]} out={["hsla_src"]}
+          params={{
+            hue: "curve(\"0:160:linear, 3:175:ease_in_out, 6:200:ease_in_out, 8:185:linear\")",
+            saturation: "curve(\"0:0.20:linear, 2:0.35:ease_out, 5:0.45:ease_in_out, 8:0.30:ease_in\")",
+            lightness: "curve(\"0:0.04:linear, 3:0.08:ease_in_out, 6:0.06:ease_in_out, 8:0.04:linear\")",
+            alpha: "curve(\"0:0.18:linear, 2:0.28:ease_out, 6:0.30:linear, 8:0.20:ease_in\")"
+          }} />
+
+    <Pass id="post_bloom" kind="compute" effect="glow_bloom"
+          in={["hsla_src"]} out={["bloom_src"]}
+          params={{
+            threshold: "0.32",
+            intensity: "curve(\"0:0.8:linear, 2:1.4:ease_out, 5:1.8:ease_in_out, 8:1.0:ease_in\")",
+            sigma: "16.0"
+          }} />
+  </Process>
+
+  <Present from="aurora_post" />
+</Graph>

@@ -1,0 +1,250 @@
+<!-- Astronomer's Celestial Atlas 7s — an aged star chart with self-drawing constellations, compass rose, and candle light. Original, no licensed content. -->
+<Graph fps={30} duration="7s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#1a1438" />
+
+  <Scene id="astronomers_celestial_atlas_7s">
+    <Defs>
+      <Font id="display" family="Avenir Next Condensed" fallback="sans-serif" />
+      <Font id="serif" family="Times New Roman" fallback="serif" />
+      <Font id="mono" family="Menlo" fallback="monospace" />
+
+      <RadialGradient id="parchment_navy" cx="0.54" cy="0.48" r="0.88"
+                      stops="0:#2a2058, 0.38:#1e1644, 0.72:#14102e, 1:#0a0820" />
+      <RadialGradient id="candle_glow" cx="0.50" cy="0.50" r="0.55"
+                      stops="0:#fff4d0ff, 0.15:#ffdd88cc, 0.36:#ffaa4444, 0.66:#cc662218, 1:#cc662200" />
+      <RadialGradient id="star_bright" cx="0.50" cy="0.50" r="0.50"
+                      stops="0:#ffffffee, 0.18:#fff8e0aa, 0.44:#e8d8ff44, 0.74:#8866cc18, 1:#8866cc00" />
+      <RadialGradient id="ink_splatter" cx="0.50" cy="0.50" r="0.72"
+                      stops="0:#0a0612F2, 0.34:#141028D8, 0.70:#1a14385C, 1:#1a143800" />
+      <RadialGradient id="cosmic_dust" cx="0.50" cy="0.50" r="0.65"
+                      stops="0:#aaa0dd44, 0.30:#8878cc22, 0.62:#6655aa11, 1:#6655aa00" />
+
+      <LinearGradient id="compass_gold" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#f2d895, 0.26:#c7a15b, 0.58:#8a6537, 1:#e3c174" />
+      <LinearGradient id="constellation_line" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#fff8e000, 0.15:#fff8e088, 0.50:#ffffffcc, 0.85:#fff8e088, 1:#fff8e000" />
+      <LinearGradient id="ink_pen" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#0a061200, 0.24:#0a0612AA, 0.74:#0a0612AA, 1:#0a061200" />
+
+      <LinearGradient id="chart_scratch" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#ffffff00, 0.28:#fff8e044, 0.64:#0a061266, 1:#ffffff00" />
+      <LinearGradient id="parchment_wash_left" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#00000055, 0.32:#00000022, 0.78:#00000000, 1:#00000000" />
+      <LinearGradient id="parchment_wash_right" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#00000000, 0.34:#ffcc4430, 0.74:#fff0c018, 1:#00000044" />
+      <LinearGradient id="chart_fold" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#00000000, 0.44:#fff0c044, 0.52:#0a061299, 0.62:#00000000, 1:#00000000" />
+      <LinearGradient id="chart_ink_line" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#0a061200, 0.24:#0a0612AA, 0.74:#0a0612AA, 1:#0a061200" />
+    </Defs>
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="7s" out="hold">
+          <Layer>
+
+            <!-- ===== AGED NAVY PARCHMENT BASE ===== -->
+            <Group id="star_chart"
+                   opacity={curve("0:1:linear, 5.5:1:linear, 7:0.7:ease_in")}>
+              <Rect x="0" y="0" width="1920" height="1080" fill="url(#parchment_navy)" />
+              <Rect x="0" y="0" width="1920" height="1080" color="#000000" opacity={curve("0:0.18:linear, 5:0.32:ease_in_out")} />
+              <Rect x="0" y="0" width="960" height="1080" fill="url(#parchment_wash_left)" opacity={curve("0:0.28:linear, 5:0.44:ease_in_out")} />
+              <Rect x="960" y="0" width="960" height="1080" fill="url(#parchment_wash_right)" opacity={curve("0:0.14:linear, 3:0.36:ease_out, 5:0.42:linear")} />
+
+              <!-- Paper grain and old chart scratch marks. -->
+              <Repeat id="chart_dust" count="54" x="42" y="38" xStep="34" yStep="19" opacity="0.40" opacityStep="-0.002">
+                <Circle x="random(-10, 10, floor($time.sec*3)+17)" y="random(-7, 7, floor($time.sec*3)+31)" radius="1.6" color="#aaa0dd" opacity="0.18" />
+              </Repeat>
+              <Repeat id="chart_scratch_field" count="13" x="145" y="-40" xStep="142" opacity="0.20" opacityStep="-0.006">
+                <Rect x="random(-18, 18, floor($time.sec*2)+91)" y="0" width="2.2" height="1160" fill="url(#chart_scratch)" opacity="0.28" />
+              </Repeat>
+
+              <!-- Map tick marks — like old chart border graduations. -->
+              <Repeat id="chart_ticks_left" count="9" x="48" y="98" yStep="96" opacity="0.60" opacityStep="-0.018">
+                <Path d="M 0 0 L 34 12 M 4 18 L 42 30 M 10 38 L 54 52" stroke="#0a0612" strokeWidth="5" lineCap="round" fill="none" opacity="0.52" />
+              </Repeat>
+              <Repeat id="chart_ticks_right" count="8" x="1804" y="52" yStep="118" opacity="0.56" opacityStep="-0.020">
+                <Path d="M 0 0 L 42 8 M -8 20 L 34 28 M -18 42 L 28 56" stroke="#0a0612" strokeWidth="5" lineCap="round" fill="none" opacity="0.48" />
+              </Repeat>
+
+              <!-- Central fold / chart spine. -->
+              <Rect x="904" y="0" width="88" height="1080" fill="url(#chart_fold)" opacity="0.80" />
+              <Line x1="958" y1="0" x2="958" y2="1080" stroke="#0a0612" strokeWidth="5" opacity="0.60" />
+              <Line x1="988" y1="0" x2="988" y2="1080" stroke="#fff0c0" strokeWidth="3" opacity="0.18" />
+
+              <!-- ===== CANDLE LIGHT GLOW — the warm light source ===== -->
+              <Group id="candle_light" opacity={curve("0:0.15:linear, 1:0.40:ease_out, 5:0.50:ease_in_out, 7:0.30:ease_in")}>
+                <Circle x="300" y="820" radius={curve("0:120:ease_out, 3:240:ease_in_out, 7:200:ease_in")} fill="url(#candle_glow)" opacity={0.30 + 0.10*(0.5 + 0.5*sin($time.sec*8.0))} blend="screen" />
+                <Circle x="1620" y="780" radius={curve("0:100:ease_out, 3:200:ease_in_out, 7:170:ease_in")} fill="url(#candle_glow)" opacity={0.22 + 0.08*(0.5 + 0.5*sin($time.sec*7.0))} blend="screen" />
+              </Group>
+
+              <!-- ===== INK SPLATTER ATMOSPHERE ===== -->
+              <Group id="ink_atmosphere" opacity={curve("0:0.20:linear, 1.10:0.30:ease_in_out, 2.20:0.50:ease_out, 5:0.52:linear, 7:0.38:ease_in")}>
+                <Circle x="750" y="534" radius={curve("0:200:ease_out, 2.30:420:ease_in_out, 5:440:linear, 7:400:ease_in")} fill="url(#ink_splatter)" />
+                <Circle x="1095" y="482" radius={curve("0:120:ease_out, 2.30:340:ease_in_out, 5:360:linear, 7:320:ease_in")} fill="url(#ink_splatter)" />
+                <Circle x="1040" y="812" radius={curve("0:120:ease_out, 2.45:280:ease_in_out, 5:300:linear, 7:270:ease_in")} fill="url(#ink_splatter)" opacity="0.78" />
+              </Group>
+
+              <!-- ===== COMPASS ROSE — draws itself via path trim ===== -->
+              <Group id="compass_rose" x="300" y="820"
+                     scale={curve("0:0.20:ease_out, 2:1.0:ease_out, 5:1.05:ease_in_out, 7:1.0:ease_in")}
+                     opacity={curve("0:0:linear, 0.5:0.90:ease_out, 5:0.90:linear, 7:0.70:ease_in")}
+                     transformOriginX="0" transformOriginY="0">
+
+                <!-- Outer ring. -->
+                <Circle x="0" y="0" radius="90" fill="#00000000" stroke="#c7a15b" strokeWidth="3" opacity="0.80"
+                        trimStart={curve("0:0:linear, 0.3:0:ease_out")}
+                        trimEnd={curve("0:0:linear, 0.3:0:ease_out, 1.5:1:ease_out, 7:1:linear")} />
+
+                <!-- Inner ring. -->
+                <Circle x="0" y="0" radius="70" fill="#00000000" stroke="#c7a15b" strokeWidth="1.5" opacity="0.60" strokeDasharray="4 8" />
+
+                <!-- Cardinal points — star shape. -->
+                <Path d="M 0 -100 L 12 -20 L 100 0 L 12 20 L 0 100 L -12 20 L -100 0 L -12 -20 Z"
+                      fill="url(#compass_gold)" stroke="#0a0612" strokeWidth="2" opacity="0.88"
+                      trimStart={curve("0:0:linear, 0.8:0:ease_out")}
+                      trimEnd={curve("0:0:linear, 0.8:0:ease_out, 2.0:1:ease_out, 7:1:linear")} />
+
+                <!-- Diagonal points. -->
+                <Path d="M 60 -60 L 8 -12 L 60 60 L 8 12 L -60 60 L -8 12 L -60 -60 L -8 -12 Z"
+                      fill="#00000000" stroke="#c7a15b" strokeWidth="1.5" opacity="0.50"
+                      trimStart={curve("0:0:linear, 1.2:0:ease_out")}
+                      trimEnd={curve("0:0:linear, 1.2:0:ease_out, 2.5:1:ease_out, 7:1:linear")} />
+
+                <!-- Center dot. -->
+                <Circle x="0" y="0" radius={curve("0:0:linear, 2:6:ease_out, 7:6:linear")} fill="url(#compass_gold)" opacity="0.90" />
+
+                <!-- N/E/S/W labels. -->
+                <Text value="N" x="0" y="-110" fontFamily="Times New Roman" fontSize="22" renderScale="4x" color="#c7a15b" opacity={curve("1.5:0:linear, 2.2:0.85:ease_out, 7:0.70:ease_in")} />
+                <Text value="S" x="0" y="120" fontFamily="Times New Roman" fontSize="22" renderScale="4x" color="#c7a15b" opacity={curve("1.5:0:linear, 2.2:0.85:ease_out, 7:0.70:ease_in")} />
+                <Text value="E" x="110" y="0" fontFamily="Times New Roman" fontSize="22" renderScale="4x" color="#c7a15b" opacity={curve("1.5:0:linear, 2.2:0.85:ease_out, 7:0.70:ease_in")} />
+                <Text value="W" x="-120" y="0" fontFamily="Times New Roman" fontSize="22" renderScale="4x" color="#c7a15b" opacity={curve("1.5:0:linear, 2.2:0.85:ease_out, 7:0.70:ease_in")} />
+              </Group>
+
+              <!-- ===== CONSTELLATIONS — self-drawing star patterns ===== -->
+              <Group id="constellations" opacity={curve("0:0:linear, 1.5:0.92:ease_out, 5:0.92:linear, 7:0.75:ease_in")}>
+
+                <!-- Constellation 1 — "The Hunter" (upper left). -->
+                <Group id="constellation_hunter">
+                  <Path d="M 520 220 L 620 300 L 700 280 L 760 380 L 680 420 L 620 300 M 700 280 L 820 240"
+                        stroke="#fff8e0" strokeWidth="2" fill="none" opacity="0.80" blend="screen"
+                        trimStart={curve("0:0:linear, 1.5:0:ease_out")}
+                        trimEnd={curve("0:0:linear, 1.5:0:ease_out, 3.5:1:ease_out, 7:1:linear")} />
+                  <Circle x="520" y="220" radius={curve("0:0:linear, 2:5:ease_out, 7:5:linear")} fill="url(#star_bright)" opacity={curve("0:0:linear, 2:0.90:ease_out, 7:0.75:ease_in")} blend="screen" />
+                  <Circle x="620" y="300" radius={curve("0:0:linear, 2.2:4:ease_out, 7:4:linear")} fill="url(#star_bright)" opacity={curve("0:0:linear, 2.2:0.85:ease_out, 7:0.70:ease_in")} blend="screen" />
+                  <Circle x="700" y="280" radius={curve("0:0:linear, 2.4:6:ease_out, 7:6:linear")} fill="url(#star_bright)" opacity={curve("0:0:linear, 2.4:0.92:ease_out, 7:0.78:ease_in")} blend="screen" />
+                  <Circle x="760" y="380" radius={curve("0:0:linear, 2.6:5:ease_out, 7:5:linear")} fill="url(#star_bright)" opacity={curve("0:0:linear, 2.6:0.88:ease_out, 7:0.72:ease_in")} blend="screen" />
+                  <Circle x="680" y="420" radius={curve("0:0:linear, 2.8:4:ease_out, 7:4:linear")} fill="url(#star_bright)" opacity={curve("0:0:linear, 2.8:0.82:ease_out, 7:0.68:ease_in")} blend="screen" />
+                  <Circle x="820" y="240" radius={curve("0:0:linear, 3.0:3:ease_out, 7:3:linear")} fill="url(#star_bright)" opacity={curve("0:0:linear, 3.0:0.80:ease_out, 7:0.65:ease_in")} blend="screen" />
+                </Group>
+
+                <!-- Constellation 2 — "The Crown" (upper right). -->
+                <Group id="constellation_crown">
+                  <Path d="M 1180 200 L 1240 160 L 1300 200 L 1360 150 L 1420 210 M 1180 200 L 1420 210"
+                        stroke="#fff8e0" strokeWidth="2" fill="none" opacity="0.80" blend="screen"
+                        trimStart={curve("0:0:linear, 2.0:0:ease_out")}
+                        trimEnd={curve("0:0:linear, 2.0:0:ease_out, 4.0:1:ease_out, 7:1:linear")} />
+                  <Circle x="1180" y="200" radius={curve("0:0:linear, 2.5:4:ease_out, 7:4:linear")} fill="url(#star_bright)" opacity={curve("0:0:linear, 2.5:0.85:ease_out, 7:0.70:ease_in")} blend="screen" />
+                  <Circle x="1240" y="160" radius={curve("0:0:linear, 2.7:5:ease_out, 7:5:linear")} fill="url(#star_bright)" opacity={curve("0:0:linear, 2.7:0.90:ease_out, 7:0.75:ease_in")} blend="screen" />
+                  <Circle x="1300" y="200" radius={curve("0:0:linear, 2.9:4:ease_out, 7:4:linear")} fill="url(#star_bright)" opacity={curve("0:0:linear, 2.9:0.82:ease_out, 7:0.68:ease_in")} blend="screen" />
+                  <Circle x="1360" y="150" radius={curve("0:0:linear, 3.1:6:ease_out, 7:6:linear")} fill="url(#star_bright)" opacity={curve("0:0:linear, 3.1:0.92:ease_out, 7:0.78:ease_in")} blend="screen" />
+                  <Circle x="1420" y="210" radius={curve("0:0:linear, 3.3:4:ease_out, 7:4:linear")} fill="url(#star_bright)" opacity={curve("0:0:linear, 3.3:0.85:ease_out, 7:0.70:ease_in")} blend="screen" />
+                </Group>
+
+                <!-- Constellation 3 — "The Serpent" (lower center). -->
+                <Group id="constellation_serpent">
+                  <Path d="M 800 620 C 860 580 920 660 980 600 C 1040 560 1100 640 1160 580"
+                        stroke="#fff8e0" strokeWidth="2" fill="none" opacity="0.75" blend="screen"
+                        trimStart={curve("0:0:linear, 2.5:0:ease_out")}
+                        trimEnd={curve("0:0:linear, 2.5:0:ease_out, 4.5:1:ease_out, 7:1:linear")} />
+                  <Circle x="800" y="620" radius={curve("0:0:linear, 3:3:ease_out, 7:3:linear")} fill="url(#star_bright)" opacity={curve("0:0:linear, 3:0.80:ease_out, 7:0.65:ease_in")} blend="screen" />
+                  <Circle x="860" y="580" radius={curve("0:0:linear, 3.2:3:ease_out, 7:3:linear")} fill="url(#star_bright)" opacity={curve("0:0:linear, 3.2:0.78:ease_out, 7:0.62:ease_in")} blend="screen" />
+                  <Circle x="980" y="600" radius={curve("0:0:linear, 3.5:4:ease_out, 7:4:linear")} fill="url(#star_bright)" opacity={curve("0:0:linear, 3.5:0.85:ease_out, 7:0.70:ease_in")} blend="screen" />
+                  <Circle x="1100" y="640" radius={curve("0:0:linear, 3.8:3:ease_out, 7:3:linear")} fill="url(#star_bright)" opacity={curve("0:0:linear, 3.8:0.78:ease_out, 7:0.62:ease_in")} blend="screen" />
+                  <Circle x="1160" y="580" radius={curve("0:0:linear, 4:3:ease_out, 7:3:linear")} fill="url(#star_bright)" opacity={curve("0:0:linear, 4:0.80:ease_out, 7:0.65:ease_in")} blend="screen" />
+                </Group>
+
+                <!-- Background tiny stars. -->
+                <Repeat id="bg_stars" count="40" x="120" y="80" xStep="42" yStep="24" opacity="0.50" opacityStep="-0.005">
+                  <Circle x="random(-6,6,floor($time.sec*2)+41)" y="random(-4,4,floor($time.sec*2)+63)" radius={1.2 + 0.6*(0.5 + 0.5*sin($time.sec*1.8))} fill="#fff8e0" opacity="0.60" blend="screen" />
+                </Repeat>
+              </Group>
+
+              <!-- ===== GOLD DUST PARTICLES ===== -->
+              <Group id="gold_dust" opacity={curve("0:0:linear, 2:0.50:ease_out, 5:0.50:linear, 7:0.25:ease_in")}>
+                <Repeat id="dust_motes" count="28" x="200" y="200" xStep="48" yStep="28" opacity="0.45" opacityStep="-0.006">
+                  <Circle x="random(-20,20,floor($time.sec*3)+111) + 14*sin($time.sec*0.7)"
+                          y="random(-14,14,floor($time.sec*3)+125) + 12*cos($time.sec*0.5)"
+                          radius={1.0 + 0.6*(0.5 + 0.5*sin($time.sec*2.2))}
+                          fill="url(#cosmic_dust)" opacity="0.50" blend="screen" />
+                </Repeat>
+              </Group>
+
+              <!-- ===== DECORATIVE FRAME ===== -->
+              <Group id="chart_frame" opacity={curve("0:0.52:linear, 3:0.68:linear, 7:0.45:ease_in")}>
+                <Path d="M 42 44 L 240 44 M 44 44 L 44 260 M 1680 44 L 1874 44 M 1874 44 L 1874 260 M 42 1032 L 240 1032 M 44 830 L 44 1032 M 1680 1032 L 1874 1032 M 1874 830 L 1874 1032"
+                      stroke="#0a0612" strokeWidth="8" lineCap="round" fill="none" opacity="0.54" />
+                <Path d="M 80 862 C 120 802 184 786 246 824 C 196 842 164 884 154 946 C 126 914 102 884 80 862 Z"
+                      fill="url(#compass_gold)" stroke="#0a0612" strokeWidth="5" opacity="0.50" />
+                <Path d="M 1680 138 C 1748 104 1814 130 1842 202 C 1766 172 1718 188 1680 246"
+                      fill="url(#compass_gold)" stroke="#0a0612" strokeWidth="5" opacity="0.46" />
+              </Group>
+
+              <!-- ===== ASTRONOMER'S INK NOTES ===== -->
+              <Group id="ink_notes" opacity={curve("0:0:linear, 3:0.70:ease_out, 5:0.70:linear, 7:0.50:ease_in")}>
+                <Text value="LAT 42°N" x="80" y="980" fontFamily="Menlo" fontSize="18" renderScale="4x" color="#c7a15b" opacity="0.70" />
+                <Text value="LON 71°W" x="80" y="1004" fontFamily="Menlo" fontSize="18" renderScale="4x" color="#c7a15b" opacity="0.60" />
+                <Text value="EPOCH J2000" x="1640" y="980" fontFamily="Menlo" fontSize="18" renderScale="4x" color="#c7a15b" opacity="0.70" />
+                <Text value="DECL +45°" x="1640" y="1004" fontFamily="Menlo" fontSize="18" renderScale="4x" color="#c7a15b" opacity="0.60" />
+                <Rect x="690" y="600" width="170" height="24" fill="url(#chart_ink_line)" opacity="0.50" />
+                <Rect x="1392" y="604" width="248" height="28" fill="url(#chart_ink_line)" opacity="0.46" />
+              </Group>
+
+              <!-- ===== TITLE REVEAL — "CELESTIAL" with starlight sweep ===== -->
+              <Group id="title_lockup"
+                     x={curve("0:-180:ease_out, 5.0:0:ease_out, 7:0:linear")}
+                     y={curve("0:24:ease_out, 5.5:0:ease_in_out, 7:0:linear")}
+                     scale={curve("0:1.08:ease_out, 6:1.0:ease_in_out, 7:1.0:linear")}
+                     opacity={curve("0:0:linear, 4.8:0:linear, 5.2:0.82:ease_out, 6.2:1:linear, 7:1:linear")}
+                     transformOriginX="960" transformOriginY="540">
+
+                <Text value="CELESTIAL" x="center" y="530" fontFamily="Times New Roman" fontWeight="400" fontSize="232" renderScale="4x" color="#0a0612" opacity="0.56" />
+                <Text value="CELESTIAL" x="center" y="512" fontFamily="Times New Roman" fontWeight="400" fontSize="232" renderScale="4x" color="#C7B15B" opacity="0.94" />
+                <Text value="CELESTIAL" x="center" y="506" fontFamily="Times New Roman" fontWeight="400" fontSize="232" renderScale="4x" color="#FFE7A3" opacity={curve("4.8:0:linear, 5.6:0.24:ease_out, 6.5:0.16:ease_in_out, 7:0.20:linear")} />
+
+                <!-- Ink descender cuts. -->
+                <Path d="M 540 328 L 562 742 L 588 332 Z M 1124 372 L 1140 702 L 1162 370 Z"
+                      fill="#C7B15B" stroke="#4B3E08" strokeWidth="4" opacity="0.86" />
+
+              </Group>
+
+              <!-- Subtitle. -->
+              <Group id="subtitle" opacity={curve("0:0.0:linear, 5.8:0.0:linear, 6.3:0.90:ease_out, 7:0.95:linear")}
+                     x={curve("0:0:linear, 6.3:0:ease_out, 7:0:linear")}>
+                <Text value="AND THE" x="1110" y="608" fontFamily="Times New Roman" fontSize="58" renderScale="4x" color="#A49243" opacity="0.88" />
+                <Text value="CELESTIAL" x="1094" y="688" fontFamily="Times New Roman" fontSize="92" renderScale="4x" color="#C7B15B" opacity="0.94" />
+                <Text value="ATLAS" x="1110" y="768" fontFamily="Times New Roman" fontSize="78" renderScale="4x" color="#C7B15B" opacity="0.88" />
+              </Group>
+
+              <!-- Warm flicker vignette — the signature sin-based glow. -->
+              <Rect x="0" y="0" width="1920" height="1080" color="#FFF0C0" opacity="0.022 + 0.016*(0.5 + 0.5*sin($time.sec*12.0))" blend="screen" />
+              <Rect x="0" y="0" width="1920" height="1080" color="#000000" opacity={curve("0:0.08:linear, 4:0.12:ease_in_out, 7:0.20:linear")} />
+            </Group>
+
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="CelestialBloomProcess">
+    <Tex id="src" fmt="rgba16f" from="scene:astronomers_celestial_atlas_7s" />
+    <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="post_bloom" kind="compute"
+          effect="bloom"
+          in={["src"]} out={["out"]}
+          params={{ threshold: "0.12", intensity: "2.05", sigma: "18.0" }} />
+  </Process>
+
+  <Present from="CelestialBloomProcess" />
+</Graph>

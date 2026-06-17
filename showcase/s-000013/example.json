@@ -1,0 +1,54 @@
+{
+  "id": "s-000013",
+  "type": "showcase",
+  "title": "Astronomer's Celestial Atlas 7s",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "process",
+    "bloom",
+    "glow",
+    "gradient",
+    "text",
+    "path",
+    "curve-animation"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Rect",
+    "Circle",
+    "Line",
+    "Path",
+    "Text",
+    "LinearGradient",
+    "RadialGradient",
+    "Process",
+    "Tex",
+    "Pass",
+    "Present"
+  ],
+  "teaches": [
+    "Build an aged celestial atlas with self-drawing constellation paths, compass rose, and candle-lit parchment.",
+    "Use warm bloom, starlight sweep light pass, and sin-based flicker vignette for astronomical atmosphere."
+  ],
+  "source_path": "showcase/s-000013",
+  "demo_url": "",
+  "related": [
+    "s-000002",
+    "s-000006"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Process",
+    "Present"
+  ]
+}

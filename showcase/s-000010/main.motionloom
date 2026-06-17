@@ -1,0 +1,221 @@
+<!-- Solar Eclipse Corona 7s — a dramatic total solar eclipse with corona, flares, and diamond ring. -->
+<Graph fps={30} duration="7s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#020108" />
+
+  <Scene id="solar_eclipse_corona_7s">
+    <Defs>
+      <Font id="display" family="Avenir Next Condensed" fallback="sans-serif" />
+      <Font id="mono" family="Menlo" fallback="monospace" />
+
+      <RadialGradient id="sun_surface" cx="0.50" cy="0.50" r="0.50"
+                      stops="0:#ffffff, 0.25:#fff8e0, 0.50:#ffe080, 0.75:#ffaa30, 1:#cc6600" />
+      <RadialGradient id="sun_halo" cx="0.50" cy="0.50" r="0.55"
+                      stops="0:#ffffffaa, 0.12:#fff0c088, 0.32:#ffcc5044, 0.62:#ff882018, 1:#ff882000" />
+      <RadialGradient id="corona_inner" cx="0.50" cy="0.50" r="0.50"
+                      stops="0:#ffffffee, 0.10:#fff0c0cc, 0.22:#ffe8a088, 0.40:#ffcc5044, 0.66:#ff882018, 0.86:#cc440808, 1:#cc440800" />
+      <RadialGradient id="corona_outer" cx="0.50" cy="0.50" r="0.60"
+                      stops="0:#ffffff00, 0.15:#fff8e044, 0.34:#ffe08022, 0.58:#ffaa3011, 0.82:#cc440805, 1:#cc440800" />
+      <RadialGradient id="corona_stream" cx="0.50" cy="0.50" r="0.70"
+                      stops="0:#ffffff88, 0.18:#fff0c044, 0.42:#ffcc5018, 0.72:#ff882008, 1:#ff882000" />
+      <RadialGradient id="diamond_ring" cx="0.50" cy="0.50" r="0.50"
+                      stops="0:#ffffff, 0.08:#ffffffee, 0.20:#fff0c0aa, 0.42:#ffe08044, 0.70:#ffaa3011, 1:#ffaa3000" />
+      <RadialGradient id="lens_flare" cx="0.50" cy="0.50" r="0.60"
+                      stops="0:#ffffffcc, 0.15:#fff0c066, 0.40:#ffe08022, 0.72:#ffaa3008, 1:#ffaa3000" />
+      <RadialGradient id="moon_shadow" cx="0.50" cy="0.50" r="0.50"
+                      stops="0:#000000ff, 0.88:#000000ff, 0.94:#000000ee, 0.98:#00000088, 1:#00000000" />
+      <RadialGradient id="flare_glow" cx="0.50" cy="0.50" r="0.50"
+                      stops="0:#ffffffaa, 0.30:#ffe08044, 0.66:#ff882011, 1:#ff882000" />
+      <RadialGradient id="vignette" cx="0.50" cy="0.50" r="0.85"
+                      stops="0:#00000000, 0.45:#00000000, 0.75:#02010844, 1:#020108aa" />
+
+      <LinearGradient id="flare_streak" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#ffffff00, 0.15:#ffe080aa, 0.50:#ffffffcc, 0.85:#ffe080aa, 1:#ffffff00" />
+      <LinearGradient id="diamond_streak" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#ffffff00, 0.10:#fff0c088, 0.50:#ffffffff, 0.90:#fff0c088, 1:#ffffff00" />
+      <LinearGradient id="sky_dark" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#020108, 0.40:#030210, 0.72:#050420, 1:#080630" />
+    </Defs>
+
+    <Timeline>
+      <Track id="sky_track" z="-200">
+        <Sequence from="0s" duration="7s" out="hold">
+          <Layer id="sky_layer">
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#sky_dark)" />
+            <Rect x="0" y="0" width="1920" height="1080" color="#020108" opacity={curve("0:0.0:linear, 2.5:0.0:linear, 3.0:0.60:ease_in, 4.0:0.80:ease_in, 5.0:0.60:ease_out, 6.5:0.0:ease_out, 7:0.0:linear")} />
+
+            <Repeat id="eclipse_stars" count="60" x="80" y="60" xStep="30" yStep="22" opacity="0.50" opacityStep="-0.003">
+              <Circle x="random(-5,5,floor($time.sec*2)+19)" y="random(-4,4,floor($time.sec*2)+37)" radius={1.2 + 0.8*(0.5 + 0.5*sin($time.sec*1.5))} fill="#FFFFFF" opacity={curve("0:0:linear, 2.8:0:linear, 3.2:0.70:ease_out, 4.8:0.70:linear, 5.2:0:ease_in, 7:0:linear")} blend="screen" />
+            </Repeat>
+
+            <Repeat id="bright_eclipse_stars" count="10" x="160" y="100" xStep="160" yStep="80" opacity="0.65" opacityStep="-0.015">
+              <Circle x="0" y="0" radius={2.0 + 1.2*(0.5 + 0.5*sin($time.sec*1.2))} fill="#FFFFFF" opacity={curve("0:0:linear, 2.8:0:linear, 3.2:0.90:ease_out, 4.8:0.90:linear, 5.2:0:ease_in, 7:0:linear")} blend="screen" />
+            </Repeat>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="sun_track" z="-150">
+        <Sequence from="0s" duration="7s" out="hold">
+          <Layer id="sun_layer">
+            <Group id="sun" x="960" y="540" opacity={curve("0:1:linear, 2.8:1:linear, 3.0:0.0:ease_in, 5.0:0.0:linear, 5.2:1:ease_out, 7:1:linear")}>
+              <Circle x="0" y="0" radius={curve("0:180:ease_out, 2:200:ease_in_out, 7:200:linear")} fill="url(#sun_halo)" opacity={curve("0:0.60:linear, 2:0.80:ease_in_out, 7:0.80:linear")} blend="screen" />
+              <Circle x="0" y="0" radius="140" fill="url(#sun_surface)" opacity="0.95" />
+
+              <Repeat id="sun_granulation" count="20" x="0" y="0" rotationStep="18" opacity="0.40" opacityStep="0">
+                <Circle x="0" y="-100" radius="16" fill="#ffe080" opacity={0.30 + 0.15*(0.5 + 0.5*sin($time.sec*2.0))} blend="screen" />
+              </Repeat>
+
+              <Repeat id="sun_spots" count="6" x="0" y="0" rotationStep="60" opacity="0.50" opacityStep="0">
+                <Circle x="0" y="-90" radius="8" fill="#cc6600" opacity="0.50" />
+              </Repeat>
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="corona_track" z="-130">
+        <Sequence from="0s" duration="7s" out="hold">
+          <Layer id="corona_layer" blend="screen">
+            <Group id="corona" x="960" y="540" opacity={curve("0:0:linear, 2.8:0:linear, 3.0:1:ease_out, 5.0:1:linear, 5.2:0:ease_in, 7:0:linear")}>
+              <Circle x="0" y="0" radius={curve("2.8:140:ease_out, 3.0:280:ease_out, 5.0:320:ease_in_out, 5.2:140:ease_in")} fill="url(#corona_outer)" opacity={curve("2.8:0:linear, 3.2:0.60:ease_out, 4.5:0.70:linear, 5.0:0.60:ease_in_out, 5.2:0:ease_in")} blend="screen" />
+              <Circle x="0" y="0" radius={curve("2.8:100:ease_out, 3.0:200:ease_out, 5.0:230:ease_in_out, 5.2:100:ease_in")} fill="url(#corona_inner)" opacity={curve("2.8:0:linear, 3.2:0.80:ease_out, 4.5:0.90:linear, 5.0:0.80:ease_in_out, 5.2:0:ease_in")} blend="screen" />
+
+              <Repeat id="corona_rays" count="48" x="0" y="0" rotationStep="7.5" opacity="0.70" opacityStep="0">
+                <Rect x="0" y="-2" width={curve("2.8:0:linear, 3.2:180:ease_out, 4.0:260:ease_in_out, 5.0:220:ease_in_out, 5.2:0:ease_in")} height="3" fill="#ffffff" opacity={curve("2.8:0:linear, 3.2:0.40:ease_out, 4.5:0.30:linear, 5.0:0.20:ease_in_out, 5.2:0:ease_in")} blend="screen" />
+              </Repeat>
+
+              <Repeat id="corona_streams" count="24" x="0" y="0" rotationStep="15" opacity="0.60" opacityStep="0">
+                <Circle x={curve("2.8:140:linear, 3.5:220:ease_out, 5.0:280:ease_in_out, 5.2:140:ease_in")} y="0" radius={curve("2.8:0:linear, 3.5:60:ease_out, 5.0:80:ease_in_out, 5.2:0:ease_in")} fill="url(#corona_stream)" opacity={curve("2.8:0:linear, 3.5:0.50:ease_out, 4.5:0.40:linear, 5.0:0.30:ease_in_out, 5.2:0:ease_in")} blend="screen" />
+              </Repeat>
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="flares_track" z="-120">
+        <Sequence from="0s" duration="7s" out="hold">
+          <Layer id="flares_layer" blend="screen">
+            <Group id="solar_flares" x="960" y="540" opacity={curve("0:0:linear, 2.8:0:linear, 3.0:0.90:ease_out, 5.0:0.90:linear, 5.2:0:ease_in, 7:0:linear")}>
+              <Repeat id="flare_rays" count="12" x="0" y="0" rotationStep="30" opacity="0.75" opacityStep="0">
+                <Path d="M 130 0 C 180 -20 240 -40 320 -10 C 280 -5 240 5 200 10 C 170 15 145 10 130 0 Z"
+                      fill="url(#flare_glow)"
+                      opacity={curve("2.8:0:linear, 3.5:0.60:ease_out, 4.5:0.70:linear, 5.0:0.50:ease_in_out, 5.2:0:ease_in")}
+                      trimStart={curve("2.8:0:linear, 3.5:0:ease_out")}
+                      trimEnd={curve("2.8:0:linear, 3.5:1:ease_out, 5.0:1:linear, 5.2:0:ease_in")} />
+              </Repeat>
+
+              <Repeat id="flare_prominences" count="8" x="0" y="0" rotationStep="45" opacity="0.70" opacityStep="0">
+                <Path d="M 130 0 C 160 -40 200 -60 250 -30 C 220 -10 190 0 160 5 C 145 8 135 5 130 0 Z"
+                      fill="#ff8820"
+                      opacity={curve("2.8:0:linear, 3.8:0.50:ease_out, 4.5:0.55:linear, 5.0:0.40:ease_in_out, 5.2:0:ease_in")}
+                      trimStart={curve("2.8:0:linear, 3.8:0:ease_out")}
+                      trimEnd={curve("2.8:0:linear, 3.8:1:ease_out, 5.0:1:linear, 5.2:0:ease_in")} />
+              </Repeat>
+
+              <Repeat id="flare_streaks" count="16" x="0" y="0" rotationStep="22.5" opacity="0.60" opacityStep="0">
+                <Line x1="130" y1="0" x2={curve("2.8:130:linear, 3.5:380:ease_out, 5.0:420:ease_in_out, 5.2:130:ease_in")} y2="0" stroke="url(#flare_streak)" strokeWidth="2" opacity={curve("2.8:0:linear, 3.5:0.55:ease_out, 4.5:0.45:linear, 5.0:0.30:ease_in_out, 5.2:0:ease_in")} blend="screen" />
+              </Repeat>
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="diamond_ring_track" z="-100">
+        <Sequence from="0s" duration="7s" out="hold">
+          <Layer id="diamond_ring_layer" blend="screen">
+            <Group id="diamond_ring_effect" x="960" y="540" opacity={curve("0:0:linear, 2.7:0:linear, 2.9:1:ease_out, 3.1:0:ease_in, 4.9:0:linear, 5.1:1:ease_out, 5.3:0:ease_in, 7:0:linear")}>
+              <Circle x="0" y="-140" radius={curve("2.7:0:linear, 2.9:30:ease_out, 3.1:0:ease_in, 4.9:0:linear, 5.1:30:ease_out, 5.3:0:ease_in")} fill="url(#diamond_ring)" opacity="0.90" blend="screen" />
+
+              <Line x1={curve("2.7:0:linear, 2.9:140:ease_out, 3.1:0:ease_in, 4.9:0:linear, 5.1:140:ease_out, 5.3:0:ease_in")} y1="-140" x2={curve("2.7:0:linear, 2.9:-140:ease_out, 3.1:0:ease_in, 4.9:0:linear, 5.1:-140:ease_out, 5.3:0:ease_in")} y2="-140" stroke="url(#diamond_streak)" strokeWidth="3" opacity={curve("2.7:0:linear, 2.9:0.80:ease_out, 3.1:0:ease_in, 4.9:0:linear, 5.1:0.80:ease_out, 5.3:0:ease_in")} blend="screen" />
+
+              <Circle x="0" y="-140" radius={curve("2.7:0:linear, 2.9:8:ease_out, 3.1:0:ease_in, 4.9:0:linear, 5.1:8:ease_out, 5.3:0:ease_in")} fill="#ffffff" opacity="1.0" blend="screen" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="moon_track" z="-80">
+        <Sequence from="0s" duration="7s" out="hold">
+          <Layer id="moon_layer">
+            <Group id="moon" x={curve("0:300:ease_in_out, 3.5:960:ease_in_out, 7:1620:ease_in_out")} y="540" opacity={curve("0:0:linear, 0.5:1:ease_out, 6.5:1:linear, 7:0:ease_in")}>
+              <Circle x="0" y="0" radius={curve("0:120:ease_out, 1:150:ease_in_out, 7:150:linear")} fill="url(#moon_shadow)" />
+              <Circle x="0" y="0" radius="148" fill="#000000" opacity="0.98" />
+              <Circle x="0" y="0" radius="150" stroke="#0a0a14" strokeWidth="2" fill="#00000000" opacity="0.60" />
+
+              <Circle x={curve("0:0:linear, 3.5:0:linear, 7:0:linear")} y={curve("0:-40:linear, 3.5:0:linear, 7:40:linear")} radius="6" fill="#1a1a24" opacity="0.40" />
+              <Circle x={curve("0:20:linear, 3.5:0:linear, 7:-20:linear")} y={curve("0:30:linear, 3.5:0:linear, 7:-30:linear")} radius="8" fill="#1a1a24" opacity="0.35" />
+              <Circle x={curve("0:-30:linear, 3.5:0:linear, 7:30:linear")} y={curve("0:10:linear, 3.5:0:linear, 7:-10:linear")} radius="5" fill="#1a1a24" opacity="0.30" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="lens_flare_track" z="-60">
+        <Sequence from="0s" duration="7s" out="hold">
+          <Layer id="lens_flare_layer" blend="screen">
+            <Group id="lens_flare_group" x="960" y="540" opacity={curve("0:0.40:linear, 2.5:0.50:ease_in_out, 3.0:0.0:ease_in, 5.0:0.0:linear, 5.2:0.50:ease_out, 6.5:0.40:ease_in_out, 7:0.30:ease_in")}>
+              <Circle x="0" y="0" radius="240" fill="url(#lens_flare)" opacity="0.30" blend="screen" />
+              <Line x1="-400" y1="0" x2="400" y2="0" stroke="#ffffff" strokeWidth="1.5" opacity={curve("0:0.20:linear, 2:0.30:ease_out, 3:0:ease_in, 5:0:linear, 5.2:0.30:ease_out, 7:0.20:ease_in")} blend="screen" />
+              <Line x1="0" y1="-400" x2="0" y2="400" stroke="#ffffff" strokeWidth="1" opacity={curve("0:0.15:linear, 2:0.22:ease_out, 3:0:ease_in, 5:0:linear, 5.2:0.22:ease_out, 7:0.15:ease_in")} blend="screen" />
+
+              <Circle x={curve("0:-300:linear, 7:-300:linear")} y="80" radius="12" fill="#ffffff" opacity={curve("0:0.30:linear, 2.5:0.40:ease_out, 3:0:ease_in, 5:0:linear, 5.2:0.40:ease_out, 7:0.30:ease_in")} blend="screen" />
+              <Circle x={curve("0:300:linear, 7:300:linear")} y="-60" radius="8" fill="#ffe080" opacity={curve("0:0.25:linear, 2.5:0.35:ease_out, 3:0:ease_in, 5:0:linear, 5.2:0.35:ease_out, 7:0.25:ease_in")} blend="screen" />
+              <Circle x={curve("0:-500:linear, 7:-500:linear")} y="-120" radius="6" fill="#ffaa30" opacity={curve("0:0.20:linear, 2.5:0.28:ease_out, 3:0:ease_in, 5:0:linear, 5.2:0.28:ease_out, 7:0.20:ease_in")} blend="screen" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="overlay_track" z="-40">
+        <Sequence from="0s" duration="7s" out="hold">
+          <Layer id="overlay_layer">
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)" opacity={curve("0:0.30:linear, 3:0.50:ease_in, 5:0.50:linear, 7:0.40:ease_out")} />
+
+            <Group id="hud" opacity={curve("0:0:linear, 0.5:0.60:ease_out, 2.5:0.60:linear, 3:0.20:ease_in, 5:0.20:linear, 5.5:0.60:ease_out, 7:0.60:linear")}>
+              <Text value="TOTAL SOLAR ECLIPSE" x="80" y="80" fontFamily="Menlo" fontSize="18" color="#ffe080" opacity="0.80" />
+              <Text value="CORONA PHASE" x="80" y="104" fontFamily="Menlo" fontSize="14" color="#ff8820" opacity="0.60" />
+              <Line x1="80" y1="114" x2="280" y2="114" stroke="#ffe080" strokeWidth="1" opacity="0.40" />
+            </Group>
+
+            <Group id="title_lockup" opacity={curve("0:0:linear, 3.5:0:linear, 4:1:ease_out, 5:1:linear, 5.5:0:ease_in, 7:0:linear")}>
+              <Text value="TOTALITY" x="center" y="940" fontFamily="Avenir Next Condensed" fontWeight="300" fontSize="120" textGap="14" renderScale="4x" color="#ffffff" opacity="0.95" />
+              <Text value="SOLAR ECLIPSE" x="center" y="1020" fontFamily="Avenir Next Condensed" fontWeight="600" fontSize="52" textGap="8" renderScale="4x" color="#ffe080" opacity="0.80" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="eclipse_post">
+    <Tex id="scene_src" fmt="rgba16f" from="scene:solar_eclipse_corona_7s" />
+    <Tex id="hsla_src" fmt="rgba16f" size={[1920,1080]} />
+    <Tex id="bloom_src" fmt="rgba16f" size={[1920,1080]} />
+    <Tex id="blur_src" fmt="rgba16f" size={[1920,1080]} />
+
+    <Pass id="post_hsla" kind="compute" effect="hsla_overlay"
+          in={["scene_src"]} out={["hsla_src"]}
+          params={{
+            hue: "curve(\"0:45:linear, 2.8:45:linear, 3.0:30:ease_in, 5.0:30:linear, 5.2:45:ease_out, 7:45:linear\")",
+            saturation: "curve(\"0:0.30:linear, 2.5:0.35:ease_in_out, 3.0:0.15:ease_in, 5.0:0.15:linear, 5.2:0.35:ease_out, 7:0.30:ease_in\")",
+            lightness: "curve(\"0:0.06:linear, 2.5:0.08:ease_in_out, 3.0:-0.04:ease_in, 5.0:-0.04:linear, 5.2:0.08:ease_out, 7:0.06:ease_in\")",
+            alpha: "curve(\"0:0.20:linear, 2.5:0.25:ease_in_out, 3.0:0.10:ease_in, 5.0:0.10:linear, 5.2:0.25:ease_out, 7:0.20:ease_in\")"
+          }} />
+
+    <Pass id="post_bloom" kind="compute" effect="glow_bloom"
+          in={["hsla_src"]} out={["bloom_src"]}
+          params={{
+            threshold: "0.35",
+            intensity: "curve(\"0:0.8:linear, 2.5:1.2:ease_in_out, 3.0:2.2:ease_out, 4.0:2.6:ease_in_out, 5.0:2.2:ease_in_out, 5.2:1.2:ease_in, 7:0.8:linear\")",
+            sigma: "16.0"
+          }} />
+
+    <Pass id="post_blur" kind="compute" effect="gaussian_5tap_blur"
+          in={["bloom_src"]} out={["blur_src"]}
+          params={{
+            sigma: "curve(\"0:0.0:linear, 2.8:0.0:linear, 3.0:1.5:ease_out, 4.0:2.5:ease_in_out, 5.0:1.5:ease_in_out, 5.2:0.0:ease_in, 7:0.0:linear\")"
+          }} />
+  </Process>
+
+  <Present from="eclipse_post" />
+</Graph>
