@@ -1,0 +1,42 @@
+<Graph fps={30} duration="3s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#101827" />
+
+  <Scene id="HslaFixedSource">
+    <Defs>
+      <LinearGradient id="base_grad" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#1E293B, 0.45:#334155, 1:#0F172A" />
+    </Defs>
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#base_grad)" />
+            <Rect x="180" y="150" width="1560" height="780" radius="64" color="#FFFFFF" opacity="0.12" />
+            <Circle x="620" y="540" radius="240" color="#F59E0B" opacity="0.80" />
+            <Circle x="960" y="540" radius="260" color="#E5E7EB" opacity="0.86" />
+            <Circle x="1300" y="540" radius="240" color="#06B6D4" opacity="0.80" />
+            <Text value="HSLA OVERLAY" x="960" y="530" fontSize="108" fontWeight="900" renderScale="4x" color="#FFFFFF" opacity="0.94" />
+            <Text value="fixed hue + saturation + lightness + alpha" x="960" y="620" fontSize="38" renderScale="4x" color="#E0F2FE" opacity="0.88" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="layer_fx">
+    <Tex id="src" fmt="rgba16f" from="scene:HslaFixedSource" />
+    <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="fx_hsla_overlay" kind="compute"
+          effect="hsla_overlay"
+          in={["src"]} out={["out"]}
+          params={{
+            hue: "210.0",
+            saturation: "0.70",
+            lightness: "0.41",
+            alpha: "0.45"
+          }} />
+  </Process>
+
+  <Present from="layer_fx" />
+</Graph>

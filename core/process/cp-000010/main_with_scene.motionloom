@@ -1,0 +1,36 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+  <Background color="#05070D" />
+
+  <Scene id="LightSweepSource">
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="800" height="450" color="#05070D" />
+            <Rect x="120" y="132" width="560" height="186" radius="36" color="#111827" stroke="#38BDF8" strokeWidth="2" opacity="1" />
+            <Text x="400" y="240" value="LIGHT SWEEP" fontSize="74" fontWeight="900" renderScale="4x" color="#E0F2FE" opacity="0.96" />
+            <Text x="400" y="290" value="effect=&quot;light_sweep&quot;" fontSize="22" color="#7DD3FC" opacity="0.82" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="LightSweepProcess">
+    <Tex id="src" fmt="rgba16f" from="scene:LightSweepSource" />
+    <Tex id="out" fmt="rgba16f" size={[800,450]} />
+    <Pass id="post_light_sweep" kind="compute"
+          effect="light_sweep"
+          in={["src"]} out={["out"]}
+          params={{
+            position: "curve(\"0:0.0:linear, 3.0:1.0:ease_in_out\")",
+            angle: "-18.0",
+            width: "0.18",
+            softness: "0.08",
+            intensity: "1.35",
+            color: "#FFFFFF"
+          }} />
+  </Process>
+
+  <Present from="LightSweepProcess" />
+</Graph>

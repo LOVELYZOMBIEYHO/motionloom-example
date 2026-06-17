@@ -1,0 +1,41 @@
+{
+  "id": "cp-000009",
+  "type": "core",
+  "title": "Process Tone Map",
+  "domain": "process",
+  "features": [
+    "process",
+    "gpu-pipeline",
+    "color",
+    "tone_map",
+    "grading"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present",
+    "tone_map"
+  ],
+  "teaches": [
+    "Use effect=\"tone_map\" for exposure, contrast, shoulder, gamma, and saturation.",
+    "Use tone mapping after glow/bloom to control highlights."
+  ],
+  "source_path": "generated/process/tone_map",
+  "demo_url": "",
+  "related": [
+    "cp-000008",
+    "cp-000010"
+  ],
+  "requires": [
+    "Graph",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present"
+  ]
+}

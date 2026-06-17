@@ -1,0 +1,45 @@
+{
+  "id": "ct-000001",
+  "type": "core",
+  "title": "Text Pill Box",
+  "domain": "text",
+  "features": [
+    "text",
+    "text-box",
+    "text-gap"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Text",
+    "fontWeight",
+    "textGap",
+    "box"
+  ],
+  "teaches": [
+    "Use Text box=\"pill\" to create an auto-sized rounded background behind text.",
+    "Use fontWeight and textGap to tune bold condensed title-card typography.",
+    "Use transparent Background for overlay-ready pill text exports."
+  ],
+  "source_path": "generated/text/text_pill_box",
+  "demo_url": "",
+  "related": [
+    "cs-000021"
+  ],
+  "requires": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Text",
+    "Present"
+  ]
+}

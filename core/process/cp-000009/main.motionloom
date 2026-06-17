@@ -1,0 +1,20 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+
+  <Process id="ToneMapProcess">
+    <Input id="clip0" type="video" from="input:clip0" />
+    <Tex id="src" fmt="rgba16f" from="clip0" />
+    <Tex id="out" fmt="rgba16f" size={[800,450]} />
+    <Pass id="post_tone_map" kind="compute"
+          effect="tone_map"
+          in={["src"]} out={["out"]}
+          params={{
+            exposure: "0.45",
+            contrast: "1.18",
+            shoulder: "0.65",
+            gamma: "2.2",
+            saturation: "1.08"
+          }} />
+  </Process>
+
+  <Present from="ToneMapProcess" />
+</Graph>

@@ -1,0 +1,196 @@
+<!-- ANICA cyberpunk promo concept, scene-only MotionLoom DSL.
+     Audio/SFX from the storyboard are represented visually; this file does not output sound. -->
+<Graph fps={30} duration="20s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#020307" />
+
+  <Scene id="anica_cyberpunk_promo_20s">
+    <Defs>
+      <RadialGradient id="void_bg" cx="0.50" cy="0.45" r="0.90"
+                      stops="0:#11233A, 0.42:#050817, 0.78:#020307, 1:#000000" />
+      <RadialGradient id="green_core" cx="0.50" cy="0.50" r="0.72"
+                      stops="0:#D7FFE7, 0.18:#38FF8F, 0.54:#05B85D66, 1:#05B85D00" />
+      <RadialGradient id="iris_grad" cx="0.50" cy="0.45" r="0.72"
+                      stops="0:#FFFFFF, 0.22:#88FFF1, 0.52:#4D7CFF, 0.84:#6A35FF, 1:#000000" />
+      <RadialGradient id="portal_grad" cx="0.50" cy="0.50" r="0.70"
+                      stops="0:#FFFFFFCC, 0.22:#55FFF2AA, 0.52:#6D49FF66, 0.82:#FF2B9A33, 1:#00000000" />
+      <RadialGradient id="burst_grad" cx="0.50" cy="0.50" r="0.82"
+                      stops="0:#FFFFFF, 0.13:#DAFFFFE8, 0.35:#60F4FF88, 0.66:#923EFF44, 1:#00000000" />
+      <LinearGradient id="laser_green" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#00FF8800, 0.15:#00FF88, 0.50:#E8FFF4, 0.85:#00FF88, 1:#00FF8800" />
+      <LinearGradient id="neon_bar" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#FFFFFF, 0.24:#82F7FF, 0.68:#6A49FF, 1:#FF3FA8" />
+      <LinearGradient id="matrix_grad" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#99FFD6, 0.32:#2BFF8A, 0.70:#0B6B4E, 1:#00140F" />
+      <LinearGradient id="mammoth_toon" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#80F7FF, 0.38:#596CFF, 0.70:#E456FF, 1:#171A32" />
+      <LinearGradient id="mammoth_wire" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#1CFFB7, 0.50:#FFFFFF, 1:#8E6BFF" />
+      <LinearGradient id="hot_pass" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#FFFFFF00, 0.24:#55FFF2, 0.52:#FFFFFF, 0.78:#FF3FA8, 1:#FFFFFF00" />
+      <LinearGradient id="final_text" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#7BFFB8, 0.30:#FFFFFF, 0.68:#76ECFF, 1:#B68CFF" />
+    </Defs>
+
+    <Timeline>
+      <Track id="scene_content" space="world" z="0">
+        <Sequence from="0s" duration="20s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#void_bg)" />
+
+            <!-- Global scanline/noise field. -->
+            <Repeat id="scanline_field" count="34" x="0" y="20" yStep="32" opacity="0.18" opacityStep="-0.002">
+              <Line x1="0" y1="0" x2="1920" y2="0" stroke="#8BEAFF" strokeWidth="1" opacity="0.22" />
+            </Repeat>
+            <Repeat id="far_star_grid" count="30" x="90" y="120" xStep="62" yStep="23" opacity="0.34" opacityStep="-0.006">
+              <Circle x="10*sin($time.sec*0.9)" y="8*sin($time.sec*1.2)" radius="2.0 + 1.2*(0.5 + 0.5*sin($time.sec*3.2))" color="#8AFBFF" opacity="0.22" blend="screen" />
+            </Repeat>
+
+            <!-- 0:00-0:03 Code becomes eyes. -->
+            <Group id="shot_code_creation" opacity={curve("0:1:linear, 2.85:1:linear, 3.22:0:ease_in_out, 20:0:linear")}>
+              <Circle x="960" y="540" radius={curve("0:110:ease_out, 1.5:440:ease_in_out, 3:720:ease_in")} color="url(#green_core)" opacity={curve("0:0.15:linear, 1.0:0.85:ease_out, 2.8:0.35:ease_in")} blend="screen" />
+              <Line x1={curve("0:-800:ease_out, 0.72:260:ease_out, 3:420:ease_in_out")} y1="390" x2={curve("0:120:ease_out, 0.72:1680:ease_out, 3:1500:ease_in_out")} y2="390" stroke="#00FF88" strokeWidth="8" opacity="0.92" blend="screen" />
+              <Text id="code_graph" value="Graph fps={60}" x={curve("0:-720:ease_out, 0.70:270:ease_out, 2.75:410:ease_in_out")} y="370" fontFamily="Menlo" fontSize="82" renderScale="4x" color="#9DFFC8" opacity={curve("0:0:ease_out, 0.35:1:ease_out, 2.75:1:linear, 3.1:0:ease_in")} />
+              <Text value="CODE IS MOTION." x="center" y="860" fontFamily="Avenir Next Condensed" fontSize="110" renderScale="4x" color="#E8FFF4" opacity={curve("0:0:linear, 1.25:0:ease_out, 1.72:1:ease_out, 2.82:1:linear, 3.1:0:ease_in")} />
+
+              <Group id="neural_paths" opacity={curve("0.60:0:linear, 1.05:1:ease_out, 2.75:1:linear, 3.05:0:ease_in")}
+                     x="960" y="540" scale={curve("0.6:0.80:ease_out, 2.8:1.10:ease_in_out")} transformOriginX="0" transformOriginY="0">
+                <Repeat id="neural_ray_repeat" count="22" rotationStep="16.36" opacity="0.72" opacityStep="-0.010">
+                  <Line x1="0" y1="0" x2={curve("0.70:40:ease_out, 1.35:520:ease_out, 3:700:ease_in")} y2="0" stroke="#32FF93" strokeWidth="3" opacity="0.54" blend="screen" />
+                  <Circle x={curve("0.70:40:ease_out, 1.35:520:ease_out, 3:700:ease_in")} y="0" radius="6" color="#FFFFFF" opacity="0.72" blend="screen" />
+                </Repeat>
+              </Group>
+
+              <Group id="anime_eyes" x="960" y="540" scale={curve("0.80:0.35:ease_out, 1.55:1.0:ease(0.16,1.18,0.24,1), 2.90:1.05:ease_in")} opacity={curve("0.75:0:linear, 1.15:1:ease_out, 2.86:1:linear, 3.15:0:ease_in")} transformOriginX="0" transformOriginY="0">
+                <Path d="M -500 -30 C -360 -180 -120 -206 0 -42 C -140 70 -350 82 -500 -30 Z" fill="#F6FFFF" stroke="#A6FFF1" strokeWidth="7" opacity="0.95" />
+                <Path d="M 500 -30 C 360 -180 120 -206 0 -42 C 140 70 350 82 500 -30 Z" fill="#F6FFFF" stroke="#A6FFF1" strokeWidth="7" opacity="0.95" />
+                <Circle x="-225" y="-44" radius="88" fill="url(#iris_grad)" stroke="#030A20" strokeWidth="8" />
+                <Circle x="225" y="-44" radius="88" fill="url(#iris_grad)" stroke="#030A20" strokeWidth="8" />
+                <Circle x="-225" y="-44" radius="34" color="#01030A" />
+                <Circle x="225" y="-44" radius="34" color="#01030A" />
+                <Circle x="-254" y="-82" radius="18" color="#FFFFFF" opacity="0.92" />
+                <Circle x="196" y="-82" radius="18" color="#FFFFFF" opacity="0.92" />
+                <Path d="M -548 -54 C -386 -230 -112 -256 28 -60" stroke="#32FF93" strokeWidth="8" fill="none" lineCap="round" trimStart={curve("0.8:0:linear, 1.45:0:ease_out, 2.10:0.05:ease_in_out")} trimEnd={curve("0.8:0:linear, 1.45:1:ease_out, 3:1:linear")} />
+                <Path d="M 548 -54 C 386 -230 112 -256 -28 -60" stroke="#32FF93" strokeWidth="8" fill="none" lineCap="round" trimStart={curve("0.8:0:linear, 1.45:0:ease_out, 2.10:0.05:ease_in_out")} trimEnd={curve("0.8:0:linear, 1.45:1:ease_out, 3:1:linear")} />
+              </Group>
+            </Group>
+
+            <!-- 0:03-0:07 2D data matrix and morphing forms. -->
+            <Group id="shot_text_matrix" opacity={curve("2.80:0:ease_in_out, 3.25:1:ease_out, 6.80:1:linear, 7.20:0:ease_in_out, 20:0:linear")}
+                   scale={curve("3:1.18:ease_out, 7:0.92:ease_in_out")} transformOriginX="960" transformOriginY="540">
+              <Text value="TEXT MATRIX" x="90" y="112" fontFamily="Menlo" fontSize="28" renderScale="4x" color="#79FFC0" opacity="0.82" />
+              <Text value="Procedural fontSize + y + vector morph" x="90" y="148" fontFamily="Menlo" fontSize="22" renderScale="4x" color="#A6B4FF" opacity="0.78" />
+              <Repeat id="text_city_repeat" count="18" x="120" y="780" xStep="96" opacity="0.96" opacityStep="-0.012">
+                <Text value="Text" x="0" y="0" fontFamily="Avenir Next Condensed" fontSize="56 + 46*(0.5 + 0.5*sin($time.sec*4.4))" renderScale="4x" color="#9AFFC9" opacity="0.86" rotation="-90" />
+                <Rect x="-6" y="12" width="68" height="220 + 180*(0.5 + 0.5*sin($time.sec*3.2))" radius="18" fill="url(#matrix_grad)" opacity="0.18" blend="screen" />
+              </Repeat>
+              <Repeat id="matrix_code_rain" count="26" x="90" y="220" xStep="70" opacity="0.62" opacityStep="-0.008">
+                <Text value="Rect" x="0" y="34*sin($time.sec*2.2)" fontFamily="Menlo" fontSize="18" renderScale="4x" color="#2BFF8A" opacity="0.58" />
+                <Text value="Circle" x="0" y="70 + 48*sin($time.sec*2.7 + 1.2)" fontFamily="Menlo" fontSize="18" renderScale="4x" color="#79E7FF" opacity="0.48" />
+              </Repeat>
+
+              <Group id="morph_field" x="960" y="520" rotation="12*sin($time.sec*0.9)" transformOriginX="0" transformOriginY="0">
+                <Path id="shape_morph_a"
+                      d={morph("3.00:M -130 -130 C -40 -130 40 -130 130 -130 C 130 -40 130 40 130 130 C 40 130 -40 130 -130 130 C -130 40 -130 -40 -130 -130 Z", "4.30:M 0 -170 C 96 -170 170 -96 170 0 C 170 96 96 170 0 170 C -96 170 -170 96 -170 0 C -170 -96 -96 -170 0 -170 Z", "5.60:M 0 -190 C 60 -120 130 -60 190 0 C 130 60 60 120 0 190 C -60 120 -130 60 -190 0 C -130 -60 -60 -120 0 -190 Z", "7.00:M -130 -130 C -40 -130 40 -130 130 -130 C 130 -40 130 40 130 130 C 40 130 -40 130 -130 130 C -130 40 -130 -40 -130 -130 Z")}
+                      fill="#00000000" stroke="#FFFFFF" strokeWidth="8" opacity="0.90" blend="screen" />
+                <Path id="shape_morph_b"
+                      d={morph("3.00:M -150 0 C -150 -92 -60 -118 0 -118 C 60 -118 150 -92 150 0 C 150 92 60 118 0 118 C -60 118 -150 92 -150 0 Z", "4.70:M -170 -80 C -52 -80 52 -80 170 -80 C 170 -28 170 28 170 80 C 52 80 -52 80 -170 80 C -170 28 -170 -28 -170 -80 Z", "6.00:M 0 -170 C 80 -70 160 -70 190 0 C 120 42 100 120 0 190 C -100 120 -120 42 -190 0 C -160 -70 -80 -70 0 -170 Z", "7.00:M -150 0 C -150 -92 -60 -118 0 -118 C 60 -118 150 -92 150 0 C 150 92 60 118 0 118 C -60 118 -150 92 -150 0 Z")}
+                      fill="url(#portal_grad)" stroke="#72FFF2" strokeWidth="4" opacity="0.62" blend="screen" />
+              </Group>
+            </Group>
+
+            <!-- 0:07-0:12 Faux 3D world and toon mammoth. -->
+            <Group id="shot_world_mammoth" opacity={curve("6.80:0:ease_in_out, 7.20:1:ease_out, 11.75:1:linear, 12.20:0:ease_in_out, 20:0:linear")}>
+              <Circle x="960" y="540" radius={curve("7:80:ease_out, 7.75:390:ease(0.16,1.1,0.24,1), 12:460:ease_in_out")} fill="url(#portal_grad)" opacity="0.92" blend="screen" />
+              <Repeat id="portal_ticks" count="48" x="960" y="540" rotationStep="7.5" opacity="0.78" opacityStep="-0.004">
+                <Line x1="0" y1="-315" x2="0" y2="-430" stroke="#6FFFE8" strokeWidth="4" opacity="0.58" blend="screen" />
+              </Repeat>
+              <Text value="World" x="center" y="206" fontFamily="Menlo" fontSize="56" renderScale="4x" color="#72FFF2" opacity={curve("7:0:ease_out, 7.65:1:ease_out, 11.6:1:linear, 12:0:ease_in")} />
+
+              <Group id="mammoth_wireframe" x="960" y="600" scale={curve("7.0:0.22:ease_out, 8.0:1.0:ease(0.16,1.1,0.24,1), 12:1.05:ease_in_out")} opacity={curve("7.0:0:linear, 7.65:1:ease_out, 9.10:0.82:linear, 9.75:0.16:ease_in, 12:0.16:linear")} transformOriginX="0" transformOriginY="0">
+                <Path d="M -420 -40 C -350 -210 -80 -245 120 -170 C 300 -210 470 -110 455 68 C 446 220 250 236 62 200 C -120 248 -350 200 -414 64 C -466 36 -462 -10 -420 -40 Z" fill="#00000000" stroke="#8EFFF0" strokeWidth="5" />
+                <Path d="M 270 -120 C 376 -96 470 -24 470 84 C 450 158 384 180 318 164" fill="#00000000" stroke="#FFFFFF" strokeWidth="4" />
+                <Path d="M 345 34 C 524 100 550 260 408 290 C 502 226 484 126 350 84" fill="#00000000" stroke="#FFE6A3" strokeWidth="8" lineCap="round" />
+                <Path d="M 300 48 C 436 132 422 242 290 258 C 378 208 376 122 292 86" fill="#00000000" stroke="#FFE6A3" strokeWidth="8" lineCap="round" />
+                <Line x1="-360" y1="-36" x2="360" y2="130" stroke="#6FFFE8" strokeWidth="2" opacity="0.55" />
+                <Line x1="-250" y1="-156" x2="260" y2="210" stroke="#6FFFE8" strokeWidth="2" opacity="0.45" />
+                <Line x1="-430" y1="60" x2="460" y2="-40" stroke="#FF5AD5" strokeWidth="2" opacity="0.42" />
+                <Circle x="302" y="-52" radius="12" color="#FFFFFF" />
+              </Group>
+
+              <Group id="mammoth_toon" x="960" y="600" scale={curve("7.0:0.22:ease_out, 8.0:1.0:ease(0.16,1.1,0.24,1), 12:1.08:ease_in_out")} opacity={curve("8.75:0:linear, 9.55:1:ease_out, 11.85:1:linear, 12.20:0:ease_in")} transformOriginX="0" transformOriginY="0">
+                <Path d="M -420 -40 C -350 -210 -80 -245 120 -170 C 300 -210 470 -110 455 68 C 446 220 250 236 62 200 C -120 248 -350 200 -414 64 C -466 36 -462 -10 -420 -40 Z" fill="url(#mammoth_toon)" stroke="#07101C" strokeWidth="16" />
+                <Path d="M -250 160 L -290 350 L -210 350 L -160 190 Z" fill="#2E3F7B" stroke="#07101C" strokeWidth="12" />
+                <Path d="M -30 176 L -54 350 L 28 350 L 70 190 Z" fill="#2E3F7B" stroke="#07101C" strokeWidth="12" />
+                <Path d="M 188 164 L 180 350 L 262 350 L 290 154 Z" fill="#2E3F7B" stroke="#07101C" strokeWidth="12" />
+                <Path d="M 345 34 C 524 100 550 260 408 290 C 502 226 484 126 350 84" fill="#00000000" stroke="#FFF0B9" strokeWidth="18" lineCap="round" />
+                <Path d="M 300 48 C 436 132 422 242 290 258 C 378 208 376 122 292 86" fill="#00000000" stroke="#FFF0B9" strokeWidth="18" lineCap="round" />
+                <Circle x="302" y="-52" radius="18" color="#FFFFFF" stroke="#07101C" strokeWidth="8" />
+                <Circle x="308" y="-52" radius="7" color="#07101C" />
+                <Repeat id="toon_stripe_repeat" count="7" x="-310" y="-92" xStep="92" yStep="22" opacity="0.38" opacityStep="-0.018">
+                  <Line x1="0" y1="0" x2="88" y2="38" stroke="#BFFBFF" strokeWidth="6" opacity="0.38" />
+                </Repeat>
+              </Group>
+
+              <Text value="Material style toon outline true" x="center" y="906" fontFamily="Menlo" fontSize="34" renderScale="4x" color="#D9F9FF" opacity={curve("8.50:0:ease_out, 9.25:1:ease_out, 11.55:1:linear, 12:0:ease_in")} />
+              <Rect x={curve("8.70:-460:ease_out, 9.55:1920:ease_out, 12:2200:linear")} y="842" width="460" height="90" radius="45" fill="url(#hot_pass)" opacity="0.70" blend="screen" />
+            </Group>
+
+            <!-- 0:12-0:17 GPU process/composition climax. -->
+            <Group id="shot_process_climax" opacity={curve("11.75:0:ease_in_out, 12.20:1:ease_out, 16.50:1:linear, 16.90:0:ease_in_out, 20:0:linear")}>
+              <Text value="Process" x="center" y="104" fontFamily="Menlo" fontSize="60" renderScale="4x" color="#83FFF1" opacity="0.92" />
+              <Rect x="110" y="145" width="1700" height="720" radius="42" color="#02060C" stroke="#70FFF2" strokeWidth="4" opacity="0.72" />
+              <Rect x="136" y="172" width="790" height="660" radius="34" color="#06101E" stroke="#355BFF" strokeWidth="3" opacity="0.86" />
+              <Rect x="994" y="172" width="790" height="660" radius="34" color="#06101E" stroke="#FF3FA8" strokeWidth="3" opacity="0.86" />
+              <Text value="scene:anime_eye" x="180" y="225" fontFamily="Menlo" fontSize="24" renderScale="4x" color="#7CB7FF" opacity="0.80" />
+              <Text value="world:toon_mammoth" x="1040" y="225" fontFamily="Menlo" fontSize="24" renderScale="4x" color="#FF90D2" opacity="0.80" />
+
+              <Group id="mini_eye" x="530" y="500" scale="0.62" opacity="0.95" transformOriginX="0" transformOriginY="0">
+                <Path d="M -500 -30 C -360 -180 -120 -206 0 -42 C -140 70 -350 82 -500 -30 Z" fill="#F6FFFF" stroke="#A6FFF1" strokeWidth="7" />
+                <Path d="M 500 -30 C 360 -180 120 -206 0 -42 C 140 70 350 82 500 -30 Z" fill="#F6FFFF" stroke="#A6FFF1" strokeWidth="7" />
+                <Circle x="-225" y="-44" radius="88" fill="url(#iris_grad)" stroke="#030A20" strokeWidth="8" />
+                <Circle x="225" y="-44" radius="88" fill="url(#iris_grad)" stroke="#030A20" strokeWidth="8" />
+                <Circle x="-225" y="-44" radius="34" color="#01030A" />
+                <Circle x="225" y="-44" radius="34" color="#01030A" />
+              </Group>
+
+              <Group id="mini_mammoth" x="1375" y="560" scale="0.50" opacity="0.98" transformOriginX="0" transformOriginY="0">
+                <Path d="M -420 -40 C -350 -210 -80 -245 120 -170 C 300 -210 470 -110 455 68 C 446 220 250 236 62 200 C -120 248 -350 200 -414 64 C -466 36 -462 -10 -420 -40 Z" fill="url(#mammoth_toon)" stroke="#07101C" strokeWidth="16" />
+                <Path d="M 345 34 C 524 100 550 260 408 290 C 502 226 484 126 350 84" fill="#00000000" stroke="#FFF0B9" strokeWidth="18" lineCap="round" />
+                <Path d="M 300 48 C 436 132 422 242 290 258 C 378 208 376 122 292 86" fill="#00000000" stroke="#FFF0B9" strokeWidth="18" lineCap="round" />
+                <Circle x="302" y="-52" radius="18" color="#FFFFFF" stroke="#07101C" strokeWidth="8" />
+              </Group>
+
+              <Group id="process_passes" opacity={curve("12.25:0:linear, 13.0:1:ease_out, 16.8:1:linear")}>
+                <Line x1="880" y1="500" x2="1040" y2="500" stroke="#8DFDF3" strokeWidth="12" lineCap="round" opacity="0.90" blend="screen" />
+                <Text value="Pass effect=glow" x="center" y="470" fontFamily="Menlo" fontSize="32" renderScale="4x" color="#FFFFFF" opacity="0.92" />
+                <Text value="Pass effect=particles" x="center" y="548" fontFamily="Menlo" fontSize="28" renderScale="4x" color="#8DFDF3" opacity="0.80" />
+              </Group>
+
+              <Circle x="960" y="540" radius={curve("12.4:40:ease_out, 14.6:360:ease_in_out, 16.6:620:ease_in")} fill="url(#burst_grad)" opacity={curve("12.4:0:ease_out, 13.4:0.20:ease_out, 15.2:0.78:ease_out, 16.75:0.12:ease_in")} blend="screen" />
+              <Repeat id="particle_storm" count="40" x="960" y="540" rotationStep="9" opacity="0.82" opacityStep="-0.010">
+                <Circle x={curve("12.2:0:ease_out, 15.4:420:ease_out, 17.0:20:ease_in")} y="18*sin($time.sec*8.0)" radius="4 + 4*(0.5 + 0.5*sin($time.sec*5.0))" color="#FFFFFF" opacity="0.62" blend="screen" />
+                <Line x1={curve("12.2:0:ease_out, 15.4:300:ease_out, 17.0:10:ease_in")} y1="0" x2={curve("12.2:0:ease_out, 15.4:500:ease_out, 17.0:22:ease_in")} y2="0" stroke="#8DFDF3" strokeWidth="2" opacity="0.28" blend="screen" />
+              </Repeat>
+              <Text value="EVERY FRAME IS A GPU GRAPH" x="center" y="940" fontFamily="Avenir Next Condensed" fontSize="92" renderScale="4x" color="#FFFFFF" opacity={curve("13.0:0:ease_out, 13.8:1:ease_out, 16.6:1:linear, 17.05:0:ease_in")} />
+            </Group>
+
+            <!-- 0:17-0:20 Collapse to Present and logo. -->
+            <Group id="shot_final_present" opacity={curve("16.80:0:ease_in_out, 17.10:1:ease_out, 20:1:linear")}>
+              <Rect x="0" y="0" width="1920" height="1080" color="#020307" opacity={curve("16.8:0:ease_out, 17.25:0.82:ease_out, 20:1:linear")} />
+              <Circle x="960" y="540" radius={curve("17.00:360:ease_in, 17.55:42:ease_in_out, 20:120:ease_out")} fill="url(#burst_grad)" opacity={curve("17.0:0.62:ease_out, 17.55:0.92:ease_in, 18.3:0.16:ease_out, 20:0.05:linear")} blend="screen" />
+              <Repeat id="collapse_particles" count="32" x="960" y="540" rotationStep="11.25" opacity="0.78" opacityStep="-0.010">
+                <Circle x={curve("17.0:420:ease_in, 17.65:0:ease_in_out, 20:0:linear")} y="0" radius="4" color="#8DFDF3" blend="screen" />
+              </Repeat>
+              <Text value="Present from final_composite" x="center" y="438" fontFamily="Menlo" fontSize="58" renderScale="4x" color="#DFFBFF" opacity={curve("17.15:0:ease_out, 17.82:1:ease_out, 18.65:1:linear, 19.0:0:ease_in")} />
+              <Line x1={curve("17.50:960:ease_out, 17.95:420:ease_out, 19.1:420:linear")} y1="494" x2={curve("17.50:960:ease_out, 17.95:1500:ease_out, 19.1:1500:linear")} y2="494" stroke="#8DFDF3" strokeWidth="6" opacity={curve("17.4:0:ease_out, 17.95:1:ease_out, 19.0:0:ease_in")} blend="screen" />
+              <Text value="ANICA" x="center" y="520" fontFamily="Avenir Next Condensed" fontSize="190" renderScale="4x" color="#FFFFFF" opacity={curve("18.55:0:ease_out, 19.10:1:ease_out, 20:1:linear")} />
+              <Text value="The AI-Native VFX Engine" x="center" y="632" fontFamily="Helvetica Neue" fontSize="42" renderScale="4x" color="#9BA8FF" opacity={curve("18.72:0:ease_out, 19.25:0.92:ease_out, 20:0.92:linear")} />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="anica_cyberpunk_promo_20s" />
+</Graph>

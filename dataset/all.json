@@ -1,0 +1,1611 @@
+{
+  "example_count": 49,
+  "core_count": 49,
+  "showcase_count": 0,
+  "domain_counts": {
+    "scene": 37,
+    "world": 6,
+    "process": 4,
+    "composition": 1,
+    "text": 1
+  },
+  "id_prefixes": {
+    "scene": "cs",
+    "world": "cw",
+    "process": "cp",
+    "composition": "cm",
+    "text": "ct"
+  },
+  "examples": [
+    {
+      "id": "cs-000001",
+      "type": "core",
+      "title": "DSL Camera Basic",
+      "domain": "scene",
+      "features": [
+        "camera"
+      ],
+      "dsl": [
+        "camera"
+      ],
+      "teaches": [
+        "Use a scene <Camera> track to create visible pan and zoom over world-space content."
+      ],
+      "source_path": "generated/dsl/camera",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Camera"
+      ],
+      "path": "core/scene/cs-000001/"
+    },
+    {
+      "id": "cs-000002",
+      "type": "core",
+      "title": "DSL Circle Basic",
+      "domain": "scene",
+      "features": [
+        "circle"
+      ],
+      "dsl": [
+        "circle"
+      ],
+      "teaches": [
+        "Use the basic <Circle> pattern in MotionLoom."
+      ],
+      "source_path": "generated/dsl/circle",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Circle"
+      ],
+      "path": "core/scene/cs-000002/"
+    },
+    {
+      "id": "cs-000003",
+      "type": "core",
+      "title": "DSL Component Basic",
+      "domain": "scene",
+      "features": [
+        "component"
+      ],
+      "dsl": [
+        "component"
+      ],
+      "teaches": [
+        "Define one Component inside Defs."
+      ],
+      "source_path": "generated/dsl/component",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Defs",
+        "Component",
+        "Use"
+      ],
+      "path": "core/scene/cs-000003/"
+    },
+    {
+      "id": "cs-000004",
+      "type": "core",
+      "title": "DSL Curve Basic",
+      "domain": "scene",
+      "features": [
+        "curve"
+      ],
+      "dsl": [
+        "curve"
+      ],
+      "teaches": [
+        "Animate one numeric property over time with curve().",
+        "curve() changes the property value over time; it does not morph the shape itself."
+      ],
+      "source_path": "generated/dsl/curve",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "curve"
+      ],
+      "path": "core/scene/cs-000004/"
+    },
+    {
+      "id": "cs-000005",
+      "type": "core",
+      "title": "DSL Defs Basic",
+      "domain": "scene",
+      "features": [
+        "defs"
+      ],
+      "dsl": [
+        "defs"
+      ],
+      "teaches": [
+        "Use the basic <Defs> pattern in MotionLoom."
+      ],
+      "source_path": "generated/dsl/defs",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Defs"
+      ],
+      "path": "core/scene/cs-000005/"
+    },
+    {
+      "id": "cs-000006",
+      "type": "core",
+      "title": "DSL Graph Basic",
+      "domain": "scene",
+      "features": [
+        "graph"
+      ],
+      "dsl": [
+        "graph"
+      ],
+      "teaches": [
+        "Use the basic <Graph> pattern in MotionLoom."
+      ],
+      "source_path": "generated/dsl/graph",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph"
+      ],
+      "path": "core/scene/cs-000006/"
+    },
+    {
+      "id": "cs-000007",
+      "type": "core",
+      "title": "DSL Group Basic",
+      "domain": "scene",
+      "features": [
+        "group"
+      ],
+      "dsl": [
+        "group"
+      ],
+      "teaches": [
+        "Use the basic <Group> pattern in MotionLoom."
+      ],
+      "source_path": "generated/dsl/group",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group"
+      ],
+      "path": "core/scene/cs-000007/"
+    },
+    {
+      "id": "cs-000008",
+      "type": "core",
+      "title": "DSL Image Basic",
+      "domain": "scene",
+      "features": [
+        "image"
+      ],
+      "dsl": [
+        "image"
+      ],
+      "teaches": [
+        "Use the basic <Image> pattern in MotionLoom."
+      ],
+      "source_path": "generated/dsl/image",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Image"
+      ],
+      "path": "core/scene/cs-000008/"
+    },
+    {
+      "id": "cs-000009",
+      "type": "core",
+      "title": "DSL Layer Basic",
+      "domain": "scene",
+      "features": [
+        "layer"
+      ],
+      "dsl": [
+        "layer"
+      ],
+      "teaches": [
+        "Use the basic <Layer> pattern in MotionLoom."
+      ],
+      "source_path": "generated/dsl/layer",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer"
+      ],
+      "path": "core/scene/cs-000009/"
+    },
+    {
+      "id": "cs-000010",
+      "type": "core",
+      "title": "DSL Line Basic",
+      "domain": "scene",
+      "features": [
+        "line"
+      ],
+      "dsl": [
+        "line"
+      ],
+      "teaches": [
+        "Use the basic <Line> pattern in MotionLoom."
+      ],
+      "source_path": "generated/dsl/line",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Line"
+      ],
+      "path": "core/scene/cs-000010/"
+    },
+    {
+      "id": "cs-000011",
+      "type": "core",
+      "title": "DSL LinearGradient Basic",
+      "domain": "scene",
+      "features": [
+        "lineargradient"
+      ],
+      "dsl": [
+        "lineargradient"
+      ],
+      "teaches": [
+        "Use the basic <LinearGradient> pattern in MotionLoom."
+      ],
+      "source_path": "generated/dsl/lineargradient",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Defs",
+        "LinearGradient"
+      ],
+      "path": "core/scene/cs-000011/"
+    },
+    {
+      "id": "cs-000012",
+      "type": "core",
+      "title": "DSL Masking Basic",
+      "domain": "scene",
+      "features": [
+        "masking"
+      ],
+      "dsl": [
+        "masking"
+      ],
+      "teaches": [
+        "Apply one Mask to one Group."
+      ],
+      "source_path": "generated/dsl/masking",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Defs",
+        "Mask",
+        "Group"
+      ],
+      "path": "core/scene/cs-000012/"
+    },
+    {
+      "id": "cs-000013",
+      "type": "core",
+      "title": "DSL Matte Basic",
+      "domain": "scene",
+      "features": [
+        "matte"
+      ],
+      "dsl": [
+        "matte"
+      ],
+      "teaches": [
+        "Use one Precompose as a matte for one Layer."
+      ],
+      "source_path": "generated/dsl/matte",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Defs",
+        "Precompose",
+        "Layer",
+        "matte"
+      ],
+      "path": "core/scene/cs-000013/"
+    },
+    {
+      "id": "cs-000014",
+      "type": "core",
+      "title": "DSL Path Basic",
+      "domain": "scene",
+      "features": [
+        "path"
+      ],
+      "dsl": [
+        "path"
+      ],
+      "teaches": [
+        "Use the basic <Path> pattern in MotionLoom."
+      ],
+      "source_path": "generated/dsl/path",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Path"
+      ],
+      "path": "core/scene/cs-000014/"
+    },
+    {
+      "id": "cs-000015",
+      "type": "core",
+      "title": "DSL Polyline Basic",
+      "domain": "scene",
+      "features": [
+        "polyline"
+      ],
+      "dsl": [
+        "polyline"
+      ],
+      "teaches": [
+        "Use the basic <Polyline> pattern in MotionLoom."
+      ],
+      "source_path": "generated/dsl/polyline",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Polyline"
+      ],
+      "path": "core/scene/cs-000015/"
+    },
+    {
+      "id": "cs-000016",
+      "type": "core",
+      "title": "DSL RadialGradient Basic",
+      "domain": "scene",
+      "features": [
+        "radialgradient"
+      ],
+      "dsl": [
+        "radialgradient"
+      ],
+      "teaches": [
+        "Use the basic <RadialGradient> pattern in MotionLoom."
+      ],
+      "source_path": "generated/dsl/radialgradient",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Defs",
+        "RadialGradient"
+      ],
+      "path": "core/scene/cs-000016/"
+    },
+    {
+      "id": "cs-000017",
+      "type": "core",
+      "title": "DSL Rect Basic",
+      "domain": "scene",
+      "features": [
+        "rect"
+      ],
+      "dsl": [
+        "rect"
+      ],
+      "teaches": [
+        "Use the basic <Rect> pattern in MotionLoom."
+      ],
+      "source_path": "generated/dsl/rect",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Rect"
+      ],
+      "path": "core/scene/cs-000017/"
+    },
+    {
+      "id": "cs-000018",
+      "type": "core",
+      "title": "DSL Scene Basic",
+      "domain": "scene",
+      "features": [
+        "scene"
+      ],
+      "dsl": [
+        "scene"
+      ],
+      "teaches": [
+        "Use the basic <Scene> pattern in MotionLoom."
+      ],
+      "source_path": "generated/dsl/scene",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene"
+      ],
+      "path": "core/scene/cs-000018/"
+    },
+    {
+      "id": "cs-000019",
+      "type": "core",
+      "title": "DSL Sequence Basic",
+      "domain": "scene",
+      "features": [
+        "sequence"
+      ],
+      "dsl": [
+        "sequence"
+      ],
+      "teaches": [
+        "Use the basic <Sequence> pattern in MotionLoom."
+      ],
+      "source_path": "generated/dsl/sequence",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence"
+      ],
+      "path": "core/scene/cs-000019/"
+    },
+    {
+      "id": "cs-000020",
+      "type": "core",
+      "title": "DSL Sin Expression Basic",
+      "domain": "scene",
+      "features": [
+        "sin"
+      ],
+      "dsl": [
+        "sin"
+      ],
+      "teaches": [
+        "Animate one property with sin($time.sec)."
+      ],
+      "source_path": "generated/dsl/sin",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "sin"
+      ],
+      "path": "core/scene/cs-000020/"
+    },
+    {
+      "id": "cs-000021",
+      "type": "core",
+      "title": "DSL Text Basic",
+      "domain": "scene",
+      "features": [
+        "text",
+        "text-render-scale"
+      ],
+      "dsl": [
+        "text",
+        "renderScale"
+      ],
+      "teaches": [
+        "Use the basic <Text> pattern in MotionLoom.",
+        "Use renderScale=\"4x\" to rasterize text at four times the pixel density without changing layout size."
+      ],
+      "source_path": "generated/dsl/text",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text"
+      ],
+      "path": "core/scene/cs-000021/"
+    },
+    {
+      "id": "cs-000022",
+      "type": "core",
+      "title": "DSL Timeline Basic",
+      "domain": "scene",
+      "features": [
+        "timeline"
+      ],
+      "dsl": [
+        "timeline"
+      ],
+      "teaches": [
+        "Use the basic <Timeline> pattern in MotionLoom."
+      ],
+      "source_path": "generated/dsl/timeline",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline"
+      ],
+      "path": "core/scene/cs-000022/"
+    },
+    {
+      "id": "cs-000023",
+      "type": "core",
+      "title": "DSL Track Basic",
+      "domain": "scene",
+      "features": [
+        "track"
+      ],
+      "dsl": [
+        "track"
+      ],
+      "teaches": [
+        "Use the basic <Track> pattern in MotionLoom.",
+        "Scene track z controls paint order only. Higher z draws later; it is not perspective depth."
+      ],
+      "source_path": "generated/dsl/track",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Rect"
+      ],
+      "path": "core/scene/cs-000023/"
+    },
+    {
+      "id": "cs-000024",
+      "type": "core",
+      "title": "DSL Use Basic",
+      "domain": "scene",
+      "features": [
+        "use"
+      ],
+      "dsl": [
+        "use"
+      ],
+      "teaches": [
+        "Instantiate one Component with Use."
+      ],
+      "source_path": "generated/dsl/use",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Defs",
+        "Component",
+        "Use"
+      ],
+      "path": "core/scene/cs-000024/"
+    },
+    {
+      "id": "cs-000025",
+      "type": "core",
+      "title": "Audio Spectrum",
+      "domain": "scene",
+      "features": [
+        "audio-reactive",
+        "random-animation",
+        "component",
+        "gradient",
+        "glow",
+        "shape",
+        "text",
+        "timeline",
+        "defs"
+      ],
+      "dsl": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Defs",
+        "Component",
+        "Use",
+        "Text",
+        "Rect",
+        "Line",
+        "Group",
+        "LinearGradient",
+        "RadialGradient",
+        "curve",
+        "random"
+      ],
+      "teaches": [
+        "Combine multiple MotionLoom features into a polished demo.",
+        "Use this as a reference for YouTube Short or promo-style output.",
+        "Study how features combine: audio-reactive, random-animation, component, gradient, glow, shape."
+      ],
+      "source_path": "scene/audio/audio_spectrum.motionloom",
+      "demo_url": "",
+      "path": "core/scene/cs-000025/"
+    },
+    {
+      "id": "cs-000026",
+      "type": "core",
+      "title": "Anica Agent UI Zoom Transition 10s",
+      "domain": "scene",
+      "features": [
+        "transition",
+        "timeline",
+        "layout",
+        "defs",
+        "text",
+        "shape",
+        "path",
+        "gradient",
+        "character-action"
+      ],
+      "dsl": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Defs",
+        "Text",
+        "Rect",
+        "Circle",
+        "Group",
+        "Image",
+        "RadialGradient",
+        "curve"
+      ],
+      "teaches": [
+        "Combine multiple MotionLoom features into a polished demo.",
+        "Use this as a reference for YouTube Short or promo-style output.",
+        "Study how features combine: transition, timeline, layout, defs, text, shape."
+      ],
+      "source_path": "scene/motion_graphics/anica_agent_ui_zoom_transition_10s.motionloom",
+      "demo_url": "",
+      "path": "core/scene/cs-000026/"
+    },
+    {
+      "id": "cs-000027",
+      "type": "core",
+      "title": "Anica Motionloom Fancy Pip 20s",
+      "domain": "scene",
+      "features": [
+        "layout",
+        "timeline",
+        "text",
+        "shape",
+        "audio-reactive",
+        "defs",
+        "path",
+        "gradient",
+        "glow"
+      ],
+      "dsl": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Defs",
+        "Text",
+        "Rect",
+        "Circle",
+        "Line",
+        "Path",
+        "Group",
+        "LinearGradient",
+        "RadialGradient",
+        "curve",
+        "sin"
+      ],
+      "teaches": [
+        "Combine multiple MotionLoom features into a polished demo.",
+        "Use this as a reference for YouTube Short or promo-style output.",
+        "Study how features combine: layout, timeline, text, shape, audio-reactive, defs."
+      ],
+      "source_path": "scene/motion_graphics/anica_motionloom_fancy_pip_20s.motionloom",
+      "demo_url": "",
+      "path": "core/scene/cs-000027/"
+    },
+    {
+      "id": "cs-000028",
+      "type": "core",
+      "title": "Anica Promo Presentation 20s",
+      "domain": "scene",
+      "features": [
+        "layout",
+        "timeline",
+        "text",
+        "shape",
+        "defs",
+        "path",
+        "gradient",
+        "glow",
+        "character-rig"
+      ],
+      "dsl": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Defs",
+        "Text",
+        "Rect",
+        "Circle",
+        "Path",
+        "Group",
+        "LinearGradient",
+        "RadialGradient",
+        "curve"
+      ],
+      "teaches": [
+        "Combine multiple MotionLoom features into a polished demo.",
+        "Use this as a reference for YouTube Short or promo-style output.",
+        "Study how features combine: layout, timeline, text, shape, defs, path."
+      ],
+      "source_path": "scene/motion_graphics/anica_promo_presentation_20s.motionloom",
+      "demo_url": "",
+      "path": "core/scene/cs-000028/"
+    },
+    {
+      "id": "cs-000029",
+      "type": "core",
+      "title": "Car Phone Hands Vector",
+      "domain": "scene",
+      "features": [
+        "layout",
+        "timeline",
+        "text",
+        "shape",
+        "defs",
+        "path",
+        "gradient",
+        "glow",
+        "environment"
+      ],
+      "dsl": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Defs",
+        "Text",
+        "Rect",
+        "Circle",
+        "Line",
+        "Path",
+        "Group",
+        "LinearGradient",
+        "RadialGradient"
+      ],
+      "teaches": [
+        "Combine multiple MotionLoom features into a polished demo.",
+        "Use this as a reference for YouTube Short or promo-style output.",
+        "Study how features combine: layout, timeline, text, shape, defs, path."
+      ],
+      "source_path": "scene/motion_graphics/car_phone_hands_vector.motionloom",
+      "demo_url": "",
+      "path": "core/scene/cs-000029/"
+    },
+    {
+      "id": "cs-000030",
+      "type": "core",
+      "title": "Countdown Blur Zoom 6s",
+      "domain": "scene",
+      "features": [
+        "filter",
+        "text",
+        "layout",
+        "shape",
+        "transition",
+        "environment",
+        "timeline",
+        "curve-animation"
+      ],
+      "dsl": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Rect",
+        "Group",
+        "curve"
+      ],
+      "teaches": [
+        "Combine multiple MotionLoom features into a polished demo.",
+        "Use this as a reference for YouTube Short or promo-style output.",
+        "Study how features combine: filter, text, layout, shape, transition, environment."
+      ],
+      "source_path": "scene/motion_graphics/countdown_blur_zoom_6s.motionloom",
+      "demo_url": "",
+      "path": "core/scene/cs-000030/"
+    },
+    {
+      "id": "cs-000031",
+      "type": "core",
+      "title": "Filled Shape Morph Intro 10s",
+      "domain": "scene",
+      "features": [
+        "shape",
+        "path",
+        "curve-animation",
+        "gradient",
+        "defs",
+        "glow",
+        "character-action",
+        "environment",
+        "layout"
+      ],
+      "dsl": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Defs",
+        "Rect",
+        "Circle",
+        "Path",
+        "Group",
+        "RadialGradient",
+        "curve"
+      ],
+      "teaches": [
+        "Combine multiple MotionLoom features into a polished demo.",
+        "Use this as a reference for YouTube Short or promo-style output.",
+        "Study how features combine: shape, path, curve-animation, gradient, defs, glow."
+      ],
+      "source_path": "scene/motion_graphics/filled_shape_morph_intro_10s.motionloom",
+      "demo_url": "",
+      "path": "core/scene/cs-000031/"
+    },
+    {
+      "id": "cs-000032",
+      "type": "core",
+      "title": "Kinetic Bloom 6s",
+      "domain": "scene",
+      "features": [
+        "glow",
+        "text",
+        "gradient",
+        "curve-animation",
+        "defs",
+        "shape",
+        "path",
+        "character-rig",
+        "environment"
+      ],
+      "dsl": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Defs",
+        "Text",
+        "Rect",
+        "Circle",
+        "Line",
+        "Path",
+        "Group",
+        "LinearGradient",
+        "RadialGradient",
+        "curve",
+        "sin"
+      ],
+      "teaches": [
+        "Combine multiple MotionLoom features into a polished demo.",
+        "Use this as a reference for YouTube Short or promo-style output.",
+        "Study how features combine: glow, text, gradient, curve-animation, defs, shape."
+      ],
+      "source_path": "scene/motion_graphics/kinetic_bloom_6s.motionloom",
+      "demo_url": "",
+      "path": "core/scene/cs-000032/"
+    },
+    {
+      "id": "cs-000033",
+      "type": "core",
+      "title": "Scene Full Feature Showcase",
+      "domain": "scene",
+      "features": [
+        "layout",
+        "timeline",
+        "text",
+        "shape",
+        "component",
+        "defs",
+        "path",
+        "gradient",
+        "glow"
+      ],
+      "dsl": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Defs",
+        "Component",
+        "Use",
+        "Text",
+        "Rect",
+        "Circle",
+        "Line",
+        "Path",
+        "Polyline",
+        "Group",
+        "Image",
+        "Svg",
+        "LinearGradient",
+        "RadialGradient",
+        "Camera",
+        "curve"
+      ],
+      "teaches": [
+        "Combine multiple MotionLoom features into a polished demo.",
+        "Use this as a reference for YouTube Short or promo-style output.",
+        "Study how features combine: layout, timeline, text, shape, component, defs."
+      ],
+      "source_path": "scene/motion_graphics/scene_full_feature_showcase.motionloom",
+      "demo_url": "",
+      "path": "core/scene/cs-000033/"
+    },
+    {
+      "id": "cs-000034",
+      "type": "core",
+      "title": "Stick Fight Storyboard 4shot",
+      "domain": "scene",
+      "features": [
+        "layout",
+        "timeline",
+        "text",
+        "shape",
+        "defs",
+        "path",
+        "gradient",
+        "character-rig",
+        "character-action"
+      ],
+      "dsl": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Defs",
+        "Text",
+        "Rect",
+        "Circle",
+        "Line",
+        "Path",
+        "Group",
+        "LinearGradient",
+        "curve"
+      ],
+      "teaches": [
+        "Combine multiple MotionLoom features into a polished demo.",
+        "Use this as a reference for YouTube Short or promo-style output.",
+        "Study how features combine: layout, timeline, text, shape, defs, path."
+      ],
+      "source_path": "scene/motion_graphics/stick_fight_storyboard_4shot.motionloom",
+      "demo_url": "",
+      "path": "core/scene/cs-000034/"
+    },
+    {
+      "id": "cs-000035",
+      "type": "core",
+      "title": "Asset Card Layout",
+      "domain": "scene",
+      "features": [
+        "layout",
+        "image-asset",
+        "timeline",
+        "shape",
+        "text",
+        "gradient",
+        "glow"
+      ],
+      "dsl": [
+        "Graph",
+        "Scene",
+        "Defs",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Rect",
+        "Circle",
+        "Line",
+        "Image",
+        "Text",
+        "LinearGradient",
+        "RadialGradient",
+        "curve"
+      ],
+      "teaches": [
+        "Compose background, asset image, card shape, labels, glow, and animation timing into one scene.",
+        "Use layout as a feature label, while keeping domain as scene for graph-family classification.",
+        "Reference the renamed character1 asset path and internal DSL id naming."
+      ],
+      "source_path": "scene/layout/asset_card_layout.motionloom",
+      "demo_url": "",
+      "path": "core/scene/cs-000035/"
+    },
+    {
+      "id": "cs-000036",
+      "type": "core",
+      "title": "Pinwheel Layer zDepth Logo",
+      "domain": "scene",
+      "features": [
+        "zdepth",
+        "layer",
+        "shape",
+        "curve-animation",
+        "logo-motion"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Rect",
+        "Circle",
+        "Line",
+        "Text",
+        "curve"
+      ],
+      "teaches": [
+        "zDepth uses camera-space depth: negative is closer, positive is farther.",
+        "Use Layer zDepth for 3D-style ordering: larger positive values are farther and draw first.",
+        "Use negative Layer zDepth for nearer blades that scale larger and draw over farther blades.",
+        "Keep Track z as a paint-order tie-break while Layer zDepth controls depth ordering."
+      ],
+      "source_path": "scene/z-depth/pinwheel_layer_z_depth_logo.motionloom",
+      "demo_url": "",
+      "path": "core/scene/cs-000036/"
+    },
+    {
+      "id": "cs-000037",
+      "type": "core",
+      "title": "DSL FaceJaw Basic",
+      "domain": "scene",
+      "features": [
+        "facejaw",
+        "path",
+        "curve-animation",
+        "shape"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Circle",
+        "FaceJaw",
+        "curve"
+      ],
+      "teaches": [
+        "Use <FaceJaw> to generate a character jaw or face-outline path from simple face-shape parameters.",
+        "Use closed=false for an open jaw curve, or closed=true with fill for a filled face/jaw shape.",
+        "Animate jawEase, chinSharpness, or trimEnd with curve() for simple facial motion."
+      ],
+      "source_path": "scene/facejaw/face_jaw_basic.motionloom",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "FaceJaw"
+      ],
+      "path": "core/scene/cs-000037/"
+    },
+    {
+      "id": "cw-000001",
+      "type": "core",
+      "title": "DSL Action Basic",
+      "domain": "world",
+      "features": [
+        "action"
+      ],
+      "dsl": [
+        "action"
+      ],
+      "teaches": [
+        "Define the smallest Action with one Pose."
+      ],
+      "source_path": "generated/dsl/action",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "World",
+        "Action",
+        "Pose",
+        "Bone"
+      ],
+      "path": "core/world/cw-000001/"
+    },
+    {
+      "id": "cw-000002",
+      "type": "core",
+      "title": "DSL Actor Basic",
+      "domain": "world",
+      "features": [
+        "actor"
+      ],
+      "dsl": [
+        "actor"
+      ],
+      "teaches": [
+        "Place one Actor in a World."
+      ],
+      "source_path": "generated/dsl/actor",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "World",
+        "Actor"
+      ],
+      "path": "core/world/cw-000002/"
+    },
+    {
+      "id": "cw-000003",
+      "type": "core",
+      "title": "DSL Bone Basic",
+      "domain": "world",
+      "features": [
+        "bone"
+      ],
+      "dsl": [
+        "bone"
+      ],
+      "teaches": [
+        "Set one Bone transform inside a Pose."
+      ],
+      "source_path": "generated/dsl/bone",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "World",
+        "Action",
+        "Pose",
+        "Bone"
+      ],
+      "path": "core/world/cw-000003/"
+    },
+    {
+      "id": "cw-000004",
+      "type": "core",
+      "title": "DSL Material Basic",
+      "domain": "world",
+      "features": [
+        "material"
+      ],
+      "dsl": [
+        "material"
+      ],
+      "teaches": [
+        "Attach one Material to an Actor."
+      ],
+      "source_path": "generated/dsl/material",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "World",
+        "Actor",
+        "Material"
+      ],
+      "path": "core/world/cw-000004/"
+    },
+    {
+      "id": "cw-000005",
+      "type": "core",
+      "title": "DSL Pose Basic",
+      "domain": "world",
+      "features": [
+        "pose"
+      ],
+      "dsl": [
+        "pose"
+      ],
+      "teaches": [
+        "Place a Pose inside an Action."
+      ],
+      "source_path": "generated/dsl/pose",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "World",
+        "Action",
+        "Pose",
+        "Bone"
+      ],
+      "path": "core/world/cw-000005/"
+    },
+    {
+      "id": "cw-000006",
+      "type": "core",
+      "title": "Two Actor Handshake Camera",
+      "domain": "world",
+      "features": [
+        "glb-asset",
+        "character-action",
+        "character-rig",
+        "environment",
+        "camera",
+        "path",
+        "image-asset",
+        "curve-animation"
+      ],
+      "dsl": [
+        "Graph",
+        "Camera",
+        "Actor",
+        "Action",
+        "Bone",
+        "Pose",
+        "Material",
+        "curve"
+      ],
+      "teaches": [
+        "Combine multiple MotionLoom features into a polished demo.",
+        "Use this as a reference for YouTube Short or promo-style output.",
+        "Study how features combine: glb-asset, character-action, character-rig, environment, camera, path."
+      ],
+      "source_path": "world/scenes/two_actor_handshake_camera.motionloom",
+      "demo_url": "",
+      "path": "core/world/cw-000006/"
+    },
+    {
+      "id": "cp-000001",
+      "type": "core",
+      "title": "DSL Process Basic",
+      "domain": "process",
+      "features": [
+        "process"
+      ],
+      "dsl": [
+        "process"
+      ],
+      "teaches": [
+        "Define the smallest Process graph with one pass."
+      ],
+      "source_path": "generated/dsl/process",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Process",
+        "Input",
+        "Tex",
+        "Pass",
+        "Present"
+      ],
+      "path": "core/process/cp-000001/"
+    },
+    {
+      "id": "cp-000002",
+      "type": "core",
+      "title": "Process Bloom Alias",
+      "domain": "process",
+      "features": [
+        "process",
+        "gpu-pipeline",
+        "bloom",
+        "glow"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Process",
+        "Input",
+        "Tex",
+        "Pass",
+        "Present",
+        "bloom"
+      ],
+      "teaches": [
+        "Use effect=\"bloom\" as a Process post-pass alias for layer FX.",
+        "Feed the selected layer into Process with Input from=\"input:clip0\".",
+        "Control bloom with threshold, intensity, and sigma."
+      ],
+      "source_path": "generated/process/bloom_alias",
+      "demo_url": "",
+      "related": [
+        "cp-000003",
+        "cp-000004"
+      ],
+      "requires": [
+        "Graph",
+        "Process",
+        "Input",
+        "Tex",
+        "Pass",
+        "Present"
+      ],
+      "path": "core/process/cp-000002/"
+    },
+    {
+      "id": "cp-000003",
+      "type": "core",
+      "title": "Process Glow Alias",
+      "domain": "process",
+      "features": [
+        "process",
+        "gpu-pipeline",
+        "bloom",
+        "glow"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Process",
+        "Input",
+        "Tex",
+        "Pass",
+        "Present",
+        "glow"
+      ],
+      "teaches": [
+        "Use effect=\"glow\" as a readable alias for Process bloom in layer FX.",
+        "Keep one alias per Pass so examples are searchable and unambiguous.",
+        "Control glow with threshold, intensity, and sigma."
+      ],
+      "source_path": "generated/process/glow_alias",
+      "demo_url": "",
+      "related": [
+        "cp-000002",
+        "cp-000004"
+      ],
+      "requires": [
+        "Graph",
+        "Process",
+        "Input",
+        "Tex",
+        "Pass",
+        "Present"
+      ],
+      "path": "core/process/cp-000003/"
+    },
+    {
+      "id": "cp-000004",
+      "type": "core",
+      "title": "Process Glow Bloom Alias",
+      "domain": "process",
+      "features": [
+        "process",
+        "gpu-pipeline",
+        "bloom",
+        "glow"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Process",
+        "Input",
+        "Tex",
+        "Pass",
+        "Present",
+        "glow_bloom"
+      ],
+      "teaches": [
+        "Use effect=\"glow_bloom\" as the explicit compatibility alias for bloom/glow in layer FX.",
+        "Keep alias examples split because one Pass has exactly one effect value.",
+        "Control the post-process halo with threshold, intensity, and sigma."
+      ],
+      "source_path": "generated/process/glow_bloom_alias",
+      "demo_url": "",
+      "related": [
+        "cp-000002",
+        "cp-000003"
+      ],
+      "requires": [
+        "Graph",
+        "Process",
+        "Input",
+        "Tex",
+        "Pass",
+        "Present"
+      ],
+      "path": "core/process/cp-000004/"
+    },
+    {
+      "id": "cm-000001",
+      "type": "core",
+      "title": "Scene World Process Composition Basic",
+      "domain": "composition",
+      "features": [
+        "scene",
+        "world",
+        "process",
+        "text",
+        "shape",
+        "actor",
+        "material",
+        "gpu-pipeline"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Rect",
+        "Circle",
+        "Text",
+        "World",
+        "Camera",
+        "Actor",
+        "Material",
+        "Process",
+        "Tex",
+        "Pass",
+        "Present"
+      ],
+      "teaches": [
+        "Mix Scene, World, and Process graph families in one composition graph.",
+        "Use Scene and World outputs as Process textures, then present the final Process from the Graph root.",
+        "Keep one root-level <Present> node as the final child of <Graph>."
+      ],
+      "source_path": "core/composition/cm-000001/main.motionloom",
+      "demo_url": "",
+      "path": "core/composition/cm-000001/"
+    },
+    {
+      "id": "ct-000001",
+      "type": "core",
+      "title": "Text Pill Box",
+      "domain": "text",
+      "features": [
+        "text",
+        "text-box",
+        "text-gap"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "fontWeight",
+        "textGap",
+        "box"
+      ],
+      "teaches": [
+        "Use Text box=\"pill\" to create an auto-sized rounded background behind text.",
+        "Use fontWeight and textGap to tune bold condensed title-card typography.",
+        "Use transparent Background for overlay-ready pill text exports."
+      ],
+      "source_path": "generated/text/text_pill_box",
+      "demo_url": "",
+      "related": [
+        "cs-000021"
+      ],
+      "requires": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Present"
+      ],
+      "path": "core/text/ct-000001/"
+    }
+  ]
+}

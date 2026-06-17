@@ -1,0 +1,16 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+
+  <Process id="OpacityPulseProcess">
+    <Input id="clip0" type="video" from="input:clip0" />
+    <Tex id="src" fmt="rgba16f" from="clip0" />
+    <Tex id="out" fmt="rgba16f" size={[800,450]} />
+    <Pass id="post_opacity_pulse" kind="compute"
+          effect="opacity"
+          in={["src"]} out={["out"]}
+          params={{
+            opacity: "curve(\"0:0.25:ease_in_out, 0.75:1.0:ease_out, 1.65:0.48:ease_in_out, 2.35:0.92:ease_out, 3:0.35:ease_in\")"
+          }} />
+  </Process>
+
+  <Present from="OpacityPulseProcess" />
+</Graph>

@@ -1,0 +1,32 @@
+<Graph fps={30} duration="3s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#0B1020" />
+
+  <Scene id="OpacityFixedSource">
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1920" height="1080" color="#0B1020" />
+            <Rect x="160" y="150" width="1600" height="780" radius="64" color="#38BDF8" opacity="0.22" />
+            <Circle x="600" y="540" radius="230" color="#F97316" opacity="0.82" />
+            <Circle x="960" y="540" radius="260" color="#FFFFFF" opacity="0.92" />
+            <Circle x="1320" y="540" radius="230" color="#22D3EE" opacity="0.82" />
+            <Text value="OPACITY 30%" x="960" y="530" fontSize="112" fontWeight="900" renderScale="4x" color="#FFFFFF" opacity="0.95" />
+            <Text value="fixed whole-layer alpha: opacity = 0.3" x="960" y="620" fontSize="40" renderScale="4x" color="#E0F2FE" opacity="0.86" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="layer_fx">
+    <Tex id="src" fmt="rgba16f" from="scene:OpacityFixedSource" />
+    <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="fx_opacity" kind="compute"
+          effect="opacity"
+          in={["src"]} out={["out"]}
+          params={{ opacity: "0.3" }} />
+  </Process>
+
+  <Present from="layer_fx" />
+</Graph>

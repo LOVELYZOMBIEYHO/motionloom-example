@@ -1,0 +1,18 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+  <Background color="#FFFFFF" />
+
+  <Scene id="PolylineBasic">
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Polyline points="240,260 330,170 430,250 560,160" stroke="#111111" strokeWidth="10" lineCap="round" lineJoin="round" opacity="1" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="PolylineBasic" />
+</Graph>

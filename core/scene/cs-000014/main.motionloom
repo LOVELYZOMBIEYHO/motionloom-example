@@ -1,0 +1,18 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+  <Background color="#FFFFFF" />
+
+  <Scene id="PathBasic">
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Path d="M 240 270 C 320 120 470 120 560 270" stroke="#111111" strokeWidth="10" lineCap="round" fill="none" opacity="1" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="PathBasic" />
+</Graph>

@@ -1,0 +1,41 @@
+{
+  "id": "cp-000013",
+  "type": "core",
+  "title": "Fixed Opacity Layer FX",
+  "domain": "process",
+  "features": [
+    "process",
+    "gpu-pipeline",
+    "opacity",
+    "alpha",
+    "layer-fx",
+    "fixed-params"
+  ],
+  "dsl": [
+    "Graph",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present",
+    "opacity"
+  ],
+  "teaches": [
+    "Use effect=\"opacity\" for fixed whole-layer alpha control.",
+    "Use opacity in the 0.0-1.0 range; this example uses 0.3."
+  ],
+  "source_path": "generated/process/fixed_opacity_layer_fx",
+  "demo_url": "",
+  "related": [
+    "cp-000011",
+    "cp-000014"
+  ],
+  "requires": [
+    "Graph",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present"
+  ]
+}

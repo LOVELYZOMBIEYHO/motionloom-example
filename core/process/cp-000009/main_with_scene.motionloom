@@ -1,0 +1,55 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+  <Background color="#020617" />
+
+  <Scene id="ToneMapSource">
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="800" height="450" color="#020617" />
+            <Rect x="48" y="52" width="704" height="346" radius="34" color="#0F172A" opacity="1" />
+            <Rect x="48" y="52" width="704" height="346" radius="34" color="#FFFFFF" opacity="0.08" blend="screen" />
+
+            <Circle x="400" y="190" radius="124" color="#FFFFFF" opacity="0.62" blend="screen" />
+            <Circle x="400" y="190" radius="72" color="#FFFFFF" opacity="0.76" blend="screen" />
+            <Circle x="400" y="190" radius="26" color="#FFFFFF" opacity="1.0" blend="screen" />
+            <Circle x="276" y="222" radius="118" color="#F97316" opacity="0.72" blend="screen" />
+            <Circle x="524" y="222" radius="118" color="#22D3EE" opacity="0.70" blend="screen" />
+            <Circle x="400" y="112" radius="78" color="#FACC15" opacity="0.48" blend="screen" />
+
+            <Repeat id="exposure_steps" count="7" x="122" y="342" xStep="78" opacity="1" opacityStep="0">
+              <Rect x="0" y="0" width="58" height="24" radius="6" color="#FFFFFF" opacity="0.10" />
+            </Repeat>
+            <Rect x="122" y="342" width="58" height="24" radius="6" color="#FFFFFF" opacity="0.08" />
+            <Rect x="200" y="342" width="58" height="24" radius="6" color="#FFFFFF" opacity="0.16" />
+            <Rect x="278" y="342" width="58" height="24" radius="6" color="#FFFFFF" opacity="0.28" />
+            <Rect x="356" y="342" width="58" height="24" radius="6" color="#FFFFFF" opacity="0.44" />
+            <Rect x="434" y="342" width="58" height="24" radius="6" color="#FFFFFF" opacity="0.64" />
+            <Rect x="512" y="342" width="58" height="24" radius="6" color="#FFFFFF" opacity="0.82" />
+            <Rect x="590" y="342" width="58" height="24" radius="6" color="#FFFFFF" opacity="1.0" />
+
+            <Text x="210" y="292" value="TONE MAP HIGHLIGHT TEST" fontSize="38" fontWeight="900" renderScale="4x" color="#FFFFFF" opacity="0.88" />
+            <Text x="218" y="322" value="ACES-like rolloff keeps color around a bright core" fontSize="18" color="#E2E8F0" opacity="0.94" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="ToneMapProcess">
+    <Tex id="src" fmt="rgba16f" from="scene:ToneMapSource" />
+    <Tex id="out" fmt="rgba16f" size={[800,450]} />
+    <Pass id="post_tone_map" kind="compute"
+          effect="tone_map"
+          in={["src"]} out={["out"]}
+          params={{
+            exposure: "0.45",
+            contrast: "1.18",
+            shoulder: "0.65",
+            gamma: "2.2",
+            saturation: "1.08"
+          }} />
+  </Process>
+
+  <Present from="ToneMapProcess" />
+</Graph>

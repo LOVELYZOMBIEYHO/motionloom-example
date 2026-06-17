@@ -1,0 +1,14 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+
+  <Process id="GlowAliasProcess">
+    <Input id="clip0" type="video" from="input:clip0" />
+    <Tex id="src" fmt="rgba16f" from="clip0" />
+    <Tex id="out" fmt="rgba16f" size={[800,450]} />
+    <Pass id="post_glow" kind="compute"
+          effect="glow"
+          in={["src"]} out={["out"]}
+          params={{ threshold: "0.72", intensity: "1.45", sigma: "18.0" }} />
+  </Process>
+
+  <Present from="GlowAliasProcess" />
+</Graph>

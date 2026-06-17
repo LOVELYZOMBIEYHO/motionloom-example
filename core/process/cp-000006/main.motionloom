@@ -1,0 +1,14 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+
+  <Process id="Gaussian5TapVProcess">
+    <Input id="clip0" type="video" from="input:clip0" />
+    <Tex id="src" fmt="rgba16f" from="clip0" />
+    <Tex id="out" fmt="rgba16f" size={[800,450]} />
+    <Pass id="post_gaussian_5tap_v" kind="compute"
+          effect="gaussian_5tap_v"
+          in={["src"]} out={["out"]}
+          params={{ sigma: "8.0" }} />
+  </Process>
+
+  <Present from="Gaussian5TapVProcess" />
+</Graph>

@@ -1,0 +1,27 @@
+{
+  "id": "cs-000020",
+  "type": "core",
+  "title": "DSL Sin Expression Basic",
+  "domain": "scene",
+  "features": [
+    "sin"
+  ],
+  "dsl": [
+    "sin"
+  ],
+  "teaches": [
+    "Animate one property with sin($time.sec)."
+  ],
+  "source_path": "generated/dsl/sin",
+  "demo_url": "",
+  "related": [],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "sin"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "cs-000001",
+  "type": "core",
+  "title": "DSL Camera Basic",
+  "domain": "scene",
+  "features": [
+    "camera"
+  ],
+  "dsl": [
+    "camera"
+  ],
+  "teaches": [
+    "Use a scene <Camera> track to create visible pan and zoom over world-space content."
+  ],
+  "source_path": "generated/dsl/camera",
+  "demo_url": "",
+  "related": [],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Camera"
+  ]
+}

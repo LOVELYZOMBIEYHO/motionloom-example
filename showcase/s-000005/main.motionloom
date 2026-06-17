@@ -1,0 +1,309 @@
+<Graph fps={30} duration="10s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#030508" />
+
+  <Scene id="anica_core_overload_reactor">
+    <Defs>
+      <Font id="display" family="Avenir Next Condensed" fallback="system" />
+      <Font id="mono" family="SF Mono" fallback="monospace" />
+
+      <LinearGradient id="bg_grad" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#030508, 0.45:#0A1424, 0.72:#081021, 1:#030508" />
+      <RadialGradient id="core_glow" cx="0.50" cy="0.50" r="0.55"
+                      stops="0:#FFFFFF, 0.15:#A5F3FC, 0.40:#3B82F688, 0.70:#1D4ED820, 1:#1D4ED800" />
+      <RadialGradient id="warm_core" cx="0.50" cy="0.50" r="0.60"
+                      stops="0:#FFF7ED, 0.20:#FDBA74, 0.45:#F9731666, 0.75:#EA580C10, 1:#EA580C00" />
+      <RadialGradient id="shockwave_grad" cx="0.50" cy="0.50" r="0.50"
+                      stops="0:#FFFFFF00, 0.65:#FFFFFF44, 0.85:#FFFFFF18, 1:#FFFFFF00" />
+      <RadialGradient id="smoke_blob" cx="0.50" cy="0.50" r="0.55"
+                      stops="0:#94A3B820, 0.42:#64748B14, 0.78:#47556908, 1:#47556900" />
+      <RadialGradient id="badge_glow" cx="0.50" cy="0.50" r="0.70"
+                      stops="0:#FFFFFF, 0.30:#65F7FF88, 0.70:#3B82F622, 1:#3B82F600" />
+    </Defs>
+
+    <Timeline>
+      <Track id="bg_track" z="-100">
+        <Sequence from="0s" duration="10s" out="hold">
+          <Layer id="bg_layer">
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#bg_grad)" />
+            <Circle x="960" y="540" radius={curve("0:380:ease_in_out, 2.5:520:ease_in_out, 4.2:900:ease_out, 6.5:480:ease_in_out, 10:420:ease_in_out")} fill="url(#core_glow)" opacity={curve("0:0.12:linear, 2.0:0.28:ease_out, 3.5:0.72:ease_out, 4.0:1.0:ease_out, 4.8:0.18:ease_in, 10:0.14:linear")} blend="screen" />
+            <Rect x="0" y="0" width="1920" height="1080" color="#000000" opacity={curve("0:0.22:linear, 1.5:0.08:ease_out, 3.6:0.04:linear, 4.0:0.0:linear, 4.4:0.34:ease_in, 6.0:0.18:ease_out, 10:0.10:linear")} />
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="hud_track" z="-95">
+        <Sequence from="0s" duration="10s" out="hold">
+          <Layer id="hud_layer">
+            <Repeat id="scanlines" count="32" x="0" y="34" yStep="34" opacity="0.14" opacityStep="-0.001">
+              <Line x1="0" y1="0" x2="1920" y2="0" stroke="#38BDF8" strokeWidth="1" opacity="0.16" blend="screen" />
+            </Repeat>
+
+            <Group id="target_brackets" x="960" y="540" opacity={curve("0:0:linear, 0.4:1:ease_out, 3.2:1:linear, 3.7:0:ease_in, 10:0:linear")}>
+              <Line x1="-280" y1="-180" x2="-220" y2="-180" stroke="#38BDF8" strokeWidth="3" />
+              <Line x1="-280" y1="-180" x2="-280" y2="-130" stroke="#38BDF8" strokeWidth="3" />
+              <Line x1="280" y1="-180" x2="220" y2="-180" stroke="#38BDF8" strokeWidth="3" />
+              <Line x1="280" y1="-180" x2="280" y2="-130" stroke="#38BDF8" strokeWidth="3" />
+              <Line x1="-280" y1="180" x2="-220" y2="180" stroke="#38BDF8" strokeWidth="3" />
+              <Line x1="-280" y1="180" x2="-280" y2="130" stroke="#38BDF8" strokeWidth="3" />
+              <Line x1="280" y1="180" x2="220" y2="180" stroke="#38BDF8" strokeWidth="3" />
+              <Line x1="280" y1="180" x2="280" y2="130" stroke="#38BDF8" strokeWidth="3" />
+              <Circle x="0" y="0" radius="180" stroke="#38BDF8" strokeWidth="1" fill="#00000000" opacity="0.35" />
+              <Circle x="0" y="0" radius="220" stroke="#38BDF8" strokeWidth="1" fill="#00000000" opacity="0.22" strokeDasharray="12 18" />
+            </Group>
+
+            <Text value="CORE TEMP: 0042K" x="64" y="78" font="mono" fontSize="18" color="#38BDF8" opacity={curve("0:0:linear, 0.8:0.85:ease_out, 3.2:0.85:linear, 3.8:0:ease_in")} />
+            <Text value="REACTOR: STANDBY" x="64" y="102" font="mono" fontSize="18" color="#38BDF8" opacity={curve("0:0:linear, 0.8:0.85:ease_out, 3.2:0.85:linear, 3.8:0:ease_in")} />
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="rings_back" z="-90">
+        <Sequence from="0s" duration="10s" out="hold">
+          <Layer id="rings_back_layer" blend="screen">
+            <Group id="outer_ring_a" x="960" y="540" rotation={curve("0:0:linear, 10:120:linear")} opacity={curve("0:0:linear, 0.6:0.45:ease_out, 3.4:0.65:linear, 3.8:1.0:ease_out, 4.6:0.12:ease_in, 10:0.08:linear")}>
+              <Circle x="0" y="0" radius="260" stroke="#67E8F9" strokeWidth="2" fill="#00000000" />
+              <Circle x="0" y="0" radius="300" stroke="#67E8F9" strokeWidth="1" fill="#00000000" strokeDasharray="20 30" />
+            </Group>
+            <Group id="outer_ring_b" x="960" y="540" rotation={curve("0:0:linear, 10:-90:linear")} opacity={curve("0:0:linear, 0.8:0.35:ease_out, 3.4:0.55:linear, 3.8:0.95:ease_out, 4.6:0.10:ease_in, 10:0.06:linear")}>
+              <Circle x="0" y="0" radius="340" stroke="#38BDF8" strokeWidth="1.5" fill="#00000000" strokeDasharray="40 60" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="logo_track" z="-80">
+        <Sequence from="0s" duration="10s" out="hold">
+          <Layer id="logo_layer">
+            <Text id="anica_ghost"
+                  value="ANICA"
+                  x="center"
+                  y="520"
+                  font="display"
+                  fontWeight="900"
+                  fontSize="196"
+                  textGap="-6"
+                  renderScale="4x"
+                  color="#A5F3FC"
+                  opacity={curve("0:0:linear, 0.5:0.14:ease_out, 3.2:0.14:linear, 3.7:0:ease_in, 6.8:0:linear, 7.4:0.10:ease_out, 10:0.10:linear")}
+                  scale={curve("0:1.02:linear, 3.5:1.02:linear, 3.7:1.18:ease_out, 4.3:1.0:ease_in_out, 10:1.0:linear")}
+                  transformOriginX="960" transformOriginY="540"
+                  blend="screen" />
+
+            <Text id="anica_glitch_cyan"
+                  value="ANICA"
+                  x={curve("0:958:linear, 0.10:954:linear, 0.20:958:linear, 3.4:962:linear, 3.5:958:linear, 10:958:linear")}
+                  y="522"
+                  font="display"
+                  fontWeight="900"
+                  fontSize="196"
+                  textGap="-6"
+                  renderScale="4x"
+                  color="#22D3EE"
+                  opacity={curve("0:0:linear, 0.8:0.24:ease_out, 3.2:0.24:linear, 3.6:0:ease_in, 10:0:linear")}
+                  blend="screen" />
+
+            <Text id="anica_main"
+                  value="ANICA"
+                  x="center"
+                  y="520"
+                  font="display"
+                  fontWeight="900"
+                  fontSize="196"
+                  textGap="-6"
+                  renderScale="4x"
+                  color="#FFFFFF"
+                  opacity={curve("0:0:linear, 0.45:1:ease_out, 3.2:1:linear, 3.6:0.25:ease_out, 4.0:0:ease_in, 6.8:0:linear, 7.2:1:ease_out, 10:1:linear")}
+                  scale={curve("0:0.92:linear, 0.6:1.0:ease_out, 3.4:1.0:linear, 3.6:1.12:ease_out, 4.0:0.92:ease_in, 7.0:0.92:linear, 7.4:1.0:ease_out, 10:1.0:linear")}
+                  transformOriginX="960" transformOriginY="540" />
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="rings_front" z="-70">
+        <Sequence from="0s" duration="10s" out="hold">
+          <Layer id="rings_front_layer" blend="screen">
+            <Group id="inner_ring" x="960" y="540" rotation={curve("0:0:linear, 10:720:linear")} scale={curve("0:0.8:linear, 1.8:1.0:ease_out, 3.5:1.35:ease_out, 4.0:2.4:ease_out, 4.8:0.9:ease_in, 10:1.0:linear")} opacity={curve("0:0:linear, 0.8:0.5:ease_out, 3.4:0.8:linear, 3.7:1.0:ease_out, 4.5:0.1:ease_in, 10:0.08:linear")}>
+              <Circle x="0" y="0" radius="120" stroke="#FFFFFF" strokeWidth="3" fill="#00000000" />
+              <Circle x="0" y="0" radius="150" stroke="#67E8F9" strokeWidth="2" fill="#00000000" strokeDasharray="16 24" />
+              <Circle x="0" y="0" radius="90" stroke="#FDBA74" strokeWidth="4" fill="#00000000" strokeDasharray="8 16" />
+            </Group>
+
+            <Circle id="energy_core"
+                    x="960" y="540"
+                    radius={curve("0:28:linear, 2.0:46:ease_in_out, 3.4:78:ease_out, 3.8:320:ease_out, 4.4:28:ease_in, 10:32:linear")}
+                    fill="url(#warm_core)"
+                    opacity={curve("0:0:linear, 1.0:0.55:ease_out, 3.4:0.95:linear, 3.7:1.0:ease_out, 4.2:0.18:ease_in, 10:0.10:linear")}
+                    blend="screen" />
+
+            <Circle id="energy_core_spark"
+                    x="960" y="540"
+                    radius={curve("0:4:linear, 3.4:12:ease_out, 3.8:180:ease_out, 4.2:4:ease_in, 10:6:linear")}
+                    fill="#FFFFFF"
+                    opacity={curve("0:0:linear, 2.5:0.8:ease_out, 3.6:1.0:ease_out, 4.0:0.0:ease_in, 10:0:linear")}
+                    blend="screen" />
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="glitch_track" z="-65">
+        <Sequence from="0s" duration="10s" out="hold">
+          <Layer id="glitch_layer">
+            <Rect x="0" y={curve("0:300:linear, 0.08:296:linear, 0.16:300:linear, 3.3:540:linear, 3.4:536:linear, 3.5:540:linear, 10:300:linear")} width="1920" height="12" color="#22D3EE" opacity={curve("0:0:linear, 0.05:0.55:ease_out, 0.14:0:ease_in, 3.2:0:linear, 3.35:0.7:ease_out, 3.48:0:ease_in, 10:0:linear")} blend="screen" />
+            <Rect x="0" y={curve("0:620:linear, 0.22:616:linear, 0.30:620:linear, 3.2:700:linear, 3.3:696:linear, 3.4:700:linear, 10:620:linear")} width="1920" height="8" color="#F97316" opacity={curve("0:0:linear, 0.18:0.45:ease_out, 0.28:0:ease_in, 3.15:0:linear, 3.28:0.6:ease_out, 3.42:0:ease_in, 10:0:linear")} blend="screen" />
+            <Rect x="0" y={curve("0:480:linear, 0.42:476:linear, 0.52:480:linear, 3.1:420:linear, 3.2:416:linear, 3.3:420:linear, 10:480:linear")} width="1920" height="5" color="#FFFFFF" opacity={curve("0:0:linear, 0.38:0.35:ease_out, 0.50:0:ease_in, 3.05:0:linear, 3.18:0.5:ease_out, 3.32:0:ease_in, 10:0:linear")} blend="screen" />
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="shockwave_track" z="-50">
+        <Sequence from="0s" duration="10s" out="hold">
+          <Layer id="shockwave_layer">
+            <Rect id="white_flash" x="0" y="0" width="1920" height="1080" color="#FFFFFF" opacity={curve("0:0:linear, 3.48:0:linear, 3.55:1.0:ease_out, 3.72:0.0:ease_in, 10:0:linear")} />
+
+            <Circle id="shockwave_ring"
+                    x="960" y="540"
+                    radius={curve("0:0:linear, 3.5:0:linear, 3.55:40:ease_out, 4.6:920:ease_out, 7.0:1200:linear, 10:1200:linear")}
+                    fill="#00000000"
+                    stroke="#FFFFFF"
+                    strokeWidth={curve("0:0:linear, 3.55:18:ease_out, 4.4:6:ease_in, 10:0:linear")}
+                    opacity={curve("0:0:linear, 3.5:0:linear, 3.58:1.0:ease_out, 4.5:0.2:ease_in, 6.0:0:linear, 10:0:linear")}
+                    blend="screen" />
+
+            <Circle id="shockwave_inner"
+                    x="960" y="540"
+                    radius={curve("0:0:linear, 3.55:0:linear, 3.65:120:ease_out, 4.8:720:ease_out, 10:720:linear")}
+                    fill="url(#shockwave_grad)"
+                    opacity={curve("0:0:linear, 3.55:0:linear, 3.65:0.9:ease_out, 4.8:0.1:ease_in, 10:0:linear")}
+                    blend="screen" />
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="fragments_track" z="-40">
+        <Sequence from="0s" duration="10s" out="hold">
+          <Layer id="fragments_layer" blend="screen">
+            <Repeat id="burst_rays" count="36" x="960" y="540" rotationStep="10" opacity="1" opacityStep="0">
+              <Rect x={curve("0:0:linear, 3.5:0:linear, 3.6:0:ease_out, 4.3:620:ease_out, 6.0:820:linear, 10:820:linear")}
+                    y="-2"
+                    width={curve("0:0:linear, 3.5:0:linear, 3.6:4:ease_out, 4.1:160:ease_out, 10:160:linear")}
+                    height="4"
+                    color="#E0F2FE"
+                    opacity={curve("0:0:linear, 3.5:0:linear, 3.6:1.0:ease_out, 4.4:0.5:linear, 5.8:0.0:ease_in, 10:0:linear")} />
+            </Repeat>
+
+            <Repeat id="burst_blocks" count="24" x="960" y="540" rotationStep="15" opacity="1" opacityStep="0">
+              <Rect x={curve("0:0:linear, 3.5:0:linear, 3.62:0:ease_out, 4.4:520:ease_out, 6.0:680:linear, 10:680:linear")}
+                    y="-6"
+                    width={curve("0:0:linear, 3.5:0:linear, 3.62:0:ease_out, 4.2:22:ease_out, 10:22:linear")}
+                    height="12"
+                    color="#E0F2FE"
+                    opacity={curve("0:0:linear, 3.5:0:linear, 3.62:0.95:ease_out, 4.5:0.7:linear, 6.0:0.0:ease_in, 10:0:linear")} />
+            </Repeat>
+
+            <Repeat id="burst_lines" count="18" x="960" y="540" rotationStep="20" opacity="1" opacityStep="0">
+              <Line x1={curve("0:0:linear, 3.5:0:linear, 3.7:0:ease_out, 4.5:480:ease_out, 10:480:linear")}
+                    y1="0"
+                    x2={curve("0:0:linear, 3.5:0:linear, 3.7:0:ease_out, 4.5:720:ease_out, 10:720:linear")}
+                    y2="0"
+                    stroke="#F97316"
+                    strokeWidth="2"
+                    opacity={curve("0:0:linear, 3.5:0:linear, 3.7:0.9:ease_out, 4.6:0.4:linear, 6.0:0.0:ease_in, 10:0:linear")} />
+            </Repeat>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="smoke_track" z="-30">
+        <Sequence from="0s" duration="10s" out="hold">
+          <Layer id="smoke_layer">
+            <Repeat id="smoke_puffs" count="16" x="960" y="540" rotationStep="22.5" opacity="0.4" opacityStep="-0.01">
+              <Circle x={curve("0:0:linear, 4.4:0:linear, 4.9:130:ease_out, 7.0:380:ease_out, 10:440:linear")}
+                      y="0"
+                      radius={curve("0:0:linear, 4.4:0:linear, 4.8:75:ease_out, 7.0:230:ease_out, 10:260:linear")}
+                      fill="url(#smoke_blob)"
+                      opacity={curve("0:0:linear, 4.4:0:linear, 4.8:0.5:ease_out, 6.5:0.4:linear, 8.5:0.0:ease_in, 10:0:linear")}
+                      blend="screen" />
+            </Repeat>
+
+            <Repeat id="smoke_blobs" count="8" x="960" y="540" rotationStep="45" opacity="0.3" opacityStep="-0.015">
+              <Circle x={curve("0:0:linear, 4.6:0:linear, 5.1:90:ease_out, 7.2:260:ease_out, 10:300:linear")}
+                      y="0"
+                      radius={curve("0:0:linear, 4.6:0:linear, 5.0:55:ease_out, 7.2:170:ease_out, 10:190:linear")}
+                      fill="url(#smoke_blob)"
+                      opacity={curve("0:0:linear, 4.6:0:linear, 5.0:0.4:ease_out, 6.8:0.32:linear, 8.8:0.0:ease_in, 10:0:linear")}
+                      blend="screen" />
+            </Repeat>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="reform_track" z="-20">
+        <Sequence from="0s" duration="10s" out="hold">
+          <Layer id="reform_layer">
+            <Group id="reforming_particles" x="960" y="540" opacity={curve("0:0:linear, 6.6:0:linear, 6.8:1:ease_out, 9.0:1:linear, 10:0.8:linear")}>
+              <Repeat id="converge_dots" count="48" rotationStep="7.5" opacity="1" opacityStep="0">
+                <Circle x={curve("0:0:linear, 6.6:620:linear, 7.4:120:ease_out, 8.0:0:ease_in_out, 10:0:linear")}
+                        y="0"
+                        radius={curve("0:0:linear, 6.6:5:linear, 7.4:4:ease_out, 8.0:2.5:ease_in, 10:2.5:linear")}
+                        color="#A5F3FC"
+                        opacity={curve("0:0:linear, 6.6:0.7:linear, 7.4:1:ease_out, 8.8:1:linear, 10:0.6:linear")}
+                        blend="screen" />
+              </Repeat>
+            </Group>
+
+            <Circle id="reform_glow" x="960" y="540" radius="160" fill="url(#badge_glow)" opacity={curve("0:0:linear, 7.0:0.0:linear, 7.4:0.55:ease_out, 10:0.45:linear")} blend="screen" />
+
+            <Text id="badge_dsl"
+                  value="MotionLoom Graph DSL"
+                  x="center"
+                  y="644"
+                  font="mono"
+                  fontSize="28"
+                  color="#A5F3FC"
+                  opacity={curve("0:0:linear, 7.6:0:linear, 8.0:1:ease_out, 10:1:linear")}
+                  scale={curve("0:1:linear, 7.6:0.96:linear, 8.0:1.0:ease_out, 10:1.0:linear")}
+                  transformOriginX="960" transformOriginY="644" />
+
+            <Group id="gpu_badge" x="960" y="702" opacity={curve("0:0:linear, 8.0:0:linear, 8.3:1:ease_out, 10:1:linear")}>
+              <Rect x="-126" y="-22" width="252" height="44" radius="22" fill="#0F172A" stroke="#38BDF8" strokeWidth="1.5" opacity="0.92" />
+              <Text value="GPU  /  WebGPU" x="center" y="698" font="mono" fontSize="20" color="#FFFFFF" />
+              <Circle x="-102" y="702" radius="6" fill="#22C55E" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="reactor_post">
+    <Tex id="scene_src" fmt="rgba16f" from="scene:anica_core_overload_reactor" />
+    <Tex id="hsla_src" fmt="rgba16f" size={[1920,1080]} />
+    <Tex id="bloom_src" fmt="rgba16f" size={[1920,1080]} />
+    <Tex id="blur_src" fmt="rgba16f" size={[1920,1080]} />
+
+    <Pass id="post_hsla" kind="compute" effect="hsla_overlay"
+          in={["scene_src"]} out={["hsla_src"]}
+          params={{
+            hue: "curve(\"0:200:linear, 2.5:30:ease_in_out, 4.0:45:ease_out, 6.5:210:ease_in_out, 10:200:linear\")",
+            saturation: "curve(\"0:0.15:linear, 2.5:0.55:ease_in_out, 4.2:0.35:ease_out, 6.5:0.10:ease_in_out, 10:0.05:linear\")",
+            lightness: "curve(\"0:0.0:linear, 2.5:0.08:ease_in_out, 4.0:0.16:ease_out, 6.5:-0.02:ease_in_out, 10:0.0:linear\")",
+            alpha: "curve(\"0:0.2:linear, 2.5:0.55:ease_in_out, 4.2:0.45:ease_out, 6.5:0.25:ease_in_out, 10:0.15:linear\")"
+          }} />
+
+    <Pass id="post_bloom" kind="compute" effect="glow_bloom"
+          in={["hsla_src"]} out={["bloom_src"]}
+          params={{
+            threshold: "0.50",
+            intensity: "curve(\"0:0.8:linear, 2.0:1.6:ease_in_out, 3.5:3.2:ease_out, 4.2:2.0:ease_in, 6.5:0.9:ease_in_out, 10:0.8:linear\")",
+            sigma: "14.0"
+          }} />
+
+    <Pass id="post_blur" kind="compute" effect="gaussian_5tap_blur"
+          in={["bloom_src"]} out={["blur_src"]}
+          params={{
+            sigma: "curve(\"0:0.0:linear, 4.0:0.0:linear, 4.5:2.5:ease_out, 6.5:6.0:ease_in_out, 8.0:2.0:ease_out, 10:0.0:linear\")"
+          }} />
+  </Process>
+
+  <Present from="reactor_post" />
+</Graph>

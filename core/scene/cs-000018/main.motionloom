@@ -1,0 +1,18 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+  <Background color="#FFFFFF" />
+
+  <Scene id="SceneBasic">
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="300" y="175" width="200" height="100" color="#111111" opacity="1" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="SceneBasic" />
+</Graph>

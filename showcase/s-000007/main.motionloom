@@ -1,0 +1,338 @@
+<Graph fps={30} duration="5s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#030207" />
+
+  <Scene id="neon_collapse">
+    <Defs>
+      <Font id="display" family="Orbitron" fallback="sans-serif" />
+      <Font id="mono" family="Courier New" fallback="monospace" />
+
+      <LinearGradient id="sky_grad" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#3d25a0, 0.25:#4d35c0, 0.50:#6045e0, 0.75:#4d35c0, 1:#251770" />
+      <LinearGradient id="horizon_glow" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#1a115500, 0.25:#6d58ffDD, 0.50:#8068ffEE, 0.75:#6d58ffCC, 1:#1a104000" />
+      <LinearGradient id="building_far_grad" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#3d25a0, 0.45:#4d35c0, 0.82:#6045e0, 1:#1f1050" />
+      <LinearGradient id="building_mid_grad" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#4528b8, 0.50:#5d3af0, 0.82:#7050ff, 1:#251560" />
+      <LinearGradient id="building_near_grad" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#1f1050, 0.55:#321a80, 0.90:#4328a8, 1:#080420" />
+
+      <LinearGradient id="street_perspective" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#12082e00, 0.35:#12082eDD, 0.70:#12082eFF, 1:#030207" />
+
+      <LinearGradient id="neon_cyan" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#00F0FF00, 0.15:#00F0FFAA, 0.50:#00F0FF, 0.85:#00F0FFAA, 1:#00F0FF00" />
+      <LinearGradient id="neon_magenta" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#FF00AA00, 0.15:#FF00AAAA, 0.50:#FF00AA, 0.85:#FF00AAAA, 1:#FF00AA00" />
+      <LinearGradient id="neon_violet" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#9D00FF00, 0.15:#9D00FFAA, 0.50:#9D00FF, 0.85:#9D00FFAA, 1:#9D00FF00" />
+
+      <RadialGradient id="black_hole_core" cx="0.50" cy="0.50" r="0.50"
+                      stops="0:#000000FF, 0.55:#000000FF, 0.85:#00000088, 1:#00000000" />
+      <RadialGradient id="accretion_disk" cx="0.50" cy="0.50" r="0.55"
+                      stops="0:#00F0FF00, 0.15:#00F0FF66, 0.32:#FF00AACC, 0.48:#9D00FFAA, 0.68:#00F0FF44, 0.88:#FF00AA22, 1:#00000000" />
+      <RadialGradient id="lens_glow" cx="0.50" cy="0.50" r="0.60"
+                      stops="0:#9D00FF44, 0.25:#00F0FF22, 0.50:#FF00AA18, 0.78:#9D00FF0C, 1:#00000000" />
+      <RadialGradient id="particle_glow" cx="0.50" cy="0.50" r="0.50"
+                      stops="0:#FFFFFFCC, 0.35:#00F0FF88, 0.72:#9D00FF33, 1:#00000000" />
+      <RadialGradient id="collapse_flash" cx="0.50" cy="0.50" r="0.50"
+                      stops="0:#FFFFFFFF, 0.25:#FFFFFFCC, 0.55:#FFFFFF66, 0.82:#FFFFFF18, 1:#FFFFFF00" />
+      <RadialGradient id="vignette" cx="0.50" cy="0.50" r="0.80"
+                      stops="0:#00000000, 0.60:#00000006, 0.85:#00000014, 1:#00000028" />
+      <RadialGradient id="city_skyline_glow" cx="0.50" cy="0.85" r="0.60"
+                      stops="0:#6d58e044, 0.25:#4d35e033, 0.55:#2a157014, 1:#00000000" />
+      <RadialGradient id="street_lights" cx="0.50" cy="0.50" r="0.50"
+                      stops="0:#00F0FF77, 0.35:#00F0FF33, 0.72:#00F0FF11, 1:#00000000" />
+    </Defs>
+
+    <Timeline>
+      <Track id="sky_track" z="-250">
+        <Sequence from="0s" duration="5s" out="hold">
+          <Layer id="sky_layer">
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#sky_grad)" />
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#horizon_glow)" opacity="0.90" blend="screen" />
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#city_skyline_glow)" opacity="1.0" blend="screen" />
+
+            <Group id="searchlights" opacity="0.35" blend="screen">
+              <Path d="M 400 1080 L 600 200 L 620 200 Z" fill="#00F0FF" opacity="0.25" />
+              <Path d="M 1520 1080 L 1320 180 L 1340 180 Z" fill="#FF00AA" opacity="0.20" />
+              <Path d="M 960 1080 L 960 150 L 980 150 Z" fill="#9D00FF" opacity="0.18" />
+            </Group>
+
+            <Group id="stars" x="0" y="0" opacity={curve("0:0.70:linear, 1:0.70:linear, 4.2:0.30:linear, 5:0:linear")}>
+              <Repeat id="star_field" count="80" x="40" y="40" xStep="23" yStep="18" opacity="0.80" opacityStep="-0.002">
+                <Circle x="0" y="0" radius={1.0 + 0.8} fill="#FFFFFF" opacity="0.90" />
+              </Repeat>
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="far_city_track" z="-180">
+        <Sequence from="0s" duration="5s" out="hold">
+          <Layer id="far_city_layer">
+            <Group id="far_city_group" x="0" y="0"
+                   scale={curve("0:1.0:linear, 1:1.02:linear, 2.5:0.95:ease_in, 4:0.35:ease_in, 5:0.0:linear")}
+                   rotation={curve("0:0:linear, 1:0:linear, 2.5:1.5:linear, 4:12:ease_in, 5:22:linear")}
+                   opacity={curve("0:0.95:linear, 3.2:0.95:linear, 4:0.4:linear, 4.8:0:linear")}
+                   transformOriginX="960" transformOriginY="540">
+              <Rect x="0" y="380" width="1920" height="700" fill="url(#building_far_grad)" />
+              <Repeat id="far_buildings" count="40" x="-20" y="320" xStep="50" opacity="0.95" opacityStep="-0.002">
+                <Rect x="0" y="0" width="36" height={80 + 240} fill="#6045e0" opacity="1.0" />
+              </Repeat>
+              <Repeat id="far_windows" count="60" x="-8" y="340" xStep="32" yStep="28" opacity="0.90" opacityStep="-0.001">
+                <Rect x="0" y="0" width="8" height="14" color="#00F0FF" opacity="1.0" blend="screen" />
+              </Repeat>
+              <Repeat id="far_windows_magenta" count="40" x="0" y="355" xStep="48" yStep="32" opacity="0.80" opacityStep="-0.002">
+                <Rect x="0" y="0" width="8" height="14" color="#FF00AA" opacity="1.0" blend="screen" />
+              </Repeat>
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="mid_city_track" z="-100">
+        <Sequence from="0s" duration="5s" out="hold">
+          <Layer id="mid_city_layer">
+            <Group id="mid_city_group" x="0" y="0"
+                   scale={curve("0:1.0:linear, 1:1.03:linear, 2.5:0.88:ease_in, 4:0.22:ease_in, 5:0.0:linear")}
+                   rotation={curve("0:0:linear, 1:0:linear, 2.5:-2:linear, 4:-18:ease_in, 5:-32:linear")}
+                   opacity={curve("0:1:linear, 3.5:1:linear, 4:0.45:linear, 4.8:0:linear")}
+                   transformOriginX="960" transformOriginY="540">
+              <Rect x="0" y="260" width="1920" height="820" fill="url(#building_mid_grad)" />
+
+              <Repeat id="mid_buildings" count="20" x="20" y="220" xStep="96" opacity="0.98" opacityStep="-0.003">
+                <Rect x="0" y="0" width="68" height={120 + 380} fill="#7058ff" opacity="1.0" />
+              </Repeat>
+
+              <Repeat id="mid_windows_cyan" count="36" x="32" y="250" xStep="54" yStep="36" opacity="0.95" opacityStep="-0.002">
+                <Rect x="0" y="0" width="10" height="18" color="#00F0FF" opacity="1.0" blend="screen" />
+              </Repeat>
+              <Repeat id="mid_windows_magenta" count="28" x="58" y="275" xStep="68" yStep="42" opacity="0.85" opacityStep="-0.003">
+                <Rect x="0" y="0" width="12" height="22" color="#FF00AA" opacity="1.0" blend="screen" />
+              </Repeat>
+              <Repeat id="mid_windows_violet" count="24" x="44" y="300" xStep="78" yStep="48" opacity="0.80" opacityStep="-0.003">
+                <Rect x="0" y="0" width="11" height="20" color="#9D00FF" opacity="1.0" blend="screen" />
+              </Repeat>
+
+              <Group id="neon_sign_a" x="200" y="390" opacity={curve("0:1:linear, 0.4:1:linear, 0.8:0.95:linear, 1.2:1:linear, 5:0:linear")} blend="screen">
+                <Rect x="0" y="0" width="200" height="34" fill="#00F0FF" opacity="0.95" />
+                <Rect x="15" y="42" width="140" height="20" fill="#00F0FF" opacity="0.80" />
+              </Group>
+              <Group id="neon_sign_b" x="1380" y="330" opacity={curve("0:0.95:linear, 0.6:1:linear, 1.0:0.95:linear, 1.4:1:linear, 5:0:linear")} blend="screen">
+                <Rect x="0" y="0" width="220" height="38" fill="#FF00AA" opacity="0.95" />
+                <Rect x="30" y="48" width="150" height="22" fill="#FF00AA" opacity="0.80" />
+              </Group>
+              <Group id="neon_sign_c" x="900" y="450" opacity={curve("0:0.90:linear, 0.5:1:linear, 0.9:0.90:linear, 1.3:1:linear, 5:0:linear")} blend="screen">
+                <Rect x="0" y="0" width="170" height="28" fill="#9D00FF" opacity="0.95" />
+                <Rect x="20" y="38" width="110" height="16" fill="#9D00FF" opacity="0.80" />
+              </Group>
+
+              <Text value="NEON" x="226" y="416" fontFamily="display" fontSize="22" color="#00F0FF" opacity="1.0" blend="screen" />
+              <Text value="VOID" x="1412" y="353" fontFamily="display" fontSize="24" color="#FF00AA" opacity="1.0" blend="screen" />
+              <Text value="2077" x="932" y="468" fontFamily="mono" fontSize="18" color="#9D00FF" opacity="1.0" blend="screen" />
+
+              <Group id="building_light_strips" opacity="0.85" blend="screen">
+                <Rect x="0" y="420" width="1920" height="3" fill="#00F0FF" opacity="0.50" />
+                <Rect x="0" y="500" width="1920" height="3" fill="#FF00AA" opacity="0.40" />
+                <Rect x="0" y="580" width="1920" height="3" fill="#9D00FF" opacity="0.35" />
+                <Rect x="0" y="660" width="1920" height="3" fill="#00F0FF" opacity="0.30" />
+              </Group>
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="traffic_track" z="-70">
+        <Sequence from="0s" duration="5s" out="hold">
+          <Layer id="traffic_layer" blend="screen">
+            <Group id="traffic_group" x="0" y="0"
+                   scale={curve("0:1.0:linear, 1:1.0:linear, 2.5:0.92:ease_in, 4:0.28:ease_in, 5:0.0:linear")}
+                   rotation={curve("0:0:linear, 1:0:linear, 2.5:3:linear, 4:28:ease_in, 5:48:linear")}
+                   opacity={curve("0:0.70:linear, 3.2:0.70:linear, 4:0.25:linear, 4.7:0:linear")}
+                   transformOriginX="960" transformOriginY="540">
+              <Repeat id="trail_left" count="10" x="120" y="760" xStep="140" yStep="-18" opacity="0.55" opacityStep="-0.010">
+                <Line x1={curve("0:0:linear, 1:0:linear, 2.5:40:ease_in, 4:420:ease_in, 5:600:linear")}
+                      y1={curve("0:0:linear, 1:0:linear, 2.5:-20:ease_in, 4:-180:ease_in, 5:-260:linear")}
+                      x2={curve("0:80:linear, 1:80:linear, 2.5:140:ease_in, 4:520:ease_in, 5:720:linear")}
+                      y2={curve("0:-10:linear, 1:-10:linear, 2.5:-40:ease_in, 4:-220:ease_in, 5:-300:linear")}
+                      stroke="#00F0FF" strokeWidth="4" opacity="0.95" />
+              </Repeat>
+              <Repeat id="trail_right" count="10" x="1680" y="800" xStep="-130" yStep="-16" opacity="0.55" opacityStep="-0.010">
+                <Line x1={curve("0:0:linear, 1:0:linear, 2.5:-40:ease_in, 4:-420:ease_in, 5:-600:linear")}
+                      y1={curve("0:0:linear, 1:0:linear, 2.5:-20:ease_in, 4:-180:ease_in, 5:-260:linear")}
+                      x2={curve("0:-80:linear, 1:-80:linear, 2.5:-140:ease_in, 4:-520:ease_in, 5:-720:linear")}
+                      y2={curve("0:-10:linear, 1:-10:linear, 2.5:-40:ease_in, 4:-220:ease_in, 5:-300:linear")}
+                      stroke="#00F0FF" strokeWidth="4" opacity="0.95" />
+              </Repeat>
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="hologram_track" z="-45">
+        <Sequence from="0s" duration="5s" out="hold">
+          <Layer id="hologram_layer" blend="screen">
+            <Group id="hologram_group" x="0" y="0"
+                   scale={curve("0:1.0:linear, 1:1.0:linear, 2.5:0.90:ease_in, 4:0.18:ease_in, 5:0.0:linear")}
+                   rotation={curve("0:0:linear, 1:0:linear, 2.5:-1:linear, 4:-15:ease_in, 5:-28:linear")}
+                   opacity={curve("0:0.75:linear, 3.0:0.75:linear, 3.8:0.30:linear, 4.5:0:linear")}
+                   transformOriginX="960" transformOriginY="540">
+              <Group id="panel_a" x="420" y="320" opacity={curve("0:0.90:linear, 1:0.90:linear, 2.5:0.65:linear, 3.5:0:linear, 5:0:linear")}>
+                <Rect x="0" y="0" width="160" height="220" fill="#00F0FF22" stroke="#00F0FFAA" strokeWidth="2" />
+                <Rect x="10" y="10" width="140" height="10" fill="#00F0FF66" />
+                <Rect x="10" y="28" width="100" height="6" fill="#00F0FF55" />
+                <Rect x="10" y="40" width="120" height="6" fill="#00F0FF55" />
+                <Rect x="10" y="52" width="80" height="6" fill="#00F0FF55" />
+                <Rect x="10" y="64" width="110" height="6" fill="#00F0FF44" />
+                <Rect x="10" y="76" width="70" height="6" fill="#00F0FF44" />
+              </Group>
+              <Group id="panel_b" x="1340" y="300" opacity={curve("0:0.85:linear, 1:0.85:linear, 2.5:0.60:linear, 3.4:0:linear, 5:0:linear")}>
+                <Rect x="0" y="0" width="180" height="200" fill="#FF00AA22" stroke="#FF00AAAA" strokeWidth="2" />
+                <Rect x="12" y="12" width="156" height="12" fill="#FF00AA66" />
+                <Rect x="12" y="34" width="110" height="7" fill="#FF00AA55" />
+                <Rect x="12" y="46" width="130" height="7" fill="#FF00AA55" />
+                <Rect x="12" y="58" width="90" height="7" fill="#FF00AA55" />
+                <Rect x="12" y="70" width="120" height="7" fill="#FF00AA44" />
+              </Group>
+              <Group id="panel_c" x="880" y="260" opacity={curve("0:0.80:linear, 1:0.80:linear, 2.5:0.55:linear, 3.3:0:linear, 5:0:linear")}>
+                <Rect x="0" y="0" width="140" height="180" fill="#9D00FF22" stroke="#9D00FFAA" strokeWidth="2" />
+                <Rect x="8" y="8" width="124" height="10" fill="#9D00FF66" />
+                <Rect x="8" y="26" width="84" height="6" fill="#9D00FF55" />
+                <Rect x="8" y="38" width="104" height="6" fill="#9D00FF55" />
+                <Rect x="8" y="50" width="64" height="6" fill="#9D00FF55" />
+              </Group>
+
+              <Repeat id="pixel_fragments" count="24" x="400" y="280" xStep="42" yStep="36" opacity="0.70" opacityStep="-0.008">
+                <Rect x={curve("0:0:linear, 2.5:0:linear, 3.0:40:ease_out, 3.8:120:linear, 5:180:linear")}
+                      y={curve("0:0:linear, 2.5:0:linear, 3.0:-20:ease_out, 3.8:-80:linear, 5:-140:linear")}
+                      width="6" height="6" color="#00F0FF" opacity="0.85" blend="screen" />
+              </Repeat>
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="street_track" z="-80">
+        <Sequence from="0s" duration="5s" out="hold">
+          <Layer id="street_layer" blend="screen">
+            <Group id="street_group" x="0" y="0"
+                   scale={curve("0:1.0:linear, 1:1.03:linear, 2.5:0.92:ease_in, 4:0.25:ease_in, 5:0.0:linear")}
+                   rotation={curve("0:0:linear, 1:0:linear, 2.5:1:linear, 4:18:ease_in, 5:32:linear")}
+                   opacity={curve("0:0.75:linear, 3.0:0.75:linear, 4:0.25:linear, 4.8:0:linear")}
+                   transformOriginX="960" transformOriginY="540">
+              <Rect x="0" y="720" width="1920" height="360" fill="url(#street_perspective)" />
+              <Rect x="0" y="720" width="1920" height="360" fill="#1a1040" opacity="0.40" blend="screen" />
+              <Group id="grid_lines" opacity="0.85">
+                <Line x1="960" y1="720" x2="0" y2="1080" stroke="#00F0FF" strokeWidth="3" opacity="0.55" />
+                <Line x1="960" y1="720" x2="320" y2="1080" stroke="#00F0FF" strokeWidth="3" opacity="0.45" />
+                <Line x1="960" y1="720" x2="640" y2="1080" stroke="#00F0FF" strokeWidth="3" opacity="0.35" />
+                <Line x1="960" y1="720" x2="1280" y2="1080" stroke="#00F0FF" strokeWidth="3" opacity="0.35" />
+                <Line x1="960" y1="720" x2="1600" y2="1080" stroke="#00F0FF" strokeWidth="3" opacity="0.45" />
+                <Line x1="960" y1="720" x2="1920" y2="1080" stroke="#00F0FF" strokeWidth="3" opacity="0.55" />
+                <Line x1="0" y1="760" x2="1920" y2="760" stroke="#00F0FF" strokeWidth="2" opacity="0.30" />
+                <Line x1="0" y1="820" x2="1920" y2="820" stroke="#00F0FF" strokeWidth="2" opacity="0.25" />
+                <Line x1="0" y1="900" x2="1920" y2="900" stroke="#00F0FF" strokeWidth="2" opacity="0.20" />
+                <Line x1="0" y1="1000" x2="1920" y2="1000" stroke="#00F0FF" strokeWidth="2" opacity="0.15" />
+              </Group>
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="near_city_track" z="-10">
+        <Sequence from="0s" duration="5s" out="hold">
+          <Layer id="near_city_layer">
+            <Group id="near_city_group" x="0" y="0"
+                   scale={curve("0:1.0:linear, 1:1.05:linear, 2.5:0.82:ease_in, 4:0.15:ease_in, 5:0.0:linear")}
+                   rotation={curve("0:0:linear, 1:0:linear, 2.5:2.5:linear, 4:20:ease_in, 5:38:linear")}
+                   opacity={curve("0:1:linear, 3.6:1:linear, 4:0.50:linear, 4.8:0:linear")}
+                   transformOriginX="960" transformOriginY="540">
+              <Rect x="0" y="620" width="1920" height="460" fill="url(#building_near_grad)" />
+              <Rect x="-100" y="520" width="380" height="620" fill="#3d25a0" opacity="1.0" />
+              <Rect x="1640" y="540" width="380" height="600" fill="#3d25a0" opacity="1.0" />
+              <Rect x="220" y="660" width="220" height="460" fill="#5d45f0" opacity="1.0" />
+              <Rect x="1460" y="640" width="240" height="480" fill="#5d45f0" opacity="1.0" />
+
+              <Rect x="-80" y="560" width="60" height="520" fill="#00F0FF" opacity="0.75" blend="screen" />
+              <Rect x="1660" y="580" width="50" height="500" fill="#FF00AA" opacity="0.70" blend="screen" />
+              <Rect x="240" y="700" width="20" height="420" fill="#00F0FF" opacity="0.65" blend="screen" />
+              <Rect x="1500" y="680" width="24" height="440" fill="#FF00AA" opacity="0.60" blend="screen" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="rain_track" z="30">
+        <Sequence from="0s" duration="5s" out="hold">
+          <Layer id="rain_layer" blend="screen">
+            <Group id="rain_group" opacity={curve("0:0.55:linear, 1:0.55:linear, 4:0.20:linear, 5:0:linear")}>
+              <Repeat id="rain_drops" count="60" x="20" y="-80" xStep="31" yStep="22" opacity="0.55" opacityStep="-0.002">
+                <Line x1="0" y1={curve("0:0:linear, 5:1180:linear")} x2="-3" y2={curve("0:18:linear, 5:1198:linear")} stroke="#AADDFF" strokeWidth="1.5" opacity="0.75" />
+              </Repeat>
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="black_hole_track" z="60">
+        <Sequence from="0s" duration="5s" out="hold">
+          <Layer id="black_hole_layer" blend="screen">
+            <Group id="black_hole" x="960" y="340"
+                   scale={curve("0:0:linear, 1:0:linear, 1.4:0.25:ease_out, 2.5:0.80:ease_out, 4:3.5:ease_in, 5:6:linear")}
+                   rotation={curve("0:0:linear, 1:0:linear, 5:180:linear")}
+                   opacity={curve("0:0:linear, 1:0:linear, 1.3:0.85:linear, 4:0.90:linear, 4.8:0:linear")}
+                   transformOriginX="960" transformOriginY="340">
+              <Circle x="0" y="0" radius="180" fill="url(#lens_glow)" opacity="0.70" />
+              <Circle x="0" y="0" radius="140" fill="url(#accretion_disk)" opacity="0.85" />
+              <Ellipse x="0" y="0" rx="160" ry="40" fill="url(#accretion_disk)" opacity="0.60" rotation="15" />
+              <Circle x="0" y="0" radius="85" fill="url(#black_hole_core)" opacity="1.0" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="haze_track" z="80">
+        <Sequence from="0s" duration="5s" out="hold">
+          <Layer id="haze_layer" blend="screen">
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)" opacity={curve("0:0.35:linear, 1:0.35:linear, 2.5:0.55:linear, 4:0.75:linear, 5:0:linear")} />
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="flash_track" z="120">
+        <Sequence from="0s" duration="5s" out="hold">
+          <Layer id="flash_layer">
+            <Rect x="0" y="0" width="1920" height="1080" fill="#FFFFFF" opacity={curve("0:0:linear, 3.9:0:linear, 4.05:1:ease_out, 4.25:0.55:ease_in, 4.5:0:linear, 5:0:linear")} />
+            <Rect x="0" y="0" width="1920" height="1080" fill="#000000" opacity={curve("0:0:linear, 4.2:0:linear, 4.5:0.0:linear, 4.8:0.92:linear, 5:1:linear")} />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="neon_post">
+    <Tex id="scene_src" fmt="rgba16f" from="scene:neon_collapse" />
+    <Tex id="hsla_src" fmt="rgba16f" size={[1920,1080]} />
+    <Tex id="bloom_src" fmt="rgba16f" size={[1920,1080]} />
+
+    <Pass id="post_hsla" kind="compute" effect="hsla_overlay"
+          in={["scene_src"]} out={["hsla_src"]}
+          params={{
+            hue: "curve(\"0:200:linear, 1:205:linear, 2.5:215:linear, 4:235:linear, 5:240:linear\")",
+            saturation: "curve(\"0:0.30:linear, 1:0.35:linear, 2.5:0.45:linear, 4:0.55:linear, 5:0.0:linear\")",
+            lightness: "curve(\"0:0.55:linear, 1:0.58:linear, 2.5:0.62:linear, 4:0.68:linear, 5:0.50:linear\")",
+            alpha: "curve(\"0:0.25:linear, 1:0.28:linear, 2.5:0.35:linear, 4:0.40:linear, 5:0.0:linear\")"
+          }} />
+
+    <Pass id="post_bloom" kind="compute" effect="glow_bloom"
+          in={["hsla_src"]} out={["bloom_src"]}
+          params={{
+            threshold: "0.35",
+            intensity: "curve(\"0:1.0:linear, 1:1.1:linear, 2.5:1.8:ease_out, 4:2.6:ease_in, 5:0.0:linear\")",
+            sigma: "14.0"
+          }} />
+  </Process>
+
+  <Present from="neon_post" />
+</Graph>

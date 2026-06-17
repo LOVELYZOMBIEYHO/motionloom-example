@@ -1,0 +1,42 @@
+{
+  "id": "cs-000037",
+  "type": "core",
+  "title": "DSL FaceJaw Basic",
+  "domain": "scene",
+  "features": [
+    "facejaw",
+    "path",
+    "curve-animation",
+    "shape"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Text",
+    "Circle",
+    "FaceJaw",
+    "curve"
+  ],
+  "teaches": [
+    "Use <FaceJaw> to generate a character jaw or face-outline path from simple face-shape parameters.",
+    "Use closed=false for an open jaw curve, or closed=true with fill for a filled face/jaw shape.",
+    "Animate jawEase, chinSharpness, or trimEnd with curve() for simple facial motion."
+  ],
+  "source_path": "scene/facejaw/face_jaw_basic.motionloom",
+  "demo_url": "",
+  "related": [],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "FaceJaw"
+  ]
+}

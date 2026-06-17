@@ -1,0 +1,23 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+  <Background color="#FFFFFF" />
+
+  <Scene id="MaskingBasic">
+    <Defs>
+      <Mask id="circle_mask" shape="ellipse" x="300" y="150" width="200" height="150" radius="0" feather="0" opacity="1" />
+    </Defs>
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Group id="masked_group" mask="circle_mask" maskMode="alpha" opacity="1">
+              <Rect x="250" y="125" width="300" height="200" color="#FCDF46" opacity="1" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="MaskingBasic" />
+</Graph>

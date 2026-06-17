@@ -1,0 +1,25 @@
+<Graph fps={30} duration="4s" size={[1920,1080]}>
+  <Background color="#1a1a2e" />
+
+  <Scene id="rainbow_hello">
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Group id="rainbow_circles" x="960" y="540" rotation={curve("0:0:linear, 4:360:ease_in_out")}>
+              <Circle x="0" y="-200" radius="70" color="#FF3B30" opacity="1" />
+              <Circle x="141" y="-141" radius="70" color="#FF9500" opacity="1" />
+              <Circle x="200" y="0" radius="70" color="#FFCC00" opacity="1" />
+              <Circle x="141" y="141" radius="70" color="#34C759" opacity="1" />
+              <Circle x="0" y="200" radius="70" color="#5AC8FA" opacity="1" />
+              <Circle x="-141" y="141" radius="70" color="#007AFF" opacity="1" />
+              <Circle x="-200" y="0" radius="70" color="#AF52DE" opacity="1" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="rainbow_hello" />
+</Graph>

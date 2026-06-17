@@ -1,0 +1,19 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+
+  <Process id="HslaOverlayProcess">
+    <Input id="clip0" type="video" from="input:clip0" />
+    <Tex id="src" fmt="rgba16f" from="clip0" />
+    <Tex id="out" fmt="rgba16f" size={[800,450]} />
+    <Pass id="post_hsla_overlay" kind="compute"
+          effect="hsla_overlay"
+          in={["src"]} out={["out"]}
+          params={{
+            hue: "curve(\"0:205:linear, 1.2:285:ease_in_out, 2.1:32:ease_in_out, 3:205:ease_out\")",
+            saturation: "curve(\"0:0.18:linear, 1.2:0.46:ease_out, 2.1:0.34:ease_in_out, 3:0.20:ease_in\")",
+            lightness: "curve(\"0:0.02:linear, 1.2:0.10:ease_out, 2.1:-0.03:ease_in_out, 3:0.02:ease_in\")",
+            alpha: "curve(\"0:0.18:linear, 1.2:0.58:ease_out, 2.1:0.42:ease_in_out, 3:0.22:ease_in\")"
+          }} />
+  </Process>
+
+  <Present from="HslaOverlayProcess" />
+</Graph>

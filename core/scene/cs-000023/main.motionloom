@@ -1,0 +1,25 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+  <Background color="#FFFFFF" />
+
+  <Scene id="TrackBasic">
+
+    <Timeline>
+      <Track id="back_plate" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="220" y="145" width="220" height="140" color="#9CA3AF" opacity="1" />
+          </Layer>
+        </Sequence>
+      </Track>
+      <Track id="front_plate" space="world" z="10">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="360" y="205" width="220" height="140" color="#111111" opacity="1" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="TrackBasic" />
+</Graph>

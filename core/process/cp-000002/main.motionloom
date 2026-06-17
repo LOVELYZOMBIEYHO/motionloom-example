@@ -1,0 +1,13 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+  <Process id="BloomAliasProcess">
+    <Input id="clip0" type="video" from="input:clip0" />
+    <Tex id="src" fmt="rgba16f" from="clip0" />
+    <Tex id="out" fmt="rgba16f" size={[800,450]} />
+    <Pass id="post_bloom" kind="compute"
+          effect="bloom"
+          in={["src"]} out={["out"]}
+          params={{ threshold: "0.72", intensity: "1.45", sigma: "18.0" }} />
+  </Process>
+
+  <Present from="BloomAliasProcess" />
+</Graph>

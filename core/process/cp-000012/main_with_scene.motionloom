@@ -1,0 +1,45 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+  <Background color="#020617" />
+
+  <Scene id="HslaOverlaySource">
+    <Defs>
+      <LinearGradient id="panel_grad" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#0F172A, 0.45:#1E293B, 1:#020617" />
+    </Defs>
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="800" height="450" color="#111827" />
+            <Rect x="64" y="56" width="672" height="338" radius="34" fill="url(#panel_grad)" />
+            <Circle x="240" y="226" radius="112" color="#EF4444" opacity="0.68" blend="screen" />
+            <Circle x="400" y="226" radius="112" color="#22C55E" opacity="0.60" blend="screen" />
+            <Circle x="560" y="226" radius="112" color="#3B82F6" opacity="0.66" blend="screen" />
+            <Text value="HSLA" x="400" y="188" fontSize="82" fontWeight="900" renderScale="4x" color="#FFFFFF" opacity="0.90" />
+            <Text value="animated hue + saturation + lightness + alpha" x="400" y="246" fontSize="22" color="#E0F2FE" opacity="0.90" />
+            <Repeat id="ticks" count="9" x="220" y="320" xStep="45" opacity="0.72" opacityStep="-0.022">
+              <Line x1="0" y1="0" x2="0" y2="36" stroke="#FFFFFF" strokeWidth="3" opacity="0.42" />
+            </Repeat>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="HslaOverlayProcess">
+    <Tex id="src" fmt="rgba16f" from="scene:HslaOverlaySource" />
+    <Tex id="out" fmt="rgba16f" size={[800,450]} />
+    <Pass id="post_hsla_overlay" kind="compute"
+          effect="hsla_overlay"
+          in={["src"]} out={["out"]}
+          params={{
+            hue: "curve(\"0:205:linear, 1.2:285:ease_in_out, 2.1:32:ease_in_out, 3:205:ease_out\")",
+            saturation: "curve(\"0:0.18:linear, 1.2:0.46:ease_out, 2.1:0.34:ease_in_out, 3:0.20:ease_in\")",
+            lightness: "curve(\"0:0.02:linear, 1.2:0.10:ease_out, 2.1:-0.03:ease_in_out, 3:0.02:ease_in\")",
+            alpha: "curve(\"0:0.18:linear, 1.2:0.58:ease_out, 2.1:0.42:ease_in_out, 3:0.22:ease_in\")"
+          }} />
+  </Process>
+
+  <Present from="HslaOverlayProcess" />
+</Graph>

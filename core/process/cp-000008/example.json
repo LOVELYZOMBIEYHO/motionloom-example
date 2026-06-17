@@ -1,0 +1,41 @@
+{
+  "id": "cp-000008",
+  "type": "core",
+  "title": "Process Glow Stack",
+  "domain": "process",
+  "features": [
+    "process",
+    "gpu-pipeline",
+    "light",
+    "glow_stack",
+    "bloom"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present",
+    "glow_stack"
+  ],
+  "teaches": [
+    "Use effect=\"glow_stack\" for cinematic multi-radius glow.",
+    "Control glow threshold, intensity, radii, and tint."
+  ],
+  "source_path": "generated/process/glow_stack",
+  "demo_url": "",
+  "related": [
+    "cp-000009",
+    "cp-000010"
+  ],
+  "requires": [
+    "Graph",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present"
+  ]
+}

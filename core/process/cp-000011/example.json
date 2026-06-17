@@ -1,0 +1,42 @@
+{
+  "id": "cp-000011",
+  "type": "core",
+  "title": "Process Opacity Pulse",
+  "domain": "process",
+  "features": [
+    "process",
+    "gpu-pipeline",
+    "opacity",
+    "alpha",
+    "layer-fx"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present",
+    "opacity",
+    "curve"
+  ],
+  "teaches": [
+    "Use effect=\"opacity\" for whole-layer alpha control.",
+    "Animate opacity with curve(...) for fades, pulses, and beat-style visibility changes."
+  ],
+  "source_path": "generated/process/opacity_pulse",
+  "demo_url": "",
+  "related": [
+    "cp-000001",
+    "cp-000012"
+  ],
+  "requires": [
+    "Graph",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present"
+  ]
+}

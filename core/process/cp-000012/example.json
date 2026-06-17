@@ -1,0 +1,43 @@
+{
+  "id": "cp-000012",
+  "type": "core",
+  "title": "Process HSLA Overlay",
+  "domain": "process",
+  "features": [
+    "process",
+    "gpu-pipeline",
+    "color",
+    "hsla_overlay",
+    "tint",
+    "layer-fx"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present",
+    "hsla_overlay",
+    "curve"
+  ],
+  "teaches": [
+    "Use effect=\"hsla_overlay\" for animated color wash and tinting.",
+    "Control hue, saturation, lightness, and alpha independently."
+  ],
+  "source_path": "generated/process/hsla_overlay",
+  "demo_url": "",
+  "related": [
+    "cp-000002",
+    "cp-000011"
+  ],
+  "requires": [
+    "Graph",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present"
+  ]
+}

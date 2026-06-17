@@ -1,0 +1,23 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+  <Background color="#FFFFFF" />
+
+  <Scene id="ComponentBasic">
+    <Defs>
+      <Component id="BasicDot">
+        <Circle x="0" y="0" radius="60" color="#111111" opacity="1" />
+      </Component>
+    </Defs>
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Use ref="BasicDot" x="400" y="225" opacity="1" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="ComponentBasic" />
+</Graph>

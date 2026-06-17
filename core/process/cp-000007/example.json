@@ -1,0 +1,40 @@
+{
+  "id": "cp-000007",
+  "type": "core",
+  "title": "Process Gaussian 5-Tap Blur",
+  "domain": "process",
+  "features": [
+    "process",
+    "gpu-pipeline",
+    "blur",
+    "gaussian_5tap_blur"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present",
+    "gaussian_5tap_blur"
+  ],
+  "teaches": [
+    "Use effect=\"gaussian_5tap_blur\" for a full 5-tap Gaussian blur (horizontal + vertical).",
+    "Control blur strength with sigma."
+  ],
+  "source_path": "generated/process/gaussian_5tap_blur",
+  "demo_url": "",
+  "related": [
+    "cp-000005",
+    "cp-000006"
+  ],
+  "requires": [
+    "Graph",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "cp-000005",
+  "type": "core",
+  "title": "Process Gaussian 5-Tap Horizontal",
+  "domain": "process",
+  "features": [
+    "process",
+    "gpu-pipeline",
+    "blur",
+    "gaussian_5tap_h"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present",
+    "gaussian_5tap_h"
+  ],
+  "teaches": [
+    "Use effect=\"gaussian_5tap_h\" for a horizontal 5-tap Gaussian blur pass.",
+    "Control blur strength with sigma."
+  ],
+  "source_path": "generated/process/gaussian_5tap_h",
+  "demo_url": "",
+  "related": [
+    "cp-000006",
+    "cp-000007"
+  ],
+  "requires": [
+    "Graph",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present"
+  ]
+}

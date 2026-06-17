@@ -1,0 +1,19 @@
+<Graph fps={30} duration="3s" size={[1000,450]} renderSize={[1800,1450]}>
+  <Background color="#FFFFFF" />
+
+  <Scene id="TextBasic">
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Text id="title_kinetic" renderScale="4x" value="HELLO(better reso)" x="94" y="142" fontSize="96" color="#000000" opacity="0.94"fontFamily="Avenir Next Condensed" />
+            <Text x="240" y="275" renderScale="1x" value="World(lower reso)" fontSize="80" color="#111111" opacity="1" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="TextBasic" />
+</Graph>

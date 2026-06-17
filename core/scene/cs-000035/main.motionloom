@@ -1,0 +1,83 @@
+<Graph fps={30} duration="6s" size={[1280,720]} renderSize={[1280,720]}>
+  <Background color="#F7F3EA" />
+
+  <Scene id="AssetCardLayout">
+    <Defs>
+      <LinearGradient id="paper_grad" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#FFF8EA, 0.55:#F3E7D1, 1:#E9D3AE" />
+      <LinearGradient id="card_grad" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#FFFFFF, 0.64:#FFF5DE, 1:#F0D394" />
+      <LinearGradient id="label_grad" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#111827, 0.64:#23344F, 1:#335C67" />
+      <RadialGradient id="warm_glow" cx="0.50" cy="0.42" r="0.74"
+                      stops="0:#FFCF6B77, 0.48:#FF8F3D30, 1:#FF8F3D00" />
+      <RadialGradient id="mint_glow" cx="0.50" cy="0.50" r="0.68"
+                      stops="0:#78E7B777, 0.50:#51C4A830, 1:#51C4A800" />
+    </Defs>
+
+    <Timeline>
+      <Track id="background" space="world" z="0">
+        <Sequence from="0s" duration="6s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1280" height="720" fill="url(#paper_grad)" />
+            <Circle x="1080" y="112" radius="320" fill="url(#warm_glow)" blend="screen" opacity="0.72" />
+            <Circle x="155" y="620" radius="300" fill="url(#mint_glow)" blend="screen" opacity="0.62" />
+            <Line x1="88" y1="585" x2="1180" y2="585" stroke="#7D6B4A33" strokeWidth="2" />
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="asset_card" space="world" z="10">
+        <Sequence from="0s" duration="6s" out="hold">
+          <Layer>
+            <Group id="character1_card"
+                   x={curve("0:88:ease_out, 0.85:128:ease_out, 6:128:linear")}
+                   y={curve("0:64:ease_out, 0.85:44:ease_out, 6:44:linear")}
+                   opacity={curve("0:0:linear, 0.45:1:ease_in_out, 6:1:linear")}>
+              <Rect id="card_shadow" x="26" y="32" width="488" height="550" radius="34" color="#463A2544" />
+              <Rect id="card_body" x="0" y="0" width="488" height="550" radius="34" fill="url(#card_grad)" stroke="#6E573D33" strokeWidth="2" />
+              <Rect id="image_window" x="36" y="38" width="416" height="392" radius="28" color="#F7E9C9" opacity="0.82" />
+              <Image id="character1_composite_asset"
+                     src="../motionloom-example/assets/sample_assets/characters/character1/character1_composite_preview.png"
+                     x="66"
+                     y="52"
+                     scale="0.54"
+                     opacity="1" />
+              <Rect id="caption_bar" x="36" y="456" width="416" height="64" radius="20" fill="url(#label_grad)" />
+              <Text id="asset_label" x="64" y="496" value="CHARACTER 1" fontSize="26" color="#FFFFFF" />
+              <Text id="asset_note" x="270" y="497" value="image asset" fontSize="18" color="#B9F2E3" opacity="0.86" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="layout_notes" space="world" z="20">
+        <Sequence from="0s" duration="6s" out="hold">
+          <Layer>
+            <Group id="notes"
+                   x={curve("0:720:ease_out, 0.7:670:ease_out, 6:670:linear")}
+                   y="142"
+                   opacity={curve("0.15:0:linear, 0.85:1:ease_in_out, 6:1:linear")}>
+              <Text x="0" y="0" value="Layout" fontSize="64" color="#1B2430" />
+              <Text x="4" y="48" value="One scene, several visual layers" fontSize="24" color="#6C5D45" opacity="0.86" />
+
+              <Rect x="4" y="104" width="392" height="52" radius="16" color="#FFFFFF" opacity="0.72" />
+              <Text x="28" y="138" value="1. Background atmosphere" fontSize="24" color="#23344F" />
+
+              <Rect x="4" y="174" width="392" height="52" radius="16" color="#FFFFFF" opacity="0.72" />
+              <Text x="28" y="208" value="2. Asset card + image" fontSize="24" color="#23344F" />
+
+              <Rect x="4" y="244" width="392" height="52" radius="16" color="#FFFFFF" opacity="0.72" />
+              <Text x="28" y="278" value="3. Labels and motion timing" fontSize="24" color="#23344F" />
+
+              <Line x1="-28" y1="332" x2="430" y2="332" stroke="#23344F44" strokeWidth="2" />
+              <Text x="4" y="374" value="Use layout when one Scene combines assets, labels, shapes, and timing." fontSize="21" color="#5C4930" opacity="0.82" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="AssetCardLayout" />
+</Graph>

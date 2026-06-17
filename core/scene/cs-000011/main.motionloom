@@ -1,0 +1,21 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+  <Background color="#FFFFFF" />
+
+  <Scene id="LinearGradientBasic">
+    <Defs>
+      <LinearGradient id="left_to_right" x1="0" y1="0" x2="1" y2="0" stops="0:#111111, 1:#BBBBBB" />
+    </Defs>
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="260" y="160" width="280" height="130" color="url(#left_to_right)" opacity="1" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="LinearGradientBasic" />
+</Graph>

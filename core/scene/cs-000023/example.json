@@ -1,0 +1,28 @@
+{
+  "id": "cs-000023",
+  "type": "core",
+  "title": "DSL Track Basic",
+  "domain": "scene",
+  "features": [
+    "track"
+  ],
+  "dsl": [
+    "track"
+  ],
+  "teaches": [
+    "Use the basic <Track> pattern in MotionLoom.",
+    "Scene track z controls paint order only. Higher z draws later; it is not perspective depth."
+  ],
+  "source_path": "generated/dsl/track",
+  "demo_url": "",
+  "related": [],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Rect"
+  ]
+}

@@ -1,0 +1,17 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+  <Background color="#FFFFFF" />
+
+  <World id="BoneBasic">
+    <Background color="#FFFFFF" />
+    <Camera yaw="0" pitch="0" zoom="1" />
+
+  </World>
+
+  <Action id="basic_bone_action" skeleton="humanoid_v1" duration="1s">
+    <Pose t="0">
+      <Bone id="upper_arm_r" rotationZ="25" />
+    </Pose>
+  </Action>
+
+  <Present from="BoneBasic" />
+</Graph>

@@ -1,0 +1,21 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+
+  <Process id="GlowStackProcess">
+    <Input id="clip0" type="video" from="input:clip0" />
+    <Tex id="src" fmt="rgba16f" from="clip0" />
+    <Tex id="out" fmt="rgba16f" size={[800,450]} />
+    <Pass id="post_glow_stack" kind="compute"
+          effect="glow_stack"
+          in={["src"]} out={["out"]}
+          params={{
+            threshold: "0.56",
+            intensity: "1.8",
+            radiusSmall: "6.0",
+            radiusMedium: "18.0",
+            radiusLarge: "48.0",
+            tint: "#A5F3FC"
+          }} />
+  </Process>
+
+  <Present from="GlowStackProcess" />
+</Graph>

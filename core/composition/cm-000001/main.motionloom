@@ -1,0 +1,37 @@
+<Graph fps={30} duration="4s" size={[1280,720]} renderSize={[1280,720]}>
+  <Background color="#FFFFFF" />
+
+  <Scene id="title_scene">
+    <Timeline>
+      <Track id="scene_content" space="world" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1280" height="720" color="#FFFFFF" />
+            <Circle x="640" y="360" radius="210" color="#3B82F6" opacity="0.22" />
+            <Text x="116" y="172" value="Scene" fontSize="68" color="#111827" />
+            <Text x="120" y="226" value="2D title layer" fontSize="30" color="#4B5563" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <World id="world_actor">
+    <Background color="#FFFFFF" />
+    <Actor id="basic_actor"
+           model="../motionloom-example/assets/sample_assets/glb/mammuthus_primigenius_blumbach.glb"
+           x="0" y="0" z="0" scale="0.35" opacity="1">
+      <Material style="toon" outline="true" outlineWidth="2" />
+    </Actor>
+  </World>
+
+  <Process id="final_composite">
+    <Tex id="scene_tex" fmt="rgba16f" from="scene:title_scene" />
+    <Tex id="world_tex" fmt="rgba16f" from="world:world_actor" />
+    <Tex id="merged" fmt="rgba16f" size={[1280,720]} />
+    <Pass id="world_over_scene" kind="compute" effect="over"
+          in={["scene_tex", "world_tex"]} out={["merged"]} />
+  </Process>
+
+  <Present from="final_composite" />
+</Graph>

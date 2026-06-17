@@ -1,0 +1,29 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+  <Background color="#FFFFFF" />
+
+  <Scene id="ProcessBasicSource">
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="800" height="450" color="#FFFFFF" />
+            <Text x="52" y="64" value="Process effect: opacity" fontSize="32" color="#111827" />
+            <Text x="52" y="98" value="Standalone scene source for the basic Process pass" fontSize="20" color="#6B7280" />
+            <Rect x="250" y="154" width="300" height="142" radius="32" color="#111827" opacity="1" />
+            <Circle x="400" y="225" radius="38" color="#FFFFFF" opacity="1" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="ProcessBasic">
+    <Tex id="src" fmt="rgba16f" from="scene:ProcessBasicSource" />
+    <Tex id="out" fmt="rgba16f" size={[800,450]} />
+    <Pass id="fx_opacity" kind="compute" effect="opacity"
+          in={["src"]} out={["out"]}
+          params={{ opacity: "1.0" }} />
+  </Process>
+
+  <Present from="ProcessBasic" />
+</Graph>

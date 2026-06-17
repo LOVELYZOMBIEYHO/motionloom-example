@@ -1,0 +1,41 @@
+{
+  "id": "cp-000010",
+  "type": "core",
+  "title": "Process Light Sweep",
+  "domain": "process",
+  "features": [
+    "process",
+    "gpu-pipeline",
+    "light",
+    "light_sweep",
+    "highlight"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present",
+    "light_sweep"
+  ],
+  "teaches": [
+    "Use effect=\"light_sweep\" for an animated directional highlight.",
+    "Control sweep position, angle, width, softness, intensity, and color."
+  ],
+  "source_path": "generated/process/light_sweep",
+  "demo_url": "",
+  "related": [
+    "cp-000008",
+    "cp-000009"
+  ],
+  "requires": [
+    "Graph",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present"
+  ]
+}

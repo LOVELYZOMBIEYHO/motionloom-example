@@ -1,0 +1,43 @@
+{
+  "id": "cm-000001",
+  "type": "core",
+  "title": "Scene World Process Composition Basic",
+  "domain": "composition",
+  "features": [
+    "scene",
+    "world",
+    "process",
+    "text",
+    "shape",
+    "actor",
+    "material",
+    "gpu-pipeline"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Rect",
+    "Circle",
+    "Text",
+    "World",
+    "Camera",
+    "Actor",
+    "Material",
+    "Process",
+    "Tex",
+    "Pass",
+    "Present"
+  ],
+  "teaches": [
+    "Mix Scene, World, and Process graph families in one composition graph.",
+    "Use Scene and World outputs as Process textures, then present the final Process from the Graph root.",
+    "Keep one root-level <Present> node as the final child of <Graph>."
+  ],
+  "source_path": "core/composition/cm-000001/main.motionloom",
+  "demo_url": ""
+}

@@ -1,0 +1,21 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+
+  <Process id="LightSweepProcess">
+    <Input id="clip0" type="video" from="input:clip0" />
+    <Tex id="src" fmt="rgba16f" from="clip0" />
+    <Tex id="out" fmt="rgba16f" size={[800,450]} />
+    <Pass id="post_light_sweep" kind="compute"
+          effect="light_sweep"
+          in={["src"]} out={["out"]}
+          params={{
+            position: "curve(\"0:0.0:linear, 3.0:1.0:ease_in_out\")",
+            angle: "-18.0",
+            width: "0.18",
+            softness: "0.08",
+            intensity: "1.35",
+            color: "#FFFFFF"
+          }} />
+  </Process>
+
+  <Present from="LightSweepProcess" />
+</Graph>

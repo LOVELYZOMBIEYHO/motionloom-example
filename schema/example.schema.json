@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MotionLoom Example Metadata",
+  "type": "object",
+  "required": [
+    "id",
+    "type",
+    "title",
+    "domain",
+    "features",
+    "dsl",
+    "teaches",
+    "source_path"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^(cs|cw|cp|cm|ct)-[0-9]{6}$"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "core",
+        "showcase"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string",
+      "enum": [
+        "scene",
+        "world",
+        "process",
+        "composition",
+        "text"
+      ]
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dsl": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "teaches": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_path": {
+      "type": "string"
+    },
+    "demo_url": {
+      "type": "string"
+    },
+    "related": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "requires": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

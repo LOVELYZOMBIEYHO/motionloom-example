@@ -1,0 +1,50 @@
+# DSL Pattern Index
+
+| DSL Pattern | Count |
+|---|---:|
+| [action](dsl/action.md) | 2 |
+| [actor](dsl/actor.md) | 3 |
+| [background](dsl/background.md) | 7 |
+| [bloom](dsl/bloom.md) | 1 |
+| [bone](dsl/bone.md) | 2 |
+| [box](dsl/box.md) | 1 |
+| [camera](dsl/camera.md) | 4 |
+| [circle](dsl/circle.md) | 13 |
+| [component](dsl/component.md) | 3 |
+| [curve](dsl/curve.md) | 14 |
+| [defs](dsl/defs.md) | 11 |
+| [facejaw](dsl/facejaw.md) | 1 |
+| [fontweight](dsl/fontweight.md) | 1 |
+| [glow](dsl/glow.md) | 1 |
+| [glow-bloom](dsl/glow-bloom.md) | 1 |
+| [graph](dsl/graph.md) | 20 |
+| [group](dsl/group.md) | 13 |
+| [image](dsl/image.md) | 4 |
+| [input](dsl/input.md) | 3 |
+| [layer](dsl/layer.md) | 16 |
+| [line](dsl/line.md) | 9 |
+| [lineargradient](dsl/lineargradient.md) | 9 |
+| [masking](dsl/masking.md) | 1 |
+| [material](dsl/material.md) | 3 |
+| [matte](dsl/matte.md) | 1 |
+| [pass](dsl/pass.md) | 4 |
+| [path](dsl/path.md) | 8 |
+| [polyline](dsl/polyline.md) | 2 |
+| [pose](dsl/pose.md) | 2 |
+| [present](dsl/present.md) | 4 |
+| [process](dsl/process.md) | 5 |
+| [radialgradient](dsl/radialgradient.md) | 10 |
+| [random](dsl/random.md) | 1 |
+| [rect](dsl/rect.md) | 14 |
+| [renderscale](dsl/renderscale.md) | 1 |
+| [scene](dsl/scene.md) | 16 |
+| [sequence](dsl/sequence.md) | 16 |
+| [sin](dsl/sin.md) | 3 |
+| [svg](dsl/svg.md) | 1 |
+| [tex](dsl/tex.md) | 4 |
+| [text](dsl/text.md) | 15 |
+| [textgap](dsl/textgap.md) | 1 |
+| [timeline](dsl/timeline.md) | 16 |
+| [track](dsl/track.md) | 16 |
+| [use](dsl/use.md) | 3 |
+| [world](dsl/world.md) | 1 |

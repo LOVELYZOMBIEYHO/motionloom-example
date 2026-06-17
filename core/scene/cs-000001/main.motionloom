@@ -1,0 +1,28 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+  <Background color="#FFFFFF" />
+
+  <Scene id="CameraBasic">
+
+    <Timeline>
+      <Track id="camera" role="camera" z="1000">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Camera x={curve("0:320:linear, 3:520:ease_in_out")}
+                  y="225"
+                  zoom={curve("0:1.00:linear, 3:1.35:ease_in_out")} />
+        </Sequence>
+      </Track>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Line x1="120" y1="225" x2="680" y2="225" stroke="#DDDDDD" strokeWidth="4" />
+            <Circle x="320" y="225" radius="42" color="#9CA3AF" opacity="1" />
+            <Circle x="400" y="225" radius="70" color="#111111" opacity="1" />
+            <Circle x="520" y="225" radius="42" color="#9CA3AF" opacity="1" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="CameraBasic" />
+</Graph>

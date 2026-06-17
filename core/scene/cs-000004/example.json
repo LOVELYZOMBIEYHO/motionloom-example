@@ -1,0 +1,28 @@
+{
+  "id": "cs-000004",
+  "type": "core",
+  "title": "DSL Curve Basic",
+  "domain": "scene",
+  "features": [
+    "curve"
+  ],
+  "dsl": [
+    "curve"
+  ],
+  "teaches": [
+    "Animate one numeric property over time with curve().",
+    "curve() changes the property value over time; it does not morph the shape itself."
+  ],
+  "source_path": "generated/dsl/curve",
+  "demo_url": "",
+  "related": [],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "curve"
+  ]
+}

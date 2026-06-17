@@ -1,0 +1,41 @@
+{
+  "id": "cp-000003",
+  "type": "core",
+  "title": "Process Glow Alias",
+  "domain": "process",
+  "features": [
+    "process",
+    "gpu-pipeline",
+    "bloom",
+    "glow"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present",
+    "glow"
+  ],
+  "teaches": [
+    "Use effect=\"glow\" as a readable alias for Process bloom in layer FX.",
+    "Keep one alias per Pass so examples are searchable and unambiguous.",
+    "Control glow with threshold, intensity, and sigma."
+  ],
+  "source_path": "generated/process/glow_alias",
+  "demo_url": "",
+  "related": [
+    "cp-000002",
+    "cp-000004"
+  ],
+  "requires": [
+    "Graph",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present"
+  ]
+}

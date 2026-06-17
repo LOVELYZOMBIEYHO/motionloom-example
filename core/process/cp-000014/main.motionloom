@@ -1,0 +1,18 @@
+<Graph fps={30} size={[1920,1080]}>
+  <Process id="layer_fx">
+    <Input id="clip0" type="video" from="input:clip0" />
+    <Tex id="src" fmt="rgba16f" from="clip0" />
+    <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="fx_hsla_overlay" kind="compute"
+          effect="hsla_overlay"
+          in={["src"]} out={["out"]}
+          params={{
+            hue: "210.0",
+            saturation: "0.70",
+            lightness: "0.41",
+            alpha: "0.45"
+          }} />
+  </Process>
+
+  <Present from="layer_fx" />
+</Graph>

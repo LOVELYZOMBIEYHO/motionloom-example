@@ -1,0 +1,37 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+  <Background color="#05070D" />
+
+  <Scene id="GlowStackSource">
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="800" height="450" color="#05070D" />
+            <Circle x="400" y="225" radius="116" color="#1D4ED8" opacity="0.35" blend="screen" />
+            <Circle x="400" y="225" radius={curve("0:34:linear, 1.5:52:ease_in_out, 3:34:ease_in_out")} color="#FFFFFF" opacity="0.92" blend="screen" />
+            <Text x="400" y="242" value="GLOW" fontSize="108" fontWeight="900" renderScale="4x" color="#FFFFFF" opacity="0.95" />
+            <Text x="400" y="300" value="effect=&quot;glow_stack&quot;" fontSize="24" color="#A5F3FC" opacity="0.80" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="GlowStackProcess">
+    <Tex id="src" fmt="rgba16f" from="scene:GlowStackSource" />
+    <Tex id="out" fmt="rgba16f" size={[800,450]} />
+    <Pass id="post_glow_stack" kind="compute"
+          effect="glow_stack"
+          in={["src"]} out={["out"]}
+          params={{
+            threshold: "0.56",
+            intensity: "1.8",
+            radiusSmall: "6.0",
+            radiusMedium: "18.0",
+            radiusLarge: "48.0",
+            tint: "#A5F3FC"
+          }} />
+  </Process>
+
+  <Present from="GlowStackProcess" />
+</Graph>

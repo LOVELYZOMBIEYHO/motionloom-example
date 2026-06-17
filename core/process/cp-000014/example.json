@@ -1,0 +1,42 @@
+{
+  "id": "cp-000014",
+  "type": "core",
+  "title": "Fixed HSLA Overlay Layer FX",
+  "domain": "process",
+  "features": [
+    "process",
+    "gpu-pipeline",
+    "hsla-overlay",
+    "color-wash",
+    "layer-fx",
+    "fixed-params"
+  ],
+  "dsl": [
+    "Graph",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present",
+    "hsla_overlay"
+  ],
+  "teaches": [
+    "Use effect=\"hsla_overlay\" for a fixed color wash over a layer.",
+    "Control hue, saturation, lightness, and alpha with numeric process params."
+  ],
+  "source_path": "generated/process/fixed_hsla_overlay_layer_fx",
+  "demo_url": "",
+  "related": [
+    "cp-000002",
+    "cp-000012",
+    "cp-000013"
+  ],
+  "requires": [
+    "Graph",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present"
+  ]
+}

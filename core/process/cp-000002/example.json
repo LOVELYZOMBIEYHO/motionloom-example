@@ -1,0 +1,41 @@
+{
+  "id": "cp-000002",
+  "type": "core",
+  "title": "Process Bloom Alias",
+  "domain": "process",
+  "features": [
+    "process",
+    "gpu-pipeline",
+    "bloom",
+    "glow"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present",
+    "bloom"
+  ],
+  "teaches": [
+    "Use effect=\"bloom\" as a Process post-pass alias for layer FX.",
+    "Feed the selected layer into Process with Input from=\"input:clip0\".",
+    "Control bloom with threshold, intensity, and sigma."
+  ],
+  "source_path": "generated/process/bloom_alias",
+  "demo_url": "",
+  "related": [
+    "cp-000003",
+    "cp-000004"
+  ],
+  "requires": [
+    "Graph",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present"
+  ]
+}

@@ -1,0 +1,29 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+  <Background color="transparent" />
+
+  <Scene id="bold_pill_text_style">
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Text
+              x="240"
+              y="180"
+              value="Hello World"
+              fontFamily="Arial Black"
+              textGap="-3"
+              fontWeight="700"
+              fontSize="40"
+              color="#FFFFFF"
+              box="pill"
+              boxColor="#D9251D"
+              boxPadding="54 28"
+              boxRadius="999" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="bold_pill_text_style" />
+</Graph>

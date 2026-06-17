@@ -1,0 +1,30 @@
+{
+  "id": "cs-000021",
+  "type": "core",
+  "title": "DSL Text Basic",
+  "domain": "scene",
+  "features": [
+    "text",
+    "text-render-scale"
+  ],
+  "dsl": [
+    "text",
+    "renderScale"
+  ],
+  "teaches": [
+    "Use the basic <Text> pattern in MotionLoom.",
+    "Use renderScale=\"4x\" to rasterize text at four times the pixel density without changing layout size."
+  ],
+  "source_path": "generated/dsl/text",
+  "demo_url": "",
+  "related": [],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Text"
+  ]
+}

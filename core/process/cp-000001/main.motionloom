@@ -1,0 +1,14 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+  <Background color="#FFFFFF" />
+
+  <Process id="ProcessBasic">
+    <Input id="clip0" type="video" from="input:clip0" />
+    <Tex id="src" fmt="rgba16f" from="clip0" />
+    <Tex id="out" fmt="rgba16f" size={[800,450]} />
+    <Pass id="fx_opacity" kind="compute" effect="opacity"
+          in={["src"]} out={["out"]}
+          params={{ opacity: "1.0" }} />
+  </Process>
+
+  <Present from="ProcessBasic" />
+</Graph>

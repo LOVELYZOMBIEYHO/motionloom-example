@@ -1,0 +1,21 @@
+<Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
+  <Background color="#FFFFFF" />
+
+  <Scene id="GroupBasic">
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Group id="basic_group" x="0" y="0" opacity="1">
+              <Rect x="300" y="175" width="200" height="100" color="#111111" opacity="1" />
+              <Circle x="400" y="225" radius="28" color="#FFFFFF" opacity="1" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="GroupBasic" />
+</Graph>

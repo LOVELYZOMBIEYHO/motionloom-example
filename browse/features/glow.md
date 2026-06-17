@@ -1,0 +1,15 @@
+# Feature: glow
+
+| ID | Type | Domain | Title | Features | Teaches |
+|---|---|---|---|---|---|
+| [cs-000025](../../core/scene/cs-000025/) | core | scene | Audio Spectrum | audio-reactive, random-animation, component, gradient, glow | Combine multiple MotionLoom features into a polished demo.<br>Use this as a reference for YouTube Short or promo-style output. |
+| [cs-000027](../../core/scene/cs-000027/) | core | scene | Anica Motionloom Fancy Pip 20s | layout, timeline, text, shape, audio-reactive | Combine multiple MotionLoom features into a polished demo.<br>Use this as a reference for YouTube Short or promo-style output. |
+| [cs-000028](../../core/scene/cs-000028/) | core | scene | Anica Promo Presentation 20s | layout, timeline, text, shape, defs | Combine multiple MotionLoom features into a polished demo.<br>Use this as a reference for YouTube Short or promo-style output. |
+| [cs-000029](../../core/scene/cs-000029/) | core | scene | Car Phone Hands Vector | layout, timeline, text, shape, defs | Combine multiple MotionLoom features into a polished demo.<br>Use this as a reference for YouTube Short or promo-style output. |
+| [cs-000031](../../core/scene/cs-000031/) | core | scene | Filled Shape Morph Intro 10s | shape, path, curve-animation, gradient, defs | Combine multiple MotionLoom features into a polished demo.<br>Use this as a reference for YouTube Short or promo-style output. |
+| [cs-000032](../../core/scene/cs-000032/) | core | scene | Kinetic Bloom 6s | glow, text, gradient, curve-animation, defs | Combine multiple MotionLoom features into a polished demo.<br>Use this as a reference for YouTube Short or promo-style output. |
+| [cs-000033](../../core/scene/cs-000033/) | core | scene | Scene Full Feature Showcase | layout, timeline, text, shape, component | Combine multiple MotionLoom features into a polished demo.<br>Use this as a reference for YouTube Short or promo-style output. |
+| [cs-000035](../../core/scene/cs-000035/) | core | scene | Asset Card Layout | layout, image-asset, timeline, shape, text | Compose background, asset image, card shape, labels, glow, and animation timing into one scene.<br>Use layout as a feature label, while keeping domain as scene for graph-family classification. |
+| [cp-000002](../../core/process/cp-000002/) | core | process | Process Bloom Alias | process, gpu-pipeline, bloom, glow | Use effect="bloom" as a Process post-pass alias for layer FX.<br>Feed the selected layer into Process with Input from="input:clip0". |
+| [cp-000003](../../core/process/cp-000003/) | core | process | Process Glow Alias | process, gpu-pipeline, bloom, glow | Use effect="glow" as a readable alias for Process bloom in layer FX.<br>Keep one alias per Pass so examples are searchable and unambiguous. |
+| [cp-000004](../../core/process/cp-000004/) | core | process | Process Glow Bloom Alias | process, gpu-pipeline, bloom, glow | Use effect="glow_bloom" as the explicit compatibility alias for bloom/glow in layer FX.<br>Keep alias examples split because one Pass has exactly one effect value. |

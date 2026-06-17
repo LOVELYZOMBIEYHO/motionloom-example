@@ -1,0 +1,25 @@
+{
+  "id": "cw-000005",
+  "type": "core",
+  "title": "DSL Pose Basic",
+  "domain": "world",
+  "features": [
+    "pose"
+  ],
+  "dsl": [
+    "pose"
+  ],
+  "teaches": [
+    "Place a Pose inside an Action."
+  ],
+  "source_path": "generated/dsl/pose",
+  "demo_url": "",
+  "related": [],
+  "requires": [
+    "Graph",
+    "World",
+    "Action",
+    "Pose",
+    "Bone"
+  ]
+}
