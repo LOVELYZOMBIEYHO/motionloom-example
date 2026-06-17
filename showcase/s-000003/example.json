@@ -1,0 +1,40 @@
+{
+  "id": "s-000003",
+  "type": "showcase",
+  "title": "Rainbow Spin 4s",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "circle",
+    "group",
+    "curve-animation",
+    "shape"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Circle",
+    "Present"
+  ],
+  "teaches": [
+    "Create a simple orbiting shape animation with one rotating group.",
+    "Use a small scene-only graph as a fast parser and preview sanity check."
+  ],
+  "source_path": "showcase/s-000003",
+  "demo_url": "",
+  "related": [
+    "cs-000001"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Timeline",
+    "Present"
+  ]
+}

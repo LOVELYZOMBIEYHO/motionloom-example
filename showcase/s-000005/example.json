@@ -1,0 +1,53 @@
+{
+  "id": "s-000005",
+  "type": "showcase",
+  "title": "ANICA Core Overload Reactor Explosion 10s",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "process",
+    "bloom",
+    "glow",
+    "gradient",
+    "gpu-pipeline"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Rect",
+    "Circle",
+    "Line",
+    "Text",
+    "LinearGradient",
+    "RadialGradient",
+    "Process",
+    "Tex",
+    "Pass",
+    "Present"
+  ],
+  "teaches": [
+    "Create a high-energy logo reactor explosion with scene layers and post passes.",
+    "Chain hsla_overlay, glow_bloom, and gaussian blur in a GPU process pipeline."
+  ],
+  "source_path": "showcase/s-000005",
+  "demo_url": "",
+  "related": [
+    "cp-000002",
+    "cp-000003",
+    "cp-000007",
+    "s-000001"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Process",
+    "Present"
+  ]
+}

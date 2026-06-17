@@ -10,6 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CORE_ROOT = ROOT / "core"
+SHOWCASE_ROOT = ROOT / "showcase"
 SCHEMA_PATH = ROOT / "schema" / "example.schema.json"
 TAG_REGISTRY_PATH = ROOT / "schema" / "tag-registry.json"
 DOMAINS = ("scene", "world", "process", "composition", "text")
@@ -83,9 +84,10 @@ def validate_example_record(path: Path, record: dict, domain_dir: str) -> None:
     if domain != domain_dir:
         fail(path, f"domain '{domain}' does not match folder '{domain_dir}'")
 
-    expected_prefix = DOMAIN_PREFIX[domain]
-    if not id_value.startswith(f"{expected_prefix}-"):
-        fail(path, f"id prefix must be '{expected_prefix}-' for domain '{domain}'")
+    if type_value == "core":
+        expected_prefix = DOMAIN_PREFIX[domain]
+        if not id_value.startswith(f"{expected_prefix}-"):
+            fail(path, f"id prefix must be '{expected_prefix}-' for domain '{domain}'")
 
     for key in ("title", "source_path"):
         if not isinstance(record.get(key), str):
@@ -124,6 +126,19 @@ def load_records() -> list[dict]:
             rel_dir = path.parent.relative_to(ROOT).as_posix()
             record["path"] = f"{rel_dir}/"
             out.append(record)
+    for path in sorted(SHOWCASE_ROOT.glob("*/example.json")):
+        record = json.loads(path.read_text(encoding="utf-8"))
+        validate_example_record(path, record, record.get("domain", "scene"))
+        if record["type"] != "showcase":
+            fail(path, "showcase records must use type 'showcase'")
+        if not re.fullmatch(r"s-[0-9]{6}", record["id"]):
+            fail(path, "showcase id must match s-000000")
+        if record["id"] in seen_ids:
+            fail(path, f"duplicate id '{record['id']}'")
+        seen_ids.add(record["id"])
+        rel_dir = path.parent.relative_to(ROOT).as_posix()
+        record["path"] = f"{rel_dir}/"
+        out.append(record)
     return sorted(out, key=lambda r: (DOMAINS.index(r.get("domain", "scene")), r["id"]))
 
 
