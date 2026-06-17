@@ -1,0 +1,99 @@
+<!-- Clockwork Universe 20s — brass gears, orbital rings, cosmic clock, eclipse engine. Original, no licensed content. -->
+<Graph fps={30} duration="20s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#05030A" />
+  <Scene id="clockwork_universe_20s">
+    <Defs>
+      <Font id="display" family="Avenir Next Condensed" fallback="sans-serif" />
+      <Font id="mono" family="Menlo" fallback="monospace" />
+      <RadialGradient id="space_bg" cx="0.50" cy="0.45" r="0.90" stops="0:#1B1238, 0.38:#0D0920, 0.76:#05030A, 1:#010106" />
+      <RadialGradient id="gold_glow" cx="0.50" cy="0.50" r="0.58" stops="0:#FFFFFF, 0.16:#FFD26ACC, 0.42:#B8862B44, 0.76:#6B3F1018, 1:#6B3F1000" />
+      <RadialGradient id="blue_core" cx="0.50" cy="0.50" r="0.55" stops="0:#FFFFFF, 0.18:#9EEBFFCC, 0.46:#2563EB44, 0.78:#1E1B4B18, 1:#1E1B4B00" />
+      <RadialGradient id="star" cx="0.50" cy="0.50" r="0.50" stops="0:#FFFFFFCC, 0.35:#FFD26A44, 0.75:#FFD26A11, 1:#FFD26A00" />
+      <LinearGradient id="brass" x1="0" y1="0" x2="1" y2="1" stops="0:#FFF1B8, 0.30:#D2A747, 0.65:#7A4B16, 1:#F4D77A" />
+      <LinearGradient id="title_gold" x1="0" y1="0" x2="1" y2="0" stops="0:#FFE7A3, 0.32:#FFFFFF, 0.70:#D2A747, 1:#9EEBFF" />
+    </Defs>
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="20s" out="hold">
+          <Layer>
+      <Rect x="0" y="0" width="1920" height="1080" fill="url(#space_bg)" />
+      <Repeat id="stars" count="72" x="40" y="40" xStep="26" yStep="18" opacity="0.55" opacityStep="-0.003">
+<Circle x="random(-5,5,floor($time.sec*3)+13)" y="random(-4,4,floor($time.sec*3)+29)" radius="1.8" fill="url(#star)" opacity="0.58" blend="screen" />
+</Repeat>
+
+      <Group id="shot_gears" opacity={curve("0:1:ease_out, 3.5:1:linear, 4.2:0:ease_in_out, 20:0:linear")}>
+        <Group x="500" y="560" rotation={curve("0:0:linear, 4:120:linear")} opacity="0.78">
+<Circle x="0" y="0" radius="220" fill="url(#gold_glow)" opacity="0.28" blend="screen" />
+<Circle x="0" y="0" radius="150" stroke="#D2A747" strokeWidth="8" fill="#00000000" />
+<Repeat id="gear_a" count="18" rotationStep="20">
+<Rect x="142" y="-12" width="70" height="24" fill="url(#brass)" opacity="0.72" />
+</Repeat>
+<Circle x="0" y="0" radius="64" stroke="#FFE7A3" strokeWidth="5" fill="#00000000" />
+</Group>
+        <Group x="1230" y="480" rotation={curve("0:0:linear, 4:-160:linear")} opacity="0.70">
+<Circle x="0" y="0" radius="180" stroke="#D2A747" strokeWidth="7" fill="#00000000" />
+<Repeat id="gear_b" count="16" rotationStep="22.5">
+<Rect x="114" y="-10" width="58" height="20" fill="url(#brass)" opacity="0.66" />
+</Repeat>
+<Circle x="0" y="0" radius="48" stroke="#FFE7A3" strokeWidth="4" fill="#00000000" />
+</Group>
+        <Text value="BRASS WAKE" x="76" y="82" font="mono" fontSize="20" color="#FFE7A3" opacity="0.76" />
+      </Group>
+
+      <Group id="shot_orrery" opacity={curve("3.5:0:ease_in_out, 4.2:1:ease_out, 7.5:1:linear, 8.2:0:ease_in_out, 20:0:linear")}>
+        <Circle x="960" y="540" radius="360" stroke="#FFE7A355" strokeWidth="2" fill="#00000000" />
+<Circle x="960" y="540" radius="250" stroke="#9EEBFF55" strokeWidth="2" fill="#00000000" />
+<Circle x="960" y="540" radius="140" stroke="#FFFFFF33" strokeWidth="1" fill="#00000000" />
+        <Group x="960" y="540" rotation={curve("4:0:linear, 8:240:linear")}>
+<Circle x="360" y="0" radius="34" fill="url(#gold_glow)" opacity="0.88" blend="screen" />
+<Circle x="250" y="0" radius="24" fill="url(#blue_core)" opacity="0.80" blend="screen" />
+<Circle x="140" y="0" radius="16" color="#FFFFFF" opacity="0.80" />
+</Group>
+        <Circle x="960" y="540" radius="80" fill="url(#gold_glow)" opacity="0.72" blend="screen" />
+        <Text value="ORRERY" x="76" y="82" font="mono" fontSize="20" color="#9EEBFF" opacity="0.76" />
+      </Group>
+
+      <Group id="shot_clock" opacity={curve("7.5:0:ease_in_out, 8.2:1:ease_out, 11.5:1:linear, 12.2:0:ease_in_out, 20:0:linear")}>
+        <Circle x="960" y="540" radius="320" stroke="#D2A747" strokeWidth="4" fill="#00000000" opacity="0.72" />
+<Circle x="960" y="540" radius="250" stroke="#FFE7A355" strokeWidth="1.5" fill="#00000000" />
+        <Repeat id="ticks" count="60" x="960" y="540" rotationStep="6">
+<Line x1="0" y1="-310" x2="0" y2="-286" stroke="#FFE7A3" strokeWidth="2" opacity="0.56" />
+</Repeat>
+        <Line x1="960" y1="540" x2="960" y2="300" stroke="#FFFFFF" strokeWidth="8" opacity="0.82" rotation={curve("8:0:linear, 12:720:linear")} transformOriginX="960" transformOriginY="540" />
+        <Line x1="960" y1="540" x2="1160" y2="540" stroke="#D2A747" strokeWidth="5" opacity="0.78" rotation={curve("8:0:linear, 12:180:linear")} transformOriginX="960" transformOriginY="540" />
+        <Circle x="960" y="540" radius="32" fill="url(#gold_glow)" opacity="0.90" blend="screen" />
+        <Text value="STAR CLOCK" x="76" y="82" font="mono" fontSize="20" color="#FFE7A3" opacity="0.76" />
+      </Group>
+
+      <Group id="shot_eclipse" opacity={curve("11.5:0:ease_in_out, 12.2:1:ease_out, 15.5:1:linear, 16.2:0:ease_in_out, 20:0:linear")}>
+        <Circle x="960" y="540" radius={curve("12:180:ease_out, 14:280:ease_in_out, 16:220:ease_in")} fill="url(#blue_core)" opacity="0.64" blend="screen" />
+        <Circle x="960" y="540" radius={curve("12:60:ease_out, 14:150:ease_in_out, 16:120:ease_in")} color="#020205" opacity="0.88" />
+        <Repeat id="shutters" count="12" x="960" y="540" rotationStep="30">
+<Rect x="120" y="-10" width={curve("12:80:linear, 14:250:ease_in_out, 16:160:ease_in")} height="20" fill="url(#brass)" opacity="0.60" />
+</Repeat>
+        <Text value="ECLIPSE ENGINE" x="76" y="82" font="mono" fontSize="20" color="#9EEBFF" opacity="0.76" />
+      </Group>
+
+      <Group id="shot_final" opacity={curve("15.5:0:ease_in_out, 16.2:1:ease_out, 20:1:linear")}>
+        <Circle x="960" y="540" radius={curve("16:80:linear, 18:360:ease_out, 20:480:ease_in")} fill="url(#gold_glow)" opacity="0.38" blend="screen" />
+        <Repeat id="final_rings" count="24" x="960" y="540" rotationStep="15">
+<Line x1={curve("16:80:linear, 18:180:ease_out, 20:240:linear")} y1="0" x2={curve("16:140:linear, 18:520:ease_out, 20:620:linear")} y2="0" stroke="#FFE7A3" strokeWidth="2" opacity="0.45" blend="screen" />
+</Repeat>
+        <Text value="CLOCKWORK" x="center" y="512" font="display" fontSize="176" renderScale="4x" fill="url(#title_gold)" opacity={curve("16.8:0:linear, 18:0.96:ease_out, 20:0.96:linear")} />
+        <Text value="UNIVERSE" x="center" y="638" font="display" fontSize="82" renderScale="4x" color="#9EEBFF" opacity={curve("17.4:0:linear, 18.4:0.88:ease_out, 20:0.88:linear")} />
+      </Group>
+
+      <Rect x="0" y="0" width="1920" height="1080" color="#FFFFFF" opacity={curve("3.8:0:linear, 4.0:0.13:ease_out, 4.3:0:ease_in, 7.8:0:linear, 8.0:0.13:ease_out, 8.3:0:ease_in, 11.8:0:linear, 12.0:0.13:ease_out, 12.3:0:ease_in, 15.8:0:linear, 16.0:0.13:ease_out, 16.3:0:ease_in, 20:0:linear")} blend="screen" />
+      <Rect x="0" y="0" width="1920" height="1080" color="#000000" opacity="0.10" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Process id="clockwork_post">
+    <Tex id="src" fmt="rgba16f" from="scene:clockwork_universe_20s" />
+    <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="post_bloom" kind="compute" effect="bloom" in={["src"]} out={["out"]} params={{ threshold: "0.18", intensity: "1.85", sigma: "16.0" }} />
+  </Process>
+  <Present from="clockwork_post" />
+</Graph>

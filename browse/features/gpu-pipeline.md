@@ -3,6 +3,7 @@
 | ID | Type | Domain | Title | Features | Teaches |
 |---|---|---|---|---|---|
 | [s-000005](../../showcase/s-000005/) | showcase | scene | ANICA Core Overload Reactor Explosion 10s | scene, process, bloom, glow, gradient | Create a high-energy logo reactor explosion with scene layers and post passes.<br>Chain hsla_overlay, glow_bloom, and gaussian blur in a GPU process pipeline. |
+| [s-000010](../../showcase/s-000010/) | showcase | scene | Solar Eclipse Corona 7s | scene, process, bloom, glow, gradient | Build a dramatic total solar eclipse with corona rays, solar flares, and diamond ring effect.<br>Chain hsla_overlay, glow_bloom, and gaussian blur in a GPU process pipeline for cinematic totality. |
 | [cp-000002](../../core/process/cp-000002/) | core | process | Process Bloom Alias | process, gpu-pipeline, bloom, glow | Use effect="bloom" as a Process post-pass alias for layer FX.<br>Feed the selected layer into Process with Input from="input:clip0". |
 | [cp-000003](../../core/process/cp-000003/) | core | process | Process Glow Alias | process, gpu-pipeline, bloom, glow | Use effect="glow" as a readable alias for Process bloom in layer FX.<br>Keep one alias per Pass so examples are searchable and unambiguous. |
 | [cp-000004](../../core/process/cp-000004/) | core | process | Process Glow Bloom Alias | process, gpu-pipeline, bloom, glow | Use effect="glow_bloom" as the explicit compatibility alias for bloom/glow in layer FX.<br>Keep alias examples split because one Pass has exactly one effect value. |

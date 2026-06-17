@@ -159,7 +159,7 @@
                 <Circle x={curve("0:0:linear, 1.5:0:ease_out, 3:50:ease_out, 6:55:linear")} y="0" radius={curve("0:0:linear, 2:0:ease_out, 3:5:ease_out, 6:6:linear")} fill="#ffe8b8" opacity={curve("0:0:linear, 2:0.90:ease_out, 5:0.90:linear, 6:0.70:ease_in")} />
               </Repeat>
 
-              <Circle x="0" y="0" radius={curve("0:8:ease_out, 1.5:24:ease_out, 4:32:ease_in_out, 6:30:ease_in")} fill="#fff8e8" opacity={curve("0:0:50:linear, 1:0.95:ease_out, 5:0.95:linear, 6:0.85:ease_in")} />
+              <Circle x="0" y="0" radius={curve("0:8:ease_out, 1.5:24:ease_out, 4:32:ease_in_out, 6:30:ease_in")} fill="#fff8e8" opacity={curve("0:0.50:linear, 1:0.95:ease_out, 5:0.95:linear, 6:0.85:ease_in")} />
               <Circle x="0" y="0" radius={curve("0:4:ease_out, 1.5:14:ease_out, 4:18:ease_in_out, 6:16:ease_in")} fill="#ffcc66" opacity="0.90" />
             </Group>
           </Layer>
