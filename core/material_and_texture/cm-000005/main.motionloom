@@ -1,0 +1,69 @@
+<Graph fps={30} duration="4s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#C7481E" />
+
+  <Scene id="orange_painted_canvas_source">
+    <Defs>
+      <Texture id="paint_grain" kind="brushed_paint" scale="64" strength="0.42" contrast="1.05" seed="505" brushAngle="-10" bumpStrength="0.95" relief="0.85" />
+      <RadialGradient id="paint_base" cx="0.50" cy="0.46" r="0.92"
+                      stops="0:#E96B2F, 0.34:#D95424, 0.68:#B63A18, 1:#7C210E" />
+      <LinearGradient id="warm_streak" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#FFFFFF00, 0.26:#FFB06A24, 0.52:#FF8A3D18, 0.78:#4B120A22, 1:#FFFFFF00" />
+      <LinearGradient id="dry_brush" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#00000000, 0.32:#24080433, 0.48:#FFFFFF1F, 0.68:#24080422, 1:#00000000" />
+      <LinearGradient id="ink_grain" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#050505, 0.42:#1A1A18, 0.74:#070707, 1:#2A2A26" />
+      <RadialGradient id="edge_vignette" cx="0.50" cy="0.50" r="0.86"
+                      stops="0:#00000000, 0.70:#00000012, 1:#00000055" />
+    </Defs>
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#paint_base)" texture="paint_grain" textureOpacity="0.34" />
+
+            <Repeat id="broad_paint_strokes" count="34" x="-120" y="52" yStep="32" opacity="0.42" opacityStep="-0.004">
+              <Rect x="0" y="0" width="2160" height="18" fill="url(#warm_streak)" opacity="0.34" rotation="-1.8" />
+            </Repeat>
+
+            <Repeat id="dry_brush_marks" count="44" x="-80" y="24" yStep="24" opacity="0.36" opacityStep="-0.003">
+              <Rect x="0" y="0" width="2080" height="5" fill="url(#dry_brush)" opacity="0.28" rotation="1.2" />
+            </Repeat>
+
+            <Repeat id="vertical_canvas_threads" count="52" x="24" y="0" xStep="37" opacity="0.20" opacityStep="-0.001">
+              <Line x1="0" y1="0" x2="0" y2="1080" stroke="#FFE0B022" strokeWidth="2" />
+              <Line x1="4" y1="0" x2="4" y2="1080" stroke="#4C110A24" strokeWidth="2" />
+            </Repeat>
+
+            <Repeat id="paint_pits" count="75" x="80" y="80" xStep="26" yStep="19" opacity="0.22" opacityStep="-0.002">
+              <Circle x="0" y="0" radius="3" color="#3A0D07" opacity="0.20" />
+            </Repeat>
+
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#edge_vignette)" />
+
+            <Group id="printed_title" x="450" y="460" opacity="0.94">
+              <Text value="TEXTURING" x="0" y="0" fontFamily="Arial" fontWeight="900" fontSize="190" renderScale="4x" fill="url(#ink_grain)" />
+              <Text value="TEXTURING" x="4" y="5" fontFamily="Arial" fontWeight="900" fontSize="190" renderScale="4x" color="#000000" opacity="0.24" />
+            </Group>
+
+            <Group id="ink_scuffs" x="960" y="600" opacity="0.22">
+              <Repeat id="letter_scratches" count="26" x="-560" y="-130" yStep="10" opacity="0.42" opacityStep="-0.006">
+                <Rect x="0" y="0" width="1120" height="3" color="#D25A25" opacity="0.18" rotation="-1.4" />
+              </Repeat>
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="paint_post">
+    <Tex id="src" fmt="rgba16f" from="scene:orange_painted_canvas_source" />
+    <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="post_painted_texture" kind="compute" effect="texture_overlay"
+          in={["src"]} out={["out"]}
+          params={{ kind: "brushed_paint", scale: "64.0", strength: "0.42", contrast: "1.05", seed: "505.0", brush_angle: "-10.0", bump_strength: "0.95", relief: "0.85" }} />
+  </Process>
+
+  <Present from="paint_post" />
+</Graph>

@@ -1,0 +1,21 @@
+<Graph fps={30} duration="3s" size={[960,540]} renderSize={[960,540]}>
+  <Background color="#F7F0FF" />
+
+  <Scene id="soft_pastel_rounded">
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="960" height="540" color="#F7F0FF" />
+            <Circle x="260" y="260" radius="170" color="#FFD6E8" opacity="0.50" />
+            <Circle x="690" y="280" radius="140" color="#B8FFF4" opacity="0.60" />
+            <Text value="SOFT TYPE" x="center" y="287" fontFamily="Arial Rounded MT Bold" fontSize="72" fontWeight="700" textGap="1" color="#FFFFFF" />
+            <Text value="SOFT TYPE" x="center" y="278" fontFamily="Arial Rounded MT Bold" fontSize="72" fontWeight="700" textGap="1" color="#8E6BFF" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="soft_pastel_rounded" />
+</Graph>

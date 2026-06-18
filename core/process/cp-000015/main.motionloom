@@ -1,0 +1,19 @@
+<Graph fps={30} size={[1920,1080]}>
+  <Process id="layer_fx">
+    <Input id="clip0" type="video" from="input:clip0" />
+    <Tex id="src" fmt="rgba16f" from="clip0" />
+    <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="fx_texture_overlay" kind="compute"
+          effect="texture_overlay"
+          in={["src"]} out={["out"]}
+          params={{
+            kind: "paper",
+            scale: "48.0",
+            strength: "0.32",
+            contrast: "0.70",
+            seed: "11.0"
+          }} />
+  </Process>
+
+  <Present from="layer_fx" />
+</Graph>

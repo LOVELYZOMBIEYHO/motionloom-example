@@ -1,0 +1,47 @@
+<Graph fps={30} duration="4s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#C9B58A" />
+
+  <Scene id="recycled_fiber_paper_source">
+    <Defs>
+      <Texture id="recycled_fiber" kind="paper" scale="38" strength="0.38" contrast="0.82" seed="202" />
+      <RadialGradient id="warm_pulp" cx="0.48" cy="0.42" r="0.86"
+                      stops="0:#E9D8AC, 0.45:#C8AD76, 0.78:#9F7B48, 1:#6D4B2C" />
+      <LinearGradient id="fiber_line" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#FFFFFF00, 0.42:#FFF4CE44, 0.58:#5B3B1D33, 1:#FFFFFF00" />
+      <RadialGradient id="pulp_stain" cx="0.50" cy="0.50" r="0.55"
+                      stops="0:#5A351E36, 0.54:#5A351E12, 1:#5A351E00" />
+    </Defs>
+
+    <Timeline>
+      <Track id="paper" space="world" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#warm_pulp)" texture="recycled_fiber" textureOpacity="0.38" />
+            <Repeat id="long_fibers" count="42" x="-80" y="80" yStep="23" opacity="0.58" opacityStep="-0.006">
+              <Rect x="0" y="0" width="2180" height="3" fill="url(#fiber_line)" opacity="0.22" rotation="-1.2 + 2.4*(0.5 + 0.5*sin($time.sec*0.0))" />
+            </Repeat>
+            <Repeat id="short_flecks" count="95" x="80" y="60" xStep="38" yStep="17" opacity="0.45" opacityStep="-0.003">
+              <Rect x="0" y="0" width="24" height="2" color="#3F2A18" opacity="0.16" rotation="-18" />
+            </Repeat>
+            <Circle x="380" y="300" radius="270" fill="url(#pulp_stain)" opacity="0.34" />
+            <Circle x="1480" y="760" radius="360" fill="url(#pulp_stain)" opacity="0.26" />
+
+            <Rect x="260" y="220" width="1400" height="640" radius="34" color="#F2DDAA" opacity="0.18" />
+            <Text value="RECYCLED PAPER" x="960" y="460" fontFamily="Georgia" fontWeight="900" fontSize="124" renderScale="4x" color="#4F321D" opacity="0.78" />
+            <Text value="fibers + pulp variation + procedural overlay" x="960" y="558" fontFamily="Arial" fontSize="42" renderScale="4x" color="#5A3B22" opacity="0.72" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="fiber_post">
+    <Tex id="src" fmt="rgba16f" from="scene:recycled_fiber_paper_source" />
+    <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="post_fiber_texture" kind="compute" effect="texture_overlay"
+          in={["src"]} out={["out"]}
+          params={{ kind: "paper", scale: "38.0", strength: "0.34", contrast: "0.86", seed: "202.0" }} />
+  </Process>
+
+  <Present from="fiber_post" />
+</Graph>

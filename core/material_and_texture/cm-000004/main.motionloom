@@ -1,0 +1,81 @@
+<Graph fps={30} duration="4s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#2E1AD8" />
+
+  <Scene id="violet_halftone_mesh_source">
+    <Defs>
+      <Texture id="ink_mesh" kind="paper" scale="132" strength="0.24" contrast="0.88" seed="404" />
+      <RadialGradient id="violet_base" cx="0.46" cy="0.42" r="0.88"
+                      stops="0:#6B55FF, 0.34:#4E35E8, 0.70:#2E1AD8, 1:#170A82" />
+      <RadialGradient id="dot_light" cx="0.50" cy="0.50" r="0.50"
+                      stops="0:#C7BCFFFF, 0.48:#A99CFFBB, 0.76:#6D5AFB44, 1:#6D5AFB00" />
+      <RadialGradient id="dot_dark" cx="0.50" cy="0.50" r="0.50"
+                      stops="0:#0B043B88, 0.54:#16097355, 1:#16097300" />
+      <LinearGradient id="ink_fill" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#F4F2E7, 0.45:#D8D4C5, 1:#EEEBDD" />
+      <LinearGradient id="ink_shadow" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#00000000, 0.40:#1B0A7748, 1:#07002580" />
+      <LinearGradient id="print_scrape" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#FFFFFF00, 0.45:#FFFFFF44, 0.55:#2B236644, 1:#FFFFFF00" />
+    </Defs>
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#violet_base)" texture="ink_mesh" textureOpacity="0.24" />
+
+            <Group id="mesh_field_a" x="-40" y="-28" rotation="-6" opacity="0.82">
+              <Repeat id="mesh_rows_a" count="42" x="0" y="0" yStep="28" opacity="0.88" opacityStep="-0.002">
+                <Repeat id="mesh_dots_a" count="78" x="0" y="0" xStep="28" opacity="0.88" opacityStep="-0.002">
+                  <Circle x="0" y="0" radius="8" fill="url(#dot_light)" opacity="0.72" />
+                  <Circle x="0" y="0" radius="4" fill="url(#dot_dark)" opacity="0.42" />
+                </Repeat>
+              </Repeat>
+            </Group>
+
+            <Group id="mesh_field_b" x="-18" y="-8" rotation="-6" opacity="0.34">
+              <Repeat id="mesh_rows_b" count="42" x="0" y="0" yStep="28" opacity="0.52" opacityStep="-0.001">
+                <Repeat id="mesh_dots_b" count="78" x="0" y="0" xStep="28" opacity="0.52" opacityStep="-0.001">
+                  <Circle x="0" y="0" radius="5" color="#16097A" opacity="0.58" />
+                </Repeat>
+              </Repeat>
+            </Group>
+
+            <Group id="printed_letters" x="210" y="245" rotation="-3" opacity="0.96">
+              <Text value="texture" x="0" y="420" fontFamily="Arial" fontWeight="900" fontSize="360" renderScale="4x" fill="url(#ink_fill)" />
+              <Text value="texture" x="14" y="438" fontFamily="Arial" fontWeight="900" fontSize="360" renderScale="4x" fill="url(#ink_shadow)" opacity="0.54" />
+            </Group>
+
+            <Group id="edge_print_dots" x="262" y="227" rotation="-3" opacity="0.78">
+              <Repeat id="edge_top" count="42" x="0" y="0" xStep="18" opacity="0.82" opacityStep="-0.004">
+                <Circle x="0" y="0" radius="4" color="#1C0B8B" opacity="0.84" />
+              </Repeat>
+              <Repeat id="edge_left" count="24" x="0" y="0" yStep="18" opacity="0.72" opacityStep="-0.006">
+                <Circle x="0" y="0" radius="3.6" color="#1C0B8B" opacity="0.84" />
+              </Repeat>
+              <Repeat id="edge_lower" count="54" x="120" y="330" xStep="18" opacity="0.74" opacityStep="-0.004">
+                <Circle x="0" y="0" radius="3.5" color="#1C0B8B" opacity="0.74" />
+              </Repeat>
+            </Group>
+
+            <Group id="scratches" opacity="0.32">
+              <Repeat id="scrape_lines" count="20" x="180" y="180" yStep="42" opacity="0.38" opacityStep="-0.006">
+                <Rect x="0" y="0" width="1560" height="4" fill="url(#print_scrape)" opacity="0.30" rotation="-3" />
+              </Repeat>
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="mesh_post">
+    <Tex id="src" fmt="rgba16f" from="scene:violet_halftone_mesh_source" />
+    <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="post_mesh_texture" kind="compute" effect="texture_overlay"
+          in={["src"]} out={["out"]}
+          params={{ kind: "paper", scale: "132.0", strength: "0.22", contrast: "0.90", seed: "404.0" }} />
+  </Process>
+
+  <Present from="mesh_post" />
+</Graph>

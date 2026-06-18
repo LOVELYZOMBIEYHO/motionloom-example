@@ -1,0 +1,13 @@
+{
+  "id": "cm-000005",
+  "type": "core",
+  "title": "Orange Painted Canvas Texture",
+  "domain": "material_and_texture",
+  "features": ["material", "texture-overlay", "paper-texture", "brushed-paint", "gradient", "text"],
+  "dsl": ["Graph", "Scene", "Defs", "Texture", "Process", "Tex", "Pass", "Present", "texture_overlay"],
+  "teaches": ["Simulate painted canvas with layered gradients and procedural brushed-paint texture.", "Use repeated translucent strokes to suggest brush and fabric grain."],
+  "source_path": "generated/material_and_texture/orange_painted_canvas_texture",
+  "demo_url": "",
+  "related": ["cm-000004"],
+  "requires": ["Graph", "Scene", "Process", "Tex", "Pass", "Present"]
+}

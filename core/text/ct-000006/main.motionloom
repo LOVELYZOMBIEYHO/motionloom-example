@@ -1,0 +1,22 @@
+<Graph fps={30} duration="3s" size={[960,540]} renderSize={[960,540]}>
+  <Background color="#020805" />
+
+  <Scene id="terminal_hacker_type">
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="960" height="540" color="#020805" />
+            <Repeat id="terminal_lines" count="9" x="120" y="126" yStep="32" opacity="0.42" opacityStep="-0.02">
+              <Line x1="0" y1="0" x2="720" y2="0" stroke="#123F20" strokeWidth="2" opacity="0.36" />
+            </Repeat>
+            <Text value="> ACCESS OK" x="170" y="286" fontFamily="Courier New" fontSize="66" fontWeight="700" textGap="2" color="#6DFF8A" />
+            <Rect x="675" y="238" width="22" height="70" color="#6DFF8A" opacity="0.5 + 0.5*sin($time.sec*8)" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="terminal_hacker_type" />
+</Graph>

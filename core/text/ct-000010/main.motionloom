@@ -1,0 +1,23 @@
+<Graph fps={30} duration="3s" size={[960,540]} renderSize={[960,540]}>
+  <Background color="#050A18" />
+
+  <Scene id="cyber_gradient_label">
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="960" height="540" color="#050A18" />
+            <Repeat id="grid" count="12" x="120" y="130" yStep="24" opacity="0.30" opacityStep="-0.006">
+              <Line x1="0" y1="0" x2="720" y2="0" stroke="#1B4C74" strokeWidth="1" />
+            </Repeat>
+            <Rect x="180" y="206" width="600" height="128" radius="10" color="#071A34" stroke="#B66CFF" strokeWidth="3" />
+            <Text value="CYBER GRID" x="center" y="297" fontFamily="Arial Black" fontSize="78" fontWeight="900" textGap="-1" color="#2C577A" />
+            <Text value="CYBER GRID" x="center" y="286" fontFamily="Arial Black" fontSize="78" fontWeight="900" textGap="-1" color="#91F8FF" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="cyber_gradient_label" />
+</Graph>

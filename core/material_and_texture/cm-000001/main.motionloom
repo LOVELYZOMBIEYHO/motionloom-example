@@ -1,0 +1,52 @@
+<Graph fps={30} duration="4s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#E9E9E4" />
+
+  <Scene id="archival_note_texture_source">
+    <Defs>
+      <Texture id="paper_fiber" kind="paper" scale="72" strength="0.22" contrast="0.62" seed="101" />
+      <LinearGradient id="paper_base" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#F9F9F5, 0.42:#ECECE7, 0.74:#F6F6F0, 1:#D8D8D2" />
+      <LinearGradient id="soft_shadow" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#00000018, 0.35:#00000006, 1:#00000022" />
+      <LinearGradient id="marker_yellow" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#FFF36A00, 0.10:#FFF36ABB, 0.88:#FFF36AC8, 1:#FFF36A00" />
+    </Defs>
+
+    <Timeline>
+      <Track id="paper" space="world" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#paper_base)" texture="paper_fiber" textureOpacity="0.22" />
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#soft_shadow)" opacity="0.48" />
+            <Rect x="0" y="0" width="1920" height="1080" color="#FFFFFF" opacity="0.20 + 0.015*sin($time.sec*1.7)" />
+
+            <Group id="archive_notes" x="150" y="130" opacity="0.96">
+              <Text value="The archive page carries a soft cotton finish, with" x="0" y="0" fontFamily="Times New Roman" fontSize="47" renderScale="4x" color="#2A2A28" opacity="0.86" />
+              <Text value="tiny fibers drifting under the ink like quiet static." x="0" y="62" fontFamily="Times New Roman" fontSize="47" renderScale="4x" color="#2A2A28" opacity="0.84" />
+              <Text value="Each paragraph is intentionally fictional and neutral," x="0" y="124" fontFamily="Times New Roman" fontSize="47" renderScale="4x" color="#2A2A28" opacity="0.84" />
+              <Text value="created only to demonstrate paper material behavior." x="0" y="186" fontFamily="Times New Roman" fontSize="47" renderScale="4x" color="#2A2A28" opacity="0.84" />
+
+              <Rect x="-8" y="296" width="730" height="58" radius="4" fill="url(#marker_yellow)" opacity="0.76" />
+              <Text value="A warm marker pass catches the eye." x="0" y="292" fontFamily="Times New Roman" fontSize="47" renderScale="4x" color="#22221F" opacity="0.92" />
+              <Text value="The surface stays dry, matte, and slightly uneven," x="700" y="292" fontFamily="Times New Roman" fontSize="47" renderScale="4x" color="#2A2A28" opacity="0.84" />
+              <Text value="with fully original words and no source quotation." x="0" y="354" fontFamily="Times New Roman" fontSize="47" renderScale="4x" color="#2A2A28" opacity="0.84" />
+
+              <Text value="Fine grain, low contrast shadows, and pale ink" x="0" y="486" fontFamily="Times New Roman" fontSize="47" renderScale="4x" color="#2A2A28" opacity="0.78" />
+              <Text value="turn a flat rectangle into believable stationery." x="0" y="548" fontFamily="Times New Roman" fontSize="47" renderScale="4x" color="#2A2A28" opacity="0.78" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="paper_post">
+    <Tex id="src" fmt="rgba16f" from="scene:archival_note_texture_source" />
+    <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="post_paper_texture" kind="compute" effect="texture_overlay"
+          in={["src"]} out={["out"]}
+          params={{ kind: "paper", scale: "86.0", strength: "0.24", contrast: "0.58", seed: "101.0" }} />
+  </Process>
+
+  <Present from="paper_post" />
+</Graph>

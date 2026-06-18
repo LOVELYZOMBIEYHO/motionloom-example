@@ -1,0 +1,20 @@
+<Graph fps={30} duration="3s" size={[960,540]} renderSize={[960,540]}>
+  <Background color="#141018" />
+
+  <Scene id="brush_script_accent">
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="960" height="540" color="#141018" />
+            <Rect x="190" y="232" width="580" height="10" radius="5" color="#7E3A77" opacity="0.65" />
+            <Text value="Hand Made" x="center" y="315" fontFamily="Brush Script MT" fontSize="108" fontWeight="500" color="#5C254E" opacity="0.65" />
+            <Text value="Hand Made" x="center" y="300" fontFamily="Brush Script MT" fontSize="108" fontWeight="500" color="#FFB3DE" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="brush_script_accent" />
+</Graph>

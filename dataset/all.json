@@ -1,13 +1,13 @@
 {
-  "example_count": 77,
-  "core_count": 59,
-  "showcase_count": 18,
+  "example_count": 94,
+  "core_count": 70,
+  "showcase_count": 24,
   "domain_counts": {
-    "scene": 55,
+    "scene": 61,
     "world": 6,
-    "process": 14,
+    "process": 15,
     "composition": 1,
-    "text": 1
+    "text": 11
   },
   "id_prefixes": {
     "scene": "cs",
@@ -1206,7 +1206,7 @@
     {
       "id": "s-000001",
       "type": "showcase",
-      "title": "ANICA Cyberpunk Promo 20s",
+      "title": "ANICA Cyberpunk City Reveal 7s",
       "domain": "scene",
       "features": [
         "scene",
@@ -1214,12 +1214,15 @@
         "glow",
         "gradient",
         "logo-motion",
-        "curve-animation"
+        "curve-animation",
+        "layout",
+        "repeat"
       ],
       "dsl": [
         "Graph",
         "Background",
         "Scene",
+        "Defs",
         "Timeline",
         "Track",
         "Sequence",
@@ -1227,20 +1230,24 @@
         "Group",
         "Rect",
         "Circle",
+        "Path",
         "Text",
         "Line",
+        "Repeat",
         "LinearGradient",
         "RadialGradient",
         "Present"
       ],
       "teaches": [
-        "Build a long-form cyberpunk promo with layered scene graphics.",
-        "Use text, gradients, glows, and timed tracks for landing-page style motion."
+        "Build a poster-like cyberpunk city reveal using only MotionLoom scene primitives.",
+        "Layer perspective skyscrapers, billboards, fog, rain, debris, and a foreground silhouette.",
+        "Use gradients, repeats, and slow camera motion for a cinematic 7-second loop."
       ],
       "source_path": "showcase/s-000001",
       "demo_url": "",
       "related": [
-        "s-000005"
+        "s-000005",
+        "s-000016"
       ],
       "requires": [
         "Graph",
@@ -2167,6 +2174,275 @@
       "path": "showcase/s-000018/"
     },
     {
+      "id": "s-000019",
+      "type": "showcase",
+      "title": "Audio Spectrum",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "audio-reactive",
+        "random-animation",
+        "gradient",
+        "repeat",
+        "rect",
+        "text",
+        "curve-animation"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Rect",
+        "Circle",
+        "Line",
+        "Text",
+        "Repeat",
+        "LinearGradient",
+        "RadialGradient",
+        "Present"
+      ],
+      "teaches": [
+        "Build a stylized audio spectrum using deterministic random motion to mimic frequency activity.",
+        "Use repeated bar groups, gradients, reflection shapes, text overlays, and frame-seeded random animation."
+      ],
+      "source_path": "showcase/s-000019",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Present"
+      ],
+      "path": "showcase/s-000019/"
+    },
+    {
+      "id": "s-000020",
+      "type": "showcase",
+      "title": "Business Bar Chart Animated",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "component",
+        "defs",
+        "gradient",
+        "rect",
+        "text",
+        "line",
+        "curve-animation"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Rect",
+        "Line",
+        "Text",
+        "LinearGradient",
+        "Present"
+      ],
+      "teaches": [
+        "Create a polished business bar chart with reusable gradients and animated values.",
+        "Use Defs, grid lines, grouped bars, labels, and curve-driven bar growth."
+      ],
+      "source_path": "showcase/s-000020",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Present"
+      ],
+      "path": "showcase/s-000020/"
+    },
+    {
+      "id": "s-000021",
+      "type": "showcase",
+      "title": "Card Animation Layout",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "component",
+        "layout",
+        "rect",
+        "circle",
+        "text",
+        "group",
+        "curve-animation"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Rect",
+        "Circle",
+        "Text",
+        "Present"
+      ],
+      "teaches": [
+        "Animate a field of floating content cards with staggered opacity and layout variation.",
+        "Use grouped card components with text, circles, rounded rectangles, shadows, and simple time expressions."
+      ],
+      "source_path": "showcase/s-000021",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Present"
+      ],
+      "path": "showcase/s-000021/"
+    },
+    {
+      "id": "s-000022",
+      "type": "showcase",
+      "title": "Animated Path And Polyline",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "path",
+        "polyline",
+        "line",
+        "circle",
+        "text",
+        "curve-animation"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Polyline",
+        "Path",
+        "Circle",
+        "Present"
+      ],
+      "teaches": [
+        "Compare animated Polyline and Path strokes in one compact scene.",
+        "Use trimStart/trimEnd, smoothstep expressions, labels, and endpoint markers."
+      ],
+      "source_path": "showcase/s-000022",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Present"
+      ],
+      "path": "showcase/s-000022/"
+    },
+    {
+      "id": "s-000023",
+      "type": "showcase",
+      "title": "Ease In Out Bezier Curve Demo",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "curve",
+        "curve-animation",
+        "line",
+        "text"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Line",
+        "curve",
+        "Present"
+      ],
+      "teaches": [
+        "Compare named ease_in_out animation against a custom cubic Bezier easing curve.",
+        "Use curve(...) keyframes on line endpoints to visualize timing differences."
+      ],
+      "source_path": "showcase/s-000023",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Present"
+      ],
+      "path": "showcase/s-000023/"
+    },
+    {
+      "id": "s-000024",
+      "type": "showcase",
+      "title": "Green Screen Subscribe Animation 5s",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "color",
+        "text",
+        "shape",
+        "path",
+        "rect",
+        "circle",
+        "curve-animation",
+        "transition"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Rect",
+        "Circle",
+        "Path",
+        "Text",
+        "LinearGradient",
+        "RadialGradient",
+        "Present"
+      ],
+      "teaches": [
+        "Build a green-screen subscribe animation with only MotionLoom scene primitives.",
+        "Sequence cursor clicks, like activation, subscribe-to-subscribed transition, and bell ring animation using curve timing."
+      ],
+      "source_path": "showcase/s-000024",
+      "demo_url": "",
+      "related": [
+        "s-000004",
+        "s-000020",
+        "s-000023"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Present"
+      ],
+      "path": "showcase/s-000024/"
+    },
+    {
       "id": "cw-000001",
       "type": "core",
       "title": "DSL Action Basic",
@@ -2902,6 +3178,50 @@
       "path": "core/process/cp-000014/"
     },
     {
+      "id": "cp-000015",
+      "type": "core",
+      "title": "Paper Texture Overlay",
+      "domain": "process",
+      "features": [
+        "process",
+        "gpu-pipeline",
+        "texture-overlay",
+        "paper-texture",
+        "layer-fx"
+      ],
+      "dsl": [
+        "Graph",
+        "Scene",
+        "Defs",
+        "Texture",
+        "Process",
+        "Input",
+        "Tex",
+        "Pass",
+        "Present",
+        "texture_overlay"
+      ],
+      "teaches": [
+        "Use effect=\"texture_overlay\" for procedural paper/grain texture.",
+        "Use <Texture /> in <Defs> as the scene-side texture metadata surface."
+      ],
+      "source_path": "generated/process/paper_texture_overlay",
+      "demo_url": "",
+      "related": [
+        "cp-000013",
+        "cp-000014"
+      ],
+      "requires": [
+        "Graph",
+        "Process",
+        "Input",
+        "Tex",
+        "Pass",
+        "Present"
+      ],
+      "path": "core/process/cp-000015/"
+    },
+    {
       "id": "cm-000001",
       "type": "core",
       "title": "Scene World Process Composition Basic",
@@ -2990,6 +3310,501 @@
         "Present"
       ],
       "path": "core/text/ct-000001/"
+    },
+    {
+      "id": "ct-000002",
+      "type": "core",
+      "title": "Neon Mono Glow",
+      "domain": "text",
+      "features": [
+        "text",
+        "text-gap",
+        "color",
+        "layout",
+        "shape"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Rect",
+        "Present",
+        "fontWeight",
+        "textGap"
+      ],
+      "teaches": [
+        "Create a neon mono glow typography treatment.",
+        "Layer duplicate Text nodes to simulate depth, glow, shadow, or emphasis without external assets.",
+        "Use fontFamily, fontWeight, textGap, and simple primitives to build reusable text styles."
+      ],
+      "source_path": "core/text/ct-000002",
+      "demo_url": "",
+      "related": [
+        "ct-000001"
+      ],
+      "requires": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Present"
+      ],
+      "path": "core/text/ct-000002/"
+    },
+    {
+      "id": "ct-000003",
+      "type": "core",
+      "title": "Gold Serif Extrude",
+      "domain": "text",
+      "features": [
+        "text",
+        "text-gap",
+        "color",
+        "layout",
+        "shape"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Rect",
+        "Present",
+        "fontWeight",
+        "textGap"
+      ],
+      "teaches": [
+        "Create a gold serif extrude typography treatment.",
+        "Layer duplicate Text nodes to simulate depth, glow, shadow, or emphasis without external assets.",
+        "Use fontFamily, fontWeight, textGap, and simple primitives to build reusable text styles."
+      ],
+      "source_path": "core/text/ct-000003",
+      "demo_url": "",
+      "related": [
+        "ct-000001"
+      ],
+      "requires": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Present"
+      ],
+      "path": "core/text/ct-000003/"
+    },
+    {
+      "id": "ct-000004",
+      "type": "core",
+      "title": "Condensed Impact Poster",
+      "domain": "text",
+      "features": [
+        "text",
+        "text-gap",
+        "color",
+        "layout",
+        "shape"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Rect",
+        "Present",
+        "fontWeight",
+        "textGap"
+      ],
+      "teaches": [
+        "Create a condensed impact poster typography treatment.",
+        "Layer duplicate Text nodes to simulate depth, glow, shadow, or emphasis without external assets.",
+        "Use fontFamily, fontWeight, textGap, and simple primitives to build reusable text styles."
+      ],
+      "source_path": "core/text/ct-000004",
+      "demo_url": "",
+      "related": [
+        "ct-000001"
+      ],
+      "requires": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Present"
+      ],
+      "path": "core/text/ct-000004/"
+    },
+    {
+      "id": "ct-000005",
+      "type": "core",
+      "title": "Soft Pastel Rounded",
+      "domain": "text",
+      "features": [
+        "text",
+        "text-gap",
+        "color",
+        "layout",
+        "shape"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Rect",
+        "Circle",
+        "Present",
+        "fontWeight",
+        "textGap"
+      ],
+      "teaches": [
+        "Create a soft pastel rounded typography treatment.",
+        "Layer duplicate Text nodes to simulate depth, glow, shadow, or emphasis without external assets.",
+        "Use fontFamily, fontWeight, textGap, and simple primitives to build reusable text styles."
+      ],
+      "source_path": "core/text/ct-000005",
+      "demo_url": "",
+      "related": [
+        "ct-000001"
+      ],
+      "requires": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Present"
+      ],
+      "path": "core/text/ct-000005/"
+    },
+    {
+      "id": "ct-000006",
+      "type": "core",
+      "title": "Terminal Hacker Type",
+      "domain": "text",
+      "features": [
+        "text",
+        "text-gap",
+        "color",
+        "layout",
+        "shape"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Rect",
+        "Line",
+        "Repeat",
+        "Present",
+        "fontWeight",
+        "textGap"
+      ],
+      "teaches": [
+        "Create a terminal hacker type typography treatment.",
+        "Layer duplicate Text nodes to simulate depth, glow, shadow, or emphasis without external assets.",
+        "Use fontFamily, fontWeight, textGap, and simple primitives to build reusable text styles."
+      ],
+      "source_path": "core/text/ct-000006",
+      "demo_url": "",
+      "related": [
+        "ct-000001"
+      ],
+      "requires": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Present"
+      ],
+      "path": "core/text/ct-000006/"
+    },
+    {
+      "id": "ct-000007",
+      "type": "core",
+      "title": "Retro Chrome Stack",
+      "domain": "text",
+      "features": [
+        "text",
+        "text-gap",
+        "color",
+        "layout",
+        "shape"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Rect",
+        "Present",
+        "fontWeight",
+        "textGap"
+      ],
+      "teaches": [
+        "Create a retro chrome stack typography treatment.",
+        "Layer duplicate Text nodes to simulate depth, glow, shadow, or emphasis without external assets.",
+        "Use fontFamily, fontWeight, textGap, and simple primitives to build reusable text styles."
+      ],
+      "source_path": "core/text/ct-000007",
+      "demo_url": "",
+      "related": [
+        "ct-000001"
+      ],
+      "requires": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Present"
+      ],
+      "path": "core/text/ct-000007/"
+    },
+    {
+      "id": "ct-000008",
+      "type": "core",
+      "title": "Brush Script Accent",
+      "domain": "text",
+      "features": [
+        "text",
+        "text-gap",
+        "color",
+        "layout",
+        "shape"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Rect",
+        "Present",
+        "fontWeight"
+      ],
+      "teaches": [
+        "Create a brush script accent typography treatment.",
+        "Layer duplicate Text nodes to simulate depth, glow, shadow, or emphasis without external assets.",
+        "Use fontFamily, fontWeight, textGap, and simple primitives to build reusable text styles."
+      ],
+      "source_path": "core/text/ct-000008",
+      "demo_url": "",
+      "related": [
+        "ct-000001"
+      ],
+      "requires": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Present"
+      ],
+      "path": "core/text/ct-000008/"
+    },
+    {
+      "id": "ct-000009",
+      "type": "core",
+      "title": "Editorial Magazine Serif",
+      "domain": "text",
+      "features": [
+        "text",
+        "text-gap",
+        "color",
+        "layout",
+        "shape"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Rect",
+        "Line",
+        "Present",
+        "fontWeight",
+        "textGap"
+      ],
+      "teaches": [
+        "Create a editorial magazine serif typography treatment.",
+        "Layer duplicate Text nodes to simulate depth, glow, shadow, or emphasis without external assets.",
+        "Use fontFamily, fontWeight, textGap, and simple primitives to build reusable text styles."
+      ],
+      "source_path": "core/text/ct-000009",
+      "demo_url": "",
+      "related": [
+        "ct-000001"
+      ],
+      "requires": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Present"
+      ],
+      "path": "core/text/ct-000009/"
+    },
+    {
+      "id": "ct-000010",
+      "type": "core",
+      "title": "Cyber Gradient Label",
+      "domain": "text",
+      "features": [
+        "text",
+        "text-gap",
+        "color",
+        "layout",
+        "shape"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Rect",
+        "Line",
+        "Repeat",
+        "Present",
+        "fontWeight",
+        "textGap"
+      ],
+      "teaches": [
+        "Create a cyber gradient label typography treatment.",
+        "Layer duplicate Text nodes to simulate depth, glow, shadow, or emphasis without external assets.",
+        "Use fontFamily, fontWeight, textGap, and simple primitives to build reusable text styles."
+      ],
+      "source_path": "core/text/ct-000010",
+      "demo_url": "",
+      "related": [
+        "ct-000001"
+      ],
+      "requires": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Present"
+      ],
+      "path": "core/text/ct-000010/"
+    },
+    {
+      "id": "ct-000011",
+      "type": "core",
+      "title": "Minimal Kinetic Sans",
+      "domain": "text",
+      "features": [
+        "text",
+        "text-gap",
+        "color",
+        "layout",
+        "shape"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Rect",
+        "Present",
+        "fontWeight",
+        "textGap"
+      ],
+      "teaches": [
+        "Create a minimal kinetic sans typography treatment.",
+        "Layer duplicate Text nodes to simulate depth, glow, shadow, or emphasis without external assets.",
+        "Use fontFamily, fontWeight, textGap, and simple primitives to build reusable text styles."
+      ],
+      "source_path": "core/text/ct-000011",
+      "demo_url": "",
+      "related": [
+        "ct-000001"
+      ],
+      "requires": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Present"
+      ],
+      "path": "core/text/ct-000011/"
     }
   ]
 }

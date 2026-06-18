@@ -1,0 +1,20 @@
+<Graph fps={30} duration="3s" size={[960,540]} renderSize={[960,540]}>
+  <Background color="#111111" />
+
+  <Scene id="condensed_impact_poster">
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="960" height="540" color="#111111" />
+            <Rect x="0" y="220" width="960" height="112" color="#FF3B30" />
+            <Text value="IMPACT CUT" x="center" y="319" fontFamily="Impact" fontSize="104" fontWeight="900" textGap="-4" color="#00000066" />
+            <Text value="IMPACT CUT" x="center" y="306" fontFamily="Impact" fontSize="104" fontWeight="900" textGap="-4" color="#FFFFFF" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="condensed_impact_poster" />
+</Graph>

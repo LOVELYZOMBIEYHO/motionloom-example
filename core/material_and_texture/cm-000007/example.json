@@ -1,0 +1,13 @@
+{
+  "id": "cm-000007",
+  "type": "core",
+  "title": "Orange Oil Canvas Texturing",
+  "domain": "material_and_texture",
+  "features": ["material", "external-texture", "height-map", "texture-overlay", "oil-canvas", "typography"],
+  "dsl": ["Graph", "Scene", "Defs", "Texture", "Process", "Tex", "Pass", "Present", "texture_overlay"],
+  "teaches": ["Use a real paper/canvas texture as both image and height input.", "Recreate an orange oil-painted poster surface with black printed typography."],
+  "source_path": "generated/material_and_texture/orange_oil_canvas_texturing",
+  "demo_url": "",
+  "related": ["cm-000005", "cm-000006"],
+  "requires": ["Graph", "Scene", "Defs", "Texture", "Process", "Tex", "Pass", "Present"]
+}

@@ -1,0 +1,21 @@
+<Graph fps={30} duration="3s" size={[960,540]} renderSize={[960,540]}>
+  <Background color="#F8F3E8" />
+
+  <Scene id="editorial_magazine_serif">
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="960" height="540" color="#F8F3E8" />
+            <Line x1="170" y1="182" x2="790" y2="182" stroke="#C28A2E" strokeWidth="4" />
+            <Text value="EDITORIAL" x="center" y="292" fontFamily="Georgia" fontSize="82" fontWeight="700" textGap="2" color="#1F1B16" />
+            <Text value="TYPE STUDY / MOTIONLOOM" x="center" y="342" fontFamily="Arial" fontSize="22" fontWeight="700" textGap="3" color="#C28A2E" />
+            <Line x1="170" y1="366" x2="790" y2="366" stroke="#C28A2E" strokeWidth="4" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="editorial_magazine_serif" />
+</Graph>

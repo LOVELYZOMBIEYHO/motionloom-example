@@ -1,0 +1,53 @@
+<Graph fps={30} duration="4s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#EFEFEC" />
+
+  <Scene id="captured_lab_sheet_source">
+    <Defs>
+      <Texture id="scanner_lines" kind="scanlines" scale="220" strength="0.18" contrast="0.74" seed="303" />
+      <LinearGradient id="scan_paper" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#FFFFFF, 0.38:#EDEDEA, 0.66:#FAFAF8, 1:#DADAD6" />
+      <RadialGradient id="lens_falloff" cx="0.50" cy="0.50" r="0.82"
+                      stops="0:#FFFFFF00, 0.55:#FFFFFF00, 0.82:#00000016, 1:#00000036" />
+      <LinearGradient id="blue_cast" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#D9E9FF22, 0.50:#FFFFFF00, 1:#FFE8D622" />
+    </Defs>
+
+    <Timeline>
+      <Track id="paper" space="world" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#scan_paper)" texture="scanner_lines" textureOpacity="0.18" />
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#blue_cast)" opacity="0.65" />
+            <Repeat id="scanline_field" count="72" x="0" y="6" yStep="15" opacity="0.38" opacityStep="-0.001">
+              <Line x1="0" y1="0" x2="1920" y2="0" stroke="#1E253022" strokeWidth="1" />
+            </Repeat>
+            <Repeat id="vertical_moire" count="34" x="18" y="0" xStep="56" opacity="0.22" opacityStep="-0.002">
+              <Line x1="0" y1="0" x2="0" y2="1080" stroke="#FFFFFF30" strokeWidth="2" />
+            </Repeat>
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#lens_falloff)" />
+
+            <Group id="lab_status_block" x="640" y="130" opacity="0.86">
+              <Text value="$ render material-sheet --profile preview" x="0" y="0" fontFamily="Menlo" fontSize="31" renderScale="4x" color="#313A40" opacity="0.86" />
+              <Text value="✓ Generated neutral test surface" x="0" y="56" fontFamily="Menlo" fontSize="31" renderScale="4x" color="#296B3B" opacity="0.82" />
+              <Text value="✓ Calibrated grain and line response" x="0" y="112" fontFamily="Menlo" fontSize="31" renderScale="4x" color="#296B3B" opacity="0.82" />
+              <Text value="Next: compare scan pass against clean paper" x="0" y="168" fontFamily="Menlo" fontSize="31" renderScale="4x" color="#4F565A" opacity="0.76" />
+            </Group>
+
+            <Circle x="1510" y="535" radius="210" color="#FFFFFF" stroke="#111111" strokeWidth="4" opacity="0.86" />
+            <Text value="SCAN TEST" x="1510" y="560" fontFamily="Arial" fontWeight="900" fontSize="66" renderScale="4x" color="#111111" opacity="0.88" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="moire_post">
+    <Tex id="src" fmt="rgba16f" from="scene:captured_lab_sheet_source" />
+    <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="post_scan_texture" kind="compute" effect="texture_overlay"
+          in={["src"]} out={["out"]}
+          params={{ kind: "scanlines", scale: "220.0", strength: "0.18", contrast: "0.72", seed: "303.0" }} />
+  </Process>
+
+  <Present from="moire_post" />
+</Graph>

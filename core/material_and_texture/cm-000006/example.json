@@ -1,0 +1,13 @@
+{
+  "id": "cm-000006",
+  "type": "core",
+  "title": "External Newspaper Paper Texture",
+  "domain": "material_and_texture",
+  "features": ["material", "external-texture", "height-map", "texture-overlay", "image-asset", "text"],
+  "dsl": ["Graph", "Scene", "Defs", "Texture", "Process", "Tex", "Pass", "Present", "texture_overlay"],
+  "teaches": ["Use Texture src assets as image and height maps.", "Tint a real texture toward warm off-white newspaper paper instead of using procedural noise only."],
+  "source_path": "generated/material_and_texture/external_newspaper_paper_texture",
+  "demo_url": "",
+  "related": ["cm-000005"],
+  "requires": ["Graph", "Scene", "Defs", "Texture", "Process", "Tex", "Pass", "Present"]
+}

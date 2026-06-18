@@ -1,0 +1,49 @@
+<Graph fps={30} duration="4s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#EFE6D2" />
+
+  <Scene id="external_newspaper_paper_texture_source">
+    <Defs>
+      <Texture id="canvas" src="./textures/orange_canvas.png" kind="image" />
+      <Texture id="height" src="./textures/orange_height.png" kind="height" />
+      <RadialGradient id="paper_base" cx="0.50" cy="0.44" r="0.96"
+                      stops="0:#FFF9EA, 0.42:#EFE5CE, 0.78:#D9C9AA, 1:#B09C78" />
+      <LinearGradient id="ink_black" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#0B0B0B, 0.42:#20201D, 0.76:#050505, 1:#26231F" />
+      <RadialGradient id="edge_falloff" cx="0.50" cy="0.50" r="0.86"
+                      stops="0:#00000000, 0.72:#5B463016, 1:#3B28115A" />
+    </Defs>
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#paper_base)" />
+            <Repeat id="subtle_newsprint_rub" count="22" x="-80" y="92" yStep="42" opacity="0.16" opacityStep="-0.002">
+              <Rect x="0" y="0" width="2100" height="10" color="#6B5A4324" opacity="0.08" rotation="-0.6" />
+            </Repeat>
+            <Repeat id="paper_fiber_lines" count="42" x="0" y="28" yStep="24" opacity="0.14" opacityStep="-0.001">
+              <Line x1="0" y1="0" x2="1920" y2="0" stroke="#FFFFFF26" strokeWidth="1" />
+              <Line x1="0" y1="2" x2="1920" y2="2" stroke="#7E674B16" strokeWidth="1" />
+            </Repeat>
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#edge_falloff)" />
+
+            <Group id="print_lockup" opacity="0.96">
+              <Text value="NEWSPRINT" x="center" y="500" fontFamily="Georgia" fontWeight="900" fontSize="156" renderScale="4x" color="#17120D" />
+              <Text value="IMAGE TEXTURE + HEIGHT MAP" x="center" y="642" fontFamily="Arial" fontWeight="900" fontSize="50" renderScale="4x" color="#2D2418" opacity="0.70" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="external_canvas_post">
+    <Tex id="src" fmt="rgba16f" from="scene:external_newspaper_paper_texture_source" />
+    <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="post_external_canvas_texture" kind="compute" effect="texture_overlay"
+          in={["src"]} out={["out"]}
+          params={{ texture: "canvas", height: "height", scale: "1.0", strength: "0.035", contrast: "0.28", bump_strength: "0.16", relief: "0.18" }} />
+  </Process>
+
+  <Present from="external_canvas_post" />
+</Graph>

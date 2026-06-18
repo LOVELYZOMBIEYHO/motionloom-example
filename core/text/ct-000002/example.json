@@ -1,0 +1,48 @@
+{
+  "id": "ct-000002",
+  "type": "core",
+  "title": "Neon Mono Glow",
+  "domain": "text",
+  "features": [
+    "text",
+    "text-gap",
+    "color",
+    "layout",
+    "shape"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Text",
+    "Rect",
+    "Present",
+    "fontWeight",
+    "textGap"
+  ],
+  "teaches": [
+    "Create a neon mono glow typography treatment.",
+    "Layer duplicate Text nodes to simulate depth, glow, shadow, or emphasis without external assets.",
+    "Use fontFamily, fontWeight, textGap, and simple primitives to build reusable text styles."
+  ],
+  "source_path": "core/text/ct-000002",
+  "demo_url": "",
+  "related": [
+    "ct-000001"
+  ],
+  "requires": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Text",
+    "Present"
+  ]
+}

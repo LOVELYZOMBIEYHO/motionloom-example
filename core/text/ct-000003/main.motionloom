@@ -1,0 +1,21 @@
+<Graph fps={30} duration="3s" size={[960,540]} renderSize={[960,540]}>
+  <Background color="#180F06" />
+
+  <Scene id="gold_serif_extrude">
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="960" height="540" color="#180F06" />
+            <Text value="GOLD TITLE" x="center" y="294" fontFamily="Times New Roman" fontSize="88" fontWeight="900" textGap="-2" color="#5F3512" />
+            <Text value="GOLD TITLE" x="center" y="286" fontFamily="Times New Roman" fontSize="88" fontWeight="900" textGap="-2" color="#A56424" />
+            <Text value="GOLD TITLE" x="center" y="276" fontFamily="Times New Roman" fontSize="88" fontWeight="900" textGap="-2" color="#F7D47A" />
+            <Text value="GOLD TITLE" x="center" y="268" fontFamily="Times New Roman" fontSize="88" fontWeight="900" textGap="-2" color="#FFF1B8" opacity="0.36" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="gold_serif_extrude" />
+</Graph>

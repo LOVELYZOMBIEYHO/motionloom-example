@@ -1,0 +1,159 @@
+<!-- Green-screen subscribe animation. Original generic UI assets; no external image or logo. -->
+<Graph fps={30} duration="5s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#66FF3F" />
+
+  <Scene id="green_screen_subscribe_animation_5s">
+    <Defs>
+      <Font id="display" family="Arial" fallback="sans-serif" />
+      <LinearGradient id="panel_fill" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#FFFFFF, 1:#F8F8F8" />
+      <LinearGradient id="panel_shadow" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#0000002A, 1:#00000000" />
+      <LinearGradient id="subscribe_red" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#F24B4B, 0.55:#EA3F45, 1:#D93138" />
+      <LinearGradient id="subscribed_gray" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#9F9F9F, 1:#7E7E7E" />
+      <RadialGradient id="click_ring" cx="0.50" cy="0.50" r="0.50"
+                      stops="0:#FFFFFF00, 0.58:#FFFFFF00, 0.76:#11111166, 1:#11111100" />
+    </Defs>
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="5s" out="hold">
+          <Layer>
+            <Group id="card"
+                   x="960"
+                   y="540"
+                   opacity={curve("0:0:linear, 0.20:1:ease_out, 4.72:1:linear, 5:0:ease_in")}
+                   scale={curve("0:0.92:ease_out, 0.24:1.02:ease_out, 0.44:1.0:ease_in_out, 5:1.0:linear")}
+                   transformOriginX="960"
+                   transformOriginY="540">
+
+              <Rect x="-585" y="-105" width="1170" height="226" radius="44" fill="url(#panel_shadow)" opacity="0.40" />
+              <Rect x="-600" y="-125" width="1200" height="230" radius="44" fill="url(#panel_fill)" stroke="#EAEAEA" strokeWidth="2" />
+
+              <Group id="like_gray" x="-420" y="-18"
+                     opacity={curve("0:1:linear, 1.18:1:linear, 1.36:0:ease_in, 5:0:linear")}>
+                <Rect x="-62" y="10" width="16" height="52" fill="#858585" />
+                <Path d="M -38 58 L -38 10 C -20 -10 -12 -34 3 -34 C 19 -34 20 -12 12 6 L 50 6 C 62 6 68 15 65 28 L 57 60 C 54 72 44 78 31 78 L -38 78 Z"
+                      fill="#858585" />
+              </Group>
+
+              <Group id="like_blue" x="-420" y="-18"
+                     scale={curve("0:1:linear, 1.12:1:linear, 1.24:0.92:ease_in, 1.40:1.05:ease_out, 1.62:1.0:ease_in_out, 5:1.0:linear")}
+                     opacity={curve("0:0:linear, 1.18:0:linear, 1.36:1:ease_out, 5:1:linear")}
+                     transformOriginX="-420"
+                     transformOriginY="-8">
+                <Rect x="-62" y="10" width="16" height="52" fill="#2F80ED" />
+                <Path d="M -38 58 L -38 10 C -20 -10 -12 -34 3 -34 C 19 -34 20 -12 12 6 L 50 6 C 62 6 68 15 65 28 L 57 60 C 54 72 44 78 31 78 L -38 78 Z"
+                      fill="#2F80ED" />
+              </Group>
+
+              <Group id="dislike_icon" x="-245" y="38">
+                <Rect x="46" y="-64" width="16" height="52" fill="#858585" />
+                <Path d="M 38 -62 L 38 -14 C 20 4 12 30 -3 30 C -19 30 -20 8 -12 -10 L -50 -10 C -62 -10 -68 -19 -65 -32 L -57 -64 C -54 -76 -44 -82 -31 -82 L 38 -82 Z"
+                      fill="#858585" />
+              </Group>
+
+              <Rect id="like_underline"
+                    x="-482"
+                    y="80"
+                    width={curve("0:0:linear, 1.30:0:linear, 1.62:268:ease_out, 5:268:linear")}
+                    height="10"
+                    radius="5"
+                    color="#2F80ED"
+                    opacity={curve("0:0:linear, 1.30:0:linear, 1.48:1:ease_out, 5:1:linear")} />
+
+              <Group id="subscribe_button" x="130" y="4"
+                     scale={curve("0:1:linear, 2.46:1:linear, 2.64:0.92:ease_in, 2.82:1.05:ease_out, 3.10:1.0:ease_in_out, 5:1.0:linear")}
+                     transformOriginX="130"
+                     transformOriginY="-8">
+                <Rect x="-230" y="-62" width="460" height="124" radius="19"
+                      fill="url(#subscribe_red)"
+                      opacity={curve("0:1:linear, 2.72:1:linear, 2.90:0:ease_in, 5:0:linear")} />
+                <Rect x="-230" y="-62" width="460" height="124" radius="19"
+                      fill="url(#subscribed_gray)"
+                      opacity={curve("0:0:linear, 2.72:0:linear, 2.90:1:ease_out, 5:1:linear")} />
+                <Text value="SUBSCRIBE"
+                      x="-148"
+                      y="-25"
+                      font="display"
+                      fontWeight="900"
+                      fontSize="56"
+                      color="#FFFFFF"
+                      opacity={curve("0:1:linear, 2.72:1:linear, 2.90:0:ease_in, 5:0:linear")} />
+                <Text value="SUBSCRIBED"
+                      x="-156"
+                      y="-25"
+                      font="display"
+                      fontWeight="900"
+                      fontSize="49"
+                      color="#FFFFFF"
+                      opacity={curve("0:0:linear, 2.72:0:linear, 2.90:1:ease_out, 5:1:linear")} />
+              </Group>
+
+              <Group id="bell_icon"
+                     x="455"
+                     y="-4"
+                     rotation={curve("0:0:linear, 3.58:0:linear, 3.76:-13:ease_out, 3.94:13:ease_in_out, 4.14:-8:ease_in_out, 4.34:0:ease_out, 5:0:linear")}
+                     transformOriginX="0"
+                     transformOriginY="0">
+                <Path d="M -38 46 L 38 46 L 27 22 L 27 -7 C 27 -44 -27 -44 -27 -7 L -27 22 Z"
+                      fill="#00000000"
+                      stroke="#808080"
+                      strokeWidth="8"
+                      lineJoin="round" />
+                <Circle x="0" y="55" radius="8" fill="#808080" />
+                <Path d="M -38 46 L 38 46 L 27 22 L 27 -7 C 27 -44 -27 -44 -27 -7 L -27 22 Z"
+                      fill="#00000000"
+                      stroke="#686868"
+                      strokeWidth="8"
+                      lineJoin="round"
+                      opacity={curve("0:0:linear, 2.72:0:linear, 2.90:1:ease_out, 5:1:linear")} />
+                <Circle x="0" y="55" radius="8" fill="#686868"
+                        opacity={curve("0:0:linear, 2.72:0:linear, 2.90:1:ease_out, 5:1:linear")} />
+                <Path d="M -38 46 L 38 46 L 27 22 L 27 -7 C 27 -44 -27 -44 -27 -7 L -27 22 Z"
+                      fill="#8A8A8A"
+                      opacity={curve("0:0:linear, 3.66:0:linear, 3.84:1:ease_out, 5:1:linear")} />
+                <Circle x="0" y="55" radius="8" fill="#8A8A8A"
+                        opacity={curve("0:0:linear, 3.66:0:linear, 3.84:1:ease_out, 5:1:linear")} />
+                <Path d="M -48 -6 C -63 11 -63 32 -47 49"
+                      stroke="#686868"
+                      strokeWidth="7"
+                      fill="none"
+                      opacity={curve("0:0:linear, 3.62:0:linear, 3.84:1:ease_out, 4.54:0:ease_in, 5:0:linear")} />
+                <Path d="M 48 -6 C 63 11 63 32 47 49"
+                      stroke="#686868"
+                      strokeWidth="7"
+                      fill="none"
+                      opacity={curve("0:0:linear, 3.62:0:linear, 3.84:1:ease_out, 4.54:0:ease_in, 5:0:linear")} />
+              </Group>
+
+              <Circle x="-433" y="23" radius={curve("0:0:linear, 1.08:0:linear, 1.28:64:ease_out, 1.58:94:ease_in, 5:94:linear")}
+                      fill="url(#click_ring)"
+                      opacity={curve("0:0:linear, 1.08:0:linear, 1.22:1:ease_out, 1.58:0:ease_in, 5:0:linear")} />
+              <Circle x="110" y="44" radius={curve("0:0:linear, 2.54:0:linear, 2.76:64:ease_out, 3.12:94:ease_in, 5:94:linear")}
+                      fill="url(#click_ring)"
+                      opacity={curve("0:0:linear, 2.54:0:linear, 2.70:1:ease_out, 3.12:0:ease_in, 5:0:linear")} />
+              <Circle x="452" y="30" radius={curve("0:0:linear, 3.62:0:linear, 3.84:64:ease_out, 4.20:94:ease_in, 5:94:linear")}
+                      fill="url(#click_ring)"
+                      opacity={curve("0:0:linear, 3.62:0:linear, 3.78:1:ease_out, 4.20:0:ease_in, 5:0:linear")} />
+
+              <Group id="cursor"
+                     x={curve("0:-370:linear, 0.55:-370:linear, 0.95:-450:ease_in_out, 1.30:-432:ease_out, 1.95:80:ease_in_out, 2.72:110:ease_out, 3.28:435:ease_in_out, 3.90:452:ease_out, 4.70:530:linear, 5:530:linear")}
+                     y={curve("0:180:linear, 0.55:180:linear, 0.95:12:ease_in_out, 1.30:36:ease_out, 1.95:92:ease_in_out, 2.72:58:ease_out, 3.28:78:ease_in_out, 3.90:42:ease_out, 4.70:110:linear, 5:110:linear")}
+                     opacity={curve("0:0:linear, 0.48:0:linear, 0.68:1:ease_out, 4.64:1:linear, 5:0:ease_in")}>
+                <Path d="M 0 0 L 0 116 L 33 84 L 57 137 L 84 124 L 59 75 L 106 75 Z"
+                      fill="#FFFFFF"
+                      stroke="#111111"
+                      strokeWidth="5" />
+              </Group>
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="green_screen_subscribe_animation_5s" />
+</Graph>

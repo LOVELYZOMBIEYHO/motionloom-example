@@ -1,0 +1,57 @@
+<Graph fps={30} duration="4s" size={[1080,1350]} renderSize={[1080,1350]}>
+  <Background color="#C94620" />
+
+  <Scene id="orange_oil_canvas_texturing">
+    <Defs>
+      <Texture id="canvas" src="./textures/texture_paint_zoom.jpg" kind="image" />
+      <Texture id="height" src="./textures/texture_paint_zoom.jpg" kind="height" />
+      <RadialGradient id="orange_canvas_base" cx="0.48" cy="0.44" r="0.92"
+                      stops="0:#E76B35, 0.34:#D65325, 0.68:#B93A18, 1:#7F210C" />
+      <LinearGradient id="warm_canvas_wash" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#FF9A5224, 0.36:#D94C2110, 0.68:#8E250B20, 1:#3B0D0436" />
+      <LinearGradient id="dry_roller_streak" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#00000000, 0.20:#FFFFFF14, 0.40:#4B120A12, 0.62:#FFFFFF0F, 1:#00000000" />
+      <RadialGradient id="edge_burn" cx="0.50" cy="0.48" r="0.88"
+                      stops="0:#00000000, 0.68:#00000010, 1:#00000050" />
+    </Defs>
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1080" height="1350" fill="url(#orange_canvas_base)" />
+            <Rect x="0" y="0" width="1080" height="1350" fill="url(#warm_canvas_wash)" blend="multiply" opacity="0.58" />
+
+            <Repeat id="roller_streaks" count="34" x="-80" y="44" yStep="31" opacity="0.18" opacityStep="-0.002">
+              <Rect x="0" y="0" width="1260" height="14" fill="url(#dry_roller_streak)" rotation="-1.2" />
+            </Repeat>
+
+            <Repeat id="subtle_paint_pores" count="48" x="35" y="30" xStep="24" yStep="19" opacity="0.18" opacityStep="-0.001">
+              <Circle x="0" y="0" radius="1.8" color="#3B0B05" opacity="0.10" />
+            </Repeat>
+
+            <Rect x="0" y="0" width="1080" height="1350" fill="url(#edge_burn)" />
+
+            <Group id="printed_word" x="48" y="705" opacity="0.96">
+              <Text value="TEXTURING" x="0" y="0" fontFamily="Arial" fontWeight="900" fontSize="142" renderScale="4x" color="#111111" />
+              <Text value="TEXTURING" x="2" y="3" fontFamily="Arial" fontWeight="900" fontSize="142" renderScale="4x" color="#000000" opacity="0.28" />
+              <Repeat id="ink_dry_scuffs" count="26" x="0" y="-86" yStep="8" opacity="0.16" opacityStep="-0.002">
+                <Rect x="0" y="0" width="970" height="3" color="#C94A20" opacity="0.22" rotation="-1.0" />
+              </Repeat>
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="oil_canvas_post">
+    <Tex id="src" fmt="rgba16f" from="scene:orange_oil_canvas_texturing" />
+    <Tex id="out" fmt="rgba16f" size={[1080,1350]} />
+    <Pass id="post_external_oil_canvas_texture" kind="compute" effect="texture_overlay"
+          in={["src"]} out={["out"]}
+          params={{ texture: "canvas", height: "height", scale: "1.0", strength: "0.52", contrast: "1.15", bump_strength: "1.35", relief: "1.1" }} />
+  </Process>
+
+  <Present from="oil_canvas_post" />
+</Graph>

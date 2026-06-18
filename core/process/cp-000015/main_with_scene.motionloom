@@ -1,0 +1,46 @@
+<Graph fps={30} duration="3s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#D9C49A" />
+
+  <Scene id="PaperTextureSource">
+    <Defs>
+      <Texture id="paper_grain" kind="paper" scale="48" strength="0.32" contrast="0.70" seed="11" />
+      <LinearGradient id="paper_base" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#F4E6C6, 0.45:#D9C49A, 1:#B99462" />
+      <LinearGradient id="ink_fade" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#3B2A1800, 0.18:#3B2A18AA, 0.82:#3B2A18AA, 1:#3B2A1800" />
+    </Defs>
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#paper_base)" texture="paper_grain" textureOpacity="0.32" />
+            <Rect x="210" y="150" width="1500" height="780" radius="46" color="#FFF4D8" opacity="0.46" />
+            <Rect x="300" y="322" width="1320" height="8" radius="4" fill="url(#ink_fade)" opacity="0.48" />
+            <Rect x="300" y="512" width="1320" height="8" radius="4" fill="url(#ink_fade)" opacity="0.38" />
+            <Rect x="300" y="702" width="1320" height="8" radius="4" fill="url(#ink_fade)" opacity="0.30" />
+            <Text value="PAPER TEXTURE" x="960" y="480" fontFamily="Arial" fontWeight="900" fontSize="132" renderScale="4x" color="#3B2A18" opacity="0.86" />
+            <Text value="procedural texture_overlay process" x="960" y="586" fontFamily="Arial" fontSize="42" renderScale="4x" color="#5B4228" opacity="0.82" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="paper_post">
+    <Tex id="src" fmt="rgba16f" from="scene:PaperTextureSource" />
+    <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="post_texture_overlay" kind="compute"
+          effect="texture_overlay"
+          in={["src"]} out={["out"]}
+          params={{
+            kind: "paper",
+            scale: "48.0",
+            strength: "0.32",
+            contrast: "0.70",
+            seed: "11.0"
+          }} />
+  </Process>
+
+  <Present from="paper_post" />
+</Graph>

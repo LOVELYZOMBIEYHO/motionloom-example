@@ -1,0 +1,21 @@
+<Graph fps={30} duration="3s" size={[960,540]} renderSize={[960,540]}>
+  <Background color="#07111F" />
+
+  <Scene id="neon_mono_glow">
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="960" height="540" color="#07111F" />
+            <Rect x="120" y="150" width="720" height="240" radius="28" color="#081A2B" stroke="#0B3E66" strokeWidth="2" />
+            <Text value="NEON SIGNAL" x="center" y="290" fontFamily="Courier New" fontSize="74" fontWeight="700" textGap="4" color="#1A6D88" opacity="0.75" />
+            <Text value="NEON SIGNAL" x="center" y="284" fontFamily="Courier New" fontSize="74" fontWeight="700" textGap="4" color="#42DFFF" opacity="0.70" />
+            <Text value="NEON SIGNAL" x="center" y="278" fontFamily="Courier New" fontSize="74" fontWeight="700" textGap="4" color="#70F5FF" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="neon_mono_glow" />
+</Graph>

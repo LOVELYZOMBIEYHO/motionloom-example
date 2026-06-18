@@ -1,0 +1,38 @@
+{
+  "id": "s-000023",
+  "type": "showcase",
+  "title": "Ease In Out Bezier Curve Demo",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "curve",
+    "curve-animation",
+    "line",
+    "text"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Text",
+    "Line",
+    "curve",
+    "Present"
+  ],
+  "teaches": [
+    "Compare named ease_in_out animation against a custom cubic Bezier easing curve.",
+    "Use curve(...) keyframes on line endpoints to visualize timing differences."
+  ],
+  "source_path": "showcase/s-000023",
+  "demo_url": "",
+  "related": [],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Present"
+  ]
+}

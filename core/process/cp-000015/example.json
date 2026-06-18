@@ -1,0 +1,43 @@
+{
+  "id": "cp-000015",
+  "type": "core",
+  "title": "Paper Texture Overlay",
+  "domain": "process",
+  "features": [
+    "process",
+    "gpu-pipeline",
+    "texture-overlay",
+    "paper-texture",
+    "layer-fx"
+  ],
+  "dsl": [
+    "Graph",
+    "Scene",
+    "Defs",
+    "Texture",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present",
+    "texture_overlay"
+  ],
+  "teaches": [
+    "Use effect=\"texture_overlay\" for procedural paper/grain texture.",
+    "Use <Texture /> in <Defs> as the scene-side texture metadata surface."
+  ],
+  "source_path": "generated/process/paper_texture_overlay",
+  "demo_url": "",
+  "related": [
+    "cp-000013",
+    "cp-000014"
+  ],
+  "requires": [
+    "Graph",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present"
+  ]
+}

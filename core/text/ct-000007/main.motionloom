@@ -1,0 +1,21 @@
+<Graph fps={30} duration="3s" size={[960,540]} renderSize={[960,540]}>
+  <Background color="#0E1020" />
+
+  <Scene id="retro_chrome_stack">
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="960" height="540" color="#0E1020" />
+            <Text value="CHROME" x="center" y="307" fontFamily="Arial Black" fontSize="96" fontWeight="900" textGap="-3" color="#1B2638" />
+            <Text value="CHROME" x="center" y="298" fontFamily="Arial Black" fontSize="96" fontWeight="900" textGap="-3" color="#627C9A" />
+            <Text value="CHROME" x="center" y="287" fontFamily="Arial Black" fontSize="96" fontWeight="900" textGap="-3" color="#C9D7E8" />
+            <Text value="CHROME" x="center" y="272" fontFamily="Arial Black" fontSize="96" fontWeight="900" textGap="-3" color="#FFFFFF" opacity="0.55" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="retro_chrome_stack" />
+</Graph>
