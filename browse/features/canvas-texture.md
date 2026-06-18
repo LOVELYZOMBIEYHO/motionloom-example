@@ -1,6 +1,5 @@
-# Feature: texture-overlay
+# Feature: canvas-texture
 
 | ID | Type | Domain | Title | Features | Teaches |
 |---|---|---|---|---|---|
 | [s-000025](../../showcase/s-000025/) | showcase | scene | Base64 Oil Canvas Texture Parameters 6s | scene, process, texture-overlay, canvas-texture, image-asset | Embed a canvas texture directly in MotionLoom with a base64 data URI.<br>Animate texture_overlay parameters to compare strength, contrast, bump, and relief. |
-| [cp-000015](../../core/process/cp-000015/) | core | process | Paper Texture Overlay | process, gpu-pipeline, texture-overlay, paper-texture, layer-fx | Use effect="texture_overlay" for procedural paper/grain texture.<br>Use <Texture /> in <Defs> as the scene-side texture metadata surface. |

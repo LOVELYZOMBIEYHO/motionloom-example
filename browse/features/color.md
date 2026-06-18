@@ -2,6 +2,7 @@
 
 | ID | Type | Domain | Title | Features | Teaches |
 |---|---|---|---|---|---|
+| [s-000001](../../showcase/s-000001/) | showcase | scene | Pinwheel zDepth Layer Sorting 4s | scene, zdepth, layer, shape, curve-animation | Demonstrate layer zDepth ordering with four overlapping pinwheel blades.<br>Use separate layers and subtle curve animation to make depth sorting visible. |
 | [s-000024](../../showcase/s-000024/) | showcase | scene | Green Screen Subscribe Animation 5s | scene, color, text, shape, path | Build a green-screen subscribe animation with only MotionLoom scene primitives.<br>Sequence cursor clicks, like activation, subscribe-to-subscribed transition, and bell ring animation using curve timing. |
 | [cp-000009](../../core/process/cp-000009/) | core | process | Process Tone Map | process, gpu-pipeline, color, tone_map, grading | Use effect="tone_map" for exposure, contrast, shoulder, gamma, and saturation.<br>Use tone mapping after glow/bloom to control highlights. |
 | [cp-000012](../../core/process/cp-000012/) | core | process | Process HSLA Overlay | process, gpu-pipeline, color, hsla_overlay, tint | Use effect="hsla_overlay" for animated color wash and tinting.<br>Control hue, saturation, lightness, and alpha independently. |

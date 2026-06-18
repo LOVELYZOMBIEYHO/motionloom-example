@@ -1,13 +1,51 @@
 {
   "id": "s-000025",
-  "title": "Base64 Oil Canvas Texture Parameters",
   "type": "showcase",
-  "duration": "6s",
+  "title": "Base64 Oil Canvas Texture Parameters 6s",
+  "domain": "scene",
   "features": [
-    "Texture data URI",
-    "base64 embedded asset",
-    "texture_overlay",
-    "animated process parameters"
+    "scene",
+    "process",
+    "texture-overlay",
+    "canvas-texture",
+    "image-asset",
+    "material",
+    "curve-animation"
   ],
-  "entry": "main.motionloom"
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Rect",
+    "Text",
+    "LinearGradient",
+    "RadialGradient",
+    "Process",
+    "Tex",
+    "Pass",
+    "Present"
+  ],
+  "teaches": [
+    "Embed a canvas texture directly in MotionLoom with a base64 data URI.",
+    "Animate texture_overlay parameters to compare strength, contrast, bump, and relief."
+  ],
+  "source_path": "showcase/s-000025",
+  "demo_url": "",
+  "related": [
+    "cm-000006",
+    "cm-000007",
+    "cp-000015"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Process",
+    "Present"
+  ]
 }

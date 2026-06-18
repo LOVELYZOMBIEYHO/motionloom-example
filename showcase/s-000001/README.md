@@ -1,26 +1,24 @@
-# ANICA Cyberpunk City Reveal 7s
+# Pinwheel zDepth Layer Sorting 4s
 
-A scene-only MotionLoom cyberpunk city poster reveal inspired by vertical neon city compositions.
+A compact scene-only MotionLoom demo showing how `Layer zDepth` changes the draw order of overlapping shapes.
 
 ## Timeline
 
 | Time | Action |
 |------|--------|
-| 0.0s | Foggy city and towers appear. |
-| 0.6s | ANICA title glows in at the top. |
-| 1.0s | Slow camera drift starts. |
-| 2.0s | Rain, windows, billboards, and debris create motion. |
-| 7.0s | Scene holds as a short cinematic loop. |
+| 0.0s | Four colored pinwheel blades appear around the center. |
+| 0.0s-4.0s | Each blade rotates slightly while retaining its layer depth order. |
+| 4.0s | Scene holds on the final sorted pinwheel layout. |
 
 ## Notes
 
-- No external images, logos, or licensed assets.
-- The ANICA logo text is original DSL text, not an imported image.
-- Built from `Rect`, `Path`, `Text`, `Repeat`, gradients, and timed camera motion.
+- Scene-only example; no process pass or external assets.
+- Negative `zDepth` layers render closer than positive `zDepth` layers.
+- Useful as a small visual test for layer ordering and zDepth behavior.
 
 ## Run
 
 ```bash
 cargo run -p motionloom --example render_file_frame -- \
-  showcase/s-000001/main.motionloom /tmp/s-000001.png 90 cpu
+  showcase/s-000001/main.motionloom /tmp/s-000001.png 60 cpu
 ```

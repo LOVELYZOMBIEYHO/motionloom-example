@@ -1,139 +1,62 @@
-<!-- ANICA cyberpunk city reveal. Original MotionLoom DSL scene; no external logos or assets. -->
-<Graph fps={30} duration="7s" size={[1920,1080]} renderSize={[1920,1080]}>
-  <Background color="#030711" />
+<Graph fps={30} duration="4s" size={[800,450]} renderSize={[800,450]}>
+  <Background color="#FFFFFF" />
 
-  <Scene id="anica_cyberpunk_city_reveal_7s">
-    <Defs>
-      <Font id="display" family="Arial Black" fallback="sans-serif" />
-      <Font id="mono" family="Courier New" fallback="monospace" />
-
-      <RadialGradient id="sky_vortex" cx="0.50" cy="0.50" r="0.88"
-                      stops="0:#F5EEC988, 0.18:#80F6FF55, 0.42:#153C73AA, 0.76:#071226, 1:#02040A" />
-      <LinearGradient id="fog_rise" x1="0" y1="1" x2="0" y2="0"
-                      stops="0:#F7EABEEE, 0.22:#BDFBFF77, 0.58:#17376244, 1:#03071100" />
-      <LinearGradient id="tower_dark" x1="0" y1="0" x2="1" y2="0"
-                      stops="0:#02040A, 0.22:#101C2F, 0.52:#05070D, 0.80:#182B42, 1:#02040A" />
-      <LinearGradient id="glass_left" x1="0" y1="0" x2="1" y2="1"
-                      stops="0:#0A1322, 0.45:#173B5B, 0.80:#02050A, 1:#000000" />
-      <LinearGradient id="glass_right" x1="1" y1="0" x2="0" y2="1"
-                      stops="0:#0C1830, 0.38:#20496A, 0.78:#03060B, 1:#000000" />
-      <LinearGradient id="blue_billboard" x1="0" y1="0" x2="0" y2="1"
-                      stops="0:#BFFFFF, 0.28:#55D9FF, 0.70:#306DFF, 1:#10214E" />
-      <LinearGradient id="pink_billboard" x1="0" y1="0" x2="0" y2="1"
-                      stops="0:#FFF2FF, 0.25:#FF89DA, 0.65:#9F5BFF, 1:#241144" />
-      <LinearGradient id="logo_gold" x1="0" y1="0" x2="1" y2="1"
-                      stops="0:#FFFFFF, 0.22:#FFF2A6, 0.58:#F5C747, 1:#B36A19" />
-      <LinearGradient id="rain" x1="0" y1="0" x2="0" y2="1"
-                      stops="0:#BFFFFF00, 0.42:#BFFFFF66, 1:#BFFFFF00" />
-      <RadialGradient id="logo_glow" cx="0.50" cy="0.50" r="0.55"
-                      stops="0:#FFF7AA88, 0.45:#53E9FF44, 1:#53E9FF00" />
-      <RadialGradient id="street_light" cx="0.50" cy="0.84" r="0.70"
-                      stops="0:#FFF2C9DD, 0.22:#B9F7FF88, 0.58:#183C6744, 1:#00000000" />
-    </Defs>
-
+  <Scene id="PinwheelZDepthLogo">
     <Timeline>
-      <Track id="main" space="world" z="0">
-        <Sequence from="0s" duration="7s" out="hold">
+      <Track id="depth_guides" space="screen" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
           <Layer>
-            <Group id="slow_camera"
-                   y={curve("0:34:ease_out, 7:-22:ease_in_out")}
-                   scale={curve("0:1.08:ease_out, 7:1.0:ease_in_out")}
-                   transformOriginX="960"
-                   transformOriginY="540">
-              <Rect x="0" y="0" width="1920" height="1080" fill="url(#sky_vortex)" />
-              <Circle x="960" y="730" radius={curve("0:460:ease_out, 3.4:560:ease_in_out, 7:660:ease_out")}
-                      fill="url(#street_light)"
-                      opacity={curve("0:0.55:linear, 2.2:0.80:ease_out, 7:0.64:linear")}
-                      blend="screen" />
-              <Rect x="0" y="0" width="1920" height="1080" fill="url(#fog_rise)" opacity="0.86" />
+            <Text x="32" y="44" value="Pinwheel zDepth" fontSize="28" color="#111827" />
+            <Text x="32" y="72" value="Layer zDepth sorts four overlapping color blades" fontSize="16" color="#6B7280" />
+            <Line x1="400" y1="86" x2="400" y2="364" stroke="#11182718" strokeWidth="2" />
+            <Line x1="258" y1="225" x2="542" y2="225" stroke="#11182718" strokeWidth="2" />
+          </Layer>
+        </Sequence>
+      </Track>
 
-              <!-- Distant towers and luminous vertical signs. -->
-              <Group id="far_city" opacity="0.62">
-                <Rect x="120" y="360" width="165" height="620" fill="#08101D" />
-                <Rect x="1630" y="330" width="160" height="650" fill="#08101D" />
-                <Rect x="410" y="480" width="116" height="500" fill="#091320" />
-                <Rect x="1398" y="510" width="124" height="470" fill="#07101E" />
-                <Rect x="150" y="390" width="52" height="420" fill="url(#blue_billboard)" opacity="0.56" blend="screen" />
-                <Rect x="1674" y="360" width="50" height="450" fill="url(#blue_billboard)" opacity="0.54" blend="screen" />
-                <Rect x="445" y="520" width="42" height="330" fill="url(#pink_billboard)" opacity="0.46" blend="screen" />
-                <Rect x="1435" y="548" width="44" height="300" fill="url(#pink_billboard)" opacity="0.42" blend="screen" />
-              </Group>
+      <Track id="pinwheel" space="world" z="10" zDepth="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Circle x="400" y="225" radius="128" color="#F3F4F6" opacity="0.62" />
+            <Circle x="400" y="225" radius="10" color="#111827" opacity="0.18" />
+          </Layer>
 
-              <!-- Main left building. -->
-              <Group id="left_skyscraper" x="235" y="270" rotation="-7" opacity="0.96">
-                <Rect x="-60" y="130" width="430" height="730" fill="url(#glass_left)" stroke="#4DBBEA66" strokeWidth="3" />
-                <Rect x="20" y="185" width="140" height="270" fill="url(#blue_billboard)" opacity="0.78" blend="screen" />
-                <Text value="AI" x="56" y="300" font="display" fontSize="56" color="#E9FFFF" opacity="0.90" />
-                <Repeat id="left_window_rows" count="18" x="190" y="190" yStep="31" opacity="0.86" opacityStep="-0.012">
-                  <Repeat id="left_window_cols" count="6" x="0" y="0" xStep="28" opacity="1" opacityStep="-0.025">
-                    <Rect x="0" y="0" width="18" height="9" color="#BDF7FF" opacity="0.40 + 0.24*(0.5 + 0.5*sin($time.sec*3.0))" />
-                  </Repeat>
-                </Repeat>
-              </Group>
-
-              <!-- Main right building. -->
-              <Group id="right_skyscraper" x="1246" y="350" rotation="6" opacity="0.98">
-                <Rect x="-30" y="80" width="520" height="765" fill="url(#glass_right)" stroke="#63D6FF66" strokeWidth="3" />
-                <Rect x="310" y="140" width="122" height="270" fill="url(#pink_billboard)" opacity="0.76" blend="screen" />
-                <Rect x="44" y="158" width="230" height="62" fill="url(#blue_billboard)" opacity="0.88" blend="screen" />
-                <Repeat id="right_window_rows" count="20" x="58" y="258" yStep="28" opacity="0.90" opacityStep="-0.010">
-                  <Repeat id="right_window_cols" count="9" x="0" y="0" xStep="38" opacity="1" opacityStep="-0.018">
-                    <Rect x="0" y="0" width="24" height="9" color="#EAFBFF" opacity="0.32 + 0.22*(0.5 + 0.5*sin($time.sec*2.4))" />
-                  </Repeat>
-                </Repeat>
-              </Group>
-
-              <!-- Center monolith. -->
-              <Group id="center_monolith" opacity={curve("0:0.92:linear, 7:1:linear")}>
-                <Rect x="760" y="262" width="400" height="724" radius="56" fill="url(#tower_dark)" stroke="#6DE7FF44" strokeWidth="3" />
-                <Circle x="960" y="315" radius="54" color="#DDFDFF" opacity="0.90" />
-                <Circle x="960" y="315" radius="38" color="#09162B" />
-                <Text value="A" x="939" y="337" font="display" fontSize="52" color="#BFFFFF" opacity="0.90" />
-                <Repeat id="center_window_stack" count="18" x="840" y="430" yStep="27" opacity="0.36" opacityStep="-0.006">
-                  <Line x1="0" y1="0" x2="240" y2="0" stroke="#4E9DCA" strokeWidth="2" opacity="0.28" />
-                </Repeat>
-              </Group>
-
-              <!-- Foreground roof platform. -->
-              <Group id="hero_rooftop" opacity="1">
-                <Rect x="470" y="910" width="980" height="80" color="#03060D" stroke="#132E45" strokeWidth="4" />
-                <Rect x="540" y="865" width="840" height="62" color="#050A12" stroke="#17334A" strokeWidth="4" />
-                <Rect x="730" y="844" width="460" height="28" color="#071322" stroke="#244B64" strokeWidth="2" />
-              </Group>
-
-              <!-- ANICA logo and tag. -->
-              <Group id="anica_title"
-                     y={curve("0:-26:ease_out, 1.2:0:ease_out, 7:-8:ease_in_out")}
-                     opacity={curve("0:0:linear, 0.62:1:ease_out, 6.5:1:linear, 7:0.94:linear")}>
-                <Circle x="960" y="126" radius="210" fill="url(#logo_glow)" opacity="0.66" blend="screen" />
-                <Text value="ANICA" x="center" y="146" font="display" fontSize="116" fontWeight="900"
-                      textGap="-6" color="#301F00" opacity="0.72" rotation="-3" />
-                <Text value="ANICA" x="center" y="134" font="display" fontSize="116" fontWeight="900"
-                      textGap="-6" color="#F5C747" rotation="-3" />
-                <Text value="ANICA" x="center" y="126" font="display" fontSize="116" fontWeight="900"
-                      textGap="-6" color="#FFF4A8" opacity="0.45" rotation="-3" />
-                <Text value="AI VIDEO ENGINE" x="center" y="210" font="mono" fontSize="24" fontWeight="700"
-                      textGap="5" color="#DDFDFF" opacity="0.86" />
-              </Group>
-
-              <!-- Floating debris and rain streaks. -->
-              <Repeat id="rain_field" count="36" x="36" y="-60" xStep="54" opacity="0.50" opacityStep="-0.006">
-                <Rect x="20*sin($time.sec*1.3)" y="80*sin($time.sec*1.7)" width="3" height="120" fill="url(#rain)" opacity="0.34" rotation="12" />
-              </Repeat>
-              <Repeat id="debris_field" count="10" x="150" y="235" xStep="180" yStep="32" opacity="0.60" opacityStep="-0.024">
-                <Rect x="30*sin($time.sec*1.8)" y="18*sin($time.sec*2.1)" width="56" height="22" radius="6"
-                      color="#070A0F" stroke="#85EFFF55" strokeWidth="2"
-                      opacity="0.78" rotation="18*sin($time.sec*1.4)" />
-              </Repeat>
-
-              <Rect x="0" y="0" width="1920" height="1080" color="#000000"
-                    opacity={curve("0:0.18:linear, 2.0:0.02:ease_out, 5.8:0.04:linear, 7:0.18:ease_in")} />
+          <Layer id="blade_blue_mid_near" zDepth="-0.25">
+            <Group x="400" y="225" rotation={curve("0:-4:linear, 4:16:ease_in_out")}>
+              <Rect x="-22" y="-120" width="102" height="132" radius="34" color="#4285F4" opacity="0.92" />
+              <Circle x="34" y="-62" radius="30" color="#8AB4F8" opacity="0.32" />
             </Group>
+          </Layer>
+
+          <Layer id="blade_red_mid_far" zDepth="0.55">
+            <Group x="400" y="225" rotation={curve("0:86:linear, 4:106:ease_in_out")}>
+              <Rect x="-22" y="-120" width="102" height="132" radius="34" color="#EA4335" opacity="0.88" />
+              <Circle x="34" y="-62" radius="30" color="#F28B82" opacity="0.34" />
+            </Group>
+          </Layer>
+
+          <Layer id="blade_yellow_far" zDepth="1.25">
+            <Group x="400" y="225" rotation={curve("0:176:linear, 4:196:ease_in_out")}>
+              <Rect x="-22" y="-120" width="102" height="132" radius="34" color="#FBBC04" opacity="0.86" />
+              <Circle x="34" y="-62" radius="30" color="#FDE293" opacity="0.36" />
+            </Group>
+          </Layer>
+
+          <Layer id="blade_green_near" zDepth="-0.8">
+            <Group x="400" y="225" rotation={curve("0:266:linear, 4:286:ease_in_out")}>
+              <Rect x="-22" y="-120" width="102" height="132" radius="34" color="#34A853" opacity="0.84" />
+              <Circle x="34" y="-62" radius="30" color="#81C995" opacity="0.38" />
+            </Group>
+          </Layer>
+
+          <Layer id="center_cap" zDepth="0">
+            <Circle x="400" y="225" radius="38" color="#FFFFFF" opacity="0.94" />
+            <Circle x="400" y="225" radius="20" color="#111827" opacity="0.16" />
           </Layer>
         </Sequence>
       </Track>
     </Timeline>
   </Scene>
 
-  <Present from="anica_cyberpunk_city_reveal_7s" />
+  <Present from="PinwheelZDepthLogo" />
 </Graph>

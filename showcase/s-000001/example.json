@@ -1,23 +1,21 @@
 {
   "id": "s-000001",
   "type": "showcase",
-  "title": "ANICA Cyberpunk City Reveal 7s",
+  "title": "Pinwheel zDepth Layer Sorting 4s",
   "domain": "scene",
   "features": [
     "scene",
-    "text",
-    "glow",
-    "gradient",
-    "logo-motion",
+    "zdepth",
+    "layer",
+    "shape",
     "curve-animation",
-    "layout",
-    "repeat"
+    "color",
+    "layout"
   ],
   "dsl": [
     "Graph",
     "Background",
     "Scene",
-    "Defs",
     "Timeline",
     "Track",
     "Sequence",
@@ -25,24 +23,20 @@
     "Group",
     "Rect",
     "Circle",
-    "Path",
     "Text",
     "Line",
-    "Repeat",
-    "LinearGradient",
-    "RadialGradient",
     "Present"
   ],
   "teaches": [
-    "Build a poster-like cyberpunk city reveal using only MotionLoom scene primitives.",
-    "Layer perspective skyscrapers, billboards, fog, rain, debris, and a foreground silhouette.",
-    "Use gradients, repeats, and slow camera motion for a cinematic 7-second loop."
+    "Demonstrate layer zDepth ordering with four overlapping pinwheel blades.",
+    "Use separate layers and subtle curve animation to make depth sorting visible."
   ],
   "source_path": "showcase/s-000001",
   "demo_url": "",
   "related": [
-    "s-000005",
-    "s-000016"
+    "cs-000016",
+    "cs-000017",
+    "s-000003"
   ],
   "requires": [
     "Graph",
