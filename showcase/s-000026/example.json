@@ -1,0 +1,56 @@
+{
+  "id": "s-000026",
+  "type": "showcase",
+  "title": "Base64 Paper Magnifier Typography 6s",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "process",
+    "texture-overlay",
+    "paper-texture",
+    "image-asset",
+    "material",
+    "text",
+    "curve-animation"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "Texture",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Rect",
+    "Circle",
+    "Path",
+    "Text",
+    "LinearGradient",
+    "RadialGradient",
+    "Process",
+    "Tex",
+    "Pass",
+    "Present"
+  ],
+  "teaches": [
+    "Embed a paper texture directly with a base64 data URI.",
+    "Use the magnify_lens process effect for true circular lens remapping with glass/rim shading.",
+    "Combine magnify_lens with texture_overlay for paper-print material treatment."
+  ],
+  "source_path": "showcase/s-000026",
+  "demo_url": "",
+  "related": [
+    "s-000025",
+    "cm-000006",
+    "cp-000015"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Process",
+    "Present"
+  ]
+}
