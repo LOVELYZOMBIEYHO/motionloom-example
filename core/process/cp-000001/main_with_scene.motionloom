@@ -1,29 +1,36 @@
 <Graph fps={30} duration="3s" size={[800,450]} renderSize={[800,450]}>
-  <Background color="#FFFFFF" />
+  <Background color="#111827" />
 
-  <Scene id="ProcessBasicSource">
+  <Scene id="BrightnessSource">
+    <Defs>
+      <LinearGradient id="sample_bg" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#111827, 0.50:#1F2937, 1:#020617" />
+    </Defs>
+
     <Timeline>
       <Track id="main" space="world" z="0">
         <Sequence from="0s" duration="3s" out="hold">
           <Layer>
-            <Rect x="0" y="0" width="800" height="450" color="#FFFFFF" />
-            <Text x="52" y="64" value="Process effect: opacity" fontSize="32" color="#111827" />
-            <Text x="52" y="98" value="Standalone scene source for the basic Process pass" fontSize="20" color="#6B7280" />
-            <Rect x="250" y="154" width="300" height="142" radius="32" color="#111827" opacity="1" />
-            <Circle x="400" y="225" radius="38" color="#FFFFFF" opacity="1" />
+            <Rect x="0" y="0" width="800" height="450" fill="url(#sample_bg)" />
+            <Rect x="70" y="78" width="660" height="294" radius="36" color="#FFFFFF" opacity="0.10" />
+            <Circle x="240" y="230" radius="86" color="#38BDF8" opacity="0.58" />
+            <Circle x="400" y="230" radius="96" color="#F8FAFC" opacity="0.50" />
+            <Circle x="560" y="230" radius="86" color="#F97316" opacity="0.58" />
+            <Text value="BRIGHTNESS" x="400" y="218" fontFamily="Arial" fontWeight="900" fontSize="62" renderScale="4x" color="#FFFFFF" opacity="0.94" />
+            <Text value="brightness 1.3" x="400" y="274" fontFamily="Arial" fontSize="28" renderScale="4x" color="#CBD5E1" opacity="0.88" />
           </Layer>
         </Sequence>
       </Track>
     </Timeline>
   </Scene>
 
-  <Process id="ProcessBasic">
-    <Tex id="src" fmt="rgba16f" from="scene:ProcessBasicSource" />
+  <Process id="BrightnessProcess">
+    <Tex id="src" fmt="rgba16f" from="scene:BrightnessSource" />
     <Tex id="out" fmt="rgba16f" size={[800,450]} />
-    <Pass id="fx_opacity" kind="compute" effect="opacity"
+    <Pass id="fx_brightness" kind="compute" effect="brightness"
           in={["src"]} out={["out"]}
-          params={{ opacity: "1.0" }} />
+          params={{ brightness: "1.3" }} />
   </Process>
 
-  <Present from="ProcessBasic" />
+  <Present from="BrightnessProcess" />
 </Graph>

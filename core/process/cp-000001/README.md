@@ -1,4 +1,4 @@
-# DSL Process Basic
+# Process Brightness
 
 ID: `cp-000001`  
 Type: `core`  
@@ -6,22 +6,23 @@ Domain: `process`
 
 ## Files
 
-- `main.motionloom`: single Process / layer FX version using `input:clip0`.
+- `main.motionloom`: Layer FX version using `input:clip0`.
 - `main_with_scene.motionloom`: standalone Scene + Process version for direct preview/render testing.
 
 ## Features
 
-process
+process, brightness, layer-fx
 
 ## DSL
 
-process
+process, brightness
 
 ## Teaches
 
-- Define the smallest Process graph with one pass.
-- Use `Input from="input:clip0"` for layer FX usage.
+- Use `brightness` as a MotionLoom Process pass.
+- `brightness: "1.0"` is identity; `brightness: "1.3"` brightens by +0.3.
+- Use `Input from="input:clip0"` for Anica Layer FX usage.
 
 ## Use In Anica
 
-For layer FX, open `main.motionloom`, copy all content, then paste it into the Anica Layer FX MotionLoom script field.
+Open Layer FX Template Picker, choose `cp-000001 Process Brightness`, then insert it into the selected Layer FX.

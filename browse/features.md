@@ -9,6 +9,7 @@
 | [bloom](features/bloom.md) | 19 |
 | [blur](features/blur.md) | 3 |
 | [bone](features/bone.md) | 1 |
+| [brightness](features/brightness.md) | 1 |
 | [camera](features/camera.md) | 2 |
 | [canvas-texture](features/canvas-texture.md) | 1 |
 | [character-action](features/character-action.md) | 4 |
@@ -40,7 +41,7 @@
 | [image](features/image.md) | 1 |
 | [image-asset](features/image-asset.md) | 4 |
 | [layer](features/layer.md) | 3 |
-| [layer-fx](features/layer-fx.md) | 5 |
+| [layer-fx](features/layer-fx.md) | 6 |
 | [layout](features/layout.md) | 21 |
 | [light](features/light.md) | 2 |
 | [light-sweep](features/light-sweep.md) | 1 |

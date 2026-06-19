@@ -8,6 +8,7 @@
 | [bloom](dsl/bloom.md) | 1 |
 | [bone](dsl/bone.md) | 2 |
 | [box](dsl/box.md) | 1 |
+| [brightness](dsl/brightness.md) | 1 |
 | [camera](dsl/camera.md) | 4 |
 | [circle](dsl/circle.md) | 37 |
 | [component](dsl/component.md) | 3 |

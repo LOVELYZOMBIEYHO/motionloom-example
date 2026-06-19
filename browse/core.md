@@ -45,7 +45,7 @@
 | [cw-000004](../core/world/cw-000004/) | core | world | DSL Material Basic | material | Attach one Material to an Actor. |
 | [cw-000005](../core/world/cw-000005/) | core | world | DSL Pose Basic | pose | Place a Pose inside an Action. |
 | [cw-000006](../core/world/cw-000006/) | core | world | Two Actor Handshake Camera | glb-asset, character-action, character-rig, environment, camera | Combine multiple MotionLoom features into a polished demo.<br>Use this as a reference for YouTube Short or promo-style output. |
-| [cp-000001](../core/process/cp-000001/) | core | process | DSL Process Basic | process | Define the smallest Process graph with one pass. |
+| [cp-000001](../core/process/cp-000001/) | core | process | Process Brightness | process, brightness, layer-fx | Use brightness as a Layer FX Process pass.<br>Set brightness to 1.0 for identity, or 1.3 for a brighter image. |
 | [cp-000002](../core/process/cp-000002/) | core | process | Process Bloom Alias | process, gpu-pipeline, bloom, glow | Use effect="bloom" as a Process post-pass alias for layer FX.<br>Feed the selected layer into Process with Input from="input:clip0". |
 | [cp-000003](../core/process/cp-000003/) | core | process | Process Glow Alias | process, gpu-pipeline, bloom, glow | Use effect="glow" as a readable alias for Process bloom in layer FX.<br>Keep one alias per Pass so examples are searchable and unambiguous. |
 | [cp-000004](../core/process/cp-000004/) | core | process | Process Glow Bloom Alias | process, gpu-pipeline, bloom, glow | Use effect="glow_bloom" as the explicit compatibility alias for bloom/glow in layer FX.<br>Keep alias examples split because one Pass has exactly one effect value. |
