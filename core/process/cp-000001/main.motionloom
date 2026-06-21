@@ -7,7 +7,7 @@
     <Tex id="out" fmt="rgba16f" size={[800,450]} />
     <Pass id="fx_brightness" kind="compute" effect="brightness"
           in={["src"]} out={["out"]}
-          params={{ brightness: "1.3" }} />
+          params={{ brightness: "0.3" }} />
   </Process>
 
   <Present from="BrightnessProcess" />
