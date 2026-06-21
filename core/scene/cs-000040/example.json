@@ -1,0 +1,37 @@
+{
+  "id": "cs-000040",
+  "type": "core",
+  "domain": "scene",
+  "title": "Scene Layer3D Static Background",
+  "summary": "Compare Layer3D z-depth and X/Y rotation against a static cyber grid background.",
+  "entry": "main.motionloom",
+  "features": ["scene", "layer3d", "2.5d", "zdepth", "curve-animation"],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "LinearGradient",
+    "RadialGradient",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Layer3D",
+    "Rect",
+    "Line",
+    "Text",
+    "Repeat",
+    "curve"
+  ],
+  "teaches": [
+    "Use a static detailed background to judge Layer3D motion.",
+    "Animate z to change apparent size and depth.",
+    "Animate rotationX and rotationY to show perspective card tilt."
+  ],
+  "source_path": "scene/camera/layer3d_static_background.motionloom",
+  "demo_url": "",
+  "related": ["cs-000039", "cs-000036"],
+  "requires": ["Graph", "Scene", "Layer3D"],
+  "path": "core/scene/cs-000040/"
+}

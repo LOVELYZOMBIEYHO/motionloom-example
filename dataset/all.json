@@ -1,11 +1,11 @@
 {
-  "example_count": 96,
-  "core_count": 70,
-  "showcase_count": 26,
+  "example_count": 102,
+  "core_count": 74,
+  "showcase_count": 28,
   "domain_counts": {
-    "scene": 63,
+    "scene": 68,
     "world": 6,
-    "process": 15,
+    "process": 16,
     "composition": 1,
     "text": 11
   },
@@ -1202,6 +1202,151 @@
         "FaceJaw"
       ],
       "path": "core/scene/cs-000037/"
+    },
+    {
+      "id": "cs-000038",
+      "type": "core",
+      "title": "Mask Follow Target",
+      "domain": "scene",
+      "features": [
+        "masking",
+        "curve-animation",
+        "shape"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "masking",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Rect",
+        "Circle",
+        "Line",
+        "Text",
+        "curve"
+      ],
+      "teaches": [
+        "Use <Mask follow=\"node:id\"> to make a mask track another scene node.",
+        "Apply the followed mask to a Group to reveal color or effects around the moving target."
+      ],
+      "source_path": "scene/masking/mask_follow_target.motionloom",
+      "demo_url": "",
+      "related": [
+        "cs-000012"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Defs",
+        "Mask",
+        "Group"
+      ],
+      "path": "core/scene/cs-000038/"
+    },
+    {
+      "id": "cs-000039",
+      "type": "core",
+      "domain": "scene",
+      "title": "Scene Layer3D Cards",
+      "summary": "AE-like 2.5D scene layers using Layer3D z, rotationX, rotationY, and camera zoom.",
+      "entry": "main.motionloom",
+      "features": [
+        "scene",
+        "camera",
+        "layer3d",
+        "2.5d",
+        "zdepth"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "LinearGradient",
+        "RadialGradient",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Camera",
+        "Layer",
+        "Layer3D",
+        "Rect",
+        "Text",
+        "curve"
+      ],
+      "teaches": [
+        "Use Layer3D for flat scene content in pseudo-3D space.",
+        "Use z to sort near and far cards.",
+        "Use rotationX and rotationY for AE-like card tilt."
+      ],
+      "source_path": "scene/camera/layer3d_cards.motionloom",
+      "demo_url": "",
+      "related": [
+        "cs-000001",
+        "cs-000036"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Camera",
+        "Layer3D"
+      ],
+      "path": "core/scene/cs-000039/"
+    },
+    {
+      "id": "cs-000040",
+      "type": "core",
+      "domain": "scene",
+      "title": "Scene Layer3D Static Background",
+      "summary": "Compare Layer3D z-depth and X/Y rotation against a static cyber grid background.",
+      "entry": "main.motionloom",
+      "features": [
+        "scene",
+        "layer3d",
+        "2.5d",
+        "zdepth",
+        "curve-animation"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "LinearGradient",
+        "RadialGradient",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Layer3D",
+        "Rect",
+        "Line",
+        "Text",
+        "Repeat",
+        "curve"
+      ],
+      "teaches": [
+        "Use a static detailed background to judge Layer3D motion.",
+        "Animate z to change apparent size and depth.",
+        "Animate rotationX and rotationY to show perspective card tilt."
+      ],
+      "source_path": "scene/camera/layer3d_static_background.motionloom",
+      "demo_url": "",
+      "related": [
+        "cs-000039",
+        "cs-000036"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Layer3D"
+      ],
+      "path": "core/scene/cs-000040/"
     },
     {
       "id": "s-000001",
@@ -2546,6 +2691,99 @@
       "path": "showcase/s-000026/"
     },
     {
+      "id": "s-000027",
+      "type": "showcase",
+      "title": "Masked Typography Text 2s",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "mask",
+        "group-mask",
+        "typography",
+        "luma-matte",
+        "gpu-friendly"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Mask",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Text",
+        "Rect",
+        "Present"
+      ],
+      "teaches": [
+        "Use a color precompose as source and a white TEXT precompose as luma matte.",
+        "Keep the scene static and primitive-only for direct GPU live preview testing.",
+        "Create a text-filled-color look without process post effects or unsupported blend modes."
+      ],
+      "source_path": "showcase/s-000027",
+      "demo_url": "",
+      "related": [
+        "cs-000033",
+        "s-000026"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Present"
+      ],
+      "path": "showcase/s-000027/"
+    },
+    {
+      "id": "s-000028",
+      "type": "showcase",
+      "title": "Layer3D Neon Gallery",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "layer3d",
+        "2.5d",
+        "zdepth",
+        "curve-animation",
+        "gpu-friendly"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Layer3D",
+        "Rect",
+        "Text",
+        "Line",
+        "Repeat",
+        "Present"
+      ],
+      "teaches": [
+        "Use Layer3D to project flat 2D artwork with perspective.",
+        "Animate z and rotationY to create a near-card push.",
+        "Keep the background static to make Layer3D motion readable."
+      ],
+      "source_path": "showcase/s-000028",
+      "demo_url": "",
+      "related": [
+        "cs-000040"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Layer3D",
+        "Present"
+      ],
+      "path": "showcase/s-000028/"
+    },
+    {
       "id": "cw-000001",
       "type": "core",
       "title": "DSL Action Basic",
@@ -3327,6 +3565,53 @@
         "Present"
       ],
       "path": "core/process/cp-000015/"
+    },
+    {
+      "id": "cp-000016",
+      "type": "core",
+      "title": "Process Pass Mask",
+      "domain": "process",
+      "features": [
+        "process",
+        "gpu-pipeline",
+        "mask",
+        "pass-mask",
+        "luma-mask",
+        "layer-fx"
+      ],
+      "dsl": [
+        "Graph",
+        "Scene",
+        "Defs",
+        "RadialGradient",
+        "Process",
+        "Input",
+        "Tex",
+        "Pass",
+        "Present",
+        "mask",
+        "maskMode"
+      ],
+      "teaches": [
+        "Use mask=\"...\" on <Pass> to limit a process effect to a mask texture.",
+        "Use maskMode=\"luma\" when the mask texture is black and white."
+      ],
+      "source_path": "generated/process/pass_mask",
+      "demo_url": "",
+      "related": [
+        "cs-000012",
+        "cs-000033",
+        "cp-000001"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Process",
+        "Tex",
+        "Pass",
+        "Present"
+      ],
+      "path": "core/process/cp-000016/"
     },
     {
       "id": "cm-000001",

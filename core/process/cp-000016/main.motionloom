@@ -1,0 +1,34 @@
+<Graph fps={30} size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#00000000" />
+
+  <Scene id="soft_center_mask">
+    <Defs>
+      <RadialGradient id="mask_grad" cx="0.50" cy="0.50" r="0.56"
+                      stops="0:#FFFFFF, 0.62:#FFFFFFEE, 0.84:#FFFFFF55, 1:#FFFFFF00" />
+    </Defs>
+    <Timeline>
+      <Track id="mask" space="world" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Circle x="960" y="540" radius="420" fill="url(#mask_grad)" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="layer_fx">
+    <Input id="clip0" type="video" from="input:clip0" />
+    <Tex id="src" fmt="rgba16f" from="clip0" />
+    <Tex id="mask_tex" fmt="rgba16f" from="scene:soft_center_mask" />
+    <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="masked_brightness" kind="compute"
+          effect="brightness"
+          in={["src"]} out={["out"]}
+          mask="mask_tex"
+          maskMode="luma"
+          params={{ brightness: "0.32" }} />
+  </Process>
+
+  <Present from="layer_fx" />
+</Graph>

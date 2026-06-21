@@ -1,0 +1,110 @@
+<Graph fps={30} duration="5s" size={[1280,720]} renderSize={[1280,720]}>
+  <Background color="#05070B" />
+
+  <Scene id="layer3d_on_static_background_demo">
+    <Defs>
+      <RadialGradient id="sky_glow" cx="0.52" cy="0.42" r="0.78"
+                      stops="0:#1B3D72, 0.38:#0B162C, 0.78:#05070B, 1:#020306" />
+      <LinearGradient id="horizon_wash" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#00B7FF00, 0.34:#2D83FF30, 0.50:#F5D67A44, 0.70:#B04DFF28, 1:#00B7FF00" />
+      <LinearGradient id="panel_blue" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#8BE9FF, 0.35:#376DFF, 1:#151836" />
+      <LinearGradient id="panel_orange" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#FFE08A, 0.46:#FF7A32, 1:#42110A" />
+      <LinearGradient id="panel_purple" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#F6A7FF, 0.45:#8F49FF, 1:#17112C" />
+      <RadialGradient id="panel_light" cx="0.45" cy="0.35" r="0.62"
+                      stops="0:#FFFFFF55, 0.42:#FFFFFF10, 1:#FFFFFF00" />
+    </Defs>
+
+    <Timeline>
+      <Track id="static_background" space="world" z="0">
+        <Sequence from="0s" duration="5s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1280" height="720" fill="url(#sky_glow)" />
+            <Rect x="0" y="270" width="1280" height="170" fill="url(#horizon_wash)" opacity="0.75" />
+
+            <Repeat id="far_vertical_grid" count="28" x="80" y="140" xStep="42" opacity="0.30" opacityStep="-0.004">
+              <Line x1="0" y1="0" x2="0" y2="430" stroke="#72D7FF" strokeWidth="1" opacity="0.20" />
+            </Repeat>
+            <Repeat id="far_horizontal_grid" count="16" x="0" y="180" yStep="24" opacity="0.36" opacityStep="-0.006">
+              <Line x1="72" y1="0" x2="1208" y2="0" stroke="#B9D8FF" strokeWidth="1" opacity="0.16" />
+            </Repeat>
+
+            <Repeat id="building_left" count="8" x="80" y="446" xStep="48" opacity="0.86" opacityStep="-0.02">
+              <Rect x="0" y="0" width="34" height="150" fill="#07101C" stroke="#2B597A" strokeWidth="1" />
+              <Repeat count="4" x="7" y="14" yStep="24" opacity="0.70" opacityStep="-0.03">
+                <Rect x="0" y="0" width="20" height="7" color="#76DFFF" opacity="0.24" />
+              </Repeat>
+            </Repeat>
+            <Repeat id="building_right" count="7" x="868" y="420" xStep="50" opacity="0.80" opacityStep="-0.025">
+              <Rect x="0" y="0" width="38" height="176" fill="#080A15" stroke="#463C7C" strokeWidth="1" />
+              <Repeat count="5" x="8" y="16" yStep="25" opacity="0.70" opacityStep="-0.02">
+                <Rect x="0" y="0" width="22" height="7" color="#FFA8EA" opacity="0.22" />
+              </Repeat>
+            </Repeat>
+
+            <Text value="STATIC BACKGROUND" x="640" y="644" fontSize="24" fontWeight="800" color="#BFD7FF" opacity="0.34" />
+            <Text value="only Layer3D panels move in depth / rotation" x="640" y="674" fontSize="18" color="#7F93AA" opacity="0.60" />
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="layer3d_panels" space="world" z="10">
+        <Sequence from="0s" duration="5s" out="hold">
+          <Layer>
+            <Text value="Layer3D comparison" x="640" y="82" fontSize="54" fontWeight="900" color="#FFFFFF" />
+            <Text value="same flat 2D artwork, different z + rotationX/Y over a static scene" x="640" y="122" fontSize="22" color="#9CB2C9" />
+          </Layer>
+
+          <Layer3D id="near_swing_panel"
+                   x="408" y="250" z={curve("0:-40:linear, 2.5:-120:ease_in_out, 5:-40:ease_in_out")}
+                   rotationY={curve("0:-28:ease_in_out, 2.5:28:ease_in_out, 5:-28:ease_in_out")}
+                   rotationX={curve("0:6:linear, 2.5:-6:ease_in_out, 5:6:ease_in_out")}
+                   perspective="760"
+                   transformOriginX="220" transformOriginY="125">
+            <Rect x="0" y="0" width="440" height="250" radius="24" fill="url(#panel_orange)" stroke="#FFDCA0" strokeWidth="3" />
+            <Rect x="16" y="16" width="408" height="218" radius="18" fill="url(#panel_light)" blend="screen" opacity="0.75" />
+            <Repeat id="near_scan" count="7" x="28" y="34" yStep="27" opacity="0.38" opacityStep="-0.018">
+              <Line x1="0" y1="0" x2="382" y2="0" stroke="#FFFFFF" strokeWidth="3" opacity="0.22" />
+            </Repeat>
+            <Text value="NEAR" x="220" y="146" fontSize="72" fontWeight="900" color="#0A1020" />
+            <Text value="z moves closer + rotates Y" x="220" y="202" fontSize="21" color="#241104" opacity="0.72" />
+          </Layer3D>
+
+          <Layer3D id="left_depth_panel"
+                   x="130" y="250" z="170"
+                   rotationY={curve("0:58:ease_in_out, 2.5:22:ease_in_out, 5:58:ease_in_out")}
+                   rotationX="-8"
+                   perspective="760"
+                   transformOriginX="180" transformOriginY="130">
+            <Rect x="0" y="0" width="360" height="260" radius="18" fill="url(#panel_blue)" stroke="#A7F2FF" strokeWidth="3" />
+            <Repeat id="left_tiles" count="7" x="25" y="25" xStep="42" opacity="0.58" opacityStep="-0.025">
+              <Rect x="0" y="0" width="26" height="26" color="#FFFFFF" opacity="0.18" />
+              <Rect x="0" y="48" width="26" height="26" color="#061325" opacity="0.28" />
+              <Rect x="0" y="96" width="26" height="26" color="#A6FFEA" opacity="0.14" />
+            </Repeat>
+            <Text value="FAR" x="180" y="134" fontSize="58" fontWeight="900" color="#FFFFFF" />
+            <Text value="smaller by z" x="180" y="184" fontSize="20" color="#D8F8FF" opacity="0.78" />
+          </Layer3D>
+
+          <Layer3D id="right_floor_panel"
+                   x="790" y="310" z="40"
+                   rotationY={curve("0:-26:ease_in_out, 2.5:-54:ease_in_out, 5:-26:ease_in_out")}
+                   rotationX={curve("0:48:ease_in_out, 2.5:62:ease_in_out, 5:48:ease_in_out")}
+                   perspective="760"
+                   transformOriginX="220" transformOriginY="110">
+            <Rect x="0" y="0" width="440" height="220" radius="20" fill="url(#panel_purple)" stroke="#F3B2FF" strokeWidth="3" />
+            <Repeat id="right_rays" count="8" x="24" y="20" xStep="48" opacity="0.62" opacityStep="-0.022">
+              <Line x1="0" y1="170" x2="34" y2="0" stroke="#FFFFFF" strokeWidth="4" opacity="0.18" />
+            </Repeat>
+            <Text value="TILT" x="220" y="100" fontSize="64" fontWeight="900" color="#FFFFFF" />
+            <Text value="rotationX makes a floor-like card" x="220" y="148" fontSize="20" color="#F6D7FF" opacity="0.72" />
+          </Layer3D>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="layer3d_on_static_background_demo" />
+</Graph>

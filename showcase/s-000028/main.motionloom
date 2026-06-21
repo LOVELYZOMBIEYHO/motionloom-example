@@ -1,0 +1,118 @@
+<!-- Layer3D showcase: elegant 2.5D glass cards over a static neon city backdrop. -->
+<Graph fps={30} duration="6s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#03050A" />
+
+  <Scene id="layer3d_neon_gallery_showcase">
+    <Defs>
+      <RadialGradient id="night_sky" cx="0.50" cy="0.42" r="0.82"
+                      stops="0:#193567, 0.34:#09172D, 0.72:#03050A, 1:#000000" />
+      <RadialGradient id="moon_glow" cx="0.50" cy="0.50" r="0.50"
+                      stops="0:#FFFFFFAA, 0.30:#80E7FF66, 0.64:#3D78FF22, 1:#3D78FF00" />
+      <LinearGradient id="horizon_neon" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#00D8FF00, 0.22:#26B8FF38, 0.48:#FFE58A40, 0.74:#FF56D438, 1:#00D8FF00" />
+      <LinearGradient id="floor_grid_fade" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#8CEBFF42, 0.42:#4C7BFF20, 1:#00000000" />
+      <LinearGradient id="glass_cyan" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#8BF4FF, 0.22:#2FAEFF, 0.58:#1747C8, 1:#071326" />
+      <LinearGradient id="glass_gold" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#FFF0A8, 0.36:#FFB24A, 0.68:#D84230, 1:#17070B" />
+      <LinearGradient id="glass_magenta" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#FFD6FF, 0.34:#B44EFF, 0.70:#4E38D8, 1:#12061E" />
+      <LinearGradient id="scan_light" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#FFFFFF00, 0.42:#FFFFFF88, 0.54:#FFFFFFCC, 1:#FFFFFF00" />
+      <RadialGradient id="panel_glint" cx="0.28" cy="0.20" r="0.56"
+                      stops="0:#FFFFFF80, 0.38:#FFFFFF1E, 1:#FFFFFF00" />
+    </Defs>
+
+    <Timeline>
+      <Track id="static_world" space="world" z="0">
+        <Sequence from="0s" duration="6s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#night_sky)" />
+            <Circle x="960" y="360" radius="360" fill="url(#moon_glow)" opacity="0.58" blend="screen" />
+            <Rect x="0" y="430" width="1920" height="250" fill="url(#horizon_neon)" opacity="0.90" />
+
+            <Repeat id="left_skyline" count="12" x="105" y="566" xStep="68" opacity="0.82" opacityStep="-0.022">
+              <Rect x="0" y="0" width="46" height="270" fill="#06101D" stroke="#24557B" strokeWidth="1.5" />
+              <Repeat count="6" x="10" y="20" yStep="36" opacity="0.70" opacityStep="-0.035">
+                <Rect x="0" y="0" width="24" height="9" color="#81E7FF" opacity="0.28" />
+              </Repeat>
+            </Repeat>
+
+            <Repeat id="right_skyline" count="11" x="1130" y="530" xStep="62" opacity="0.78" opacityStep="-0.018">
+              <Rect x="0" y="0" width="44" height="306" fill="#080817" stroke="#594090" strokeWidth="1.5" />
+              <Repeat count="7" x="9" y="20" yStep="34" opacity="0.70" opacityStep="-0.026">
+                <Rect x="0" y="0" width="24" height="8" color="#FFA7F3" opacity="0.26" />
+              </Repeat>
+            </Repeat>
+
+            <Rect x="0" y="760" width="1920" height="320" fill="url(#floor_grid_fade)" opacity="0.72" />
+            <Repeat id="floor_lines" count="13" x="0" y="794" yStep="24" opacity="0.60" opacityStep="-0.034">
+              <Line x1="300" y1="0" x2="1620" y2="0" stroke="#9DEFFF" strokeWidth="1.5" opacity="0.25" />
+            </Repeat>
+            <Repeat id="floor_rays" count="17" x="960" y="780" rotationStep="4.2" opacity="0.48" opacityStep="-0.018">
+              <Line x1="0" y1="0" x2="0" y2="420" stroke="#7CC9FF" strokeWidth="1.2" opacity="0.22" />
+            </Repeat>
+
+            <Text value="STATIC NEON BACKDROP" x="960" y="946" fontSize="24" fontWeight="800" color="#8FA9C8" opacity="0.42" />
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="layer3d_gallery" space="world" z="10">
+        <Sequence from="0s" duration="6s" out="hold">
+          <Layer>
+            <Text value="LAYER3D" x="960" y="122" fontSize="86" fontWeight="900" renderScale="4x" color="#FFFFFF" />
+            <Text value="flat scene artwork moving through depth, tilt, and perspective" x="960" y="178" fontSize="30" renderScale="4x" color="#AFC4DD" opacity="0.86" />
+          </Layer>
+
+          <Layer3D id="cyan_far_card"
+                   x="260" y="310" z="150"
+                   rotationY={curve("0:46:ease_in_out, 3:24:ease_in_out, 6:46:ease_in_out")}
+                   rotationX={curve("0:-6:linear, 3:6:ease_in_out, 6:-6:ease_in_out")}
+                   perspective="900"
+                   transformOriginX="250" transformOriginY="180">
+            <Rect x="0" y="0" width="500" height="360" radius="36" fill="url(#glass_cyan)" stroke="#B9FAFF" strokeWidth="4" opacity="0.95" />
+            <Rect x="22" y="22" width="456" height="316" radius="28" fill="url(#panel_glint)" blend="screen" opacity="0.32" />
+            <Repeat id="cyan_tiles" count="7" x="46" y="52" xStep="54" opacity="0.70" opacityStep="-0.025">
+              <Rect x="0" y="0" width="34" height="34" color="#FFFFFF" opacity="0.18" />
+              <Rect x="0" y="58" width="34" height="34" color="#66EFFF" opacity="0.14" />
+              <Rect x="0" y="116" width="34" height="34" color="#0B1730" opacity="0.34" />
+            </Repeat>
+            <Text value="FAR" x="250" y="184" fontSize="82" fontWeight="900" color="#FFFFFF" />
+          </Layer3D>
+
+          <Layer3D id="gold_hero_card"
+                   x="650" y="326" z={curve("0:35:linear, 3:-58:ease_in_out, 6:35:ease_in_out")}
+                   rotationY={curve("0:-18:ease_in_out, 3:20:ease_in_out, 6:-18:ease_in_out")}
+                   rotationX={curve("0:5:ease_in_out, 3:-6:ease_in_out, 6:5:ease_in_out")}
+                   perspective="900"
+                   transformOriginX="300" transformOriginY="200">
+            <Rect x="0" y="0" width="600" height="400" radius="42" fill="url(#glass_gold)" stroke="#FFE7A5" strokeWidth="5" opacity="0.97" />
+            <Rect x="28" y="28" width="544" height="344" radius="32" fill="url(#panel_glint)" blend="screen" opacity="0.32" />
+            <Repeat id="gold_scan" count="8" x="56" y="64" yStep="34" opacity="0.44" opacityStep="-0.020">
+              <Line x1="0" y1="0" x2="488" y2="0" stroke="#FFFFFF" strokeWidth="3" opacity="0.24" />
+            </Repeat>
+            <Text value="NEAR" x="300" y="214" fontSize="104" fontWeight="900" color="#080A12" />
+          </Layer3D>
+
+          <Layer3D id="magenta_tilt_card"
+                   x="1150" y="420" z="60"
+                   rotationY={curve("0:-28:ease_in_out, 3:-48:ease_in_out, 6:-28:ease_in_out")}
+                   rotationX={curve("0:42:ease_in_out, 3:54:ease_in_out, 6:42:ease_in_out")}
+                   perspective="900"
+                   transformOriginX="270" transformOriginY="140">
+            <Rect x="0" y="0" width="540" height="280" radius="38" fill="url(#glass_magenta)" stroke="#F9BCFF" strokeWidth="4" opacity="0.94" />
+            <Rect x="24" y="24" width="492" height="232" radius="28" fill="url(#panel_glint)" blend="screen" opacity="0.30" />
+            <Repeat id="magenta_rays" count="9" x="46" y="40" xStep="52" opacity="0.60" opacityStep="-0.022">
+              <Line x1="0" y1="190" x2="44" y2="0" stroke="#FFFFFF" strokeWidth="5" opacity="0.18" />
+            </Repeat>
+            <Text value="TILT" x="270" y="128" fontSize="86" fontWeight="900" color="#FFFFFF" />
+          </Layer3D>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="layer3d_neon_gallery_showcase" />
+</Graph>

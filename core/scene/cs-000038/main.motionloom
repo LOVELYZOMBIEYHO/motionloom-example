@@ -1,0 +1,52 @@
+<Graph fps={30} duration="4s" size={[1280,720]} renderSize={[1280,720]}>
+  <Background color="#05070D" />
+
+  <Scene id="mask_follow_target_demo">
+    <Defs>
+      <LinearGradient id="revealed_color" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#FF4FD8, 0.28:#FFE66D, 0.58:#61FFEA, 1:#7C5CFF" />
+      <RadialGradient id="target_glow" cx="0.50" cy="0.50" r="0.50"
+                      stops="0:#FFFFFF, 0.35:#62F7FFAA, 1:#62F7FF00" />
+      <Mask id="moving_spot_mask" follow="node:tracker" shape="circle" x="0" y="0" radius="118" feather="20" />
+    </Defs>
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Text value="MASK FOLLOW" x="640" y="118" fontSize="54" fontWeight="900" color="#E8F7FF" />
+            <Text value="the reveal mask follows the small cyan target" x="640" y="158" fontSize="24" color="#8CA3B8" />
+
+            <Repeat id="grid" count="18" x="110" y="245" yStep="18" opacity="0.34" opacityStep="-0.006">
+              <Line x1="0" y1="0" x2="1060" y2="0" stroke="#A9C8FF" strokeWidth="1" opacity="0.22" />
+            </Repeat>
+
+            <Group id="masked_reveal" mask="moving_spot_mask" maskMode="alpha">
+              <Rect x="150" y="230" width="980" height="280" radius="44" fill="url(#revealed_color)" opacity="0.96" />
+              <Repeat id="bright_slashes" count="12" x="180" y="214" xStep="86" opacity="0.70" opacityStep="-0.012">
+                <Line x1="0" y1="300" x2="120" y2="0" stroke="#FFFFFF" strokeWidth="10" opacity="0.24" />
+              </Repeat>
+            </Group>
+
+            <Rect x="150" y="230" width="980" height="280" radius="44" fill="#0B1020" stroke="#33445F" strokeWidth="3" opacity="0.82" />
+            <Text value="REVEAL TARGET" x="640" y="392" fontSize="94" fontWeight="900" color="#FFFFFF" opacity="0.12" />
+
+            <Circle id="tracker"
+                    x={curve("0:245:ease_in_out, 1.35:675:ease_in_out, 2.7:1030:ease_in_out, 4:520:ease_in_out")}
+                    y={curve("0:352:ease_in_out, 1.35:300:ease_in_out, 2.7:430:ease_in_out, 4:352:ease_in_out")}
+                    radius="14"
+                    color="#66F7FF" />
+            <Circle x={curve("0:245:ease_in_out, 1.35:675:ease_in_out, 2.7:1030:ease_in_out, 4:520:ease_in_out")}
+                    y={curve("0:352:ease_in_out, 1.35:300:ease_in_out, 2.7:430:ease_in_out, 4:352:ease_in_out")}
+                    radius="52"
+                    fill="url(#target_glow)"
+                    blend="screen"
+                    opacity="0.72" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="mask_follow_target_demo" />
+</Graph>

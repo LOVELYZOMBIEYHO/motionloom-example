@@ -1,0 +1,46 @@
+{
+  "id": "s-000028",
+  "type": "showcase",
+  "title": "Layer3D Neon Gallery",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "layer3d",
+    "2.5d",
+    "zdepth",
+    "curve-animation",
+    "gpu-friendly"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Layer3D",
+    "Rect",
+    "Text",
+    "Line",
+    "Repeat",
+    "Present"
+  ],
+  "teaches": [
+    "Use Layer3D to project flat 2D artwork with perspective.",
+    "Animate z and rotationY to create a near-card push.",
+    "Keep the background static to make Layer3D motion readable."
+  ],
+  "source_path": "showcase/s-000028",
+  "demo_url": "",
+  "related": [
+    "cs-000040"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Layer3D",
+    "Present"
+  ]
+}

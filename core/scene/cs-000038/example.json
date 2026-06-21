@@ -1,0 +1,44 @@
+{
+  "id": "cs-000038",
+  "type": "core",
+  "title": "Mask Follow Target",
+  "domain": "scene",
+  "features": [
+    "masking",
+    "curve-animation",
+    "shape"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "masking",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Rect",
+    "Circle",
+    "Line",
+    "Text",
+    "curve"
+  ],
+  "teaches": [
+    "Use <Mask follow=\"node:id\"> to make a mask track another scene node.",
+    "Apply the followed mask to a Group to reveal color or effects around the moving target."
+  ],
+  "source_path": "scene/masking/mask_follow_target.motionloom",
+  "demo_url": "",
+  "related": [
+    "cs-000012"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Defs",
+    "Mask",
+    "Group"
+  ]
+}

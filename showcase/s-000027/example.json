@@ -1,0 +1,45 @@
+{
+  "id": "s-000027",
+  "type": "showcase",
+  "title": "Masked Typography Text 2s",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "mask",
+    "group-mask",
+    "typography",
+    "luma-matte",
+    "gpu-friendly"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "Mask",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Text",
+    "Rect",
+    "Present"
+  ],
+  "teaches": [
+    "Use a color precompose as source and a white TEXT precompose as luma matte.",
+    "Keep the scene static and primitive-only for direct GPU live preview testing.",
+    "Create a text-filled-color look without process post effects or unsupported blend modes."
+  ],
+  "source_path": "showcase/s-000027",
+  "demo_url": "",
+  "related": [
+    "cs-000033",
+    "s-000026"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Present"
+  ]
+}

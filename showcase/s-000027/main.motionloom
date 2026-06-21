@@ -1,0 +1,79 @@
+<!-- Static GPU maskFrom test: a colorful plate revealed through a block TEXT node matte. -->
+<Graph fps={30} duration="2s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#000000" />
+
+  <Scene id="masked_text_matte_static">
+    <Defs>
+      <Precompose id="sunset_plate" size={[1920,1080]}>
+        <Rect x="0" y="0" width="1920" height="1080" color="#000000" />
+        <Rect x="0" y="220" width="1920" height="180" color="#F3B49A" />
+        <Rect x="0" y="360" width="1920" height="170" color="#FFE0C7" />
+        <Rect x="0" y="500" width="1920" height="140" color="#FFF6EA" />
+        <Rect x="0" y="620" width="1920" height="260" color="#766274" />
+
+        <Path d="M 0 676 L 180 618 L 360 650 L 540 590 L 760 645 L 960 560 L 1160 632 L 1360 590 L 1550 654 L 1740 620 L 1920 672 L 1920 880 L 0 880 Z"
+              fill="#2C2028"
+              stroke="none"
+              opacity="0.88" />
+        <Path d="M 0 548 C 240 500 410 504 610 538 C 820 574 980 528 1200 506 C 1460 480 1640 510 1920 466 L 1920 610 C 1620 650 1420 608 1210 628 C 980 650 820 690 600 638 C 395 590 210 610 0 650 Z"
+              fill="#FFFFFF"
+              stroke="none"
+              opacity="0.22" />
+      </Precompose>
+
+      <Precompose id="text_matte" size={[1920,1080]}>
+        <Group id="text_shape_matte">
+          <!-- T -->
+          <Rect x="140" y="270" width="360" height="86" color="#FFFFFF" />
+          <Rect x="276" y="270" width="88" height="540" color="#FFFFFF" />
+
+          <!-- E -->
+          <Rect x="565" y="270" width="88" height="540" color="#FFFFFF" />
+          <Rect x="565" y="270" width="370" height="86" color="#FFFFFF" />
+          <Rect x="565" y="494" width="316" height="82" color="#FFFFFF" />
+          <Rect x="565" y="724" width="370" height="86" color="#FFFFFF" />
+
+          <!-- X -->
+          <Path d="M 970 270 L 1070 270 L 1328 810 L 1228 810 Z"
+                fill="#FFFFFF"
+                stroke="none" />
+          <Path d="M 1228 270 L 1328 270 L 1070 810 L 970 810 Z"
+                fill="#FFFFFF"
+                stroke="none" />
+
+          <!-- T -->
+          <Rect x="1415" y="270" width="365" height="86" color="#FFFFFF" />
+          <Rect x="1554" y="270" width="88" height="540" color="#FFFFFF" />
+        </Group>
+      </Precompose>
+
+      <Precompose id="text_shadow" size={[1920,1080]}>
+        <!-- Same text silhouette, offset slightly for a hard black print edge. -->
+        <Rect x="154" y="286" width="360" height="86" color="#FFFFFF" />
+        <Rect x="290" y="286" width="88" height="540" color="#FFFFFF" />
+        <Rect x="579" y="286" width="88" height="540" color="#FFFFFF" />
+        <Rect x="579" y="286" width="370" height="86" color="#FFFFFF" />
+        <Rect x="579" y="510" width="316" height="82" color="#FFFFFF" />
+        <Rect x="579" y="740" width="370" height="86" color="#FFFFFF" />
+        <Path d="M 984 286 L 1084 286 L 1342 826 L 1242 826 Z" fill="#FFFFFF" stroke="none" />
+        <Path d="M 1242 286 L 1342 286 L 1084 826 L 984 826 Z" fill="#FFFFFF" stroke="none" />
+        <Rect x="1429" y="286" width="365" height="86" color="#FFFFFF" />
+        <Rect x="1568" y="286" width="88" height="540" color="#FFFFFF" />
+      </Precompose>
+    </Defs>
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="2s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1920" height="1080" color="#000000" />
+            <Layer id="shadow_edge" source="text_shadow" opacity="0.44" />
+            <Layer id="color_inside_text" source="sunset_plate" matteFrom="text_shape_matte" matteMode="alpha" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="masked_text_matte_static" />
+</Graph>

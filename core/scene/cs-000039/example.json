@@ -1,0 +1,49 @@
+{
+  "id": "cs-000039",
+  "type": "core",
+  "domain": "scene",
+  "title": "Scene Layer3D Cards",
+  "summary": "AE-like 2.5D scene layers using Layer3D z, rotationX, rotationY, and camera zoom.",
+  "entry": "main.motionloom",
+  "features": [
+    "scene",
+    "camera",
+    "layer3d",
+    "2.5d",
+    "zdepth"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "LinearGradient",
+    "RadialGradient",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Camera",
+    "Layer",
+    "Layer3D",
+    "Rect",
+    "Text",
+    "curve"
+  ],
+  "teaches": [
+    "Use Layer3D for flat scene content in pseudo-3D space.",
+    "Use z to sort near and far cards.",
+    "Use rotationX and rotationY for AE-like card tilt."
+  ],
+  "source_path": "scene/camera/layer3d_cards.motionloom",
+  "demo_url": "",
+  "related": [
+    "cs-000001",
+    "cs-000036"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Camera",
+    "Layer3D"
+  ]
+}

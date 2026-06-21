@@ -1,0 +1,66 @@
+<Graph fps={30} duration="4s" size={[1280,720]} renderSize={[1280,720]}>
+  <Background color="#070A12" />
+
+  <Scene id="scene_layer3d_cards_demo">
+    <Defs>
+      <LinearGradient id="card_blue" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#62F7FF, 0.46:#2F80ED, 1:#241B7A" />
+      <LinearGradient id="card_gold" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#FFF1A8, 0.48:#F59E0B, 1:#7C2D12" />
+      <LinearGradient id="card_pink" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#FF8FE8, 0.48:#D946EF, 1:#581C87" />
+      <RadialGradient id="stage_glow" cx="0.50" cy="0.56" r="0.62"
+                      stops="0:#3B82F644, 0.55:#11182722, 1:#00000000" />
+    </Defs>
+
+    <Timeline>
+      <Track id="camera" role="camera" z="1000">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Camera x="640" y="360" zoom={curve("0:1.00:linear, 4:1.08:ease_in_out")} />
+        </Sequence>
+      </Track>
+
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1280" height="720" fill="url(#stage_glow)" />
+            <Text value="SCENE 2.5D" x="640" y="86" fontSize="56" fontWeight="900" color="#F8FAFC" />
+            <Text value="Layer3D keeps flat scene layers, but adds z + X/Y rotation" x="640" y="126" fontSize="24" color="#94A3B8" />
+          </Layer>
+
+          <Layer3D id="card_left"
+                   x="300" y="360" z="160"
+                   rotationY={curve("0:-46:ease_in_out, 4:-28:ease_in_out")}
+                   rotationX="-8"
+                   perspective="850"
+                   transformOriginX="0" transformOriginY="0">
+            <Rect x="-150" y="-110" width="300" height="220" radius="28" fill="url(#card_blue)" opacity="0.94" />
+            <Text value="FAR" x="0" y="14" fontSize="58" fontWeight="900" color="#FFFFFF" />
+          </Layer3D>
+
+          <Layer3D id="card_center"
+                   x="640" y="365" z="-120"
+                   rotationY={curve("0:18:ease_in_out, 4:-18:ease_in_out")}
+                   rotationX={curve("0:-10:ease_in_out, 4:10:ease_in_out")}
+                   perspective="850"
+                   transformOriginX="0" transformOriginY="0">
+            <Rect x="-180" y="-130" width="360" height="260" radius="32" fill="url(#card_gold)" opacity="0.98" />
+            <Text value="NEAR" x="0" y="16" fontSize="68" fontWeight="900" color="#111827" />
+          </Layer3D>
+
+          <Layer3D id="card_right"
+                   x="980" y="360" z="80"
+                   rotationY={curve("0:42:ease_in_out, 4:24:ease_in_out")}
+                   rotationX="8"
+                   perspective="850"
+                   transformOriginX="0" transformOriginY="0">
+            <Rect x="-150" y="-110" width="300" height="220" radius="28" fill="url(#card_pink)" opacity="0.94" />
+            <Text value="MID" x="0" y="14" fontSize="58" fontWeight="900" color="#FFFFFF" />
+          </Layer3D>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="scene_layer3d_cards_demo" />
+</Graph>

@@ -1,0 +1,55 @@
+<Graph fps={30} duration="4s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#101827" />
+
+  <Scene id="sample_source">
+    <Defs>
+      <LinearGradient id="base_grad" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#0F172A, 0.42:#334155, 1:#111827" />
+    </Defs>
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#base_grad)" />
+            <Rect x="260" y="170" width="1400" height="740" radius="72" color="#FFFFFF" opacity="0.10" />
+            <Circle x="620" y="540" radius="260" color="#F59E0B" opacity="0.72" />
+            <Circle x="960" y="540" radius="280" color="#E5E7EB" opacity="0.78" />
+            <Circle x="1300" y="540" radius="260" color="#06B6D4" opacity="0.72" />
+            <Text value="PASS MASK" x="960" y="520" fontFamily="Arial" fontWeight="900" fontSize="126" renderScale="4x" color="#FFFFFF" opacity="0.94" />
+            <Text value="brightness is limited by a luma mask texture" x="960" y="625" fontFamily="Arial" fontSize="42" renderScale="4x" color="#E0F2FE" opacity="0.88" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Scene id="soft_center_mask">
+    <Defs>
+      <RadialGradient id="mask_grad" cx="0.50" cy="0.50" r="0.56"
+                      stops="0:#FFFFFF, 0.62:#FFFFFFEE, 0.84:#FFFFFF55, 1:#FFFFFF00" />
+    </Defs>
+    <Timeline>
+      <Track id="mask" space="world" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Circle x="960" y="540" radius="420" fill="url(#mask_grad)" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="masked_post">
+    <Tex id="src" fmt="rgba16f" from="scene:sample_source" />
+    <Tex id="mask_tex" fmt="rgba16f" from="scene:soft_center_mask" />
+    <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="masked_brightness" kind="compute"
+          effect="brightness"
+          in={["src"]} out={["out"]}
+          mask="mask_tex"
+          maskMode="luma"
+          params={{ brightness: "0.32" }} />
+  </Process>
+
+  <Present from="masked_post" />
+</Graph>
