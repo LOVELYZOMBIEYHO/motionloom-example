@@ -1,53 +1,35 @@
-# s-000006 — Infinite Museum of Time
+# s-000006 — Time Engine Museum
 
-A 5-second cinematic animation (1920×1080, 30fps) featuring an infinite museum
-corridor filled with clocks from different eras. The camera flies forward through
-the corridor as time itself unravels.
+A 5-second cinematic scene (1920×1080, 30fps) built around one clear subject:
+a large central **Time Engine** clock inside a dark museum hall.
+
+## What Changed
+
+The previous version had many small clocks and panels but no dominant focal
+point. This version keeps the same time-museum idea, but organizes the frame
+around a readable composition:
+
+- **Center:** a large golden mechanical clock engine.
+- **Left:** an ancient clock display case.
+- **Right:** a future digital clock display case.
+- **Foreground:** orbiting relic clocks, dust, and a sweeping time beam.
+- **Final beat:** the scene freezes on `00:00`.
 
 ## Animation Phases
 
 | Time | Phase | Description |
 |------|-------|-------------|
-| 0–1s | Elegant Entry | Slow camera movement through the corridor. Clocks tick asynchronously on the walls. Dust particles float in the museum light. |
-| 1–2s | Time Reversal | All clock hands begin spinning backward. Digital numbers glitch and reverse. The atmosphere shifts. |
-| 2–3.5s | Temporal Fracture | The corridor stretches into impossible perspective. Walls split into time-slice panels showing Ancient, Victorian, Modern, and Future eras. |
-| 3.5–4.5s | Vortex | Hundreds of clock faces detach and orbit around the camera in a swirling vortex. Pocket watches, digital displays, holographic clocks, and sundials spin through space. |
-| 4.5–5s | The Freeze | Time stops. All elements shatter into still fragments. The final frame reveals one glowing timestamp: **00:00**. |
+| 0–1s | Museum Reveal | Title fades in and the central Time Engine scales into view. |
+| 1–2s | Engine Activation | Clock hands begin moving and the side exhibits become readable. |
+| 2–4.3s | Temporal Sweep | A bright time beam crosses the machine while orbiting clock relics rotate. |
+| 4.3–5s | Time Freeze | The machine locks to `00:00` and the final `TIME STOPS` stamp appears. |
 
 ## Visual Style
 
-- **Surreal, high-end museum aesthetic**
-- Deep shadows and dark marble tones (`#0a0505`, `#1a0f0a`, `#2d1b0e`)
-- Gold accents and details (`#d4af37`, `#FFD700`)
-- Museum lighting with radial glows
-- Subtle dust particles floating throughout
-- Cinematic perspective with receding corridor frames
-
-## Clock Types
-
-1. **Grandfather clock** — Classic wall clock with gold Roman numerals
-2. **Roman numeral clock** — Ornate circular face on the right wall
-3. **Pocket watch** — Silver suspended clock with chain, spinning backward
-4. **Digital clock** — Green LED-style display with scrambling numbers
-5. **Holographic clock** — Cyan neon rings with dashed orbital lines
-6. **Sundial** — Ancient bronze disc with golden gnomon
-
-## Effects
-
-- **Recursive corridor illusion** — Receding rectangular frames create infinite depth
-- **Rotating clock hands** — Each hand rotates at different speeds via `curve()` animation
-- **Number scrambling** — Digital clock shows glitching time values
-- **Time-slice panels** — Four era panels slide in with opacity/scale transitions
-- **3D-like perspective** — Scale transforms combined with depth opacity
-- **Particle dust** — 24+ floating particles with `$index`-based position expressions
-- **Glass cracks** — Fragment lines burst outward during the freeze
-- **Vortex motion** — 16+ orbiting clock faces with radial displacement
-
-## Post-Processing
-
-- **HSLA overlay** — Warm golden hue shift, subtle saturation boost
-- **Bloom** — Threshold 0.40, intensity animated from 0.8 to 2.2 during the vortex
-- **Gaussian blur** — Not used; bloom alone provides the atmospheric glow
+- Dark bronze museum hall.
+- Gold clock face as the main subject.
+- Cyan future exhibit balanced against warm ancient clock tones.
+- Warm HSLA grade and bloom pass for cinematic glow.
 
 ## Run
 

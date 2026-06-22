@@ -1,14 +1,15 @@
 {
-  "id": "s-000006",
+  "id": "s-000031",
   "type": "showcase",
-  "title": "Time Engine Museum 5s",
+  "title": "ANICA Cyber Book Portrait",
   "domain": "scene",
   "features": [
     "scene",
-    "process",
-    "bloom",
-    "gradient",
-    "text",
+    "portrait",
+    "book-style",
+    "page-turn",
+    "typography",
+    "texture",
     "curve-animation"
   ],
   "dsl": [
@@ -21,6 +22,7 @@
     "Sequence",
     "Layer",
     "Group",
+    "Repeat",
     "Rect",
     "Circle",
     "Line",
@@ -31,22 +33,22 @@
     "Process",
     "Tex",
     "Pass",
-    "Present"
+    "Present",
+    "Image"
   ],
   "teaches": [
-    "Build a cinematic time-museum scene with one clear central clock engine as the subject.",
-    "Use HSLA and bloom post-processing for warm atmospheric grading."
+    "Create a cyber-noir illustrated book cover using only scene primitives.",
+    "Layer folds, scratches, dust, and page-turn highlights for a tactile composition.",
+    "Use timed groups to transition between cover, MotionLoom, and product-story beats."
   ],
-  "source_path": "showcase/s-000006",
+  "source_path": "showcase/s-000031",
   "demo_url": "",
   "related": [
-    "s-000002",
-    "s-000007"
+    "s-000030"
   ],
   "requires": [
     "Graph",
     "Scene",
-    "Process",
     "Present"
   ]
 }

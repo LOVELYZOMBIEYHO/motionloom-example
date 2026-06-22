@@ -1,0 +1,47 @@
+{
+  "id": "s-000032",
+  "type": "showcase",
+  "title": "Fearless RGB Glitch Typography",
+  "domain": "text",
+  "features": [
+    "scene",
+    "text",
+    "rgb-glitch",
+    "typography",
+    "scanlines",
+    "curve-animation"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Repeat",
+    "Rect",
+    "Text",
+    "Process",
+    "Tex",
+    "Pass",
+    "Present"
+  ],
+  "teaches": [
+    "Build RGB glitch typography by layering offset Text nodes.",
+    "Use deterministic noise, scanlines, and slice rectangles for a digital glitch look.",
+    "Sequence motivational text beats with simple opacity and scale curves."
+  ],
+  "source_path": "showcase/s-000032",
+  "demo_url": "",
+  "related": [
+    "s-000033",
+    "ct-000012"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Present"
+  ]
+}

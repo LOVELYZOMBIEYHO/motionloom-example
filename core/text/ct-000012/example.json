@@ -1,0 +1,56 @@
+{
+  "id": "ct-000012",
+  "type": "core",
+  "title": "Text AA Soft Edge Blur",
+  "domain": "text",
+  "features": [
+    "text",
+    "antialias",
+    "edge-smoothing",
+    "soft-edge",
+    "blur",
+    "render-scale"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Text",
+    "Rect",
+    "Line",
+    "LinearGradient",
+    "RadialGradient",
+    "Present",
+    "antialias",
+    "edgeSmoothing",
+    "softEdge",
+    "blur",
+    "renderScale"
+  ],
+  "teaches": [
+    "Use renderScale auto for cleaner default text rasterization.",
+    "Use antialias presets and softEdge or edgeSmoothing to reduce hard pixel edges.",
+    "Use blur on Text for soft glow or defocus treatments."
+  ],
+  "source_path": "core/text/ct-000012",
+  "demo_url": "",
+  "related": [
+    "ct-000001",
+    "ct-000011"
+  ],
+  "requires": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Text",
+    "Present"
+  ]
+}

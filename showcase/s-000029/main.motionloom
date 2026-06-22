@@ -1,0 +1,360 @@
+<!-- Neon-spectrum zoom promo with GPU bloom and procedural light. -->
+<Graph fps={30} duration="18s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#050816" />
+
+  <Scene id="anica_neon_premium_promo_18s_v2">
+    <Defs>
+      <RadialGradient id="cyan_ambient" cx="0.50" cy="0.50" r="0.58"
+                      stops="0:#63E6FF66, 0.28:#22C7E833, 0.66:#0B4B7022, 1:#05081600" />
+      <RadialGradient id="violet_ambient" cx="0.50" cy="0.50" r="0.62"
+                      stops="0:#9B7CFF66, 0.30:#7048E833, 0.70:#3518791F, 1:#05081600" />
+      <RadialGradient id="magenta_ambient" cx="0.50" cy="0.50" r="0.60"
+                      stops="0:#FF78B755, 0.32:#D946A622, 0.72:#6D174D18, 1:#05081600" />
+    </Defs>
+    <Timeline>
+      <Track id="promo_content" space="world" z="0">
+        <Sequence from="0s" duration="18s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1920" height="1080" color="#050816" />
+            <Circle id="ambient_light_cyan"
+                    x={curve("0:1540:ease_in_out, 9:1180:ease_in_out, 18:1480:ease_in_out")}
+                    y={curve("0:180:ease_in_out, 9:310:ease_in_out, 18:220:ease_in_out")}
+                    radius={curve("0:620:ease_in_out, 9:760:ease_in_out, 18:680:ease_in_out")}
+                    fill="url(#cyan_ambient)" opacity="0.48" blend="screen" />
+            <Circle id="ambient_light_violet"
+                    x={curve("0:260:ease_in_out, 9:520:ease_in_out, 18:320:ease_in_out")}
+                    y={curve("0:880:ease_in_out, 9:690:ease_in_out, 18:820:ease_in_out")}
+                    radius={curve("0:540:ease_in_out, 9:700:ease_in_out, 18:600:ease_in_out")}
+                    fill="url(#violet_ambient)" opacity="0.42" blend="screen" />
+            <Circle id="ambient_light_magenta"
+                    x={curve("0:960:ease_in_out, 9:1320:ease_in_out, 18:960:ease_in_out")}
+                    y={curve("0:1040:ease_in_out, 9:860:ease_in_out, 18:980:ease_in_out")}
+                    radius="420" fill="url(#magenta_ambient)" opacity="0.24" blend="screen" />
+
+            <!-- Persistent procedural texture keeps the design tactile without external assets. -->
+            <Group id="procedural_texture" opacity="0.11">
+              <Repeat id="horizontal_scanlines" count="37" x="0" y="0" yStep="30">
+                <Rect x="0" y="0" width="1920" height="1" color="#EAFBFF" opacity="0.22" />
+              </Repeat>
+              <Repeat id="vertical_hairlines" count="25" x="0" y="0" xStep="80" opacity="0.34">
+                <Rect x="0" y="0" width="1" height="1080" color="#EAFBFF" opacity="0.10" />
+              </Repeat>
+              <Repeat id="grain_field_a" count="18" x="82" y="74" xStep="103" yStep="47" rotationStep="17" opacity="0.44" opacityStep="-0.012">
+                <Rect x="0" y="0" width="3" height="18" color="#EAFBFF" opacity="0.34" />
+              </Repeat>
+              <Repeat id="grain_field_b" count="16" x="1660" y="90" xStep="-97" yStep="59" rotationStep="-13" opacity="0.38" opacityStep="-0.010">
+                <Circle x="0" y="0" radius="2.5" color="#EAFBFF" opacity="0.42" />
+              </Repeat>
+            </Group>
+
+            <!-- 0-3s: restrained product lockup that accelerates into the first zoom. -->
+            <Group id="intro_anica"
+                   x={curve("0:0:linear, 2.50:0:linear, 2.92:-210:ease(0.18,0.82,0.20,1), 18:-210:linear")}
+                   y={curve("0:0:linear, 2.50:0:linear, 2.92:-95:ease(0.18,0.82,0.20,1), 18:-95:linear")}
+                   scale={curve("0:0.82:ease_out, 0.70:1:ease_out, 2.02:1:linear, 2.52:1.10:ease_in_out, 2.78:5.60:ease_in_out, 18:5.60:linear")}
+                   transformOriginX="960"
+                   transformOriginY="540"
+                   opacity={curve("0:0:linear, 0.28:1:ease_out, 2.48:1:linear, 2.92:0:ease_in, 18:0:linear")}>
+              <Circle x="960" y="500" radius="330" color="#EAFBFF" opacity="0.025" />
+              <Circle x="960" y="500" radius="248" fill="#05081600" stroke="#EAFBFF" strokeWidth="2" opacity="0.16" />
+              <Path id="intro_crosshair_horizontal" d="M 590 500 L 1330 500" stroke="#EAFBFF" strokeWidth="1.5" fill="#05081600" opacity="0.18" />
+              <Path id="intro_crosshair_vertical" d="M 960 208 L 960 792" stroke="#EAFBFF" strokeWidth="1.5" fill="#05081600" opacity="0.18" />
+              <Text value="ANICA"
+                    x="center"
+                    y="470"
+                    fontFamily="Avenir Next Condensed"
+                    fontWeight="800"
+                    fontSize="220"
+                    textGap="10"
+                    color="#FFFFFF" />
+              <Text value="Agentic AI Video Editing"
+                    x="center"
+                    y="646"
+                    fontFamily="Menlo"
+                    fontSize="28"
+                    textGap="5"
+                    color="#63E6FF"
+                    opacity={curve("0:0:linear, 0.65:0:linear, 1.05:0.78:ease_out, 2.42:0.78:linear, 2.75:0:ease_in")} />
+              <Rect x="742" y="702" width={curve("0:0:linear, 0.82:0:linear, 1.38:436:ease_out, 2.50:436:linear")} height="3" color="#EAFBFF" opacity="0.82" />
+            </Group>
+
+            <!-- 3-6s: luminous threads weave words into motion and finished video. -->
+            <Group id="motionloom_woven_story_v2"
+                   x={curve("0:120:linear, 2.60:120:linear, 3.04:0:ease_out, 5.02:0:linear, 5.52:-80:ease_in_out, 5.78:-2300:ease_in_out, 18:-2300:linear")}
+                   y={curve("0:70:linear, 2.60:70:linear, 3.04:0:ease_out, 5.02:0:linear, 5.52:-24:ease_in_out, 5.78:-120:ease_in_out, 18:-120:linear")}
+                   scale={curve("0:0.54:linear, 2.60:0.54:linear, 3.04:1:ease_out, 5.02:1:linear, 5.52:1.04:ease_in_out, 5.78:1.12:ease_in_out, 18:1.12:linear")}
+                   transformOriginX="1260"
+                   transformOriginY="390"
+                   opacity={curve("0:0:linear, 2.62:0:linear, 3.04:1:ease_out, 5.48:1:linear, 5.78:0.15:ease_in_out, 5.86:0:ease_in, 18:0:linear")}>
+              <Circle id="motionloom_title_light" x="960" y="390" radius="460" fill="url(#violet_ambient)" opacity="0.48" blend="screen" />
+              <Text value="MotionLoom"
+                    x="center"
+                    y="382"
+                    fontFamily="Avenir Next Condensed"
+                    fontWeight="800"
+                    fontSize="178"
+                    renderScale="4x"
+                    color="#C8B8FF" />
+              <Text value="Primitive-first visual DSL"
+                    x="center"
+                    y="532"
+                    fontFamily="Menlo"
+                    fontSize="28"
+                    renderScale="4x"
+                    color="#63E6FF"
+                    opacity="0.82" />
+
+              <Group id="woven_visual_flow" opacity={curve("2.72:0:linear, 3.32:1:ease_out, 5.48:1:linear")}>
+                <!-- Wide translucent strokes provide the glow body; thin strokes remain crisp. -->
+                <Path id="thread_cyan_glow" d="M 360 718 C 570 618 760 618 960 718 C 1160 818 1350 818 1560 718"
+                      stroke="#63E6FF" strokeWidth="9" lineCap="round" fill="#05081600" opacity="0.30" blend="screen"
+                      trimEnd={curve("2.72:0:ease_in_out, 3.74:1:ease_in_out")} />
+                <Path id="thread_cyan_core" d="M 360 718 C 570 618 760 618 960 718 C 1160 818 1350 818 1560 718"
+                      stroke="#9CF1FF" strokeWidth="3.5" lineCap="round" fill="#05081600" opacity="0.90" blend="screen"
+                      trimEnd={curve("2.72:0:ease_in_out, 3.74:1:ease_in_out")} />
+
+                <Path id="thread_violet_glow" d="M 360 752 C 585 842 742 842 960 752 C 1178 662 1335 662 1560 752"
+                      stroke="#9B7CFF" strokeWidth="9" lineCap="round" fill="#05081600" opacity="0.30" blend="screen"
+                      trimEnd={curve("2.86:0:ease_in_out, 3.94:1:ease_in_out")} />
+                <Path id="thread_violet_core" d="M 360 752 C 585 842 742 842 960 752 C 1178 662 1335 662 1560 752"
+                      stroke="#B9A8FF" strokeWidth="3.5" lineCap="round" fill="#05081600" opacity="0.88" blend="screen"
+                      trimEnd={curve("2.86:0:ease_in_out, 3.94:1:ease_in_out")} />
+
+                <Path id="thread_magenta_glow" d="M 360 735 C 595 735 740 675 960 735 C 1180 795 1325 735 1560 735"
+                      stroke="#FF78B7" strokeWidth="7" lineCap="round" fill="#05081600" opacity="0.26" blend="screen"
+                      trimEnd={curve("3.02:0:ease_in_out, 4.10:1:ease_in_out")} />
+                <Path id="thread_magenta_core" d="M 360 735 C 595 735 740 675 960 735 C 1180 795 1325 735 1560 735"
+                      stroke="#FF9DCA" strokeWidth="2.5" lineCap="round" fill="#05081600" opacity="0.74" blend="screen"
+                      trimEnd={curve("3.02:0:ease_in_out, 4.10:1:ease_in_out")} />
+
+                <!-- These illuminated nodes mark the meaningful input, transformation, and output stages. -->
+                <Circle x="360" y="735" radius="42" fill="url(#cyan_ambient)" opacity="0.84" blend="screen" />
+                <Circle x="360" y="735" radius="7" color="#EAFBFF" opacity="0.96" blend="screen" />
+                <Circle x="960" y="735" radius="54" fill="url(#violet_ambient)" opacity="0.92" blend="screen" />
+                <Circle x="960" y="735" radius="8" color="#EAFBFF" opacity="0.98" blend="screen" />
+                <Circle x="1560" y="735" radius="46" fill="url(#magenta_ambient)" opacity="0.88" blend="screen" />
+                <Circle x="1560" y="735" radius="7" color="#EAFBFF" opacity="0.96" blend="screen" />
+
+                <Text value="WORDS" x="360" y="866" fontFamily="Menlo" fontSize="20" textGap="5" color="#63E6FF" opacity="0.78" />
+                <Text value="MOTION" x="960" y="866" fontFamily="Menlo" fontSize="20" textGap="5" color="#9B7CFF" opacity="0.82" />
+                <Text value="VIDEO" x="1560" y="866" fontFamily="Menlo" fontSize="20" textGap="5" color="#FF78B7" opacity="0.78" />
+              </Group>
+            </Group>
+
+            <!-- 6-9s: instruction text and editable geometry share one clean composition. -->
+            <Group id="instructions_not_pixels"
+                   x={curve("0:-130:linear, 5.58:-130:linear, 6.04:0:ease_out, 8.52:0:linear, 8.94:-250:ease_in, 18:-250:linear")}
+                   y={curve("0:90:linear, 5.58:90:linear, 6.04:0:ease_out, 8.52:0:linear, 8.94:160:ease_in, 18:160:linear")}
+                   scale={curve("0:0.56:linear, 5.58:0.56:linear, 6.04:1:ease_out, 8.02:1:linear, 8.52:0.92:ease_in_out, 8.80:0.08:ease_in_out, 18:0.08:linear")}
+                   transformOriginX="690"
+                   transformOriginY="575"
+                   opacity={curve("0:0:linear, 5.60:0:linear, 6.04:1:ease_out, 8.48:1:linear, 8.80:0.12:ease_in_out, 8.88:0:ease_in, 18:0:linear")}>
+              <Rect x="120" y="162" width="1680" height="756" fill="#05081600" stroke="#EAFBFF" strokeWidth="2" opacity="0.16" />
+              <Path id="instruction_divider" d="M 960 232 L 960 848" stroke="#EAFBFF" strokeWidth="2" fill="#05081600" opacity="0.20" />
+              <Text value="AI writes instructions, not just pixels"
+                    x="160"
+                    y="260"
+                    width="690"
+                    fontFamily="Avenir Next Condensed"
+                    fontWeight="800"
+                    fontSize="78"
+                    color="#FFFFFF" />
+              <Group id="instruction_code" x="164" y="552" opacity="0.72">
+                <Text value="GRAPH / SCENE / GROUP"
+                      x="0" y="0" fontFamily="Menlo" fontSize="23" color="#EAFBFF" />
+                <Text value="CURVE / SCALE / OPACITY"
+                      x="0" y="54" fontFamily="Menlo" fontSize="23" color="#EAFBFF"
+                      opacity={curve("5.70:0:linear, 6.55:1:ease_out")} />
+                <Text value="PRESENT / OUTPUT"
+                      x="0" y="108" fontFamily="Menlo" fontSize="23" color="#EAFBFF"
+                      opacity={curve("5.90:0:linear, 6.82:1:ease_out")} />
+              </Group>
+              <Group id="editable_geometry" x="1040" y="262">
+                <Circle x="260" y="220" radius={curve("5.72:22:ease_out, 6.72:154:ease_out, 8.50:154:linear")} fill="#05081600" stroke="#EAFBFF" strokeWidth="5" opacity="0.86" />
+                <Rect x="96" y="372" width={curve("5.90:0:ease_out, 7.04:460:ease_out, 8.50:460:linear")} height="178" fill="#05081600" stroke="#EAFBFF" strokeWidth="5" opacity="0.72" />
+                <Path id="editable_diagonal" d="M 74 518 L 518 84" stroke="#FF78B7" strokeWidth="3" fill="#05081600"
+                      trimEnd={curve("5.80:0:linear, 6.90:1:ease_out")} opacity="0.56" />
+                <Circle x="74" y="518" radius="12" color="#EAFBFF" />
+                <Circle x="518" y="84" radius="12" color="#EAFBFF" />
+              </Group>
+            </Group>
+
+            <!-- 9-12s: three deterministic states arrive with compact scale pulses. -->
+            <Group id="deterministic_triptych"
+                   x={curve("0:150:linear, 8.58:150:linear, 9.04:0:ease_out, 11.52:0:linear, 11.94:210:ease_in, 18:210:linear")}
+                   y={curve("0:-80:linear, 8.58:-80:linear, 9.04:0:ease_out, 11.02:0:linear, 11.52:-70:ease_in_out, 11.80:-1400:ease_in_out, 18:-1400:linear")}
+                   scale={curve("0:1.38:linear, 8.58:1.38:linear, 9.04:1:ease_out, 11.02:1:linear, 11.52:1.04:ease_in_out, 11.80:1.14:ease_in_out, 18:1.14:linear")}
+                   transformOriginX="1450"
+                   transformOriginY="540"
+                   opacity={curve("0:0:linear, 8.60:0:linear, 9.04:1:ease_out, 11.48:1:linear, 11.80:0.12:ease_in_out, 11.88:0:ease_in, 18:0:linear")}>
+              <Path id="triptych_axis" d="M 214 540 L 1706 540" stroke="#63E6FF" strokeWidth="2" fill="#05081600" opacity="0.18" />
+              <Circle x="390" y="540" radius={curve("8.72:62:ease_out, 9.38:118:ease_out, 9.72:106:ease_in_out")} fill="#05081600" stroke="#EAFBFF" strokeWidth="4" opacity="0.68" />
+              <Circle x="960" y="540" radius={curve("9.34:62:ease_out, 10.00:118:ease_out, 10.34:106:ease_in_out")} fill="#05081600" stroke="#EAFBFF" strokeWidth="4" opacity="0.68" />
+              <Circle x="1530" y="540" radius={curve("9.98:62:ease_out, 10.64:118:ease_out, 10.98:106:ease_in_out")} fill="#05081600" stroke="#EAFBFF" strokeWidth="4" opacity="0.68" />
+              <Text value="Editable."
+                    x="390" y="522" fontFamily="Avenir Next Condensed" fontWeight="800" fontSize="72" color="#63E6FF"
+                    opacity={curve("8.70:0:linear, 9.32:1:ease_out")} />
+              <Text value="Deterministic."
+                    x="960" y="522" fontFamily="Avenir Next Condensed" fontWeight="800" fontSize="72" color="#9B7CFF"
+                    opacity={curve("9.30:0:linear, 9.96:1:ease_out")} />
+              <Text value="Renderable."
+                    x="1530" y="522" fontFamily="Avenir Next Condensed" fontWeight="800" fontSize="72" color="#FF78B7"
+                    opacity={curve("9.94:0:linear, 10.60:1:ease_out")} />
+              <Repeat id="triptych_top_ticks" count="13" x="350" y="288" xStep="102" opacity="0.42" opacityStep="-0.014">
+                <Rect x="0" y="0" width="26" height="4" color="#EAFBFF" />
+              </Repeat>
+              <Repeat id="triptych_bottom_ticks" count="13" x="350" y="790" xStep="102" opacity="0.24" opacityStep="0.014">
+                <Rect x="0" y="0" width="26" height="4" color="#EAFBFF" />
+              </Repeat>
+            </Group>
+
+            <!-- 12-15s: a simple describe-refine-create journey for non-technical users. -->
+            <Group id="ideas_in_motion"
+                   x={curve("0:0:linear, 11.58:0:linear, 12.04:0:ease_out, 14.52:0:linear, 14.94:-170:ease_in, 18:-170:linear")}
+                   y={curve("0:650:linear, 11.58:650:linear, 12.04:0:ease_out, 14.52:0:linear, 14.94:-110:ease_in, 18:-110:linear")}
+                   scale={curve("0:0.56:linear, 11.58:0.56:linear, 12.04:1:ease_out, 14.02:1:linear, 14.52:1.10:ease_in_out, 14.78:5.60:ease_in_out, 18:5.60:linear")}
+                   transformOriginX="1538"
+                   transformOriginY="594"
+                   opacity={curve("0:0:linear, 11.60:0:linear, 12.04:1:ease_out, 14.48:1:linear, 14.94:0:ease_in, 18:0:linear")}>
+              <Text value="Your ideas, instantly in motion"
+                    x="center" y="172" fontFamily="Avenir Next Condensed" fontWeight="800" fontSize="96" color="#FFFFFF" />
+              <Text value="Describe it. Refine it. Make it yours."
+                    x="center" y="272" fontFamily="Menlo" fontSize="28" color="#63E6FF" opacity="0.78" />
+
+              <Group id="describe_card" x="180" y="390" opacity={curve("11.70:0:linear, 12.18:1:ease_out")}>
+                <Rect x="0" y="0" width="380" height="360" radius="34" color="#0A1026" stroke="#63E6FF" strokeWidth="2" opacity="0.94" />
+                <Circle x="190" y="102" radius="92" fill="url(#cyan_ambient)" opacity="0.72" blend="screen" />
+                <Rect x="82" y="58" width="216" height="112" radius="24" fill="#050816" stroke="#63E6FF" strokeWidth="3" />
+                <Path id="describe_bubble_tail" d="M 112 170 L 88 204 L 154 170" fill="#050816" stroke="#63E6FF" strokeWidth="3" />
+                <Rect x="116" y="88" width={curve("11.80:0:ease_out, 12.42:148:ease_out")} height="8" radius="4" color="#EAFBFF" opacity="0.90" />
+                <Rect x="116" y="116" width={curve("11.90:0:ease_out, 12.58:116:ease_out")} height="8" radius="4" color="#9B7CFF" opacity="0.78" />
+                <Text value="DESCRIBE" x="190" y="282" fontFamily="Avenir Next Condensed" fontWeight="800" fontSize="38" color="#63E6FF" />
+                <Text value="Start with your idea" x="190" y="324" fontFamily="Menlo" fontSize="18" color="#EAFBFF" opacity="0.66" />
+              </Group>
+
+              <Path id="describe_to_refine" d="M 560 570 C 630 520 700 520 770 570" stroke="#63E6FF" strokeWidth="5" fill="#05081600"
+                    trimEnd={curve("12.08:0:linear, 12.70:1:ease_in_out")} opacity="0.70" />
+              <Circle x={curve("12.08:560:ease_in_out, 12.70:770:ease_in_out")} y="570" radius="9" color="#EAFBFF" blend="screen" />
+
+              <Group id="refine_card" x="770" y="390" opacity={curve("12.18:0:linear, 12.70:1:ease_out")}>
+                <Rect x="0" y="0" width="380" height="360" radius="34" color="#0A1026" stroke="#9B7CFF" strokeWidth="2" opacity="0.94" />
+                <Circle x="190" y="112" radius="104" fill="url(#violet_ambient)" opacity="0.72" blend="screen" />
+                <Path d="M 82 78 L 298 78 M 82 126 L 298 126 M 82 174 L 298 174" stroke="#EAFBFF" strokeWidth="5" fill="#05081600" opacity="0.62" />
+                <Circle x={curve("12.20:126:ease_in_out, 13.20:246:ease_in_out")} y="78" radius="15" color="#63E6FF" blend="screen" />
+                <Circle x={curve("12.30:260:ease_in_out, 13.30:154:ease_in_out")} y="126" radius="15" color="#9B7CFF" blend="screen" />
+                <Circle x={curve("12.40:146:ease_in_out, 13.40:224:ease_in_out")} y="174" radius="15" color="#FF78B7" blend="screen" />
+                <Text value="REFINE" x="190" y="282" fontFamily="Avenir Next Condensed" fontWeight="800" fontSize="38" color="#9B7CFF" />
+                <Text value="Shape every detail" x="190" y="324" fontFamily="Menlo" fontSize="18" color="#EAFBFF" opacity="0.66" />
+              </Group>
+
+              <Path id="refine_to_create" d="M 1150 570 C 1220 520 1290 520 1360 570" stroke="#9B7CFF" strokeWidth="5" fill="#05081600"
+                    trimEnd={curve("12.62:0:linear, 13.28:1:ease_in_out")} opacity="0.70" />
+              <Circle x={curve("12.62:1150:ease_in_out, 13.28:1360:ease_in_out")} y="570" radius="9" color="#EAFBFF" blend="screen" />
+
+              <Group id="create_card" x="1360" y="390" opacity={curve("12.68:0:linear, 13.24:1:ease_out")}>
+                <Rect x="0" y="0" width="380" height="360" radius="34" color="#0A1026" stroke="#FF78B7" strokeWidth="2" opacity="0.94" />
+                <Circle x="190" y="112" radius="112" fill="url(#magenta_ambient)" opacity="0.76" blend="screen" />
+                <Rect x="68" y="46" width="244" height="154" radius="20" color="#050816" stroke="#FF78B7" strokeWidth="3" />
+                <Path id="create_play_icon" d="M 166 82 L 166 164 L 238 123 Z" fill="#EAFBFF" stroke="#63E6FF" strokeWidth="3" opacity="0.92" />
+                <Circle x="190" y="123" radius={curve("12.80:42:ease_in_out, 13.52:82:ease_in_out, 14.20:52:ease_in_out")} fill="#05081600" stroke="#63E6FF" strokeWidth="3" opacity="0.52" />
+                <Text value="CREATE" x="190" y="282" fontFamily="Avenir Next Condensed" fontWeight="800" fontSize="38" color="#FF78B7" />
+                <Text value="Bring it to life" x="190" y="324" fontFamily="Menlo" fontSize="18" color="#EAFBFF" opacity="0.66" />
+              </Group>
+            </Group>
+
+            <!-- 15-18s: the system resolves into a spacious open-source final card. -->
+            <Group id="open_source_finale"
+                   x={curve("0:90:linear, 14.58:90:linear, 15.04:0:ease_out, 18:0:linear")}
+                   y={curve("0:-70:linear, 14.58:-70:linear, 15.04:0:ease_out, 18:0:linear")}
+                   scale={curve("0:0.52:linear, 14.58:0.52:linear, 15.04:1:ease_out, 17.72:0.94:ease_in_out, 18:0.94:linear")}
+                   transformOriginX="960"
+                   transformOriginY="540"
+                   opacity={curve("0:0:linear, 14.60:0:linear, 15.04:1:ease_out, 18:1:linear")}>
+              <Circle x="960" y="540" radius={curve("14.62:110:ease_out, 15.42:410:ease_out, 18:470:ease_in_out")} fill="#05081600" stroke="#EAFBFF" strokeWidth="2" opacity="0.18" />
+              <Circle x="960" y="540" radius={curve("14.66:54:ease_out, 15.36:260:ease_out, 18:306:ease_in_out")} fill="#05081600" stroke="#EAFBFF" strokeWidth="3" opacity="0.24" />
+              <Path id="final_orbit_a" d="M 310 540 C 560 188 1360 188 1610 540 C 1360 892 560 892 310 540"
+                    stroke="#63E6FF" strokeWidth="2" fill="#05081600" opacity="0.18"
+                    trimStart={curve("14.68:0.5:ease_out, 15.70:0:ease_out")}
+                    trimEnd={curve("14.68:0.5:ease_out, 15.70:1:ease_out")} />
+              <Path id="final_orbit_b" d="M 960 110 C 1260 258 1260 822 960 970 C 660 822 660 258 960 110"
+                    stroke="#9B7CFF" strokeWidth="2" fill="#05081600" opacity="0.14"
+                    trimStart={curve("14.76:0.5:ease_out, 15.82:0:ease_out")}
+                    trimEnd={curve("14.76:0.5:ease_out, 15.82:1:ease_out")} />
+              <Text value="Video-as-code for AI agents"
+                    x="center" y="454" fontFamily="Avenir Next Condensed" fontWeight="800" fontSize="104" color="#FFFFFF" />
+              <Text value="Open-source creative infrastructure"
+                    x="center" y="590" fontFamily="Menlo" fontSize="30" color="#63E6FF" opacity="0.76" />
+              <Rect x="702" y="662" width={curve("14.90:0:ease_out, 15.88:516:ease_out, 18:516:linear")} height="4" color="#EAFBFF" opacity="0.84" />
+              <Text value="A"
+                    x="center" y="790" fontFamily="Avenir Next Condensed" fontWeight="800" fontSize="72" color="#EAFBFF"
+                    opacity={curve("15.30:0:linear, 16.20:0.62:ease_out")} />
+            </Group>
+
+            <!-- Five distinct transitions avoid repeating the same zoom language. -->
+            <Group id="transition_depth_rays_01" x="960" y="540" opacity={curve("0:0:linear, 2.02:0:linear, 2.52:0.20:ease_in_out, 2.66:0.82:ease_in_out, 2.86:0:ease_in_out, 18:0:linear")}>
+              <Repeat id="depth_ray_field_01" count="16" rotationStep="22.5" opacity="0.74" opacityStep="-0.012">
+                <Line x1={curve("2.02:90:ease_in_out, 2.52:140:ease_in_out, 2.78:780:ease_in_out")} y1="0"
+                      x2={curve("2.02:150:ease_in_out, 2.52:220:ease_in_out, 2.78:1480:ease_in_out")} y2="0"
+                      stroke="#63E6FF" strokeWidth="4" opacity="0.62" blend="screen" />
+              </Repeat>
+            </Group>
+
+            <Group id="transition_whip_left_02" opacity={curve("0:0:linear, 5.36:0:linear, 5.52:0.82:ease_in_out, 5.84:0:ease_in_out, 18:0:linear")}>
+              <Line x1={curve("5.36:2050:ease_in_out, 5.78:-720:ease_in_out")} y1="390" x2={curve("5.36:2640:ease_in_out, 5.78:-130:ease_in_out")} y2="390" stroke="#63E6FF" strokeWidth="12" opacity="0.34" blend="screen" />
+              <Line x1={curve("5.40:2160:ease_in_out, 5.82:-780:ease_in_out")} y1="540" x2={curve("5.40:2860:ease_in_out, 5.82:-80:ease_in_out")} y2="540" stroke="#9B7CFF" strokeWidth="7" opacity="0.48" blend="screen" />
+              <Line x1={curve("5.44:2280:ease_in_out, 5.86:-640:ease_in_out")} y1="690" x2={curve("5.44:2740:ease_in_out, 5.86:-180:ease_in_out")} y2="690" stroke="#FF78B7" strokeWidth="4" opacity="0.42" blend="screen" />
+            </Group>
+
+            <Group id="transition_collapse_03" x="960" y="540" opacity={curve("0:0:linear, 8.42:0:linear, 8.58:0.72:ease_in_out, 8.86:0:ease_in_out, 18:0:linear")}>
+              <Repeat id="collapse_ray_field_03" count="12" rotationStep="30" opacity="0.66" opacityStep="-0.014">
+                <Line x1={curve("8.42:980:ease_in_out, 8.80:40:ease_in_out")} y1="0"
+                      x2={curve("8.42:1380:ease_in_out, 8.80:86:ease_in_out")} y2="0"
+                      stroke="#9B7CFF" strokeWidth="5" opacity="0.50" blend="screen" />
+              </Repeat>
+            </Group>
+
+            <Group id="transition_whip_up_04" opacity={curve("0:0:linear, 11.38:0:linear, 11.54:0.76:ease_in_out, 11.86:0:ease_in_out, 18:0:linear")}>
+              <Line x1="520" y1={curve("11.38:1320:ease_in_out, 11.80:-420:ease_in_out")} x2="520" y2={curve("11.38:1980:ease_in_out, 11.80:240:ease_in_out")} stroke="#63E6FF" strokeWidth="8" opacity="0.34" blend="screen" />
+              <Line x1="960" y1={curve("11.42:1420:ease_in_out, 11.84:-520:ease_in_out")} x2="960" y2={curve("11.42:2120:ease_in_out, 11.84:180:ease_in_out")} stroke="#9B7CFF" strokeWidth="12" opacity="0.40" blend="screen" />
+              <Line x1="1400" y1={curve("11.46:1260:ease_in_out, 11.88:-480:ease_in_out")} x2="1400" y2={curve("11.46:1840:ease_in_out, 11.88:100:ease_in_out")} stroke="#FF78B7" strokeWidth="5" opacity="0.38" blend="screen" />
+            </Group>
+
+            <Group id="transition_final_rays_05" x="1538" y="594" opacity={curve("0:0:linear, 14.02:0:linear, 14.52:0.18:ease_in_out, 14.66:0.86:ease_in_out, 14.86:0:ease_in_out, 18:0:linear")}>
+              <Repeat id="final_ray_field_05" count="14" rotationStep="25.714" opacity="0.78" opacityStep="-0.014">
+                <Line x1={curve("14.02:72:ease_in_out, 14.52:118:ease_in_out, 14.78:820:ease_in_out")} y1="0"
+                      x2={curve("14.02:130:ease_in_out, 14.52:210:ease_in_out, 14.78:1540:ease_in_out")} y2="0"
+                      stroke="#FF78B7" strokeWidth="4" opacity="0.58" blend="screen" />
+              </Repeat>
+            </Group>
+
+            <!-- Brief exposure spikes mask each scale handoff and keep transitions crisp. -->
+            <Rect id="transition_flash"
+                  x="0" y="0" width="1920" height="1080" color="#EAFBFF"
+                  opacity={curve("0:0:linear, 2.60:0:linear, 2.69:0.42:ease_in_out, 2.82:0:linear, 5.60:0:linear, 5.69:0.42:ease_in_out, 5.82:0:linear, 8.60:0:linear, 8.69:0.42:ease_in_out, 8.82:0:linear, 11.60:0:linear, 11.69:0.42:ease_in_out, 11.82:0:linear, 14.60:0:linear, 14.69:0.46:ease_in_out, 14.82:0:linear, 18:0:linear")} />
+
+            <Rect id="edge_vignette_top" x="0" y="0" width="1920" height="76" color="#050816" opacity="0.72" />
+            <Rect id="edge_vignette_bottom" x="0" y="1004" width="1920" height="76" color="#050816" opacity="0.72" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="anica_neon_bloom_post">
+    <Tex id="promo_scene_src" fmt="rgba16f" from="scene:anica_neon_premium_promo_18s_v2" />
+    <Tex id="promo_bloom_out" fmt="rgba16f" size={[1920,1080]} />
+
+    <Pass id="promo_glow_bloom"
+          kind="compute"
+          effect="glow_bloom"
+          in={["promo_scene_src"]}
+          out={["promo_bloom_out"]}
+          params={{
+            threshold: "0.28",
+            intensity: "curve(\"0:1.32:linear, 2.02:1.32:linear, 2.52:1.45:ease_in_out, 2.70:3.55:ease_in_out, 2.92:1.38:ease_in_out, 5.02:1.38:linear, 5.52:1.48:ease_in_out, 5.70:3.55:ease_in_out, 5.92:1.38:ease_in_out, 8.02:1.38:linear, 8.52:1.48:ease_in_out, 8.70:3.55:ease_in_out, 8.92:1.38:ease_in_out, 11.02:1.38:linear, 11.52:1.48:ease_in_out, 11.70:3.55:ease_in_out, 11.92:1.38:ease_in_out, 14.02:1.38:linear, 14.52:1.50:ease_in_out, 14.70:3.75:ease_in_out, 14.95:1.42:ease_in_out, 18:1.48:ease_in_out\")",
+            sigma: "22.0"
+          }} />
+  </Process>
+
+  <Present from="anica_neon_bloom_post" />
+</Graph>

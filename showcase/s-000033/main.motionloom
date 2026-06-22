@@ -1,0 +1,126 @@
+<!-- Portrait RGB glitch typography promo built from fixed text layers and numeric motion. -->
+<Graph fps={30} duration="9s" size={[1080,1920]} renderSize={[1080,1920]}>
+  <Background color="#000000" />
+
+  <Scene id="fearless_rgb_glitch_typography_portrait_9s">
+    <Timeline>
+      <Track id="glitch_typography_content" space="world" z="0">
+        <Sequence from="0s" duration="9s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1080" height="1920" color="#000000" />
+
+            <!-- Low-opacity scanlines and deterministic digital debris. -->
+            <Group id="screen_texture" opacity="0.18">
+              <Repeat id="scanline_field" count="80" x="0" y="0" yStep="24" opacity="0.36" opacityStep="-0.004">
+                <Rect x="0" y="0" width="1080" height="1" color="#FFFFFF" opacity="0.10" />
+              </Repeat>
+              <Repeat id="pixel_noise" count="30" x="34" y="70" xStep="36" yStep="59" opacity="0.40" opacityStep="-0.009">
+                <Rect x="random(-16,16,floor($time.sec*5)+41)" y="random(-10,10,floor($time.sec*5)+59)" width="18" height="2" color="#FFFFFF" opacity="0.18" />
+              </Repeat>
+            </Group>
+
+            <!-- 0-3s: fragmented question assembles into the corrected phrase. -->
+            <Group id="afraid_question"
+                   opacity={curve("0:1:linear, 2.54:1:linear, 2.82:0:ease_in_out, 9:0:linear")}
+                   scale={curve("0:0.96:ease_out, 2.42:1.02:ease_in_out, 2.72:1.08:ease_in_out, 9:1.08:linear")}
+                   transformOriginX="540" transformOriginY="960">
+              <Text value="AFRA D   OF   FAIL NG?" x="center" y="420" fontFamily="Avenir Next Condensed" fontWeight="800" fontSize="76" textGap="12" color="#151515" opacity="0.82" />
+              <Text value="AFR ID   OF FAI ING?" x="center" y="1470" fontFamily="Avenir Next Condensed" fontWeight="800" fontSize="76" textGap="12" color="#101820" opacity="0.80" />
+
+              <Group id="afraid_rgb_stack" x={curve("0:-34:ease_out, 0.58:0:ease_out, 2.46:0:linear, 2.68:18:ease_in_out")}>
+                <Group id="afraid_cyan_offset" x="-10">
+                  <Text value="Afraid of failing?" x="center" y="900" fontFamily="Avenir Next Condensed" fontWeight="900" fontSize="116" textGap="2" renderScale="4x" color="#00E5FF"
+                        opacity={curve("0:0.10:linear, 0.24:0.82:ease_out, 2.56:0.72:linear")} />
+                </Group>
+                <Group id="afraid_red_offset" x="10">
+                  <Text value="Afraid of failing?" x="center" y="900" fontFamily="Avenir Next Condensed" fontWeight="900" fontSize="116" textGap="2" renderScale="4x" color="#FF2A3D"
+                        opacity={curve("0:0.10:linear, 0.24:0.78:ease_out, 2.56:0.68:linear")} />
+                </Group>
+                <Text value="Afraid of failing?" x="center" y="900" fontFamily="Avenir Next Condensed" fontWeight="900" fontSize="116" textGap="2" renderScale="4x" color="#FFFFFF"
+                      opacity={curve("0:0:linear, 0.30:1:ease_out, 2.56:1:linear")} />
+              </Group>
+
+              <Group id="afraid_glitch_slices">
+                <Rect x={curve("0:120:ease_in_out, 0.18:680:ease_in_out, 0.34:240:ease_in_out, 2.30:240:linear")} y="790" width="240" height="18" color="#000000"
+                      opacity={curve("0:0.82:linear, 0.42:0:ease_in, 2.24:0:linear, 2.34:0.82:ease_out, 2.48:0:ease_in")} />
+                <Rect x={curve("0:820:ease_in_out, 0.16:320:ease_in_out, 0.36:560:ease_in_out, 2.30:560:linear")} y="1006" width="210" height="14" color="#00E5FF"
+                      opacity={curve("0:0.58:linear, 0.40:0:ease_in, 2.24:0:linear, 2.34:0.62:ease_out, 2.48:0:ease_in")} />
+                <Rect x={curve("0:280:ease_in_out, 0.20:860:ease_in_out, 0.38:420:ease_in_out, 2.30:420:linear")} y="1080" width="280" height="10" color="#FF2A3D"
+                      opacity={curve("0:0.52:linear, 0.44:0:ease_in, 2.24:0:linear, 2.34:0.58:ease_out, 2.48:0:ease_in")} />
+              </Group>
+            </Group>
+
+            <!-- 3-6s: cursor and RGB layers rebuild the reassurance. -->
+            <Group id="dont_worry"
+                   opacity={curve("0:0:linear, 2.72:0:linear, 3.02:1:ease_out, 5.54:1:linear, 5.82:0:ease_in_out, 9:0:linear")}
+                   x={curve("0:80:linear, 2.72:80:linear, 3.12:0:ease_out, 5.60:0:linear")}>
+              <Text value="DON'T    WOR Y!" x="center" y="420" fontFamily="Avenir Next Condensed" fontWeight="800" fontSize="78" textGap="14" color="#121820" opacity="0.84" />
+              <Text value="DO 'T WORR  !" x="center" y="1470" fontFamily="Avenir Next Condensed" fontWeight="800" fontSize="78" textGap="14" color="#161616" opacity="0.78" />
+
+              <Group id="worry_cyan_offset" x="-10">
+                <Text value="Don't worry!" x="center" y="900" fontFamily="Avenir Next Condensed" fontWeight="900" fontSize="148" textGap="4" renderScale="4x" color="#00E5FF"
+                      opacity={curve("2.76:0:linear, 3.12:0.76:ease_out, 5.58:0.70:linear")} />
+              </Group>
+              <Group id="worry_red_offset" x="10">
+                <Text value="Don't worry!" x="center" y="900" fontFamily="Avenir Next Condensed" fontWeight="900" fontSize="148" textGap="4" renderScale="4x" color="#FF2A3D"
+                      opacity={curve("2.76:0:linear, 3.12:0.72:ease_out, 5.58:0.66:linear")} />
+              </Group>
+              <Text value="Don't worry!" x="center" y="900" fontFamily="Avenir Next Condensed" fontWeight="900" fontSize="148" textGap="4" renderScale="4x" color="#FFFFFF"
+                    opacity={curve("2.78:0:linear, 3.18:1:ease_out, 5.58:1:linear")} />
+
+              <Rect x={curve("2.76:280:ease_in_out, 3.72:790:ease_in_out, 5.18:790:linear, 5.28:810:ease_in_out, 5.38:790:ease_in_out")} y="748" width="5" height="310" color="#FFFFFF"
+                    opacity="0.45 + 0.45*sin($time.sec*18.0)" />
+              <Rect x={curve("2.82:1040:ease_out, 3.22:650:ease_out, 5.24:650:linear")} y="900" width="180" height="16" color="#000000"
+                    opacity={curve("2.82:0.82:linear, 3.34:0:ease_in, 5.18:0:linear, 5.30:0.72:ease_out, 5.46:0:ease_in")} />
+            </Group>
+
+            <!-- 6-9s: final motivational punch with a brief chromatic explosion. -->
+            <Group id="just_do_it"
+                   opacity={curve("0:0:linear, 5.72:0:linear, 6.02:1:ease_out, 9:1:linear")}
+                   scale={curve("0:0.82:linear, 5.72:0.82:linear, 6.18:1:ease_out, 8.20:1:linear, 8.48:1.10:ease_in_out, 9:1.04:ease_in_out")}
+                   transformOriginX="540" transformOriginY="960">
+              <Text value="J ST  DO  I !" x="center" y="420" fontFamily="Avenir Next Condensed" fontWeight="800" fontSize="82" textGap="18" color="#141414" opacity="0.86" />
+              <Text value="JU T    O IT!" x="center" y="1470" fontFamily="Avenir Next Condensed" fontWeight="800" fontSize="82" textGap="18" color="#101820" opacity="0.82" />
+
+              <Group id="final_rgb_stack" rotation={curve("5.76:-2:ease_out, 6.18:0:ease_out, 9:0:linear")}>
+                <Group id="final_cyan_offset" x="-12">
+                  <Text value="Just do it!" x="center" y="900" fontFamily="Avenir Next Condensed" fontWeight="900" fontSize="176" textGap="5" renderScale="4x" color="#00E5FF"
+                        opacity={curve("5.74:0:linear, 6.02:0.82:ease_out, 9:0.64:linear")} />
+                </Group>
+                <Group id="final_red_offset" x="12">
+                  <Text value="Just do it!" x="center" y="900" fontFamily="Avenir Next Condensed" fontWeight="900" fontSize="176" textGap="5" renderScale="4x" color="#FF2A3D"
+                        opacity={curve("5.74:0:linear, 6.02:0.80:ease_out, 9:0.62:linear")} />
+                </Group>
+                <Text value="Just do it!" x="center" y="900" fontFamily="Avenir Next Condensed" fontWeight="900" fontSize="176" textGap="5" renderScale="4x" color="#FFFFFF"
+                      opacity={curve("5.78:0:linear, 6.10:1:ease_out, 9:1:linear")} />
+              </Group>
+
+              <Repeat id="final_color_burst" count="18" x="540" y="960" rotationStep="20" opacity="0.72" opacityStep="-0.018">
+                <Rect x={curve("5.78:0:ease_out, 6.26:520:ease_out, 7.10:760:ease_in_out")} y="-2" width={curve("5.78:0:ease_out, 6.20:190:ease_out, 7.10:90:ease_in_out")} height="4"
+                      color="#00E5FF" opacity={curve("5.76:0:linear, 6.02:0.72:ease_out, 7.12:0:ease_in")} />
+              </Repeat>
+              <Rect x="0" y="0" width="1080" height="1920" color="#FFFFFF"
+                    opacity={curve("5.78:0:linear, 5.92:0.42:ease_out, 6.08:0:ease_in, 8.42:0:linear, 8.52:0.18:ease_out, 8.64:0:ease_in, 9:0:linear")} />
+            </Group>
+
+            <!-- Shared RGB edge noise reinforces the reference style without external assets. -->
+            <Rect x="0" y={curve("0:180:linear, 1.6:760:ease_in_out, 3.2:340:ease_in_out, 4.8:900:ease_in_out, 6.4:260:ease_in_out, 9:720:ease_in_out")}
+                  width="1080" height="3" color="#00E5FF" opacity="0.18" />
+            <Rect x="0" y={curve("0:880:linear, 1.4:280:ease_in_out, 3.0:820:ease_in_out, 4.6:420:ease_in_out, 6.2:940:ease_in_out, 9:360:ease_in_out")}
+                  width="1080" height="2" color="#FF2A3D" opacity="0.16" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="glitch_typography_post">
+    <Tex id="glitch_src" fmt="rgba16f" from="scene:fearless_rgb_glitch_typography_portrait_9s" />
+    <Tex id="glitch_out" fmt="rgba16f" size={[1080,1920]} />
+    <Pass id="subtle_rgb_glow" kind="compute" effect="glow_bloom"
+          in={["glitch_src"]} out={["glitch_out"]}
+          params={{ threshold: "0.72", intensity: "0.62", sigma: "6.0" }} />
+  </Process>
+
+  <Present from="glitch_typography_post" />
+</Graph>

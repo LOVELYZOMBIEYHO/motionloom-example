@@ -1,0 +1,38 @@
+<Graph fps={30} duration="4s" size={[1280,720]} renderSize={[1280,720]}>
+  <Background color="#090B12" />
+
+  <Scene id="text_aa_soft_edge_blur_demo">
+    <Defs>
+      <RadialGradient id="stage_glow" cx="0.50" cy="0.48" r="0.70"
+                      stops="0:#23385A, 0.44:#111827, 1:#090B12" />
+      <LinearGradient id="neon_text" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#C9FF4A, 0.42:#FFFFFF, 0.72:#7CFBFF, 1:#B58CFF" />
+      <LinearGradient id="rule_grad" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#FFFFFF00, 0.50:#D7FF4A, 1:#FFFFFF00" />
+    </Defs>
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1280" height="720" fill="url(#stage_glow)" />
+            <Text value="TEXT AA / SOFT EDGE" x="640" y="110" fontFamily="Arial" fontWeight="900" fontSize="46" renderScale="auto" color="#F8FAFC" />
+            <Text value="same text, different edge treatment" x="640" y="152" fontFamily="Arial" fontSize="22" renderScale="auto" color="#94A3B8" />
+
+            <Text value="HARD EDGE" x="330" y="292" fontFamily="Arial" fontWeight="900" fontSize="86" renderScale="1x" color="#FFFFFF" />
+            <Text value="renderScale=1x" x="330" y="354" fontFamily="Arial" fontSize="24" renderScale="auto" color="#64748B" />
+
+            <Text value="SMOOTH" x="930" y="292" fontFamily="Arial" fontWeight="900" fontSize="92" renderScale="auto" antialias="subpixel" softEdge="0.34" color="#C9FF4A" />
+            <Text value="renderScale=auto + softEdge" x="930" y="354" fontFamily="Arial" fontSize="24" renderScale="auto" color="#A7F3D0" />
+
+            <Text value="BLUR PULSE" x="640" y="520" fontFamily="Arial" fontWeight="900" fontSize="108" renderScale="auto" color="#D7FF4A" blur={curve("0:0:linear, 1.4:14:ease_in_out, 2.7:14:linear, 4:0:ease_out")} opacity="0.86" />
+            <Text value="blur animates 0px → 14px → 0px" x="640" y="622" fontFamily="Arial" fontSize="28" renderScale="auto" color="#CBD5E1" />
+            <Line x1="260" y1="574" x2="1020" y2="574" stroke="url(#rule_grad)" strokeWidth="3" opacity="0.74" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="text_aa_soft_edge_blur_demo" />
+</Graph>
