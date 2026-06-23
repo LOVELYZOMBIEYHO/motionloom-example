@@ -1,13 +1,13 @@
 {
-  "example_count": 102,
-  "core_count": 74,
-  "showcase_count": 28,
+  "example_count": 108,
+  "core_count": 75,
+  "showcase_count": 33,
   "domain_counts": {
-    "scene": 68,
+    "scene": 71,
     "world": 6,
     "process": 16,
     "composition": 1,
-    "text": 11
+    "text": 14
   },
   "id_prefixes": {
     "scene": "cs",
@@ -2784,6 +2784,170 @@
       "path": "showcase/s-000028/"
     },
     {
+      "id": "s-000029",
+      "type": "showcase",
+      "title": "ANICA Neon Premium Promo",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "promo",
+        "neon",
+        "typography",
+        "bloom",
+        "curve-animation",
+        "procedural-texture"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Repeat",
+        "Rect",
+        "Circle",
+        "Line",
+        "Path",
+        "Text",
+        "RadialGradient",
+        "Process",
+        "Tex",
+        "Pass",
+        "Present"
+      ],
+      "teaches": [
+        "Build a long-form neon product promo with only procedural scene primitives.",
+        "Use ambient gradients, scanlines, and grain to create a premium motion-graphics look.",
+        "Sequence multiple typography beats with curve-driven zooms and opacity transitions."
+      ],
+      "source_path": "showcase/s-000029",
+      "demo_url": "",
+      "related": [
+        "s-000030",
+        "s-000031"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Present"
+      ],
+      "path": "showcase/s-000029/"
+    },
+    {
+      "id": "s-000030",
+      "type": "showcase",
+      "title": "ANICA Neon Premium Portrait Promo",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "portrait",
+        "promo",
+        "neon",
+        "typography",
+        "curve-animation",
+        "procedural-texture"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Repeat",
+        "Rect",
+        "Circle",
+        "Line",
+        "Path",
+        "Text",
+        "RadialGradient",
+        "Process",
+        "Tex",
+        "Pass",
+        "Present",
+        "Image"
+      ],
+      "teaches": [
+        "Adapt the neon promo language to a vertical 1080x1920 layout.",
+        "Use portrait-safe composition, vertical workflow lines, and staged text groups.",
+        "Keep the design asset-free with gradients, repeats, and procedural texture."
+      ],
+      "source_path": "showcase/s-000030",
+      "demo_url": "",
+      "related": [
+        "s-000029",
+        "s-000031"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Present"
+      ],
+      "path": "showcase/s-000030/"
+    },
+    {
+      "id": "s-000031",
+      "type": "showcase",
+      "title": "ANICA Cyber Book Portrait",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "portrait",
+        "book-style",
+        "page-turn",
+        "typography",
+        "texture",
+        "curve-animation"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Repeat",
+        "Rect",
+        "Circle",
+        "Line",
+        "Path",
+        "Text",
+        "LinearGradient",
+        "RadialGradient",
+        "Process",
+        "Tex",
+        "Pass",
+        "Present",
+        "Image"
+      ],
+      "teaches": [
+        "Create a cyber-noir illustrated book cover using only scene primitives.",
+        "Layer folds, scratches, dust, and page-turn highlights for a tactile composition.",
+        "Use timed groups to transition between cover, MotionLoom, and product-story beats."
+      ],
+      "source_path": "showcase/s-000031",
+      "demo_url": "",
+      "related": [
+        "s-000030"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Present"
+      ],
+      "path": "showcase/s-000031/"
+    },
+    {
       "id": "cw-000001",
       "type": "core",
       "title": "DSL Action Basic",
@@ -4197,6 +4361,168 @@
         "Present"
       ],
       "path": "core/text/ct-000011/"
+    },
+    {
+      "id": "ct-000012",
+      "type": "core",
+      "title": "Text AA Soft Edge Blur",
+      "domain": "text",
+      "features": [
+        "text",
+        "antialias",
+        "edge-smoothing",
+        "soft-edge",
+        "blur",
+        "render-scale"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Rect",
+        "Line",
+        "LinearGradient",
+        "RadialGradient",
+        "Present",
+        "antialias",
+        "edgeSmoothing",
+        "softEdge",
+        "blur",
+        "renderScale"
+      ],
+      "teaches": [
+        "Use renderScale auto for cleaner default text rasterization.",
+        "Use antialias presets and softEdge or edgeSmoothing to reduce hard pixel edges.",
+        "Use blur on Text for soft glow or defocus treatments."
+      ],
+      "source_path": "core/text/ct-000012",
+      "demo_url": "",
+      "related": [
+        "ct-000001",
+        "ct-000011"
+      ],
+      "requires": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Present"
+      ],
+      "path": "core/text/ct-000012/"
+    },
+    {
+      "id": "s-000032",
+      "type": "showcase",
+      "title": "Fearless RGB Glitch Typography",
+      "domain": "text",
+      "features": [
+        "scene",
+        "text",
+        "rgb-glitch",
+        "typography",
+        "scanlines",
+        "curve-animation"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Repeat",
+        "Rect",
+        "Text",
+        "Process",
+        "Tex",
+        "Pass",
+        "Present"
+      ],
+      "teaches": [
+        "Build RGB glitch typography by layering offset Text nodes.",
+        "Use deterministic noise, scanlines, and slice rectangles for a digital glitch look.",
+        "Sequence motivational text beats with simple opacity and scale curves."
+      ],
+      "source_path": "showcase/s-000032",
+      "demo_url": "",
+      "related": [
+        "s-000033",
+        "ct-000012"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Present"
+      ],
+      "path": "showcase/s-000032/"
+    },
+    {
+      "id": "s-000033",
+      "type": "showcase",
+      "title": "Bass Pulse Six-Line RGB Glitch Portrait",
+      "domain": "text",
+      "features": [
+        "scene",
+        "text",
+        "portrait",
+        "rgb-glitch",
+        "typography",
+        "scanlines",
+        "curve-animation",
+        "sin",
+        "random-animation",
+        "audio-reactive",
+        "bloom"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Repeat",
+        "Rect",
+        "Circle",
+        "Text",
+        "Process",
+        "Tex",
+        "Pass",
+        "Present",
+        "sin",
+        "random",
+        "curve"
+      ],
+      "teaches": [
+        "Cut a 9-second portrait typography promo into six 1.5-second music beats.",
+        "Use deterministic bass-style pulses, RGB split, side meters, scanlines, and beat flashes.",
+        "Keep short motivational phrases readable while matching fast DnB-style music energy."
+      ],
+      "source_path": "showcase/s-000033",
+      "demo_url": "",
+      "related": [
+        "s-000032"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Process",
+        "Present"
+      ],
+      "path": "showcase/s-000033/"
     }
   ]
 }

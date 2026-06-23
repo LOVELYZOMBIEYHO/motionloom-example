@@ -179,7 +179,7 @@
     <Tex id="cyber_book_out" fmt="rgba16f" size={[1080,1920]} />
     <Pass id="cyber_book_post_bloom" kind="compute" effect="bloom"
           in={["cyber_book_src"]} out={["cyber_book_out"]}
-          params={{ threshold: "0.18", intensity: "2.45", sigma: "22.0" }} />
+          params={{ threshold: "0.18", intensity: "1.45", sigma: "22.0" }} />
   </Process>
 
   <Present from="anica_cyber_book_bloom" />

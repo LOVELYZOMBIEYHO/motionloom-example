@@ -1,12 +1,12 @@
-# s-000033 Fearless RGB Glitch Typography Portrait
+# s-000033 Bass Pulse Six-Line RGB Glitch Portrait
 
-Portrait RGB glitch typography promo built from fixed text layers and numeric motion.
+Portrait RGB glitch typography promo cut into six `1.5s` text hits for fast DnB / club audio.
 
 - Duration: `9s`.
 - Canvas: `1080x1920`.
-- Adapt the RGB glitch typography sequence to vertical portrait output.
-- Use fixed text layers and numeric motion instead of external assets.
-- Keep chromatic offsets readable on mobile-safe compositions.
+- Text beats: `AFRAID?`, `OF FAILING?`, `DON'T WORRY`, `MOVE ANYWAY`, `NO EXCUSES`, `JUST DO IT!`.
+- Adds scanline movement, side meter bars, RGB split jitter, beat flashes, radial pulses, and heavier glow.
+- Uses deterministic `sin(...)`, `random(...)`, and `curve(...)`; no audio analysis is required.
 
 Run:
 

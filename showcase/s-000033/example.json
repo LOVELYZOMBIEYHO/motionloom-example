@@ -1,7 +1,7 @@
 {
   "id": "s-000033",
   "type": "showcase",
-  "title": "Fearless RGB Glitch Typography Portrait",
+  "title": "Bass Pulse Six-Line RGB Glitch Portrait",
   "domain": "text",
   "features": [
     "scene",
@@ -10,7 +10,11 @@
     "rgb-glitch",
     "typography",
     "scanlines",
-    "curve-animation"
+    "curve-animation",
+    "sin",
+    "random-animation",
+    "audio-reactive",
+    "bloom"
   ],
   "dsl": [
     "Graph",
@@ -23,26 +27,30 @@
     "Group",
     "Repeat",
     "Rect",
+    "Circle",
     "Text",
     "Process",
     "Tex",
     "Pass",
-    "Present"
+    "Present",
+    "sin",
+    "random",
+    "curve"
   ],
   "teaches": [
-    "Adapt the RGB glitch typography sequence to vertical portrait output.",
-    "Use fixed text layers and numeric motion instead of external assets.",
-    "Keep chromatic offsets readable on mobile-safe compositions."
+    "Cut a 9-second portrait typography promo into six 1.5-second music beats.",
+    "Use deterministic bass-style pulses, RGB split, side meters, scanlines, and beat flashes.",
+    "Keep short motivational phrases readable while matching fast DnB-style music energy."
   ],
   "source_path": "showcase/s-000033",
   "demo_url": "",
   "related": [
-    "s-000032",
-    "ct-000012"
+    "s-000032"
   ],
   "requires": [
     "Graph",
     "Scene",
+    "Process",
     "Present"
   ]
 }
