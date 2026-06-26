@@ -1,0 +1,54 @@
+{
+  "id": "s-000035",
+  "type": "showcase",
+  "title": "High Detail Bishoujo Eye Gaze Squint",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "character",
+    "eye",
+    "anime",
+    "iris-detail",
+    "gaze-animation",
+    "squint-animation",
+    "curve-animation",
+    "gradients",
+    "highlights"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "LinearGradient",
+    "RadialGradient",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Character",
+    "Group",
+    "Repeat",
+    "Rect",
+    "Circle",
+    "Path",
+    "Present",
+    "curve"
+  ],
+  "teaches": [
+    "Build a detailed anime-style eye from layered paths, gradients, and highlights.",
+    "Animate gaze left, return to center, and then narrow the eye into a squint.",
+    "Use grouped transforms to keep iris motion and eyelid compression coordinated."
+  ],
+  "source_path": "showcase/s-000035",
+  "demo_url": "",
+  "related": [
+    "s-000034"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Timeline",
+    "Present"
+  ]
+}

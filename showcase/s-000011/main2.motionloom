@@ -1,0 +1,230 @@
+<!-- Phoenix Ascension Ember Storm Portrait 7s — a firebird rising from ash and ember, original mythology, no licensed content. -->
+<Graph fps={30} duration="7s" size={[1080,1920]} renderSize={[1080,1920]}>
+  <Background color="#0a0404" />
+
+  <Scene id="phoenix_ascension_ember_storm_portrait_7s">
+    <Defs>
+      <Font id="display" family="Avenir Next Condensed" fallback="sans-serif" />
+      <Font id="serif" family="Times New Roman" fallback="serif" />
+
+      <RadialGradient id="ember_base" cx="0.50" cy="0.62" r="0.90"
+                      stops="0:#2a0a04, 0.28:#1a0604, 0.60:#0e0302, 1:#0a0404" />
+      <RadialGradient id="smoke_cloud" cx="0.50" cy="0.50" r="0.72"
+                      stops="0:#3a1208F2, 0.34:#221006D8, 0.70:#1808045C, 1:#18080400" />
+      <RadialGradient id="ember_core" cx="0.50" cy="0.50" r="0.55"
+                      stops="0:#ffffff, 0.12:#fff0c0, 0.28:#ffaa30, 0.52:#ff440066, 0.80:#cc220018, 1:#cc220000" />
+      <RadialGradient id="ash_glow" cx="0.50" cy="0.50" r="0.65"
+                      stops="0:#ff884488, 0.30:#cc442244, 0.62:#661a1018, 1:#661a1000" />
+      <RadialGradient id="phoenix_body_glow" cx="0.50" cy="0.40" r="0.60"
+                      stops="0:#fff8e0ee, 0.18:#ffcc60aa, 0.42:#ff662044, 0.72:#cc220018, 1:#cc220000" />
+
+      <LinearGradient id="flame_grad" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#fff0c0, 0.20:#ffcc50, 0.48:#ff6620, 0.78:#cc2200, 1:#440a00" />
+      <LinearGradient id="feather_grad" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#ffe890, 0.24:#ffaa40, 0.54:#ff5520, 0.82:#aa1a08, 1:#330400" />
+      <LinearGradient id="feather_tip" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#fff8e0, 0.30:#ffcc60, 0.62:#ff7730, 0.88:#cc3300, 1:#440a00" />
+
+      <LinearGradient id="ember_scratch" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#ffffff00, 0.28:#ff884444, 0.64:#22060066, 1:#ffffff00" />
+      <LinearGradient id="ash_wash_left" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#00000055, 0.32:#00000022, 0.78:#00000000, 1:#00000000" />
+      <LinearGradient id="ash_wash_right" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#00000000, 0.34:#cc442230, 0.74:#ff773318, 1:#00000044" />
+      <LinearGradient id="ash_fold" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#00000000, 0.44:#ff773344, 0.52:#0a020299, 0.62:#00000000, 1:#00000000" />
+      <LinearGradient id="ember_line" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#0a020200, 0.24:#0a0202AA, 0.74:#0a0202AA, 1:#0a020200" />
+    </Defs>
+
+    <Timeline>
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="7s" out="hold">
+          <Layer>
+
+            <!-- ===== ASH BED — the ground the phoenix rises from ===== -->
+            <Group id="ash_bed"
+                   opacity={curve("0:1:linear, 5.5:1:linear, 7:0.6:ease_in")}>
+              <Rect x="0" y="0" width="1080" height="1920" fill="url(#ember_base)" />
+              <Rect x="0" y="0" width="1080" height="1920" color="#000000" opacity={curve("0:0.24:linear, 5:0.40:ease_in_out")} />
+              <Rect x="0" y="0" width="540" height="1920" fill="url(#ash_wash_left)" opacity={curve("0:0.30:linear, 5:0.46:ease_in_out")} />
+              <Rect x="540" y="0" width="540" height="1920" fill="url(#ash_wash_right)" opacity={curve("0:0.16:linear, 3:0.38:ease_out, 5:0.44:linear")} />
+
+              <!-- Ember dust and ash grain. -->
+              <Repeat id="ember_dust" count="54" x="42" y="38" xStep="34" yStep="19" opacity="0.40" opacityStep="-0.002">
+                <Circle x="random(-10, 10, floor($time.sec*3)+17)" y="random(-7, 7, floor($time.sec*3)+31)" radius="1.8" color="#ff6622" opacity="0.20" blend="screen" />
+              </Repeat>
+              <Repeat id="ember_scratch_field" count="13" x="145" y="-40" xStep="142" opacity="0.22" opacityStep="-0.006">
+                <Rect x="random(-18, 18, floor($time.sec*2)+91)" y="0" width="2.2" height="1160" fill="url(#ember_scratch)" opacity="0.32" />
+              </Repeat>
+
+              <!-- Central fold / heat haze column. -->
+              <Rect x="492" y="0" width="88" height="1920" fill="url(#ash_fold)" opacity="0.84" />
+              <Line x1="538" y1="0" x2="538" y2="1920" stroke="#090202" strokeWidth="5" opacity="0.64" />
+              <Line x1="568" y1="0" x2="568" y2="1920" stroke="#ff7733" strokeWidth="3" opacity="0.20" />
+
+              <!-- Rising smoke pillars in the first seconds, then dissipate. -->
+              <Group id="early_smoke" opacity={curve("0:1:linear, 1.25:0.65:ease_in_out, 2.50:0.18:ease_in, 3:0.0:ease_in")}
+                     x={curve("0:0:linear, 3:-70:ease_in_out")} y="0">
+                <Circle x="260" y="520" radius={curve("0:290:ease_out, 3:360:ease_in_out")} fill="url(#smoke_cloud)" opacity="0.76" />
+                <Circle x="410" y="420" radius={curve("0:180:ease_out, 3:220:ease_in_out")} fill="url(#smoke_cloud)" opacity="0.62" />
+                <Circle x="760" y="360" radius="220" fill="url(#smoke_cloud)" opacity="0.42" />
+                <Circle x="820" y="1110" radius="250" fill="url(#smoke_cloud)" opacity="0.50" />
+                <Circle x="530" y="980" radius="210" fill="url(#smoke_cloud)" opacity="0.44" />
+              </Group>
+
+              <!-- The ignition point — glowing ember core that grows. -->
+              <Group id="ignition" opacity={curve("0:0.18:linear, 1.10:0.34:ease_in_out, 2.20:0.88:ease_out, 3:0.94:linear, 5:0.94:linear, 7:0.80:ease_in")}>
+                <Circle x="540" y="1180" radius={curve("0:120:ease_out, 2.30:360:ease_in_out, 3:420:ease_out, 5:380:ease_in_out, 7:340:ease_in")} fill="url(#ember_core)" />
+                <Circle x="540" y="1180" radius={curve("0:60:ease_out, 2.30:220:ease_in_out, 3:280:ease_out, 5:240:ease_in_out, 7:200:ease_in")} fill="url(#ash_glow)" />
+                <Rect x="160" y="1000" width="760" height="420" radius="120" color="#090202" opacity={curve("0:0.0:linear, 1.45:0.10:ease_in, 2.45:0.32:ease_out, 3:0.40:linear, 5:0.36:ease_in_out, 7:0.28:ease_in")} />
+              </Group>
+
+              <!-- Animated rising ember spark trail from the ash. -->
+              <Path id="ember_trail"
+                    d="M 540 1460 C 520 1280 560 1120 540 920 C 520 760 570 600 540 420 M 540 420 L 516 520 M 540 420 L 568 518"
+                    stroke="#ff7733" strokeWidth="10" lineCap="round" lineJoin="round" fill="none"
+                    trimStart={curve("0:0:linear, 0.20:0:linear, 0.72:0.02:ease_in_out")}
+                    trimEnd={curve("0:0:linear, 0.20:1:ease_out, 1.80:1:linear")}
+                    opacity={curve("0:0.88:linear, 0.90:0.72:linear, 1.80:0:ease_in, 3:0:linear")} />
+
+              <!-- Decorative flame border, like a burning frame edge. -->
+              <Group id="flame_frame" opacity={curve("0:0.52:linear, 3:0.68:linear, 7:0.40:ease_in")}>
+                <Path d="M 42 44 L 200 44 M 44 44 L 44 260 M 880 44 L 1036 44 M 1036 44 L 1036 260 M 42 1876 L 200 1876 M 44 1660 L 44 1876 M 880 1876 L 1036 1876 M 1036 1660 L 1036 1876"
+                      stroke="#220600" strokeWidth="8" lineCap="round" fill="none" opacity="0.54" />
+                <Path d="M 80 1700 C 120 1640 184 1624 246 1662 C 196 1680 164 1722 154 1784 C 126 1752 102 1722 80 1700 Z"
+                      fill="url(#flame_grad)" stroke="#220600" strokeWidth="5" opacity="0.62" />
+                <Path d="M 866 138 C 934 104 1000 130 1028 202 C 952 172 904 188 866 246"
+                      fill="url(#flame_grad)" stroke="#220600" strokeWidth="5" opacity="0.58" />
+              </Group>
+
+              <!-- ===== THE PHOENIX — rises from the ember core ===== -->
+              <Group id="phoenix"
+                     x="540"
+                     y={curve("0:1240:ease_out, 2:1080:ease_in_out, 3.5:820:ease_out, 5:680:ease_in_out, 7:620:ease_in")}
+                     scale={curve("0:0.20:ease_out, 2:0.55:ease_out, 3.5:1.0:ease_out, 5:1.06:ease_in_out, 7:1.02:ease_in")}
+                     rotation={curve("0:0:linear, 7:8:ease_in_out")}
+                     opacity={curve("0:0:linear, 1.5:0.50:ease_out, 3:0.92:ease_out, 5:1:linear, 7:0.90:ease_in")}
+                     transformOriginX="0" transformOriginY="0">
+
+                <!-- Body glow halo. -->
+                <Circle x="0" y="0" radius={curve("0:40:ease_out, 3:180:ease_out, 5:200:ease_in_out, 7:180:ease_in")} fill="url(#phoenix_body_glow)" opacity={curve("0:0.30:linear, 3:0.60:ease_out, 5:0.55:linear, 7:0.40:ease_in")} blend="screen" />
+
+                <!-- Phoenix body — stylized flame-shaped torso. -->
+                <Path d="M 0 0 C -50 -40 -70 -120 -40 -200 C -20 -260 20 -260 40 -200 C 70 -120 50 -40 0 0 Z"
+                      fill="url(#flame_grad)" stroke="#220600" strokeWidth="4" opacity="0.92"
+                      trimStart={curve("0:0:linear, 1.2:0:ease_out, 3:0:linear")}
+                      trimEnd={curve("0:0:linear, 1.2:0:ease_out, 3:1:ease_out, 7:1:linear")} />
+
+                <!-- Head crest. -->
+                <Path d="M 0 -200 C -20 -250 -30 -290 -15 -320 C -5 -300 5 -300 15 -320 C 30 -290 20 -250 0 -200 Z"
+                      fill="url(#feather_tip)" stroke="#220600" strokeWidth="3" opacity="0.90"
+                      trimStart={curve("0:0:linear, 2:0:ease_out")}
+                      trimEnd={curve("0:0:linear, 2:0:ease_out, 3.5:1:ease_out, 7:1:linear")} />
+
+                <!-- Left wing — feathers via Repeat. -->
+                <Group id="left_wing" opacity={curve("0:0:linear, 2:0.80:ease_out, 3.5:0.92:ease_out, 7:0.80:ease_in")}
+                       rotation={curve("0:-30:ease_out, 3.5:-75:ease_out, 5:-80:ease_in_out, 7:-70:ease_in")}
+                       transformOriginX="0" transformOriginY="0">
+                  <Repeat id="left_feathers" count="7" x="0" y="0" rotationStep="-12" opacity="0.88" opacityStep="-0.02">
+                    <Path d="M 0 0 C -30 -80 -60 -180 -40 -280 C -25 -340 -10 -340 0 -300 C 10 -260 30 -180 20 -100 C 15 -50 10 -20 0 0 Z"
+                          fill="url(#feather_grad)" stroke="#220600" strokeWidth="2.5" opacity="0.85"
+                          trimStart={curve("0:0:linear, 2:0:ease_out")}
+                          trimEnd={curve("0:0:linear, 2:0:ease_out, 3.5:1:ease_out, 7:1:linear")} />
+                  </Repeat>
+                </Group>
+
+                <!-- Right wing — mirror of left. -->
+                <Group id="right_wing" opacity={curve("0:0:linear, 2:0.80:ease_out, 3.5:0.92:ease_out, 7:0.80:ease_in")}
+                       rotation={curve("0:30:ease_out, 3.5:75:ease_out, 5:80:ease_in_out, 7:70:ease_in")}
+                       transformOriginX="0" transformOriginY="0">
+                  <Repeat id="right_feathers" count="7" x="0" y="0" rotationStep="12" opacity="0.88" opacityStep="-0.02">
+                    <Path d="M 0 0 C 30 -80 60 -180 40 -280 C 25 -340 10 -340 0 -300 C -10 -260 -30 -180 -20 -100 C -15 -50 -10 -20 0 0 Z"
+                          fill="url(#feather_grad)" stroke="#220600" strokeWidth="2.5" opacity="0.85"
+                          trimStart={curve("0:0:linear, 2:0:ease_out")}
+                          trimEnd={curve("0:0:linear, 2:0:ease_out, 3.5:1:ease_out, 7:1:linear")} />
+                  </Repeat>
+                </Group>
+
+                <!-- Tail flames. -->
+                <Group id="tail_flames" opacity={curve("0:0:linear, 2.5:0.75:ease_out, 5:0.75:linear, 7:0.50:ease_in")}>
+                  <Repeat id="tail_feathers" count="5" x="0" y="0" rotationStep="15" opacity="0.80" opacityStep="-0.04">
+                    <Path d="M 0 0 C -15 60 -20 140 -10 220 C -5 260 5 260 10 220 C 20 140 15 60 0 0 Z"
+                          fill="url(#flame_grad)" stroke="#220600" strokeWidth="2" opacity="0.80"
+                          trimStart={curve("0:0:linear, 2.5:0:ease_out")}
+                          trimEnd={curve("0:0:linear, 2.5:0:ease_out, 4:1:ease_out, 7:1:linear")} />
+                  </Repeat>
+                </Group>
+
+                <!-- Eye spark. -->
+                <Circle x="0" y="-220" radius={curve("0:0:linear, 3:0:ease_out, 3.5:4:ease_out, 7:4:linear")} fill="#ffffff" opacity={curve("0:0:linear, 3:0:ease_out, 3.5:0.95:ease_out, 7:0.80:ease_in")} blend="screen" />
+              </Group>
+
+              <!-- ===== EMBER STORM — rising fire particles around the phoenix ===== -->
+              <Group id="ember_storm" opacity={curve("0:0:linear, 2:0.50:ease_out, 4:0.70:ease_out, 6:0.70:linear, 7:0.30:ease_in")}>
+                <Repeat id="rising_embers" count="40" x="90" y="1640" xStep="30" yStep="0" opacity="0.65" opacityStep="-0.006">
+                  <Circle x="random(-24, 24, floor($time.sec*2)+61) + 18*sin($time.sec*1.4)"
+                          y={curve("0:0:linear, 7:-500:ease_out")}
+                          radius={1.5 + 1.4*(0.5 + 0.5*sin($time.sec*2.5))}
+                          fill="url(#ash_glow)" opacity="0.60" blend="screen" />
+                </Repeat>
+
+                <Repeat id="spark_particles" count="28" x="170" y="1500" xStep="28" yStep="14" opacity="0.55" opacityStep="-0.008">
+                  <Circle x="random(-18, 18, floor($time.sec*3)+121) + 22*cos($time.sec*1.0)"
+                          y={curve("0:0:linear, 7:-420:ease_out")}
+                          radius={1.0 + 0.8*(0.5 + 0.5*sin($time.sec*3.0))}
+                          fill="#ffcc50" opacity="0.55" blend="screen" />
+                </Repeat>
+              </Group>
+
+              <!-- ===== TITLE REVEAL — "PHOENIX" with ember sweep ===== -->
+              <Group id="title_lockup"
+                     x={curve("0:-180:ease_out, 5.0:0:ease_out, 7:0:linear")}
+                     y={curve("0:24:ease_out, 5.5:0:ease_in_out, 7:0:linear")}
+                     scale={curve("0:1.08:ease_out, 6:1.0:ease_in_out, 7:1.0:linear")}
+                     opacity={curve("0:0:linear, 4.8:0:linear, 5.2:0.82:ease_out, 6.2:1:linear, 7:1:linear")}
+                     transformOriginX="540" transformOriginY="1340">
+
+                <Text value="PHOENIX" x="center" y="1320" fontFamily="Times New Roman" fontWeight="700" fontSize="146" renderScale="4x" color="#1A0604" opacity="0.56" />
+                <Text value="PHOENIX" x="center" y="1304" fontFamily="Times New Roman" fontWeight="700" fontSize="146" renderScale="4x" color="#C7482B" opacity="0.94" />
+                <Text value="PHOENIX" x="center" y="1298" fontFamily="Times New Roman" fontWeight="700" fontSize="146" renderScale="4x" color="#FFE7A3" opacity={curve("4.8:0:linear, 5.6:0.24:ease_out, 6.5:0.16:ease_in_out, 7:0.20:linear")} />
+
+                <!-- Flame descender cuts. -->
+                <Path d="M 302 1188 L 322 1450 L 344 1192 Z M 736 1210 L 752 1440 L 774 1210 Z"
+                      fill="#C7482B" stroke="#4B1A08" strokeWidth="4" opacity="0.86" />
+                <Rect x="320" y="1370" width="150" height="20" fill="url(#ember_line)" opacity="0.60" />
+                <Rect x="650" y="1374" width="210" height="22" fill="url(#ember_line)" opacity="0.56" />
+
+              </Group>
+
+              <!-- Subtitle. -->
+              <Group id="subtitle" opacity={curve("0:0.0:linear, 5.8:0.0:linear, 6.3:0.90:ease_out, 7:0.95:linear")}
+                     x={curve("0:0:linear, 6.3:0:ease_out, 7:0:linear")}
+                     y={curve("0:24:ease_out, 6.3:0:ease_out, 7:0:linear")}>
+                <Text value="FROM THE" x="center" y="1428" fontFamily="Times New Roman" fontSize="46" renderScale="4x" color="#A43A22" opacity="0.88" />
+                <Text value="EMBERS" x="center" y="1504" fontFamily="Times New Roman" fontSize="72" renderScale="4x" color="#C7482B" opacity="0.94" />
+                <Text value="REBORN" x="center" y="1582" fontFamily="Times New Roman" fontSize="62" renderScale="4x" color="#C7482B" opacity="0.88" />
+              </Group>
+
+              <!-- Warm flicker vignette — the signature sin-based glow from s-000002. -->
+              <Rect x="0" y="0" width="1080" height="1920" color="#FF7733" opacity="0.025 + 0.020*(0.5 + 0.5*sin($time.sec*16.0))" blend="screen" />
+              <Rect x="0" y="0" width="1080" height="1920" color="#000000" opacity={curve("0:0.08:linear, 4:0.12:ease_in_out, 7:0.22:linear")} />
+            </Group>
+
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="PhoenixBloomProcess">
+    <Tex id="src" fmt="rgba16f" from="scene:phoenix_ascension_ember_storm_portrait_7s" />
+    <Tex id="out" fmt="rgba16f" size={[1080,1920]} />
+    <Pass id="post_bloom" kind="compute"
+          effect="bloom"
+          in={["src"]} out={["out"]}
+          params={{ threshold: "0.14", intensity: "2.15", sigma: "18.0" }} />
+  </Process>
+
+  <Present from="PhoenixBloomProcess" />
+</Graph>

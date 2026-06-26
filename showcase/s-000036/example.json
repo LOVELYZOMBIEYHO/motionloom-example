@@ -1,0 +1,57 @@
+{
+  "id": "s-000036",
+  "type": "showcase",
+  "title": "Stickman Five Finger FK Rig",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "character-rig",
+    "character-action",
+    "bone",
+    "pose",
+    "shape",
+    "path",
+    "curve-animation"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Bone",
+    "Action",
+    "Pose",
+    "Scene",
+    "Defs",
+    "LinearGradient",
+    "RadialGradient",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Rect",
+    "Circle",
+    "Path",
+    "Text",
+    "Present",
+    "curve"
+  ],
+  "teaches": [
+    "Build a five-finger hand with parented FK bone chains.",
+    "Animate finger curls by rotating each phalanx through Action and Pose keyframes.",
+    "Attach visible finger artwork to bones so child joints inherit parent motion."
+  ],
+  "source_path": "showcase/s-000036",
+  "demo_url": "",
+  "related": [
+    "cs-000041",
+    "s-000035"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Skeleton",
+    "Action",
+    "Character",
+    "ApplyAction"
+  ]
+}

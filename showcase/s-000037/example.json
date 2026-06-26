@@ -1,0 +1,65 @@
+{
+  "id": "s-000037",
+  "type": "showcase",
+  "title": "Stickman IK FK Template",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "character-rig",
+    "character-action",
+    "ik",
+    "fk",
+    "bone",
+    "pose",
+    "shape",
+    "path",
+    "curve-animation"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Skeleton",
+    "Bone",
+    "Action",
+    "Pose",
+    "IK",
+    "Scene",
+    "Defs",
+    "LinearGradient",
+    "RadialGradient",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Rect",
+    "Circle",
+    "Line",
+    "Path",
+    "Text",
+    "Character",
+    "Part",
+    "ApplyAction",
+    "Present",
+    "curve"
+  ],
+  "teaches": [
+    "Separate FK and IK into different timeline phases so inactive controls do not share the same screen.",
+    "Use FK parent-child rotations for a direct shoulder and elbow pose.",
+    "Use a two-bone IK target to make a wrist follow a moving point while the elbow solves automatically."
+  ],
+  "source_path": "showcase/s-000037",
+  "demo_url": "",
+  "related": [
+    "s-000036"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Skeleton",
+    "Action",
+    "IK",
+    "Character",
+    "ApplyAction"
+  ]
+}

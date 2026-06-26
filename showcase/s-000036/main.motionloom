@@ -1,0 +1,263 @@
+<Graph fps={30} duration="5s" size={[1280,720]} renderSize={[1280,720]}>
+  <Background color="#F7FAFC" />
+
+  <Skeleton id="five_finger_hand_fk_v1">
+    <Bone id="root" x="0" y="0" />
+    <Bone id="wrist" parent="root" x="0" y="0" />
+    <Bone id="palm" parent="wrist" x="0" y="0" />
+
+    <Bone id="thumb_1" parent="palm" x="-42" y="24" />
+    <Bone id="thumb_2" parent="thumb_1" x="-46" y="-22" />
+    <Bone id="thumb_3" parent="thumb_2" x="-34" y="-14" />
+
+    <Bone id="index_1" parent="palm" x="-24" y="-50" />
+    <Bone id="index_2" parent="index_1" x="0" y="-56" />
+    <Bone id="index_3" parent="index_2" x="0" y="-42" />
+
+    <Bone id="middle_1" parent="palm" x="0" y="-58" />
+    <Bone id="middle_2" parent="middle_1" x="0" y="-64" />
+    <Bone id="middle_3" parent="middle_2" x="0" y="-48" />
+
+    <Bone id="ring_1" parent="palm" x="24" y="-50" />
+    <Bone id="ring_2" parent="ring_1" x="0" y="-56" />
+    <Bone id="ring_3" parent="ring_2" x="0" y="-40" />
+
+    <Bone id="pinky_1" parent="palm" x="44" y="-38" />
+    <Bone id="pinky_2" parent="pinky_1" x="0" y="-44" />
+    <Bone id="pinky_3" parent="pinky_2" x="0" y="-32" />
+  </Skeleton>
+
+  <Action id="five_finger_fk_demo" skeleton="five_finger_hand_fk_v1" duration="5s">
+    <Pose t="0.0">
+      <Bone id="wrist" rotation="-8" />
+      <Bone id="thumb_1" rotation="-18" />
+      <Bone id="thumb_2" rotation="4" />
+      <Bone id="thumb_3" rotation="4" />
+      <Bone id="index_1" rotation="-8" />
+      <Bone id="index_2" rotation="6" />
+      <Bone id="index_3" rotation="4" />
+      <Bone id="middle_1" rotation="0" />
+      <Bone id="middle_2" rotation="3" />
+      <Bone id="middle_3" rotation="2" />
+      <Bone id="ring_1" rotation="8" />
+      <Bone id="ring_2" rotation="8" />
+      <Bone id="ring_3" rotation="5" />
+      <Bone id="pinky_1" rotation="18" />
+      <Bone id="pinky_2" rotation="12" />
+      <Bone id="pinky_3" rotation="8" />
+    </Pose>
+    <Pose t="1.1">
+      <Bone id="wrist" rotation="6" />
+      <Bone id="thumb_1" rotation="-42" />
+      <Bone id="thumb_2" rotation="-10" />
+      <Bone id="thumb_3" rotation="-4" />
+      <Bone id="index_1" rotation="-18" />
+      <Bone id="index_2" rotation="2" />
+      <Bone id="index_3" rotation="2" />
+      <Bone id="middle_1" rotation="-4" />
+      <Bone id="middle_2" rotation="0" />
+      <Bone id="middle_3" rotation="0" />
+      <Bone id="ring_1" rotation="32" />
+      <Bone id="ring_2" rotation="38" />
+      <Bone id="ring_3" rotation="28" />
+      <Bone id="pinky_1" rotation="44" />
+      <Bone id="pinky_2" rotation="46" />
+      <Bone id="pinky_3" rotation="32" />
+    </Pose>
+    <Pose t="2.25">
+      <Bone id="wrist" rotation="-4" />
+      <Bone id="thumb_1" rotation="38" />
+      <Bone id="thumb_2" rotation="48" />
+      <Bone id="thumb_3" rotation="36" />
+      <Bone id="index_1" rotation="46" />
+      <Bone id="index_2" rotation="58" />
+      <Bone id="index_3" rotation="42" />
+      <Bone id="middle_1" rotation="42" />
+      <Bone id="middle_2" rotation="58" />
+      <Bone id="middle_3" rotation="42" />
+      <Bone id="ring_1" rotation="38" />
+      <Bone id="ring_2" rotation="54" />
+      <Bone id="ring_3" rotation="40" />
+      <Bone id="pinky_1" rotation="34" />
+      <Bone id="pinky_2" rotation="48" />
+      <Bone id="pinky_3" rotation="34" />
+    </Pose>
+    <Pose t="3.35">
+      <Bone id="wrist" rotation="10" />
+      <Bone id="thumb_1" rotation="-35" />
+      <Bone id="thumb_2" rotation="-14" />
+      <Bone id="thumb_3" rotation="-8" />
+      <Bone id="index_1" rotation="-22" />
+      <Bone id="index_2" rotation="-8" />
+      <Bone id="index_3" rotation="-4" />
+      <Bone id="middle_1" rotation="0" />
+      <Bone id="middle_2" rotation="0" />
+      <Bone id="middle_3" rotation="0" />
+      <Bone id="ring_1" rotation="18" />
+      <Bone id="ring_2" rotation="10" />
+      <Bone id="ring_3" rotation="6" />
+      <Bone id="pinky_1" rotation="36" />
+      <Bone id="pinky_2" rotation="18" />
+      <Bone id="pinky_3" rotation="10" />
+    </Pose>
+    <Pose t="4.2">
+      <Bone id="wrist" rotation="-12" />
+      <Bone id="thumb_1" rotation="-10" />
+      <Bone id="thumb_2" rotation="22" />
+      <Bone id="thumb_3" rotation="18" />
+      <Bone id="index_1" rotation="38" />
+      <Bone id="index_2" rotation="50" />
+      <Bone id="index_3" rotation="36" />
+      <Bone id="middle_1" rotation="-6" />
+      <Bone id="middle_2" rotation="6" />
+      <Bone id="middle_3" rotation="4" />
+      <Bone id="ring_1" rotation="34" />
+      <Bone id="ring_2" rotation="42" />
+      <Bone id="ring_3" rotation="30" />
+      <Bone id="pinky_1" rotation="18" />
+      <Bone id="pinky_2" rotation="20" />
+      <Bone id="pinky_3" rotation="14" />
+    </Pose>
+    <Pose t="5.0">
+      <Bone id="wrist" rotation="-8" />
+      <Bone id="thumb_1" rotation="-18" />
+      <Bone id="thumb_2" rotation="4" />
+      <Bone id="thumb_3" rotation="4" />
+      <Bone id="index_1" rotation="-8" />
+      <Bone id="index_2" rotation="6" />
+      <Bone id="index_3" rotation="4" />
+      <Bone id="middle_1" rotation="0" />
+      <Bone id="middle_2" rotation="3" />
+      <Bone id="middle_3" rotation="2" />
+      <Bone id="ring_1" rotation="8" />
+      <Bone id="ring_2" rotation="8" />
+      <Bone id="ring_3" rotation="5" />
+      <Bone id="pinky_1" rotation="18" />
+      <Bone id="pinky_2" rotation="12" />
+      <Bone id="pinky_3" rotation="8" />
+    </Pose>
+  </Action>
+
+  <Scene id="stickman_five_finger_fk_showcase">
+    <Defs>
+      <LinearGradient id="bg_wash" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#F8FBFF, 0.55:#F1F7FF, 1:#FFF7ED" />
+      <RadialGradient id="hand_glow" cx="0.50" cy="0.42" r="0.62"
+                      stops="0:#FDE68A66, 0.45:#FB923C22, 1:#FB923C00" />
+    </Defs>
+
+    <Timeline>
+      <Track id="scene_content" space="world" z="0">
+        <Sequence from="0s" duration="5s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1280" height="720" fill="url(#bg_wash)" />
+            <Circle x="850" y="360" radius="260" fill="url(#hand_glow)" blend="screen" opacity="0.82" />
+            <Text value="FK FINGER RIG" x="80" y="82" fontSize="56" fontWeight="900" color="#111827" />
+            <Text value="each finger is a parented bone chain" x="82" y="138" fontSize="24" color="#475569" opacity="0.86" />
+
+            <Character id="stickman" x="300" y="290" scale="1.0" opacity="1">
+              <Circle x="0" y="-82" radius="38" stroke="#111827" strokeWidth="9" fill="#00000000" />
+              <Path d="M 0 -42 L 0 122" stroke="#111827" strokeWidth="10" lineCap="round" fill="none" />
+              <Path d="M 0 0 L -110 72" stroke="#111827" strokeWidth="9" lineCap="round" fill="none" />
+              <Path d="M 0 0 L 138 64 L 220 24" stroke="#111827" strokeWidth="9" lineCap="round" lineJoin="round" fill="none" />
+              <Path d="M 0 122 L -82 255" stroke="#111827" strokeWidth="10" lineCap="round" fill="none" />
+              <Path d="M 0 122 L 90 255" stroke="#111827" strokeWidth="10" lineCap="round" fill="none" />
+              <Circle x="220" y="24" radius="16" fill="#F97316" stroke="#111827" strokeWidth="5" />
+              <Text value="source stickman" x="0" y="320" fontSize="20" color="#64748B" />
+            </Character>
+
+            <Path d="M 548 360 C 610 310 666 300 720 314" stroke="#CBD5E1" strokeWidth="4" lineCap="round" fill="none" strokeDasharray="10 12" opacity="0.92" />
+            <Text value="right hand enlarged" x="570" y="292" fontSize="22" color="#64748B" opacity="0.72" />
+
+            <Character id="hand_fk" rig="five_finger_hand_fk_v1" x="850" y="410" scale="1.55" rotation="0" transformOriginX="0" transformOriginY="0" opacity="1">
+              <Part id="wrist_sleeve" attachTo="wrist">
+                <Path d="M -56 92 C -32 118 38 118 62 92 L 42 8 C 18 28 -22 28 -44 8 Z" fill="#DBEAFE" stroke="#1E293B" strokeWidth="5" />
+              </Part>
+              <Part id="palm_art" attachTo="palm">
+                <Path d="M -70 -44 C -78 0 -68 54 -28 84 C 0 104 52 92 72 50 C 92 8 70 -48 30 -68 C -2 -84 -54 -76 -70 -44 Z" fill="#FEF3C7" stroke="#111827" strokeWidth="7" lineJoin="round" />
+                <Path d="M -42 12 C -16 30 28 30 54 8" stroke="#F59E0B" strokeWidth="3" lineCap="round" fill="none" opacity="0.45" />
+                <Circle x="0" y="0" radius="7" fill="#F97316" opacity="0.75" />
+              </Part>
+
+              <Part id="thumb_1_art" attachTo="thumb_1">
+                <Path d="M 0 0 L -46 -22" stroke="#111827" strokeWidth="13" lineCap="round" fill="none" />
+                <Circle x="0" y="0" radius="8" fill="#F97316" />
+              </Part>
+              <Part id="thumb_2_art" attachTo="thumb_2">
+                <Path d="M 0 0 L -34 -14" stroke="#111827" strokeWidth="11" lineCap="round" fill="none" />
+                <Circle x="0" y="0" radius="7" fill="#FDBA74" />
+              </Part>
+              <Part id="thumb_3_art" attachTo="thumb_3">
+                <Path d="M 0 0 L -24 -10" stroke="#111827" strokeWidth="9" lineCap="round" fill="none" />
+                <Circle x="0" y="0" radius="6" fill="#FED7AA" />
+              </Part>
+
+              <Part id="index_1_art" attachTo="index_1">
+                <Path d="M 0 0 L 0 -56" stroke="#111827" strokeWidth="12" lineCap="round" fill="none" />
+                <Circle x="0" y="0" radius="7" fill="#F97316" />
+              </Part>
+              <Part id="index_2_art" attachTo="index_2">
+                <Path d="M 0 0 L 0 -42" stroke="#111827" strokeWidth="10" lineCap="round" fill="none" />
+                <Circle x="0" y="0" radius="6" fill="#FDBA74" />
+              </Part>
+              <Part id="index_3_art" attachTo="index_3">
+                <Path d="M 0 0 L 0 -30" stroke="#111827" strokeWidth="8" lineCap="round" fill="none" />
+                <Circle x="0" y="0" radius="5" fill="#FED7AA" />
+              </Part>
+
+              <Part id="middle_1_art" attachTo="middle_1">
+                <Path d="M 0 0 L 0 -64" stroke="#111827" strokeWidth="13" lineCap="round" fill="none" />
+                <Circle x="0" y="0" radius="7" fill="#F97316" />
+              </Part>
+              <Part id="middle_2_art" attachTo="middle_2">
+                <Path d="M 0 0 L 0 -48" stroke="#111827" strokeWidth="11" lineCap="round" fill="none" />
+                <Circle x="0" y="0" radius="6" fill="#FDBA74" />
+              </Part>
+              <Part id="middle_3_art" attachTo="middle_3">
+                <Path d="M 0 0 L 0 -34" stroke="#111827" strokeWidth="9" lineCap="round" fill="none" />
+                <Circle x="0" y="0" radius="5" fill="#FED7AA" />
+              </Part>
+
+              <Part id="ring_1_art" attachTo="ring_1">
+                <Path d="M 0 0 L 0 -56" stroke="#111827" strokeWidth="12" lineCap="round" fill="none" />
+                <Circle x="0" y="0" radius="7" fill="#F97316" />
+              </Part>
+              <Part id="ring_2_art" attachTo="ring_2">
+                <Path d="M 0 0 L 0 -40" stroke="#111827" strokeWidth="10" lineCap="round" fill="none" />
+                <Circle x="0" y="0" radius="6" fill="#FDBA74" />
+              </Part>
+              <Part id="ring_3_art" attachTo="ring_3">
+                <Path d="M 0 0 L 0 -28" stroke="#111827" strokeWidth="8" lineCap="round" fill="none" />
+                <Circle x="0" y="0" radius="5" fill="#FED7AA" />
+              </Part>
+
+              <Part id="pinky_1_art" attachTo="pinky_1">
+                <Path d="M 0 0 L 0 -44" stroke="#111827" strokeWidth="11" lineCap="round" fill="none" />
+                <Circle x="0" y="0" radius="7" fill="#F97316" />
+              </Part>
+              <Part id="pinky_2_art" attachTo="pinky_2">
+                <Path d="M 0 0 L 0 -32" stroke="#111827" strokeWidth="9" lineCap="round" fill="none" />
+                <Circle x="0" y="0" radius="6" fill="#FDBA74" />
+              </Part>
+              <Part id="pinky_3_art" attachTo="pinky_3">
+                <Path d="M 0 0 L 0 -24" stroke="#111827" strokeWidth="7" lineCap="round" fill="none" />
+                <Circle x="0" y="0" radius="5" fill="#FED7AA" />
+              </Part>
+            </Character>
+
+            <Group id="time_labels" opacity="0.72">
+              <Text value="open" x="705" y="650" fontSize="20" color="#334155" opacity={curve("0:1:linear, 0.9:0.3:ease_in_out, 5:0.3:linear")} />
+              <Text value="count" x="805" y="650" fontSize="20" color="#334155" opacity={curve("0:0.3:linear, 1.1:1:ease_in_out, 2:0.3:ease_in_out, 5:0.3:linear")} />
+              <Text value="fist" x="905" y="650" fontSize="20" color="#334155" opacity={curve("0:0.3:linear, 2.25:1:ease_in_out, 3.1:0.3:ease_in_out, 5:0.3:linear")} />
+              <Text value="spread" x="1005" y="650" fontSize="20" color="#334155" opacity={curve("0:0.3:linear, 3.35:1:ease_in_out, 4.05:0.3:ease_in_out, 5:0.3:linear")} />
+              <Text value="wave" x="1105" y="650" fontSize="20" color="#334155" opacity={curve("0:0.3:linear, 4.2:1:ease_in_out, 5:0.4:ease_in_out")} />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <ApplyAction target="hand_fk" action="five_finger_fk_demo" at="0s" />
+  <Present from="stickman_five_finger_fk_showcase" />
+</Graph>

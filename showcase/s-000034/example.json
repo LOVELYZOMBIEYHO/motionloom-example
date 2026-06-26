@@ -1,0 +1,55 @@
+{
+  "id": "s-000034",
+  "type": "showcase",
+  "title": "Dual Eye Gaze Blink",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "character",
+    "eyes",
+    "gaze-animation",
+    "blink-animation",
+    "component-reuse",
+    "mirrored-character",
+    "deform-grid",
+    "curve-animation",
+    "gradients"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "LinearGradient",
+    "Brush",
+    "Component",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Character",
+    "Group",
+    "Use",
+    "Path",
+    "Circle",
+    "Present",
+    "curve"
+  ],
+  "teaches": [
+    "Reuse a detailed eye component to build a mirrored two-eye character shot.",
+    "Animate coordinated gaze shifts with iris movement, squash, and subtle deformation.",
+    "Layer open-eye and closed-eye artwork to create a clean blink transition."
+  ],
+  "source_path": "showcase/s-000034",
+  "demo_url": "",
+  "related": [
+    "s-000035"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Component",
+    "Timeline",
+    "Present"
+  ]
+}

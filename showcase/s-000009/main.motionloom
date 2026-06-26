@@ -1,8 +1,8 @@
-<!-- Lotus Bloom Meditation 6s — a golden lotus flower blooming with sacred geometry. -->
-<Graph fps={30} duration="6s" size={[1920,1080]} renderSize={[1920,1080]}>
+<!-- Lotus Bloom Meditation 15s — a golden lotus flower blooming with sacred geometry. -->
+<Graph fps={30} duration="15s" size={[1920,1080]} renderSize={[1920,1080]}>
   <Background color="#0a0612" />
 
-  <Scene id="lotus_bloom_meditation_6s">
+  <Scene id="lotus_bloom_meditation_15s">
     <Defs>
       <Font id="display" family="Avenir Next Condensed" fallback="sans-serif" />
       <Font id="serif" family="Times New Roman" fallback="serif" />
@@ -35,7 +35,7 @@
 
     <Timeline>
       <Track id="bg_track" z="-200">
-        <Sequence from="0s" duration="6s" out="hold">
+        <Sequence from="0s" duration="15s" out="hold">
           <Layer id="bg_layer">
             <Rect x="0" y="0" width="1920" height="1080" fill="#0a0612" />
             <Circle x="960" y="540" radius={curve("0:200:ease_out, 3:560:ease_in_out, 6:620:ease_in")} fill="url(#bg_glow)" opacity={curve("0:0.30:linear, 2:0.50:ease_out, 6:0.40:ease_in")} blend="screen" />
@@ -55,7 +55,7 @@
               </Repeat>
             </Group>
 
-            <Group id="mandala_rotate" x="960" y="540" rotation={curve("0:0:linear, 6:120:ease_in_out")} opacity={curve("0:0:linear, 1.5:0.18:ease_out, 5:0.18:linear, 6:0.08:ease_in")}>
+            <Group id="mandala_rotate" x="960" y="540" rotation={curve("0:0:linear, 6:120:ease_in_out, 15:300:linear")} opacity={curve("0:0:linear, 1.5:0.18:ease_out, 5:0.18:linear, 6:0.08:ease_in, 15:0.08:linear")}>
               <Repeat id="rotating_ring" count="12" x="0" y="0" rotationStep="30" opacity="0.30" opacityStep="0">
                 <Path d="M 0 -320 C 20 -340 40 -340 60 -320 C 40 -300 20 -300 0 -320 Z" fill="#00000000" stroke="#ffaa44" strokeWidth="1" opacity="0.25" />
               </Repeat>
@@ -65,16 +65,16 @@
       </Track>
 
       <Track id="outer_petals_track" z="-150">
-        <Sequence from="0s" duration="6s" out="hold">
+        <Sequence from="0s" duration="15s" out="hold">
           <Layer id="outer_petals_layer">
             <Group id="outer_petals" x="960" y="540"
                    scale={curve("0:0.20:ease_out, 2:1.0:ease_out, 4:1.08:ease_in_out, 6:1.04:ease_in")}
-                   rotation={curve("0:0:linear, 6:30:ease_in_out")}
-                   opacity={curve("0:0:linear, 0.5:0.90:ease_out, 5:0.90:linear, 6:0.70:ease_in")}
+                   rotation={curve("0:0:linear, 6:30:ease_in_out, 15:120:linear")}
+                   opacity={curve("0:0:linear, 0.5:0.90:ease_out, 5:0.90:linear, 6:0.70:ease_in, 15:0.70:linear")}
                    transformOriginX="0" transformOriginY="0">
 
               <Repeat id="outer_petal_ring" count="12" x="0" y="0" rotationStep="30" opacity="0.85" opacityStep="0">
-                <Group rotation={curve("0:0:linear, 6:15:ease_in_out")}>
+                <Group rotation={curve("0:0:linear, 6:15:ease_in_out, 15:60:linear")}>
                   <Path d="M 0 0 C -50 -80 -60 -200 -30 -320 C -15 -380 15 -380 30 -320 C 60 -200 50 -80 0 0 Z"
                         fill="url(#petal_deep)"
                         stroke="#ffcc88" strokeWidth="2"
@@ -94,16 +94,16 @@
       </Track>
 
       <Track id="mid_petals_track" z="-120">
-        <Sequence from="0s" duration="6s" out="hold">
+        <Sequence from="0s" duration="15s" out="hold">
           <Layer id="mid_petals_layer">
             <Group id="mid_petals" x="960" y="540"
                    scale={curve("0:0.15:ease_out, 1.5:0.88:ease_out, 4:0.96:ease_in_out, 6:0.92:ease_in")}
-                   rotation={curve("0:0:linear, 6:-20:ease_in_out")}
-                   opacity={curve("0:0:linear, 0.8:0.92:ease_out, 5:0.92:linear, 6:0.75:ease_in")}
+                   rotation={curve("0:0:linear, 6:-20:ease_in_out, 15:-95:linear")}
+                   opacity={curve("0:0:linear, 0.8:0.92:ease_out, 5:0.92:linear, 6:0.75:ease_in, 15:0.75:linear")}
                    transformOriginX="0" transformOriginY="0">
 
               <Repeat id="mid_petal_ring" count="8" x="0" y="0" rotationStep="45" opacity="0.90" opacityStep="0">
-                <Group rotation={curve("0:0:linear, 6:-10:ease_in_out")}>
+                <Group rotation={curve("0:0:linear, 6:-10:ease_in_out, 15:-58:linear")}>
                   <Path d="M 0 0 C -40 -60 -50 -160 -25 -260 C -12 -310 12 -310 25 -260 C 50 -160 40 -60 0 0 Z"
                         fill="url(#petal_gold)"
                         stroke="#ffe8b8" strokeWidth="2.5"
@@ -123,12 +123,12 @@
       </Track>
 
       <Track id="inner_petals_track" z="-90">
-        <Sequence from="0s" duration="6s" out="hold">
+        <Sequence from="0s" duration="15s" out="hold">
           <Layer id="inner_petals_layer">
             <Group id="inner_petals" x="960" y="540"
                    scale={curve("0:0.10:ease_out, 1.2:0.72:ease_out, 4:0.80:ease_in_out, 6:0.78:ease_in")}
-                   rotation={curve("0:0:linear, 6:12:ease_in_out")}
-                   opacity={curve("0:0:linear, 1:0.95:ease_out, 5:0.95:linear, 6:0.80:ease_in")}
+                   rotation={curve("0:0:linear, 6:12:ease_in_out, 15:72:linear")}
+                   opacity={curve("0:0:linear, 1:0.95:ease_out, 5:0.95:linear, 6:0.80:ease_in, 15:0.80:linear")}
                    transformOriginX="0" transformOriginY="0">
 
               <Repeat id="inner_petal_ring" count="6" x="0" y="0" rotationStep="60" opacity="0.95" opacityStep="0">
@@ -145,11 +145,11 @@
       </Track>
 
       <Track id="center_track" z="-60">
-        <Sequence from="0s" duration="6s" out="hold">
+        <Sequence from="0s" duration="15s" out="hold">
           <Layer id="center_layer">
             <Group id="lotus_center" x="960" y="540"
                    scale={curve("0:0.05:ease_out, 1.5:1.0:ease_out, 4:1.15:ease_in_out, 6:1.08:ease_in")}
-                   opacity={curve("0:0:linear, 1:1:ease_out, 5:1:linear, 6:0.90:ease_in")}
+                   opacity={curve("0:0:linear, 1:1:ease_out, 5:1:linear, 6:0.90:ease_in, 15:0.90:linear")}
                    transformOriginX="0" transformOriginY="0">
 
               <Circle x="0" y="0" radius={curve("0:20:ease_out, 1.5:80:ease_out, 4:110:ease_in_out, 6:100:ease_in")} fill="url(#center_glow)" opacity={curve("0:0.40:linear, 2:0.85:ease_out, 5:0.85:linear, 6:0.70:ease_in")} blend="screen" />
@@ -167,7 +167,7 @@
       </Track>
 
       <Track id="particles_track" z="-40">
-        <Sequence from="0s" duration="6s" out="hold">
+        <Sequence from="0s" duration="15s" out="hold">
           <Layer id="particles_layer" blend="screen">
             <Group id="rising_particles" opacity={curve("0:0:linear, 1.5:0.60:ease_out, 5:0.60:linear, 6:0.30:ease_in")}>
               <Repeat id="gold_particles" count="36" x="760" y="900" xStep="12" yStep="0" opacity="0.55" opacityStep="-0.005">
@@ -194,15 +194,1172 @@
       </Track>
 
       <Track id="overlay_track" z="-20">
-        <Sequence from="0s" duration="6s" out="hold">
+        <Sequence from="0s" duration="15s" out="hold">
           <Layer id="overlay_layer">
-            <Rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)" opacity={curve("0:0.30:linear, 3:0.40:ease_in_out, 6:0.50:ease_in")} />
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#vignette)" opacity={curve("0:0.30:linear, 3:0.40:ease_in_out, 6:0.50:ease_in, 9:0.62:ease_in")} />
 
-            <Group id="title_lockup" opacity={curve("0:0:linear, 4.5:0:linear, 5:1:ease_out, 6:1:linear")}
-                   y={curve("0:30:linear, 4.5:30:linear, 5:0:ease_out, 6:0:linear")}>
+            <Group id="title_lockup" opacity={curve("0:0:linear, 4.5:0:linear, 5:1:ease_out, 6.35:1:linear, 6.95:0:ease_in, 9:0:linear")}
+                   y={curve("0:30:linear, 4.5:30:linear, 5:0:ease_out, 6.35:0:linear, 9:-24:ease_in")}>
               <Text value="LOTUS" x="center" y="920" fontFamily="Times New Roman" fontWeight="400" fontSize="100" renderScale="4x" color="#fff0c8" opacity="0.95" />
               <Text value="BLOOM" x="center" y="1000" fontFamily="Avenir Next Condensed" fontWeight="300" fontSize="48" textGap="12" renderScale="4x" color="#ffcc88" opacity="0.80" />
-              <Line x1={curve("4.5:960:ease_out, 5.2:720:ease_out, 6:720:linear")} y1="970" x2={curve("4.5:960:ease_out, 5.2:1200:ease_out, 6:1200:linear")} y2="970" stroke="#ffcc66" strokeWidth="1.5" opacity={curve("4.5:0:linear, 5.2:0.50:ease_out, 6:0.50:linear")} blend="screen" />
+              <Line x1={curve("4.5:960:ease_out, 5.2:1200:ease_out, 6.35:1200:linear, 9:840:ease_in")} y1="970" x2={curve("4.5:960:ease_out, 5.2:1200:ease_out, 6.35:1200:linear, 9:1080:ease_in")} y2="970" stroke="#ffcc66" strokeWidth="1.5" opacity={curve("4.5:0:linear, 5.2:0.50:ease_out, 6.35:0.50:linear, 6.95:0:ease_in, 9:0:linear")} blend="screen" />
+            </Group>
+
+            <Group id="closing_mantra" opacity={curve("0:0:linear, 6.5:0:linear, 7.1:0.92:ease_out, 14.2:0.92:linear, 15:0:ease_in")}
+                   y={curve("0:18:linear, 6.5:18:linear, 7.1:0:ease_out, 14.2:0:linear, 15:-18:ease_in")}>
+              <Text value="BREATHE IN LIGHT" x="center" y="948" fontFamily="Avenir Next Condensed" fontWeight="300" fontSize="54" textGap="10" renderScale="4x" color="#ffe8b8" opacity="0.92" />
+              <Line x1={curve("6.6:960:ease_out, 7.25:780:ease_out, 14.2:780:linear, 15:820:ease_in")} y1="992" x2={curve("6.6:960:ease_out, 7.25:1140:ease_out, 14.2:1140:linear, 15:1100:ease_in")} y2="992" stroke="#fff0c8" strokeWidth="1.2" opacity={curve("6.6:0:linear, 7.25:0.48:ease_out, 14.2:0.48:linear, 15:0:ease_in")} blend="screen" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="closing_fx_track" z="-15">
+        <Sequence from="0s" duration="15s" out="hold">
+          <Layer id="closing_fx_layer" blend="screen">
+            <Group id="closing_aura" x="960" y="540" opacity={curve("0:0:linear, 5.8:0:linear, 6.4:0.78:ease_out, 8.2:0.55:linear, 9:0:ease_in")}>
+              <Circle x="0" y="0" radius={curve("5.8:180:ease_out, 7.2:720:ease_out, 9:1040:ease_in")} stroke="#fff0c8" strokeWidth={curve("5.8:5:linear, 7.2:2:ease_out, 9:0.5:ease_in")} fill="#00000000" opacity={curve("5.8:0:linear, 6.5:0.62:ease_out, 9:0:ease_in")} />
+              <Circle x="0" y="0" radius={curve("6.2:120:ease_out, 7.8:620:ease_out, 9:980:ease_in")} stroke="#ffaa44" strokeWidth={curve("6.2:4:linear, 7.8:1.5:ease_out, 9:0.4:ease_in")} fill="#00000000" opacity={curve("6.2:0:linear, 6.9:0.48:ease_out, 9:0:ease_in")} />
+              <Circle x="0" y="0" radius={curve("6.6:80:ease_out, 8.2:520:ease_out, 9:860:ease_in")} stroke="#ff8844" strokeWidth={curve("6.6:3:linear, 8.2:1.2:ease_out, 9:0.3:ease_in")} fill="#00000000" opacity={curve("6.6:0:linear, 7.2:0.36:ease_out, 9:0:ease_in")} />
+            </Group>
+
+            <Group id="closing_starburst" x="960" y="540"
+                   rotation={curve("0:0:linear, 6:0:linear, 9:72:ease_in_out")}
+                   opacity={curve("0:0:linear, 6.0:0:linear, 6.7:0.70:ease_out, 8.5:0.45:linear, 9:0:ease_in")}>
+              <Repeat id="closing_starburst_rays" count="48" x="0" y="0" rotationStep="7.5" opacity="0.52" opacityStep="-0.004">
+                <Line x1="0" y1={curve("6:120:linear, 7.2:220:ease_out, 9:300:ease_in")}
+                      x2="0" y2={curve("6:240:linear, 7.2:640:ease_out, 9:940:ease_in")}
+                      stroke="#ffe8b8" strokeWidth={curve("6:2.2:linear, 7.5:1.2:ease_out, 9:0.2:ease_in")}
+                      opacity={curve("6:0:linear, 6.8:0.42:ease_out, 9:0:ease_in")}
+                      lineCap="round" />
+              </Repeat>
+            </Group>
+
+            <Group id="closing_gold_drift" opacity={curve("0:0:linear, 6.1:0:linear, 6.7:0.72:ease_out, 8.6:0.72:linear, 9:0:ease_in")}>
+              <Repeat id="closing_gold_particles" count="44" x="560" y="820" xStep="18" yStep="3" opacity="0.60" opacityStep="-0.006">
+                <Circle x="random(-60,60,floor($time.sec*4)+211) + 42*sin($time.sec*1.6)"
+                        y={curve("6:0:linear, 9:-520:ease_out")}
+                        radius={1.6 + 1.4*(0.5 + 0.5*sin($time.sec*3.2))}
+                        fill="url(#particle_gold)" opacity="0.66" blend="screen" />
+              </Repeat>
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="portrait_flower_rain_track" z="-10">
+        <Sequence from="0s" duration="15s" out="hold">
+          <Layer id="portrait_flower_rain_layer" blend="screen">
+            <Group id="late_gold_dust" opacity={curve("0:0:linear, 8.8:0:linear, 9.4:0.74:ease_out, 14.4:0.74:linear, 15:0:ease_in")}>
+              <Repeat id="late_gold_dust_field_a" count="24" x="74" y="-120" xStep="41" yStep="-37" opacity="0.48" opacityStep="-0.004">
+                <Circle x="0"
+                        y={curve("9:-80:linear, 15:1294:ease_in_out")}
+                        radius={0.9 + 1.4*(0.5 + 0.5*sin($time.sec*3.7))}
+                        fill="url(#particle_gold)"
+                        opacity="0.62"
+                        blend="screen" />
+              </Repeat>
+              <Repeat id="late_gold_dust_field_b" count="20" x="32" y="-420" xStep="53" yStep="-19" opacity="0.42" opacityStep="-0.003">
+                <Circle x="0"
+                        y={curve("9.2:-80:linear, 15:1238:ease_in_out")}
+                        radius={0.8 + 1.1*(0.5 + 0.5*sin($time.sec*2.9))}
+                        fill="url(#particle_gold)"
+                        opacity="0.54"
+                        blend="screen" />
+              </Repeat>
+              <Repeat id="late_gold_dust_field_c" count="18" x="118" y="-760" xStep="47" yStep="-53" opacity="0.36" opacityStep="-0.003">
+                <Circle x="0"
+                        y={curve("9.6:-80:linear, 15:1305:ease_in_out")}
+                        radius={0.7 + 1.0*(0.5 + 0.5*sin($time.sec*3.3))}
+                        fill="url(#particle_gold)"
+                        opacity="0.46"
+                        blend="screen" />
+              </Repeat>
+            </Group>
+
+            <Group id="late_mini_lotus_rain" opacity={curve("0:0:linear, 9:0:linear, 9.8:0.68:ease_out, 14.2:0.68:linear, 15:0:ease_in")}>
+              <Group id="rain_flower_01" x="128" y={curve("9.56:-236:linear, 15:1148:ease_in_out")} rotation={curve("9.56:-149:linear, 15:388:ease_in_out")} scale="0.22" opacity="0.59">
+                <Repeat id="rain_flower_01_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_02" x="388" y={curve("10.12:-349:linear, 15:1226:ease_in_out")} rotation={curve("10.12:-118:linear, 15:-672:ease_in_out")} scale="0.18" opacity="0.67">
+                <Repeat id="rain_flower_02_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_03" x="647" y={curve("9.40:-461:linear, 15:1125:ease_in_out")} rotation={curve("9.40:-87:linear, 15:484:ease_in_out")} scale="0.26" opacity="0.56">
+                <Repeat id="rain_flower_03_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_04" x="907" y={curve("9.96:-574:linear, 15:1204:ease_in_out")} rotation={curve("9.96:-56:linear, 15:-644:ease_in_out")} scale="0.20" opacity="0.62">
+                <Repeat id="rain_flower_04_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_05" x="1166" y={curve("9.24:-686:linear, 15:1282:ease_in_out")} rotation={curve("9.24:-25:linear, 15:580:ease_in_out")} scale="0.24" opacity="0.51">
+                <Repeat id="rain_flower_05_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_06" x="1426" y={curve("9.80:-799:linear, 15:1361:ease_in_out")} rotation={curve("9.80:6:linear, 15:-616:ease_in_out")} scale="0.17" opacity="0.59">
+                <Repeat id="rain_flower_06_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_07" x="1685" y={curve("9.08:-911:linear, 15:1440:ease_in_out")} rotation={curve("9.08:37:linear, 15:676:ease_in_out")} scale="0.21" opacity="0.67">
+                <Repeat id="rain_flower_07_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_08" x="245" y={curve("9.64:-169:linear, 15:1181:ease_in_out")} rotation={curve("9.64:68:linear, 15:-588:ease_in_out")} scale="0.25" opacity="0.56">
+                <Repeat id="rain_flower_08_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_09" x="505" y={curve("10.20:-281:linear, 15:1260:ease_in_out")} rotation={curve("10.20:99:linear, 15:772:ease_in_out")} scale="0.19" opacity="0.62">
+                <Repeat id="rain_flower_09_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_10" x="764" y={curve("9.48:-394:linear, 15:1159:ease_in_out")} rotation={curve("9.48:130:linear, 15:-560:ease_in_out")} scale="0.23" opacity="0.51">
+                <Repeat id="rain_flower_10_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_11" x="1024" y={curve("10.04:-506:linear, 15:1238:ease_in_out")} rotation={curve("10.04:161:linear, 15:868:ease_in_out")} scale="0.16" opacity="0.59">
+                <Repeat id="rain_flower_11_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_12" x="1284" y={curve("9.32:-619:linear, 15:1316:ease_in_out")} rotation={curve("9.32:-168:linear, 15:-892:ease_in_out")} scale="0.22" opacity="0.67">
+                <Repeat id="rain_flower_12_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_13" x="1543" y={curve("9.88:-731:linear, 15:1395:ease_in_out")} rotation={curve("9.88:-137:linear, 15:384:ease_in_out")} scale="0.18" opacity="0.56">
+                <Repeat id="rain_flower_13_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_14" x="1803" y={curve("9.16:-844:linear, 15:1474:ease_in_out")} rotation={curve("9.16:-106:linear, 15:-644:ease_in_out")} scale="0.24" opacity="0.62">
+                <Repeat id="rain_flower_14_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_15" x="171" y={curve("9.72:-101:linear, 15:1125:ease_in_out")} rotation={curve("9.72:-75:linear, 15:480:ease_in_out")} scale="0.20" opacity="0.51">
+                <Repeat id="rain_flower_15_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_16" x="430" y={curve("9.00:-214:linear, 15:1204:ease_in_out")} rotation={curve("9.00:-44:linear, 15:-616:ease_in_out")} scale="0.26" opacity="0.59">
+                <Repeat id="rain_flower_16_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_17" x="690" y={curve("9.56:-326:linear, 15:1282:ease_in_out")} rotation={curve("9.56:-13:linear, 15:576:ease_in_out")} scale="0.17" opacity="0.67">
+                <Repeat id="rain_flower_17_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_18" x="949" y={curve("10.12:-439:linear, 15:1181:ease_in_out")} rotation={curve("10.12:18:linear, 15:-588:ease_in_out")} scale="0.21" opacity="0.56">
+                <Repeat id="rain_flower_18_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_19" x="1209" y={curve("9.40:-551:linear, 15:1260:ease_in_out")} rotation={curve("9.40:49:linear, 15:672:ease_in_out")} scale="0.25" opacity="0.62">
+                <Repeat id="rain_flower_19_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_20" x="1468" y={curve("9.96:-664:linear, 15:1339:ease_in_out")} rotation={curve("9.96:80:linear, 15:-560:ease_in_out")} scale="0.19" opacity="0.51">
+                <Repeat id="rain_flower_20_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_21" x="1728" y={curve("9.24:-776:linear, 15:1418:ease_in_out")} rotation={curve("9.24:111:linear, 15:768:ease_in_out")} scale="0.23" opacity="0.59">
+                <Repeat id="rain_flower_21_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_22" x="292" y={curve("9.80:-90:linear, 15:1159:ease_in_out")} rotation={curve("9.80:142:linear, 15:-532:ease_in_out")} scale="0.16" opacity="0.67">
+                <Repeat id="rain_flower_22_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_23" x="551" y={curve("9.08:-202:linear, 15:1238:ease_in_out")} rotation={curve("9.08:173:linear, 15:864:ease_in_out")} scale="0.22" opacity="0.56">
+                <Repeat id="rain_flower_23_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_24" x="811" y={curve("9.64:-315:linear, 15:1136:ease_in_out")} rotation={curve("9.64:-156:linear, 15:-864:ease_in_out")} scale="0.18" opacity="0.62">
+                <Repeat id="rain_flower_24_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_25" x="1070" y={curve("10.20:-428:linear, 15:1215:ease_in_out")} rotation={curve("10.20:-125:linear, 15:600:ease_in_out")} scale="0.24" opacity="0.51">
+                <Repeat id="rain_flower_25_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_26" x="1330" y={curve("9.48:-540:linear, 15:1294:ease_in_out")} rotation={curve("9.48:-94:linear, 15:-616:ease_in_out")} scale="0.20" opacity="0.59">
+                <Repeat id="rain_flower_26_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_27" x="1589" y={curve("10.04:-652:linear, 15:1372:ease_in_out")} rotation={curve("10.04:-63:linear, 15:476:ease_in_out")} scale="0.26" opacity="0.67">
+                <Repeat id="rain_flower_27_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_28" x="71" y={curve("9.32:-765:linear, 15:1451:ease_in_out")} rotation={curve("9.32:-32:linear, 15:-588:ease_in_out")} scale="0.17" opacity="0.56">
+                <Repeat id="rain_flower_28_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_29" x="331" y={curve("9.88:-45:linear, 15:1114:ease_in_out")} rotation={curve("9.88:-1:linear, 15:572:ease_in_out")} scale="0.21" opacity="0.62">
+                <Repeat id="rain_flower_29_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_30" x="590" y={curve("9.16:-158:linear, 15:1192:ease_in_out")} rotation={curve("9.16:30:linear, 15:-560:ease_in_out")} scale="0.25" opacity="0.51">
+                <Repeat id="rain_flower_30_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_31" x="850" y={curve("9.72:-270:linear, 15:1271:ease_in_out")} rotation={curve("9.72:61:linear, 15:668:ease_in_out")} scale="0.19" opacity="0.59">
+                <Repeat id="rain_flower_31_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_32" x="1109" y={curve("9.00:-382:linear, 15:1170:ease_in_out")} rotation={curve("9.00:92:linear, 15:-532:ease_in_out")} scale="0.23" opacity="0.67">
+                <Repeat id="rain_flower_32_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_33" x="1369" y={curve("9.56:-495:linear, 15:1249:ease_in_out")} rotation={curve("9.56:123:linear, 15:764:ease_in_out")} scale="0.16" opacity="0.56">
+                <Repeat id="rain_flower_33_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_34" x="1628" y={curve("10.12:-608:linear, 15:1328:ease_in_out")} rotation={curve("10.12:154:linear, 15:-504:ease_in_out")} scale="0.22" opacity="0.62">
+                <Repeat id="rain_flower_34_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_35" x="1888" y={curve("9.40:-720:linear, 15:1406:ease_in_out")} rotation={curve("9.40:-175:linear, 15:500:ease_in_out")} scale="0.18" opacity="0.51">
+                <Repeat id="rain_flower_35_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_36" x="210" y={curve("9.96:-832:linear, 15:1485:ease_in_out")} rotation={curve("9.96:-144:linear, 15:-836:ease_in_out")} scale="0.24" opacity="0.59">
+                <Repeat id="rain_flower_36_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_37" x="469" y={curve("9.24:-135:linear, 15:1136:ease_in_out")} rotation={curve("9.24:-113:linear, 15:596:ease_in_out")} scale="0.20" opacity="0.67">
+                <Repeat id="rain_flower_37_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_38" x="729" y={curve("9.80:-248:linear, 15:1215:ease_in_out")} rotation={curve("9.80:-82:linear, 15:-808:ease_in_out")} scale="0.26" opacity="0.56">
+                <Repeat id="rain_flower_38_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_39" x="988" y={curve("9.08:-360:linear, 15:1294:ease_in_out")} rotation={curve("9.08:-51:linear, 15:472:ease_in_out")} scale="0.17" opacity="0.62">
+                <Repeat id="rain_flower_39_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_40" x="1248" y={curve("9.64:-472:linear, 15:1192:ease_in_out")} rotation={curve("9.64:-20:linear, 15:-560:ease_in_out")} scale="0.21" opacity="0.51">
+                <Repeat id="rain_flower_40_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_41" x="1508" y={curve("10.20:-585:linear, 15:1271:ease_in_out")} rotation={curve("10.20:11:linear, 15:568:ease_in_out")} scale="0.25" opacity="0.59">
+                <Repeat id="rain_flower_41_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_42" x="1767" y={curve("9.48:-698:linear, 15:1350:ease_in_out")} rotation={curve("9.48:42:linear, 15:-532:ease_in_out")} scale="0.19" opacity="0.67">
+                <Repeat id="rain_flower_42_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_43" x="132" y={curve("10.04:-810:linear, 15:1429:ease_in_out")} rotation={curve("10.04:73:linear, 15:664:ease_in_out")} scale="0.23" opacity="0.56">
+                <Repeat id="rain_flower_43_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_44" x="391" y={curve("9.32:-68:linear, 15:1148:ease_in_out")} rotation={curve("9.32:104:linear, 15:-504:ease_in_out")} scale="0.16" opacity="0.62">
+                <Repeat id="rain_flower_44_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_45" x="651" y={curve("9.88:-180:linear, 15:1226:ease_in_out")} rotation={curve("9.88:135:linear, 15:760:ease_in_out")} scale="0.22" opacity="0.51">
+                <Repeat id="rain_flower_45_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_46" x="910" y={curve("9.16:-292:linear, 15:1125:ease_in_out")} rotation={curve("9.16:166:linear, 15:-476:ease_in_out")} scale="0.18" opacity="0.59">
+                <Repeat id="rain_flower_46_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_47" x="1170" y={curve("9.72:-405:linear, 15:1204:ease_in_out")} rotation={curve("9.72:-163:linear, 15:496:ease_in_out")} scale="0.24" opacity="0.67">
+                <Repeat id="rain_flower_47_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_48" x="1429" y={curve("9.00:-518:linear, 15:1282:ease_in_out")} rotation={curve("9.00:-132:linear, 15:-808:ease_in_out")} scale="0.20" opacity="0.56">
+                <Repeat id="rain_flower_48_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_49" x="1689" y={curve("9.56:-630:linear, 15:1361:ease_in_out")} rotation={curve("9.56:-101:linear, 15:592:ease_in_out")} scale="0.26" opacity="0.62">
+                <Repeat id="rain_flower_49_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_50" x="260" y={curve("10.12:-742:linear, 15:1440:ease_in_out")} rotation={curve("10.12:-70:linear, 15:-780:ease_in_out")} scale="0.17" opacity="0.51">
+                <Repeat id="rain_flower_50_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_51" x="519" y={curve("9.40:-124:linear, 15:1170:ease_in_out")} rotation={curve("9.40:-39:linear, 15:688:ease_in_out")} scale="0.21" opacity="0.59">
+                <Repeat id="rain_flower_51_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_52" x="779" y={curve("9.96:-236:linear, 15:1249:ease_in_out")} rotation={curve("9.96:-8:linear, 15:-532:ease_in_out")} scale="0.25" opacity="0.67">
+                <Repeat id="rain_flower_52_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_53" x="1038" y={curve("9.24:-349:linear, 15:1148:ease_in_out")} rotation={curve("9.24:23:linear, 15:564:ease_in_out")} scale="0.19" opacity="0.56">
+                <Repeat id="rain_flower_53_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_54" x="1298" y={curve("9.80:-461:linear, 15:1226:ease_in_out")} rotation={curve("9.80:54:linear, 15:-504:ease_in_out")} scale="0.23" opacity="0.62">
+                <Repeat id="rain_flower_54_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_55" x="1557" y={curve("9.08:-574:linear, 15:1305:ease_in_out")} rotation={curve("9.08:85:linear, 15:660:ease_in_out")} scale="0.16" opacity="0.51">
+                <Repeat id="rain_flower_55_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_56" x="1817" y={curve("9.64:-686:linear, 15:1384:ease_in_out")} rotation={curve("9.64:116:linear, 15:-476:ease_in_out")} scale="0.22" opacity="0.59">
+                <Repeat id="rain_flower_56_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_57" x="185" y={curve("10.20:-799:linear, 15:1462:ease_in_out")} rotation={curve("10.20:147:linear, 15:756:ease_in_out")} scale="0.18" opacity="0.67">
+                <Repeat id="rain_flower_57_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_58" x="444" y={curve("9.48:-146:linear, 15:1192:ease_in_out")} rotation={curve("9.48:178:linear, 15:-448:ease_in_out")} scale="0.24" opacity="0.56">
+                <Repeat id="rain_flower_58_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_59" x="704" y={curve("10.04:-259:linear, 15:1271:ease_in_out")} rotation={curve("10.04:-151:linear, 15:492:ease_in_out")} scale="0.20" opacity="0.62">
+                <Repeat id="rain_flower_59_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+              <Group id="rain_flower_60" x="964" y={curve("9.32:-371:linear, 15:1170:ease_in_out")} rotation={curve("9.32:-120:linear, 15:-780:ease_in_out")} scale="0.26" opacity="0.51">
+                <Repeat id="rain_flower_60_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.64" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.57" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.51" blend="screen" />
+              </Group>
+
+              <Group id="rain_flower_61" x="258" y={curve("11.35:-236:linear, 15:1294:ease_in_out")} rotation={curve("9.56:-149:linear, 15:388:ease_in_out")} scale="0.22" opacity="0.46">
+                <Repeat id="rain_flower_61_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_62" x="517" y={curve("11.80:-349:linear, 15:1192:ease_in_out")} rotation={curve("10.12:-118:linear, 15:-672:ease_in_out")} scale="0.18" opacity="0.52">
+                <Repeat id="rain_flower_62_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_63" x="777" y={curve("11.22:-461:linear, 15:1271:ease_in_out")} rotation={curve("9.40:-87:linear, 15:484:ease_in_out")} scale="0.26" opacity="0.44">
+                <Repeat id="rain_flower_63_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_64" x="1036" y={curve("11.67:-574:linear, 15:1350:ease_in_out")} rotation={curve("9.96:-56:linear, 15:-644:ease_in_out")} scale="0.20" opacity="0.48">
+                <Repeat id="rain_flower_64_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_65" x="1296" y={curve("11.09:-686:linear, 15:1429:ease_in_out")} rotation={curve("9.24:-25:linear, 15:580:ease_in_out")} scale="0.24" opacity="0.40">
+                <Repeat id="rain_flower_65_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_66" x="1556" y={curve("11.54:-799:linear, 15:1508:ease_in_out")} rotation={curve("9.80:6:linear, 15:-616:ease_in_out")} scale="0.17" opacity="0.46">
+                <Repeat id="rain_flower_66_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_67" x="1815" y={curve("10.96:-911:linear, 15:1586:ease_in_out")} rotation={curve("9.08:37:linear, 15:676:ease_in_out")} scale="0.21" opacity="0.52">
+                <Repeat id="rain_flower_67_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_68" x="375" y={curve("11.41:-169:linear, 15:1148:ease_in_out")} rotation={curve("9.64:68:linear, 15:-588:ease_in_out")} scale="0.25" opacity="0.44">
+                <Repeat id="rain_flower_68_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_69" x="635" y={curve("11.86:-281:linear, 15:1226:ease_in_out")} rotation={curve("10.20:99:linear, 15:772:ease_in_out")} scale="0.19" opacity="0.48">
+                <Repeat id="rain_flower_69_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_70" x="894" y={curve("11.28:-394:linear, 15:1305:ease_in_out")} rotation={curve("9.48:130:linear, 15:-560:ease_in_out")} scale="0.23" opacity="0.40">
+                <Repeat id="rain_flower_70_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_71" x="1154" y={curve("11.73:-506:linear, 15:1384:ease_in_out")} rotation={curve("10.04:161:linear, 15:868:ease_in_out")} scale="0.16" opacity="0.46">
+                <Repeat id="rain_flower_71_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_72" x="1413" y={curve("11.16:-619:linear, 15:1462:ease_in_out")} rotation={curve("9.32:-168:linear, 15:-892:ease_in_out")} scale="0.22" opacity="0.52">
+                <Repeat id="rain_flower_72_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_73" x="1673" y={curve("11.60:-731:linear, 15:1541:ease_in_out")} rotation={curve("9.88:-137:linear, 15:384:ease_in_out")} scale="0.18" opacity="0.44">
+                <Repeat id="rain_flower_73_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_74" x="76" y={curve("11.03:-844:linear, 15:1620:ease_in_out")} rotation={curve("9.16:-106:linear, 15:-644:ease_in_out")} scale="0.24" opacity="0.48">
+                <Repeat id="rain_flower_74_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_75" x="300" y={curve("11.48:-101:linear, 15:1271:ease_in_out")} rotation={curve("9.72:-75:linear, 15:480:ease_in_out")} scale="0.20" opacity="0.40">
+                <Repeat id="rain_flower_75_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_76" x="560" y={curve("10.90:-214:linear, 15:1170:ease_in_out")} rotation={curve("9.00:-44:linear, 15:-616:ease_in_out")} scale="0.26" opacity="0.46">
+                <Repeat id="rain_flower_76_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_77" x="820" y={curve("11.35:-326:linear, 15:1249:ease_in_out")} rotation={curve("9.56:-13:linear, 15:576:ease_in_out")} scale="0.17" opacity="0.52">
+                <Repeat id="rain_flower_77_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_78" x="1079" y={curve("11.80:-439:linear, 15:1328:ease_in_out")} rotation={curve("10.12:18:linear, 15:-588:ease_in_out")} scale="0.21" opacity="0.44">
+                <Repeat id="rain_flower_78_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_79" x="1339" y={curve("11.22:-551:linear, 15:1406:ease_in_out")} rotation={curve("9.40:49:linear, 15:672:ease_in_out")} scale="0.25" opacity="0.48">
+                <Repeat id="rain_flower_79_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_80" x="1598" y={curve("11.67:-664:linear, 15:1485:ease_in_out")} rotation={curve("9.96:80:linear, 15:-560:ease_in_out")} scale="0.19" opacity="0.40">
+                <Repeat id="rain_flower_80_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_81" x="1858" y={curve("11.09:-776:linear, 15:1564:ease_in_out")} rotation={curve("9.24:111:linear, 15:768:ease_in_out")} scale="0.23" opacity="0.46">
+                <Repeat id="rain_flower_81_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_82" x="421" y={curve("11.54:-90:linear, 15:1125:ease_in_out")} rotation={curve("9.80:142:linear, 15:-532:ease_in_out")} scale="0.16" opacity="0.52">
+                <Repeat id="rain_flower_82_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_83" x="681" y={curve("10.96:-202:linear, 15:1204:ease_in_out")} rotation={curve("9.08:173:linear, 15:864:ease_in_out")} scale="0.22" opacity="0.44">
+                <Repeat id="rain_flower_83_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_84" x="940" y={curve("11.41:-315:linear, 15:1282:ease_in_out")} rotation={curve("9.64:-156:linear, 15:-864:ease_in_out")} scale="0.18" opacity="0.48">
+                <Repeat id="rain_flower_84_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_85" x="1200" y={curve("11.86:-428:linear, 15:1361:ease_in_out")} rotation={curve("10.20:-125:linear, 15:600:ease_in_out")} scale="0.24" opacity="0.40">
+                <Repeat id="rain_flower_85_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_86" x="1460" y={curve("11.28:-540:linear, 15:1440:ease_in_out")} rotation={curve("9.48:-94:linear, 15:-616:ease_in_out")} scale="0.20" opacity="0.46">
+                <Repeat id="rain_flower_86_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_87" x="1719" y={curve("11.73:-652:linear, 15:1519:ease_in_out")} rotation={curve("10.04:-63:linear, 15:476:ease_in_out")} scale="0.26" opacity="0.52">
+                <Repeat id="rain_flower_87_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_88" x="201" y={curve("11.16:-765:linear, 15:1598:ease_in_out")} rotation={curve("9.32:-32:linear, 15:-588:ease_in_out")} scale="0.17" opacity="0.44">
+                <Repeat id="rain_flower_88_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_89" x="460" y={curve("11.60:-45:linear, 15:1260:ease_in_out")} rotation={curve("9.88:-1:linear, 15:572:ease_in_out")} scale="0.21" opacity="0.48">
+                <Repeat id="rain_flower_89_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_90" x="720" y={curve("11.03:-158:linear, 15:1159:ease_in_out")} rotation={curve("9.16:30:linear, 15:-560:ease_in_out")} scale="0.25" opacity="0.40">
+                <Repeat id="rain_flower_90_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_91" x="980" y={curve("11.48:-270:linear, 15:1238:ease_in_out")} rotation={curve("9.72:61:linear, 15:668:ease_in_out")} scale="0.19" opacity="0.46">
+                <Repeat id="rain_flower_91_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_92" x="1239" y={curve("10.90:-382:linear, 15:1316:ease_in_out")} rotation={curve("9.00:92:linear, 15:-532:ease_in_out")} scale="0.23" opacity="0.52">
+                <Repeat id="rain_flower_92_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_93" x="1499" y={curve("11.35:-495:linear, 15:1395:ease_in_out")} rotation={curve("9.56:123:linear, 15:764:ease_in_out")} scale="0.16" opacity="0.44">
+                <Repeat id="rain_flower_93_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_94" x="1758" y={curve("11.80:-608:linear, 15:1474:ease_in_out")} rotation={curve("10.12:154:linear, 15:-504:ease_in_out")} scale="0.22" opacity="0.48">
+                <Repeat id="rain_flower_94_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_95" x="98" y={curve("11.22:-720:linear, 15:1552:ease_in_out")} rotation={curve("9.40:-175:linear, 15:500:ease_in_out")} scale="0.18" opacity="0.40">
+                <Repeat id="rain_flower_95_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_96" x="340" y={curve("11.67:-832:linear, 15:1631:ease_in_out")} rotation={curve("9.96:-144:linear, 15:-836:ease_in_out")} scale="0.24" opacity="0.46">
+                <Repeat id="rain_flower_96_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_97" x="599" y={curve("11.09:-135:linear, 15:1282:ease_in_out")} rotation={curve("9.24:-113:linear, 15:596:ease_in_out")} scale="0.20" opacity="0.52">
+                <Repeat id="rain_flower_97_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_98" x="859" y={curve("11.54:-248:linear, 15:1181:ease_in_out")} rotation={curve("9.80:-82:linear, 15:-808:ease_in_out")} scale="0.26" opacity="0.44">
+                <Repeat id="rain_flower_98_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_99" x="1118" y={curve("10.96:-360:linear, 15:1260:ease_in_out")} rotation={curve("9.08:-51:linear, 15:472:ease_in_out")} scale="0.17" opacity="0.48">
+                <Repeat id="rain_flower_99_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_100" x="1378" y={curve("11.41:-472:linear, 15:1339:ease_in_out")} rotation={curve("9.64:-20:linear, 15:-560:ease_in_out")} scale="0.21" opacity="0.40">
+                <Repeat id="rain_flower_100_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_101" x="1637" y={curve("11.86:-585:linear, 15:1418:ease_in_out")} rotation={curve("10.20:11:linear, 15:568:ease_in_out")} scale="0.25" opacity="0.46">
+                <Repeat id="rain_flower_101_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_102" x="1897" y={curve("11.28:-698:linear, 15:1496:ease_in_out")} rotation={curve("9.48:42:linear, 15:-532:ease_in_out")} scale="0.19" opacity="0.52">
+                <Repeat id="rain_flower_102_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_103" x="261" y={curve("11.73:-810:linear, 15:1575:ease_in_out")} rotation={curve("10.04:73:linear, 15:664:ease_in_out")} scale="0.23" opacity="0.44">
+                <Repeat id="rain_flower_103_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_104" x="521" y={curve("11.16:-68:linear, 15:1294:ease_in_out")} rotation={curve("9.32:104:linear, 15:-504:ease_in_out")} scale="0.16" opacity="0.48">
+                <Repeat id="rain_flower_104_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_105" x="780" y={curve("11.60:-180:linear, 15:1192:ease_in_out")} rotation={curve("9.88:135:linear, 15:760:ease_in_out")} scale="0.22" opacity="0.40">
+                <Repeat id="rain_flower_105_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_106" x="1040" y={curve("11.03:-292:linear, 15:1271:ease_in_out")} rotation={curve("9.16:166:linear, 15:-476:ease_in_out")} scale="0.18" opacity="0.46">
+                <Repeat id="rain_flower_106_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_107" x="1300" y={curve("11.48:-405:linear, 15:1350:ease_in_out")} rotation={curve("9.72:-163:linear, 15:496:ease_in_out")} scale="0.24" opacity="0.52">
+                <Repeat id="rain_flower_107_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_108" x="1559" y={curve("10.90:-518:linear, 15:1429:ease_in_out")} rotation={curve("9.00:-132:linear, 15:-808:ease_in_out")} scale="0.20" opacity="0.44">
+                <Repeat id="rain_flower_108_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_109" x="1819" y={curve("11.35:-630:linear, 15:1508:ease_in_out")} rotation={curve("9.56:-101:linear, 15:592:ease_in_out")} scale="0.26" opacity="0.48">
+                <Repeat id="rain_flower_109_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_110" x="389" y={curve("11.80:-742:linear, 15:1586:ease_in_out")} rotation={curve("10.12:-70:linear, 15:-780:ease_in_out")} scale="0.17" opacity="0.40">
+                <Repeat id="rain_flower_110_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_111" x="649" y={curve("11.22:-124:linear, 15:1136:ease_in_out")} rotation={curve("9.40:-39:linear, 15:688:ease_in_out")} scale="0.21" opacity="0.46">
+                <Repeat id="rain_flower_111_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_112" x="908" y={curve("11.67:-236:linear, 15:1215:ease_in_out")} rotation={curve("9.96:-8:linear, 15:-532:ease_in_out")} scale="0.25" opacity="0.52">
+                <Repeat id="rain_flower_112_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_113" x="1168" y={curve("11.09:-349:linear, 15:1294:ease_in_out")} rotation={curve("9.24:23:linear, 15:564:ease_in_out")} scale="0.19" opacity="0.44">
+                <Repeat id="rain_flower_113_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_114" x="1428" y={curve("11.54:-461:linear, 15:1372:ease_in_out")} rotation={curve("9.80:54:linear, 15:-504:ease_in_out")} scale="0.23" opacity="0.48">
+                <Repeat id="rain_flower_114_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_115" x="1687" y={curve("10.96:-574:linear, 15:1451:ease_in_out")} rotation={curve("9.08:85:linear, 15:660:ease_in_out")} scale="0.16" opacity="0.40">
+                <Repeat id="rain_flower_115_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_116" x="91" y={curve("11.41:-686:linear, 15:1530:ease_in_out")} rotation={curve("9.64:116:linear, 15:-476:ease_in_out")} scale="0.22" opacity="0.46">
+                <Repeat id="rain_flower_116_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_117" x="315" y={curve("11.86:-799:linear, 15:1609:ease_in_out")} rotation={curve("10.20:147:linear, 15:756:ease_in_out")} scale="0.18" opacity="0.52">
+                <Repeat id="rain_flower_117_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_118" x="574" y={curve("11.28:-146:linear, 15:1159:ease_in_out")} rotation={curve("9.48:178:linear, 15:-448:ease_in_out")} scale="0.24" opacity="0.44">
+                <Repeat id="rain_flower_118_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_119" x="834" y={curve("11.73:-259:linear, 15:1238:ease_in_out")} rotation={curve("10.04:-151:linear, 15:492:ease_in_out")} scale="0.20" opacity="0.48">
+                <Repeat id="rain_flower_119_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+              <Group id="rain_flower_120" x="1093" y={curve("11.16:-371:linear, 15:1316:ease_in_out")} rotation={curve("9.32:-120:linear, 15:-780:ease_in_out")} scale="0.26" opacity="0.40">
+                <Repeat id="rain_flower_120_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.50" opacityStep="0">
+                  <Path d="M 0 0 C -14 -26 -14 -56 0 -82 C 14 -56 14 -26 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.4" opacity="0.44" />
+                </Repeat>
+                <Circle x="0" y="0" radius="10" fill="#ffe8b8" opacity="0.40" blend="screen" />
+              </Group>
+
+              <Group id="rain_flower_121" x="171" y={curve("12.00:-551:linear, 15:698:ease_in_out")} rotation={curve("12.00:89:linear, 15:668:ease_in_out")} scale="0.12" opacity="0.34">
+                <Repeat id="rain_flower_121_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_122" x="430" y={curve("12.12:-628:linear, 15:761:ease_in_out")} rotation={curve("12.12:118:linear, 15:-480:ease_in_out")} scale="0.15" opacity="0.42">
+                <Repeat id="rain_flower_122_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_123" x="690" y={curve("12.24:-705:linear, 15:825:ease_in_out")} rotation={curve("12.24:147:linear, 15:764:ease_in_out")} scale="0.18" opacity="0.50">
+                <Repeat id="rain_flower_123_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_124" x="949" y={curve("12.36:-782:linear, 15:888:ease_in_out")} rotation={curve("12.36:176:linear, 15:-200:ease_in_out")} scale="0.21" opacity="0.58">
+                <Repeat id="rain_flower_124_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_125" x="1209" y={curve("12.48:-860:linear, 15:952:ease_in_out")} rotation={curve("12.48:-155:linear, 15:240:ease_in_out")} scale="0.14" opacity="0.46">
+                <Repeat id="rain_flower_125_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_126" x="1468" y={curve("12.60:-937:linear, 15:1015:ease_in_out")} rotation={curve("12.60:-126:linear, 15:-540:ease_in_out")} scale="0.17" opacity="0.34">
+                <Repeat id="rain_flower_126_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_127" x="1728" y={curve("12.72:-1014:linear, 15:1079:ease_in_out")} rotation={curve("12.72:-97:linear, 15:336:ease_in_out")} scale="0.12" opacity="0.42">
+                <Repeat id="rain_flower_127_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_128" x="92" y={curve("12.84:-584:linear, 15:1142:ease_in_out")} rotation={curve("12.84:-68:linear, 15:-520:ease_in_out")} scale="0.15" opacity="0.50">
+                <Repeat id="rain_flower_128_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_129" x="352" y={curve("12.96:-662:linear, 15:1206:ease_in_out")} rotation={curve("12.96:-39:linear, 15:432:ease_in_out")} scale="0.18" opacity="0.58">
+                <Repeat id="rain_flower_129_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_130" x="612" y={curve("13.08:-739:linear, 15:718:ease_in_out")} rotation={curve("13.08:-10:linear, 15:-500:ease_in_out")} scale="0.21" opacity="0.46">
+                <Repeat id="rain_flower_130_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_131" x="871" y={curve("13.20:-816:linear, 15:782:ease_in_out")} rotation={curve("13.20:19:linear, 15:528:ease_in_out")} scale="0.14" opacity="0.34">
+                <Repeat id="rain_flower_131_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_132" x="1131" y={curve("13.32:-893:linear, 15:845:ease_in_out")} rotation={curve("13.32:48:linear, 15:-480:ease_in_out")} scale="0.17" opacity="0.42">
+                <Repeat id="rain_flower_132_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_133" x="1390" y={curve("13.44:-970:linear, 15:909:ease_in_out")} rotation={curve("13.44:77:linear, 15:624:ease_in_out")} scale="0.12" opacity="0.50">
+                <Repeat id="rain_flower_133_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_134" x="1650" y={curve("13.56:-1047:linear, 15:973:ease_in_out")} rotation={curve("13.56:106:linear, 15:-460:ease_in_out")} scale="0.15" opacity="0.58">
+                <Repeat id="rain_flower_134_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_135" x="224" y={curve("13.68:-618:linear, 15:1036:ease_in_out")} rotation={curve("13.68:135:linear, 15:720:ease_in_out")} scale="0.18" opacity="0.46">
+                <Repeat id="rain_flower_135_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_136" x="484" y={curve("12.00:-695:linear, 15:1100:ease_in_out")} rotation={curve("12.00:164:linear, 15:-440:ease_in_out")} scale="0.21" opacity="0.34">
+                <Repeat id="rain_flower_136_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_137" x="743" y={curve("12.12:-772:linear, 15:1163:ease_in_out")} rotation={curve("12.12:-167:linear, 15:196:ease_in_out")} scale="0.14" opacity="0.42">
+                <Repeat id="rain_flower_137_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_138" x="1003" y={curve("12.24:-849:linear, 15:1227:ease_in_out")} rotation={curve("12.24:-138:linear, 15:-520:ease_in_out")} scale="0.17" opacity="0.50">
+                <Repeat id="rain_flower_138_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_139" x="1262" y={curve("12.36:-926:linear, 15:739:ease_in_out")} rotation={curve("12.36:-109:linear, 15:292:ease_in_out")} scale="0.12" opacity="0.58">
+                <Repeat id="rain_flower_139_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_140" x="1522" y={curve("12.48:-1003:linear, 15:803:ease_in_out")} rotation={curve("12.48:-80:linear, 15:-500:ease_in_out")} scale="0.15" opacity="0.46">
+                <Repeat id="rain_flower_140_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_141" x="1781" y={curve("12.60:-574:linear, 15:866:ease_in_out")} rotation={curve("12.60:-51:linear, 15:388:ease_in_out")} scale="0.18" opacity="0.34">
+                <Repeat id="rain_flower_141_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_142" x="132" y={curve("12.72:-651:linear, 15:930:ease_in_out")} rotation={curve("12.72:-22:linear, 15:-480:ease_in_out")} scale="0.21" opacity="0.42">
+                <Repeat id="rain_flower_142_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_143" x="391" y={curve("12.84:-728:linear, 15:993:ease_in_out")} rotation={curve("12.84:7:linear, 15:484:ease_in_out")} scale="0.14" opacity="0.50">
+                <Repeat id="rain_flower_143_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_144" x="651" y={curve("12.96:-805:linear, 15:1057:ease_in_out")} rotation={curve("12.96:36:linear, 15:-460:ease_in_out")} scale="0.17" opacity="0.58">
+                <Repeat id="rain_flower_144_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_145" x="910" y={curve("13.08:-882:linear, 15:1120:ease_in_out")} rotation={curve("13.08:65:linear, 15:580:ease_in_out")} scale="0.12" opacity="0.46">
+                <Repeat id="rain_flower_145_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_146" x="1170" y={curve("13.20:-959:linear, 15:1184:ease_in_out")} rotation={curve("13.20:94:linear, 15:-440:ease_in_out")} scale="0.15" opacity="0.34">
+                <Repeat id="rain_flower_146_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_147" x="1429" y={curve("13.32:-1036:linear, 15:1248:ease_in_out")} rotation={curve("13.32:123:linear, 15:676:ease_in_out")} scale="0.18" opacity="0.42">
+                <Repeat id="rain_flower_147_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_148" x="1689" y={curve("13.44:-607:linear, 15:760:ease_in_out")} rotation={curve("13.44:152:linear, 15:-420:ease_in_out")} scale="0.21" opacity="0.50">
+                <Repeat id="rain_flower_148_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_149" x="263" y={curve("13.56:-684:linear, 15:824:ease_in_out")} rotation={curve("13.56:-179:linear, 15:412:ease_in_out")} scale="0.14" opacity="0.58">
+                <Repeat id="rain_flower_149_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_150" x="523" y={curve("13.68:-761:linear, 15:887:ease_in_out")} rotation={curve("13.68:-150:linear, 15:-760:ease_in_out")} scale="0.17" opacity="0.46">
+                <Repeat id="rain_flower_150_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_151" x="782" y={curve("12.00:-838:linear, 15:951:ease_in_out")} rotation={curve("12.00:-121:linear, 15:248:ease_in_out")} scale="0.12" opacity="0.34">
+                <Repeat id="rain_flower_151_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_152" x="1042" y={curve("12.12:-915:linear, 15:1014:ease_in_out")} rotation={curve("12.12:-92:linear, 15:-480:ease_in_out")} scale="0.15" opacity="0.42">
+                <Repeat id="rain_flower_152_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_153" x="1301" y={curve("12.24:-992:linear, 15:1078:ease_in_out")} rotation={curve("12.24:-63:linear, 15:344:ease_in_out")} scale="0.18" opacity="0.50">
+                <Repeat id="rain_flower_153_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_154" x="1561" y={curve("12.36:-563:linear, 15:1141:ease_in_out")} rotation={curve("12.36:-34:linear, 15:-460:ease_in_out")} scale="0.21" opacity="0.58">
+                <Repeat id="rain_flower_154_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_155" x="1820" y={curve("12.48:-640:linear, 15:1205:ease_in_out")} rotation={curve("12.48:-5:linear, 15:440:ease_in_out")} scale="0.14" opacity="0.46">
+                <Repeat id="rain_flower_155_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_156" x="185" y={curve("12.60:-717:linear, 15:717:ease_in_out")} rotation={curve("12.60:24:linear, 15:-440:ease_in_out")} scale="0.17" opacity="0.34">
+                <Repeat id="rain_flower_156_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_157" x="444" y={curve("12.72:-794:linear, 15:781:ease_in_out")} rotation={curve("12.72:53:linear, 15:536:ease_in_out")} scale="0.12" opacity="0.42">
+                <Repeat id="rain_flower_157_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_158" x="704" y={curve("12.84:-871:linear, 15:844:ease_in_out")} rotation={curve("12.84:82:linear, 15:-420:ease_in_out")} scale="0.15" opacity="0.50">
+                <Repeat id="rain_flower_158_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_159" x="964" y={curve("12.96:-948:linear, 15:908:ease_in_out")} rotation={curve("12.96:111:linear, 15:632:ease_in_out")} scale="0.18" opacity="0.58">
+                <Repeat id="rain_flower_159_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_160" x="1223" y={curve("13.08:-1025:linear, 15:971:ease_in_out")} rotation={curve("13.08:140:linear, 15:-400:ease_in_out")} scale="0.21" opacity="0.46">
+                <Repeat id="rain_flower_160_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_161" x="1483" y={curve("13.20:-596:linear, 15:1035:ease_in_out")} rotation={curve("13.20:169:linear, 15:728:ease_in_out")} scale="0.14" opacity="0.34">
+                <Repeat id="rain_flower_161_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_162" x="1742" y={curve("13.32:-673:linear, 15:1099:ease_in_out")} rotation={curve("13.32:-162:linear, 15:-740:ease_in_out")} scale="0.17" opacity="0.42">
+                <Repeat id="rain_flower_162_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_163" x="110" y={curve("13.44:-750:linear, 15:1162:ease_in_out")} rotation={curve("13.44:-133:linear, 15:464:ease_in_out")} scale="0.12" opacity="0.50">
+                <Repeat id="rain_flower_163_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_164" x="370" y={curve("13.56:-827:linear, 15:1226:ease_in_out")} rotation={curve("13.56:-104:linear, 15:-720:ease_in_out")} scale="0.15" opacity="0.58">
+                <Repeat id="rain_flower_164_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_165" x="629" y={curve("13.68:-904:linear, 15:738:ease_in_out")} rotation={curve("13.68:-75:linear, 15:300:ease_in_out")} scale="0.18" opacity="0.46">
+                <Repeat id="rain_flower_165_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_166" x="889" y={curve("12.00:-982:linear, 15:802:ease_in_out")} rotation={curve("12.00:-46:linear, 15:-440:ease_in_out")} scale="0.21" opacity="0.34">
+                <Repeat id="rain_flower_166_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_167" x="1148" y={curve("12.12:-552:linear, 15:865:ease_in_out")} rotation={curve("12.12:-17:linear, 15:396:ease_in_out")} scale="0.14" opacity="0.42">
+                <Repeat id="rain_flower_167_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_168" x="1408" y={curve("12.24:-629:linear, 15:929:ease_in_out")} rotation={curve("12.24:12:linear, 15:-420:ease_in_out")} scale="0.17" opacity="0.50">
+                <Repeat id="rain_flower_168_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_169" x="1668" y={curve("12.36:-706:linear, 15:992:ease_in_out")} rotation={curve("12.36:41:linear, 15:492:ease_in_out")} scale="0.12" opacity="0.58">
+                <Repeat id="rain_flower_169_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_170" x="235" y={curve("12.48:-784:linear, 15:1056:ease_in_out")} rotation={curve("12.48:70:linear, 15:-400:ease_in_out")} scale="0.15" opacity="0.46">
+                <Repeat id="rain_flower_170_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_171" x="494" y={curve("12.60:-861:linear, 15:1119:ease_in_out")} rotation={curve("12.60:99:linear, 15:588:ease_in_out")} scale="0.18" opacity="0.34">
+                <Repeat id="rain_flower_171_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_172" x="754" y={curve("12.72:-938:linear, 15:1183:ease_in_out")} rotation={curve("12.72:128:linear, 15:-380:ease_in_out")} scale="0.21" opacity="0.42">
+                <Repeat id="rain_flower_172_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_173" x="1013" y={curve("12.84:-1015:linear, 15:1246:ease_in_out")} rotation={curve("12.84:157:linear, 15:684:ease_in_out")} scale="0.14" opacity="0.50">
+                <Repeat id="rain_flower_173_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_174" x="1273" y={curve("12.96:-586:linear, 15:759:ease_in_out")} rotation={curve("12.96:-174:linear, 15:-720:ease_in_out")} scale="0.17" opacity="0.58">
+                <Repeat id="rain_flower_174_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_175" x="1532" y={curve("13.08:-663:linear, 15:822:ease_in_out")} rotation={curve("13.08:-145:linear, 15:420:ease_in_out")} scale="0.12" opacity="0.46">
+                <Repeat id="rain_flower_175_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_176" x="1792" y={curve("13.20:-740:linear, 15:886:ease_in_out")} rotation={curve("13.20:-116:linear, 15:-700:ease_in_out")} scale="0.15" opacity="0.34">
+                <Repeat id="rain_flower_176_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_177" x="153" y={curve("13.32:-817:linear, 15:950:ease_in_out")} rotation={curve("13.32:-87:linear, 15:516:ease_in_out")} scale="0.18" opacity="0.42">
+                <Repeat id="rain_flower_177_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_178" x="412" y={curve("13.44:-894:linear, 15:1013:ease_in_out")} rotation={curve("13.44:-58:linear, 15:-420:ease_in_out")} scale="0.21" opacity="0.50">
+                <Repeat id="rain_flower_178_petals" count="7" x="0" y="0" rotationStep="51.43" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_light)" stroke="#fff0c8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_179" x="672" y={curve("13.56:-971:linear, 15:1077:ease_in_out")} rotation={curve("13.56:-29:linear, 15:352:ease_in_out")} scale="0.14" opacity="0.58">
+                <Repeat id="rain_flower_179_petals" count="8" x="0" y="0" rotationStep="45.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_deep)" stroke="#ffcc88" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
+              <Group id="rain_flower_180" x="932" y={curve("13.68:-1048:linear, 15:1140:ease_in_out")} rotation={curve("13.68:0:linear, 15:-400:ease_in_out")} scale="0.17" opacity="0.46">
+                <Repeat id="rain_flower_180_petals" count="6" x="0" y="0" rotationStep="60.0" opacity="0.68" opacityStep="0">
+                  <Path d="M 0 0 C -13 -24 -13 -52 0 -76 C 13 -52 13 -24 0 0 Z" fill="url(#petal_gold)" stroke="#ffe8b8" strokeWidth="2.2" opacity="0.58" />
+                </Repeat>
+                <Circle x="0" y="0" radius="9" fill="#ffe8b8" opacity="0.48" blend="screen" />
+              </Group>
             </Group>
           </Layer>
         </Sequence>
@@ -211,24 +1368,24 @@
   </Scene>
 
   <Process id="lotus_post">
-    <Tex id="scene_src" fmt="rgba16f" from="scene:lotus_bloom_meditation_6s" />
+    <Tex id="scene_src" fmt="rgba16f" from="scene:lotus_bloom_meditation_15s" />
     <Tex id="hsla_src" fmt="rgba16f" size={[1920,1080]} />
     <Tex id="bloom_src" fmt="rgba16f" size={[1920,1080]} />
 
     <Pass id="post_hsla" kind="compute" effect="hsla_overlay"
           in={["scene_src"]} out={["hsla_src"]}
           params={{
-            hue: "curve(\"0:40:linear, 3:35:ease_in_out, 6:30:ease_in\")",
-            saturation: "curve(\"0:0.10:linear, 2:0.25:ease_out, 5:0.30:ease_in_out, 6:0.20:ease_in\")",
-            lightness: "curve(\"0:0.02:linear, 2:0.06:ease_out, 5:0.05:ease_in_out, 6:0.02:ease_in\")",
-            alpha: "curve(\"0:0.15:linear, 2:0.25:ease_out, 5:0.28:linear, 6:0.18:ease_in\")"
+            hue: "curve(\"0:40:linear, 3:35:ease_in_out, 6:30:ease_in, 9:46:ease_in_out, 15:42:ease_in\")",
+            saturation: "curve(\"0:0.10:linear, 2:0.25:ease_out, 5:0.30:ease_in_out, 6:0.20:ease_in, 8:0.34:ease_out, 14:0.32:linear, 15:0.12:ease_in\")",
+            lightness: "curve(\"0:0.02:linear, 2:0.06:ease_out, 5:0.05:ease_in_out, 6:0.02:ease_in, 8:0.08:ease_out, 14:0.07:linear, 15:0.01:ease_in\")",
+            alpha: "curve(\"0:0.15:linear, 2:0.25:ease_out, 5:0.28:linear, 6:0.18:ease_in, 8:0.30:ease_out, 14:0.28:linear, 15:0.08:ease_in\")"
           }} />
 
     <Pass id="post_bloom" kind="compute" effect="glow_bloom"
           in={["hsla_src"]} out={["bloom_src"]}
           params={{
             threshold: "0.38",
-            intensity: "curve(\"0:0.6:linear, 1.5:1.2:ease_out, 4:1.6:ease_in_out, 6:1.0:ease_in\")",
+            intensity: "curve(\"0:0.6:linear, 1.5:1.2:ease_out, 4:1.6:ease_in_out, 6:1.0:ease_in, 7.4:2.0:ease_out, 12:1.7:ease_in_out, 15:0.55:ease_in\")",
             sigma: "14.0"
           }} />
   </Process>

@@ -46,3 +46,10 @@ GPU preview:
 cargo run --release -p motionloom --example wgpu_live_preview -- \
   showcase/s-000011/main.motionloom
 ```
+
+Portrait variant:
+
+```bash
+cargo run --release -p motionloom --example wgpu_live_preview -- \
+  showcase/s-000011/main2.motionloom
+```

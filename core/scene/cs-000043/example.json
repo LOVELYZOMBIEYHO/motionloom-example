@@ -1,0 +1,52 @@
+{
+  "id": "cs-000043",
+  "type": "core",
+  "title": "Puppet Pin Auto Mesh",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "puppet",
+    "pin",
+    "auto-mesh",
+    "deformation",
+    "shape",
+    "curve-animation"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "LinearGradient",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Puppet",
+    "Pin",
+    "Rect",
+    "Line",
+    "Circle",
+    "Group",
+    "Text",
+    "Present",
+    "curve"
+  ],
+  "teaches": [
+    "Use Puppet with auto mesh for AE-style pin deformation.",
+    "Anchor part of the mesh with fixed pins while an animated pin pulls the surface.",
+    "Keep topology optional for simple deformation cases."
+  ],
+  "source_path": "scene/deform/puppet_pin_auto_mesh.motionloom",
+  "demo_url": "",
+  "related": [
+    "cs-000041",
+    "cs-000044"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Puppet",
+    "Pin"
+  ]
+}

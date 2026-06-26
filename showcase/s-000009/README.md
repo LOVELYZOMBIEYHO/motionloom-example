@@ -1,8 +1,9 @@
-# Lotus Bloom Meditation 6s
+# Lotus Bloom Meditation 9s
 
 A serene MotionLoom DSL showcase of a golden lotus flower blooming from its center
 outward, surrounded by a sacred geometry mandala. Three concentric petal rings
-unfold with path trim animation while golden particles rise and halo rings expand.
+unfold with path trim animation while golden particles rise, halo rings expand,
+and a final aura/starburst meditation beat resolves the scene.
 
 ## Animation Timing
 
@@ -12,6 +13,7 @@ unfold with path trim animation while golden particles rise and halo rings expan
 | 1-2.5s | Inner Bloom | Inner petals (6) bloom first with trim animation. Stamens extend outward. |
 | 2.5-4s | Full Bloom | Middle petals (8) and outer petals (12) bloom in sequence. Halo rings expand. |
 | 4-6s | Radiance | Golden particles rise. All petals gently rotate. "LOTUS BLOOM" title reveals. |
+| 6-9s | Closing Aura | Expanding aura rings, rotating starburst rays, denser particle drift, and "BREATHE IN LIGHT" reveal. |
 
 ## Visual Style
 
@@ -21,6 +23,8 @@ unfold with path trim animation while golden particles rise and halo rings expan
 - **Golden center** with 16 stamen lines tipped with glowing dots
 - **Rising gold particles** with procedural jitter and upward drift
 - **Expanding halo rings** in gold and amber
+- **Closing starburst** with 48 radial rays, three aura rings, and denser gold particle drift
+- **Mantra title** reveal for the extended closing beat
 - **Vignette** for focused center composition
 
 ## Petal Animation
@@ -32,8 +36,8 @@ Each petal ring uses `Path` with `trimStart` and `trimEnd` curves:
 
 ## Post-Processing
 
-- **HSLA overlay** — Warm golden hue shift (40 to 30), subtle saturation boost
-- **Glow bloom** — Threshold 0.38, intensity animated 0.6 to 1.6 to 1.0
+- **HSLA overlay** — Warm golden hue shift with a brighter closing pulse
+- **Glow bloom** — Threshold 0.38, intensity rises again during the 6-9s closing effect
 
 ## Run
 
@@ -47,4 +51,11 @@ GPU preview:
 ```bash
 cargo run --release -p motionloom --example wgpu_live_preview -- \
   showcase/s-000009/main.motionloom
+```
+
+Portrait variant (`15s`, extended flower-rain ending):
+
+```bash
+cargo run --release -p motionloom --example wgpu_live_preview -- \
+  showcase/s-000009/main2.motionloom
 ```

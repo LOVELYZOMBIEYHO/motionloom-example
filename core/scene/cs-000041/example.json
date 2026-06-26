@@ -1,0 +1,60 @@
+{
+  "id": "cs-000041",
+  "type": "core",
+  "domain": "scene",
+  "title": "Single Eye Left Turn Morph",
+  "summary": "Animate a stylized single eye turning left with path morphs, primitive transforms, and deformGrid perspective warping.",
+  "entry": "main.motionloom",
+  "features": [
+    "scene",
+    "shape",
+    "path",
+    "polyline",
+    "line",
+    "circle",
+    "rect",
+    "text",
+    "gradient",
+    "curve-animation",
+    "character-rig"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "LinearGradient",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Path",
+    "Line",
+    "Polyline",
+    "Circle",
+    "Rect",
+    "Text",
+    "curve"
+  ],
+  "teaches": [
+    "Use path morphing to reshape an eye as it turns in perspective.",
+    "Combine scale, skew, and deformGrid to sell a side-facing eye rotation.",
+    "Keep iris, pupil, eyelid, and profile ridge transforms synchronized during a turn."
+  ],
+  "source_path": "scene/eyes/eyes2/left_turn_morph.motionloom",
+  "demo_url": "",
+  "related": [
+    "cs-000031",
+    "cs-000032",
+    "cs-000038"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Timeline",
+    "Path",
+    "Group"
+  ],
+  "path": "core/scene/cs-000041/"
+}
