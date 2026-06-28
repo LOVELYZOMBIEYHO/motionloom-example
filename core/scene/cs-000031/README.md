@@ -1,23 +1,5 @@
-# Filled Shape Morph Intro 10s
+# Scene Layer3D Static Background Comparison
 
-ID: `cs-000031`  
-Type: `core`  
-Domain: `scene`
-
-## Features
-
-shape, path, curve-animation, gradient, defs, glow, character-action, environment, layout
-
-## DSL
-
-Graph, Scene, Timeline, Track, Sequence, Layer, Defs, Rect, Circle, Path, Group, RadialGradient, curve
-
-## Teaches
-
-- Combine multiple MotionLoom features into a polished demo.
-- Use this as a reference for YouTube Short or promo-style output.
-- Study how features combine: shape, path, curve-animation, gradient, defs, glow.
-
-## Use In Anica
-
-Open `main.motionloom`, copy all content, then paste it into the Anica VFX / MotionLoom page.
+Shows what `Layer3D` changes visually against a non-moving, non-solid background.
+The grid/city background is static; only the three `Layer3D` panels move in `z`,
+`rotationX`, and `rotationY`, making depth and perspective differences obvious.

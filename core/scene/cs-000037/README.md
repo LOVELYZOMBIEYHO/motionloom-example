@@ -1,23 +1,10 @@
-# DSL FaceJaw Basic
+# AnimationTarget Advanced Targets
 
-ID: `cs-000037`  
-Type: `core`  
-Domain: `scene`
+This core scene extends `AnimationTarget` beyond basic transform properties.
 
-## Features
+## What it demonstrates
 
-facejaw, path, curve-animation, shape
-
-## DSL
-
-Graph, Background, Scene, Timeline, Track, Sequence, Layer, Text, Circle, FaceJaw, curve
-
-## Teaches
-
-- Use `<FaceJaw>` to generate a character jaw or face-outline path from simple face-shape parameters.
-- Use `closed="false"` for an open jaw curve, or `closed="true"` with fill for a filled face/jaw shape.
-- Animate `jawEase`, `chinSharpness`, or `trimEnd` with `curve()` for simple facial motion.
-
-## Use In Anica
-
-Open `main.motionloom`, copy all content, then paste it into the Anica VFX / MotionLoom page.
+- `Pin` `x` and `y` targets for Puppet-style deformation.
+- `Path` `d` targets that compile into the existing `morph(...)` path pipeline.
+- Skeleton `Bone` `rotation` targets that flow through the existing rig and `ApplyAction` pipeline.
+- A UI-friendly data model: each editable channel is addressed by `node + property + frame`.

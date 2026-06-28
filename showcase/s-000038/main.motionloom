@@ -1,284 +1,120 @@
-<Graph fps={30} duration="2s" size={[800,1200]} renderSize={[800,1200]}>
-  <Background color="#ffffff" />
+<!-- Image nodes are GPU-native in scene render. Relative paths are resolved from the renderer process cwd; this example assumes the Anica repo root as cwd. -->
+<Graph fps={30} duration="10s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#FF4D8D" />
 
-  <Scene id="standing_character_scene">
+  <Scene id="anica_agent_ui_zoom_transition_10s">
+    <Defs>
+      <RadialGradient id="hot_bg" cx="0.18" cy="0.18" r="0.98"
+                      stops="0:#FFF36A, 0.36:#FF4D8D, 0.72:#7657FF, 1:#11D6C4" />
+      <RadialGradient id="cool_bg" cx="0.72" cy="0.24" r="0.98"
+                      stops="0:#7AF7FF, 0.38:#4F7DFF, 0.70:#7B3DFF, 1:#120B2C" />
+      <RadialGradient id="spot_white" cx="0.50" cy="0.50" r="0.52"
+                      stops="0:#FFFFFFDD, 0.46:#FFFFFF44, 1:#FFFFFF00" />
+    </Defs>
+
     <Timeline>
-      <Track id="character_track" space="world" z="0">
-        <Sequence from="0s" duration="2s" out="hold">
-          <Layer id="character_layer">
-            <Ellipse id="ground_shadow"
-                     x="400"
-                     y="1135"
-                     rx="190"
-                     ry="24"
-                     fill="#d9d9d9"
-                     opacity="0.45" />
+      <Track id="scene_content" space="world" z="0">
+        <Sequence from="0s" duration="10s" out="hold">
+          <Layer>
 
-            <Character id="standing_person" x="100" y="280" scale="0.74">
-              <Group id="left_leg_group" transformOriginX="320" transformOriginY="650">
-                <Path id="left_leg"
-                      d="M300 650 C297 770 292 915 275 1080 L345 1080 C365 915 375 775 382 650 Z"
-                      fill="#b93858" />
-                <Rect id="left_cuff" x="265" y="1068" width="93" height="30" radius="3" fill="#d6506b" />
-                <Path id="left_shoe"
-                      d="M270 1094 C252 1104 232 1116 222 1132 C213 1147 228 1158 267 1159 C305 1160 347 1148 355 1135 C360 1126 337 1109 310 1094 Z"
-                      fill="#0e2930" />
-              </Group>
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#hot_bg)" />
+            <Circle x={curve("0:250:linear, 4.9:250:linear, 5.25:1520:ease_in_out, 10:1520:linear")}
+                    y={curve("0:160:linear, 4.9:160:linear, 5.25:300:ease_in_out, 10:300:linear")}
+                    radius="520"
+                    fill="url(#spot_white)"
+                    opacity="0.50" />
+            <Circle x={curve("0:1550:linear, 4.9:1550:linear, 5.25:340:ease_in_out, 10:340:linear")}
+                    y={curve("0:840:linear, 4.9:840:linear, 5.25:780:ease_in_out, 10:780:linear")}
+                    radius="430"
+                    color="#00FFE0"
+                    opacity="0.23" />
+            <Rect x={curve("0:1920:linear, 4.9:1920:linear, 5.16:0:ease_in_out, 10:0:linear")}
+                  y="0"
+                  width="1920"
+                  height="1080"
+                  fill="url(#cool_bg)"
+                  opacity={curve("0:0:linear, 4.85:0:linear, 5.18:1:ease_in_out, 10:1:linear")} />
 
-              <Group id="right_leg_group" transformOriginX="480" transformOriginY="650">
-                <Path id="right_leg"
-                      d="M418 650 C425 775 438 915 462 1080 L532 1080 C510 910 501 770 498 650 Z"
-                      fill="#b93858" />
-                <Rect id="right_cuff" x="448" y="1068" width="93" height="30" radius="3" fill="#d6506b" />
-                <Path id="right_shoe"
-                      d="M456 1094 C482 1106 518 1121 536 1135 C552 1148 541 1159 501 1160 C458 1161 424 1149 419 1135 C416 1125 431 1107 456 1094 Z"
-                      fill="#0e2930" />
-              </Group>
+            <Text value="AI editing timeline"
+                  x="118"
+                  y="154"
+                  fontSize="56"
+                  color="#FFFFFF"
+                  opacity={curve("0:0:linear, 0.35:0.92:ease_in_out, 0.95:0.92:linear, 1.15:0:ease_in_out, 9.15:0:linear, 9.55:0.90:ease_in_out, 10:0:ease_in_out")} />
+            <Text value="silent cuts  /  multilingual subtitles"
+                  x="122"
+                  y="206"
+                  fontSize="26"
+                  color="#FFFFFF"
+                  opacity={curve("0:0:linear, 0.45:0.70:ease_in_out, 0.95:0.70:linear, 1.15:0:ease_in_out, 9.20:0:linear, 9.58:0.66:ease_in_out, 10:0:ease_in_out")} />
 
-              <Group id="pelvis_group">
-                <Path id="waist"
-                      d="M292 635 C330 662 466 664 508 637 L500 690 C455 710 342 710 300 690 Z"
-                      fill="#bd2e54" />
-                <Path id="fly"
-                      d="M400 660 C402 705 402 735 394 756"
-                      fill="none"
-                      stroke="#d75a77"
-                      strokeWidth="4"
-                      lineCap="round"
-                      opacity="0.65" />
-                <Path id="left_pocket"
-                      d="M310 665 C325 690 325 722 295 735"
-                      fill="none"
-                      stroke="#d75a77"
-                      strokeWidth="4"
-                      lineCap="round"
-                      opacity="0.55" />
-                <Path id="right_pocket"
-                      d="M490 665 C474 690 474 722 505 735"
-                      fill="none"
-                      stroke="#d75a77"
-                      strokeWidth="4"
-                      lineCap="round"
-                      opacity="0.55" />
-              </Group>
+            <!-- First screenshot: start with the full 2880x1800 UI framed inside 1920x1080, then punch zoom to the right-side AI panel with small hand-held jitter. -->
+            <Group id="shot_01_main"
+                   x={curve("0:-190:linear, 1.00:-190:linear, 2.00:-190:linear, 2.28:-1620:ease(0.12,1.0,0.16,1), 2.62:-1638:linear, 2.92:-1608:linear, 3.28:-1630:linear, 3.64:-1614:linear, 4.06:-1636:linear, 4.52:-1610:linear, 4.82:-1624:linear, 5.10:-3300:ease_in_out, 10:-3300:linear")}
+                   y={curve("0:-184:linear, 1.00:-184:linear, 2.00:-184:linear, 2.28:-690:ease(0.12,1.0,0.16,1), 2.62:-706:linear, 2.92:-676:linear, 3.28:-700:linear, 3.64:-684:linear, 4.06:-704:linear, 4.52:-682:linear, 4.82:-694:linear, 5.10:-694:linear, 10:-694:linear")}
+                   scale={curve("0:0.56:linear, 1.00:0.56:linear, 2.00:0.56:linear, 2.28:1.18:ease(0.12,1.0,0.16,1), 5.10:1.18:linear, 10:1.18:linear")}
+                   transformOriginX="780"
+                   transformOriginY="500"
+                   opacity={curve("0:0:linear, 0.95:0:linear, 1.00:1:ease_in_out, 4.86:1:linear, 5.12:0:ease_in_out, 10:0:linear")}>
+              <Rect x="-46" y="-46" width="2972" height="1892" radius="60" color="#000000" opacity="0.32" />
+              <Image src="../motionloom-example/assets/sample_assets/README/readme_showcase1.png" x="0" y="0" scale="1" opacity="1" />
+            </Group>
 
-              <Group id="left_arm_group" transformOriginX="320" transformOriginY="400">
-                <Path id="left_upper_arm"
-                      d="M275 385 C240 420 226 495 218 560 C211 615 206 665 197 718 C194 738 221 746 231 724 C248 681 258 616 270 560 C283 500 302 442 326 404 Z"
-                      fill="#f3a089" />
-                <Group id="left_forearm_group" transformOriginX="210" transformOriginY="720">
-                  <Path id="left_forearm"
-                        d="M197 710 C181 744 170 790 158 835 C153 854 179 864 190 845 C208 810 223 768 233 724 Z"
-                        fill="#f3a089" />
-                  <Group id="left_hand_group" transformOriginX="190" transformOriginY="840">
-                    <Path id="left_palm"
-                          d="M149 828 C142 846 151 866 174 872 C197 878 219 864 224 842 C229 820 215 804 192 800 C170 797 156 810 149 828 Z"
-                          fill="#f3a089" />
-                    <Path id="left_thumb"
-                          d="M158 834 C135 832 122 820 118 806 C116 798 123 792 132 797 C145 804 156 810 169 812"
-                          fill="none"
-                          stroke="#df816f"
-                          strokeWidth="3"
-                          lineCap="round" />
-                    <Path id="left_index"
-                          d="M170 856 C164 886 157 914 148 938 C145 947 154 954 162 947 C176 927 185 895 191 861"
-                          fill="none"
-                          stroke="#df816f"
-                          strokeWidth="3"
-                          lineCap="round" />
-                    <Path id="left_middle"
-                          d="M187 859 C184 892 181 923 175 949 C173 959 183 965 190 956 C202 931 207 894 207 860"
-                          fill="none"
-                          stroke="#df816f"
-                          strokeWidth="3"
-                          lineCap="round" />
-                    <Path id="left_ring"
-                          d="M204 854 C207 884 210 913 210 938 C210 949 222 951 226 941 C232 913 229 883 221 856"
-                          fill="none"
-                          stroke="#df816f"
-                          strokeWidth="3"
-                          lineCap="round" />
-                    <Path id="left_pinky"
-                          d="M218 842 C231 860 241 880 248 900 C252 910 263 908 263 897 C260 872 247 849 225 833"
-                          fill="none"
-                          stroke="#df816f"
-                          strokeWidth="3"
-                          lineCap="round" />
-                    <Path id="left_palm_line"
-                          d="M166 828 C182 842 203 841 216 826"
-                          fill="none"
-                          stroke="#df816f"
-                          strokeWidth="3"
-                          lineCap="round"
-                          opacity="0.55" />
-                  </Group>
-                </Group>
-              </Group>
+            <Group id="shot_01_trail_a"
+                   x={curve("0:-190:linear, 4.74:-1580:linear, 5.16:-3480:ease_in_out, 10:-3480:linear")}
+                   y={curve("0:-184:linear, 4.74:-690:linear, 5.16:-690:linear, 10:-690:linear")}
+                   scale="1.18"
+                   transformOriginX="780"
+                   transformOriginY="500"
+                   opacity={curve("0:0:linear, 4.72:0:linear, 4.86:0.28:ease_in_out, 5.18:0:ease_in_out, 10:0:linear")}>
+              <Image src="../motionloom-example/assets/sample_assets/README/readme_showcase1.png" x="0" y="0" scale="1" opacity="1" />
+            </Group>
+            <Group id="shot_01_trail_b"
+                   x={curve("0:-190:linear, 4.78:-1460:linear, 5.20:-3120:ease_in_out, 10:-3120:linear")}
+                   y={curve("0:-184:linear, 4.78:-682:linear, 5.20:-682:linear, 10:-682:linear")}
+                   scale="1.18"
+                   transformOriginX="780"
+                   transformOriginY="500"
+                   opacity={curve("0:0:linear, 4.76:0:linear, 4.90:0.16:ease_in_out, 5.22:0:ease_in_out, 10:0:linear")}>
+              <Image src="../motionloom-example/assets/sample_assets/README/readme_showcase1.png" x="0" y="0" scale="1" opacity="1" />
+            </Group>
 
-              <Group id="right_arm_group"
-                     rotation={curve("0:0:ease_in_out, 0.55:-118:ease_in_out, 1.82:-118:linear, 2:0:ease_in_out")}
-                     transformOriginX="480"
-                     transformOriginY="400">
-                <Path id="right_upper_arm"
-                      d="M525 385 C560 420 574 495 582 560 C589 615 594 665 603 718 C606 738 579 746 569 724 C552 681 542 616 530 560 C517 500 498 442 474 404 Z"
-                      fill="#f3a089" />
-                <Group id="right_forearm_group"
-                       rotation={curve("0:0:linear, 0.55:0:linear, 0.74:36:ease_in_out, 0.96:14:ease_in_out, 1.18:42:ease_in_out, 1.40:16:ease_in_out, 1.62:36:ease_in_out, 1.82:26:ease_in_out, 2:0:ease_in_out")}
-                       transformOriginX="590"
-                       transformOriginY="720">
-                  <Path id="right_forearm"
-                        d="M603 710 C619 744 630 790 642 835 C647 854 621 864 610 845 C592 810 577 768 567 724 Z"
-                        fill="#f3a089" />
-                  <Group id="right_hand_group"
-                         rotation={curve("0:0:linear, 0.55:262:ease_in_out, 0.74:282:ease_in_out, 0.96:246:ease_in_out, 1.18:286:ease_in_out, 1.40:248:ease_in_out, 1.62:278:ease_in_out, 1.82:262:ease_in_out, 2:0:ease_in_out")}
-                         transformOriginX="610"
-                         transformOriginY="840">
-                    <Path id="right_palm"
-                          d="M651 828 C658 846 649 866 626 872 C603 878 581 864 576 842 C571 820 585 804 608 800 C630 797 644 810 651 828 Z"
-                          fill="#f3a089" />
-                    <Path id="right_thumb"
-                          d="M642 834 C665 832 678 820 682 806 C684 798 677 792 668 797 C655 804 644 810 631 812"
-                          fill="none"
-                          stroke="#df816f"
-                          strokeWidth="3"
-                          lineCap="round" />
-                    <Path id="right_index"
-                          d="M630 856 C636 886 643 914 652 938 C655 947 646 954 638 947 C624 927 615 895 609 861"
-                          fill="none"
-                          stroke="#df816f"
-                          strokeWidth="3"
-                          lineCap="round" />
-                    <Path id="right_middle"
-                          d="M613 859 C616 892 619 923 625 949 C627 959 617 965 610 956 C598 931 593 894 593 860"
-                          fill="none"
-                          stroke="#df816f"
-                          strokeWidth="3"
-                          lineCap="round" />
-                    <Path id="right_ring"
-                          d="M596 854 C593 884 590 913 590 938 C590 949 578 951 574 941 C568 913 571 883 579 856"
-                          fill="none"
-                          stroke="#df816f"
-                          strokeWidth="3"
-                          lineCap="round" />
-                    <Path id="right_pinky"
-                          d="M582 842 C569 860 559 880 552 900 C548 910 537 908 537 897 C540 872 553 849 575 833"
-                          fill="none"
-                          stroke="#df816f"
-                          strokeWidth="3"
-                          lineCap="round" />
-                    <Path id="right_palm_line"
-                          d="M634 828 C618 842 597 841 584 826"
-                          fill="none"
-                          stroke="#df816f"
-                          strokeWidth="3"
-                          lineCap="round"
-                          opacity="0.55" />
-                  </Group>
-                </Group>
-              </Group>
+            <!-- Second screenshot: fast left-moving reveal into a full-view frame, then the same right-side punch zoom. -->
+            <Group id="shot_02_trail_a"
+                   x={curve("0:2260:linear, 4.82:2260:linear, 5.12:280:ease_in_out, 5.36:-190:ease_out, 10:-190:linear")}
+                   y="-184"
+                   scale="0.56"
+                   transformOriginX="780"
+                   transformOriginY="500"
+                   opacity={curve("0:0:linear, 4.84:0:linear, 5.00:0.22:ease_in_out, 5.30:0:ease_in_out, 10:0:linear")}>
+              <Image src="../motionloom-example/assets/sample_assets/README/readme_showcase2.png" x="0" y="0" scale="1" opacity="1" />
+            </Group>
+            <Group id="shot_02_trail_b"
+                   x={curve("0:2460:linear, 4.86:2460:linear, 5.16:620:ease_in_out, 5.38:-190:ease_out, 10:-190:linear")}
+                   y="-184"
+                   scale="0.56"
+                   transformOriginX="780"
+                   transformOriginY="500"
+                   opacity={curve("0:0:linear, 4.88:0:linear, 5.04:0.15:ease_in_out, 5.34:0:ease_in_out, 10:0:linear")}>
+              <Image src="../motionloom-example/assets/sample_assets/README/readme_showcase2.png" x="0" y="0" scale="1" opacity="1" />
+            </Group>
+            <Group id="shot_02_main"
+                   x={curve("0:2260:linear, 4.80:2260:linear, 5.12:-190:ease_in_out, 6.00:-190:linear, 6.28:-1620:ease(0.12,1.0,0.16,1), 6.64:-1606:linear, 6.96:-1642:linear, 7.32:-1612:linear, 7.72:-1636:linear, 8.16:-1608:linear, 8.58:-1640:linear, 9.00:-1620:linear, 9.28:-1620:linear, 9.58:-3300:ease_in_out, 10:-3300:linear")}
+                   y={curve("0:-184:linear, 4.80:-184:linear, 5.12:-184:ease_in_out, 6.00:-184:linear, 6.28:-690:ease(0.12,1.0,0.16,1), 6.64:-674:linear, 6.96:-704:linear, 7.32:-682:linear, 7.72:-700:linear, 8.16:-676:linear, 8.58:-706:linear, 9.00:-690:linear, 9.58:-690:linear, 10:-690:linear")}
+                   scale={curve("0:0.56:linear, 5.12:0.56:linear, 6.00:0.56:linear, 6.28:1.18:ease(0.12,1.0,0.16,1), 9.28:1.18:linear, 9.58:1.18:linear, 10:1.18:linear")}
+                   transformOriginX="780"
+                   transformOriginY="500"
+                   opacity={curve("0:0:linear, 4.86:0:linear, 5.08:1:ease_in_out, 9.20:1:linear, 9.62:0:ease_in_out, 10:0:linear")}>
+              <Rect x="-46" y="-46" width="2972" height="1892" radius="60" color="#000000" opacity="0.32" />
+              <Image src="../motionloom-example/assets/sample_assets/README/readme_showcase2.png" x="0" y="0" scale="1" opacity="1" />
+            </Group>
 
-              <Group id="torso_group" transformOriginX="400" transformOriginY="470">
-                <Path id="shirt_body"
-                      d="M295 330 C326 300 365 286 400 286 C438 286 476 300 505 330 C522 368 526 430 506 480 L506 636 C470 665 330 665 294 636 L294 480 L240 455 C252 410 265 360 295 330 Z"
-                      fill="#c63d5e" />
-                <Path id="shirt_neck"
-                      d="M350 309 C370 334 430 334 450 309 C436 294 418 286 400 286 C382 286 364 294 350 309 Z"
-                      fill="#c83f5e" />
-                <Path id="left_sleeve_line"
-                      d="M293 405 C300 443 298 472 294 500"
-                      fill="none"
-                      stroke="#b83351"
-                      strokeWidth="4"
-                      lineCap="round"
-                      opacity="0.5" />
-                <Path id="right_sleeve_line"
-                      d="M507 405 C500 443 502 472 506 500"
-                      fill="none"
-                      stroke="#b83351"
-                      strokeWidth="4"
-                      lineCap="round"
-                      opacity="0.0" />
-              </Group>
-
-              <Group id="right_sleeve_pinned_group"
-                     rotation={curve("0:0:ease_in_out, 0.55:-118:ease_in_out, 1.82:-118:linear, 2:0:ease_in_out")}
-                     transformOriginX="480"
-                     transformOriginY="400">
-                <Path id="right_sleeve_pinned"
-                      d="M474 404 C490 438 506 488 530 560 L584 535 C572 458 545 376 505 330 C494 352 484 378 474 404 Z"
-                      fill="#c63d5e" />
-                <Path id="right_sleeve_pinned_shadow"
-                      d="M506 398 C512 448 522 506 530 560"
-                      fill="none"
-                      stroke="#b83351"
-                      strokeWidth="4"
-                      lineCap="round"
-                      opacity="0.45" />
-              </Group>
-
-              <Group id="neck_group" transformOriginX="400" transformOriginY="280">
-                <Path id="neck_shape"
-                      d="M356 250 L445 250 L451 318 C428 342 374 342 350 318 Z"
-                      fill="#f3a089" />
-                <Path id="neck_shadow"
-                      d="M355 283 C377 310 425 313 447 285"
-                      fill="none"
-                      stroke="#d77766"
-                      strokeWidth="5"
-                      lineCap="round"
-                      opacity="0.45" />
-              </Group>
-
-              <Group id="head_group" transformOriginX="400" transformOriginY="180">
-                <Ellipse id="left_ear" x="319" y="188" rx="22" ry="34" fill="#f3a089" />
-                <Ellipse id="right_ear" x="481" y="188" rx="22" ry="34" fill="#f3a089" />
-                <Path id="face"
-                      d="M318 132 C320 78 360 44 407 47 C458 50 492 91 488 150 L484 204 C480 271 435 302 400 302 C365 302 320 271 316 204 Z"
-                      fill="#f3a089" />
-
-                <Group id="hair_group">
-                  <Path id="hair_main"
-                        d="M317 142 C300 91 328 44 381 30 C424 19 466 36 489 70 C501 88 519 88 535 80 C527 115 500 134 468 132 C434 130 403 111 379 92 C378 121 365 146 341 147 C329 148 323 145 317 142 Z"
-                        fill="#1d0f0f" />
-                  <Path id="hair_side"
-                        d="M319 132 C291 145 288 192 318 218 C334 187 337 157 319 132 Z"
-                        fill="#1d0f0f" />
-                </Group>
-
-                <Group id="face_features_group">
-                  <Path id="left_brow" d="M357 155 Q376 145 394 153" fill="none" stroke="#3a1b1b" strokeWidth="4" lineCap="round" />
-                  <Path id="right_brow" d="M428 153 Q448 145 466 155" fill="none" stroke="#3a1b1b" strokeWidth="4" lineCap="round" />
-                  <Ellipse id="left_eye" x="373" y="181" rx="6" ry="11" fill="#241313" />
-                  <Ellipse id="right_eye" x="438" y="181" rx="6" ry="11" fill="#241313" />
-                  <Path id="nose"
-                        d="M405 178 C410 204 409 218 395 218"
-                        fill="none"
-                        stroke="#b86055"
-                        strokeWidth="3"
-                        lineCap="round" />
-                  <Path id="mouth"
-                        d="M377 238 Q401 253 425 238"
-                        fill="none"
-                        stroke="#8e4d47"
-                        strokeWidth="4"
-                        lineCap="round" />
-                  <Ellipse id="left_blush" x="346" y="202" rx="14" ry="8" fill="#d84b68" opacity="0.75" />
-                  <Ellipse id="right_blush" x="458" y="202" rx="14" ry="8" fill="#d84b68" opacity="0.75" />
-                  <Path id="chin_shadow"
-                        d="M354 258 C374 278 426 280 448 258"
-                        fill="none"
-                        stroke="#d77766"
-                        strokeWidth="5"
-                        lineCap="round"
-                        opacity="0.35" />
-                </Group>
-              </Group>
-            </Character>
+            <Rect x="0" y="0" width="1920" height="1080" color="#FFFFFF" opacity={curve("0:0.16:linear, 0.70:0:ease_in_out, 9.30:0:linear, 9.78:0.20:ease_in_out, 10:0.34:ease_in_out")} />
           </Layer>
         </Sequence>
       </Track>
     </Timeline>
   </Scene>
 
-  <Present from="standing_character_scene" />
+  <Present from="anica_agent_ui_zoom_transition_10s" />
 </Graph>

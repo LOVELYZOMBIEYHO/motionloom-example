@@ -1,53 +1,40 @@
 {
   "id": "s-000038",
   "type": "showcase",
-  "title": "Standing Character Vector",
+  "title": "Anica Agent UI Zoom Transition 10s",
   "domain": "scene",
   "features": [
-    "scene",
-    "character",
+    "transition",
+    "timeline",
+    "layout",
+    "defs",
+    "text",
     "shape",
     "path",
-    "circle",
-    "rect",
     "gradient",
-    "curve-animation"
+    "character-action"
   ],
   "dsl": [
     "Graph",
-    "Background",
     "Scene",
     "Timeline",
     "Track",
     "Sequence",
     "Layer",
-    "Character",
-    "Group",
-    "Path",
+    "Defs",
+    "Text",
     "Rect",
-    "Ellipse",
-    "Present",
+    "Circle",
+    "Group",
+    "Image",
+    "RadialGradient",
     "curve"
   ],
   "teaches": [
-    "Build a full standing character from scene vector primitives.",
-    "Organize body parts into named groups for later rigging or animation.",
-    "Animate a waving arm with FK-style parent-child group rotations."
+    "Combine multiple MotionLoom features into a polished demo.",
+    "Use this as a reference for YouTube Short or promo-style output.",
+    "Study how features combine: transition, timeline, layout, defs, text, shape."
   ],
   "source_path": "showcase/s-000038",
-  "demo_url": "",
-  "related": [
-    "s-000034",
-    "s-000035",
-    "s-000036",
-    "s-000037"
-  ],
-  "requires": [
-    "Graph",
-    "Scene",
-    "Timeline",
-    "Character",
-    "Path",
-    "Ellipse"
-  ]
+  "demo_url": ""
 }

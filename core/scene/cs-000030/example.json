@@ -1,35 +1,49 @@
 {
   "id": "cs-000030",
   "type": "core",
-  "title": "Countdown Blur Zoom 6s",
   "domain": "scene",
+  "title": "Scene Layer3D Cards",
+  "summary": "AE-like 2.5D scene layers using Layer3D z, rotationX, rotationY, and camera zoom.",
+  "entry": "main.motionloom",
   "features": [
-    "filter",
-    "text",
-    "layout",
-    "shape",
-    "transition",
-    "environment",
-    "timeline",
-    "curve-animation"
+    "scene",
+    "camera",
+    "layer3d",
+    "2.5d",
+    "zdepth"
   ],
   "dsl": [
     "Graph",
+    "Background",
     "Scene",
+    "Defs",
+    "LinearGradient",
+    "RadialGradient",
     "Timeline",
     "Track",
     "Sequence",
+    "Camera",
     "Layer",
-    "Text",
+    "Layer3D",
     "Rect",
-    "Group",
+    "Text",
     "curve"
   ],
   "teaches": [
-    "Combine multiple MotionLoom features into a polished demo.",
-    "Use this as a reference for YouTube Short or promo-style output.",
-    "Study how features combine: filter, text, layout, shape, transition, environment."
+    "Use Layer3D for flat scene content in pseudo-3D space.",
+    "Use z to sort near and far cards.",
+    "Use rotationX and rotationY for AE-like card tilt."
   ],
-  "source_path": "scene/motion_graphics/countdown_blur_zoom_6s.motionloom",
-  "demo_url": ""
+  "source_path": "scene/camera/layer3d_cards.motionloom",
+  "demo_url": "",
+  "related": [
+    "cs-000001",
+    "cs-000027"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Camera",
+    "Layer3D"
+  ]
 }

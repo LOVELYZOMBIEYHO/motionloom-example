@@ -1,4 +1,4 @@
-# Anica Agent UI Zoom Transition 10s
+# Asset Card Layout
 
 ID: `cs-000026`  
 Type: `core`  
@@ -6,17 +6,17 @@ Domain: `scene`
 
 ## Features
 
-transition, timeline, layout, defs, text, shape, path, gradient, character-action
+layout, image-asset, timeline, shape, text, gradient, glow
 
 ## DSL
 
-Graph, Scene, Timeline, Track, Sequence, Layer, Defs, Text, Rect, Circle, Group, Image, RadialGradient, curve
+Graph, Scene, Defs, Timeline, Track, Sequence, Layer, Group, Rect, Circle, Line, Image, Text, LinearGradient, RadialGradient, curve
 
 ## Teaches
 
-- Combine multiple MotionLoom features into a polished demo.
-- Use this as a reference for YouTube Short or promo-style output.
-- Study how features combine: transition, timeline, layout, defs, text, shape.
+- Compose background, asset image, card shape, labels, glow, and animation timing into one scene.
+- Use layout as a feature label, while keeping domain as scene for graph-family classification.
+- Reference the renamed character1 asset path and internal DSL id naming.
 
 ## Use In Anica
 

@@ -1,23 +1,11 @@
-# Stick Fight Storyboard 4shot
+# Puppet Pin Auto Mesh
 
-ID: `cs-000034`  
-Type: `core`  
-Domain: `scene`
+This core scene demonstrates the first-level `Puppet + Pin` workflow. The mesh is
+automatic, so the author only supplies pins and the artwork inside the `Puppet`.
 
-## Features
+## What it demonstrates
 
-layout, timeline, text, shape, defs, path, gradient, character-rig, character-action
-
-## DSL
-
-Graph, Scene, Timeline, Track, Sequence, Layer, Defs, Text, Rect, Circle, Line, Path, Group, LinearGradient, curve
-
-## Teaches
-
-- Combine multiple MotionLoom features into a polished demo.
-- Use this as a reference for YouTube Short or promo-style output.
-- Study how features combine: layout, timeline, text, shape, defs, path.
-
-## Use In Anica
-
-Open `main.motionloom`, copy all content, then paste it into the Anica VFX / MotionLoom page.
+- `Puppet` as a deformation container.
+- `Pin fixed="true"` anchors that keep part of the surface stable.
+- Animated `Pin targetX/targetY` curves that pull the auto mesh.
+- No required topology markup for simple cases.

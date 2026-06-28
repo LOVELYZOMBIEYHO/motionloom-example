@@ -1,41 +1,44 @@
 {
   "id": "cs-000029",
   "type": "core",
-  "title": "Car Phone Hands Vector",
+  "title": "Mask Follow Target",
   "domain": "scene",
   "features": [
-    "layout",
-    "timeline",
-    "text",
-    "shape",
-    "defs",
-    "path",
-    "gradient",
-    "glow",
-    "environment"
+    "masking",
+    "curve-animation",
+    "shape"
   ],
   "dsl": [
     "Graph",
+    "Background",
     "Scene",
+    "Defs",
+    "masking",
     "Timeline",
     "Track",
     "Sequence",
     "Layer",
-    "Defs",
-    "Text",
+    "Group",
     "Rect",
     "Circle",
     "Line",
-    "Path",
-    "Group",
-    "LinearGradient",
-    "RadialGradient"
+    "Text",
+    "curve"
   ],
   "teaches": [
-    "Combine multiple MotionLoom features into a polished demo.",
-    "Use this as a reference for YouTube Short or promo-style output.",
-    "Study how features combine: layout, timeline, text, shape, defs, path."
+    "Use <Mask follow=\"node:id\"> to make a mask track another scene node.",
+    "Apply the followed mask to a Group to reveal color or effects around the moving target."
   ],
-  "source_path": "scene/motion_graphics/car_phone_hands_vector.motionloom",
-  "demo_url": ""
+  "source_path": "scene/masking/mask_follow_target.motionloom",
+  "demo_url": "",
+  "related": [
+    "cs-000012"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Defs",
+    "Mask",
+    "Group"
+  ]
 }

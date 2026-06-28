@@ -1,4 +1,4 @@
-# Anica Motionloom Fancy Pip 20s
+# Pinwheel Layer zDepth Logo
 
 ID: `cs-000027`  
 Type: `core`  
@@ -6,17 +6,18 @@ Domain: `scene`
 
 ## Features
 
-layout, timeline, text, shape, audio-reactive, defs, path, gradient, glow
+zdepth, layer, shape, curve-animation, logo-motion
 
 ## DSL
 
-Graph, Scene, Timeline, Track, Sequence, Layer, Defs, Text, Rect, Circle, Line, Path, Group, LinearGradient, RadialGradient, curve, sin
+Graph, Background, Scene, Timeline, Track, Sequence, Layer, Group, Rect, Circle, Line, Text, curve
 
 ## Teaches
 
-- Combine multiple MotionLoom features into a polished demo.
-- Use this as a reference for YouTube Short or promo-style output.
-- Study how features combine: layout, timeline, text, shape, audio-reactive, defs.
+- zDepth uses camera-space depth: negative is closer, positive is farther.
+- Use Layer zDepth for 3D-style ordering: larger positive values are farther and draw first.
+- Use negative Layer zDepth for nearer blades that scale larger and draw over farther blades.
+- Keep Track z as a paint-order tie-break while Layer zDepth controls depth ordering.
 
 ## Use In Anica
 

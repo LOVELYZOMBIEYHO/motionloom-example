@@ -1,4 +1,4 @@
-# Anica Promo Presentation 20s
+# DSL FaceJaw Basic
 
 ID: `cs-000028`  
 Type: `core`  
@@ -6,17 +6,17 @@ Domain: `scene`
 
 ## Features
 
-layout, timeline, text, shape, defs, path, gradient, glow, character-rig
+facejaw, path, curve-animation, shape
 
 ## DSL
 
-Graph, Scene, Timeline, Track, Sequence, Layer, Defs, Text, Rect, Circle, Path, Group, LinearGradient, RadialGradient, curve
+Graph, Background, Scene, Timeline, Track, Sequence, Layer, Text, Circle, FaceJaw, curve
 
 ## Teaches
 
-- Combine multiple MotionLoom features into a polished demo.
-- Use this as a reference for YouTube Short or promo-style output.
-- Study how features combine: layout, timeline, text, shape, defs, path.
+- Use `<FaceJaw>` to generate a character jaw or face-outline path from simple face-shape parameters.
+- Use `closed="false"` for an open jaw curve, or `closed="true"` with fill for a filled face/jaw shape.
+- Animate `jawEase`, `chinSharpness`, or `trimEnd` with `curve()` for simple facial motion.
 
 ## Use In Anica
 

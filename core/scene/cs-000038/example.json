@@ -1,44 +1,58 @@
 {
   "id": "cs-000038",
   "type": "core",
-  "title": "Mask Follow Target",
   "domain": "scene",
+  "title": "Scene Camera And Layer3D Separation",
+  "summary": "Shows Scene Camera pan/zoom/follow and Layer3D 2.5D card tilt as separate concepts.",
+  "entry": "main.motionloom",
   "features": [
-    "masking",
-    "curve-animation",
-    "shape"
+    "scene",
+    "camera",
+    "layer3d",
+    "2.5d",
+    "timeline",
+    "track"
   ],
   "dsl": [
     "Graph",
     "Background",
     "Scene",
     "Defs",
-    "masking",
+    "LinearGradient",
+    "RadialGradient",
     "Timeline",
     "Track",
     "Sequence",
+    "Camera",
     "Layer",
-    "Group",
+    "Layer3D",
     "Rect",
     "Circle",
     "Line",
+    "Path",
     "Text",
+    "Repeat",
     "curve"
   ],
   "teaches": [
-    "Use <Mask follow=\"node:id\"> to make a mask track another scene node.",
-    "Apply the followed mask to a Group to reveal color or effects around the moving target."
+    "Use Scene Camera for 2D pan, zoom, rotation, and follow.",
+    "Use Layer3D for flat 2.5D layer/card transforms.",
+    "Do not expose Camera2.5D as a component; use Layer3D / 2.5D Layer."
   ],
-  "source_path": "scene/masking/mask_follow_target.motionloom",
+  "source_path": "scene/camera/scene_camera_layer3d_separation.motionloom",
   "demo_url": "",
   "related": [
-    "cs-000012"
+    "cs-000001",
+    "cs-000030",
+    "cs-000031"
   ],
   "requires": [
     "Graph",
     "Scene",
-    "Defs",
-    "Mask",
-    "Group"
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Camera",
+    "Layer3D"
   ]
 }

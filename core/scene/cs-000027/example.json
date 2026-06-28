@@ -1,43 +1,36 @@
 {
   "id": "cs-000027",
   "type": "core",
-  "title": "Anica Motionloom Fancy Pip 20s",
+  "title": "Pinwheel Layer zDepth Logo",
   "domain": "scene",
   "features": [
-    "layout",
-    "timeline",
-    "text",
+    "zdepth",
+    "layer",
     "shape",
-    "audio-reactive",
-    "defs",
-    "path",
-    "gradient",
-    "glow"
+    "curve-animation",
+    "logo-motion"
   ],
   "dsl": [
     "Graph",
+    "Background",
     "Scene",
     "Timeline",
     "Track",
     "Sequence",
     "Layer",
-    "Defs",
-    "Text",
+    "Group",
     "Rect",
     "Circle",
     "Line",
-    "Path",
-    "Group",
-    "LinearGradient",
-    "RadialGradient",
-    "curve",
-    "sin"
+    "Text",
+    "curve"
   ],
   "teaches": [
-    "Combine multiple MotionLoom features into a polished demo.",
-    "Use this as a reference for YouTube Short or promo-style output.",
-    "Study how features combine: layout, timeline, text, shape, audio-reactive, defs."
+    "zDepth uses camera-space depth: negative is closer, positive is farther.",
+    "Use Layer zDepth for 3D-style ordering: larger positive values are farther and draw first.",
+    "Use negative Layer zDepth for nearer blades that scale larger and draw over farther blades.",
+    "Keep Track z as a paint-order tie-break while Layer zDepth controls depth ordering."
   ],
-  "source_path": "scene/motion_graphics/anica_motionloom_fancy_pip_20s.motionloom",
+  "source_path": "scene/z-depth/pinwheel_layer_z_depth_logo.motionloom",
   "demo_url": ""
 }

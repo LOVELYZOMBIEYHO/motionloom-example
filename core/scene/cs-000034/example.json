@@ -1,41 +1,52 @@
 {
   "id": "cs-000034",
   "type": "core",
-  "title": "Stick Fight Storyboard 4shot",
+  "title": "Puppet Pin Auto Mesh",
   "domain": "scene",
   "features": [
-    "layout",
-    "timeline",
-    "text",
+    "scene",
+    "puppet",
+    "pin",
+    "auto-mesh",
+    "deformation",
     "shape",
-    "defs",
-    "path",
-    "gradient",
-    "character-rig",
-    "character-action"
+    "curve-animation"
   ],
   "dsl": [
     "Graph",
+    "Background",
     "Scene",
+    "Defs",
+    "LinearGradient",
     "Timeline",
     "Track",
     "Sequence",
     "Layer",
-    "Defs",
-    "Text",
+    "Puppet",
+    "Pin",
     "Rect",
-    "Circle",
     "Line",
-    "Path",
+    "Circle",
     "Group",
-    "LinearGradient",
+    "Text",
+    "Present",
     "curve"
   ],
   "teaches": [
-    "Combine multiple MotionLoom features into a polished demo.",
-    "Use this as a reference for YouTube Short or promo-style output.",
-    "Study how features combine: layout, timeline, text, shape, defs, path."
+    "Use Puppet with auto mesh for AE-style pin deformation.",
+    "Anchor part of the mesh with fixed pins while an animated pin pulls the surface.",
+    "Keep topology optional for simple deformation cases."
   ],
-  "source_path": "scene/motion_graphics/stick_fight_storyboard_4shot.motionloom",
-  "demo_url": ""
+  "source_path": "scene/deform/puppet_pin_auto_mesh.motionloom",
+  "demo_url": "",
+  "related": [
+    "cs-000032",
+    "cs-000035"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Puppet",
+    "Pin"
+  ]
 }

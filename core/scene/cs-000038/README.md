@@ -1,3 +1,8 @@
-# CS-000038 — Mask Follow Target
+# Scene Camera And Layer3D Separation
 
-Demonstrates `<Mask follow="node:...">`, where a soft circular mask follows a moving target node and reveals a colored layer.
+Shows the intended split between `Scene Camera` and `Layer3D`.
+
+- `Scene Camera` lives in `<Track role="camera">` and moves the world-space view.
+- `Layer3D` is a flat 2.5D layer/card inside the scene, with `z`, `rotationX`,
+  `rotationY`, `rotationZ`, and `perspective`.
+- Do not call `Layer3D` a 2.5D camera; it is the object/layer transform.

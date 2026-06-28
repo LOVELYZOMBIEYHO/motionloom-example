@@ -1,42 +1,65 @@
 {
   "id": "cs-000037",
   "type": "core",
-  "title": "DSL FaceJaw Basic",
+  "title": "AnimationTarget Advanced Targets",
   "domain": "scene",
   "features": [
-    "facejaw",
+    "scene",
+    "animation-target",
+    "keyframe-animation",
+    "puppet",
+    "pin",
     "path",
-    "curve-animation",
-    "shape"
+    "bone",
+    "character-rig"
   ],
   "dsl": [
     "Graph",
     "Background",
+    "Skeleton",
+    "Bone",
+    "Action",
+    "Pose",
     "Scene",
+    "Defs",
+    "LinearGradient",
+    "RadialGradient",
     "Timeline",
     "Track",
     "Sequence",
     "Layer",
-    "Text",
+    "Group",
+    "Puppet",
+    "Pin",
+    "Path",
     "Circle",
-    "FaceJaw",
+    "Rect",
+    "Text",
+    "Character",
+    "Part",
+    "AnimationTarget",
+    "Key",
+    "ApplyAction",
+    "Present",
     "curve"
   ],
   "teaches": [
-    "Use <FaceJaw> to generate a character jaw or face-outline path from simple face-shape parameters.",
-    "Use closed=false for an open jaw curve, or closed=true with fill for a filled face/jaw shape.",
-    "Animate jawEase, chinSharpness, or trimEnd with curve() for simple facial motion."
+    "Use AnimationTarget node/property keys for Puppet Pin x/y.",
+    "Use AnimationTarget property=d for editor-friendly path morph keyframes.",
+    "Use AnimationTarget on a skeleton bone id to drive rig rotation."
   ],
-  "source_path": "scene/facejaw/face_jaw_basic.motionloom",
+  "source_path": "scene/animation/animation_target_advanced_targets.motionloom",
   "demo_url": "",
-  "related": [],
+  "related": [
+    "cs-000036",
+    "cs-000034"
+  ],
   "requires": [
     "Graph",
     "Scene",
-    "Timeline",
-    "Track",
-    "Sequence",
-    "Layer",
-    "FaceJaw"
+    "AnimationTarget",
+    "Key",
+    "Puppet",
+    "Skeleton"
   ]
 }

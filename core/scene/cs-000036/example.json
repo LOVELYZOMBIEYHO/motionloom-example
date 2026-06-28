@@ -1,14 +1,13 @@
 {
   "id": "cs-000036",
   "type": "core",
-  "title": "Pinwheel Layer zDepth Logo",
+  "title": "AnimationTarget Keyframe MVP",
   "domain": "scene",
   "features": [
-    "zdepth",
-    "layer",
-    "shape",
-    "curve-animation",
-    "logo-motion"
+    "scene",
+    "animation-target",
+    "keyframe-animation",
+    "curve-animation"
   ],
   "dsl": [
     "Graph",
@@ -21,16 +20,27 @@
     "Group",
     "Rect",
     "Circle",
+    "Path",
     "Line",
     "Text",
-    "curve"
+    "AnimationTarget",
+    "Key",
+    "Present"
   ],
   "teaches": [
-    "zDepth uses camera-space depth: negative is closer, positive is farther.",
-    "Use Layer zDepth for 3D-style ordering: larger positive values are farther and draw first.",
-    "Use negative Layer zDepth for nearer blades that scale larger and draw over farther blades.",
-    "Keep Track z as a paint-order tie-break while Layer zDepth controls depth ordering."
+    "Use AnimationTarget to animate a node property by frame.",
+    "Use Key nodes for editor-friendly frame-based animation.",
+    "Start with x, y, rotation, scale, and opacity before advanced targets."
   ],
-  "source_path": "scene/z-depth/pinwheel_layer_z_depth_logo.motionloom",
-  "demo_url": ""
+  "source_path": "scene/animation/animation_target_key_mvp.motionloom",
+  "demo_url": "",
+  "related": [
+    "cs-000032"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "AnimationTarget",
+    "Key"
+  ]
 }

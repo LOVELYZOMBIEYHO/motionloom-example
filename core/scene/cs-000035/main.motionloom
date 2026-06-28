@@ -1,83 +1,58 @@
-<Graph fps={30} duration="6s" size={[1280,720]} renderSize={[1280,720]}>
-  <Background color="#F7F3EA" />
+<Graph fps={30} duration="3s" size={[960,540]} renderSize={[960,540]}>
+  <Background color="#FFFBEB" />
 
-  <Scene id="AssetCardLayout">
+  <Scene id="puppet_pin_mesh_topology_advanced">
     <Defs>
-      <LinearGradient id="paper_grad" x1="0" y1="0" x2="1" y2="1"
-                      stops="0:#FFF8EA, 0.55:#F3E7D1, 1:#E9D3AE" />
-      <LinearGradient id="card_grad" x1="0" y1="0" x2="1" y2="1"
-                      stops="0:#FFFFFF, 0.64:#FFF5DE, 1:#F0D394" />
-      <LinearGradient id="label_grad" x1="0" y1="0" x2="1" y2="0"
-                      stops="0:#111827, 0.64:#23344F, 1:#335C67" />
-      <RadialGradient id="warm_glow" cx="0.50" cy="0.42" r="0.74"
-                      stops="0:#FFCF6B77, 0.48:#FF8F3D30, 1:#FF8F3D00" />
-      <RadialGradient id="mint_glow" cx="0.50" cy="0.50" r="0.68"
-                      stops="0:#78E7B777, 0.50:#51C4A830, 1:#51C4A800" />
+      <LinearGradient id="skin_grad" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#FDBA74, 0.55:#FB923C, 1:#C2410C" />
     </Defs>
 
     <Timeline>
-      <Track id="background" space="world" z="0">
-        <Sequence from="0s" duration="6s" out="hold">
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
           <Layer>
-            <Rect x="0" y="0" width="1280" height="720" fill="url(#paper_grad)" />
-            <Circle x="1080" y="112" radius="320" fill="url(#warm_glow)" blend="screen" opacity="0.72" />
-            <Circle x="155" y="620" radius="300" fill="url(#mint_glow)" blend="screen" opacity="0.62" />
-            <Line x1="88" y1="585" x2="1180" y2="585" stroke="#7D6B4A33" strokeWidth="2" />
-          </Layer>
-        </Sequence>
-      </Track>
+            <Rect x="0" y="0" width="960" height="540" color="#FFFBEB" />
+            <Text value="PUPPET MESHTOPOLOGY" x="58" y="74" fontSize="43" fontWeight="900" color="#431407" />
+            <Text value="manual vertices are optional; pins may reference them by id" x="60" y="114" fontSize="22" color="#7C2D12" opacity="0.82" />
 
-      <Track id="asset_card" space="world" z="10">
-        <Sequence from="0s" duration="6s" out="hold">
-          <Layer>
-            <Group id="character1_card"
-                   x={curve("0:88:ease_out, 0.85:128:ease_out, 6:128:linear")}
-                   y={curve("0:64:ease_out, 0.85:44:ease_out, 6:44:linear")}
-                   opacity={curve("0:0:linear, 0.45:1:ease_in_out, 6:1:linear")}>
-              <Rect id="card_shadow" x="26" y="32" width="488" height="550" radius="34" color="#463A2544" />
-              <Rect id="card_body" x="0" y="0" width="488" height="550" radius="34" fill="url(#card_grad)" stroke="#6E573D33" strokeWidth="2" />
-              <Rect id="image_window" x="36" y="38" width="416" height="392" radius="28" color="#F7E9C9" opacity="0.82" />
-              <Image id="character1_composite_asset"
-                     src="../motionloom-example/assets/sample_assets/characters/character1/character1_composite_preview.png"
-                     x="66"
-                     y="52"
-                     scale="0.54"
-                     opacity="1" />
-              <Rect id="caption_bar" x="36" y="456" width="416" height="64" radius="20" fill="url(#label_grad)" />
-              <Text id="asset_label" x="64" y="496" value="CHARACTER 1" fontSize="26" color="#FFFFFF" />
-              <Text id="asset_note" x="270" y="497" value="image asset" fontSize="18" color="#B9F2E3" opacity="0.86" />
-            </Group>
-          </Layer>
-        </Sequence>
-      </Track>
+            <Puppet id="topology_arm" x="290" y="178" width="390" height="170" density="medium" amount="1">
+              <MeshTopology id="arm_topology">
+                <Vertex id="shoulder_top" x="0" y="26" />
+                <Vertex id="shoulder_bottom" x="0" y="144" />
+                <Vertex id="elbow_top" x="190" y="12" />
+                <Vertex id="elbow_bottom" x="190" y="158" />
+                <Vertex id="wrist_top" x="390" y="42" />
+                <Vertex id="wrist_bottom" x="390" y="128" />
+                <Triangle id="upper_a" a="shoulder_top" b="shoulder_bottom" c="elbow_top" />
+                <Triangle id="upper_b" a="shoulder_bottom" b="elbow_bottom" c="elbow_top" />
+                <Triangle id="forearm_a" a="elbow_top" b="elbow_bottom" c="wrist_top" />
+                <Triangle id="forearm_b" a="elbow_bottom" b="wrist_bottom" c="wrist_top" />
+                <Edge id="shoulder_edge" a="shoulder_top" b="shoulder_bottom" boundary="true" />
+                <Region id="forearm_region" vertices="elbow_top elbow_bottom wrist_top wrist_bottom" weight="1" />
+              </MeshTopology>
 
-      <Track id="layout_notes" space="world" z="20">
-        <Sequence from="0s" duration="6s" out="hold">
-          <Layer>
-            <Group id="notes"
-                   x={curve("0:720:ease_out, 0.7:670:ease_out, 6:670:linear")}
-                   y="142"
-                   opacity={curve("0.15:0:linear, 0.85:1:ease_in_out, 6:1:linear")}>
-              <Text x="0" y="0" value="Layout" fontSize="64" color="#1B2430" />
-              <Text x="4" y="48" value="One scene, several visual layers" fontSize="24" color="#6C5D45" opacity="0.86" />
+              <Pin id="shoulder_top_pin" vertex="shoulder_top" fixed="true" radius="130" />
+              <Pin id="shoulder_bottom_pin" vertex="shoulder_bottom" fixed="true" radius="130" />
+              <Pin id="wrist_pin"
+                   vertex="wrist_top"
+                   targetX={curve("0:390:ease_in_out, 0.9:430:ease_in_out, 1.6:350:ease_in_out, 2.3:420:ease_in_out, 3:390:ease_in_out")}
+                   targetY={curve("0:42:ease_in_out, 0.9:-24:ease_in_out, 1.6:96:ease_in_out, 2.3:6:ease_in_out, 3:42:ease_in_out")}
+                   radius="260"
+                   falloff="gaussian"
+                   strength="1.15" />
 
-              <Rect x="4" y="104" width="392" height="52" radius="16" color="#FFFFFF" opacity="0.72" />
-              <Text x="28" y="138" value="1. Background atmosphere" fontSize="24" color="#23344F" />
+              <Path d="M 0 26 C 80 -10 130 6 190 12 C 250 18 318 26 390 42 L 390 128 C 310 146 248 156 190 158 C 122 160 64 154 0 144 Z"
+                    fill="url(#skin_grad)" stroke="#431407" strokeWidth="7" />
+              <Line x1="190" y1="12" x2="190" y2="158" stroke="#7C2D12" strokeWidth="3" opacity="0.28" />
+              <Circle x="390" y="42" radius="14" fill="#FEF3C7" stroke="#431407" strokeWidth="4" />
+            </Puppet>
 
-              <Rect x="4" y="174" width="392" height="52" radius="16" color="#FFFFFF" opacity="0.72" />
-              <Text x="28" y="208" value="2. Asset card + image" fontSize="24" color="#23344F" />
-
-              <Rect x="4" y="244" width="392" height="52" radius="16" color="#FFFFFF" opacity="0.72" />
-              <Text x="28" y="278" value="3. Labels and motion timing" fontSize="24" color="#23344F" />
-
-              <Line x1="-28" y1="332" x2="430" y2="332" stroke="#23344F44" strokeWidth="2" />
-              <Text x="4" y="374" value="Use layout when one Scene combines assets, labels, shapes, and timing." fontSize="21" color="#5C4930" opacity="0.82" />
-            </Group>
+            <Text value="Topology is parsed and serialized, but simple scenes can omit it." x="190" y="472" fontSize="22" color="#7C2D12" opacity="0.76" />
           </Layer>
         </Sequence>
       </Track>
     </Timeline>
   </Scene>
 
-  <Present from="AssetCardLayout" />
+  <Present from="puppet_pin_mesh_topology_advanced" />
 </Graph>

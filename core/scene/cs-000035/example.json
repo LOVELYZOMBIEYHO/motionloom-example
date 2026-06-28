@@ -1,40 +1,60 @@
 {
   "id": "cs-000035",
   "type": "core",
-  "title": "Asset Card Layout",
+  "title": "Puppet MeshTopology Advanced",
   "domain": "scene",
   "features": [
-    "layout",
-    "image-asset",
-    "timeline",
-    "shape",
-    "text",
-    "gradient",
-    "glow"
+    "scene",
+    "puppet",
+    "pin",
+    "mesh-topology",
+    "vertex",
+    "triangle",
+    "edge",
+    "region",
+    "deformation",
+    "curve-animation"
   ],
   "dsl": [
     "Graph",
+    "Background",
     "Scene",
     "Defs",
+    "LinearGradient",
     "Timeline",
     "Track",
     "Sequence",
     "Layer",
-    "Group",
-    "Rect",
-    "Circle",
+    "Puppet",
+    "MeshTopology",
+    "Vertex",
+    "Triangle",
+    "Edge",
+    "Region",
+    "Pin",
+    "Path",
     "Line",
-    "Image",
+    "Circle",
     "Text",
-    "LinearGradient",
-    "RadialGradient",
+    "Present",
     "curve"
   ],
   "teaches": [
-    "Compose background, asset image, card shape, labels, glow, and animation timing into one scene.",
-    "Use layout as a feature label, while keeping domain as scene for graph-family classification.",
-    "Reference the renamed character1 asset path and internal DSL id naming."
+    "Use MeshTopology only when auto mesh is not enough.",
+    "Define vertices, triangles, edges, and regions for advanced puppet structure.",
+    "Reference topology vertices from Pin nodes."
   ],
-  "source_path": "scene/layout/asset_card_layout.motionloom",
-  "demo_url": ""
+  "source_path": "scene/deform/puppet_mesh_topology_advanced.motionloom",
+  "demo_url": "",
+  "related": [
+    "cs-000032",
+    "cs-000034"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Puppet",
+    "MeshTopology",
+    "Pin"
+  ]
 }

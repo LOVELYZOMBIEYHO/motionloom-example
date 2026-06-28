@@ -1,23 +1,7 @@
-# Kinetic Bloom 6s
+# Single Eye Left Turn Morph
 
-ID: `cs-000032`  
-Type: `core`  
-Domain: `scene`
+A stylized single-eye scene showing a frontal eye turning into a side-facing profile.
+The example combines `morph(...)` path animation, primitive transforms, and a `deformGrid`
+warp so the eye, iris, eyelids, lashes, and profile ridge all compress together.
 
-## Features
-
-glow, text, gradient, curve-animation, defs, shape, path, character-rig, environment
-
-## DSL
-
-Graph, Scene, Timeline, Track, Sequence, Layer, Defs, Text, Rect, Circle, Line, Path, Group, LinearGradient, RadialGradient, curve, sin
-
-## Teaches
-
-- Combine multiple MotionLoom features into a polished demo.
-- Use this as a reference for YouTube Short or promo-style output.
-- Study how features combine: glow, text, gradient, curve-animation, defs, shape.
-
-## Use In Anica
-
-Open `main.motionloom`, copy all content, then paste it into the Anica VFX / MotionLoom page.
+Use this as a reference for perspective eye turns and shape-morph timing in MotionLoom.

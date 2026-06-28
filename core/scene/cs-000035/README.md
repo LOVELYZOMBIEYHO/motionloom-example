@@ -1,23 +1,12 @@
-# Asset Card Layout
+# Puppet MeshTopology Advanced
 
-ID: `cs-000035`  
-Type: `core`  
-Domain: `scene`
+This core scene shows the optional advanced topology layer for Puppet Pin
+deformation. Simple scenes should use `Puppet + Pin` only; topology is for cases
+where artists need stable named vertices and explicit structure.
 
-## Features
+## What it demonstrates
 
-layout, image-asset, timeline, shape, text, gradient, glow
-
-## DSL
-
-Graph, Scene, Defs, Timeline, Track, Sequence, Layer, Group, Rect, Circle, Line, Image, Text, LinearGradient, RadialGradient, curve
-
-## Teaches
-
-- Compose background, asset image, card shape, labels, glow, and animation timing into one scene.
-- Use layout as a feature label, while keeping domain as scene for graph-family classification.
-- Reference the renamed character1 asset path and internal DSL id naming.
-
-## Use In Anica
-
-Open `main.motionloom`, copy all content, then paste it into the Anica VFX / MotionLoom page.
+- `MeshTopology` inside `Puppet`.
+- Manual `Vertex`, `Triangle`, `Edge`, and `Region` tags.
+- `Pin vertex="..."` references.
+- The same animated pin workflow as auto mesh, with stronger author control.

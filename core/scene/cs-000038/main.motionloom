@@ -1,52 +1,122 @@
-<Graph fps={30} duration="4s" size={[1280,720]} renderSize={[1280,720]}>
-  <Background color="#05070D" />
+<Graph fps={30} duration="5s" size={[1280,720]} renderSize={[1280,720]}>
+  <Background color="#07111F" />
 
-  <Scene id="mask_follow_target_demo">
+  <Scene id="scene_camera_layer3d_separation">
     <Defs>
-      <LinearGradient id="revealed_color" x1="0" y1="0" x2="1" y2="1"
-                      stops="0:#FF4FD8, 0.28:#FFE66D, 0.58:#61FFEA, 1:#7C5CFF" />
+      <LinearGradient id="bg_grad" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#07111F, 0.55:#10233E, 1:#0B1220" />
+      <LinearGradient id="grid_fade" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#60A5FA22, 0.55:#38BDF822, 1:#0F172A00" />
+      <LinearGradient id="card_a" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#F8FAFC, 0.55:#BFDBFE, 1:#60A5FA" />
+      <LinearGradient id="card_b" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#FFF7ED, 0.55:#FDBA74, 1:#FB7185" />
       <RadialGradient id="target_glow" cx="0.50" cy="0.50" r="0.50"
-                      stops="0:#FFFFFF, 0.35:#62F7FFAA, 1:#62F7FF00" />
-      <Mask id="moving_spot_mask" follow="node:tracker" shape="circle" x="0" y="0" radius="118" feather="20" />
+                      stops="0:#FBBF24AA, 0.38:#F59E0B44, 1:#F59E0B00" />
     </Defs>
 
     <Timeline>
-      <Track id="main" space="world" z="0">
-        <Sequence from="0s" duration="4s" out="hold">
-          <Layer>
-            <Text value="MASK FOLLOW" x="640" y="118" fontSize="54" fontWeight="900" color="#E8F7FF" />
-            <Text value="the reveal mask follows the small cyan target" x="640" y="158" fontSize="24" color="#8CA3B8" />
+      <Track id="scene_camera_track" role="camera" z="1000">
+        <Sequence from="0s" duration="5s" out="hold">
+          <Camera id="scene_camera"
+                  target="camera_target"
+                  anchorX="50%"
+                  anchorY="50%"
+                  zoom={curve("0:0.92:ease_in_out, 1.6:1.20:ease_in_out, 3.3:1.05:ease_in_out, 5:1.18:ease_in_out")}
+                  rotation={curve("0:-1.4:ease_in_out, 2.5:1.2:ease_in_out, 5:0:ease_in_out")}
+                  offsetX={curve("0:0:linear, 2.5:-42:ease_in_out, 5:36:ease_in_out")}
+                  offsetY={curve("0:0:linear, 2.5:18:ease_in_out, 5:-16:ease_in_out")}
+                  worldBounds="-320,-220,1920,1120" />
+        </Sequence>
+      </Track>
 
-            <Repeat id="grid" count="18" x="110" y="245" yStep="18" opacity="0.34" opacityStep="-0.006">
-              <Line x1="0" y1="0" x2="1060" y2="0" stroke="#A9C8FF" strokeWidth="1" opacity="0.22" />
+      <Track id="world_space_scene" space="world" z="0">
+        <Sequence from="0s" duration="5s" out="hold">
+          <Layer id="world_background">
+            <Rect x="-320" y="-220" width="1920" height="1120" fill="url(#bg_grad)" />
+            <Rect x="-320" y="380" width="1920" height="520" fill="url(#grid_fade)" opacity="0.88" />
+
+            <Repeat id="world_grid_vertical" count="25" x="-240" y="-160" xStep="80" opacity="0.24">
+              <Line x1="0" y1="0" x2="0" y2="1040" stroke="#93C5FD" strokeWidth="1" />
+            </Repeat>
+            <Repeat id="world_grid_horizontal" count="14" x="-240" y="-120" yStep="80" opacity="0.20">
+              <Line x1="0" y1="0" x2="1840" y2="0" stroke="#93C5FD" strokeWidth="1" />
             </Repeat>
 
-            <Group id="masked_reveal" mask="moving_spot_mask" maskMode="alpha">
-              <Rect x="150" y="230" width="980" height="280" radius="44" fill="url(#revealed_color)" opacity="0.96" />
-              <Repeat id="bright_slashes" count="12" x="180" y="214" xStep="86" opacity="0.70" opacityStep="-0.012">
-                <Line x1="0" y1="300" x2="120" y2="0" stroke="#FFFFFF" strokeWidth="10" opacity="0.24" />
-              </Repeat>
-            </Group>
+            <Path d="M -40 540 C 220 290 460 650 760 380 C 1040 128 1240 220 1500 90"
+                  stroke="#38BDF8"
+                  strokeWidth="10"
+                  lineCap="round"
+                  fill="none"
+                  opacity="0.46"
+                  trimEnd={curve("0:0.20:ease_in_out, 2.2:0.72:ease_in_out, 5:1:linear")} />
 
-            <Rect x="150" y="230" width="980" height="280" radius="44" fill="#0B1020" stroke="#33445F" strokeWidth="3" opacity="0.82" />
-            <Text value="REVEAL TARGET" x="640" y="392" fontSize="94" fontWeight="900" color="#FFFFFF" opacity="0.12" />
-
-            <Circle id="tracker"
-                    x={curve("0:245:ease_in_out, 1.35:675:ease_in_out, 2.7:1030:ease_in_out, 4:520:ease_in_out")}
-                    y={curve("0:352:ease_in_out, 1.35:300:ease_in_out, 2.7:430:ease_in_out, 4:352:ease_in_out")}
-                    radius="14"
-                    color="#66F7FF" />
-            <Circle x={curve("0:245:ease_in_out, 1.35:675:ease_in_out, 2.7:1030:ease_in_out, 4:520:ease_in_out")}
-                    y={curve("0:352:ease_in_out, 1.35:300:ease_in_out, 2.7:430:ease_in_out, 4:352:ease_in_out")}
-                    radius="52"
+            <Circle id="camera_target"
+                    x={curve("0:460:ease_in_out, 1.8:620:ease_in_out, 3.4:800:ease_in_out, 5:930:ease_in_out")}
+                    y={curve("0:500:ease_in_out, 1.8:360:ease_in_out, 3.4:440:ease_in_out, 5:300:ease_in_out")}
+                    radius="44"
                     fill="url(#target_glow)"
                     blend="screen"
-                    opacity="0.72" />
+                    opacity="0.92" />
+            <Circle x={curve("0:460:ease_in_out, 1.8:620:ease_in_out, 3.4:800:ease_in_out, 5:930:ease_in_out")}
+                    y={curve("0:500:ease_in_out, 1.8:360:ease_in_out, 3.4:440:ease_in_out, 5:300:ease_in_out")}
+                    radius="9"
+                    fill="#FDE68A"
+                    stroke="#111827"
+                    strokeWidth="3" />
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="layer3d_cards" space="world" z="10">
+        <Sequence from="0s" duration="5s" out="hold">
+          <Layer3D id="blue_layer3d_card"
+                   x={curve("0:520:ease_in_out, 2.4:580:ease_in_out, 5:560:ease_in_out")}
+                   y="535"
+                   z={curve("0:80:ease_in_out, 2.5:20:ease_in_out, 5:70:ease_in_out")}
+                   rotationX={curve("0:0:ease_in_out, 2.5:12:ease_in_out, 5:4:ease_in_out")}
+                   rotationY={curve("0:-18:ease_in_out, 2.5:16:ease_in_out, 5:-10:ease_in_out")}
+                   rotationZ={curve("0:-4:ease_in_out, 5:3:ease_in_out")}
+                   perspective="760"
+                   zDepth="-20"
+                   transformOriginX="0" transformOriginY="0">
+            <Rect x="-82" y="-52" width="164" height="104" radius="18" fill="url(#card_a)" stroke="#E0F2FE" strokeWidth="4" />
+            <Text value="Layer3D" x="0" y="-2" fontSize="18" fontWeight="900" color="#0F172A" />
+            <Text value="tilt + z" x="0" y="22" fontSize="12" color="#1E3A8A" opacity="0.86" />
+          </Layer3D>
+
+          <Layer3D id="orange_layer3d_card"
+                   x={curve("0:820:ease_in_out, 2.5:760:ease_in_out, 5:840:ease_in_out")}
+                   y="575"
+                   z={curve("0:90:ease_in_out, 2.5:40:ease_in_out, 5:80:ease_in_out")}
+                   rotationX={curve("0:8:ease_in_out, 2.5:-8:ease_in_out, 5:6:ease_in_out")}
+                   rotationY={curve("0:16:ease_in_out, 2.5:-16:ease_in_out, 5:12:ease_in_out")}
+                   rotationZ={curve("0:5:ease_in_out, 5:-4:ease_in_out")}
+                   perspective="760"
+                   zDepth="40"
+                   transformOriginX="0" transformOriginY="0">
+            <Rect x="-82" y="-50" width="164" height="100" radius="18" fill="url(#card_b)" stroke="#FFEDD5" strokeWidth="4" />
+            <Text value="2.5D Layer" x="0" y="-2" fontSize="16" fontWeight="900" color="#431407" />
+            <Text value="not camera" x="0" y="22" fontSize="12" color="#7C2D12" opacity="0.88" />
+          </Layer3D>
+        </Sequence>
+      </Track>
+
+      <Track id="screen_labels" space="screen" z="100">
+        <Sequence from="0s" duration="5s" out="hold">
+          <Layer id="screen_overlay">
+            <Rect x="44" y="38" width="586" height="112" radius="24" fill="#020617" opacity="0.64" />
+            <Text value="Scene Camera vs Layer3D" x="72" y="84" fontSize="42" fontWeight="900" color="#F8FAFC" />
+            <Text value="Camera moves the world view; Layer3D tilts flat content inside that view." x="74" y="122" fontSize="20" color="#BAE6FD" opacity="0.90" />
+
+            <Rect x="896" y="44" width="320" height="90" radius="22" fill="#020617" opacity="0.52" />
+            <Text value="Scene Camera" x="1056" y="82" fontSize="26" fontWeight="800" color="#FDE68A" />
+            <Text value="pan / zoom / follow" x="1056" y="112" fontSize="18" color="#F8FAFC" opacity="0.82" />
           </Layer>
         </Sequence>
       </Track>
     </Timeline>
   </Scene>
 
-  <Present from="mask_follow_target_demo" />
+  <Present from="scene_camera_layer3d_separation" />
 </Graph>

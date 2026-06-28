@@ -1,62 +1,68 @@
-<Graph fps={30} duration="4s" size={[800,450]} renderSize={[800,450]}>
-  <Background color="#FFFFFF" />
+<Graph fps={30} duration="2s" size={[960,540]} renderSize={[960,540]}>
+  <Background color="#0f172a" />
 
-  <Scene id="PinwheelZDepthLogo">
+  <Scene id="animation_target_key_mvp">
     <Timeline>
-      <Track id="depth_guides" space="screen" z="0">
-        <Sequence from="0s" duration="4s" out="hold">
+      <Track id="main" space="world" z="0">
+        <Sequence from="0s" duration="2s" out="hold">
           <Layer>
-            <Text x="32" y="44" value="Pinwheel zDepth" fontSize="28" color="#111827" />
-            <Text x="32" y="72" value="Layer zDepth sorts four overlapping color blades: far first, near last" fontSize="16" color="#6B7280" />
-            <Line x1="400" y1="86" x2="400" y2="364" stroke="#11182718" strokeWidth="2" />
-            <Line x1="258" y1="225" x2="542" y2="225" stroke="#11182718" strokeWidth="2" />
-          </Layer>
-        </Sequence>
-      </Track>
+            <Text id="title"
+                  value="AnimationTarget + Key"
+                  x="center"
+                  y="84"
+                  fontSize="48"
+                  fontWeight="800"
+                  color="#e2e8f0" />
 
-      <Track id="pinwheel" space="world" z="10" zDepth="0">
-        <Sequence from="0s" duration="4s" out="hold">
-          <Layer>
-            <Circle x="400" y="225" radius="128" color="#F3F4F6" opacity="0.62" />
-            <Circle x="400" y="225" radius="10" color="#111827" opacity="0.18" />
-          </Layer>
+            <Text id="caption"
+                  value="node + property + frame keys, evaluated every frame"
+                  x="center"
+                  y="128"
+                  fontSize="22"
+                  color="#94a3b8" />
 
-          <Layer id="blade_blue_mid_near" zDepth="-0.25">
-            <Group x="400" y="225" rotation={curve("0:-4:linear, 4:16:ease_in_out")}>
-              <Rect x="-22" y="-120" width="102" height="132" radius="34" color="#4285F4" opacity="0.92" />
-              <Circle x="34" y="-62" radius="30" color="#8AB4F8" opacity="0.32" />
+            <Group id="animated_card"
+                   x="210"
+                   y="265"
+                   rotation="0"
+                   scale="1"
+                   opacity="1"
+                   transformOriginX="0"
+                   transformOriginY="0">
+              <Rect x="-82" y="-58" width="164" height="116" radius="22" fill="#38bdf8" opacity="0.95" />
+              <Circle x="-38" y="-14" radius="15" fill="#f8fafc" opacity="0.92" />
+              <Circle x="38" y="-14" radius="15" fill="#f8fafc" opacity="0.92" />
+              <Path d="M -42 28 C -16 48 18 48 44 28" stroke="#0f172a" strokeWidth="8" lineCap="round" fill="none" />
             </Group>
-          </Layer>
 
-          <Layer id="blade_red_mid_far" zDepth="0.55">
-            <Group x="400" y="225" rotation={curve("0:86:linear, 4:106:ease_in_out")}>
-              <Rect x="-22" y="-120" width="102" height="132" radius="34" color="#EA4335" opacity="0.88" />
-              <Circle x="34" y="-62" radius="30" color="#F28B82" opacity="0.34" />
-            </Group>
-          </Layer>
-
-          <Layer id="blade_yellow_far" zDepth="1.25">
-            <Group x="400" y="225" rotation={curve("0:176:linear, 4:196:ease_in_out")}>
-              <Rect x="-22" y="-120" width="102" height="132" radius="34" color="#FBBC04" opacity="0.86" />
-              <Circle x="34" y="-62" radius="30" color="#FDE293" opacity="0.36" />
-            </Group>
-          </Layer>
-
-          <Layer id="blade_green_near" zDepth="-0.8">
-            <Group x="400" y="225" rotation={curve("0:266:linear, 4:286:ease_in_out")}>
-              <Rect x="-22" y="-120" width="102" height="132" radius="34" color="#34A853" opacity="0.84" />
-              <Circle x="34" y="-62" radius="30" color="#81C995" opacity="0.38" />
-            </Group>
-          </Layer>
-
-          <Layer id="center_cap" zDepth="0">
-            <Circle x="400" y="225" radius="38" color="#FFFFFF" opacity="0.94" />
-            <Circle x="400" y="225" radius="20" color="#111827" opacity="0.16" />
+            <Line x1="170" y1="390" x2="790" y2="390" stroke="#334155" strokeWidth="4" lineCap="round" opacity="0.8" />
+            <Text value="frame 0" x="142" y="430" fontSize="18" color="#64748b" />
+            <Text value="frame 30" x="438" y="430" fontSize="18" color="#64748b" />
+            <Text value="frame 59" x="746" y="430" fontSize="18" color="#64748b" />
           </Layer>
         </Sequence>
       </Track>
     </Timeline>
   </Scene>
 
-  <Present from="PinwheelZDepthLogo" />
+  <AnimationTarget node="animated_card" property="x">
+    <Key frame="0" value="210" ease="ease_in_out" />
+    <Key frame="30" value="480" ease="ease_in_out" />
+    <Key frame="59" value="750" ease="ease_in_out" />
+  </AnimationTarget>
+
+  <AnimationTarget node="animated_card" property="rotation">
+    <Key frame="0" value="-12" ease="ease_in_out" />
+    <Key frame="30" value="16" ease="ease(0.82,0,0.58,1)" />
+    <Key frame="59" value="-8" ease="ease_in_out" />
+  </AnimationTarget>
+
+  <AnimationTarget node="animated_card" property="opacity">
+    <Key frame="0" value="0.35" ease="linear" />
+    <Key frame="12" value="1" ease="ease_out" />
+    <Key frame="48" value="1" ease="linear" />
+    <Key frame="59" value="0.55" ease="ease_in" />
+  </AnimationTarget>
+
+  <Present from="animation_target_key_mvp" />
 </Graph>

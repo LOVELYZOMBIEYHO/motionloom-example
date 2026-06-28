@@ -1,40 +1,40 @@
 {
   "id": "cs-000026",
   "type": "core",
-  "title": "Anica Agent UI Zoom Transition 10s",
+  "title": "Asset Card Layout",
   "domain": "scene",
   "features": [
-    "transition",
-    "timeline",
     "layout",
-    "defs",
-    "text",
+    "image-asset",
+    "timeline",
     "shape",
-    "path",
+    "text",
     "gradient",
-    "character-action"
+    "glow"
   ],
   "dsl": [
     "Graph",
     "Scene",
+    "Defs",
     "Timeline",
     "Track",
     "Sequence",
     "Layer",
-    "Defs",
-    "Text",
+    "Group",
     "Rect",
     "Circle",
-    "Group",
+    "Line",
     "Image",
+    "Text",
+    "LinearGradient",
     "RadialGradient",
     "curve"
   ],
   "teaches": [
-    "Combine multiple MotionLoom features into a polished demo.",
-    "Use this as a reference for YouTube Short or promo-style output.",
-    "Study how features combine: transition, timeline, layout, defs, text, shape."
+    "Compose background, asset image, card shape, labels, glow, and animation timing into one scene.",
+    "Use layout as a feature label, while keeping domain as scene for graph-family classification.",
+    "Reference the renamed character1 asset path and internal DSL id naming."
   ],
-  "source_path": "scene/motion_graphics/anica_agent_ui_zoom_transition_10s.motionloom",
+  "source_path": "scene/layout/asset_card_layout.motionloom",
   "demo_url": ""
 }

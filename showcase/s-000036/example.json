@@ -1,57 +1,52 @@
 {
   "id": "s-000036",
   "type": "showcase",
-  "title": "Stickman Five Finger FK Rig",
+  "title": "Standing Character Vector",
   "domain": "scene",
   "features": [
     "scene",
-    "character-rig",
-    "character-action",
-    "bone",
-    "pose",
+    "character",
     "shape",
     "path",
+    "circle",
+    "rect",
+    "gradient",
     "curve-animation"
   ],
   "dsl": [
     "Graph",
     "Background",
-    "Bone",
-    "Action",
-    "Pose",
     "Scene",
-    "Defs",
-    "LinearGradient",
-    "RadialGradient",
     "Timeline",
     "Track",
     "Sequence",
     "Layer",
+    "Character",
     "Group",
-    "Rect",
-    "Circle",
     "Path",
-    "Text",
+    "Rect",
+    "Ellipse",
     "Present",
     "curve"
   ],
   "teaches": [
-    "Build a five-finger hand with parented FK bone chains.",
-    "Animate finger curls by rotating each phalanx through Action and Pose keyframes.",
-    "Attach visible finger artwork to bones so child joints inherit parent motion."
+    "Build a full standing character from scene vector primitives.",
+    "Organize body parts into named groups for later rigging or animation.",
+    "Animate a waving arm with FK-style parent-child group rotations."
   ],
   "source_path": "showcase/s-000036",
   "demo_url": "",
   "related": [
-    "cs-000041",
-    "s-000035"
+    "s-000034",
+    "s-000035",
+    "s-000037"
   ],
   "requires": [
     "Graph",
     "Scene",
-    "Skeleton",
-    "Action",
+    "Timeline",
     "Character",
-    "ApplyAction"
+    "Path",
+    "Ellipse"
   ]
 }

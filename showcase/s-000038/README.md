@@ -1,14 +1,23 @@
-# Standing Character Vector
+# Anica Agent UI Zoom Transition 10s
 
-A standing character built from MotionLoom scene primitives. The example keeps
-each major body part in a named group, then animates the right arm with simple
-FK-style parent-child rotations.
+ID: `s-000038`  
+Type: `core`  
+Domain: `scene`
 
-## What it demonstrates
+## Features
 
-- `Character` as a container for full-body vector artwork.
-- `Group` nodes for legs, arms, torso, neck, head, hair, and face details.
-- `Path`, `Rect`, and `Ellipse` primitives for a complete stylized character.
-- A waving right arm driven by shoulder, forearm, and hand rotation curves.
-- MotionLoom-compatible `Ellipse x/y rx/ry` syntax converted from SVG-style
-  `cx/cy rx/ry` input.
+transition, timeline, layout, defs, text, shape, path, gradient, character-action
+
+## DSL
+
+Graph, Scene, Timeline, Track, Sequence, Layer, Defs, Text, Rect, Circle, Group, Image, RadialGradient, curve
+
+## Teaches
+
+- Combine multiple MotionLoom features into a polished demo.
+- Use this as a reference for YouTube Short or promo-style output.
+- Study how features combine: transition, timeline, layout, defs, text, shape.
+
+## Use In Anica
+
+Open `main.motionloom`, copy all content, then paste it into the Anica VFX / MotionLoom page.

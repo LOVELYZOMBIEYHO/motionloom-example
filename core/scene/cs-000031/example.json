@@ -1,39 +1,50 @@
 {
   "id": "cs-000031",
   "type": "core",
-  "title": "Filled Shape Morph Intro 10s",
   "domain": "scene",
+  "title": "Scene Layer3D Static Background",
+  "summary": "Compare Layer3D z-depth and X/Y rotation against a static cyber grid background.",
+  "entry": "main.motionloom",
   "features": [
-    "shape",
-    "path",
-    "curve-animation",
-    "gradient",
-    "defs",
-    "glow",
-    "character-action",
-    "environment",
-    "layout"
+    "scene",
+    "layer3d",
+    "2.5d",
+    "zdepth",
+    "curve-animation"
   ],
   "dsl": [
     "Graph",
+    "Background",
     "Scene",
+    "Defs",
+    "LinearGradient",
+    "RadialGradient",
     "Timeline",
     "Track",
     "Sequence",
     "Layer",
-    "Defs",
+    "Layer3D",
     "Rect",
-    "Circle",
-    "Path",
-    "Group",
-    "RadialGradient",
+    "Line",
+    "Text",
+    "Repeat",
     "curve"
   ],
   "teaches": [
-    "Combine multiple MotionLoom features into a polished demo.",
-    "Use this as a reference for YouTube Short or promo-style output.",
-    "Study how features combine: shape, path, curve-animation, gradient, defs, glow."
+    "Use a static detailed background to judge Layer3D motion.",
+    "Animate z to change apparent size and depth.",
+    "Animate rotationX and rotationY to show perspective card tilt."
   ],
-  "source_path": "scene/motion_graphics/filled_shape_morph_intro_10s.motionloom",
-  "demo_url": ""
+  "source_path": "scene/camera/layer3d_static_background.motionloom",
+  "demo_url": "",
+  "related": [
+    "cs-000030",
+    "cs-000027"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Layer3D"
+  ],
+  "path": "core/scene/cs-000031/"
 }
