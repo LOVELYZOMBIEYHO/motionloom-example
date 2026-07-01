@@ -17,7 +17,7 @@
             <Circle x="400" y="230" radius="96" color="#F8FAFC" opacity="0.50" />
             <Circle x="560" y="230" radius="86" color="#F97316" opacity="0.58" />
             <Text value="BRIGHTNESS" x="400" y="218" fontFamily="Arial" fontWeight="900" fontSize="62" renderScale="4x" color="#FFFFFF" opacity="0.94" />
-            <Text value="brightness 1.3" x="400" y="274" fontFamily="Arial" fontSize="28" renderScale="4x" color="#CBD5E1" opacity="0.88" />
+            <Text value="brightness 0.3" x="400" y="274" fontFamily="Arial" fontSize="28" renderScale="4x" color="#CBD5E1" opacity="0.88" />
           </Layer>
         </Sequence>
       </Track>
@@ -29,7 +29,7 @@
     <Tex id="out" fmt="rgba16f" size={[800,450]} />
     <Pass id="fx_brightness" kind="compute" effect="brightness"
           in={["src"]} out={["out"]}
-          params={{ brightness: "1.3" }} />
+          params={{ brightness: "0.3" }} />
   </Process>
 
   <Present from="BrightnessProcess" />
