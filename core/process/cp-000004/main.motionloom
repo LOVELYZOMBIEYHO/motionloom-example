@@ -7,7 +7,7 @@
     <Pass id="post_glow_bloom" kind="compute"
           effect="glow_bloom"
           in={["src"]} out={["out"]}
-          params={{ threshold: "0.72", intensity: "1.45", sigma: "18.0" }} />
+          params={{ threshold: "0.32", intensity: "1.45", sigma: "18.0" }} />
   </Process>
 
   <Present from="GlowBloomAliasProcess" />
