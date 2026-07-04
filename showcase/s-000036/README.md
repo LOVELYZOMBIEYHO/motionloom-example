@@ -10,5 +10,12 @@ FK-style parent-child rotations.
 - `Group` nodes for legs, arms, torso, neck, head, hair, and face details.
 - `Path`, `Rect`, and `Ellipse` primitives for a complete stylized character.
 - A waving right arm driven by shoulder, forearm, and hand rotation curves.
+- `right_waving_forearm_control` as the main FK control for the waving forearm.
 - MotionLoom-compatible `Ellipse x/y rx/ry` syntax converted from SVG-style
   `cx/cy rx/ry` input.
+
+## Editable controls
+
+- `right_arm_group`: shoulder / whole raised arm direction.
+- `right_waving_forearm_control`: elbow / waving forearm rotation.
+- `right_hand_group`: wrist / palm orientation during the wave.

@@ -1,0 +1,182 @@
+<Graph fps={30} duration="6s" size={[1536,864]} renderSize={[1536,864]}>
+  <Background color="#000000" />
+
+  <Scene id="prompt_type_to_panel_transform">
+    <Defs>
+      <RadialGradient id="magenta_glow" cx="0.50" cy="0.50" r="0.55"
+                      stops="0:#00f5d4aa, 0.35:#14b8a666, 0.72:#08334422, 1:#00000000" />
+      <RadialGradient id="amber_glow" cx="0.50" cy="0.50" r="0.55"
+                      stops="0:#d9f99d88, 0.42:#84cc164c, 0.78:#1a2e051c, 1:#00000000" />
+      <RadialGradient id="violet_glow" cx="0.50" cy="0.50" r="0.55"
+                      stops="0:#3b82ffaa, 0.42:#1d4ed855, 0.80:#0b102620, 1:#00000000" />
+      <LinearGradient id="prompt_fill" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#021012ee, 0.38:#06343aaa, 0.68:#12385f77, 1:#02050cee" />
+      <LinearGradient id="panel_fill" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#02060aee, 0.42:#061f2acc, 0.70:#123f4388, 1:#020506ee" />
+      <LinearGradient id="panel_edge" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#ffffff33, 0.42:#ffffff18, 1:#ffffff44" />
+      <RadialGradient id="button_pressed_glow" cx="0.50" cy="0.50" r="0.50"
+                      stops="0:#6f7174ee, 1:#6f7174ee" />
+      <Mask id="typing_reveal_clip" shape="rect"
+            x="120" y="360"
+            width={curve("0:120:linear, 0.24:258:ease_out, 0.57:366:ease_out, 0.90:486:ease_out, 1.22:548:ease_out, 1.54:590:ease_out, 2.28:590:linear, 2.42:590:linear")}
+            height="90"
+            radius="0"
+            feather="0"
+            opacity="1" />
+      <Mask id="send_button_clip" shape="circle" x="1375" y="406" radius="52" feather="0" opacity="1" />
+      <Mask id="hello_world_scene_clip" shape="rect" x="424" y="284" width="688" height="336" radius="22" feather="0" opacity="1" />
+    </Defs>
+
+    <Timeline>
+      <Track id="background_track" space="world" z="-10">
+        <Sequence from="0s" duration="6s" out="hold">
+          <Layer>
+            <Circle x="590" y="-90" radius="440" fill="url(#violet_glow)" opacity="0.55" blend="screen" />
+            <Circle x="820" y="380" radius="520" fill="url(#magenta_glow)" opacity="0.72" blend="screen" />
+            <Circle x="1110" y="665" radius="430" fill="url(#amber_glow)" opacity="0.52" blend="screen" />
+            <Circle x="1460" y="80" radius="250" fill="#000000" opacity="0.86" />
+            <Circle x="210" y="90" radius="500" fill="#000000" opacity="0.76" />
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="prompt_track" space="world" z="0">
+        <Sequence from="0s" duration="6s" out="hold">
+          <Layer>
+            <Group id="prompt_card">
+              <Rect id="prompt_panel_shadow"
+                    x={curve("0:52:ease_in_out, 2.34:52:linear, 3.16:214:ease_in_out, 5:214:linear")}
+                    y={curve("0:334:ease_in_out, 2.34:334:linear, 3.16:28:ease_in_out, 5:28:linear")}
+                    width={curve("0:1432:ease_in_out, 2.34:1432:linear, 3.16:1110:ease_in_out, 5:1110:linear")}
+                    height={curve("0:156:ease_in_out, 2.34:156:linear, 3.16:808:ease_in_out, 5:808:linear")}
+                    radius={curve("0:76:ease_in_out, 2.34:76:linear, 3.16:52:ease_in_out, 5:52:linear")}
+                    fill="#000000"
+                    opacity={curve("0:0.62:linear, 2.34:0.62:linear, 3.16:0.86:ease_in_out, 5:0.86:linear")} />
+
+              <Rect id="prompt_panel_fill"
+                    x={curve("0:50:ease_in_out, 2.34:50:linear, 3.16:216:ease_in_out, 5:216:linear")}
+                    y={curve("0:328:ease_in_out, 2.34:328:linear, 3.16:22:ease_in_out, 5:22:linear")}
+                    width={curve("0:1436:ease_in_out, 2.34:1436:linear, 3.16:1104:ease_in_out, 5:1104:linear")}
+                    height={curve("0:158:ease_in_out, 2.34:158:linear, 3.16:808:ease_in_out, 5:808:linear")}
+                    radius={curve("0:76:ease_in_out, 2.34:76:linear, 3.16:52:ease_in_out, 5:52:linear")}
+                    fill="url(#panel_fill)"
+                    opacity="0.92" />
+
+              <Rect id="prompt_panel_border"
+                    x={curve("0:50:ease_in_out, 2.34:50:linear, 3.16:216:ease_in_out, 5:216:linear")}
+                    y={curve("0:328:ease_in_out, 2.34:328:linear, 3.16:22:ease_in_out, 5:22:linear")}
+                    width={curve("0:1436:ease_in_out, 2.34:1436:linear, 3.16:1104:ease_in_out, 5:1104:linear")}
+                    height={curve("0:158:ease_in_out, 2.34:158:linear, 3.16:808:ease_in_out, 5:808:linear")}
+                    radius={curve("0:76:ease_in_out, 2.34:76:linear, 3.16:52:ease_in_out, 5:52:linear")}
+                    fill="#00000000"
+                    stroke="#ffffff44"
+                    strokeWidth={curve("0:4:linear, 2.34:4:linear, 3.16:3:ease_in_out, 4.5:3:linear")}
+                    opacity="0.86" />
+            </Group>
+
+            <Group id="typing_cursor_group" opacity={curve("0:1:linear, 2.26:1:linear, 2.42:0:ease_in")}>
+              <Line id="typing_cursor"
+                    x={curve("0:258:linear, 0.26:430:linear, 0.59:495:linear, 0.92:665:linear, 1.24:690:linear, 1.54:690:linear, 2.04:690:linear, 2.30:690:linear")}
+                    y="386"
+                    x1="0" y1="0" x2="0" y2="78"
+                    stroke="#ffffff"
+                    strokeWidth="4"
+                    lineCap="round"
+                    opacity={curve("0:1:linear, 0.18:1:linear, 0.19:0:linear, 0.34:0:linear, 0.35:1:linear, 1.95:1:linear, 2.08:0:ease_in, 4.5:0:linear")} />
+            </Group>
+
+            <Group id="send_button_base"
+                   x="1375"
+                   y="406"
+                   scale={curve("0:1:linear, 2.02:1:linear, 2.12:0.86:ease_in_out, 2.24:1.02:ease_out, 4.5:1.02:linear")}
+                   opacity={curve("0:1:linear, 2.30:1:linear, 2.40:0:ease_in, 4.5:0:linear")}>
+              <Circle x="0" y="0" radius="54" fill="#ffffff" opacity={curve("0:0:linear, 1.96:0:linear, 2.06:0.22:ease_out, 2.24:0.12:ease_in_out, 2.36:0:ease_in, 4.5:0:linear")} />
+              <Circle x="0" y="0" radius="52" fill="#0077c8" opacity={curve("0:0.96:linear, 2.22:0.96:linear, 2.38:0:ease_in, 4.5:0:linear")} />
+            </Group>
+
+            <Group id="send_button_pressed"
+                   x="1375"
+                   y="406"
+                   scale={curve("0:0.86:linear, 2.30:0.86:linear, 2.42:1:ease_out, 2.52:0:ease_in")}
+                   opacity={curve("0:0:linear, 2.30:0:linear, 2.42:0.92:ease_out, 2.52:0:ease_in, 4.5:0:linear")}>
+              <Circle x="0" y="0" radius="52" fill="url(#button_pressed_glow)" opacity="1" />
+            </Group>
+
+            <Group id="panel_final_content" opacity={curve("0:0:linear, 3.22:0:linear, 3.42:1:ease_out, 6:1:linear")}>
+              <Text value="Make a Hello World scene" x="970" y="126" fontFamily="Arial" fontWeight="900" fontSize="27" color="#ffffff" opacity={curve("3.22:0:linear, 3.48:0.96:ease_out, 6:0.96:linear")} />
+              <Group id="hello_world_mini_scene"
+                     opacity={curve("3.24:0:linear, 3.54:1:ease_out, 6:1:linear")}
+                     scale={curve("3.24:0.86:ease_out, 3.54:1:ease_out, 6:1:linear")}
+                     transformOriginX="768"
+                     transformOriginY="430">
+                <Rect x="408" y="250" width="720" height="390" radius="34" fill="#020817" stroke="#7dd3fc55" strokeWidth="2" opacity="0.96" />
+                <Line x1="448" y1="310" x2="1088" y2="310" stroke="#ffffff18" strokeWidth="1.5" />
+                <Circle x="464" y="282" radius="6" fill="#ef4444" opacity="0.88" />
+                <Circle x="486" y="282" radius="6" fill="#facc15" opacity="0.88" />
+                <Circle x="508" y="282" radius="6" fill="#22c55e" opacity="0.88" />
+              </Group>
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="typing_reveal_track" space="world" z="1">
+        <Sequence from="0s" duration="6s" out="hold">
+          <Layer id="typing_reveal_layer" mask="typing_reveal_clip" maskMode="alpha">
+            <Text id="typing_full_text"
+                  value="Make a Hello World scene"
+                  x="136"
+                  y="392"
+                  fontFamily="Arial"
+                  fontWeight="900"
+                  fontSize="46"
+                  color="#ffffff"
+                  opacity={curve("0:1:linear, 2.26:1:linear, 2.42:0:ease_in, 4.5:0:linear")} />
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="send_arrow_mask_track" space="world" z="2">
+        <Sequence from="0s" duration="6s" out="hold">
+          <Layer id="send_arrow_mask_layer" mask="send_button_clip" maskMode="alpha">
+            <Group id="send_arrow_base"
+                   x="1375"
+                   y="406"
+                   scale={curve("0:1:linear, 2.02:1:linear, 2.12:0.86:ease_in_out, 2.24:1.02:ease_out, 4.5:1.02:linear")}
+                   opacity={curve("0:1:linear, 2.30:1:linear, 2.40:0:ease_in, 4.5:0:linear")}>
+              <Group id="send_arrow_rise"
+                     y={curve("0:0:linear, 2.02:0:linear, 2.16:-10:ease_out, 2.34:-76:ease_in")}
+                     opacity="1">
+                <Line x1="0" y1="26" x2="0" y2="-30" stroke="#ffffff" strokeWidth="4" lineCap="round"
+                      opacity="1" />
+                <Line x1="0" y1="-30" x2="-22" y2="-8" stroke="#ffffff" strokeWidth="4" lineCap="round"
+                      opacity="1" />
+                <Line x1="0" y1="-30" x2="22" y2="-8" stroke="#ffffff" strokeWidth="4" lineCap="round"
+                      opacity="1" />
+              </Group>
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="hello_world_scene_masked_track" space="world" z="3">
+        <Sequence from="0s" duration="6s" out="hold">
+          <Layer id="hello_world_scene_masked_layer" mask="hello_world_scene_clip" maskMode="alpha">
+            <Group id="hello_world_scene_content"
+                   opacity={curve("0:0:linear, 3.58:0:linear, 3.92:1:ease_out, 6:1:linear")}>
+              <Circle x="560" y="366" radius="170" fill="#2563eb33" blend="screen" />
+              <Circle x="980" y="500" radius="190" fill="#22c55e26" blend="screen" />
+              <Circle x="760" y="430" radius="260" fill="#a855f71c" blend="screen" />
+              <Rect x="448" y="330" width="640" height="250" radius="26" fill="#07111f88" stroke="#38bdf822" strokeWidth="1.5" opacity="0.88" />
+              <Text value="HELLO WORLD" x="center" y="432" fontFamily="Arial" fontWeight="900" fontSize="76" color="#ffffff" opacity={curve("4.58:0:linear, 4.92:0.98:ease_out, 6:0.98:linear")} />
+              <Text value="SCENE PREVIEW" x="center" y="520" fontFamily="Arial" fontWeight="700" fontSize="20" textGap="5" color="#93c5fd" opacity={curve("4.72:0:linear, 5.04:0.74:ease_out, 6:0.74:linear")} />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="prompt_type_to_panel_transform" />
+</Graph>
