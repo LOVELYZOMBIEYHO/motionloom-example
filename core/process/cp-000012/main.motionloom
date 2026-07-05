@@ -8,10 +8,10 @@
           effect="hsla_overlay"
           in={["src"]} out={["out"]}
           params={{
-            hue: "curve(\"0:205:linear, 1.2:285:ease_in_out, 2.1:32:ease_in_out, 3:205:ease_out\")",
-            saturation: "curve(\"0:0.18:linear, 1.2:0.46:ease_out, 2.1:0.34:ease_in_out, 3:0.20:ease_in\")",
-            lightness: "curve(\"0:0.02:linear, 1.2:0.10:ease_out, 2.1:-0.03:ease_in_out, 3:0.02:ease_in\")",
-            alpha: "curve(\"0:0.18:linear, 1.2:0.58:ease_out, 2.1:0.42:ease_in_out, 3:0.22:ease_in\")"
+            hue: "205.0",
+            saturation: "0.34",
+            lightness: "0.04",
+            alpha: "0.32"
           }} />
   </Process>
 

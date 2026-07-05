@@ -8,7 +8,7 @@
           <Layer>
             <Rect x="0" y="0" width="800" height="450" color="#05070D" />
             <Circle x="400" y="225" radius="116" color="#1D4ED8" opacity="0.35" blend="screen" />
-            <Circle x="400" y="225" radius={curve("0:34:linear, 1.5:52:ease_in_out, 3:34:ease_in_out")} color="#FFFFFF" opacity="0.92" blend="screen" />
+            <Circle x="400" y="225" radius="44" color="#FFFFFF" opacity="0.92" blend="screen" />
             <Text x="400" y="242" value="GLOW" fontSize="108" fontWeight="900" renderScale="4x" color="#FFFFFF" opacity="0.95" />
             <Text x="400" y="300" value="effect=&quot;glow_stack&quot;" fontSize="24" color="#A5F3FC" opacity="0.80" />
           </Layer>

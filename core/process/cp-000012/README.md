@@ -15,11 +15,11 @@ process, gpu-pipeline, color, hsla_overlay, tint, layer-fx
 
 ## DSL
 
-Graph, Background, Process, Input, Tex, Pass, Present, hsla_overlay, curve
+Graph, Background, Process, Input, Tex, Pass, Present, hsla_overlay
 
 ## Teaches
 
-- Use `effect="hsla_overlay"` for animated color wash and tinting.
+- Use `effect="hsla_overlay"` for a fixed color wash and tinting.
 - Control `hue`, `saturation`, `lightness`, and `alpha` independently.
 - Use low alpha for grading and higher alpha for stylized color pulses.
 

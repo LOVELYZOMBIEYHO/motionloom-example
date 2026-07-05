@@ -15,7 +15,7 @@
   "properties": {
     "id": {
       "type": "string",
-      "pattern": "^(cs|cw|cp|cm|ct|s)-[0-9]{6}$"
+      "pattern": "^(cs|cw|cp|cpt|cm|ct|s)-[0-9]{6}$"
     },
     "type": {
       "type": "string",
@@ -33,6 +33,7 @@
         "scene",
         "world",
         "process",
+        "process_with_time",
         "composition",
         "text"
       ]

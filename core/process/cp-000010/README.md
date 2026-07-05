@@ -19,7 +19,7 @@ Graph, Background, Process, Input, Tex, Pass, Present, light_sweep
 
 ## Teaches
 
-- Use `effect="light_sweep"` for an animated directional highlight.
+- Use `effect="light_sweep"` for a fixed directional highlight.
 - Control sweep position, angle, width, softness, intensity, and color.
 
 ## Use In Anica

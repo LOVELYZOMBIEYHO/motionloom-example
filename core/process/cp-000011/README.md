@@ -1,4 +1,4 @@
-# Process Opacity Pulse
+# Process Opacity
 
 ID: `cp-000011`  
 Type: `core`  
@@ -15,13 +15,13 @@ process, gpu-pipeline, opacity, alpha, layer-fx
 
 ## DSL
 
-Graph, Background, Process, Input, Tex, Pass, Present, opacity, curve
+Graph, Background, Process, Input, Tex, Pass, Present, opacity
 
 ## Teaches
 
 - Use `effect="opacity"` for whole-layer alpha control.
-- Animate `opacity` with `curve(...)` for fades, pulses, and beat-style visibility changes.
-- In Anica Layer FX, this is useful for rhythmic flashes or partial layer reveal.
+- Use a fixed `opacity` value for partial layer reveal.
+- In Anica Layer FX, this is useful for static transparency or previewing alpha composition.
 
 ## Use In Anica
 

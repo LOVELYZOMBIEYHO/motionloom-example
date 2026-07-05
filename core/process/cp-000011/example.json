@@ -1,7 +1,7 @@
 {
   "id": "cp-000011",
   "type": "core",
-  "title": "Process Opacity Pulse",
+  "title": "Process Opacity",
   "domain": "process",
   "features": [
     "process",
@@ -18,14 +18,13 @@
     "Tex",
     "Pass",
     "Present",
-    "opacity",
-    "curve"
+    "opacity"
   ],
   "teaches": [
     "Use effect=\"opacity\" for whole-layer alpha control.",
-    "Animate opacity with curve(...) for fades, pulses, and beat-style visibility changes."
+    "Use a fixed opacity value for static transparency or partial layer reveal."
   ],
-  "source_path": "generated/process/opacity_pulse",
+  "source_path": "generated/process/opacity",
   "demo_url": "",
   "related": [
     "cp-000001",

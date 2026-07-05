@@ -1,0 +1,42 @@
+{
+  "id": "cpt-000002",
+  "type": "core",
+  "title": "Process With Time Opacity Pulse",
+  "domain": "process_with_time",
+  "features": [
+    "process",
+    "gpu-pipeline",
+    "opacity",
+    "alpha",
+    "layer-fx",
+    "curve-animation"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present",
+    "opacity",
+    "curve"
+  ],
+  "teaches": [
+    "Use effect=\"opacity\" with curve(...) for fades, pulses, and beat-style visibility changes.",
+    "Keep timed process examples separate from static core process examples."
+  ],
+  "source_path": "generated/process_with_time/opacity_pulse",
+  "demo_url": "",
+  "related": [
+    "cp-000011"
+  ],
+  "requires": [
+    "Graph",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present"
+  ]
+}

@@ -13,11 +13,12 @@ CORE_ROOT = ROOT / "core"
 SHOWCASE_ROOT = ROOT / "showcase"
 SCHEMA_PATH = ROOT / "schema" / "example.schema.json"
 TAG_REGISTRY_PATH = ROOT / "schema" / "tag-registry.json"
-DOMAINS = ("scene", "world", "process", "composition", "text")
+DOMAINS = ("scene", "world", "process", "process_with_time", "composition", "text")
 DOMAIN_PREFIX = {
     "scene": "cs",
     "world": "cw",
     "process": "cp",
+    "process_with_time": "cpt",
     "composition": "cm",
     "text": "ct",
 }
@@ -190,7 +191,7 @@ by_domain = ids_by(all_records, "domain")
 by_type = ids_by(all_records, "type")
 by_feature = ids_by(all_records, "features")
 by_dsl = ids_by(all_records, "dsl")
-domain_counts = {domain: len(by_domain.get(domain, [])) for domain in DOMAINS}
+domain_counts = {domain: len(by_domain.get(slug(domain), [])) for domain in DOMAINS}
 
 write(ROOT / "dataset/examples.jsonl", "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in all_records))
 write(ROOT / "dataset/core.jsonl", "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in core))
@@ -250,7 +251,7 @@ write(browse / "showcase.md", table(showcase, "# Showcase Examples", browse / "s
 
 idx = ["# Domain Index", "", "| Domain | Prefix | Count |", "|---|---|---:|"]
 for domain in DOMAINS:
-    ids = by_domain.get(domain, [])
+    ids = by_domain.get(slug(domain), [])
     idx.append(f"| [{domain}](domains/{domain}.md) | `{DOMAIN_PREFIX[domain]}-*` | {len(ids)} |")
     write(
         browse / "domains" / f"{domain}.md",

@@ -1,0 +1,43 @@
+{
+  "id": "cpt-000003",
+  "type": "core",
+  "title": "Process With Time HSLA Overlay",
+  "domain": "process_with_time",
+  "features": [
+    "process",
+    "gpu-pipeline",
+    "color",
+    "hsla_overlay",
+    "tint",
+    "layer-fx",
+    "curve-animation"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present",
+    "hsla_overlay",
+    "curve"
+  ],
+  "teaches": [
+    "Use effect=\"hsla_overlay\" with curve(...) for animated color wash and tinting.",
+    "Keep timed process examples separate from static core process examples."
+  ],
+  "source_path": "generated/process_with_time/hsla_overlay_curve",
+  "demo_url": "",
+  "related": [
+    "cp-000012"
+  ],
+  "requires": [
+    "Graph",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present"
+  ]
+}

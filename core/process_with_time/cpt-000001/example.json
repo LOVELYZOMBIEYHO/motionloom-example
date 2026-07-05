@@ -1,0 +1,42 @@
+{
+  "id": "cpt-000001",
+  "type": "core",
+  "title": "Process With Time Light Sweep",
+  "domain": "process_with_time",
+  "features": [
+    "process",
+    "gpu-pipeline",
+    "light",
+    "light_sweep",
+    "highlight",
+    "curve-animation"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present",
+    "light_sweep",
+    "curve"
+  ],
+  "teaches": [
+    "Use effect=\"light_sweep\" with curve(...) to animate sweep position.",
+    "Keep timed process examples separate from static core process examples."
+  ],
+  "source_path": "generated/process_with_time/light_sweep_curve",
+  "demo_url": "",
+  "related": [
+    "cp-000010"
+  ],
+  "requires": [
+    "Graph",
+    "Process",
+    "Input",
+    "Tex",
+    "Pass",
+    "Present"
+  ]
+}
