@@ -1,4 +1,4 @@
-# CP-000015 — Paper Texture Overlay
+# cp-000013 — Paper Texture Overlay
 
 This example shows `effect="texture_overlay"` as a Layer FX process.
 
