@@ -1,23 +1,31 @@
 {
-  "id": "cp-000016",
+  "id": "cs-000039",
   "type": "core",
-  "title": "Process Pass Mask",
-  "domain": "process",
+  "title": "Scene Process Pass Mask",
+  "domain": "scene",
   "features": [
+    "scene",
     "process",
     "gpu-pipeline",
     "mask",
     "pass-mask",
-    "luma-mask",
-    "layer-fx"
+    "luma-mask"
   ],
   "dsl": [
     "Graph",
+    "Background",
     "Scene",
     "Defs",
+    "LinearGradient",
     "RadialGradient",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Rect",
+    "Circle",
+    "Text",
     "Process",
-    "Input",
     "Tex",
     "Pass",
     "Present",
@@ -26,9 +34,10 @@
   ],
   "teaches": [
     "Use mask=\"...\" on <Pass> to limit a process effect to a mask texture.",
-    "Use maskMode=\"luma\" when the mask texture is black and white."
+    "Use maskMode=\"luma\" when the mask texture is black and white.",
+    "Keep process-pass-mask examples with Scene examples when the graph depends on scene textures."
   ],
-  "source_path": "generated/process/pass_mask",
+  "source_path": "generated/scene/process_pass_mask",
   "demo_url": "",
   "related": [
     "cs-000012",

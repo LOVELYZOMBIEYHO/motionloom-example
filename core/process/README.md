@@ -20,5 +20,4 @@ Generated indexes live in `../../browse/`.
 - `cp-000010` — `light_sweep`.
 - `cp-000011` — `opacity` pulse.
 - `cp-000012` — `hsla_overlay` color wash.
-- `cp-000013` — fixed `opacity` Layer FX.
-- `cp-000014` — fixed `hsla_overlay` Layer FX.
+- `cp-000015` — `texture_overlay`.

@@ -6,7 +6,7 @@
 | [abstract-background](features/abstract-background.md) | 1 |
 | [action](features/action.md) | 1 |
 | [actor](features/actor.md) | 2 |
-| [alpha](features/alpha.md) | 3 |
+| [alpha](features/alpha.md) | 2 |
 | [animation-target](features/animation-target.md) | 3 |
 | [anime](features/anime.md) | 1 |
 | [antialias](features/antialias.md) | 1 |
@@ -26,7 +26,6 @@
 | [character-rig](features/character-rig.md) | 8 |
 | [circle](features/circle.md) | 7 |
 | [color](features/color.md) | 15 |
-| [color-wash](features/color-wash.md) | 1 |
 | [component](features/component.md) | 4 |
 | [component-reuse](features/component-reuse.md) | 1 |
 | [curve](features/curve.md) | 2 |
@@ -41,7 +40,6 @@
 | [eyes](features/eyes.md) | 1 |
 | [facejaw](features/facejaw.md) | 1 |
 | [filter](features/filter.md) | 1 |
-| [fixed-params](features/fixed-params.md) | 2 |
 | [fk](features/fk.md) | 2 |
 | [gaussian-5tap-blur](features/gaussian-5tap-blur.md) | 1 |
 | [gaussian-5tap-h](features/gaussian-5tap-h.md) | 1 |
@@ -51,7 +49,7 @@
 | [glow](features/glow.md) | 24 |
 | [glow-stack](features/glow-stack.md) | 1 |
 | [gpu-friendly](features/gpu-friendly.md) | 2 |
-| [gpu-pipeline](features/gpu-pipeline.md) | 21 |
+| [gpu-pipeline](features/gpu-pipeline.md) | 19 |
 | [gradient](features/gradient.md) | 28 |
 | [gradients](features/gradients.md) | 2 |
 | [grading](features/grading.md) | 1 |
@@ -60,7 +58,7 @@
 | [group-mask](features/group-mask.md) | 1 |
 | [highlight](features/highlight.md) | 2 |
 | [highlights](features/highlights.md) | 1 |
-| [hsla-overlay](features/hsla-overlay.md) | 3 |
+| [hsla-overlay](features/hsla-overlay.md) | 2 |
 | [ik](features/ik.md) | 2 |
 | [image](features/image.md) | 1 |
 | [image-asset](features/image-asset.md) | 4 |
@@ -68,7 +66,7 @@
 | [keyframe-animation](features/keyframe-animation.md) | 2 |
 | [keyframe-editing](features/keyframe-editing.md) | 1 |
 | [layer](features/layer.md) | 3 |
-| [layer-fx](features/layer-fx.md) | 9 |
+| [layer-fx](features/layer-fx.md) | 6 |
 | [layer3d](features/layer3d.md) | 4 |
 | [layout](features/layout.md) | 19 |
 | [light](features/light.md) | 3 |
@@ -85,7 +83,7 @@
 | [mesh-topology](features/mesh-topology.md) | 1 |
 | [mirrored-character](features/mirrored-character.md) | 1 |
 | [neon](features/neon.md) | 2 |
-| [opacity](features/opacity.md) | 5 |
+| [opacity](features/opacity.md) | 4 |
 | [page-turn](features/page-turn.md) | 1 |
 | [paper-texture](features/paper-texture.md) | 2 |
 | [particles](features/particles.md) | 1 |
@@ -96,7 +94,7 @@
 | [portrait](features/portrait.md) | 3 |
 | [pose](features/pose.md) | 3 |
 | [procedural-texture](features/procedural-texture.md) | 2 |
-| [process](features/process.md) | 37 |
+| [process](features/process.md) | 35 |
 | [promo](features/promo.md) | 2 |
 | [prompt-ui](features/prompt-ui.md) | 1 |
 | [puppet](features/puppet.md) | 3 |
@@ -109,7 +107,7 @@
 | [rgb-glitch](features/rgb-glitch.md) | 2 |
 | [rounded-panel](features/rounded-panel.md) | 1 |
 | [scanlines](features/scanlines.md) | 2 |
-| [scene](features/scene.md) | 48 |
+| [scene](features/scene.md) | 49 |
 | [sequence](features/sequence.md) | 1 |
 | [shape](features/shape.md) | 33 |
 | [sin](features/sin.md) | 2 |
