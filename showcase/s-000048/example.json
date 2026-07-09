@@ -1,0 +1,57 @@
+{
+  "id": "s-000048",
+  "type": "showcase",
+  "title": "Dual Cursed Eye Path Animation",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "anime",
+    "eyes",
+    "eye",
+    "path",
+    "masking",
+    "gaze-animation",
+    "blink-animation",
+    "curve-animation",
+    "gradients",
+    "glow"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "RadialGradient",
+    "LinearGradient",
+    "Mask",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Rect",
+    "Circle",
+    "Line",
+    "Path",
+    "Present",
+    "curve"
+  ],
+  "teaches": [
+    "Build a dramatic dual-eye anime-style shot with only MotionLoom Path, Circle, Line, and Group primitives.",
+    "Mask the animated iris groups so large rotating Path details stay inside the eye shape.",
+    "Keep all major eye parts in named groups so the landing page scene controls can edit them."
+  ],
+  "source_path": "showcase/s-000048",
+  "demo_url": "",
+  "related": [
+    "s-000034",
+    "s-000035"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Timeline",
+    "Path",
+    "Present"
+  ]
+}

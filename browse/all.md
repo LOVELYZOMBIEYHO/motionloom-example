@@ -86,6 +86,7 @@
 | [s-000045](../showcase/s-000045/) | showcase | scene | Static Motionloom Title Card | static-composition, typography, shape, gradient, glow | Create a polished static title card without timeline animation.<br>Use gradients, glow layers, and repeated particles for depth. |
 | [s-000046](../showcase/s-000046/) | showcase | scene | AnimationTarget Kinetic Shapes | animation-target, keyframe-editing, shape, timeline, transform | Use AnimationTarget nodes to animate existing scene nodes by id.<br>Drive x, y, rotation, scale, and opacity without inline curve attributes. |
 | [s-000047](../showcase/s-000047/) | showcase | scene | Prompt Typing To Panel Transform | typing-effect, prompt-ui, transform, rounded-panel, abstract-background | Create a typing effect using fixed Text nodes and timed opacity.<br>Transform a prompt bar into a large rounded panel with numeric curves. |
+| [s-000048](../showcase/s-000048/) | showcase | scene | Dual Cursed Eye Path Animation | scene, anime, eyes, eye, path | Build a dramatic dual-eye anime-style shot with only MotionLoom Path, Circle, Line, and Group primitives.<br>Mask the animated iris groups so large rotating Path details stay inside the eye shape. |
 | [cw-000001](../core/world/cw-000001/) | core | world | DSL Action Basic | action | Define the smallest Action with one Pose. |
 | [cw-000002](../core/world/cw-000002/) | core | world | DSL Actor Basic | actor | Place one Actor in a World. |
 | [cw-000003](../core/world/cw-000003/) | core | world | DSL Bone Basic | bone | Set one Bone transform inside a Pose. |

@@ -3,3 +3,4 @@
 | ID | Type | Domain | Title | Features | Teaches |
 |---|---|---|---|---|---|
 | [s-000035](../../showcase/s-000035/) | showcase | scene | High Detail Bishoujo Eye Gaze Squint | scene, character, eye, anime, iris-detail | Build a detailed anime-style eye from layered paths, gradients, and highlights.<br>Animate gaze left, return to center, and then narrow the eye into a squint. |
+| [s-000048](../../showcase/s-000048/) | showcase | scene | Dual Cursed Eye Path Animation | scene, anime, eyes, eye, path | Build a dramatic dual-eye anime-style shot with only MotionLoom Path, Circle, Line, and Group primitives.<br>Mask the animated iris groups so large rotating Path details stay inside the eye shape. |

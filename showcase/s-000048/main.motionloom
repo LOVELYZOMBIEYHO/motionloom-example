@@ -1,0 +1,268 @@
+<Graph fps={30} duration="6s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#FFFFFF" />
+
+  <Scene id="dual_cursed_eye_path_animation">
+    <Defs>
+      <RadialGradient id="left_red_aura" cx="0.50" cy="0.50" r="0.58"
+                      stops="0:#ff2a1f88, 0.34:#e11d4866, 0.72:#7f1d1d24, 1:#00000000" />
+      <RadialGradient id="right_violet_aura" cx="0.50" cy="0.50" r="0.60"
+                      stops="0:#f0abff88, 0.35:#a855f766, 0.72:#581c8728, 1:#00000000" />
+      <RadialGradient id="left_iris_fill" cx="0.50" cy="0.45" r="0.72"
+                      stops="0:#ff3b30, 0.45:#ef1d1d, 0.76:#8f1111, 1:#220303" />
+      <RadialGradient id="right_iris_fill" cx="0.50" cy="0.50" r="0.78"
+                      stops="0:#fff1ff, 0.32:#f5c7ff, 0.67:#c084fc, 1:#4c1d95" />
+      <LinearGradient id="sclera_left" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#ffffff, 0.42:#e5e7eb, 0.72:#fef2f2, 1:#ffffff" />
+      <LinearGradient id="sclera_right" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#ffe4ff, 0.40:#f5d0fe, 0.70:#fce7f3, 1:#ffffff" />
+      <Filter id="soft_eyelid_blur">
+        <Blur radius="22" />
+      </Filter>
+
+      <Precompose id="left_eye_aperture_matte" size={[1920,1080]}>
+        <Path id="left_eye_aperture_shape"
+              d={morph("0:M 28 512 C 190 378 448 364 680 486 C 478 642 192 632 28 512 Z",
+                       "2.92:M 28 512 C 190 378 448 364 680 486 C 478 642 192 632 28 512 Z",
+                       "3.12:M 28 512 C 190 496 448 492 680 486 C 478 520 192 520 28 512 Z",
+                       "3.26:M 28 512 C 190 496 448 492 680 486 C 478 520 192 520 28 512 Z",
+                       "3.48:M 28 512 C 190 378 448 364 680 486 C 478 642 192 632 28 512 Z",
+                       "6:M 28 512 C 190 378 448 364 680 486 C 478 642 192 632 28 512 Z")}
+              fill="#ffffff"
+              stroke="none" />
+      </Precompose>
+
+      <Precompose id="right_eye_aperture_matte" size={[1920,1080]}>
+        <Path id="right_eye_aperture_shape"
+              d={morph("0:M 1204 500 C 1348 356 1622 354 1872 492 C 1648 642 1382 636 1204 500 Z",
+                       "3.02:M 1204 500 C 1348 356 1622 354 1872 492 C 1648 642 1382 636 1204 500 Z",
+                       "3.18:M 1204 500 C 1348 490 1622 488 1872 492 C 1648 516 1382 516 1204 500 Z",
+                       "3.30:M 1204 500 C 1348 490 1622 488 1872 492 C 1648 516 1382 516 1204 500 Z",
+                       "3.52:M 1204 500 C 1348 356 1622 354 1872 492 C 1648 642 1382 636 1204 500 Z",
+                       "6:M 1204 500 C 1348 356 1622 354 1872 492 C 1648 642 1382 636 1204 500 Z")}
+              fill="#ffffff"
+              stroke="none" />
+      </Precompose>
+
+      <Precompose id="left_soft_eyelids" size={[1920,1080]}>
+        <Path id="left_soft_upper_lid"
+              d="M 0 408 C 198 278 520 286 704 492 C 506 416 238 410 58 522 C 26 492 6 450 0 408 Z"
+              fill="#000000"
+              opacity="0.82" />
+        <Path id="left_soft_lower_lid"
+              d="M 8 552 C 216 640 530 628 704 488 C 526 722 190 732 8 552 Z"
+              fill="#000000"
+              opacity="0.80" />
+      </Precompose>
+
+      <Precompose id="right_soft_eyelids" size={[1920,1080]}>
+        <Path id="right_soft_upper_lid"
+              d="M 1164 488 C 1372 288 1668 272 1920 416 C 1860 454 1818 486 1784 510 C 1592 416 1372 412 1164 488 Z"
+              fill="#000000"
+              opacity="0.82" />
+        <Path id="right_soft_lower_lid"
+              d="M 1170 488 C 1398 642 1698 644 1914 552 C 1708 724 1382 730 1170 488 Z"
+              fill="#000000"
+              opacity="0.80" />
+      </Precompose>
+    </Defs>
+
+    <Timeline>
+      <Track id="eye_rigs" space="screen" z="10">
+        <Sequence from="0s" duration="6s" out="hold">
+          <Layer>
+            <Rect id="top_void" x="0" y="0" width="1920" height="286" color="#000000" opacity="0.98" />
+            <Rect id="bottom_void" x="0" y="675" width="1920" height="405" color="#000000" opacity="0.98" />
+
+            <Group id="left_eye_all_group"
+                   x="0"
+                   y="0"
+                   rotation="0"
+                   scale="1"
+                   transformOriginX="360"
+                   transformOriginY="505">
+              <Circle id="left_outer_red_bleed" x="356" y="502" radius="340" fill="url(#left_red_aura)" opacity={curve("0:0.34:linear, 1.25:0.72:ease_in_out, 2.20:0.42:ease_out, 3.75:0.84:ease_in_out, 6:0.36:linear")} />
+              <Layer id="left_soft_eyelid_blur_layer"
+                     source="left_soft_eyelids"
+                     effect="soft_eyelid_blur"
+                     opacity="0.82" />
+
+              <Group id="left_eye_visible_masked" maskFrom="left_eye_aperture_matte" maskMode="alpha">
+                <Group id="left_eye_sclera" transformOriginX="360" transformOriginY="500">
+                  <Path id="left_eye_white_shape"
+                        d="M 28 512 C 190 378 448 364 680 486 C 478 642 192 632 28 512 Z"
+                        fill="url(#sclera_left)"
+                        stroke="#111111"
+                        strokeWidth="8"
+                        opacity="0.98" />
+                  <Path id="left_eye_lower_shadow"
+                        d="M 92 552 C 254 630 470 620 650 510 C 496 656 228 666 56 540 Z"
+                        fill="url(#sclera_left)"
+                        opacity="0.72" />
+                  <Path id="left_eye_upper_lid"
+                        d="M 12 486 C 208 302 472 296 688 404 C 494 414 236 414 68 514 C 38 510 18 500 12 486 Z"
+                        fill="url(#sclera_left)"
+                        opacity="0.98" />
+                </Group>
+
+                <Group id="left_red_iris"
+                       x="346"
+                       y="502"
+                       rotation={curve("0:0:linear, 6:720:linear")}
+                       scale="1"
+                       transformOriginX="0"
+                       transformOriginY="0">
+                  <Circle id="left_iris_red_outer" x="0" y="0" radius="128" fill="url(#left_iris_fill)" opacity="0.98" />
+                  <Circle id="left_iris_red_mid" x="0" y="0" radius="96" color="#ff2018" opacity="0.96" />
+                  <Group id="left_iris_react_star" rotation={curve("0:0:linear, 6:-720:linear")} transformOriginX="0" transformOriginY="0">
+                    <Path id="left_iris_star_up" d="M 0 -118 L 36 -34 L 126 -24 L 58 34 L 78 118 L 0 72 L -78 118 L -58 34 L -126 -24 L -36 -34 Z" fill="#050505" opacity="0.92" />
+                    <Path id="left_iris_star_down" d="M 0 118 L -36 34 L -126 24 L -58 -34 L -78 -118 L 0 -72 L 78 -118 L 58 -34 L 126 24 L 36 34 Z" fill="#050505" opacity="0.82" />
+                    <Group id="left_iris_orbit_a" rotation="0" transformOriginX="0" transformOriginY="0">
+                      <Ellipse id="left_iris_orbit_a_ring" x="0" y="0" rx="116" ry="38" color="#00000000" stroke="#050505" strokeWidth="8" opacity="0.94" />
+                    </Group>
+                    <Group id="left_iris_orbit_b" rotation="60" transformOriginX="0" transformOriginY="0">
+                      <Ellipse id="left_iris_orbit_b_ring" x="0" y="0" rx="116" ry="38" color="#00000000" stroke="#050505" strokeWidth="8" opacity="0.94" />
+                    </Group>
+                    <Group id="left_iris_orbit_c" rotation="120" transformOriginX="0" transformOriginY="0">
+                      <Ellipse id="left_iris_orbit_c_ring" x="0" y="0" rx="116" ry="38" color="#00000000" stroke="#050505" strokeWidth="8" opacity="0.94" />
+                    </Group>
+                  </Group>
+                  <Circle id="left_iris_core" x="0" y="0" radius="34" color="#ff2018" stroke="#050505" strokeWidth="8" opacity="1" />
+                  <Circle id="left_pupil" x="0" y="0" radius="17" color="#050505" opacity="1" />
+                </Group>
+
+                <Path id="left_eye_inner_upper_shadow"
+                      d="M 622 430 C 470 360 196 366 26 496 C 212 458 438 456 622 536 Z"
+                      fill="#000000"
+                      opacity={curve("0:0.48:linear, 1.2:0.64:ease_in_out, 2.4:0.50:linear, 4.2:0.68:ease_in_out, 6:0.48:linear")} />
+                <Path id="left_eye_inner_lower_shadow"
+                      d="M 112 552 C 268 620 462 602 596 508 C 470 652 238 660 88 540 Z"
+                      fill="#000000"
+                      opacity="0.14" />
+                <Path id="left_eye_gloss_cut"
+                      d="M 118 468 C 260 400 430 400 570 498 C 430 464 250 470 120 535 Z"
+                      fill="#ffffff"
+                      opacity={curve("0:0.04:linear, 1.2:0.10:ease_in_out, 2.8:0.05:linear, 4.4:0.12:ease_in_out, 6:0.04:linear")} />
+                <Path id="left_iris_upper_shadow_overlay"
+                      d="M 92 452 C 232 412 470 414 606 502 C 462 474 260 474 104 530 Z"
+                      fill="#000000"
+                      opacity={curve("0:0.22:linear, 1.2:0.34:ease_in_out, 2.92:0.26:linear, 3.22:0.52:ease_in_out, 4.2:0.34:ease_in_out, 6:0.22:linear")} />
+              </Group>
+
+              <Path id="left_eye_upper_lid_occluder"
+                    d="M 12 420 C 208 302 472 296 688 486 C 494 414 236 414 68 514 C 38 492 18 454 12 420 Z"
+                    fill="#000000"
+                    opacity="0.62" />
+              <Path id="left_eye_lower_lid_occluder"
+                    d="M 28 548 C 230 620 516 606 688 488 C 512 688 198 700 28 548 Z"
+                    fill="#000000"
+                    opacity="0.62" />
+            </Group>
+
+            <Group id="right_eye_all_group"
+                   x="0"
+                   y="0"
+                   rotation="0"
+                   scale="1"
+                   transformOriginX="1510"
+                   transformOriginY="505">
+              <Circle id="right_outer_violet_bleed" x="1514" y="500" radius="360" fill="url(#right_violet_aura)" opacity={curve("0:0.38:linear, 1.45:0.76:ease_in_out, 2.70:0.42:ease_out, 4.15:0.88:ease_in_out, 6:0.40:linear")} />
+              <Layer id="right_soft_eyelid_blur_layer"
+                     source="right_soft_eyelids"
+                     effect="soft_eyelid_blur"
+                     opacity="0.82" />
+
+              <Group id="right_eye_visible_masked" maskFrom="right_eye_aperture_matte" maskMode="alpha">
+                <Group id="right_eye_sclera" transformOriginX="1510" transformOriginY="500">
+                  <Path id="right_eye_white_shape"
+                        d="M 1204 500 C 1348 356 1622 354 1872 492 C 1648 642 1382 636 1204 500 Z"
+                        fill="url(#sclera_right)"
+                        stroke="#1d1028"
+                        strokeWidth="8"
+                        opacity="0.98" />
+                  <Path id="right_eye_upper_lid"
+                        d="M 1184 420 C 1370 286 1652 300 1900 480 C 1668 408 1420 410 1238 500 C 1202 478 1188 450 1184 420 Z"
+                        fill="url(#sclera_right)"
+                        opacity="0.98" />
+                  <Path id="right_eye_lower_shadow"
+                        d="M 1255 548 C 1428 626 1658 616 1830 506 C 1650 662 1398 662 1230 536 Z"
+                        fill="url(#sclera_right)"
+                        opacity="0.72" />
+                </Group>
+
+                <Group id="right_violet_iris"
+                       x="1520"
+                       y="502"
+                       rotation="0"
+                       scale="1"
+                       transformOriginX="0"
+                       transformOriginY="0">
+                  <Circle id="right_iris_outer" x="0" y="0" radius="150" fill="url(#right_iris_fill)" opacity="0.96" />
+                  <Circle id="right_ring_outer" x="0" y="0" radius="126" color="#00000000" stroke="#2a1538" strokeWidth="7" opacity="0.78" />
+                  <Circle id="right_ring_mid" x="0" y="0" radius="82" color="#00000000" stroke="#2a1538" strokeWidth="6" opacity="0.74" />
+                  <Circle id="right_ring_inner" x="0" y="0" radius="44" color="#00000000" stroke="#2a1538" strokeWidth="5" opacity="0.78" />
+                  <Circle id="right_pupil" x="0" y="0" radius="18" color="#09010f" opacity="0.98" />
+                </Group>
+
+                <Path id="right_eye_inner_upper_shadow"
+                      d="M 1248 430 C 1400 360 1674 366 1844 496 C 1658 458 1432 456 1248 536 Z"
+                      fill="#1a0824"
+                      opacity={curve("0:0.42:linear, 1.2:0.60:ease_in_out, 2.4:0.44:linear, 4.2:0.64:ease_in_out, 6:0.42:linear")} />
+                <Path id="right_eye_inner_lower_shadow"
+                      d="M 1248 548 C 1428 618 1662 604 1834 506 C 1655 658 1394 662 1228 538 Z"
+                      fill="#16061f"
+                      opacity="0.14" />
+                <Path id="right_eye_gloss_cut"
+                      d="M 1270 468 C 1430 404 1650 404 1815 494 C 1648 470 1450 470 1260 540 Z"
+                      fill="#ffffff"
+                      opacity={curve("0:0.04:linear, 1.2:0.10:ease_in_out, 2.8:0.05:linear, 4.4:0.12:ease_in_out, 6:0.04:linear")} />
+                <Path id="right_iris_upper_shadow_overlay"
+                      d="M 1250 452 C 1412 412 1664 414 1822 500 C 1644 474 1440 474 1258 532 Z"
+                      fill="#12051a"
+                      opacity={curve("0:0.24:linear, 1.2:0.36:ease_in_out, 3.02:0.28:linear, 3.24:0.54:ease_in_out, 4.2:0.38:ease_in_out, 6:0.24:linear")} />
+              </Group>
+
+              <Path id="right_eye_upper_lid_occluder"
+                    d="M 1188 486 C 1382 306 1656 294 1900 420 C 1846 454 1812 480 1780 500 C 1598 414 1380 412 1188 486 Z"
+                    fill="#000000"
+                    opacity="0.62" />
+              <Path id="right_eye_lower_lid_occluder"
+                    d="M 1188 492 C 1406 622 1680 626 1878 548 C 1688 696 1394 704 1188 492 Z"
+                    fill="#000000"
+                    opacity="0.62" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="DualEyeGlowStackProcess">
+    <Tex id="src" fmt="rgba16f" from="scene:dual_cursed_eye_path_animation" />
+    <Tex id="glow_red" fmt="rgba16f" size={[1920,1080]} />
+    <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="left_eye_red_glow_stack" kind="compute"
+          effect="glow_stack"
+          in={["src"]} out={["glow_red"]}
+          params={{
+            threshold: "0.50",
+            intensity: "0.92",
+            radiusSmall: "5.0",
+            radiusMedium: "18.0",
+            radiusLarge: "60.0",
+            tint: "#ff2a1f"
+          }} />
+    <Pass id="right_eye_violet_glow_stack" kind="compute"
+          effect="glow_stack"
+          in={["glow_red"]} out={["out"]}
+          params={{
+            threshold: "0.58",
+            intensity: "0.78",
+            radiusSmall: "7.0",
+            radiusMedium: "22.0",
+            radiusLarge: "72.0",
+            tint: "#c084fc"
+          }} />
+  </Process>
+
+  <Present from="DualEyeGlowStackProcess" />
+</Graph>
