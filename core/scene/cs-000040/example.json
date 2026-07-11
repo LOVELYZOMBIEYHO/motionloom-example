@@ -1,0 +1,49 @@
+{
+  "id": "cs-000040",
+  "type": "core",
+  "title": "Group Mask Feather And Expansion",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "mask",
+    "group-mask",
+    "edge-smoothing",
+    "gpu-friendly"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "LinearGradient",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Rect",
+    "Circle",
+    "Text",
+    "Present",
+    "mask",
+    "maskMode"
+  ],
+  "teaches": [
+    "Use maskExpansion with a positive value to grow a Group mask or a negative value to contract it.",
+    "Use maskFeather after expansion to soften the final alpha boundary.",
+    "Animate maskFeather and maskExpansion with numeric expressions or curves when required."
+  ],
+  "source_path": "core/scene/cs-000040",
+  "demo_url": "",
+  "related": [
+    "cs-000012",
+    "cs-000039"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Timeline",
+    "Group",
+    "Present"
+  ]
+}

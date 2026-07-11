@@ -1,0 +1,60 @@
+{
+  "id": "s-000051",
+  "type": "showcase",
+  "title": "Inferno Anime Eye with Fire Noise Iris",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "anime",
+    "eye",
+    "fire",
+    "procedural-texture",
+    "material",
+    "noise",
+    "iris-detail",
+    "highlights",
+    "gaze-animation",
+    "blink-animation",
+    "curve-animation",
+    "gradients"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "Noise",
+    "Material",
+    "RadialGradient",
+    "LinearGradient",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Rect",
+    "Circle",
+    "Path",
+    "Present",
+    "curve"
+  ],
+  "teaches": [
+    "Build a dramatic anime eye with a flame-colored iris and apply a procedural fire noise material to the iris surface.",
+    "Reuse the fire noise and material definitions from s-000050 as a live internal texture for the eye.",
+    "Coordinate gaze shifts, a slow iris rotation, and a single blink while keeping the eye masked and layered."
+  ],
+  "source_path": "showcase/s-000051",
+  "demo_url": "",
+  "related": [
+    "s-000050",
+    "s-000049",
+    "s-000035"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Timeline",
+    "Path",
+    "Present"
+  ]
+}

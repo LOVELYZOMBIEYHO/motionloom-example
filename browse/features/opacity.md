@@ -2,6 +2,7 @@
 
 | ID | Type | Domain | Title | Features | Teaches |
 |---|---|---|---|---|---|
+| [cs-000041](../../core/scene/cs-000041/) | core | scene | Ordered Group Effect Stack | scene, group, filter, blur, opacity | Attach an ordered list of Filter ids to a Group with the effects attribute.<br>Apply Blur, ColorMatrix, and Opacity filters to the complete composited Group rather than each child. |
 | [s-000046](../../showcase/s-000046/) | showcase | scene | AnimationTarget Kinetic Shapes | animation-target, keyframe-editing, shape, timeline, transform | Use AnimationTarget nodes to animate existing scene nodes by id.<br>Drive x, y, rotation, scale, and opacity without inline curve attributes. |
 | [s-000047](../../showcase/s-000047/) | showcase | scene | Prompt Typing To Panel Transform | typing-effect, prompt-ui, transform, rounded-panel, abstract-background | Create a typing effect using fixed Text nodes and timed opacity.<br>Transform a prompt bar into a large rounded panel with numeric curves. |
 | [cp-000011](../../core/process/cp-000011/) | core | process | Process Opacity | process, gpu-pipeline, opacity, alpha, layer-fx | Use effect="opacity" for whole-layer alpha control.<br>Use a fixed opacity value for static transparency or partial layer reveal. |

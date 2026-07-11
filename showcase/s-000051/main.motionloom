@@ -1,0 +1,279 @@
+<Graph fps={30} duration="6s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#120505" />
+
+  <Scene id="inferno_anime_eye_fire_noise">
+    <Defs>
+      <!-- Fire noise and material reused from s-000050 -->
+      <Noise id="fire_noise" type="flow" scale="11" octaves="5" seed="17" contrast="1.72" evolution={curve("0:0:linear, 6:8:linear")} />
+      <Material id="fire_material" texture="fire_noise" textureAmount="0.86" displacement="fire_noise" displacementAmount="46" roughness="0.28" specular="0.48" />
+
+      <!-- Fire palette -->
+      <LinearGradient id="fire_fill" x1="0" y1="1" x2="0" y2="0" stops="0:#7a0900, 0.36:#ff3b08, 0.72:#ffb000, 1:#fff4a0" />
+      <RadialGradient id="iris_inferno" cx="0.50" cy="0.42" r="0.78" stops="0:#ff5a08, 0.38:#ff8a12, 0.68:#ffb628, 0.90:#ff5206, 1:#4a0500" />
+      <RadialGradient id="iris_core_dark" cx="0.50" cy="0.50" r="0.68" stops="0:#2a0500, 0.45:#4a0800, 0.78:#ff5206, 1:#ff8a12" />
+      <RadialGradient id="ember_glow" cx="0.50" cy="0.50" r="0.62" stops="0:#ff3b0888, 0.42:#ff6b0844, 0.78:#ff260518, 1:#00000000" />
+      <RadialGradient id="sclera_grad" cx="0.50" cy="0.50" r="0.72" stops="0:#fff8f2, 0.42:#ffebe0, 0.78:#f0d5c8, 1:#c9a89c" />
+      <LinearGradient id="skin_grad" x1="0" y1="0" x2="0" y2="1" stops="0:#2a1210, 0.45:#4a2520, 0.78:#6b3830, 1:#2a1512" />
+      <LinearGradient id="lid_shadow" x1="0" y1="0" x2="0" y2="1" stops="0:#000000d0, 0.42:#2a0a08a0, 1:#00000000" />
+
+      <Filter id="ember_blur">
+        <Blur radius="18" />
+      </Filter>
+      <Filter id="soft_lid_blur">
+        <Blur radius="14" />
+      </Filter>
+      <Filter id="tomoe_soft_blur">
+        <Blur radius="3.5" />
+      </Filter>
+      <Filter id="flame_soft_blur">
+        <Blur radius="2.5" />
+      </Filter>
+      <Filter id="lower_glow_blur">
+        <Blur radius="8" />
+      </Filter>
+
+      <!-- Eye aperture matte for masking iris and sclera -->
+      <Precompose id="eye_aperture_matte" size={[1920,1080]}>
+        <Path id="eye_aperture_shape"
+              d={morph("0:M 540 540 C 640 320 1280 320 1380 540 C 1280 760 640 760 540 540 Z",
+                       "1.80:M 540 540 C 640 320 1280 320 1380 540 C 1280 760 640 760 540 540 Z",
+                       "2.00:M 540 540 C 660 450 1260 450 1380 540 C 1260 630 660 630 540 540 Z",
+                       "2.22:M 540 540 C 660 450 1260 450 1380 540 C 1260 630 660 630 540 540 Z",
+                       "2.46:M 540 540 C 640 320 1280 320 1380 540 C 1280 760 640 760 540 540 Z",
+                       "6:M 540 540 C 640 320 1280 320 1380 540 C 1280 760 640 760 540 540 Z")}
+              fill="#ffffff"
+              stroke="none" />
+      </Precompose>
+
+      <!-- Soft upper eyelid for shadow -->
+      <Precompose id="soft_upper_eyelid" size={[1920,1080]}>
+        <Path id="soft_upper_eyelid_shape"
+              d="M 480 540 C 600 260 1320 260 1440 540 C 1320 340 1080 300 960 300 C 840 300 600 340 480 540 Z"
+              fill="#000000"
+              opacity="0.70" />
+      </Precompose>
+    </Defs>
+
+    <Timeline>
+      <Track id="inferno_eye_track" space="screen" z="10">
+        <Sequence from="0s" duration="6s" out="hold">
+          <Layer>
+            <!-- Ambient ember glow behind the eye -->
+            <Circle id="outer_ember_glow" x="960" y="540" radius="460" fill="url(#ember_glow)" opacity={curve("0:0.55:linear, 1.5:0.82:ease_in_out, 3.2:0.48:ease_out, 4.8:0.78:ease_in_out, 6:0.55:linear")} />
+            <Group id="outer_ember_glow_blur_group" effects={["ember_blur"]}>
+              <Circle id="outer_ember_glow_blur" x="960" y="540" radius="520" fill="url(#ember_glow)" opacity={curve("0:0.24:linear, 1.8:0.46:ease_in_out, 3.6:0.22:ease_out, 5.0:0.40:ease_in_out, 6:0.24:linear")} />
+            </Group>
+
+            <!-- Skin canvas -->
+            <Rect id="skin_canvas" x="0" y="0" width="1920" height="1080" fill="url(#skin_grad)" opacity="0.92" />
+
+            <!-- Masked eye contents -->
+            <Group id="eye_masked" maskFrom="eye_aperture_matte" maskMode="alpha">
+              <!-- Sclera -->
+              <Group id="sclera_group">
+                <Path id="sclera_shape"
+                      d="M 540 540 C 640 320 1280 320 1380 540 C 1280 760 640 760 540 540 Z"
+                      fill="url(#sclera_grad)"
+                      stroke="#1a0a08"
+                      strokeWidth="6"
+                      opacity="0.98" />
+                <Path id="sclera_lower_warmth"
+                      d="M 580 560 C 680 700 1240 700 1340 560 C 1240 740 680 740 580 560 Z"
+                      fill="#ff8a12"
+                      opacity="0.12" />
+              </Group>
+
+              <!-- Iris with fire noise material -->
+              <Group id="iris_transform_group"
+                     x={curve("0:0:ease_in_out, 1.2:0:ease_in_out, 1.8:-18:ease_in_out, 2.6:0:ease_in_out, 3.8:16:ease_in_out, 4.6:0:ease_in_out, 6:0:linear")}
+                     y={curve("0:0:ease_in_out, 1.0:0:ease_in_out, 1.6:-10:ease_in_out, 2.4:0:ease_in_out, 3.4:-12:ease_in_out, 4.2:0:ease_in_out, 6:0:linear")}
+                     rotation={curve("0:0:linear, 6:45:linear")}
+                     scale="1"
+                     transformOriginX="960"
+                     transformOriginY="540">
+                <Circle id="iris_outer_ring" x="960" y="540" radius="216" color="#2a0500" opacity="0.96" />
+
+                <!-- Fire-noise textured iris mass -->
+                <Group id="iris_fire_mass" material="fire_material" effects={["flame_soft_blur"]}>
+                  <Circle id="iris_color_disc" x="960" y="540" radius="204" fill="url(#iris_inferno)" />
+                  <Circle id="iris_core_shade" x="960" y="540" radius="168" fill="url(#iris_core_dark)" opacity="0.72" blend="multiply" />
+
+                  <!-- Radial flame tongues that give the noise something to displace -->
+                  <Path id="flame_tongue_01"
+                        d="M 960 744 C 912 664 930 580 960 540 C 990 580 1008 664 960 744 Z"
+                        fill="url(#fire_fill)"
+                        opacity="0.74" />
+                  <Path id="flame_tongue_02"
+                        d="M 960 744 C 1016 656 1052 596 960 540 C 946 596 928 672 960 744 Z"
+                        fill="#ff3b08"
+                        opacity="0.66" />
+                  <Path id="flame_tongue_03"
+                        d="M 960 744 C 876 660 852 592 960 540 C 942 596 916 668 960 744 Z"
+                        fill="#ffb000"
+                        opacity="0.62" />
+                </Group>
+
+                <!-- Inner iris depth gradient overlay -->
+                <Circle id="iris_inner_depth" x="960" y="540" radius="198" fill="url(#ember_glow)" opacity="0.30" blend="multiply" />
+
+                <!-- Mangekyou tomoe ring around the pupil -->
+                <Group id="mangekyou_group"
+                       x="960"
+                       y="540"
+                       rotation={curve("0:0:linear, 6:180:linear")}
+                       effects={["tomoe_soft_blur"]}
+                       transformOriginX="0"
+                       transformOriginY="0">
+                  <Group id="tomoe_a" rotation="0" transformOriginX="0" transformOriginY="0">
+                    <Path id="tomoe_shape_a"
+                          d="M 0 -128 C 20 -128 36 -70 36 0 C 36 70 20 128 0 128 C -20 128 -36 70 -36 0 C -36 -70 -20 -128 0 -128 Z"
+                          fill="#2a0500"
+                          stroke="#ffb000"
+                          strokeWidth="5"
+                          opacity="0.98" />
+                    <Path id="tomoe_flame_a"
+                          d="M 0 -112 C 14 -112 26 -62 26 0 C 26 62 14 112 0 112 C -14 112 -26 62 -26 0 C -26 -62 -14 -112 0 -112 Z"
+                          fill="url(#fire_fill)"
+                          opacity="0.88" />
+                  </Group>
+                  <Group id="tomoe_b" rotation="120" transformOriginX="0" transformOriginY="0">
+                    <Path id="tomoe_shape_b"
+                          d="M 0 -128 C 20 -128 36 -70 36 0 C 36 70 20 128 0 128 C -20 128 -36 70 -36 0 C -36 -70 -20 -128 0 -128 Z"
+                          fill="#2a0500"
+                          stroke="#ffb000"
+                          strokeWidth="5"
+                          opacity="0.98" />
+                    <Path id="tomoe_flame_b"
+                          d="M 0 -112 C 14 -112 26 -62 26 0 C 26 62 14 112 0 112 C -14 112 -26 62 -26 0 C -26 -62 -14 -112 0 -112 Z"
+                          fill="url(#fire_fill)"
+                          opacity="0.88" />
+                  </Group>
+                  <Group id="tomoe_c" rotation="240" transformOriginX="0" transformOriginY="0">
+                    <Path id="tomoe_shape_c"
+                          d="M 0 -128 C 20 -128 36 -70 36 0 C 36 70 20 128 0 128 C -20 128 -36 70 -36 0 C -36 -70 -20 -128 0 -128 Z"
+                          fill="#2a0500"
+                          stroke="#ffb000"
+                          strokeWidth="5"
+                          opacity="0.98" />
+                    <Path id="tomoe_flame_c"
+                          d="M 0 -112 C 14 -112 26 -62 26 0 C 26 62 14 112 0 112 C -14 112 -26 62 -26 0 C -26 -62 -14 -112 0 -112 Z"
+                          fill="url(#fire_fill)"
+                          opacity="0.88" />
+                  </Group>
+                </Group>
+
+                <!-- Pupil sits on top of the tomoe centers -->
+                <Circle id="pupil" x="960" y="540" radius="78" color="#0a0100" />
+                <Circle id="pupil_soft_ring" x="960" y="540" radius="92" color="#1a0400" opacity="0.50" />
+
+                <!-- Crescent moon symbol on the pupil center -->
+                <Group id="crescent_moon_group">
+                  <Circle id="moon_disc" x="960" y="540" radius="44" color="#fff4a0" opacity="0.95" blend="screen" />
+                  <Circle id="moon_cut" x="982" y="526" radius="42" color="#0a0100" opacity="1" />
+                </Group>
+              </Group>
+
+              <!-- Corneal highlights -->
+              <Group id="highlights_group">
+                <!-- Large top-left primary highlight like s-000034 -->
+                <Path id="primary_highlight"
+                      d="M 800 400 C 850 340 940 330 1000 360 C 960 400 910 450 870 450 C 830 445 805 425 800 400 Z"
+                      fill="#ffffff"
+                      opacity="0.98"
+                      blend="screen" />
+                <Circle id="primary_highlight_core" x="880" y="385" radius="38" color="#ffffff" opacity="1.00" blend="screen" />
+
+                <!-- Soft secondary highlight on the right -->
+                <Circle id="secondary_highlight" x="1100" y="460" radius="22" color="#fff4c8" opacity={curve("0:0.72:ease_in_out, 1.6:0.92:ease_in_out, 3.2:0.68:ease_in_out, 4.8:0.88:ease_in_out, 6:0.72:linear")} blend="screen" />
+
+                <!-- Sparkle on the upper iris area -->
+                <Circle id="sparkle_03" x="1060" y="520" radius="5" color="#fff4c8" opacity={curve("0:0.50:ease_in_out, 2.0:0.72:ease_in_out, 4.0:0.48:ease_in_out, 6:0.50:linear")} blend="screen" />
+              </Group>
+            </Group>
+
+            <!-- Upper eyelid shadow -->
+            <Layer id="upper_eyelid_shadow_layer" source="soft_upper_eyelid" effect="soft_lid_blur" opacity="0.74" />
+
+            <!-- Eyelid frame -->
+            <Group id="eyelid_frame_group">
+              <Path id="upper_lid_mass"
+                    d={morph("0:M 480 540 C 600 260 1320 260 1440 540 C 1320 400 1080 340 960 340 C 840 340 600 400 480 540 Z",
+                             "1.80:M 480 540 C 600 260 1320 260 1440 540 C 1320 400 1080 340 960 340 C 840 340 600 400 480 540 Z",
+                             "2.00:M 480 540 C 640 480 1280 480 1440 540 C 1320 560 1080 580 960 580 C 840 580 600 560 480 540 Z",
+                             "2.22:M 480 540 C 640 480 1280 480 1440 540 C 1320 560 1080 580 960 580 C 840 580 600 560 480 540 Z",
+                             "2.46:M 480 540 C 600 260 1320 260 1440 540 C 1320 400 1080 340 960 340 C 840 340 600 400 480 540 Z",
+                             "6:M 480 540 C 600 260 1320 260 1440 540 C 1320 400 1080 340 960 340 C 840 340 600 400 480 540 Z")}
+                    fill="url(#skin_grad)"
+                    opacity="0.98" />
+              <Path id="upper_lash_line"
+                    d={morph("0:M 540 540 C 640 320 1280 320 1380 540",
+                             "1.80:M 540 540 C 640 320 1280 320 1380 540",
+                             "2.00:M 540 540 C 660 450 1260 450 1380 540",
+                             "2.22:M 540 540 C 660 450 1260 450 1380 540",
+                             "2.46:M 540 540 C 640 320 1280 320 1380 540",
+                             "6:M 540 540 C 640 320 1280 320 1380 540")}
+                    fill="#00000000"
+                    stroke="#1a0a08"
+                    strokeWidth="22"
+                    opacity="0.92" />
+              <Path id="upper_lid_crease"
+                    d="M 560 460 C 680 300 1240 300 1360 460"
+                    fill="none"
+                    stroke="#3a1815"
+                    strokeWidth="12"
+                    strokeWidthStart="0.35"
+                    strokeWidthEnd="0.85"
+                    lineCap="round"
+                    normalize="true"
+                    opacity="0.52" />
+
+              <Path id="lower_lid_mass"
+                    d="M 540 540 C 640 740 1280 740 1380 540 C 1260 720 660 720 540 540 Z"
+                    fill="url(#skin_grad)"
+                    opacity="0.92" />
+              <Path id="lower_lash_line"
+                    d="M 540 540 C 640 740 1280 740 1380 540"
+                    fill="#00000000"
+                    stroke="#2a1210"
+                    strokeWidth="14"
+                    opacity="0.78" />
+            </Group>
+
+            <!-- Eyelashes -->
+            <Group id="eyelashes_group" opacity="0.90">
+              <Path id="lash_upper_01" d="M 680 360 C 640 280 620 240 600 200" fill="none" stroke="#1a0a08" strokeWidth="10" strokeWidthStart="1.45" strokeWidthEnd="0.08" lineCap="round" normalize="true" />
+              <Path id="lash_upper_02" d="M 780 310 C 760 230 740 190 720 150" fill="none" stroke="#1a0a08" strokeWidth="11" strokeWidthStart="1.50" strokeWidthEnd="0.06" lineCap="round" normalize="true" />
+              <Path id="lash_upper_03" d="M 880 290 C 870 210 850 170 840 130" fill="none" stroke="#1a0a08" strokeWidth="11" strokeWidthStart="1.48" strokeWidthEnd="0.05" lineCap="round" normalize="true" />
+              <Path id="lash_upper_04" d="M 1040 290 C 1050 210 1070 170 1080 130" fill="none" stroke="#1a0a08" strokeWidth="11" strokeWidthStart="1.48" strokeWidthEnd="0.05" lineCap="round" normalize="true" />
+              <Path id="lash_upper_05" d="M 1140 310 C 1160 230 1180 190 1200 150" fill="none" stroke="#1a0a08" strokeWidth="11" strokeWidthStart="1.50" strokeWidthEnd="0.06" lineCap="round" normalize="true" />
+              <Path id="lash_upper_06" d="M 1240 360 C 1280 280 1300 240 1320 200" fill="none" stroke="#1a0a08" strokeWidth="10" strokeWidthStart="1.45" strokeWidthEnd="0.08" lineCap="round" normalize="true" />
+            </Group>
+
+            <!-- Lower highlight rendered after eyelids so it stays visible -->
+            <Group id="lower_highlights_group">
+              <!-- Bright bottom cornea crescent -->
+              <Group id="lower_glow_blur_group" effects={["lower_glow_blur"]}>
+                <Path id="lower_cornea_glint"
+                      d="M 840 672 C 910 712 1010 718 1080 682 C 1020 732 900 732 840 672 Z"
+                      fill="#fff4c8"
+                      opacity={curve("0:0.62:ease_in_out, 2.0:0.86:ease_in_out, 4.0:0.58:ease_in_out, 6:0.62:linear")}
+                      blend="screen" />
+              </Group>
+              <!-- Sparkle points on the lower iris -->
+              <Circle id="sparkle_01" x="920" y="648" radius="10" color="#fff4a0" opacity={curve("0:0.80:ease_in_out, 1.2:1.00:ease_in_out, 2.4:0.76:ease_in_out, 3.6:0.96:ease_in_out, 6:0.80:linear")} blend="screen" />
+              <Circle id="sparkle_02" x="1020" y="628" radius="8" color="#ffffff" opacity={curve("0:0.74:ease_in_out, 1.8:0.94:ease_in_out, 3.6:0.70:ease_in_out, 5.0:0.90:ease_in_out, 6:0.74:linear")} blend="screen" />
+            </Group>
+
+            <!-- Upper shadow over the whole eye -->
+            <Path id="upper_shadow_overlay"
+                  d="M 500 540 C 620 300 1300 300 1420 540 C 1300 380 1080 340 960 340 C 840 340 620 380 500 540 Z"
+                  fill="url(#lid_shadow)"
+                  opacity={curve("0:0.42:linear, 1.4:0.58:ease_in_out, 2.8:0.44:linear, 4.4:0.56:ease_in_out, 6:0.42:linear")} />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="inferno_anime_eye_fire_noise" />
+</Graph>

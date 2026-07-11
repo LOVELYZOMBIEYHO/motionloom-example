@@ -1,0 +1,123 @@
+<Graph fps={30} duration="6s" size={[1920,1500]} renderSize={[1920,1500]}>
+  <Background color="#071018" />
+  <Scene id="procedural_elements_lab">
+    <Defs>
+      <LinearGradient id="sky" x1="0" y1="0" x2="0" y2="1" stops="0:#183b62, 1:#76b8d7" />
+      <LinearGradient id="fire_fill" x1="0" y1="1" x2="0" y2="0" stops="0:#7a0900, 0.36:#ff3b08, 0.72:#ffb000, 1:#fff4a0" />
+      <LinearGradient id="lava_fill" x1="0" y1="0" x2="1" y2="1" stops="0:#170402, 0.35:#551005, 0.58:#ff3b05, 0.76:#ff9d00, 1:#2a0502" />
+      <LinearGradient id="water_fill" x1="0" y1="0" x2="0" y2="1" stops="0:#8fe9ff, 0.35:#238aca, 1:#073b72" />
+
+      <Noise id="cloud_noise" type="flow" scale="3.2" octaves="5" seed="3" contrast="1.08" evolution={curve("0:0:linear, 6:0.32:ease_in_out")} />
+      <Noise id="fire_noise" type="flow" scale="11" octaves="5" seed="17" contrast="1.72" evolution={curve("0:0:linear, 6:8:linear")} />
+      <Noise id="lava_noise" type="ridged" scale="8" octaves="5" seed="29" contrast="1.95" evolution={curve("0:0:linear, 6:1.1:ease_in_out")} />
+      <Noise id="steam_noise" type="flow" scale="7" octaves="4" seed="41" contrast="1.12" evolution={curve("0:0:linear, 6:3.2:linear")} />
+      <Noise id="water_noise" type="waves" scale="7" octaves="4" seed="53" contrast="1.22" evolution={curve("0:0:linear, 6:2.4:linear")} />
+      <Noise id="organic_group_noise" type="fbm" scale="918" octaves="5" seed="12" contrast="1.25" evolution={curve("0:0:linear, 6:1.5:ease_in_out")} />
+      <Noise id="organic_path_noise" type="fbm" scale="18" octaves="5" seed="72" contrast="1.25" evolution={curve("0:0:linear, 6:1.5:ease_in_out")} />
+
+      <Material id="cloud_material" texture="cloud_noise" textureAmount="0.14" displacement="cloud_noise" displacementAmount="7" roughness="0.98" specular="0.02" />
+      <Material id="fire_material" texture="fire_noise" textureAmount="0.86" displacement="fire_noise" displacementAmount="46" roughness="0.28" specular="0.48" />
+      <Material id="lava_material" texture="lava_noise" textureAmount="0.94" displacement="lava_noise" displacementAmount="32" roughness="0.72" specular="0.72" />
+      <Material id="steam_material" texture="steam_noise" textureAmount="0.62" displacement="steam_noise" displacementAmount="36" roughness="1" specular="0" opacity="0.48" />
+      <Material id="water_material" texture="water_noise" textureAmount="0.30" displacement="water_noise" displacementAmount="8" roughness="0.12" specular="0.92" />
+      <Material id="organic_group_material" texture="organic_group_noise" textureAmount="0.42"
+                displacement="organic_group_noise" displacementAmount="18"
+                roughness="0.38" specular="0.48" opacity="1" />
+      <Material id="organic_path_material" texture="organic_path_noise" textureAmount="0.42"
+                displacement="organic_path_noise" displacementAmount="18"
+                roughness="0.38" specular="0.48" opacity="1" />
+      <Filter id="fire_soft">
+        <Blur radius="3" />
+      </Filter>
+      <Filter id="steam_soft">
+        <Blur radius="16" />
+      </Filter>
+    </Defs>
+
+    <Timeline>
+      <Track id="procedural_panels" space="screen" z="0">
+        <Sequence from="0s" duration="6s" out="hold">
+          <Layer>
+            <Group id="cloud_panel">
+              <Rect x="54" y="82" width="560" height="410" radius="34" fill="url(#sky)" />
+              <Group id="cloud_mass" material="cloud_material">
+                <Circle x="190" y="300" radius="82" color="#d9edf5" />
+                <Circle x="282" y="246" radius="118" color="#f6fbff" />
+                <Circle x="392" y="292" radius="96" color="#e5f2f7" />
+                <Circle x="474" y="326" radius="72" color="#c8dce5" />
+                <Rect x="154" y="300" width="356" height="98" radius="49" color="#e8f4f8" />
+              </Group>
+              <Text x="82" y="126" value="CLOUD" fontSize="28" fontWeight="700" color="#ffffff" />
+            </Group>
+
+            <Group id="fire_panel">
+              <Rect x="680" y="82" width="500" height="410" radius="34" color="#160b08" />
+              <Group id="fire_mass" material="fire_material" effects={["fire_soft"]}>
+                <Path d="M 930 438 C 774 400 782 270 872 160 C 860 278 946 248 970 126 C 1062 234 1092 362 1018 430 C 992 454 960 458 930 438 Z" fill="url(#fire_fill)" />
+                <Path d="M 936 426 C 876 382 906 310 956 252 C 948 330 1010 324 1000 392 C 992 438 956 448 936 426 Z" fill="#fff0a0" opacity="0.82" />
+                <Path d="M 842 374 C 806 328 824 264 872 218 C 854 288 900 296 900 350 C 900 390 866 408 842 374 Z" fill="#ff6b08" opacity="0.82" />
+                <Path d="M 1016 382 C 982 330 1024 286 1014 230 C 1072 286 1080 352 1050 394 C 1038 410 1024 404 1016 382 Z" fill="#ffb000" opacity="0.74" />
+              </Group>
+              <Text x="708" y="126" value="FIRE" fontSize="28" fontWeight="700" color="#ffb33a" />
+            </Group>
+
+            <Group id="lava_panel">
+              <Rect x="1246" y="82" width="620" height="410" radius="34" color="#100504" />
+              <Group id="lava_surface" material="lava_material">
+                <Path d="M 1288 218 C 1380 154 1460 250 1544 190 C 1636 124 1740 180 1824 250 L 1824 442 L 1288 442 Z" fill="url(#lava_fill)" />
+                <Path d="M 1310 332 C 1410 278 1468 370 1560 308 C 1642 254 1748 318 1814 286" fill="none" stroke="#ffbf22" strokeWidth="22" lineCap="round" opacity="0.82" />
+                <Circle x="1440" y="250" radius="24" color="#ffdf55" opacity="0.74" />
+                <Circle x="1694" y="220" radius="17" color="#ff7b10" opacity="0.78" />
+              </Group>
+              <Text x="1274" y="126" value="LAVA" fontSize="28" fontWeight="700" color="#ff6b18" />
+            </Group>
+
+            <Group id="steam_panel">
+              <Rect x="54" y="550" width="826" height="450" radius="34" color="#17232b" />
+              <Group id="steam_plumes" material="steam_material" effects={["steam_soft"]}>
+                <Path d="M 228 930 C 126 786 306 754 224 628 C 188 574 246 550 290 588 C 370 658 252 738 356 810 C 436 866 360 948 228 930 Z" fill="#dce7eb" opacity="0.52" />
+                <Path d="M 454 946 C 358 828 500 768 430 672 C 382 606 444 570 500 614 C 584 680 486 756 566 838 C 628 902 570 968 454 946 Z" fill="#f5fbfd" opacity="0.62" />
+                <Path d="M 664 934 C 584 842 708 776 646 700 C 598 642 654 608 704 648 C 790 716 692 798 770 864 C 818 906 772 958 664 934 Z" fill="#cbd9df" opacity="0.48" />
+              </Group>
+              <Text x="82" y="598" value="STEAM" fontSize="28" fontWeight="700" color="#dcebf0" />
+            </Group>
+
+            <Group id="water_panel">
+              <Rect x="946" y="550" width="920" height="450" radius="34" color="#06263f" />
+              <Group id="flowing_water" material="water_material">
+                <Path d="M 980 716 C 1110 632 1240 760 1370 680 C 1510 594 1660 730 1832 642 L 1832 944 L 980 944 Z" fill="url(#water_fill)" />
+                <Path d="M 1008 770 C 1140 706 1262 806 1398 736 C 1534 666 1660 770 1808 700" fill="none" stroke="#bcefff" strokeWidth="18" lineCap="round" opacity="0.72" />
+                <Path d="M 1024 846 C 1158 788 1280 876 1412 820 C 1548 760 1684 846 1812 792" fill="none" stroke="#52b9e8" strokeWidth="13" lineCap="round" opacity="0.76" />
+              </Group>
+              <Text x="974" y="598" value="FLOWING WATER" fontSize="28" fontWeight="700" color="#87dcff" />
+            </Group>
+
+            <Group id="universal_group_material_panel">
+              <Rect x="54" y="1060" width="826" height="370" radius="34" color="#1b2027" />
+              <Group id="organic_group_sample" material="organic_group_material">
+                <Rect x="112" y="1138" width="340" height="230" radius="58" color="#d16d42" />
+                <Circle x="282" y="1253" radius="86" color="#f4bb66" opacity="0.72" />
+              </Group>
+              <Text x="82" y="1108" value="MATERIAL ON GROUP" fontSize="28" fontWeight="700" color="#f4bb66" />
+              <Text x="500" y="1196" value="FBM TEXTURE" fontSize="24" fontWeight="700" color="#f4d8c8" />
+              <Text x="500" y="1238" value="Independent noise + material" fontSize="20" color="#b9c2cc" />
+              <Text x="500" y="1274" value="Rect and Circle share one surface" fontSize="20" color="#b9c2cc" />
+            </Group>
+
+            <Group id="universal_path_material_panel">
+              <Rect x="946" y="1060" width="920" height="370" radius="34" color="#10251f" />
+              <Path id="organic_path_sample" material="organic_path_material"
+                    d="M 1012 1360 C 982 1250 1042 1118 1174 1100 C 1320 1080 1396 1196 1342 1306 C 1300 1392 1118 1420 1012 1360 Z"
+                    fill="#4da895" stroke="#b9f4df" strokeWidth="8" />
+              <Text x="1436" y="1108" value="MATERIAL ON PATH" fontSize="28" fontWeight="700" color="#8fe8cb" />
+              <Text x="1436" y="1196" value="FBM TEXTURE" fontSize="24" fontWeight="700" color="#b9f4df" />
+              <Text x="1436" y="1238" value="Separate noise + material values" fontSize="20" color="#a9c9be" />
+              <Text x="1436" y="1274" value="Safe to tune without Group changes" fontSize="20" color="#a9c9be" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="procedural_elements_lab" />
+</Graph>

@@ -1,0 +1,82 @@
+<Graph fps={30} duration="4s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#0B1020" />
+
+  <Scene id="mask_feather_expansion_demo">
+    <Defs>
+      <LinearGradient id="panel_fill" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#18233D, 1:#10182C" />
+      <LinearGradient id="content_fill" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#38BDF8, 0.48:#8B5CF6, 1:#F43F5E" />
+
+      <Precompose id="mask_library" size={[1920,1080]}>
+        <Circle id="mask_contract" x="430" y="550" radius="185" color="#FFFFFF" />
+        <Circle id="mask_original" x="960" y="550" radius="185" color="#FFFFFF" />
+        <Circle id="mask_expand" x="1490" y="550" radius="185" color="#FFFFFF" />
+      </Precompose>
+    </Defs>
+
+    <Timeline>
+      <Track id="mask_demo_track" space="screen" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer id="mask_demo_layer">
+            <Text id="title" x="960" y="105" value="MASK FEATHER + EXPANSION"
+                  fontSize="64" fontWeight="800" color="#F8FAFC" />
+            <Text id="subtitle" x="960" y="168"
+                  value="Expansion changes the matte boundary. Feather softens the final edge."
+                  fontSize="28" color="#94A3B8" />
+
+            <Group id="contract_panel">
+              <Rect x="180" y="260" width="500" height="600" radius="48" fill="url(#panel_fill)" />
+              <Circle x="430" y="550" radius="185" color="#FFFFFF" opacity="0.08" />
+              <Group id="contract_content"
+                     maskFrom="mask_contract"
+                     maskMode="alpha"
+                     maskExpansion="-28"
+                     maskFeather="18">
+                <Rect x="180" y="260" width="500" height="600" fill="url(#content_fill)" />
+                <Circle x="350" y="470" radius="105" color="#FFFFFF" opacity="0.20" />
+                <Circle x="510" y="640" radius="130" color="#FDE68A" opacity="0.34" />
+              </Group>
+              <Text x="430" y="790" value="CONTRACT" fontSize="32" fontWeight="700" color="#F8FAFC" />
+              <Text x="430" y="832" value="expansion -28 / feather 18" fontSize="22" color="#CBD5E1" />
+            </Group>
+
+            <Group id="original_panel">
+              <Rect x="710" y="260" width="500" height="600" radius="48" fill="url(#panel_fill)" />
+              <Circle x="960" y="550" radius="185" color="#FFFFFF" opacity="0.08" />
+              <Group id="original_content"
+                     maskFrom="mask_original"
+                     maskMode="alpha"
+                     maskExpansion="0"
+                     maskFeather="0">
+                <Rect x="710" y="260" width="500" height="600" fill="url(#content_fill)" />
+                <Circle x="880" y="470" radius="105" color="#FFFFFF" opacity="0.20" />
+                <Circle x="1040" y="640" radius="130" color="#FDE68A" opacity="0.34" />
+              </Group>
+              <Text x="960" y="790" value="ORIGINAL" fontSize="32" fontWeight="700" color="#F8FAFC" />
+              <Text x="960" y="832" value="expansion 0 / feather 0" fontSize="22" color="#CBD5E1" />
+            </Group>
+
+            <Group id="expand_panel">
+              <Rect x="1240" y="260" width="500" height="600" radius="48" fill="url(#panel_fill)" />
+              <Circle x="1490" y="550" radius="185" color="#FFFFFF" opacity="0.08" />
+              <Group id="expand_content"
+                     maskFrom="mask_expand"
+                     maskMode="alpha"
+                     maskExpansion="28"
+                     maskFeather="18">
+                <Rect x="1240" y="260" width="500" height="600" fill="url(#content_fill)" />
+                <Circle x="1410" y="470" radius="105" color="#FFFFFF" opacity="0.20" />
+                <Circle x="1570" y="640" radius="130" color="#FDE68A" opacity="0.34" />
+              </Group>
+              <Text x="1490" y="790" value="EXPAND" fontSize="32" fontWeight="700" color="#F8FAFC" />
+              <Text x="1490" y="832" value="expansion +28 / feather 18" fontSize="22" color="#CBD5E1" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="mask_feather_expansion_demo" />
+</Graph>

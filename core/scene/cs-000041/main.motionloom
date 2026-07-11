@@ -1,0 +1,70 @@
+<Graph fps={30} duration="4s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#08111C" />
+
+  <Scene id="group_effect_stack_demo">
+    <Defs>
+      <LinearGradient id="card_fill" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#06B6D4, 0.48:#2563EB, 1:#7C3AED" />
+
+      <Filter id="stack_soft_blur">
+        <Blur radius="18" />
+      </Filter>
+      <Filter id="stack_color_grade">
+        <ColorMatrix brightness="1.16" contrast="1.28" saturation="1.42" />
+      </Filter>
+      <Filter id="stack_opacity">
+        <Effect type="opacity" opacity="0.62" />
+      </Filter>
+      <Precompose id="stack_mask_library" size={[1920,1080]}>
+        <Rect id="stack_card_mask" x="1140" y="340" width="510" height="420" radius="54" color="#FFFFFF" />
+      </Precompose>
+    </Defs>
+
+    <Timeline>
+      <Track id="effect_stack_track" space="screen" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer id="effect_stack_layer">
+            <Text id="title" x="960" y="105" value="GROUP EFFECT STACK"
+                  fontSize="64" fontWeight="800" color="#F8FAFC" />
+            <Text id="subtitle" x="960" y="168"
+                  value="Filter references run from left to right in the effects array."
+                  fontSize="28" color="#94A3B8" />
+
+            <Group id="source_example_group">
+              <Rect x="230" y="300" width="590" height="500" radius="58" color="#111C2D" />
+              <Group id="source_card">
+                <Rect x="290" y="360" width="470" height="380" radius="44" fill="url(#card_fill)" />
+                <Circle x="430" y="500" radius="92" color="#FFFFFF" opacity="0.28" />
+                <Circle x="625" y="610" radius="118" color="#FDE68A" opacity="0.42" />
+                <Text x="525" y="565" value="SOURCE" fontSize="48" fontWeight="800" color="#FFFFFF" />
+              </Group>
+              <Text x="525" y="855" value="No group effects" fontSize="25" color="#CBD5E1" />
+            </Group>
+
+            <Group id="stacked_example_group">
+              <Rect x="1100" y="300" width="590" height="500" radius="58" color="#111C2D" />
+              <Group id="stacked_card"
+                     maskFrom="stack_card_mask"
+                     effects={["stack_soft_blur", "stack_color_grade", "stack_opacity"]}>
+                <Rect x="1160" y="360" width="470" height="380" radius="44" fill="url(#card_fill)" />
+                <Circle x="1300" y="500" radius="92" color="#FFFFFF" opacity="0.28" />
+                <Circle x="1495" y="610" radius="118" color="#FDE68A" opacity="0.42" />
+                <Text x="1395" y="565" value="STACKED" fontSize="48" fontWeight="800" color="#FFFFFF" />
+              </Group>
+              <Text x="1395" y="855" value="blur → grade → opacity" fontSize="25" color="#CBD5E1" />
+            </Group>
+
+            <Group id="stack_order_guide">
+              <Rect x="350" y="940" width="1220" height="82" radius="41" color="#111827" opacity="0.92" />
+              <Text x="960" y="988"
+                    value="effects order: stack_soft_blur → stack_color_grade → stack_opacity"
+                    fontSize="25" color="#67E8F9" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="group_effect_stack_demo" />
+</Graph>

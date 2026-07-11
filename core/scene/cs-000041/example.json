@@ -1,0 +1,51 @@
+{
+  "id": "cs-000041",
+  "type": "core",
+  "title": "Ordered Group Effect Stack",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "group",
+    "filter",
+    "blur",
+    "opacity",
+    "grading",
+    "gpu-friendly"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "LinearGradient",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Rect",
+    "Circle",
+    "Text",
+    "Present",
+    "blur",
+    "opacity"
+  ],
+  "teaches": [
+    "Attach an ordered list of Filter ids to a Group with the effects attribute.",
+    "Apply Blur, ColorMatrix, and Opacity filters to the complete composited Group rather than each child.",
+    "Reorder filter ids to change the effect execution order without changing Group contents."
+  ],
+  "source_path": "core/scene/cs-000041",
+  "demo_url": "",
+  "related": [
+    "cs-000033",
+    "cp-000007"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Timeline",
+    "Group",
+    "Present"
+  ]
+}

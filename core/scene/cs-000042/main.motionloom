@@ -1,0 +1,27 @@
+<Graph fps={30} duration="4s" size={[960,540]} renderSize={[960,540]}>
+  <Background color="#10161d" />
+  <Scene id="UniversalProceduralMaterial">
+    <Defs>
+      <Noise id="organic_noise" type="fbm" scale="18" octaves="5" seed="12" contrast="1.25" evolution={curve("0:0:linear, 4:1:ease_in_out")} />
+      <Material id="organic_surface" texture="organic_noise" textureAmount="0.42"
+                displacement="organic_noise" displacementAmount="18"
+                roughness="0.38" specular="0.48" opacity="1" />
+    </Defs>
+    <Timeline>
+      <Track id="material_demo" space="screen" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Group id="material_group" material="organic_surface">
+              <Rect x="90" y="80" width="340" height="380" radius="58" color="#d16d42" />
+              <Circle x="260" y="270" radius="112" color="#f4bb66" opacity="0.72" />
+            </Group>
+            <Path id="material_path" material="organic_surface"
+                  d="M 520 420 C 490 300 548 118 680 92 C 826 64 902 222 848 356 C 806 462 626 500 520 420 Z"
+                  fill="#4da895" stroke="#b9f4df" strokeWidth="8" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="UniversalProceduralMaterial" />
+</Graph>

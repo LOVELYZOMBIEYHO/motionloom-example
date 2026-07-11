@@ -1,9 +1,9 @@
 {
-  "example_count": 122,
-  "core_count": 74,
-  "showcase_count": 48,
+  "example_count": 127,
+  "core_count": 76,
+  "showcase_count": 51,
   "domain_counts": {
-    "scene": 85,
+    "scene": 90,
     "world": 6,
     "process": 13,
     "process_with_time": 3,
@@ -1437,6 +1437,108 @@
         "Present"
       ],
       "path": "core/scene/cs-000039/"
+    },
+    {
+      "id": "cs-000040",
+      "type": "core",
+      "title": "Group Mask Feather And Expansion",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "mask",
+        "group-mask",
+        "edge-smoothing",
+        "gpu-friendly"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "LinearGradient",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Rect",
+        "Circle",
+        "Text",
+        "Present",
+        "mask",
+        "maskMode"
+      ],
+      "teaches": [
+        "Use maskExpansion with a positive value to grow a Group mask or a negative value to contract it.",
+        "Use maskFeather after expansion to soften the final alpha boundary.",
+        "Animate maskFeather and maskExpansion with numeric expressions or curves when required."
+      ],
+      "source_path": "core/scene/cs-000040",
+      "demo_url": "",
+      "related": [
+        "cs-000012",
+        "cs-000039"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Group",
+        "Present"
+      ],
+      "path": "core/scene/cs-000040/"
+    },
+    {
+      "id": "cs-000041",
+      "type": "core",
+      "title": "Ordered Group Effect Stack",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "group",
+        "filter",
+        "blur",
+        "opacity",
+        "grading",
+        "gpu-friendly"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "LinearGradient",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Rect",
+        "Circle",
+        "Text",
+        "Present",
+        "blur",
+        "opacity"
+      ],
+      "teaches": [
+        "Attach an ordered list of Filter ids to a Group with the effects attribute.",
+        "Apply Blur, ColorMatrix, and Opacity filters to the complete composited Group rather than each child.",
+        "Reorder filter ids to change the effect execution order without changing Group contents."
+      ],
+      "source_path": "core/scene/cs-000041",
+      "demo_url": "",
+      "related": [
+        "cs-000033",
+        "cp-000007"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Group",
+        "Present"
+      ],
+      "path": "core/scene/cs-000041/"
     },
     {
       "id": "s-000001",
@@ -3740,6 +3842,176 @@
         "Present"
       ],
       "path": "showcase/s-000048/"
+    },
+    {
+      "id": "s-000049",
+      "type": "showcase",
+      "title": "Realistic Hazel Eye Path Study",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "portrait",
+        "eye",
+        "path",
+        "masking",
+        "gradients",
+        "iris-detail",
+        "highlights"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "RadialGradient",
+        "LinearGradient",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Rect",
+        "Circle",
+        "Path",
+        "Present"
+      ],
+      "teaches": [
+        "Build a realistic eye from editable MotionLoom Path, Circle, gradient, and mask primitives.",
+        "Layer sclera warmth, iris fibres, corneal depth, wetline, eyelids, and highlights to avoid a flat vector look.",
+        "Keep anatomical regions in named groups so the landing-page scene controls can adjust the complete eye or individual details."
+      ],
+      "source_path": "showcase/s-000049",
+      "demo_url": "",
+      "related": [
+        "s-000048",
+        "s-000034"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Path",
+        "Present"
+      ],
+      "path": "showcase/s-000049/"
+    },
+    {
+      "id": "s-000050",
+      "type": "showcase",
+      "title": "Procedural Elements Lab",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "gpu-friendly",
+        "noise",
+        "procedural-texture",
+        "material",
+        "displacement",
+        "cloud",
+        "fire",
+        "lava",
+        "steam",
+        "water"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Noise",
+        "Material",
+        "LinearGradient",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Rect",
+        "Circle",
+        "Path",
+        "Text",
+        "Present"
+      ],
+      "teaches": [
+        "Generate five organic effects from algorithms instead of image textures.",
+        "Reuse universal Noise and Material resources with different physical-looking parameters.",
+        "Animate procedural surfaces through evolution while remaining in the WebGPU renderer."
+      ],
+      "source_path": "showcase/s-000050",
+      "demo_url": "",
+      "related": [
+        "s-000049",
+        "cs-000042"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Noise",
+        "Material",
+        "Present"
+      ],
+      "path": "showcase/s-000050/"
+    },
+    {
+      "id": "s-000051",
+      "type": "showcase",
+      "title": "Inferno Anime Eye with Fire Noise Iris",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "anime",
+        "eye",
+        "fire",
+        "procedural-texture",
+        "material",
+        "noise",
+        "iris-detail",
+        "highlights",
+        "gaze-animation",
+        "blink-animation",
+        "curve-animation",
+        "gradients"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Noise",
+        "Material",
+        "RadialGradient",
+        "LinearGradient",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Rect",
+        "Circle",
+        "Path",
+        "Present",
+        "curve"
+      ],
+      "teaches": [
+        "Build a dramatic anime eye with a flame-colored iris and apply a procedural fire noise material to the iris surface.",
+        "Reuse the fire noise and material definitions from s-000050 as a live internal texture for the eye.",
+        "Coordinate gaze shifts, a slow iris rotation, and a single blink while keeping the eye masked and layered."
+      ],
+      "source_path": "showcase/s-000051",
+      "demo_url": "",
+      "related": [
+        "s-000050",
+        "s-000049",
+        "s-000035"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Path",
+        "Present"
+      ],
+      "path": "showcase/s-000051/"
     },
     {
       "id": "cw-000001",

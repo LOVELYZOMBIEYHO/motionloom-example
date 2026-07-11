@@ -9,6 +9,8 @@
                       stops="0:#f0abff88, 0.35:#a855f766, 0.72:#581c8728, 1:#00000000" />
       <RadialGradient id="left_iris_fill" cx="0.50" cy="0.45" r="0.72"
                       stops="0:#ff3b30, 0.45:#ef1d1d, 0.76:#8f1111, 1:#220303" />
+      <RadialGradient id="left_mangekyou_shading" cx="0.50" cy="0.50" r="0.50"
+                      stops="0:#000000, 0.22:#260202, 0.55:#b80909, 0.88:#ff2626, 1:#cc0c0c" />
       <RadialGradient id="right_iris_fill" cx="0.50" cy="0.50" r="0.78"
                       stops="0:#fff1ff, 0.32:#f5c7ff, 0.67:#c084fc, 1:#4c1d95" />
       <LinearGradient id="sclera_left" x1="0" y1="0" x2="1" y2="1"
@@ -17,6 +19,9 @@
                       stops="0:#ffe4ff, 0.40:#f5d0fe, 0.70:#fce7f3, 1:#ffffff" />
       <Filter id="soft_eyelid_blur">
         <Blur radius="22" />
+      </Filter>
+      <Filter id="iris_center_soft_blur">
+        <Blur radius="16" />
       </Filter>
 
       <Precompose id="left_eye_aperture_matte" size={[1920,1080]}>
@@ -56,13 +61,21 @@
 
       <Precompose id="right_soft_eyelids" size={[1920,1080]}>
         <Path id="right_soft_upper_lid"
-              d="M 1164 488 C 1372 288 1668 272 1920 416 C 1860 454 1818 486 1784 510 C 1592 416 1372 412 1164 488 Z"
+              d="M 1872 408 C 1674 278 1352 286 1168 492 C 1366 416 1634 410 1814 522 C 1846 492 1866 450 1872 408 Z"
               fill="#000000"
               opacity="0.82" />
         <Path id="right_soft_lower_lid"
-              d="M 1170 488 C 1398 642 1698 644 1914 552 C 1708 724 1382 730 1170 488 Z"
+              d="M 1864 552 C 1656 640 1342 628 1168 488 C 1346 722 1682 732 1864 552 Z"
               fill="#000000"
               opacity="0.80" />
+      </Precompose>
+
+      <Precompose id="left_iris_center_soft_cover" size={[1920,1080]}>
+        <Circle id="left_iris_center_soft_mask" x="346" y="502" radius="54" color="#050000" opacity="0.30" />
+      </Precompose>
+
+      <Precompose id="right_iris_center_soft_cover" size={[1920,1080]}>
+        <Circle id="right_iris_center_soft_mask" x="1520" y="502" radius="42" color="#120018" opacity="0.22" />
       </Precompose>
     </Defs>
 
@@ -111,24 +124,35 @@
                        scale="1"
                        transformOriginX="0"
                        transformOriginY="0">
-                  <Circle id="left_iris_red_outer" x="0" y="0" radius="128" fill="url(#left_iris_fill)" opacity="0.98" />
-                  <Circle id="left_iris_red_mid" x="0" y="0" radius="96" color="#ff2018" opacity="0.96" />
-                  <Group id="left_iris_react_star" rotation={curve("0:0:linear, 6:-720:linear")} transformOriginX="0" transformOriginY="0">
-                    <Path id="left_iris_star_up" d="M 0 -118 L 36 -34 L 126 -24 L 58 34 L 78 118 L 0 72 L -78 118 L -58 34 L -126 -24 L -36 -34 Z" fill="#050505" opacity="0.92" />
-                    <Path id="left_iris_star_down" d="M 0 118 L -36 34 L -126 24 L -58 -34 L -78 -118 L 0 -72 L 78 -118 L 58 -34 L 126 24 L 36 34 Z" fill="#050505" opacity="0.82" />
-                    <Group id="left_iris_orbit_a" rotation="0" transformOriginX="0" transformOriginY="0">
-                      <Ellipse id="left_iris_orbit_a_ring" x="0" y="0" rx="116" ry="38" color="#00000000" stroke="#050505" strokeWidth="8" opacity="0.94" />
+                  <Circle id="left_iris_mangekyou_base" x="0" y="0" radius="128" color="#000000" opacity="0.98" />
+                  <Group id="left_iris_mangekyou_lenses" transformOriginX="0" transformOriginY="0">
+                    <Group id="left_iris_mangekyou_lens_fill_a" rotation="0" transformOriginX="0" transformOriginY="0">
+                      <Path id="left_iris_mangekyou_lens_a" d="M 0 -127.1 C 22.7 -127.1 41.2 -70.2 41.2 0 C 41.2 70.2 22.7 127.1 0 127.1 C -22.7 127.1 -41.2 70.2 -41.2 0 C -41.2 -70.2 -22.7 -127.1 0 -127.1 Z" fill="url(#left_mangekyou_shading)" opacity="1" />
                     </Group>
-                    <Group id="left_iris_orbit_b" rotation="60" transformOriginX="0" transformOriginY="0">
-                      <Ellipse id="left_iris_orbit_b_ring" x="0" y="0" rx="116" ry="38" color="#00000000" stroke="#050505" strokeWidth="8" opacity="0.94" />
+                    <Group id="left_iris_mangekyou_lens_fill_b" rotation="60" transformOriginX="0" transformOriginY="0">
+                      <Path id="left_iris_mangekyou_lens_b" d="M 0 -127.1 C 22.7 -127.1 41.2 -70.2 41.2 0 C 41.2 70.2 22.7 127.1 0 127.1 C -22.7 127.1 -41.2 70.2 -41.2 0 C -41.2 -70.2 -22.7 -127.1 0 -127.1 Z" fill="url(#left_mangekyou_shading)" opacity="1" />
                     </Group>
-                    <Group id="left_iris_orbit_c" rotation="120" transformOriginX="0" transformOriginY="0">
-                      <Ellipse id="left_iris_orbit_c_ring" x="0" y="0" rx="116" ry="38" color="#00000000" stroke="#050505" strokeWidth="8" opacity="0.94" />
+                    <Group id="left_iris_mangekyou_lens_fill_c" rotation="120" transformOriginX="0" transformOriginY="0">
+                      <Path id="left_iris_mangekyou_lens_c" d="M 0 -127.1 C 22.7 -127.1 41.2 -70.2 41.2 0 C 41.2 70.2 22.7 127.1 0 127.1 C -22.7 127.1 -41.2 70.2 -41.2 0 C -41.2 -70.2 -22.7 -127.1 0 -127.1 Z" fill="url(#left_mangekyou_shading)" opacity="1" />
                     </Group>
                   </Group>
-                  <Circle id="left_iris_core" x="0" y="0" radius="34" color="#ff2018" stroke="#050505" strokeWidth="8" opacity="1" />
-                  <Circle id="left_pupil" x="0" y="0" radius="17" color="#050505" opacity="1" />
+                  <Group id="left_iris_mangekyou_lens_strokes" transformOriginX="0" transformOriginY="0">
+                    <Group id="left_iris_mangekyou_lens_stroke_a" rotation="0" transformOriginX="0" transformOriginY="0">
+                      <Path id="left_iris_mangekyou_lens_a_outline" d="M 0 -127.1 C 22.7 -127.1 41.2 -70.2 41.2 0 C 41.2 70.2 22.7 127.1 0 127.1 C -22.7 127.1 -41.2 70.2 -41.2 0 C -41.2 -70.2 -22.7 -127.1 0 -127.1 Z" fill="#00000000" stroke="#000000" strokeWidth="5.4" opacity="1" />
+                    </Group>
+                    <Group id="left_iris_mangekyou_lens_stroke_b" rotation="60" transformOriginX="0" transformOriginY="0">
+                      <Path id="left_iris_mangekyou_lens_b_outline" d="M 0 -127.1 C 22.7 -127.1 41.2 -70.2 41.2 0 C 41.2 70.2 22.7 127.1 0 127.1 C -22.7 127.1 -41.2 70.2 -41.2 0 C -41.2 -70.2 -22.7 -127.1 0 -127.1 Z" fill="#00000000" stroke="#000000" strokeWidth="5.4" opacity="1" />
+                    </Group>
+                    <Group id="left_iris_mangekyou_lens_stroke_c" rotation="120" transformOriginX="0" transformOriginY="0">
+                      <Path id="left_iris_mangekyou_lens_c_outline" d="M 0 -127.1 C 22.7 -127.1 41.2 -70.2 41.2 0 C 41.2 70.2 22.7 127.1 0 127.1 C -22.7 127.1 -41.2 70.2 -41.2 0 C -41.2 -70.2 -22.7 -127.1 0 -127.1 Z" fill="#00000000" stroke="#000000" strokeWidth="5.4" opacity="1" />
+                    </Group>
+                  </Group>
+                  <Circle id="left_pupil" x="0" y="0" radius="20" color="#000000" opacity="1" />
                 </Group>
+                <Layer id="left_iris_center_soft_cover_layer"
+                       source="left_iris_center_soft_cover"
+                       effect="iris_center_soft_blur"
+                       opacity="1" />
 
                 <Path id="left_eye_inner_upper_shadow"
                       d="M 622 430 C 470 360 196 366 26 496 C 212 458 438 456 622 536 Z"
@@ -202,6 +226,10 @@
                   <Circle id="right_ring_inner" x="0" y="0" radius="44" color="#00000000" stroke="#2a1538" strokeWidth="5" opacity="0.78" />
                   <Circle id="right_pupil" x="0" y="0" radius="18" color="#09010f" opacity="0.98" />
                 </Group>
+                <Layer id="right_iris_center_soft_cover_layer"
+                       source="right_iris_center_soft_cover"
+                       effect="iris_center_soft_blur"
+                       opacity="1" />
 
                 <Path id="right_eye_inner_upper_shadow"
                       d="M 1248 430 C 1400 360 1674 366 1844 496 C 1658 458 1432 456 1248 536 Z"
@@ -222,11 +250,11 @@
               </Group>
 
               <Path id="right_eye_upper_lid_occluder"
-                    d="M 1188 486 C 1382 306 1656 294 1900 420 C 1846 454 1812 480 1780 500 C 1598 414 1380 412 1188 486 Z"
+                    d="M 1862 420 C 1666 302 1402 296 1186 486 C 1380 414 1638 414 1806 514 C 1836 492 1856 454 1862 420 Z"
                     fill="#000000"
                     opacity="0.62" />
               <Path id="right_eye_lower_lid_occluder"
-                    d="M 1188 492 C 1406 622 1680 626 1878 548 C 1688 696 1394 704 1188 492 Z"
+                    d="M 1846 548 C 1644 620 1358 606 1186 488 C 1362 688 1676 700 1846 548 Z"
                     fill="#000000"
                     opacity="0.62" />
             </Group>

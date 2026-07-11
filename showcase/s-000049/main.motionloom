@@ -1,0 +1,196 @@
+<Graph fps={30} duration="5s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#c89f86" />
+
+  <Scene id="realistic_hazel_eye_path_study">
+    <Defs>
+      <LinearGradient id="skin_base" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#8f6555, 0.22:#c99a7f, 0.58:#e0b69b, 1:#8a5d50" />
+      <LinearGradient id="sclera_natural" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#b9a9a2, 0.18:#eee8e3, 0.52:#fffdf7, 0.82:#e4d8d2, 1:#9d7770" />
+      <RadialGradient id="iris_hazel" cx="0.47" cy="0.44" r="0.58"
+                      stops="0:#14100b, 0.14:#2a1b0d, 0.31:#b18032, 0.52:#64733b, 0.76:#34442e, 0.92:#18251d, 1:#070b09" />
+      <RadialGradient id="iris_inner_gold" cx="0.50" cy="0.50" r="0.62"
+                      stops="0:#08060400, 0.24:#1e110800, 0.47:#d28d2b88, 0.66:#9b5e1a44, 1:#00000000" />
+      <RadialGradient id="cornea_depth" cx="0.40" cy="0.34" r="0.72"
+                      stops="0:#d8f5ff30, 0.34:#a9dced10, 0.76:#06131018, 1:#00000055" />
+      <LinearGradient id="upper_lid_skin" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#74483f, 0.35:#b67d68, 0.72:#d5a38a, 1:#6b3e38" />
+      <LinearGradient id="lower_lid_skin" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#6d3d3a, 0.26:#c88778, 0.68:#dcae96, 1:#936257" />
+      <Filter id="skin_shadow_blur">
+        <Blur radius="28" />
+      </Filter>
+      <Filter id="wetline_blur">
+        <Blur radius="5" />
+      </Filter>
+
+      <Noise id="skin_surface_noise" type="fbm" scale="26" octaves="5" seed="12"
+             contrast="1.18" evolution={curve("0:0:linear, 5:0.18:ease_in_out")} />
+      <Material id="skin_surface_material"
+                texture="skin_surface_noise" textureAmount="0.16"
+                displacement="skin_surface_noise" displacementAmount="3.2"
+                roughness="0.72" specular="0.12" opacity="1" />
+
+      <Noise id="iris_surface_noise" type="ridged" scale="18" octaves="5" seed="47"
+             contrast="1.34" evolution={curve("0:0:linear, 5:0.10:ease_in_out")} />
+      <Material id="iris_surface_material"
+                texture="iris_surface_noise" textureAmount="0.28"
+                displacement="iris_surface_noise" displacementAmount="4.8"
+                roughness="0.24" specular="0.62" opacity="1" />
+
+      <Precompose id="eye_aperture_mask" size={[1920,1080]}>
+        <Path id="eye_aperture_mask_path"
+              d={morph("0:M 284 548 C 506 294 840 252 1116 330 C 1322 388 1492 486 1644 548 C 1466 654 1266 758 1008 786 C 704 818 438 700 284 548 Z",
+                       "2.20:M 284 548 C 506 294 840 252 1116 330 C 1322 388 1492 486 1644 548 C 1466 654 1266 758 1008 786 C 704 818 438 700 284 548 Z",
+                       "2.46:M 284 548 C 520 434 820 408 1114 434 C 1342 454 1510 506 1644 548 C 1478 592 1260 628 1000 634 C 716 640 454 604 284 548 Z",
+                       "2.68:M 284 548 C 506 294 840 252 1116 330 C 1322 388 1492 486 1644 548 C 1466 654 1266 758 1008 786 C 704 818 438 700 284 548 Z",
+                       "5:M 284 548 C 506 294 840 252 1116 330 C 1322 388 1492 486 1644 548 C 1466 654 1266 758 1008 786 C 704 818 438 700 284 548 Z")}
+              fill="#ffffff" />
+      </Precompose>
+
+      <Precompose id="upper_socket_shadow" size={[1920,1080]}>
+        <Path id="upper_socket_shadow_path"
+              d="M 174 438 C 452 92 918 70 1300 196 C 1504 264 1668 396 1752 506 C 1500 382 1270 278 978 272 C 666 266 416 354 174 438 Z"
+              fill="#3b1f22" opacity="0.54" />
+      </Precompose>
+    </Defs>
+
+    <Timeline>
+      <Track id="realistic_eye_track" space="screen" z="10">
+        <Sequence from="0s" duration="5s" out="hold">
+          <Layer id="realistic_eye_layer">
+            <Group id="skin_and_socket_group" material="skin_surface_material">
+              <Rect id="skin_canvas" x="0" y="0" width="1920" height="1080" fill="url(#skin_base)" />
+              <Layer id="upper_socket_shadow_layer" source="upper_socket_shadow" effect="skin_shadow_blur" opacity="1" />
+              <Path id="brow_mass"
+                    d="M 244 306 C 514 130 838 108 1122 162 C 1374 210 1566 318 1690 410 C 1456 322 1266 266 1040 242 C 738 210 480 248 244 306 Z"
+                    fill="#3a251f" roundCorners="5" normalize="true" opacity="0.82" />
+              <Path id="brow_soft_edge"
+                    d="M 288 320 C 560 186 842 166 1110 208 C 1342 244 1510 318 1628 388"
+                    fill="#00000000" stroke="#6f4437" strokeWidth="18" opacity="0.46" />
+            </Group>
+
+            <Group id="eye_contents_masked" maskFrom="eye_aperture_mask" maskMode="alpha"
+                   maskExpansion="-1.5" maskFeather="3.5">
+              <Group id="sclera_group">
+                <Path id="sclera_shape"
+                      d={morph("0:M 284 548 C 506 294 840 252 1116 330 C 1322 388 1492 486 1644 548 C 1466 654 1266 758 1008 786 C 704 818 438 700 284 548 Z",
+                               "2.20:M 284 548 H 284 C 506 294 840 252 1116 330 C 1322 388 1492 486 1644 548 C 1466 654 1266 758 1008 786 C 704 818 438 700 284 548 Z",
+                               "2.46:M 284 548 C 520 434 820 408 1114 434 C 1342 454 1510 506 1644 548 C 1478 592 1260 628 1000 634 C 716 640 454 604 284 548 Z",
+                               "2.68:M 284 548 C 506 294 840 252 1116 330 C 1322 388 1492 486 1644 548 C 1466 654 1266 758 1008 786 C 704 818 438 700 284 548 Z",
+                               "5:M 284 548 C 506 294 840 252 1116 330 C 1322 388 1492 486 1644 548 C 1466 654 1266 758 1008 786 C 704 818 438 700 284 548 Z")}
+                      fill="url(#sclera_natural)" />
+                <Path id="sclera_upper_cast_shadow"
+                      d="M 270 530 C 520 294 858 282 1124 348 C 1328 398 1490 486 1652 548 C 1430 470 1194 424 948 424 C 666 424 460 474 270 530 Z"
+                      fill="#5c3b42" opacity="0.24" />
+                <Path id="sclera_lower_warmth"
+                      d="M 300 566 C 516 690 756 742 1008 724 C 1264 706 1468 630 1628 556 C 1450 690 1244 784 986 800 C 678 818 438 700 300 566 Z"
+                      fill="#b87068" opacity="0.15" />
+
+                <Group id="sclera_veins_group" opacity="0.42">
+                  <Path id="vein_left_a" d="M 302 554 C 398 536 472 546 548 590 C 604 622 646 626 702 614" fill="none" stroke="#b25c63" strokeWidth="3" strokeWidthStart="1.5" strokeWidthEnd="0.18" lineCap="round" normalize="true" />
+                  <Path id="vein_left_b" d="M 390 474 C 474 482 532 512 584 558" fill="none" stroke="#c27478" strokeWidth="2.4" strokeWidthStart="1.3" strokeWidthEnd="0.12" lineCap="round" normalize="true" />
+                  <Path id="vein_left_branch" d="M 472 520 C 440 548 420 574 416 604" fill="none" stroke="#b25c63" strokeWidth="2" strokeWidthStart="0.18" strokeWidthEnd="1.1" lineCap="round" normalize="true" />
+                  <Path id="vein_right_a" d="M 1598 548 C 1498 528 1416 548 1340 594 C 1290 624 1248 626 1190 612" fill="none" stroke="#b25c63" strokeWidth="3" strokeWidthStart="1.5" strokeWidthEnd="0.18" lineCap="round" normalize="true" />
+                  <Path id="vein_right_b" d="M 1512 474 C 1428 482 1370 514 1318 558" fill="none" stroke="#c27478" strokeWidth="2.4" strokeWidthStart="1.3" strokeWidthEnd="0.12" lineCap="round" normalize="true" />
+                  <Path id="vein_right_branch" d="M 1434 522 C 1460 552 1474 578 1472 606" fill="none" stroke="#b25c63" strokeWidth="2" strokeWidthStart="0.18" strokeWidthEnd="1.1" lineCap="round" normalize="true" />
+                </Group>
+              </Group>
+
+              <Group id="iris_transform_group" material="iris_surface_material"
+                     x="0" y="0" rotation="0" scale="1" transformOriginX="964" transformOriginY="548">
+                <Circle id="iris_outer_limbus" x="964" y="548" radius="258" color="#080b09" opacity="0.98" />
+                <Circle id="iris_color_disc" x="964" y="548" radius="242" fill="url(#iris_hazel)" />
+                <Circle id="iris_inner_gold_layer" x="964" y="548" radius="230" fill="url(#iris_inner_gold)" opacity="0.92" />
+
+                <Group id="iris_fibres_group" opacity="0.86">
+                  <Path id="iris_fibre_00" d="M 964 318 C 950 392 950 438 964 492" fill="none" stroke="#d8b65c" strokeWidth="7" strokeWidthStart="0.28" strokeWidthEnd="1.35" lineCap="round" normalize="true" />
+                  <Path id="iris_fibre_01" d="M 1079 349 C 1034 410 1008 452 990 499" fill="none" stroke="#9ec06d" strokeWidth="6" strokeWidthStart="0.22" strokeWidthEnd="1.28" lineCap="round" normalize="true" />
+                  <Path id="iris_fibre_02" d="M 1163 433 C 1090 456 1048 480 1011 514" fill="none" stroke="#d0a04a" strokeWidth="8" strokeWidthStart="0.18" strokeWidthEnd="1.22" lineCap="round" normalize="true" />
+                  <Path id="iris_fibre_03" d="M 1194 548 C 1120 536 1062 536 1022 548" fill="none" stroke="#76955a" strokeWidth="6" strokeWidthStart="0.24" strokeWidthEnd="1.30" lineCap="round" normalize="true" />
+                  <Path id="iris_fibre_04" d="M 1163 663 C 1092 628 1052 606 1010 582" fill="none" stroke="#c58d36" strokeWidth="7" strokeWidthStart="0.20" strokeWidthEnd="1.24" lineCap="round" normalize="true" />
+                  <Path id="iris_fibre_05" d="M 1079 747 C 1036 678 1006 634 990 596" fill="none" stroke="#9dbd69" strokeWidth="6" strokeWidthStart="0.22" strokeWidthEnd="1.30" lineCap="round" normalize="true" />
+                  <Path id="iris_fibre_06" d="M 964 778 C 954 704 954 648 964 606" fill="none" stroke="#d0a14b" strokeWidth="8" strokeWidthStart="0.18" strokeWidthEnd="1.25" lineCap="round" normalize="true" />
+                  <Path id="iris_fibre_07" d="M 849 747 C 890 680 918 634 938 596" fill="none" stroke="#76955a" strokeWidth="6" strokeWidthStart="0.24" strokeWidthEnd="1.30" lineCap="round" normalize="true" />
+                  <Path id="iris_fibre_08" d="M 765 663 C 834 630 878 604 918 582" fill="none" stroke="#d0a04a" strokeWidth="8" strokeWidthStart="0.18" strokeWidthEnd="1.22" lineCap="round" normalize="true" />
+                  <Path id="iris_fibre_09" d="M 734 548 C 812 540 866 538 906 548" fill="none" stroke="#9ec06d" strokeWidth="6" strokeWidthStart="0.22" strokeWidthEnd="1.28" lineCap="round" normalize="true" />
+                  <Path id="iris_fibre_10" d="M 765 433 C 836 462 878 484 918 514" fill="none" stroke="#c58d36" strokeWidth="7" strokeWidthStart="0.20" strokeWidthEnd="1.24" lineCap="round" normalize="true" />
+                  <Path id="iris_fibre_11" d="M 849 349 C 892 414 918 454 938 499" fill="none" stroke="#78945b" strokeWidth="6" strokeWidthStart="0.24" strokeWidthEnd="1.30" lineCap="round" normalize="true" />
+                  <Path id="iris_fibre_12" d="M 1018 326 C 996 402 986 444 980 492" fill="none" stroke="#55431e" strokeWidth="4" strokeWidthStart="0.18" strokeWidthEnd="1.18" lineCap="round" normalize="true" />
+                  <Path id="iris_fibre_13" d="M 1128 388 C 1068 430 1032 468 1003 507" fill="none" stroke="#4a5d35" strokeWidth="5" strokeWidthStart="0.16" strokeWidthEnd="1.20" lineCap="round" normalize="true" />
+                  <Path id="iris_fibre_14" d="M 1180 606 C 1102 592 1056 578 1018 566" fill="none" stroke="#55431e" strokeWidth="4" strokeWidthStart="0.18" strokeWidthEnd="1.18" lineCap="round" normalize="true" />
+                  <Path id="iris_fibre_15" d="M 1040 758 C 1012 684 992 636 980 602" fill="none" stroke="#4a5d35" strokeWidth="5" strokeWidthStart="0.16" strokeWidthEnd="1.20" lineCap="round" normalize="true" />
+                  <Path id="iris_fibre_16" d="M 790 702 C 850 650 888 614 925 586" fill="none" stroke="#55431e" strokeWidth="4" strokeWidthStart="0.18" strokeWidthEnd="1.18" lineCap="round" normalize="true" />
+                  <Path id="iris_fibre_17" d="M 742 492 C 820 504 866 522 910 536" fill="none" stroke="#4a5d35" strokeWidth="5" strokeWidthStart="0.16" strokeWidthEnd="1.20" lineCap="round" normalize="true" />
+                </Group>
+
+                <Circle id="pupil_soft_ring" x="964" y="548" radius="96" color="#1b1108" opacity="0.72" />
+                <Circle id="pupil" x="964" y="548" radius="78" color="#030302" />
+                <Circle id="corneal_depth" x="964" y="548" radius="247" fill="url(#cornea_depth)" />
+              </Group>
+
+              <Group id="corneal_highlights_group">
+                <Path id="main_window_highlight"
+                      d="M 784 388 C 846 340 932 326 1004 344 C 960 372 926 414 910 462 C 862 454 818 430 784 388 Z"
+                      fill="#ffffff" opacity="0.82" />
+                <Circle id="main_highlight_core" x="854" y="382" radius="42" color="#ffffff" opacity="0.96" />
+                <Circle id="secondary_highlight" x="1078" y="430" radius="24" color="#dff8ff" opacity="0.72" />
+                <Path id="corneal_reflection_ring"
+                      d="M 1138 410 C 1176 410 1208 442 1208 480 C 1208 518 1176 550 1138 550 C 1100 550 1068 518 1068 480 C 1068 442 1100 410 1138 410 Z M 1138 430 C 1110 430 1088 452 1088 480 C 1088 508 1110 530 1138 530 C 1166 530 1188 508 1188 480 C 1188 452 1166 430 1138 430 Z"
+                      fill="#E8FAFF" booleanOp="subtract" normalize="true" opacity="0.18" />
+                <Path id="lower_cornea_glint"
+                      d="M 806 674 C 898 724 1020 734 1112 690 C 1036 758 884 758 806 674 Z"
+                      fill="#d8f5ff" opacity="0.18" />
+              </Group>
+            </Group>
+
+            <Group id="eyelid_frame_group">
+              <Path id="upper_lid_mass"
+                    d="M 198 514 C 440 216 820 202 1136 280 C 1370 338 1550 444 1702 528 C 1504 448 1300 378 1086 354 C 748 316 476 390 282 568 C 246 558 218 540 198 514 Z"
+                    fill="url(#upper_lid_skin)" opacity="0.96" />
+              <Path id="upper_lash_line"
+                    d={morph("0:M 278 548 C 504 294 842 252 1118 330 C 1324 388 1494 486 1648 548",
+                             "2.20:M 278 548 C 504 294 842 252 1118 330 C 1324 388 1494 486 1648 548",
+                             "2.46:M 278 548 C 520 432 820 408 1114 434 C 1340 454 1510 506 1648 548",
+                             "2.68:M 278 548 C 504 294 842 252 1118 330 C 1324 388 1494 486 1648 548",
+                             "5:M 278 548 C 504 294 842 252 1118 330 C 1324 388 1494 486 1648 548")}
+                    fill="#00000000" stroke="#2a1718" strokeWidth="28" opacity="0.92" />
+              <Path id="upper_lid_crease"
+                    d="M 290 394 C 530 220 864 214 1142 282 C 1374 338 1514 424 1602 484"
+                    fill="none" stroke="#80534b" strokeWidth="16" strokeWidthStart="0.35" strokeWidthEnd="1.15" lineCap="round" normalize="true" opacity="0.58" />
+              <Path id="lower_lid_mass"
+                    d="M 270 554 C 452 728 716 830 1012 806 C 1284 784 1494 670 1662 548 C 1518 730 1308 890 1010 912 C 696 936 414 802 270 554 Z"
+                    fill="url(#lower_lid_skin)" opacity="0.92" />
+              <Path id="lower_lash_line"
+                    d={morph("0:M 284 550 C 454 710 710 808 1008 784 C 1272 762 1482 658 1644 550",
+                             "2.20:M 284 550 C 454 710 710 808 1008 784 C 1272 762 1482 658 1644 550",
+                             "2.46:M 284 550 C 454 604 716 640 1000 634 C 1260 628 1478 592 1644 550",
+                             "2.68:M 284 550 C 454 710 710 808 1008 784 C 1272 762 1482 658 1644 550",
+                             "5:M 284 550 C 454 710 710 808 1008 784 C 1272 762 1482 658 1644 550")}
+                    fill="#00000000" stroke="#4a292b" strokeWidth="18" opacity="0.82" />
+              <Path id="lower_waterline"
+                    d="M 308 562 C 490 696 728 758 1002 738 C 1254 720 1456 632 1612 556"
+                    fill="none" stroke="#efb5ab" strokeWidth="12" strokeWidthStart="0.35" strokeWidthEnd="0.80" offsetPath="-3" lineCap="round" normalize="true" opacity="0.88" />
+              <Path id="tear_duct"
+                    d="M 270 546 C 310 518 344 520 380 550 C 342 584 304 584 270 546 Z"
+                    fill="#b85459" opacity="0.82" />
+              <Circle id="tear_duct_glint" x="306" y="546" radius="11" color="#ffd9d3" opacity="0.76" />
+            </Group>
+
+            <Group id="eyelashes_group" opacity="0.90">
+              <Path id="lash_upper_01" d="M 430 408 C 382 344 354 310 318 278" fill="none" stroke="#241416" strokeWidth="13" strokeWidthStart="1.45" strokeWidthEnd="0.08" lineCap="round" normalize="true" />
+              <Path id="lash_upper_02" d="M 528 350 C 500 278 480 242 450 204" fill="none" stroke="#241416" strokeWidth="14" strokeWidthStart="1.50" strokeWidthEnd="0.06" lineCap="round" normalize="true" />
+              <Path id="lash_upper_03" d="M 642 306 C 626 232 612 190 586 150" fill="none" stroke="#241416" strokeWidth="14" strokeWidthStart="1.48" strokeWidthEnd="0.05" lineCap="round" normalize="true" />
+              <Path id="lash_upper_04" d="M 1332 392 C 1396 328 1430 292 1462 250" fill="none" stroke="#241416" strokeWidth="13" strokeWidthStart="1.42" strokeWidthEnd="0.07" lineCap="round" normalize="true" />
+              <Path id="lash_upper_05" d="M 1434 438 C 1506 388 1550 360 1592 324" fill="none" stroke="#241416" strokeWidth="12" strokeWidthStart="1.38" strokeWidthEnd="0.06" lineCap="round" normalize="true" />
+              <Path id="lash_lower_01" d="M 492 694 C 454 754 432 790 414 830" fill="none" stroke="#4c3030" strokeWidth="8" strokeWidthStart="1.18" strokeWidthEnd="0.08" lineCap="round" normalize="true" />
+              <Path id="lash_lower_02" d="M 1370 680 C 1410 730 1438 764 1464 804" fill="none" stroke="#4c3030" strokeWidth="8" strokeWidthStart="1.18" strokeWidthEnd="0.08" lineCap="round" normalize="true" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="realistic_hazel_eye_path_study" />
+</Graph>

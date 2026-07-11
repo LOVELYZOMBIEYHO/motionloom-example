@@ -1,0 +1,51 @@
+{
+  "id": "s-000049",
+  "type": "showcase",
+  "title": "Realistic Hazel Eye Path Study",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "portrait",
+    "eye",
+    "path",
+    "masking",
+    "gradients",
+    "iris-detail",
+    "highlights"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "RadialGradient",
+    "LinearGradient",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Rect",
+    "Circle",
+    "Path",
+    "Present"
+  ],
+  "teaches": [
+    "Build a realistic eye from editable MotionLoom Path, Circle, gradient, and mask primitives.",
+    "Layer sclera warmth, iris fibres, corneal depth, wetline, eyelids, and highlights to avoid a flat vector look.",
+    "Keep anatomical regions in named groups so the landing-page scene controls can adjust the complete eye or individual details."
+  ],
+  "source_path": "showcase/s-000049",
+  "demo_url": "",
+  "related": [
+    "s-000048",
+    "s-000034"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Timeline",
+    "Path",
+    "Present"
+  ]
+}
