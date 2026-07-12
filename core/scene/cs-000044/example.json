@@ -1,0 +1,13 @@
+{
+  "id": "cs-000044",
+  "type": "core",
+  "title": "Edge Roughness",
+  "domain": "scene",
+  "features": ["scene", "filter", "edge", "noise", "gpu-friendly"],
+  "dsl": ["Graph", "Background", "Scene", "Defs", "EdgeRoughness", "Timeline", "Track", "Sequence", "Layer", "Group", "Circle", "Present"],
+  "teaches": ["Add deterministic hand-drawn irregularity only to vector boundaries.", "Tune displacement radius, noise scale, amount, and seed independently."],
+  "source_path": "core/scene/cs-000044",
+  "demo_url": "",
+  "related": ["cs-000041", "cs-000043", "cs-000045"],
+  "requires": ["Graph", "Scene", "Timeline", "Group", "Present"]
+}

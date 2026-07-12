@@ -65,9 +65,7 @@
               <Rect x="1246" y="82" width="620" height="410" radius="34" color="#100504" />
               <Group id="lava_surface" material="lava_material">
                 <Path d="M 1288 218 C 1380 154 1460 250 1544 190 C 1636 124 1740 180 1824 250 L 1824 442 L 1288 442 Z" fill="url(#lava_fill)" />
-                <Path d="M 1310 332 C 1410 278 1468 370 1560 308 C 1642 254 1748 318 1814 286" fill="none" stroke="#ffbf22" strokeWidth="22" lineCap="round" opacity="0.82" />
-                <Circle x="1440" y="250" radius="24" color="#ffdf55" opacity="0.74" />
-                <Circle x="1694" y="220" radius="17" color="#ff7b10" opacity="0.78" />
+
               </Group>
               <Text x="1274" y="126" value="LAVA" fontSize="28" fontWeight="700" color="#ff6b18" />
             </Group>
@@ -86,8 +84,6 @@
               <Rect x="946" y="550" width="920" height="450" radius="34" color="#06263f" />
               <Group id="flowing_water" material="water_material">
                 <Path d="M 980 716 C 1110 632 1240 760 1370 680 C 1510 594 1660 730 1832 642 L 1832 944 L 980 944 Z" fill="url(#water_fill)" />
-                <Path d="M 1008 770 C 1140 706 1262 806 1398 736 C 1534 666 1660 770 1808 700" fill="none" stroke="#bcefff" strokeWidth="18" lineCap="round" opacity="0.72" />
-                <Path d="M 1024 846 C 1158 788 1280 876 1412 820 C 1548 760 1684 846 1812 792" fill="none" stroke="#52b9e8" strokeWidth="13" lineCap="round" opacity="0.76" />
               </Group>
               <Text x="974" y="598" value="FLOWING WATER" fontSize="28" fontWeight="700" color="#87dcff" />
             </Group>

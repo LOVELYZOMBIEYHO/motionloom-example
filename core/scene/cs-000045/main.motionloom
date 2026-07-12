@@ -1,0 +1,25 @@
+<Graph fps={30} duration="4s" size={[800,450]} renderSize={[800,450]}>
+  <Background color="#f5eadf" />
+  <Scene id="ColorBleedCore">
+    <Defs>
+      <Filter id="paint_bleed">
+        <ColorBleed radius="5" amount="0.34" />
+      </Filter>
+    </Defs>
+    <Timeline>
+      <Track id="color_bleed_demo" space="screen" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Text x="92" y="70" value="CLEAN INK" fontSize="22" color="#48352d" />
+            <Text x="492" y="70" value="COLOR BLEED" fontSize="22" color="#48352d" />
+            <Path id="clean_drop" d="M 220 98 C 180 180 126 234 126 302 C 126 370 178 404 220 404 C 262 404 314 370 314 302 C 314 234 260 180 220 98 Z" fill="#b9364a" />
+            <Group id="bleeding_drop_group" effects={["paint_bleed"]}>
+              <Path id="bleeding_drop" d="M 620 98 C 580 180 526 234 526 302 C 526 370 578 404 620 404 C 662 404 714 370 714 302 C 714 234 660 180 620 98 Z" fill="#b9364a" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="ColorBleedCore" />
+</Graph>

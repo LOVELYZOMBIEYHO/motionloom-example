@@ -1,15 +1,16 @@
-# Inferno Anime Eye with Fire Noise Iris
+# Anime Inferno Eye
 
-A single dramatic anime eye with a flame-colored iris, mangekyou-style tomoe, and bright corneal highlights. The iris internal texture comes from the same procedural fire noise used in `s-000050`.
+A single stylized anime eye rebuilt from MotionLoom paths. It uses an asymmetric sharp eye aperture, a dark violet-red upper lid, a clipped orange fire iris, a vertical pupil, warm lower-iris light, and layered corneal highlights.
 
-The iris group uses a `fire_material` driven by a flowing `fire_noise` definition: the texture amount, displacement, roughness, and specular values are tuned so the orange-yellow flame surface appears to breathe and ripple inside the eye. The rest of the eye is built from standard MotionLoom primitives: masked sclera, pupil, corneal highlights, eyelids, and lashes.
+The eye remains fixed. Only the procedural flame texture, flame band offset, and iris glow move subtly so the design stays readable while feeling alive.
 
 ## What this showcase demonstrates
 
-- Reusing a procedural noise/material pair from a previous showcase as a live iris texture.
-- Layering flame gradients, fire-noise displacement, and hand-drawn flame tongues under corneal highlights.
-- Coordinating gaze shifts, slow iris rotation, and a single blink via `curve` and `morph`.
-- Keeping the eye masked so iris contents stay inside the aperture during animation.
+- A complete anime eye assembled from editable Path, Circle, and Group nodes.
+- Mask feather and expansion keeping the iris and highlights inside the eye aperture.
+- Universal procedural material applied only to the iris.
+- EdgeSoftness, EdgeRoughness, and ColorBleed applied as one hand-drawn edge stack.
+- Independently adjustable groups for the eye, sclera, iris, pupil, highlights, and eyelid frame.
 
 ## Preview command
 

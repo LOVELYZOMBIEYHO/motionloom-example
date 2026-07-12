@@ -1,0 +1,13 @@
+{
+  "id": "cs-000046",
+  "type": "core",
+  "title": "Universal Procedural Optics",
+  "domain": "scene",
+  "features": ["scene", "gpu-friendly", "procedural", "particles", "rays", "glass", "refraction", "blend", "polar-noise", "light-streak"],
+  "dsl": ["Graph", "Background", "Scene", "Defs", "Noise", "Material", "Filter", "LightStreak", "ChromaticAberration", "HighlightCompression", "Timeline", "Track", "Sequence", "Layer", "RadialRays", "ParticleField", "Group", "Circle", "Present"],
+  "teaches": ["Combine deterministic radial rays and particles with polar-coordinate noise.", "Apply universal glass refraction, optical post effects, and advanced blend modes."],
+  "source_path": "core/scene/cs-000046",
+  "demo_url": "",
+  "related": ["cs-000042", "cs-000043", "cs-000044", "cs-000045"],
+  "requires": ["Graph", "Scene", "Timeline", "Group", "Present"]
+}

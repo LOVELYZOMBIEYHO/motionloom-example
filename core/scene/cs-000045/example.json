@@ -1,0 +1,13 @@
+{
+  "id": "cs-000045",
+  "type": "core",
+  "title": "Color Bleed",
+  "domain": "scene",
+  "features": ["scene", "filter", "edge", "color", "soft-edge", "gpu-friendly"],
+  "dsl": ["Graph", "Background", "Scene", "Defs", "ColorBleed", "Timeline", "Track", "Sequence", "Layer", "Group", "Path", "Present"],
+  "teaches": ["Spread pigment beyond an alpha boundary without blurring the entire object.", "Control bleed distance and strength independently."],
+  "source_path": "core/scene/cs-000045",
+  "demo_url": "",
+  "related": ["cs-000041", "cs-000043", "cs-000044"],
+  "requires": ["Graph", "Scene", "Timeline", "Group", "Present"]
+}

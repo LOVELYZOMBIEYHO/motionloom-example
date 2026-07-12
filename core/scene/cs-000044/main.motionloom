@@ -1,0 +1,25 @@
+<Graph fps={30} duration="4s" size={[800,450]} renderSize={[800,450]}>
+  <Background color="#e8edf0" />
+  <Scene id="EdgeRoughnessCore">
+    <Defs>
+      <Filter id="hand_drawn_contour">
+        <EdgeRoughness radius="2.2" amount="0.90" scale="18" seed="44" />
+      </Filter>
+    </Defs>
+    <Timeline>
+      <Track id="edge_roughness_demo" space="screen" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Text x="92" y="70" value="PERFECT VECTOR" fontSize="22" color="#26343b" />
+            <Text x="492" y="70" value="HAND-DRAWN EDGE" fontSize="22" color="#26343b" />
+            <Circle id="clean_disc" x="220" y="236" radius="126" color="#3d86a8" stroke="#193c50" strokeWidth="13" />
+            <Group id="rough_disc_group" effects={["hand_drawn_contour"]}>
+              <Circle id="rough_disc" x="620" y="236" radius="126" color="#3d86a8" stroke="#193c50" strokeWidth="13" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="EdgeRoughnessCore" />
+</Graph>

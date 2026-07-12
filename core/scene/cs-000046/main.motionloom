@@ -1,0 +1,33 @@
+<Graph fps={30} duration="4s" size={[960,540]} renderSize={[960,540]}>
+  <Background color="#070b18" />
+  <Scene id="UniversalOpticsCore">
+    <Defs>
+      <Noise id="polar_energy" type="polar" scale="18" octaves="5" seed="7" contrast="1.3" evolution={curve("0:0:linear, 4:1:linear")} />
+      <Material id="refractive_energy" texture="polar_energy" textureAmount="0.34" displacement="polar_energy" displacementAmount="5" roughness="0.18" specular="0.75" refraction="7" dispersion="2.5" glass="0.7" />
+      <Filter id="optical_finish">
+        <LightStreak radius="26" amount="0.62" scale="-16" seed="0.68" />
+        <ChromaticAberration radius="2.5" amount="0.7" />
+        <HighlightCompression scale="0.76" amount="0.72" />
+      </Filter>
+    </Defs>
+    <Timeline>
+      <Track id="universal_optics" space="screen" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Group id="animated_energy_rays" rotation={curve("0:0:linear, 4:25:ease_in_out")}>
+              <RadialRays id="energy_rays" x="480" y="270" count="40" innerRadius="95" length="190" lengthVariation="0.32" startAngle="-90" spread="360" stroke="#64d9ff" strokeWidth="3" rayOpacity="0.28" seed="12" />
+            </Group>
+            <ParticleField id="energy_particles" x="480" y="270" width="760" height="410" count="130" minSize="1" maxSize="4" minOpacity="0.15" maxOpacity="0.82" color="#d8f6ff" seed="42" />
+            <Group id="glass_energy_orb" material="refractive_energy" effects={["optical_finish"]}>
+              <Circle x="480" y="270" radius="126" color="#30a8ed" opacity="0.88" />
+              <Circle x="445" y="230" radius="62" color="#ffffff" opacity="0.32" blend="soft-light" />
+              <Circle x="520" y="290" radius="74" color="#ff3ed1" opacity="0.48" blend="overlay" />
+              <Circle x="480" y="270" radius="26" color="#bbf8ff" opacity="0.8" blend="color-dodge" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="UniversalOpticsCore" />
+</Graph>

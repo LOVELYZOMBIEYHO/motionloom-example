@@ -1,9 +1,9 @@
 {
-  "example_count": 127,
-  "core_count": 76,
-  "showcase_count": 51,
+  "example_count": 132,
+  "core_count": 80,
+  "showcase_count": 52,
   "domain_counts": {
-    "scene": 90,
+    "scene": 95,
     "world": 6,
     "process": 13,
     "process_with_time": 3,
@@ -1539,6 +1539,205 @@
         "Present"
       ],
       "path": "core/scene/cs-000041/"
+    },
+    {
+      "id": "cs-000043",
+      "type": "core",
+      "title": "Edge Softness",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "filter",
+        "edge",
+        "edge-smoothing",
+        "soft-edge",
+        "gpu-friendly"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "EdgeSoftness",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Path",
+        "Present"
+      ],
+      "teaches": [
+        "Soften only vector alpha boundaries without blurring the complete fill.",
+        "Protect opaque interiors with preserveInterior."
+      ],
+      "source_path": "core/scene/cs-000043",
+      "demo_url": "",
+      "related": [
+        "cs-000041",
+        "cs-000044",
+        "cs-000045"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Group",
+        "Present"
+      ],
+      "path": "core/scene/cs-000043/"
+    },
+    {
+      "id": "cs-000044",
+      "type": "core",
+      "title": "Edge Roughness",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "filter",
+        "edge",
+        "noise",
+        "gpu-friendly"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "EdgeRoughness",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Circle",
+        "Present"
+      ],
+      "teaches": [
+        "Add deterministic hand-drawn irregularity only to vector boundaries.",
+        "Tune displacement radius, noise scale, amount, and seed independently."
+      ],
+      "source_path": "core/scene/cs-000044",
+      "demo_url": "",
+      "related": [
+        "cs-000041",
+        "cs-000043",
+        "cs-000045"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Group",
+        "Present"
+      ],
+      "path": "core/scene/cs-000044/"
+    },
+    {
+      "id": "cs-000045",
+      "type": "core",
+      "title": "Color Bleed",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "filter",
+        "edge",
+        "color",
+        "soft-edge",
+        "gpu-friendly"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "ColorBleed",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Path",
+        "Present"
+      ],
+      "teaches": [
+        "Spread pigment beyond an alpha boundary without blurring the entire object.",
+        "Control bleed distance and strength independently."
+      ],
+      "source_path": "core/scene/cs-000045",
+      "demo_url": "",
+      "related": [
+        "cs-000041",
+        "cs-000043",
+        "cs-000044"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Group",
+        "Present"
+      ],
+      "path": "core/scene/cs-000045/"
+    },
+    {
+      "id": "cs-000046",
+      "type": "core",
+      "title": "Universal Procedural Optics",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "gpu-friendly",
+        "procedural",
+        "particles",
+        "rays",
+        "glass",
+        "refraction",
+        "blend",
+        "polar-noise",
+        "light-streak"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Noise",
+        "Material",
+        "Filter",
+        "LightStreak",
+        "ChromaticAberration",
+        "HighlightCompression",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "RadialRays",
+        "ParticleField",
+        "Group",
+        "Circle",
+        "Present"
+      ],
+      "teaches": [
+        "Combine deterministic radial rays and particles with polar-coordinate noise.",
+        "Apply universal glass refraction, optical post effects, and advanced blend modes."
+      ],
+      "source_path": "core/scene/cs-000046",
+      "demo_url": "",
+      "related": [
+        "cs-000042",
+        "cs-000043",
+        "cs-000044",
+        "cs-000045"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Group",
+        "Present"
+      ],
+      "path": "core/scene/cs-000046/"
     },
     {
       "id": "s-000001",
@@ -3955,7 +4154,7 @@
     {
       "id": "s-000051",
       "type": "showcase",
-      "title": "Inferno Anime Eye with Fire Noise Iris",
+      "title": "Anime Inferno Eye with Hand-Drawn Edges",
       "domain": "scene",
       "features": [
         "scene",
@@ -3967,8 +4166,10 @@
         "noise",
         "iris-detail",
         "highlights",
-        "gaze-animation",
-        "blink-animation",
+        "filter",
+        "edge",
+        "edge-smoothing",
+        "soft-edge",
         "curve-animation",
         "gradients"
       ],
@@ -3979,6 +4180,9 @@
         "Defs",
         "Noise",
         "Material",
+        "EdgeSoftness",
+        "EdgeRoughness",
+        "ColorBleed",
         "RadialGradient",
         "LinearGradient",
         "Timeline",
@@ -3993,9 +4197,9 @@
         "curve"
       ],
       "teaches": [
-        "Build a dramatic anime eye with a flame-colored iris and apply a procedural fire noise material to the iris surface.",
-        "Reuse the fire noise and material definitions from s-000050 as a live internal texture for the eye.",
-        "Coordinate gaze shifts, a slow iris rotation, and a single blink while keeping the eye masked and layered."
+        "Build a fixed anime eye with a flame-colored procedural iris and vertical pupil.",
+        "Apply EdgeSoftness, EdgeRoughness, and ColorBleed as an ordered hand-drawn treatment stack.",
+        "Keep the vector interior crisp while softening and varying only the alpha boundary."
       ],
       "source_path": "showcase/s-000051",
       "demo_url": "",
@@ -4012,6 +4216,80 @@
         "Present"
       ],
       "path": "showcase/s-000051/"
+    },
+    {
+      "id": "s-000052",
+      "type": "showcase",
+      "title": "Cosmic Prism Glass Eye",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "anime",
+        "eye",
+        "procedural",
+        "procedural-texture",
+        "polar-noise",
+        "particles",
+        "rays",
+        "glass",
+        "refraction",
+        "blend",
+        "light-streak",
+        "material",
+        "masking",
+        "gpu-friendly",
+        "gradients",
+        "highlights",
+        "texture"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Noise",
+        "Material",
+        "Filter",
+        "LightStreak",
+        "ChromaticAberration",
+        "HighlightCompression",
+        "RadialGradient",
+        "LinearGradient",
+        "Precompose",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "RadialRays",
+        "ParticleField",
+        "Rect",
+        "Circle",
+        "Path",
+        "Present",
+        "curve"
+      ],
+      "teaches": [
+        "Build a luminous cosmic iris entirely from editable MotionLoom scene nodes.",
+        "Combine polar noise, deterministic particles, radial rays, glass refraction, dispersion, and advanced blend modes.",
+        "Keep optical effects clipped inside a feathered eye aperture while preserving independently adjustable groups.",
+        "Use separate low-frequency displacement and cellular pore noise for procedural skin, with filled tapered eyebrow hairs and layered eye-socket shading."
+      ],
+      "source_path": "showcase/s-000052",
+      "demo_url": "",
+      "related": [
+        "s-000051",
+        "s-000049",
+        "cs-000046"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Path",
+        "Present"
+      ],
+      "path": "showcase/s-000052/"
     },
     {
       "id": "cw-000001",

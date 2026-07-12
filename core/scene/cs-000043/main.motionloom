@@ -1,0 +1,25 @@
+<Graph fps={30} duration="4s" size={[800,450]} renderSize={[800,450]}>
+  <Background color="#f4efe5" />
+  <Scene id="EdgeSoftnessCore">
+    <Defs>
+      <Filter id="soft_edges">
+        <EdgeSoftness radius="3" amount="0.72" preserveInterior="0.90" />
+      </Filter>
+    </Defs>
+    <Timeline>
+      <Track id="edge_softness_demo" space="screen" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Text x="92" y="70" value="SHARP" fontSize="22" color="#403934" />
+            <Text x="492" y="70" value="EDGE SOFTNESS" fontSize="22" color="#403934" />
+            <Path id="sharp_leaf" d="M 92 340 C 118 162 262 92 330 126 C 316 252 226 352 92 340 Z" fill="#d04f36" stroke="#49251f" strokeWidth="12" />
+            <Group id="soft_leaf_group" effects={["soft_edges"]}>
+              <Path id="soft_leaf" d="M 492 340 C 518 162 662 92 730 126 C 716 252 626 352 492 340 Z" fill="#d04f36" stroke="#49251f" strokeWidth="12" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="EdgeSoftnessCore" />
+</Graph>

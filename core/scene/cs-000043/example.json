@@ -1,0 +1,13 @@
+{
+  "id": "cs-000043",
+  "type": "core",
+  "title": "Edge Softness",
+  "domain": "scene",
+  "features": ["scene", "filter", "edge", "edge-smoothing", "soft-edge", "gpu-friendly"],
+  "dsl": ["Graph", "Background", "Scene", "Defs", "EdgeSoftness", "Timeline", "Track", "Sequence", "Layer", "Group", "Path", "Present"],
+  "teaches": ["Soften only vector alpha boundaries without blurring the complete fill.", "Protect opaque interiors with preserveInterior."],
+  "source_path": "core/scene/cs-000043",
+  "demo_url": "",
+  "related": ["cs-000041", "cs-000044", "cs-000045"],
+  "requires": ["Graph", "Scene", "Timeline", "Group", "Present"]
+}

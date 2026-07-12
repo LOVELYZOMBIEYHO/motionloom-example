@@ -1,7 +1,7 @@
 {
   "id": "s-000051",
   "type": "showcase",
-  "title": "Inferno Anime Eye with Fire Noise Iris",
+  "title": "Anime Inferno Eye with Hand-Drawn Edges",
   "domain": "scene",
   "features": [
     "scene",
@@ -13,8 +13,10 @@
     "noise",
     "iris-detail",
     "highlights",
-    "gaze-animation",
-    "blink-animation",
+    "filter",
+    "edge",
+    "edge-smoothing",
+    "soft-edge",
     "curve-animation",
     "gradients"
   ],
@@ -25,6 +27,9 @@
     "Defs",
     "Noise",
     "Material",
+    "EdgeSoftness",
+    "EdgeRoughness",
+    "ColorBleed",
     "RadialGradient",
     "LinearGradient",
     "Timeline",
@@ -39,9 +44,9 @@
     "curve"
   ],
   "teaches": [
-    "Build a dramatic anime eye with a flame-colored iris and apply a procedural fire noise material to the iris surface.",
-    "Reuse the fire noise and material definitions from s-000050 as a live internal texture for the eye.",
-    "Coordinate gaze shifts, a slow iris rotation, and a single blink while keeping the eye masked and layered."
+    "Build a fixed anime eye with a flame-colored procedural iris and vertical pupil.",
+    "Apply EdgeSoftness, EdgeRoughness, and ColorBleed as an ordered hand-drawn treatment stack.",
+    "Keep the vector interior crisp while softening and varying only the alpha boundary."
   ],
   "source_path": "showcase/s-000051",
   "demo_url": "",
