@@ -1,0 +1,25 @@
+<Graph fps={30} duration="4s" size={[640,360]}>
+  <Background color="#172033" />
+  <Scene id="cloth_contract">
+    <Timeline>
+      <Track>
+        <Sequence from="0s" duration="4s">
+          <Layer>
+            <Group id="cloth_mesh"
+                   x={curve("0:0:ease_in_out, 1.3:28:ease_in_out, 2.7:-22:ease_in_out, 4:0:ease_in_out")}
+                   y={curve("0:0:ease_in_out, 2:12:ease_in_out, 4:0:ease_in_out")}>
+              <Curve points="190,70 255,70 320,70 385,70 450,70" stroke="#A5B4FC" strokeWidth="12" />
+              <Curve points="190,110 255,110 320,110 385,110 450,110" stroke="#818CF8" strokeWidth="12" />
+              <Curve points="190,150 255,150 320,150 385,150 450,150" stroke="#6366F1" strokeWidth="12" />
+              <Curve points="190,190 255,190 320,190 385,190 450,190" stroke="#4F46E5" strokeWidth="12" />
+              <Curve points="190,230 255,230 320,230 385,230 450,230" stroke="#4338CA" strokeWidth="12" />
+              <Curve points="190,270 255,270 320,270 385,270 450,270" stroke="#3730A3" strokeWidth="12" />
+            </Group>
+            <Cloth id="cape" target="cloth_mesh" columns="5" rows="6" stiffness="0.78" damping="0.2" amplitude="34" frequency="2.2" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="cloth_contract" />
+</Graph>

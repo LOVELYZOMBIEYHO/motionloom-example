@@ -22,6 +22,9 @@
   "antialias": [
     "ct-000012"
   ],
+  "attraction": [
+    "csim-000003"
+  ],
   "audio-reactive": [
     "cs-000025"
   ],
@@ -52,11 +55,17 @@
   "brightness": [
     "cp-000001"
   ],
+  "cache-bake": [
+    "csim-000012"
+  ],
   "camera": [
     "cs-000001",
     "cs-000030",
     "cs-000038",
     "cw-000006"
+  ],
+  "capsule-collision": [
+    "csim-000005"
   ],
   "character-action": [
     "cs-000033",
@@ -71,6 +80,12 @@
   "circle": [
     "cs-000002",
     "cs-000032"
+  ],
+  "circle-collision": [
+    "csim-000004"
+  ],
+  "cloth": [
+    "csim-000011"
   ],
   "color": [
     "cs-000045",
@@ -93,7 +108,8 @@
     "cs-000025"
   ],
   "curve": [
-    "cs-000004"
+    "cs-000004",
+    "cs-000047"
   ],
   "curve-animation": [
     "cs-000027",
@@ -117,6 +133,15 @@
   "defs": [
     "cs-000005",
     "cs-000025"
+  ],
+  "deterministic-timestep": [
+    "csim-000012"
+  ],
+  "distance-constraint": [
+    "csim-000006"
+  ],
+  "dynamic-curve": [
+    "csim-000001"
   ],
   "edge": [
     "cs-000035",
@@ -208,6 +233,9 @@
   "graph": [
     "cs-000006"
   ],
+  "gravity": [
+    "csim-000001"
+  ],
   "group": [
     "cs-000007",
     "cs-000041"
@@ -215,9 +243,15 @@
   "group-mask": [
     "cs-000040"
   ],
+  "hair": [
+    "csim-000008"
+  ],
   "highlight": [
     "cp-000010",
     "cpt-000001"
+  ],
+  "hinge": [
+    "csim-000007"
   ],
   "hsla-overlay": [
     "cp-000012",
@@ -321,6 +355,9 @@
   "paper-texture": [
     "cp-000013"
   ],
+  "particle-emitter": [
+    "csim-000010"
+  ],
   "particles": [
     "cs-000046"
   ],
@@ -379,6 +416,12 @@
     "cs-000035",
     "cs-000037"
   ],
+  "puppet-pin": [
+    "cs-000047"
+  ],
+  "puppet-warp": [
+    "cs-000047"
+  ],
   "radialgradient": [
     "cs-000016"
   ],
@@ -401,6 +444,9 @@
   "render-scale": [
     "ct-000012"
   ],
+  "rigid-body-2d": [
+    "csim-000009"
+  ],
   "scene": [
     "cs-000018",
     "cs-000030",
@@ -419,7 +465,11 @@
     "cs-000044",
     "cs-000045",
     "cs-000046",
+    "cs-000047",
     "cm-000001"
+  ],
+  "semantic-bind": [
+    "cs-000047"
   ],
   "sequence": [
     "cs-000019"
@@ -452,6 +502,9 @@
     "cs-000043",
     "cs-000045",
     "ct-000012"
+  ],
+  "spring-chain": [
+    "csim-000008"
   ],
   "text": [
     "cs-000021",
@@ -514,11 +567,17 @@
   "triangle": [
     "cs-000035"
   ],
+  "turbulence": [
+    "csim-000002"
+  ],
   "use": [
     "cs-000024"
   ],
   "vertex": [
     "cs-000035"
+  ],
+  "wind": [
+    "csim-000002"
   ],
   "world": [
     "cm-000001"

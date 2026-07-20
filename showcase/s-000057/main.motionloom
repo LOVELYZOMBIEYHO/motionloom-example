@@ -1,0 +1,124 @@
+<!-- Puppet Warp showcase: one editable character surface, animated by semantic pins. -->
+<Graph fps={30} duration="8s" size={[1280,720]} renderSize={[1280,720]}>
+  <Background color="#070A14" />
+  <Scene id="puppet_warp_pin_dance">
+    <Defs>
+      <LinearGradient id="puppet_body_gradient" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#67E8F9, 0.42:#8B5CF6, 1:#F472B6" />
+      <LinearGradient id="floor_glow" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#22D3EE00, 0.5:#22D3EEAA, 1:#F472B600" />
+      <RadialGradient id="stage_halo" cx="0.50" cy="0.50" r="0.58"
+                      stops="0:#312E81AA, 0.48:#17255466, 1:#070A1400" />
+    </Defs>
+
+    <Timeline>
+      <Track id="stage" space="screen" z="0">
+        <Sequence from="0s" duration="8s" out="hold">
+          <Layer>
+            <Circle x="640" y="360" radius="330" fill="url(#stage_halo)" />
+            <Rect x="126" y="615" width="1028" height="4" radius="2" fill="url(#floor_glow)" />
+            <Text value="MOTIONLOOM / PUPPET WARP" x="74" y="74"
+                  fontSize="25" renderScale="4x" color="#67E8F9" />
+            <Text value="ONE SURFACE · FIVE SEMANTIC PINS" x="74" y="108"
+                  fontSize="15" renderScale="4x" color="#94A3B8" />
+
+            <!-- The complete character stays ordinary editable MotionLoom artwork. -->
+            <Group id="loom_puppet">
+              <Group id="puppet_shadow">
+                <Ellipse x="640" y="604" radiusX="154" radiusY="24" color="#020617" opacity="0.76" />
+              </Group>
+
+              <Group id="puppet_body">
+                <Path d="M 520 278 C 520 230 565 196 640 196 C 715 196 760 230 760 278 L 748 470 C 744 532 705 570 640 570 C 575 570 536 532 532 470 Z"
+                      fill="url(#puppet_body_gradient)" stroke="#C4B5FD" strokeWidth="5" />
+                <Path d="M 546 388 C 592 421 688 421 734 388"
+                      fill="none" stroke="#FFFFFF" strokeWidth="4" opacity="0.30" />
+                <Circle x="596" y="302" radius="15" color="#07111F" />
+                <Circle x="684" y="302" radius="15" color="#07111F" />
+                <Circle x="591" y="297" radius="5" color="#FFFFFF" />
+                <Circle x="679" y="297" radius="5" color="#FFFFFF" />
+                <Path d="M 600 350 C 620 371 660 371 680 350"
+                      fill="none" stroke="#FFFFFF" strokeWidth="8" />
+              </Group>
+
+              <!-- Named Groups provide semantic rest anchors for PuppetPin.bindTo. -->
+              <Group id="left_hand" x="470" y="390">
+                <Path d="M 82 38 C 44 32 20 14 0 0"
+                      fill="none" stroke="#8B5CF6" strokeWidth="42" />
+                <Circle x="0" y="0" radius="28" color="#F0ABFC" stroke="#FFFFFF" strokeWidth="4" />
+              </Group>
+              <Group id="right_hand" x="810" y="390">
+                <Path d="M -82 38 C -44 32 -20 14 0 0"
+                      fill="none" stroke="#8B5CF6" strokeWidth="42" />
+                <Circle x="0" y="0" radius="28" color="#67E8F9" stroke="#FFFFFF" strokeWidth="4" />
+              </Group>
+              <Group id="head_anchor" x="640" y="246">
+                <Circle x="0" y="0" radius="3" color="#FFFFFF" opacity="0.01" />
+              </Group>
+              <Group id="hip_anchor" x="640" y="492">
+                <Circle x="0" y="0" radius="3" color="#FFFFFF" opacity="0.01" />
+              </Group>
+              <Group id="left_foot" x="580" y="568">
+                <Ellipse x="0" y="10" radiusX="52" radiusY="25" color="#6D28D9" />
+              </Group>
+              <Group id="right_foot" x="700" y="568">
+                <Ellipse x="0" y="10" radiusX="52" radiusY="25" color="#6D28D9" />
+              </Group>
+            </Group>
+
+            <!-- PuppetWarp resolves the target Group and deforms it as one surface. -->
+            <PuppetWarp id="loom_puppet_warp" target="loom_puppet"
+                        width="1280" height="720" density="high" amount="1">
+              <PuppetPin id="hip_pin" bindTo="hip_anchor" fixed="true"
+                         radius="170" strength="1.35" falloff="smooth" />
+              <PuppetPin id="left_foot_pin" bindTo="left_foot" fixed="true"
+                         radius="105" strength="1.20" falloff="smooth" />
+              <PuppetPin id="right_foot_pin" bindTo="right_foot" fixed="true"
+                         radius="105" strength="1.20" falloff="smooth" />
+              <PuppetPin id="head_pin" bindTo="head_anchor"
+                         targetX={curve("0:640:linear, 1:612:ease_in_out, 2:640:ease_in_out, 3:668:ease_in_out, 4:640:ease_in_out, 5:620:ease_in_out, 6:660:ease_in_out, 7:640:ease_in_out, 8:640:linear")}
+                         targetY={curve("0:246:linear, 1:220:ease_in_out, 2:258:ease_in_out, 3:220:ease_in_out, 4:246:ease_in_out, 5:214:ease_in_out, 6:252:ease_in_out, 7:222:ease_in_out, 8:246:ease_in_out")}
+                         radius="210" strength="1.15" falloff="gaussian" />
+              <PuppetPin id="left_hand_pin" bindTo="left_hand"
+                         targetX={curve("0:470:linear, 1:402:ease_in_out, 2:442:ease_in_out, 3:390:ease_in_out, 4:470:ease_in_out, 5:428:ease_in_out, 6:388:ease_in_out, 7:446:ease_in_out, 8:470:ease_in_out")}
+                         targetY={curve("0:390:linear, 1:296:ease_in_out, 2:205:ease_in_out, 3:278:ease_in_out, 4:390:ease_in_out, 5:248:ease_in_out, 6:190:ease_in_out, 7:300:ease_in_out, 8:390:ease_in_out")}
+                         radius="185" strength="1.35" falloff="smooth" />
+              <PuppetPin id="right_hand_pin" bindTo="right_hand"
+                         targetX={curve("0:810:linear, 1:864:ease_in_out, 2:890:ease_in_out, 3:840:ease_in_out, 4:810:ease_in_out, 5:888:ease_in_out, 6:850:ease_in_out, 7:900:ease_in_out, 8:810:ease_in_out")}
+                         targetY={curve("0:390:linear, 1:214:ease_in_out, 2:288:ease_in_out, 3:196:ease_in_out, 4:390:ease_in_out, 5:204:ease_in_out, 6:286:ease_in_out, 7:190:ease_in_out, 8:390:ease_in_out")}
+                         radius="185" strength="1.35" falloff="smooth" />
+            </PuppetWarp>
+
+            <!-- These overlays expose the animated pin targets without entering the warp. -->
+            <Group id="pin_overlay" opacity="0.88">
+              <Circle x={curve("0:470:linear, 1:402:ease_in_out, 2:442:ease_in_out, 3:390:ease_in_out, 4:470:ease_in_out, 5:428:ease_in_out, 6:388:ease_in_out, 7:446:ease_in_out, 8:470:ease_in_out")}
+                      y={curve("0:390:linear, 1:296:ease_in_out, 2:205:ease_in_out, 3:278:ease_in_out, 4:390:ease_in_out, 5:248:ease_in_out, 6:190:ease_in_out, 7:300:ease_in_out, 8:390:ease_in_out")}
+                      radius="15" fill="none" stroke="#F0ABFC" strokeWidth="3" />
+              <Circle x={curve("0:810:linear, 1:864:ease_in_out, 2:890:ease_in_out, 3:840:ease_in_out, 4:810:ease_in_out, 5:888:ease_in_out, 6:850:ease_in_out, 7:900:ease_in_out, 8:810:ease_in_out")}
+                      y={curve("0:390:linear, 1:214:ease_in_out, 2:288:ease_in_out, 3:196:ease_in_out, 4:390:ease_in_out, 5:204:ease_in_out, 6:286:ease_in_out, 7:190:ease_in_out, 8:390:ease_in_out")}
+                      radius="15" fill="none" stroke="#67E8F9" strokeWidth="3" />
+              <Circle x={curve("0:640:linear, 1:612:ease_in_out, 2:640:ease_in_out, 3:668:ease_in_out, 4:640:ease_in_out, 5:620:ease_in_out, 6:660:ease_in_out, 7:640:ease_in_out, 8:640:linear")}
+                      y={curve("0:246:linear, 1:220:ease_in_out, 2:258:ease_in_out, 3:220:ease_in_out, 4:246:ease_in_out, 5:214:ease_in_out, 6:252:ease_in_out, 7:222:ease_in_out, 8:246:ease_in_out")}
+                      radius="12" fill="none" stroke="#FFFFFF" strokeWidth="3" />
+              <Circle x="640" y="492" radius="10" color="#FACC15" />
+              <Text value="FIXED" x="662" y="500" fontSize="13" renderScale="4x" color="#FDE68A" />
+            </Group>
+
+            <Group id="dsl_callout">
+              <Rect x="918" y="92" width="300" height="154" radius="20"
+                    color="#0F172ACC" stroke="#334155" strokeWidth="2" />
+              <Text value="PuppetWarp" x="948" y="132" fontSize="22" renderScale="4x" color="#E9D5FF" />
+              <Text value="target = loom_puppet" x="948" y="166" fontSize="14" renderScale="4x" color="#94A3B8" />
+              <Text value="bindTo = right_hand" x="948" y="194" fontSize="14" renderScale="4x" color="#94A3B8" />
+              <Text value="targetX / targetY = curve(...)" x="948" y="222" fontSize="12" renderScale="4x" color="#67E8F9" />
+            </Group>
+
+            <Text value="EDIT THE ART · NAME THE ANCHORS · ANIMATE THE PINS" x="340" y="670"
+                  fontSize="17" renderScale="4x" color="#CBD5E1" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="puppet_warp_pin_dance" />
+</Graph>

@@ -1,0 +1,50 @@
+{
+  "id": "s-000057",
+  "type": "showcase",
+  "title": "Puppet Warp Pin Dance",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "character",
+    "puppet",
+    "puppet-warp",
+    "puppet-pin",
+    "semantic-bind",
+    "deformation",
+    "curve-animation",
+    "editor-overlay",
+    "gpu-friendly"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "LinearGradient",
+    "RadialGradient",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Rect",
+    "Ellipse",
+    "Circle",
+    "Path",
+    "Text",
+    "PuppetWarp",
+    "PuppetPin",
+    "Present",
+    "curve"
+  ],
+  "teaches": [
+    "Deform one editable MotionLoom artwork group as a continuous Puppet Warp surface.",
+    "Bind pins to semantic group ids instead of duplicating fragile rest coordinates.",
+    "Mix fixed hip and foot anchors with animated head and hand targets for stable expressive movement.",
+    "Visualize animated pin targets outside the warped artwork as an editor-friendly overlay."
+  ],
+  "source_path": "showcase/s-000057",
+  "demo_url": "",
+  "related": ["s-000055", "cs-000047", "cs-000035"],
+  "requires": ["Graph", "Scene", "Timeline", "Group", "PuppetWarp", "PuppetPin", "Present"]
+}

@@ -15,7 +15,7 @@
   "properties": {
     "id": {
       "type": "string",
-      "pattern": "^(cs|cw|cp|cpt|cm|ct|s)-[0-9]{6}$"
+      "pattern": "^(cs|cw|cp|cpt|cm|ct|csim|s)-[0-9]{6}$"
     },
     "type": {
       "type": "string",
@@ -35,7 +35,8 @@
         "process",
         "process_with_time",
         "composition",
-        "text"
+        "text",
+        "simulation"
       ]
     },
     "features": {

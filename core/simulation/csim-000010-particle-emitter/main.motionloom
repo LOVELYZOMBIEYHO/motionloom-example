@@ -1,0 +1,20 @@
+<Graph fps={30} duration="4s" size={[640,360]}>
+  <Background color="#071A24" />
+  <Scene id="particles">
+    <Timeline>
+      <Track>
+        <Sequence from="0s" duration="4s">
+          <Layer>
+            <Group id="emitter_motion"
+                   x={curve("0:160:ease_in_out, 1:480:ease_in_out, 2:260:ease_in_out, 3:430:ease_in_out, 4:160:ease_in_out")}
+                   y={curve("0:280:ease_in_out, 1:250:ease_in_out, 2:300:ease_in_out, 3:230:ease_in_out, 4:280:ease_in_out")}>
+              <Circle x="0" y="0" radius="18" color="#D8FF2F" />
+            </Group>
+            <ParticleEmitter id="sparks" target="emitter_motion" x="0" y="0" rate="36" lifetime="2.2" velocity={[0,-180]} gravity={[0,240]} radius="7" color="#D8FF2F" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="particles" />
+</Graph>

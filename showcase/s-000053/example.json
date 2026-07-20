@@ -1,0 +1,45 @@
+{
+  "id": "s-000053",
+  "type": "showcase",
+  "title": "Monochrome Anime Bob Hair Dynamics",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "anime",
+    "portrait",
+    "hair",
+    "spring-chain",
+    "wind",
+    "turbulence",
+    "dynamic-curve",
+    "curve-animation",
+    "gpu-friendly"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "Wind",
+    "Collider",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Path",
+    "Curve",
+    "SpringChain",
+    "Present",
+    "curve"
+  ],
+  "teaches": [
+    "Construct a high-contrast anime bob from editable silhouette, bang, side-lock, and shine paths.",
+    "Use Wind, Collider, and SpringChain to animate flyaways and face locks without destabilizing the main haircut.",
+    "Combine restrained transform curves with strand physics while preserving a clean manga silhouette."
+  ],
+  "source_path": "showcase/s-000053",
+  "demo_url": "",
+  "related": ["s-000052", "s-000055", "csim-000008"],
+  "requires": ["Graph", "Scene", "Timeline", "Curve", "SpringChain", "Present"]
+}

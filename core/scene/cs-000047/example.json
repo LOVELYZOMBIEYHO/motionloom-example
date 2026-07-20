@@ -1,0 +1,13 @@
+{
+  "id": "cs-000047",
+  "type": "core",
+  "title": "Puppet Warp Bound Pins",
+  "domain": "scene",
+  "features": ["scene", "puppet-warp", "puppet-pin", "semantic-bind", "curve"],
+  "dsl": ["Graph", "Background", "Scene", "Timeline", "Track", "Sequence", "Layer", "Group", "PuppetWarp", "PuppetPin", "Present"],
+  "teaches": ["Bind PuppetPin rest positions to semantic Group ids.", "Animate targetX and targetY while preserving the source artwork as DSL truth."],
+  "source_path": "core/scene/cs-000047",
+  "demo_url": "",
+  "related": [],
+  "requires": ["Graph", "Scene", "Timeline", "Group", "PuppetWarp", "PuppetPin", "Present"]
+}

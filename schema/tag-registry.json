@@ -26,6 +26,7 @@
     "cloud",
     "character-action",
     "character-rig",
+    "constraints",
     "circle",
     "color",
     "color-wash",
@@ -39,6 +40,7 @@
     "defs",
     "edge",
     "edge-smoothing",
+    "editor-overlay",
     "environment",
     "external-texture",
     "eye",
@@ -70,6 +72,7 @@
     "hsla-overlay",
     "hsla_overlay",
     "ik",
+    "ik-controls",
     "image",
     "image-asset",
     "impasto-texture",
@@ -77,6 +80,7 @@
     "keyframe-animation",
     "keyframe-editing",
     "lava",
+    "landmarks",
     "layer",
     "layer-fx",
     "layer3d",
@@ -109,12 +113,15 @@
     "portrait",
     "polar-noise",
     "pose",
+    "proportion-profile",
     "prompt-ui",
     "procedural-texture",
     "procedural",
     "process",
     "promo",
     "puppet",
+    "puppet-pin",
+    "puppet-warp",
     "radialgradient",
     "random-animation",
     "rect",
@@ -127,9 +134,11 @@
     "rounded-panel",
     "scanlines",
     "scene",
+    "semantic-bind",
     "sequence",
     "shape",
     "sin",
+    "skeleton",
     "soft-edge",
     "static-composition",
     "squint-animation",
@@ -154,7 +163,24 @@
     "vertex",
     "world",
     "water",
+    "validation",
     "zdepth"
+    ,"gravity"
+    ,"dynamic-curve"
+    ,"wind"
+    ,"turbulence"
+    ,"attraction"
+    ,"circle-collision"
+    ,"capsule-collision"
+    ,"distance-constraint"
+    ,"hinge"
+    ,"spring-chain"
+    ,"hair"
+    ,"rigid-body-2d"
+    ,"particle-emitter"
+    ,"cloth"
+    ,"cache-bake"
+    ,"deterministic-timestep"
   ],
   "dsl_tags": [
     "Action",
@@ -170,6 +196,8 @@
     "ChromaticAberration",
     "ColorBleed",
     "Component",
+    "Constraint",
+    "Control",
     "Defs",
     "Edge",
     "EdgeRoughness",
@@ -179,6 +207,7 @@
     "Filter",
     "Graph",
     "Group",
+    "Guide",
     "HighlightCompression",
     "IK",
     "Image",
@@ -186,11 +215,13 @@
     "Key",
     "Layer",
     "Layer3D",
+    "Landmark",
     "Line",
     "LightStreak",
     "LinearGradient",
     "Mask",
     "Material",
+    "Measure",
     "MeshTopology",
     "Noise",
     "Part",
@@ -204,10 +235,13 @@
     "Present",
     "Process",
     "Puppet",
+    "PuppetPin",
+    "PuppetWarp",
     "RadialGradient",
     "RadialRays",
     "Rect",
     "Region",
+    "Ratio",
     "Repeat",
     "Scene",
     "Sequence",
@@ -222,6 +256,20 @@
     "Use",
     "Vertex",
     "World",
+    "Curve",
+    "Gravity",
+    "Wind",
+    "Attraction",
+    "Collider",
+    "SpringChain",
+    "DynamicCurve",
+    "DistanceConstraint",
+    "Hinge",
+    "RigidBody2D",
+    "ParticleEmitter",
+    "Cloth",
+    "HairStrandField",
+    "CacheBake",
     "action",
     "actor",
     "antialias",

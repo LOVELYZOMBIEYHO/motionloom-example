@@ -1,8 +1,8 @@
-<!-- Original magical parchment title reveal. Inspired by old fantasy book-map intros; no licensed logo/text is reproduced. -->
-<Graph fps={30} duration="7s" size={[1920,1080]} renderSize={[1920,1080]}>
+<!-- Original 30-second magical parchment film prologue. No licensed logo or text is reproduced. -->
+<Graph fps={30} duration="30s" size={[1920,1080]} renderSize={[1920,1080]}>
   <Background color="#B7894F" />
 
-  <Scene id="aged_magic_book_title_reveal_7s">
+  <Scene id="aged_magic_book_film_prologue_30s">
     <Defs>
       <RadialGradient id="parchment_base" cx="0.54" cy="0.48" r="0.88"
                       stops="0:#D7B173, 0.38:#B8894A, 0.72:#6A4326, 1:#1A0F0A" />
@@ -36,12 +36,12 @@
 
     <Timeline>
       <Track id="main" space="world" z="0">
-        <Sequence from="0s" duration="7s" out="hold">
+        <Sequence from="0s" duration="7.2s" out="hide">
           <Layer>
             <Group id="page_a_swap_out"
-                   x={curve("0:0:linear, 3.05:0:linear, 4.18:-430:ease_in_out, 6.5:-430:linear")}
-                   scale={curve("0:1:linear, 3.05:1:linear, 4.18:0.982:ease_in_out, 6.5:0.982:linear")}
-                   opacity={curve("0:1:linear, 3.30:1:linear, 4.28:0.08:ease_in, 6.5:0:linear")}
+                   x={curve("0:0:linear, 3.05:0:linear, 4.18:-430:ease_in_out, 30:-430:linear")}
+                   scale={curve("0:1:linear, 3.05:1:linear, 4.18:0.982:ease_in_out, 30:0.982:linear")}
+                   opacity={curve("0:1:linear, 3.30:1:linear, 4.28:0.08:ease_in, 30:0:linear")}
                    transformOriginX="960" transformOriginY="540">
             <Rect x="0" y="0" width="1920" height="1080" fill="url(#parchment_base)" />
             <Rect x="0" y="0" width="1920" height="1080" color="#000000" opacity={curve("0:0.20:linear, 3:0.36:ease_in_out")} />
@@ -109,13 +109,10 @@
                    scale={curve("0:1.08:ease_out, 2.50:1.0:ease_in_out, 3:1.0:linear")}
                    opacity={curve("0:0.36:linear, 0.65:0.82:ease_out, 2.00:1:linear, 3:1:linear")}
                    transformOriginX="960" transformOriginY="540">
-              <Text value="Mystic" x="110" y="530" fontFamily="Times New Roman" fontSize="232" renderScale="4x" color="#1A0B08" opacity="0.56" />
-              <Text value="Mystic" x="96" y="512" fontFamily="Times New Roman" fontSize="232" renderScale="4x" color="#C7A15B" opacity="0.94" />
-              <Text value="Mystic" x="96" y="506" fontFamily="Times New Roman" fontSize="232" renderScale="4x" color="#FFE7A3" opacity={curve("0:0.18:linear, 1.10:0.28:ease_out, 2.20:0.16:ease_in_out, 3:0.22:linear")} />
-
-              <Text value="Raven" x="820" y="530" fontFamily="Times New Roman" fontSize="232" renderScale="4x" color="#1A0B08" opacity="0.56" />
-              <Text value="Raven" x="804" y="512" fontFamily="Times New Roman" fontSize="232" renderScale="4x" color="#C7A15B" opacity="0.94" />
-              <Text value="Raven" x="804" y="506" fontFamily="Times New Roman" fontSize="232" renderScale="4x" color="#FFE7A3" opacity={curve("0:0.12:linear, 1.10:0.26:ease_out, 2.20:0.16:ease_in_out, 3:0.22:linear")} />
+              <Text value="IN THE" x="210" y="500" fontFamily="Times New Roman" fontSize="132" renderScale="4x" color="#1A0B08" opacity="0.56" />
+              <Text value="IN THE" x="198" y="486" fontFamily="Times New Roman" fontSize="132" renderScale="4x" color="#C7A15B" opacity="0.94" />
+              <Text value="AGE OF ASH" x="610" y="610" fontFamily="Times New Roman" fontSize="156" renderScale="4x" color="#1A0B08" opacity="0.56" />
+              <Text value="AGE OF ASH" x="596" y="594" fontFamily="Times New Roman" fontSize="156" renderScale="4x" color="#C7A15B" opacity="0.96" />
 
               <!-- Faux sharp fantasy descenders and torn ink cuts. -->
               <Path d="M 908 328 L 930 742 L 956 332 Z M 1124 372 L 1140 702 L 1162 370 Z"
@@ -135,9 +132,8 @@
             <Group id="subtitle" opacity={curve("0:0.0:linear, 1.20:0.0:linear, 1.86:0.90:ease_out, 3:0.95:linear")}
                    x={curve("0:0:linear, 2.15:0:ease_out, 3:0:linear")}
                    y={curve("0:24:ease_out, 2.15:0:ease_out, 3:0:linear")}>
-              <Text value="AND THE" x="1110" y="608" fontFamily="Times New Roman" fontSize="58" renderScale="4x" color="#A47A43" opacity="0.88" />
-              <Text value="SHADOW" x="1094" y="688" fontFamily="Times New Roman" fontSize="92" renderScale="4x" color="#C7A15B" opacity="0.94" />
-              <Text value="CITADEL" x="1110" y="768" fontFamily="Times New Roman" fontSize="78" renderScale="4x" color="#C7A15B" opacity="0.88" />
+              <Text value="MAGIC BECAME" x="1090" y="790" fontFamily="Times New Roman" fontSize="48" renderScale="4x" color="#A47A43" opacity="0.88" />
+              <Text value="A FORBIDDEN MEMORY" x="920" y="864" fontFamily="Times New Roman" fontSize="58" renderScale="4x" color="#C7A15B" opacity="0.94" />
             </Group>
 
             <!-- Closing vignette for final frame. -->
@@ -146,9 +142,9 @@
             </Group>
 
             <Group id="page_b_swap_in"
-                   x={curve("0:420:linear, 2.95:420:linear, 4.22:0:ease_in_out, 6.5:0:linear")}
-                   scale={curve("0:1.025:linear, 2.95:1.025:linear, 4.28:1.0:ease_in_out, 6.5:1.0:linear")}
-                   opacity={curve("0:0:linear, 3.12:0:linear, 4.18:1:ease_out, 6.5:1:linear")}
+                   x={curve("0:420:linear, 2.95:420:linear, 4.22:0:ease_in_out, 7.20:0:linear, 7.76:-360:ease_in_out, 30:-360:linear")}
+                   scale={curve("0:1.025:linear, 2.95:1.025:linear, 4.28:1.0:ease_in_out, 7.20:1:linear, 7.76:0.985:ease_in_out, 30:0.985:linear")}
+                   opacity={curve("0:0:linear, 3.12:0:linear, 4.18:1:ease_out, 7.15:1:linear, 7.72:0:ease_in, 30:0:linear")}
                    transformOriginX="960" transformOriginY="540">
               <Rect x="0" y="0" width="1920" height="1080" fill="url(#parchment_base)" />
               <Rect x="0" y="0" width="1920" height="1080" color="#000000" opacity={curve("2.95:0.24:linear, 4.20:0.32:ease_in_out, 6.5:0.38:linear")} />
@@ -188,13 +184,10 @@
                      scale={curve("3.05:1.05:ease_out, 4.70:1.0:ease_in_out, 6.5:1.0:linear")}
                      opacity={curve("3.05:0.0:linear, 3.85:0.82:ease_out, 4.60:1:linear, 6.5:1:linear")}
                      transformOriginX="1240" transformOriginY="540">
-                <Text value="Ebon" x="720" y="512" fontFamily="Times New Roman" fontSize="222" renderScale="4x" color="#1A0B08" opacity="0.54" />
-                <Text value="Ebon" x="704" y="494" fontFamily="Times New Roman" fontSize="222" renderScale="4x" color="#C7A15B" opacity="0.94" />
-                <Text value="Ebon" x="704" y="488" fontFamily="Times New Roman" fontSize="222" renderScale="4x" color="#FFE7A3" opacity={curve("3.2:0.08:linear, 4.2:0.23:ease_out, 6.5:0.18:linear")} />
-
-                <Text value="Crown" x="1210" y="512" fontFamily="Times New Roman" fontSize="222" renderScale="4x" color="#1A0B08" opacity="0.54" />
-                <Text value="Crown" x="1194" y="494" fontFamily="Times New Roman" fontSize="222" renderScale="4x" color="#C7A15B" opacity="0.94" />
-                <Text value="Crown" x="1194" y="488" fontFamily="Times New Roman" fontSize="222" renderScale="4x" color="#FFE7A3" opacity={curve("3.2:0.08:linear, 4.2:0.22:ease_out, 6.5:0.18:linear")} />
+                <Text value="THE SILENT" x="430" y="500" fontFamily="Times New Roman" fontSize="148" renderScale="4x" color="#1A0B08" opacity="0.54" />
+                <Text value="THE SILENT" x="416" y="484" fontFamily="Times New Roman" fontSize="148" renderScale="4x" color="#C7A15B" opacity="0.94" />
+                <Text value="KINGDOM FELL" x="600" y="648" fontFamily="Times New Roman" fontSize="124" renderScale="4x" color="#1A0B08" opacity="0.54" />
+                <Text value="KINGDOM FELL" x="586" y="632" fontFamily="Times New Roman" fontSize="124" renderScale="4x" color="#C7A15B" opacity="0.94" />
 
                 <Path d="M 1114 316 L 1134 714 L 1158 320 Z M 1512 360 L 1526 672 L 1548 358 Z"
                       fill="#C29A55" stroke="#4B2E19" strokeWidth="4" opacity="0.78" />
@@ -205,9 +198,8 @@
               <Group id="page_b_subtitle"
                      opacity={curve("3.55:0.0:linear, 4.55:0.84:ease_out, 6.5:0.92:linear")}
                      x={curve("3.25:72:ease_out, 4.35:0:ease_out, 6.5:0:linear")}>
-                <Text value="AND THE" x="1058" y="598" fontFamily="Times New Roman" fontSize="52" renderScale="4x" color="#A47A43" opacity="0.82" />
-                <Text value="SILENT" x="1038" y="674" fontFamily="Times New Roman" fontSize="84" renderScale="4x" color="#C7A15B" opacity="0.90" />
-                <Text value="KINGDOM" x="1054" y="748" fontFamily="Times New Roman" fontSize="74" renderScale="4x" color="#C7A15B" opacity="0.84" />
+                <Text value="ITS FINAL BELL" x="1090" y="790" fontFamily="Times New Roman" fontSize="48" renderScale="4x" color="#A47A43" opacity="0.82" />
+                <Text value="WAS NEVER HEARD" x="950" y="862" fontFamily="Times New Roman" fontSize="58" renderScale="4x" color="#C7A15B" opacity="0.90" />
               </Group>
 
               <Rect x="0" y="0" width="1920" height="1080" color="#F7D99B" opacity="0.018 + 0.012*(0.5 + 0.5*sin($time.sec*13.0))" blend="screen" />
@@ -217,23 +209,223 @@
             <Group id="page_turn_transition"
                    opacity={curve("0:0:linear, 3.05:0:linear, 3.42:0.92:ease_out, 4.24:0.38:ease_in_out, 4.62:0:linear, 6.5:0:linear")}>
               <Rect x={curve("3.05:1760:ease_out, 3.72:810:ease_in_out, 4.46:-220:ease_in_out")}
-                    y="-40"
-                    width="430"
-                    height="1160"
-                    fill="url(#turn_shadow)"
-                    opacity="0.82" />
+                    y="-40" width="430" height="1160" fill="url(#turn_shadow)" opacity="0.82" />
               <Rect x={curve("3.05:1880:ease_out, 3.72:940:ease_in_out, 4.46:-90:ease_in_out")}
-                    y="-40"
-                    width="150"
-                    height="1160"
-                    fill="url(#turn_highlight)"
-                    opacity="0.30"
-                    blend="screen" />
+                    y="-40" width="150" height="1160" fill="url(#turn_highlight)" opacity="0.30" blend="screen" />
               <Circle x={curve("3.05:1540:ease_out, 3.75:960:ease_in_out, 4.45:270:ease_in_out")}
-                      y="520"
-                      radius="360"
-                      fill="url(#ink_cloud)"
-                      opacity="0.24" />
+                      y="520" radius="360" fill="url(#ink_cloud)" opacity="0.24" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="story_parchment" space="world" z="0">
+        <Sequence from="7.2s" duration="22.8s" out="hold">
+          <Layer>
+            <!-- Shared parchment stage for chapters three through eight. -->
+            <Group id="story_page_base" opacity="1">
+              <Rect x="0" y="0" width="1920" height="1080" fill="url(#parchment_base)" />
+              <Rect x="0" y="0" width="1920" height="1080" color="#000000" opacity="0.34" />
+              <Rect x="0" y="0" width="960" height="1080" fill="url(#page_left_wash)" opacity="0.42" />
+              <Rect x="960" y="0" width="960" height="1080" fill="url(#page_right_warmth)" opacity="0.46" />
+              <Repeat id="story_dust_field" count="52" x="48" y="44" xStep="36" yStep="20" opacity="0.32" opacityStep="-0.002">
+                <Circle x="random(-9, 9, floor($time.sec*3)+401)" y="random(-6, 6, floor($time.sec*3)+419)" radius="1.7" color="#24120A" opacity="0.18" />
+              </Repeat>
+              <Repeat id="story_scratch_field" count="11" x="170" y="-40" xStep="164" opacity="0.17" opacityStep="-0.005">
+                <Rect x="random(-16, 16, floor($time.sec*2)+451)" y="0" width="2" height="1160" fill="url(#film_scratch)" opacity="0.26" />
+              </Repeat>
+              <Rect x="904" y="0" width="88" height="1080" fill="url(#fold_light)" opacity="0.78" />
+              <Line x1="958" y1="0" x2="958" y2="1080" stroke="#090404" strokeWidth="5" opacity="0.60" />
+              <Line x1="988" y1="0" x2="988" y2="1080" stroke="#E8C988" strokeWidth="3" opacity="0.18" />
+              <Path d="M 42 44 L 240 44 M 44 44 L 44 260 M 1680 44 L 1874 44 M 1874 44 L 1874 260 M 42 1032 L 240 1032 M 44 830 L 44 1032 M 1680 1032 L 1874 1032 M 1874 830 L 1874 1032"
+                    stroke="#120807" strokeWidth="8" lineCap="round" fill="none" opacity="0.46" />
+              <Rect x="0" y="0" width="1920" height="1080" color="#F7D99B"
+                    opacity="0.016 + 0.012*(0.5 + 0.5*sin($time.sec*11.0))" blend="screen" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="story_chapters" space="world" z="10">
+        <Sequence from="7.2s" duration="3.6s" out="hide">
+          <Layer>
+            <!-- Chapter 3: the crown disappears beyond the known map. -->
+            <Group id="chapter_ebon_crown"
+                   x={curve("0:170:ease_out, 0.62:0:ease_out, 3.18:0:linear, 3.6:-150:ease_in")}
+                   opacity={curve("0:0:linear, 0.48:1:ease_out, 3.12:1:linear, 3.6:0:ease_in")}>
+              <Circle x="960" y="520" radius={curve("0:180:ease_out, 1.1:470:ease_in_out, 3.6:520:linear")} fill="url(#burn_hole)" opacity="0.90" />
+              <Circle x="1330" y="430" radius="310" fill="url(#ink_cloud)" opacity="0.58" />
+              <Path d="M 690 332 L 790 470 L 952 292 L 1118 470 L 1232 326 L 1180 650 L 742 650 Z"
+                    fill="#090404" stroke="#C7A15B" strokeWidth="10" lineJoin="round" opacity="0.88" />
+              <Circle x="790" y="470" radius="19" color="#E3C174" opacity="0.86" />
+              <Circle x="952" y="292" radius="23" color="#E3C174" opacity="0.92" />
+              <Circle x="1118" y="470" radius="19" color="#E3C174" opacity="0.86" />
+              <Text value="THE EBON CROWN" x="470" y="756" fontFamily="Times New Roman" fontSize="118" renderScale="4x" color="#1A0B08" opacity="0.58" />
+              <Text value="THE EBON CROWN" x="458" y="742" fontFamily="Times New Roman" fontSize="118" renderScale="4x" color="#C7A15B" opacity="0.96" />
+              <Text value="VANISHED" x="738" y="866" fontFamily="Times New Roman" fontSize="82" renderScale="4x" color="#E3C174" opacity="0.88" />
+              <Text value="CARRIED BEYOND THE EDGE OF EVERY MAP" x="620" y="956" fontFamily="Times New Roman" fontSize="34" renderScale="4x" color="#A47A43" opacity="0.90" />
+            </Group>
+          </Layer>
+        </Sequence>
+
+        <Sequence from="10.8s" duration="3.6s" out="hide">
+          <Layer>
+            <!-- Chapter 4: seven seals close over the darkness. -->
+            <Group id="chapter_seven_gates"
+                   scale={curve("0:1.24:ease_out, 0.72:1:ease_in_out, 3.12:1:linear, 3.6:1.08:ease_in")}
+                   rotation={curve("0:-2.4:ease_out, 0.72:0:ease_in_out, 3.6:0:linear")}
+                   opacity={curve("0:0:linear, 0.30:1:ease_out, 3.12:1:linear, 3.6:0:ease_in")}
+                   transformOriginX="960" transformOriginY="520">
+              <Circle x="960" y="520" radius="500" fill="url(#ink_cloud)" opacity="0.62" />
+              <Repeat id="seven_gate_marks" count="7" x="350" y="240" xStep="170" opacity="0.92" opacityStep="-0.025">
+                <Path d="M 0 420 L 0 92 C 0 28 104 28 104 92 L 104 420 M 18 420 L 18 108 C 18 58 86 58 86 108 L 86 420"
+                      fill="none" stroke="#C7A15B" strokeWidth="12" lineCap="round" opacity="0.84" />
+              </Repeat>
+              <Text value="SEVEN GATES" x="590" y="754" fontFamily="Times New Roman" fontSize="126" renderScale="4x" color="#1A0B08" opacity="0.60" />
+              <Text value="SEVEN GATES" x="578" y="740" fontFamily="Times New Roman" fontSize="126" renderScale="4x" color="#C7A15B" opacity="0.96" />
+              <Text value="SEALED THE DARKNESS" x="624" y="866" fontFamily="Times New Roman" fontSize="68" renderScale="4x" color="#E3C174" opacity="0.90" />
+              <Text value="EACH GUARDED BY AN OATH WRITTEN IN BLOOD" x="570" y="956" fontFamily="Times New Roman" fontSize="32" renderScale="4x" color="#A47A43" opacity="0.88" />
+            </Group>
+          </Layer>
+        </Sequence>
+
+        <Sequence from="14.4s" duration="3.6s" out="hide">
+          <Layer>
+            <!-- Chapter 5: a raven-shaped omen forms beneath the stars. -->
+            <Group id="chapter_raven_call"
+                   y={curve("0:96:ease_out, 0.72:0:ease_out, 3.14:0:linear, 3.6:-72:ease_in")}
+                   scale={curve("0:0.58:ease_out, 0.78:1:ease_out, 3.6:1.04:ease_in")}
+                   rotation={curve("0:-11:ease_out, 0.82:0:ease_in_out, 3.6:2:ease_in")}
+                   opacity={curve("0:0:linear, 0.26:1:ease_out, 3.12:1:linear, 3.6:0:ease_in")}
+                   transformOriginX="1010" transformOriginY="520">
+              <Circle x="960" y="472" radius="460" fill="url(#burn_hole)" opacity="0.84" />
+              <Repeat id="dead_stars" count="22" x="320" y="158" xStep="61" yStep="29" opacity="0.82" opacityStep="-0.018">
+                <Circle x="random(-20, 20, floor($time.sec)+511)" y="random(-16, 16, floor($time.sec)+527)" radius="3.4" color="#E7C37D" opacity="0.72" />
+              </Repeat>
+              <Path d="M 690 558 C 770 352 928 330 1010 474 C 1108 334 1270 374 1322 562 C 1196 490 1112 504 1020 610 C 920 508 826 488 690 558 Z M 1010 474 C 982 626 934 704 842 780 C 960 746 1038 706 1104 620 C 1092 704 1120 766 1190 824 C 1060 780 986 724 942 646"
+                    fill="#090404" stroke="#C7A15B" strokeWidth="7" lineJoin="round" opacity="0.94" />
+              <Text value="UNTIL ONE RAVEN" x="520" y="756" fontFamily="Times New Roman" fontSize="110" renderScale="4x" color="#1A0B08" opacity="0.58" />
+              <Text value="UNTIL ONE RAVEN" x="508" y="742" fontFamily="Times New Roman" fontSize="110" renderScale="4x" color="#C7A15B" opacity="0.96" />
+              <Text value="HEARD ITS CALL" x="684" y="862" fontFamily="Times New Roman" fontSize="74" renderScale="4x" color="#E3C174" opacity="0.90" />
+              <Text value="A WHISPER BENEATH THE DEAD STARS" x="650" y="952" fontFamily="Times New Roman" fontSize="34" renderScale="4x" color="#A47A43" opacity="0.88" />
+            </Group>
+          </Layer>
+        </Sequence>
+
+        <Sequence from="18s" duration="3.6s" out="hide">
+          <Layer>
+            <!-- Chapter 6: the voyage over the forbidden sea. -->
+            <Group id="chapter_forgotten_sea"
+                   y={curve("0:180:ease_out, 0.82:0:ease_out, 3.12:0:linear, 3.6:-48:ease_in")}
+                   opacity={curve("0:0:linear, 0.34:1:ease_out, 3.12:1:linear, 3.6:0:ease_in")}>
+              <Circle x="960" y="420" radius="470" fill="url(#ink_cloud)" opacity="0.66" />
+              <Group id="forgotten_sea_wave_motion"
+                     x={curve("0:-190:ease_out, 0.92:0:ease_out, 3.6:90:ease_in_out")}>
+                <Repeat id="forgotten_sea_waves" count="7" x="250" y="300" yStep="72" opacity="0.86" opacityStep="-0.055">
+                  <Path d="M 0 40 C 132 -34 246 112 382 40 C 516 -32 634 112 770 40 C 902 -30 1022 108 1160 36 C 1280 -26 1382 84 1430 44"
+                        fill="none" stroke="#C7A15B" strokeWidth="11" lineCap="round" opacity="0.72" />
+                </Repeat>
+              </Group>
+              <Group id="forgotten_sea_boat"
+                     y={curve("0:20:ease_out, 0.7:-8:ease_in_out, 1.5:8:ease_in_out, 2.3:-6:ease_in_out, 3.1:6:ease_in_out, 3.6:0:ease_in_out")}
+                     rotation={curve("0:-4:ease_out, 0.9:2:ease_in_out, 1.8:-2:ease_in_out, 2.7:2:ease_in_out, 3.6:0:ease_in_out")}
+                     transformOriginX="960" transformOriginY="470">
+                <Path d="M 860 510 L 960 382 L 1060 510 L 960 566 Z M 960 382 L 960 282 M 960 282 L 1070 402 L 960 382 Z"
+                      fill="#090404" stroke="#E3C174" strokeWidth="8" lineJoin="round" opacity="0.88" />
+              </Group>
+              <Text value="SHE CROSSED" x="652" y="750" fontFamily="Times New Roman" fontSize="116" renderScale="4x" color="#1A0B08" opacity="0.58" />
+              <Text value="SHE CROSSED" x="640" y="736" fontFamily="Times New Roman" fontSize="116" renderScale="4x" color="#C7A15B" opacity="0.96" />
+              <Text value="THE FORGOTTEN SEA" x="628" y="858" fontFamily="Times New Roman" fontSize="74" renderScale="4x" color="#E3C174" opacity="0.90" />
+              <Text value="WHERE NO LIVING COMPASS POINTS HOME" x="600" y="950" fontFamily="Times New Roman" fontSize="34" renderScale="4x" color="#A47A43" opacity="0.88" />
+            </Group>
+          </Layer>
+        </Sequence>
+
+        <Sequence from="21.6s" duration="3.6s" out="hide">
+          <Layer>
+            <!-- Chapter 7: the destination rises from the ink. -->
+            <Group id="chapter_shadow_citadel"
+                   y={curve("0:250:ease_out, 0.84:0:ease_out, 3.16:0:linear, 3.6:-42:ease_in")}
+                   scale={curve("0:0.90:ease_out, 0.84:1:ease_out, 3.6:1.02:ease_in")}
+                   opacity={curve("0:0:linear, 0.32:1:ease_out, 3.12:1:linear, 3.6:0:ease_in")}
+                   transformOriginX="960" transformOriginY="682">
+              <Circle x="960" y="460" radius="500" fill="url(#burn_hole)" opacity="0.86" />
+              <Path d="M 574 682 L 574 424 L 678 424 L 678 304 L 782 304 L 782 472 L 868 472 L 868 246 L 960 164 L 1052 246 L 1052 472 L 1140 472 L 1140 304 L 1244 304 L 1244 424 L 1348 424 L 1348 682 Z"
+                    fill="#090404" stroke="#C7A15B" strokeWidth="10" lineJoin="round" opacity="0.94" />
+              <Path d="M 904 682 L 904 532 C 904 466 1016 466 1016 532 L 1016 682"
+                    fill="none" stroke="#E3C174" strokeWidth="12" opacity="0.82" />
+              <Text value="TO ENTER THE" x="650" y="756" fontFamily="Times New Roman" fontSize="108" renderScale="4x" color="#1A0B08" opacity="0.58" />
+              <Text value="TO ENTER THE" x="638" y="742" fontFamily="Times New Roman" fontSize="108" renderScale="4x" color="#C7A15B" opacity="0.96" />
+              <Text value="SHADOW CITADEL" x="648" y="862" fontFamily="Times New Roman" fontSize="76" renderScale="4x" color="#E3C174" opacity="0.90" />
+              <Text value="BEFORE THE CROWN COULD WAKE AGAIN" x="624" y="952" fontFamily="Times New Roman" fontSize="34" renderScale="4x" color="#A47A43" opacity="0.88" />
+            </Group>
+          </Layer>
+        </Sequence>
+
+        <Sequence from="25.2s" duration="4.8s" out="hold">
+          <Layer>
+            <!-- Chapter 8: final film title, held longer for a YouTube opener. -->
+            <Group id="final_film_title"
+                   scale={curve("0:1.08:ease_out, 1.08:1:ease_in_out, 4.8:1.025:ease_in_out")}
+                   opacity={curve("0:0:linear, 0.56:1:ease_out, 4.8:1:linear")}
+                   transformOriginX="960" transformOriginY="540">
+              <Circle x="960" y="520" radius={curve("0:170:ease_out, 1.5:610:ease_in_out, 4.8:680:linear")} fill="url(#burn_hole)" opacity="0.94" />
+              <Circle x="620" y="460" radius="380" fill="url(#ink_cloud)" opacity="0.62" />
+              <Circle x="1320" y="600" radius="420" fill="url(#ink_cloud)" opacity="0.66" />
+              <Text value="MYSTIC RAVEN" x="284" y="548" fontFamily="Times New Roman" fontSize="170" renderScale="4x" color="#1A0B08" opacity="0.62" />
+              <Text value="MYSTIC RAVEN" x="270" y="532" fontFamily="Times New Roman" fontSize="170" renderScale="4x" color="#C7A15B" opacity="0.98" />
+              <Text value="AND THE EBON CROWN" x="642" y="748" fontFamily="Times New Roman" fontSize="68" renderScale="4x" color="#E3C174" opacity="0.92" />
+              <Path d="M 510 804 C 720 768 1198 768 1410 804 M 650 830 C 830 810 1090 810 1270 830"
+                    fill="none" stroke="#C7A15B" strokeWidth="7" lineCap="round" opacity="0.62" />
+              <Rect x={curve("0.25:-420:ease_out, 2:2020:ease_in_out, 4.8:2220:linear")}
+                    y="190" width="340" height="650" fill="url(#gold_sweep)" opacity="0.46" rotation="-8" blend="screen" />
+              <Text value="AN ORIGINAL MOTIONLOOM FILM PROLOGUE" x="676" y="924" fontFamily="Times New Roman" fontSize="36" renderScale="4x" color="#A47A43" opacity={curve("0:0:linear, 1.8:0:linear, 2.6:0.88:ease_out, 4.8:0.88:linear")} />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="chapter_transitions" space="world" z="20">
+        <Sequence from="7.05s" duration="19s" out="hide">
+          <Layer>
+            <!-- Chapter 3 keeps the book-page turn established by the original opening. -->
+            <Group id="chapter_page_turn">
+              <Rect x={curve("0:1900:ease_out, 0.43:760:ease_in_out, 0.87:-420:ease_in_out")} y="-40" width="430" height="1160" fill="url(#turn_shadow)" opacity={curve("0:0:linear, 0.23:0.88:ease_out, 0.73:0.34:ease_in, 0.97:0:linear, 19:0:linear")} />
+            </Group>
+
+            <!-- 10.8s: two monumental gate leaves close, flash, then release chapter four. -->
+            <Group id="transition_gate_slam" opacity={curve("0:0:linear, 3.40:0:linear, 3.68:1:ease_out, 4.18:1:linear, 4.52:0:ease_in, 19:0:linear")}>
+              <Rect x={curve("3.40:-980:ease_out, 3.84:-40:ease_in_out, 4.18:-40:linear, 4.52:-1040:ease_in")} y="0" width="1040" height="1080" color="#080303" opacity="0.94" />
+              <Rect x={curve("3.40:1920:ease_out, 3.84:920:ease_in_out, 4.18:920:linear, 4.52:1980:ease_in")} y="0" width="1040" height="1080" color="#080303" opacity="0.94" />
+              <Line x1="960" y1="0" x2="960" y2="1080" stroke="#E3C174" strokeWidth={curve("3.40:2:ease_out, 3.86:26:ease_out, 4.20:8:ease_in, 4.52:2:ease_in")} opacity="0.82" />
+            </Group>
+
+            <!-- 14.4s: a contracting ink eclipse reveals the raven omen. -->
+            <Group id="transition_ink_eclipse" opacity={curve("0:0:linear, 7.02:0:linear, 7.26:1:ease_out, 7.78:1:linear, 8.12:0:ease_in, 19:0:linear")}>
+              <Circle x="960" y="540" radius={curve("7.02:1280:ease_out, 7.58:420:ease_in_out, 8.12:0:ease_in")} fill="url(#burn_hole)" opacity="0.98" />
+              <Circle x="960" y="540" radius={curve("7.02:1120:ease_out, 7.58:250:ease_in_out, 8.12:0:ease_in")} fill="none" stroke="#C7A15B" strokeWidth="12" opacity="0.72" />
+            </Group>
+
+            <!-- 18s: layered horizontal currents wash chapter six onto the parchment. -->
+            <Group id="transition_sea_wash" opacity={curve("0:0:linear, 10.62:0:linear, 10.88:1:ease_out, 11.58:1:linear, 11.92:0:ease_in, 19:0:linear")}>
+              <Rect x={curve("10.62:-2100:ease_out, 11.18:-220:ease_in_out, 11.92:2020:ease_in")} y="120" width="2040" height="180" fill="url(#turn_shadow)" opacity="0.78" />
+              <Rect x={curve("10.62:2020:ease_out, 11.18:100:ease_in_out, 11.92:-2100:ease_in")} y="450" width="2040" height="190" fill="url(#turn_shadow)" opacity="0.82" />
+              <Rect x={curve("10.62:-2100:ease_out, 11.18:-120:ease_in_out, 11.92:2020:ease_in")} y="780" width="2040" height="170" fill="url(#turn_highlight)" opacity="0.30" blend="screen" />
+            </Group>
+
+            <!-- 21.6s: staggered shadow towers rise before the citadel itself. -->
+            <Group id="transition_citadel_rise" opacity={curve("0:0:linear, 14.22:0:linear, 14.50:1:ease_out, 15.14:1:linear, 15.48:0:ease_in, 19:0:linear")}>
+              <Rect x="260" y={curve("14.22:1120:ease_out, 14.82:120:ease_in_out, 15.48:-1180:ease_in")} width="250" height="1160" color="#080303" opacity="0.86" />
+              <Rect x="620" y={curve("14.22:1260:ease_out, 14.92:-40:ease_in_out, 15.48:-1180:ease_in")} width="280" height="1260" color="#120706" opacity="0.92" />
+              <Rect x="1010" y={curve("14.22:1200:ease_out, 14.76:60:ease_in_out, 15.48:-1180:ease_in")} width="300" height="1220" color="#080303" opacity="0.90" />
+              <Rect x="1420" y={curve("14.22:1320:ease_out, 14.98:-80:ease_in_out, 15.48:-1180:ease_in")} width="240" height="1320" color="#120706" opacity="0.86" />
+            </Group>
+
+            <!-- 25.2s: cinematic top-and-bottom aperture opens onto the final title. -->
+            <Group id="transition_title_aperture" opacity={curve("0:0:linear, 17.82:0:linear, 18.08:1:ease_out, 18.82:1:linear, 19:0:ease_in")}>
+              <Rect x="0" y={curve("17.82:-560:ease_out, 18.16:0:ease_in_out, 18.82:-560:ease_in")} width="1920" height="560" color="#050202" opacity="0.96" />
+              <Rect x="0" y={curve("17.82:1080:ease_out, 18.16:520:ease_in_out, 18.82:1080:ease_in")} width="1920" height="560" color="#050202" opacity="0.96" />
+              <Rect x="0" y="525" width="1920" height="30" fill="url(#gold_sweep)" opacity={curve("17.82:0:linear, 18.16:0.86:ease_out, 18.82:0:ease_in")} blend="screen" />
             </Group>
           </Layer>
         </Sequence>
@@ -242,7 +434,7 @@
   </Scene>
 
   <Process id="BloomAliasProcess">
-    <Tex id="src" fmt="rgba16f" from="scene:aged_magic_book_title_reveal_7s" />
+    <Tex id="src" fmt="rgba16f" from="scene:aged_magic_book_film_prologue_30s" />
     <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
     <Pass id="post_bloom" kind="compute"
           effect="bloom"

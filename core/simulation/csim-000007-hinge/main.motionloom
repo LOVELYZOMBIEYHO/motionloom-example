@@ -1,0 +1,23 @@
+<Graph fps={30} duration="4s" size={[640,360]}>
+  <Background color="#0F172A" />
+  <Scene id="hinge_contract">
+    <Timeline>
+      <Track>
+        <Sequence from="0s" duration="4s">
+          <Layer>
+            <Group id="hinge_a"
+                   rotation={curve("0:-24:ease_in_out, 1:34:ease_in_out, 2:-12:ease_in_out, 3:28:ease_in_out, 4:-24:ease_in_out")}>
+              <Rect x="180" y="160" width="150" height="24" radius="12" color="#38BDF8" />
+            </Group>
+            <Group id="hinge_b">
+              <Rect x="320" y="160" width="150" height="24" radius="12" color="#A78BFA" />
+            </Group>
+      <Circle x="320" y="172" radius="16" color="#D8FF2F" />
+      <Hinge id="center_hinge" a="hinge_a" b="hinge_b" anchor={[320,172]} stiffness="0.9" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="hinge_contract" />
+</Graph>

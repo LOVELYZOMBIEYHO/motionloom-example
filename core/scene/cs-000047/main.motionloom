@@ -1,0 +1,43 @@
+<Graph fps={30} duration="4s" size={[640,360]} renderSize={[640,360]}>
+  <Background color="#10141d" />
+  <Scene id="PuppetWarpCore">
+    <Timeline>
+      <Track id="puppet_demo" space="screen" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer>
+            <Group id="character">
+              <Group id="body" x="320" y="218">
+                <Rect x="-68" y="-55" width="136" height="118" radius="48" color="#d8ff2f" />
+              </Group>
+              <Group id="head" x="320" y="120">
+                <Circle x="0" y="0" radius="62" color="#f3c8ad" />
+                <Circle x="-22" y="-5" radius="7" color="#11120d" />
+                <Circle x="22" y="-5" radius="7" color="#11120d" />
+              </Group>
+              <Group id="left_hand" x="205" y="210">
+                <Line x1="0" y1="0" x2="70" y2="25" stroke="#f3c8ad" strokeWidth="26" />
+                <Circle x="0" y="0" radius="18" color="#f3c8ad" />
+              </Group>
+              <Group id="right_hand" x="435" y="210">
+                <Line x1="0" y1="0" x2="-70" y2="25" stroke="#f3c8ad" strokeWidth="26" />
+                <Circle x="0" y="0" radius="18" color="#f3c8ad" />
+              </Group>
+            </Group>
+            <PuppetWarp id="character_warp" target="character" width="640" height="360" density="high">
+              <PuppetPin id="head_pin" bindTo="head" fixed="true" radius="105" />
+              <PuppetPin id="left_hand_pin" bindTo="left_hand"
+                         targetX={curve("0:205:linear, 1:165:ease_in_out, 2:205:ease_in_out, 3:180:ease_in_out, 4:205:ease_in_out")}
+                         targetY={curve("0:210:linear, 1:145:ease_in_out, 2:210:ease_in_out, 3:170:ease_in_out, 4:210:ease_in_out")}
+                         radius="125" />
+              <PuppetPin id="right_hand_pin" bindTo="right_hand"
+                         targetX={curve("0:435:linear, 1:475:ease_in_out, 2:435:ease_in_out, 3:460:ease_in_out, 4:435:ease_in_out")}
+                         targetY={curve("0:210:linear, 1:145:ease_in_out, 2:210:ease_in_out, 3:170:ease_in_out, 4:210:ease_in_out")}
+                         radius="125" />
+            </PuppetWarp>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="PuppetWarpCore" />
+</Graph>

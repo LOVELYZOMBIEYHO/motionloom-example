@@ -1,0 +1,264 @@
+<Graph fps={30} duration="6s" size={[1200,900]} renderSize={[1200,900]}>
+  <Background color="#F4F3EE" />
+
+  <Scene id="monochrome_anime_bob_hair">
+    <Defs>
+      <Wind id="soft_bob_wind" direction={[1,-0.08]} strength="58"
+            turbulence="0.22" noiseScale="3.8" />
+      <Collider id="head_collision" shape="ellipse" x="600" y="382"
+                radiusX="224" radiusY="270" />
+    </Defs>
+
+    <Timeline>
+      <Track id="background" space="screen" z="0">
+        <Sequence from="0s" duration="6s" out="hold">
+          <Layer>
+            <Path id="paper_background" d="M 0 0 L 1200 0 L 1200 900 L 0 900 Z"
+                  fill="#F4F3EE" />
+            <Path id="portrait_panel" d="M 244 0 L 956 0 L 956 900 L 244 900 Z"
+                  fill="#FFFFFF" />
+            <Path id="left_crop_bar" d="M 0 0 L 244 0 L 244 900 L 0 900 Z"
+                  fill="#08090D" />
+            <Path id="right_crop_bar" d="M 956 0 L 1200 0 L 1200 900 L 956 900 Z"
+                  fill="#08090D" />
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="rear_hair" space="screen" z="5">
+        <Sequence from="0s" duration="6s" out="hold">
+          <Layer>
+            <Group id="rear_bob_mass_group">
+              <Path id="rear_bob_mass"
+                    d="M 342 684 C 302 596 306 450 326 320 C 348 168 438 62 574 34 C 730 2 856 88 888 226 C 904 294 900 356 880 416 C 926 486 936 594 900 680 C 878 734 838 770 790 792 C 818 744 820 696 800 650 C 772 720 724 766 656 798 C 610 818 568 818 526 800 C 456 774 398 740 342 684 Z"
+                    fill="#07080C" />
+              <Path id="rear_bob_left_tip"
+                    d="M 342 438 C 300 510 296 612 324 704 C 338 746 364 778 400 802 C 368 722 374 642 402 562 Z"
+                    fill="#111218" />
+              <Path id="rear_bob_right_tip"
+                    d="M 814 432 C 872 504 902 600 884 692 C 876 738 854 774 816 806 C 836 724 820 646 776 574 Z"
+                    fill="#111218" />
+            </Group>
+
+            <Group id="right_back_spikes_group" x="838" y="236"
+                   rotation={curve("0:-1:linear, 1.5:1.5:ease_in_out, 3:-0.8:ease_in_out, 4.5:1.8:ease_in_out, 6:-1:ease_in_out")}>
+              <Path id="right_back_spike_top"
+                    d="M 0 0 L 98 -44 L 60 22 L 136 18 L 72 64 L 128 94 L 48 90 Z"
+                    fill="#07080C" />
+              <Path id="right_back_spike_lower"
+                    d="M 30 88 L 132 116 L 74 144 L 142 190 L 48 174 L -4 126 Z"
+                    fill="#07080C" />
+            </Group>
+
+            <Group id="left_back_spikes_group" x="360" y="258"
+                   rotation={curve("0:0.8:linear, 1.5:-1.1:ease_in_out, 3:1:ease_in_out, 4.5:-1.4:ease_in_out, 6:0.8:ease_in_out")}>
+              <Path d="M 0 0 L -92 -24 L -52 24 L -112 42 L -42 64 L -86 110 L -4 88 Z"
+                    fill="#07080C" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="portrait" space="screen" z="10">
+        <Sequence from="0s" duration="6s" out="hold">
+          <Layer>
+            <Group id="shoulders_group">
+              <Path id="left_shoulder" d="M 286 900 C 320 798 410 748 520 742 L 594 900 Z"
+                    fill="#07080C" />
+              <Path id="right_shoulder" d="M 914 900 C 880 798 790 748 680 742 L 606 900 Z"
+                    fill="#07080C" />
+            </Group>
+
+            <Group id="neck_group">
+              <Path id="neck_shape"
+                    d="M 510 650 L 510 770 C 548 798 650 798 690 770 L 690 648 Z"
+                    fill="#FFFFFF" stroke="#07080C" strokeWidth="8" />
+              <Path id="neck_shadow"
+                    d="M 510 650 L 600 716 L 690 650 L 690 690 L 600 754 L 510 690 Z"
+                    fill="#07080C" />
+            </Group>
+
+            <Group id="face_group">
+              <Path id="face_shape"
+                    d="M 402 270 C 432 172 510 126 604 126 C 706 126 786 186 806 292 C 826 402 800 536 734 624 C 692 678 646 714 600 730 C 550 712 498 676 456 622 C 390 538 372 394 402 270 Z"
+                    fill="#FFFFFF" />
+              <Path id="left_ear"
+                    d="M 406 412 C 366 396 350 438 370 482 C 386 518 414 524 432 498 C 406 480 392 454 406 412 Z"
+                    fill="#FFFFFF" stroke="#07080C" strokeWidth="7" />
+              <Path id="right_ear"
+                    d="M 798 404 C 838 390 852 434 832 478 C 816 514 790 520 772 492 C 798 474 812 446 798 404 Z"
+                    fill="#FFFFFF" stroke="#07080C" strokeWidth="7" />
+
+              <Group id="eyes_group">
+                <Group id="left_eye_group">
+                  <Path id="left_eye_white"
+                        d="M 414 420 C 454 376 522 374 560 418 C 532 466 452 474 414 420 Z"
+                        fill="#FFFFFF" stroke="#07080C" strokeWidth="8" />
+                  <Path id="left_eye_dark"
+                        d="M 438 400 C 466 376 520 384 536 416 C 544 448 518 474 484 476 C 448 476 426 446 438 400 Z"
+                        fill="#07080C" />
+                  <Path id="left_eye_highlight"
+                        d="M 452 416 C 474 404 510 406 526 416 C 506 430 472 432 450 422 Z"
+                        fill="#FFFFFF" />
+                  <Path id="left_upper_lash"
+                        d="M 406 414 C 442 362 520 354 568 410 C 528 380 458 382 414 426 Z"
+                        fill="#07080C" />
+                  <Path id="left_brow"
+                        d="M 404 350 C 446 310 510 314 558 352 C 506 330 456 330 412 364 Z"
+                        fill="#07080C" />
+                </Group>
+
+                <Group id="right_eye_group">
+                  <Path id="right_eye_white"
+                        d="M 642 416 C 682 372 750 374 788 420 C 750 470 670 466 642 416 Z"
+                        fill="#FFFFFF" stroke="#07080C" strokeWidth="8" />
+                  <Path id="right_eye_dark"
+                        d="M 666 400 C 694 376 748 384 762 416 C 772 448 746 474 712 476 C 676 476 654 446 666 400 Z"
+                        fill="#07080C" />
+                  <Path id="right_eye_highlight"
+                        d="M 680 416 C 704 404 738 406 754 416 C 734 430 700 432 678 422 Z"
+                        fill="#FFFFFF" />
+                  <Path id="right_upper_lash"
+                        d="M 634 410 C 682 354 758 362 796 414 C 752 382 682 380 642 424 Z"
+                        fill="#07080C" />
+                  <Path id="right_brow"
+                        d="M 638 350 C 686 310 750 314 794 354 C 748 330 696 330 646 364 Z"
+                        fill="#07080C" />
+                </Group>
+              </Group>
+
+              <Group id="nose_mouth_group">
+                <Path id="nose_mark" d="M 598 492 L 614 510 L 600 536 L 588 516 Z"
+                      fill="#07080C" />
+                <Path id="mouth_line" d="M 566 590 C 584 574 608 576 624 594"
+                      fill="none" stroke="#07080C" strokeWidth="6"
+                      taperStart="0.28" taperEnd="0.28" />
+              </Group>
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="front_hair" space="screen" z="20">
+        <Sequence from="0s" duration="6s" out="hold">
+          <Layer>
+            <Group id="crown_hair_group">
+              <Path id="crown_mass"
+                    d="M 340 330 C 336 190 420 72 566 34 C 714 -4 844 86 884 226 C 900 284 892 332 870 374 C 818 304 772 250 716 212 C 656 174 576 148 492 168 C 428 184 380 240 340 330 Z"
+                    fill="#07080C" />
+              <Path id="crown_left_peak"
+                    d="M 430 112 C 486 50 558 20 642 18 C 574 38 518 72 474 122 Z"
+                    fill="#07080C" />
+            </Group>
+
+            <Group id="bangs_group">
+              <Path id="bang_left_sweep"
+                    d="M 374 246 C 410 174 470 132 534 120 C 488 198 466 284 476 374 C 438 340 406 318 364 308 C 378 286 382 266 374 246 Z"
+                    fill="#07080C" />
+              <Path id="bang_left_long"
+                    d="M 470 142 C 514 110 552 98 594 100 C 558 176 550 268 574 356 C 532 334 502 304 480 266 C 464 222 462 182 470 142 Z"
+                    fill="#07080C" />
+              <Path id="bang_center_point"
+                    d="M 560 96 C 614 90 654 108 688 140 C 650 216 624 282 612 356 C 580 306 552 252 524 192 C 538 154 550 122 560 96 Z"
+                    fill="#07080C" />
+              <Path id="bang_right_diagonal"
+                    d="M 638 112 C 698 124 748 154 788 202 C 746 248 704 290 660 330 C 676 264 672 204 638 112 Z"
+                    fill="#07080C" />
+              <Path id="bang_right_outer"
+                    d="M 722 150 C 780 178 824 222 852 280 C 802 298 754 330 706 382 C 730 304 736 228 722 150 Z"
+                    fill="#07080C" />
+            </Group>
+
+            <Group id="left_side_lock_group" x="354" y="304"
+                   rotation={curve("0:0.4:linear, 1.5:-0.8:ease_in_out, 3:0.7:ease_in_out, 4.5:-1:ease_in_out, 6:0.4:ease_in_out")}>
+              <Path id="left_side_lock"
+                    d="M 0 0 C -34 92 -48 202 -30 314 C -18 392 -42 458 -82 514 C -10 476 38 418 58 344 C 80 258 66 138 24 24 Z"
+                    fill="#07080C" />
+              <Path id="left_side_cut"
+                    d="M 18 70 C -2 190 6 320 30 398 C 44 316 42 208 18 70 Z"
+                    fill="#FFFFFF" />
+            </Group>
+
+            <Group id="right_side_lock_group" x="820" y="292"
+                   rotation={curve("0:-0.5:linear, 1.5:1:ease_in_out, 3:-0.7:ease_in_out, 4.5:1.2:ease_in_out, 6:-0.5:ease_in_out")}>
+              <Path id="right_side_lock"
+                    d="M 0 0 C 44 94 66 204 58 318 C 52 408 76 468 118 512 C 42 486 -8 428 -32 350 C -58 262 -46 142 -20 24 Z"
+                    fill="#07080C" />
+              <Path id="right_side_cut"
+                    d="M -10 66 C 22 176 24 302 8 394 C -8 306 -18 186 -10 66 Z"
+                    fill="#FFFFFF" />
+            </Group>
+
+            <Curve id="physical_left_face_lock"
+                   points="366,302 342,402 344,516 314,662"
+                   stroke="#07080C" strokeWidth="25" taperEnd="0.10" />
+            <SpringChain target="physical_left_face_lock" pin="start" segments="22"
+                         stiffness="0.88" damping="0.20" gravity={[0,170]}
+                         wind="soft_bob_wind" colliders={["head_collision"]} collisionRadius="9" />
+
+            <Curve id="physical_right_face_lock"
+                   points="824,294 852,400 850,520 884,662"
+                   stroke="#07080C" strokeWidth="25" taperEnd="0.10" />
+            <SpringChain target="physical_right_face_lock" pin="start" segments="22"
+                         stiffness="0.86" damping="0.19" gravity={[0,176]}
+                         wind="soft_bob_wind" colliders={["head_collision"]} collisionRadius="9" />
+
+            <Curve id="physical_left_outer_tip"
+                   points="336,370 296,452 300,544 264,642"
+                   stroke="#07080C" strokeWidth="17" taperEnd="0.08" />
+            <SpringChain target="physical_left_outer_tip" pin="start" segments="20"
+                         stiffness="0.82" damping="0.17" gravity={[0,190]}
+                         wind="soft_bob_wind" colliders={["head_collision"]} collisionRadius="7" />
+
+            <Curve id="physical_right_outer_tip"
+                   points="866,354 916,424 932,520 910,620"
+                   stroke="#07080C" strokeWidth="17" taperEnd="0.08" />
+            <SpringChain target="physical_right_outer_tip" pin="start" segments="20"
+                         stiffness="0.80" damping="0.16" gravity={[0,196]}
+                         wind="soft_bob_wind" colliders={["head_collision"]} collisionRadius="7" />
+
+            <Group id="hair_shine_group">
+              <Path id="crown_shine"
+                    d="M 392 226 C 426 132 498 76 584 56 C 514 94 460 158 426 256 Z"
+                    fill="#FFFFFF" />
+              <Path id="crown_shine_cut"
+                    d="M 414 204 C 438 150 470 112 510 86 C 474 132 450 184 434 246 Z"
+                    fill="#07080C" />
+              <Path id="left_shine_streak"
+                    d="M 374 300 C 354 410 358 548 390 650 C 370 526 374 410 396 312 Z"
+                    fill="#FFFFFF" />
+              <Path id="right_shine_streak"
+                    d="M 820 310 C 854 410 862 528 838 642 C 848 512 832 402 804 326 Z"
+                    fill="#FFFFFF" />
+            </Group>
+
+            <Curve id="top_flyaway"
+                   points="456,104 420,76 388,88 360,116"
+                   stroke="#07080C" strokeWidth="4" taperEnd="0.08" />
+            <SpringChain target="top_flyaway" pin="start" segments="16"
+                         stiffness="0.92" damping="0.24" gravity={[0,70]}
+                         wind="soft_bob_wind" colliders={["head_collision"]} collisionRadius="3" />
+
+            <Curve id="right_flyaway"
+                   points="812,214 870,186 928,194 978,224"
+                   stroke="#07080C" strokeWidth="4" taperEnd="0.08" />
+            <SpringChain target="right_flyaway" pin="start" segments="16"
+                         stiffness="0.90" damping="0.22" gravity={[0,76]}
+                         wind="soft_bob_wind" colliders={["head_collision"]} collisionRadius="3" />
+
+            <Group id="collar_group">
+              <Path id="left_collar"
+                    d="M 384 760 L 510 720 L 600 788 L 512 844 Z"
+                    fill="#FFFFFF" stroke="#07080C" strokeWidth="9" />
+              <Path id="right_collar"
+                    d="M 816 760 L 690 720 L 600 788 L 688 844 Z"
+                    fill="#FFFFFF" stroke="#07080C" strokeWidth="9" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="monochrome_anime_bob_hair" />
+</Graph>

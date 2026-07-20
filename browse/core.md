@@ -47,6 +47,7 @@
 | [cs-000044](../core/scene/cs-000044/) | core | scene | Edge Roughness | scene, filter, edge, noise, gpu-friendly | Add deterministic hand-drawn irregularity only to vector boundaries.<br>Tune displacement radius, noise scale, amount, and seed independently. |
 | [cs-000045](../core/scene/cs-000045/) | core | scene | Color Bleed | scene, filter, edge, color, soft-edge | Spread pigment beyond an alpha boundary without blurring the entire object.<br>Control bleed distance and strength independently. |
 | [cs-000046](../core/scene/cs-000046/) | core | scene | Universal Procedural Optics | scene, gpu-friendly, procedural, particles, rays | Combine deterministic radial rays and particles with polar-coordinate noise.<br>Apply universal glass refraction, optical post effects, and advanced blend modes. |
+| [cs-000047](../core/scene/cs-000047/) | core | scene | Puppet Warp Bound Pins | scene, puppet-warp, puppet-pin, semantic-bind, curve | Bind PuppetPin rest positions to semantic Group ids.<br>Animate targetX and targetY while preserving the source artwork as DSL truth. |
 | [cw-000001](../core/world/cw-000001/) | core | world | DSL Action Basic | action | Define the smallest Action with one Pose. |
 | [cw-000002](../core/world/cw-000002/) | core | world | DSL Actor Basic | actor | Place one Actor in a World. |
 | [cw-000003](../core/world/cw-000003/) | core | world | DSL Bone Basic | bone | Set one Bone transform inside a Pose. |
@@ -82,3 +83,15 @@
 | [ct-000010](../core/text/ct-000010/) | core | text | Cyber Gradient Label | text, text-gap, color, layout, shape | Create a cyber gradient label typography treatment.<br>Layer duplicate Text nodes to simulate depth, glow, shadow, or emphasis without external assets. |
 | [ct-000011](../core/text/ct-000011/) | core | text | Minimal Kinetic Sans | text, text-gap, color, layout, shape | Create a minimal kinetic sans typography treatment.<br>Layer duplicate Text nodes to simulate depth, glow, shadow, or emphasis without external assets. |
 | [ct-000012](../core/text/ct-000012/) | core | text | Text AA Soft Edge Blur | text, antialias, edge-smoothing, soft-edge, blur | Use renderScale auto for cleaner default text rasterization.<br>Use antialias presets and softEdge or edgeSmoothing to reduce hard pixel edges. |
+| [csim-000001](../core/simulation/csim-000001-gravity/) | core | simulation | Gravity Dynamic Curve | gravity, dynamic-curve | Apply a named deterministic Gravity resource to a Curve. |
+| [csim-000002](../core/simulation/csim-000002-wind/) | core | simulation | Wind Dynamic Curve | wind, turbulence | Reference a Wind resource from a SpringChain. |
+| [csim-000003](../core/simulation/csim-000003-attraction/) | core | simulation | Attraction Force | attraction | Pull a dynamic curve toward an attraction point. |
+| [csim-000004](../core/simulation/csim-000004-circle-collision/) | core | simulation | Circle Collision | circle-collision | Project dynamic curve particles outside a circle collider. |
+| [csim-000005](../core/simulation/csim-000005-capsule-collision/) | core | simulation | Capsule Collision | capsule-collision | Collide a dynamic curve with a capsule segment. |
+| [csim-000006](../core/simulation/csim-000006-distance-constraint/) | core | simulation | Distance Constraint | distance-constraint | Preserve rest lengths through iterative distance constraints. |
+| [csim-000007](../core/simulation/csim-000007-hinge/) | core | simulation | Hinge Contract | hinge | Declare a typed 2D hinge binding without a Simulation wrapper. |
+| [csim-000008](../core/simulation/csim-000008-spring-chain/) | core | simulation | Spring Chain Hair Guide | spring-chain, hair | Drive a hair guide with gravity, wind and head collision. |
+| [csim-000009](../core/simulation/csim-000009-rigid-body-2d/) | core | simulation | Rigid Body 2D Contract | rigid-body-2d | Attach typed mass and velocity data to a scene target. |
+| [csim-000010](../core/simulation/csim-000010-particle-emitter/) | core | simulation | Particle Emitter Contract | particle-emitter | Declare deterministic particle emission parameters. |
+| [csim-000011](../core/simulation/csim-000011-cloth/) | core | simulation | Cloth Contract | cloth | Bind a cloth grid to a scene target. |
+| [csim-000012](../core/simulation/csim-000012-cache-bake/) | core | simulation | Simulation Cache Bake Contract | cache-bake, deterministic-timestep | Declare a deterministic frame range for simulation baking. |

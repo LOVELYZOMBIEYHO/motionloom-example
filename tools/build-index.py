@@ -13,7 +13,7 @@ CORE_ROOT = ROOT / "core"
 SHOWCASE_ROOT = ROOT / "showcase"
 SCHEMA_PATH = ROOT / "schema" / "example.schema.json"
 TAG_REGISTRY_PATH = ROOT / "schema" / "tag-registry.json"
-DOMAINS = ("scene", "world", "process", "process_with_time", "composition", "text")
+DOMAINS = ("scene", "world", "process", "process_with_time", "composition", "text", "simulation")
 DOMAIN_PREFIX = {
     "scene": "cs",
     "world": "cw",
@@ -21,6 +21,7 @@ DOMAIN_PREFIX = {
     "process_with_time": "cpt",
     "composition": "cm",
     "text": "ct",
+    "simulation": "csim",
 }
 
 
@@ -73,7 +74,7 @@ def validate_example_record(path: Path, record: dict, domain_dir: str) -> None:
     props = SCHEMA.get("properties", {})
     id_value = record.get("id")
     if not isinstance(id_value, str) or not re.fullmatch(props["id"]["pattern"], id_value):
-        fail(path, "id must match cs/cw/cp/cm/ct-000000")
+        fail(path, "id must match cs/cw/cp/cpt/cm/ct/csim-000000")
 
     type_value = record.get("type")
     if type_value not in props["type"]["enum"]:

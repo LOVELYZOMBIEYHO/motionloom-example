@@ -1,0 +1,53 @@
+{
+  "id": "s-000055",
+  "type": "showcase",
+  "title": "Anime Portrait Hair Warp and Blink Rig",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "anime",
+    "portrait",
+    "character",
+    "hair",
+    "eye",
+    "blink-animation",
+    "puppet",
+    "puppet-warp",
+    "puppet-pin",
+    "mesh-topology",
+    "deformation",
+    "masking",
+    "matte",
+    "curve-animation",
+    "gpu-friendly"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "Precompose",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Path",
+    "PuppetWarp",
+    "MeshTopology",
+    "Vertex",
+    "Triangle",
+    "PuppetPin",
+    "Present",
+    "curve"
+  ],
+  "teaches": [
+    "Turn imported anime portrait paths into named semantic hair and eye groups without flattening the artwork.",
+    "Animate hair tips and two complete eye blinks with PuppetWarp pins, explicit mesh topology, and deterministic curves.",
+    "Use an inverse alpha matte to create background-independent cutouts instead of painting holes with a fixed background color."
+  ],
+  "source_path": "showcase/s-000055",
+  "demo_url": "",
+  "related": ["s-000053", "s-000057", "s-000035"],
+  "requires": ["Graph", "Scene", "Precompose", "PuppetWarp", "PuppetPin", "Present"]
+}

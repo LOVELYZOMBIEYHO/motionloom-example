@@ -1,0 +1,25 @@
+<Graph fps={30} duration="4s" size={[640,360]}>
+  <Background color="#111827" />
+  <Scene id="circle_collision">
+    <Defs>
+      <Collider id="circle_body" target="circle_motion" shape="circle" x="0" y="0" radius="82" />
+      <Wind id="collision_wind" direction={[1,-0.2]} strength="150" turbulence="0.72" noiseScale="3" />
+    </Defs>
+    <Timeline>
+      <Track>
+        <Sequence from="0s" duration="4s">
+          <Layer>
+        <Group id="circle_motion"
+               x={curve("0:540:ease_in_out, 1.5:320:ease_in_out, 2.6:250:ease_in_out, 4:540:ease_in_out")}
+               y={curve("0:210:linear, 4:210:linear")}>
+          <Circle x="0" y="0" radius="82" color="#334155" stroke="#D8FF2F" strokeWidth="4" />
+        </Group>
+        <Curve id="collision_curve" points="160,60 230,100 300,120 370,150" stroke="#FFFFFF" strokeWidth="14" />
+        <SpringChain target="collision_curve" pin="start" segments="22" stiffness="0.8" damping="0.08" gravity={[0,560]} wind="collision_wind" colliders={["circle_body"]} collisionRadius="7" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="circle_collision" />
+</Graph>

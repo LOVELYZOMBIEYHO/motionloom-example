@@ -1,0 +1,25 @@
+<Graph fps={30} duration="6s" size={[640,360]}>
+  <Background color="#17111F" />
+  <Scene id="hair_motion">
+    <Defs>
+      <Wind id="scene_wind" direction={[1,-0.15]} strength="145" turbulence="0.78" noiseScale="2.4" />
+      <Collider id="head_collider" target="head_motion" shape="ellipse" x="0" y="0" radiusX="90" radiusY="110" />
+    </Defs>
+    <Timeline>
+      <Track>
+        <Sequence from="0s" duration="6s">
+          <Layer>
+      <Group id="head_motion"
+             x={curve("0:280:ease_in_out, 2:300:ease_in_out, 4:260:ease_in_out, 6:280:ease_in_out")}
+             y={curve("0:165:ease_in_out, 3:176:ease_in_out, 6:165:ease_in_out")}>
+        <Ellipse x="0" y="0" radiusX="90" radiusY="110" color="#F2C9B8" />
+      </Group>
+      <Curve id="side_hair_guide" points="225,65 190,125 170,205 155,310" stroke="#55286F" strokeWidth="34" taperEnd="0.08" />
+      <SpringChain target="side_hair_guide" pin="start" segments="24" stiffness="0.74" damping="0.08" gravity={[0,520]} wind="scene_wind" colliders={["head_collider"]} collisionRadius="8" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="hair_motion" />
+</Graph>

@@ -1,14 +1,15 @@
 {
-  "example_count": 132,
-  "core_count": 80,
-  "showcase_count": 52,
+  "example_count": 150,
+  "core_count": 93,
+  "showcase_count": 57,
   "domain_counts": {
-    "scene": 95,
+    "scene": 101,
     "world": 6,
     "process": 13,
     "process_with_time": 3,
     "composition": 1,
-    "text": 14
+    "text": 14,
+    "simulation": 12
   },
   "id_prefixes": {
     "scene": "cs",
@@ -16,7 +17,8 @@
     "process": "cp",
     "process_with_time": "cpt",
     "composition": "cm",
-    "text": "ct"
+    "text": "ct",
+    "simulation": "csim"
   },
   "examples": [
     {
@@ -1738,6 +1740,49 @@
         "Present"
       ],
       "path": "core/scene/cs-000046/"
+    },
+    {
+      "id": "cs-000047",
+      "type": "core",
+      "title": "Puppet Warp Bound Pins",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "puppet-warp",
+        "puppet-pin",
+        "semantic-bind",
+        "curve"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "PuppetWarp",
+        "PuppetPin",
+        "Present"
+      ],
+      "teaches": [
+        "Bind PuppetPin rest positions to semantic Group ids.",
+        "Animate targetX and targetY while preserving the source artwork as DSL truth."
+      ],
+      "source_path": "core/scene/cs-000047",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Group",
+        "PuppetWarp",
+        "PuppetPin",
+        "Present"
+      ],
+      "path": "core/scene/cs-000047/"
     },
     {
       "id": "s-000001",
@@ -4292,6 +4337,329 @@
       "path": "showcase/s-000052/"
     },
     {
+      "id": "s-000053",
+      "type": "showcase",
+      "title": "Monochrome Anime Bob Hair Dynamics",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "anime",
+        "portrait",
+        "hair",
+        "spring-chain",
+        "wind",
+        "turbulence",
+        "dynamic-curve",
+        "curve-animation",
+        "gpu-friendly"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Wind",
+        "Collider",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Path",
+        "Curve",
+        "SpringChain",
+        "Present",
+        "curve"
+      ],
+      "teaches": [
+        "Construct a high-contrast anime bob from editable silhouette, bang, side-lock, and shine paths.",
+        "Use Wind, Collider, and SpringChain to animate flyaways and face locks without destabilizing the main haircut.",
+        "Combine restrained transform curves with strand physics while preserving a clean manga silhouette."
+      ],
+      "source_path": "showcase/s-000053",
+      "demo_url": "",
+      "related": [
+        "s-000052",
+        "s-000055",
+        "csim-000008"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Curve",
+        "SpringChain",
+        "Present"
+      ],
+      "path": "showcase/s-000053/"
+    },
+    {
+      "id": "s-000054",
+      "type": "showcase",
+      "title": "Profile-Driven Anime Character Rig",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "anime",
+        "character",
+        "character-rig",
+        "skeleton",
+        "proportion-profile",
+        "landmarks",
+        "validation",
+        "constraints",
+        "ik-controls",
+        "character-action",
+        "editor-overlay"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Skeleton",
+        "Bone",
+        "Landmark",
+        "Measure",
+        "Ratio",
+        "Region",
+        "Constraint",
+        "Guide",
+        "Control",
+        "Action",
+        "Pose",
+        "Character",
+        "Part",
+        "ApplyAction",
+        "Scene",
+        "Defs",
+        "LinearGradient",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Rect",
+        "Ellipse",
+        "Circle",
+        "Line",
+        "Path",
+        "Text",
+        "Present"
+      ],
+      "teaches": [
+        "Define a six-head anime body with semantic bones and explicit anatomical landmarks.",
+        "Validate proportions, silhouette regions, symmetry, joint limits, and IK-ready editor controls as typed rig metadata.",
+        "Attach editable vector parts to the same character rig used by reusable Action and Pose playback."
+      ],
+      "source_path": "showcase/s-000054",
+      "demo_url": "",
+      "related": [
+        "s-000037",
+        "s-000052",
+        "s-000055"
+      ],
+      "requires": [
+        "Graph",
+        "Skeleton",
+        "Character",
+        "Action",
+        "Scene",
+        "Present"
+      ],
+      "path": "showcase/s-000054/"
+    },
+    {
+      "id": "s-000055",
+      "type": "showcase",
+      "title": "Anime Portrait Hair Warp and Blink Rig",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "anime",
+        "portrait",
+        "character",
+        "hair",
+        "eye",
+        "blink-animation",
+        "puppet",
+        "puppet-warp",
+        "puppet-pin",
+        "mesh-topology",
+        "deformation",
+        "masking",
+        "matte",
+        "curve-animation",
+        "gpu-friendly"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Precompose",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Path",
+        "PuppetWarp",
+        "MeshTopology",
+        "Vertex",
+        "Triangle",
+        "PuppetPin",
+        "Present",
+        "curve"
+      ],
+      "teaches": [
+        "Turn imported anime portrait paths into named semantic hair and eye groups without flattening the artwork.",
+        "Animate hair tips and two complete eye blinks with PuppetWarp pins, explicit mesh topology, and deterministic curves.",
+        "Use an inverse alpha matte to create background-independent cutouts instead of painting holes with a fixed background color."
+      ],
+      "source_path": "showcase/s-000055",
+      "demo_url": "",
+      "related": [
+        "s-000053",
+        "s-000057",
+        "s-000035"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Precompose",
+        "PuppetWarp",
+        "PuppetPin",
+        "Present"
+      ],
+      "path": "showcase/s-000055/"
+    },
+    {
+      "id": "s-000056",
+      "type": "showcase",
+      "title": "Neon Loading Uplink",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "timeline",
+        "curve-animation",
+        "text",
+        "rect",
+        "neon",
+        "glow",
+        "bloom",
+        "rgb-glitch",
+        "scanlines",
+        "process",
+        "gpu-pipeline",
+        "gpu-friendly"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Filter",
+        "ChromaticAberration",
+        "LinearGradient",
+        "RadialGradient",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Rect",
+        "Path",
+        "Circle",
+        "Text",
+        "Process",
+        "Tex",
+        "Pass",
+        "Present",
+        "curve"
+      ],
+      "teaches": [
+        "Build a focused seven-second loading interface from editable scene nodes and deterministic curves.",
+        "Coordinate three loading dots, a progress bar, tunnel motion, RGB slices, and scan-line tears on one timeline.",
+        "Feed the scene into a GPU Process pass for Bloom while retaining a standalone scene graph."
+      ],
+      "source_path": "showcase/s-000056",
+      "demo_url": "",
+      "related": [
+        "s-000050",
+        "s-000052",
+        "s-000057"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Process",
+        "Present"
+      ],
+      "path": "showcase/s-000056/"
+    },
+    {
+      "id": "s-000057",
+      "type": "showcase",
+      "title": "Puppet Warp Pin Dance",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "character",
+        "puppet",
+        "puppet-warp",
+        "puppet-pin",
+        "semantic-bind",
+        "deformation",
+        "curve-animation",
+        "editor-overlay",
+        "gpu-friendly"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "LinearGradient",
+        "RadialGradient",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Rect",
+        "Ellipse",
+        "Circle",
+        "Path",
+        "Text",
+        "PuppetWarp",
+        "PuppetPin",
+        "Present",
+        "curve"
+      ],
+      "teaches": [
+        "Deform one editable MotionLoom artwork group as a continuous Puppet Warp surface.",
+        "Bind pins to semantic group ids instead of duplicating fragile rest coordinates.",
+        "Mix fixed hip and foot anchors with animated head and hand targets for stable expressive movement.",
+        "Visualize animated pin targets outside the warped artwork as an editor-friendly overlay."
+      ],
+      "source_path": "showcase/s-000057",
+      "demo_url": "",
+      "related": [
+        "s-000055",
+        "cs-000047",
+        "cs-000035"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Group",
+        "PuppetWarp",
+        "PuppetPin",
+        "Present"
+      ],
+      "path": "showcase/s-000057/"
+    },
+    {
       "id": "cw-000001",
       "type": "core",
       "title": "DSL Action Basic",
@@ -5863,6 +6231,304 @@
         "Present"
       ],
       "path": "showcase/s-000033/"
+    },
+    {
+      "id": "csim-000001",
+      "type": "core",
+      "title": "Gravity Dynamic Curve",
+      "domain": "simulation",
+      "features": [
+        "gravity",
+        "dynamic-curve"
+      ],
+      "dsl": [
+        "Gravity",
+        "Curve",
+        "SpringChain"
+      ],
+      "teaches": [
+        "Apply a named deterministic Gravity resource to a Curve."
+      ],
+      "source_path": "core/simulation/csim-000001-gravity",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Gravity",
+        "Curve",
+        "SpringChain"
+      ],
+      "path": "core/simulation/csim-000001-gravity/"
+    },
+    {
+      "id": "csim-000002",
+      "type": "core",
+      "title": "Wind Dynamic Curve",
+      "domain": "simulation",
+      "features": [
+        "wind",
+        "turbulence"
+      ],
+      "dsl": [
+        "Wind",
+        "Curve",
+        "SpringChain"
+      ],
+      "teaches": [
+        "Reference a Wind resource from a SpringChain."
+      ],
+      "source_path": "core/simulation/csim-000002-wind",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Defs",
+        "Wind",
+        "Curve",
+        "SpringChain"
+      ],
+      "path": "core/simulation/csim-000002-wind/"
+    },
+    {
+      "id": "csim-000003",
+      "type": "core",
+      "title": "Attraction Force",
+      "domain": "simulation",
+      "features": [
+        "attraction"
+      ],
+      "dsl": [
+        "Attraction",
+        "SpringChain"
+      ],
+      "teaches": [
+        "Pull a dynamic curve toward an attraction point."
+      ],
+      "source_path": "core/simulation/csim-000003-attraction",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Attraction",
+        "Curve",
+        "SpringChain"
+      ],
+      "path": "core/simulation/csim-000003-attraction/"
+    },
+    {
+      "id": "csim-000004",
+      "type": "core",
+      "title": "Circle Collision",
+      "domain": "simulation",
+      "features": [
+        "circle-collision"
+      ],
+      "dsl": [
+        "Collider",
+        "SpringChain"
+      ],
+      "teaches": [
+        "Project dynamic curve particles outside a circle collider."
+      ],
+      "source_path": "core/simulation/csim-000004-circle-collision",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Collider",
+        "Curve",
+        "SpringChain"
+      ],
+      "path": "core/simulation/csim-000004-circle-collision/"
+    },
+    {
+      "id": "csim-000005",
+      "type": "core",
+      "title": "Capsule Collision",
+      "domain": "simulation",
+      "features": [
+        "capsule-collision"
+      ],
+      "dsl": [
+        "Collider",
+        "SpringChain"
+      ],
+      "teaches": [
+        "Collide a dynamic curve with a capsule segment."
+      ],
+      "source_path": "core/simulation/csim-000005-capsule-collision",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Collider",
+        "Curve",
+        "SpringChain"
+      ],
+      "path": "core/simulation/csim-000005-capsule-collision/"
+    },
+    {
+      "id": "csim-000006",
+      "type": "core",
+      "title": "Distance Constraint",
+      "domain": "simulation",
+      "features": [
+        "distance-constraint"
+      ],
+      "dsl": [
+        "Curve",
+        "SpringChain"
+      ],
+      "teaches": [
+        "Preserve rest lengths through iterative distance constraints."
+      ],
+      "source_path": "core/simulation/csim-000006-distance-constraint",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Curve",
+        "SpringChain"
+      ],
+      "path": "core/simulation/csim-000006-distance-constraint/"
+    },
+    {
+      "id": "csim-000007",
+      "type": "core",
+      "title": "Hinge Contract",
+      "domain": "simulation",
+      "features": [
+        "hinge"
+      ],
+      "dsl": [
+        "Hinge"
+      ],
+      "teaches": [
+        "Declare a typed 2D hinge binding without a Simulation wrapper."
+      ],
+      "source_path": "core/simulation/csim-000007-hinge",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Hinge"
+      ],
+      "path": "core/simulation/csim-000007-hinge/"
+    },
+    {
+      "id": "csim-000008",
+      "type": "core",
+      "title": "Spring Chain Hair Guide",
+      "domain": "simulation",
+      "features": [
+        "spring-chain",
+        "hair"
+      ],
+      "dsl": [
+        "Wind",
+        "Collider",
+        "Curve",
+        "SpringChain"
+      ],
+      "teaches": [
+        "Drive a hair guide with gravity, wind and head collision."
+      ],
+      "source_path": "core/simulation/csim-000008-spring-chain",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Wind",
+        "Collider",
+        "Curve",
+        "SpringChain"
+      ],
+      "path": "core/simulation/csim-000008-spring-chain/"
+    },
+    {
+      "id": "csim-000009",
+      "type": "core",
+      "title": "Rigid Body 2D Contract",
+      "domain": "simulation",
+      "features": [
+        "rigid-body-2d"
+      ],
+      "dsl": [
+        "RigidBody2D"
+      ],
+      "teaches": [
+        "Attach typed mass and velocity data to a scene target."
+      ],
+      "source_path": "core/simulation/csim-000009-rigid-body-2d",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "RigidBody2D"
+      ],
+      "path": "core/simulation/csim-000009-rigid-body-2d/"
+    },
+    {
+      "id": "csim-000010",
+      "type": "core",
+      "title": "Particle Emitter Contract",
+      "domain": "simulation",
+      "features": [
+        "particle-emitter"
+      ],
+      "dsl": [
+        "ParticleEmitter"
+      ],
+      "teaches": [
+        "Declare deterministic particle emission parameters."
+      ],
+      "source_path": "core/simulation/csim-000010-particle-emitter",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "ParticleEmitter"
+      ],
+      "path": "core/simulation/csim-000010-particle-emitter/"
+    },
+    {
+      "id": "csim-000011",
+      "type": "core",
+      "title": "Cloth Contract",
+      "domain": "simulation",
+      "features": [
+        "cloth"
+      ],
+      "dsl": [
+        "Cloth"
+      ],
+      "teaches": [
+        "Bind a cloth grid to a scene target."
+      ],
+      "source_path": "core/simulation/csim-000011-cloth",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "Cloth"
+      ],
+      "path": "core/simulation/csim-000011-cloth/"
+    },
+    {
+      "id": "csim-000012",
+      "type": "core",
+      "title": "Simulation Cache Bake Contract",
+      "domain": "simulation",
+      "features": [
+        "cache-bake",
+        "deterministic-timestep"
+      ],
+      "dsl": [
+        "CacheBake"
+      ],
+      "teaches": [
+        "Declare a deterministic frame range for simulation baking."
+      ],
+      "source_path": "core/simulation/csim-000012-cache-bake",
+      "demo_url": "",
+      "related": [],
+      "requires": [
+        "CacheBake"
+      ],
+      "path": "core/simulation/csim-000012-cache-bake/"
     }
   ]
 }

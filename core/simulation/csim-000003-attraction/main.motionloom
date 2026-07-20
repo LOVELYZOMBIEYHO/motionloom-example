@@ -1,0 +1,25 @@
+<Graph fps={30} duration="4s" size={[640,360]}>
+  <Background color="#151124" />
+  <Scene id="attraction">
+    <Defs>
+      <Attraction id="orb" target="orb_motion" point={[0,0]} strength="520" radius="520" />
+      <Wind id="orbit_drive" direction={[0,-1]} strength="110" turbulence="0.85" noiseScale="2.6" />
+    </Defs>
+    <Timeline>
+      <Track>
+        <Sequence from="0s" duration="4s">
+          <Layer>
+        <Group id="orb_motion"
+               x={curve("0:520:ease_in_out, 1.4:430:ease_in_out, 2.8:500:ease_in_out, 4:520:ease_in_out")}
+               y={curve("0:110:ease_in_out, 1.4:230:ease_in_out, 2.8:150:ease_in_out, 4:110:ease_in_out")}>
+          <Circle x="0" y="0" radius="20" color="#FF5FD2" />
+        </Group>
+        <Curve id="attracted_curve" points="90,80 140,120 190,170 240,230" stroke="#F0ABFC" strokeWidth="12" />
+        <SpringChain target="attracted_curve" pin="start" segments="18" stiffness="0.7" damping="0.08" gravity={[0,80]} wind="orbit_drive" attraction="orb" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="attraction" />
+</Graph>

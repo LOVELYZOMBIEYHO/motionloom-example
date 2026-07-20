@@ -1,0 +1,20 @@
+<Graph fps={30} duration="4s" size={[640,360]}>
+  <Background color="#101827" />
+  <Scene id="gravity_curve">
+    <Defs>
+      <Gravity id="scene_gravity" vector={[0,620]} />
+    </Defs>
+    <Timeline>
+      <Track id="curve">
+        <Sequence from="0s" duration="4s">
+          <Layer>
+        <Text x="32" y="42" value="GRAVITY" fontSize="24" color="#D8FF2F" />
+        <Curve id="gravity_strand" points="120,80 180,110 240,140 300,170" stroke="#F8FAFC" strokeWidth="16" />
+        <SpringChain target="gravity_strand" pin="start" segments="18" stiffness="0.82" damping="0.12" gravity="scene_gravity" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="gravity_curve" />
+</Graph>

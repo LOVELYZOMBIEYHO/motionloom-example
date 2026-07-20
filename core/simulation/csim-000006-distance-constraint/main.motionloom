@@ -1,0 +1,23 @@
+<Graph fps={30} duration="4s" size={[640,360]}>
+  <Background color="#121212" />
+  <Scene id="distance_constraint">
+    <Timeline>
+      <Track>
+        <Sequence from="0s" duration="4s">
+          <Layer>
+            <Group id="anchor_body" x="190" y="180">
+              <Circle x="0" y="0" radius="34" color="#38BDF8" />
+            </Group>
+            <Group id="moving_body"
+                   x={curve("0:390:ease_in_out, 1:470:ease_in_out, 2:390:ease_in_out, 3:280:ease_in_out, 4:390:ease_in_out")}
+                   y={curve("0:180:ease_in_out, 1:80:ease_in_out, 2:260:ease_in_out, 3:100:ease_in_out, 4:180:ease_in_out")}>
+              <Circle x="0" y="0" radius="34" color="#F59E0B" />
+            </Group>
+            <DistanceConstraint id="body_distance" a="anchor_body" b="moving_body" distance="200" stiffness="1" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="distance_constraint" />
+</Graph>

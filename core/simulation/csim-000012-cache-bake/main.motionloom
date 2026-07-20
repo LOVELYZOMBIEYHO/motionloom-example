@@ -1,0 +1,26 @@
+<Graph fps={30} duration="4s" size={[640,360]}>
+  <Background color="#101418" />
+  <Scene id="cache_bake">
+    <Defs>
+      <Wind id="cache_wind" direction={[1,-0.2]} strength="160" turbulence="0.82" noiseScale="2.5" />
+      <Collider id="cache_driver" target="cache_driver_motion" shape="circle" x="0" y="0" radius="42" />
+    </Defs>
+    <Timeline>
+      <Track>
+        <Sequence from="0s" duration="4s">
+          <Layer>
+            <Group id="cache_driver_motion"
+                   x={curve("0:510:ease_in_out, 1.4:340:ease_in_out, 2.8:430:ease_in_out, 4:510:ease_in_out")}
+                   y={curve("0:230:ease_in_out, 2:170:ease_in_out, 4:230:ease_in_out")}>
+              <Circle x="0" y="0" radius="42" color="#29313A" stroke="#D8FF2F" strokeWidth="3" />
+            </Group>
+            <Curve id="cached_strand" points="120,70 180,110 240,160 300,220" stroke="#D8FF2F" strokeWidth="16" />
+            <SpringChain target="cached_strand" pin="start" segments="20" stiffness="0.78" damping="0.08" gravity={[0,520]} wind="cache_wind" colliders={["cache_driver"]} collisionRadius="8" />
+            <CacheBake id="strand_bake" target="cached_strand" fromFrame="0" toFrame="119" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="cache_bake" />
+</Graph>

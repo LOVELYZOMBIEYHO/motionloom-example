@@ -1,0 +1,20 @@
+<Graph fps={30} duration="4s" size={[640,360]}>
+  <Background color="#0B1720" />
+  <Scene id="wind_curve">
+    <Defs>
+      <Wind id="east_wind" direction={[1,-0.12]} strength="180" turbulence="0.38" noiseScale="3.2" />
+    </Defs>
+    <Timeline>
+      <Track>
+        <Sequence from="0s" duration="4s">
+          <Layer>
+        <Text x="32" y="42" value="WIND" fontSize="24" color="#6EE7F9" />
+        <Curve id="wind_strand" points="130,70 130,125 130,190 130,270" stroke="#67E8F9" strokeWidth="18" />
+        <SpringChain target="wind_strand" pin="start" segments="20" stiffness="0.72" damping="0.16" gravity={[0,220]} wind="east_wind" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="wind_curve" />
+</Graph>

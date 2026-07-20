@@ -1,0 +1,116 @@
+<!-- Neon Loading Uplink: a focused seven-second loading scene derived from Neon Courier. -->
+<Graph fps={30} duration="7s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#03030B" />
+  <Scene id="neon_loading_uplink">
+    <Defs>
+      <LinearGradient id="loading_neon" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#22D3EE00, 0.30:#22D3EEFF, 0.68:#F472B6FF, 1:#F472B600" />
+      <RadialGradient id="loading_beacon" cx="0.50" cy="0.50" r="0.72"
+                      stops="0:#FFFFFF, 0.24:#A5F3FC, 0.58:#22D3EE, 1:#7C3AED00" />
+      <LinearGradient id="road_neon" x1="0" y1="0" x2="1" y2="0" stops="0:#22D3EE00, 0.38:#22D3EEFF, 0.62:#F472B6FF, 1:#F472B600" />
+      <Filter id="loading_glitch_chromatic_split">
+        <ChromaticAberration
+          radius={curve("0:0.6:linear, 0.72:0.6:linear, 0.78:11:ease_out, 0.88:1:ease_in, 2.18:1:linear, 2.24:15:ease_out, 2.34:0.8:ease_in, 3.72:0.8:linear, 3.78:12:ease_out, 3.90:0.8:ease_in, 5.18:0.8:linear, 5.24:17:ease_out, 5.36:1:ease_in, 6.42:1:linear, 6.48:10:ease_out, 6.58:0.6:ease_in, 7:0.6:linear")}
+          amount="0.92" />
+      </Filter>
+    </Defs>
+    <Timeline>
+      <Track id="loading_scene" space="screen" z="0">
+        <Sequence from="0s" duration="7s" out="hold">
+          <Layer>
+            <Group id="loading_glitch_composite" effects={["loading_glitch_chromatic_split"]}>
+
+
+            <Group id="loading_tunnel_background">
+
+              <Group id="tunnel_cross_line_glitch"
+                     x={curve("0:0:linear, 0.72:0:linear, 0.78:-28:ease_out, 0.83:22:linear, 0.88:0:ease_in, 2.18:0:linear, 2.24:34:ease_out, 2.29:-18:linear, 2.34:0:ease_in, 3.72:0:linear, 3.78:-30:ease_out, 3.84:16:linear, 3.90:0:ease_in, 5.18:0:linear, 5.24:38:ease_out, 5.30:-24:linear, 5.36:0:ease_in, 6.42:0:linear, 6.48:-26:ease_out, 6.53:18:linear, 6.58:0:ease_in, 7:0:linear")}
+                     skewY={curve("0:0:linear, 0.72:0:linear, 0.78:1.4:ease_out, 0.88:0:ease_in, 2.18:0:linear, 2.24:-1.8:ease_out, 2.34:0:ease_in, 3.72:0:linear, 3.78:1.2:ease_out, 3.90:0:ease_in, 5.18:0:linear, 5.24:-1.6:ease_out, 5.36:0:ease_in, 6.42:0:linear, 6.48:1.1:ease_out, 6.58:0:ease_in, 7:0:linear")}
+                     transformOriginX="960" transformOriginY="540">
+                <Path d="M 960 540 L 80 80 M 960 540 L 1840 80 M 960 540 L 80 1000 M 960 540 L 1840 1000"
+                      stroke="#312E81" strokeWidth="18" opacity="0.72" />
+                <Path d="M 960 540 L 280 0 M 960 540 L 1640 0 M 960 540 L 280 1080 M 960 540 L 1640 1080"
+                      stroke="#0E7490" strokeWidth="10" opacity="0.78" />
+
+                <Group id="tunnel_cross_line_rgb_echo"
+                       opacity={curve("0:0:linear, 0.72:0:linear, 0.78:0.74:ease_out, 0.88:0:ease_in, 2.18:0:linear, 2.24:0.78:ease_out, 2.34:0:ease_in, 3.72:0:linear, 3.78:0.70:ease_out, 3.90:0:ease_in, 5.18:0:linear, 5.24:0.82:ease_out, 5.36:0:ease_in, 6.42:0:linear, 6.48:0.68:ease_out, 6.58:0:ease_in, 7:0:linear")}>
+                  <Group x="-24">
+                    <Path d="M 960 540 L 80 80 M 960 540 L 1840 80 M 960 540 L 80 1000 M 960 540 L 1840 1000"
+                          stroke="#22D3EE" strokeWidth="8" opacity="0.76" />
+                    <Path d="M 960 540 L 280 0 M 960 540 L 1640 0 M 960 540 L 280 1080 M 960 540 L 1640 1080"
+                          stroke="#22D3EE" strokeWidth="5" opacity="0.68" />
+                  </Group>
+                  <Group x="24">
+                    <Path d="M 960 540 L 80 80 M 960 540 L 1840 80 M 960 540 L 80 1000 M 960 540 L 1840 1000"
+                          stroke="#F472B6" strokeWidth="8" opacity="0.72" />
+                    <Path d="M 960 540 L 280 0 M 960 540 L 1640 0 M 960 540 L 280 1080 M 960 540 L 1640 1080"
+                          stroke="#F472B6" strokeWidth="5" opacity="0.64" />
+                  </Group>
+                </Group>
+              </Group>
+
+              <Circle x="960" y="540"
+                      radius={curve("0:72:linear, 2.3:520:ease_out, 2.31:72:linear, 4.62:520:ease_out, 4.63:72:linear, 7:520:ease_out")}
+                      fill="none" stroke="#22D3EE" strokeWidth="16"
+                      opacity={curve("0:0.90:linear, 2.25:0.06:ease_out, 2.3:0.90:linear, 4.57:0.06:ease_out, 4.62:0.90:linear, 7:0.06:ease_out")} />
+              <Circle x="960" y="540"
+                      radius={curve("0:250:linear, 1.42:520:ease_out, 1.43:72:linear, 3.73:520:ease_out, 3.74:72:linear, 6.05:520:ease_out, 6.06:72:linear, 7:255:ease_out")}
+                      fill="none" stroke="#F472B6" strokeWidth="10"
+                      opacity={curve("0:0.48:linear, 1.37:0.05:ease_out, 1.42:0.82:linear, 3.68:0.05:ease_out, 3.73:0.82:linear, 6:0.05:ease_out, 6.05:0.82:linear, 7:0.48:ease_out")} />
+
+            </Group>
+
+            <Group id="loading_interface">
+              <Text value="LOADING" x="330" y="712" fontSize="46" renderScale="4x" color="#A5F3FC" />
+              <Text value="." x="548" y="712" fontSize="52" renderScale="4x" color="#FFFFFF"
+                    opacity={curve("0:0:linear, 0.18:1:linear, 0.92:1:linear, 1.02:0:linear, 1.4:0:linear, 1.58:1:linear, 2.32:1:linear, 2.42:0:linear, 2.8:0:linear, 2.98:1:linear, 3.72:1:linear, 3.82:0:linear, 4.2:0:linear, 4.38:1:linear, 5.12:1:linear, 5.22:0:linear, 5.6:0:linear, 5.78:1:linear, 6.52:1:linear, 6.62:0:linear, 7:0:linear")} />
+              <Text value="." x="574" y="712" fontSize="52" renderScale="4x" color="#FFFFFF"
+                    opacity={curve("0:0:linear, 0.42:0:linear, 0.43:1:linear, 0.92:1:linear, 1.02:0:linear, 1.4:0:linear, 1.82:0:linear, 1.83:1:linear, 2.32:1:linear, 2.42:0:linear, 2.8:0:linear, 3.22:0:linear, 3.23:1:linear, 3.72:1:linear, 3.82:0:linear, 4.2:0:linear, 4.62:0:linear, 4.63:1:linear, 5.12:1:linear, 5.22:0:linear, 5.6:0:linear, 6.02:0:linear, 6.03:1:linear, 6.52:1:linear, 6.62:0:linear, 7:0:linear")} />
+              <Text value="." x="600" y="712" fontSize="52" renderScale="4x" color="#FFFFFF"
+                    opacity={curve("0:0:linear, 0.68:0:linear, 0.69:1:linear, 0.92:1:linear, 1.02:0:linear, 1.4:0:linear, 2.08:0:linear, 2.09:1:linear, 2.32:1:linear, 2.42:0:linear, 2.8:0:linear, 3.48:0:linear, 3.49:1:linear, 3.72:1:linear, 3.82:0:linear, 4.2:0:linear, 4.88:0:linear, 4.89:1:linear, 5.12:1:linear, 5.22:0:linear, 5.6:0:linear, 6.28:0:linear, 6.29:1:linear, 6.52:1:linear, 6.62:0:linear, 7:0:linear")} />
+
+              <Rect x="330" y="780" width="1260" height="78" radius="38"
+                    color="#111827" stroke="#475569" strokeWidth="5" />
+              <Rect x="346" y="796"
+                    width={curve("0:0:linear, 1.2:210:ease_out, 2.8:510:ease_in_out, 4.6:850:ease_in_out, 6.45:1210:ease_out, 7:1210:linear")}
+                    height="46" radius="22" fill="url(#loading_neon)" />
+              <Circle x={curve("0:346:linear, 1.2:556:ease_out, 2.8:856:ease_in_out, 4.6:1196:ease_in_out, 6.45:1556:ease_out, 7:1556:linear")}
+                      y="819" radius="12" color="#FFFFFF" opacity="0.92" />
+            </Group>
+
+            <Text value="THE BEST WAY TO PREDICT THE FUTURE IS TO CREATE IT" x="514" y="962"
+                  fontSize="34" renderScale="4x" color="#F8FAFC" opacity="0.72" />
+
+            <!-- Short digital faults: RGB text separation, horizontal slices, and scan-line tears. -->
+            <Group id="loading_glitch_overlay">
+              <Text value="LOADING" x={curve("0:330:linear, 0.72:330:linear, 0.78:304:ease_out, 0.88:330:ease_in, 2.18:330:linear, 2.24:362:ease_out, 2.34:330:ease_in, 3.72:330:linear, 3.78:306:ease_out, 3.90:330:ease_in, 5.18:330:linear, 5.24:368:ease_out, 5.36:330:ease_in, 7:330:linear")}
+                    y="712" fontSize="46" renderScale="4x" color="#F472B6"
+                    opacity={curve("0:0:linear, 0.72:0:linear, 0.78:0.76:ease_out, 0.88:0:ease_in, 2.18:0:linear, 2.24:0.82:ease_out, 2.34:0:ease_in, 3.72:0:linear, 3.78:0.72:ease_out, 3.90:0:ease_in, 5.18:0:linear, 5.24:0.86:ease_out, 5.36:0:ease_in, 6.42:0:linear, 6.48:0.68:ease_out, 6.58:0:ease_in, 7:0:linear")} />
+
+              <Rect x={curve("0:-620:linear, 0.70:-620:linear, 0.80:1540:ease_out, 0.90:1940:ease_in, 2.16:-700:linear, 2.28:1180:ease_out, 2.38:1940:ease_in, 3.70:-520:linear, 3.82:1420:ease_out, 3.94:1940:ease_in, 5.16:-640:linear, 5.28:980:ease_out, 5.40:1940:ease_in, 6.40:-520:linear, 6.52:1500:ease_out, 6.62:1940:ease_in, 7:1940:linear")}
+                    y="318" width="520" height="10" color="#22D3EE"
+                    opacity={curve("0:0:linear, 0.70:0:linear, 0.76:0.72:ease_out, 0.90:0:ease_in, 2.16:0:linear, 2.22:0.66:ease_out, 2.38:0:ease_in, 3.70:0:linear, 3.76:0.74:ease_out, 3.94:0:ease_in, 5.16:0:linear, 5.22:0.78:ease_out, 5.40:0:ease_in, 6.40:0:linear, 6.46:0.62:ease_out, 6.62:0:ease_in, 7:0:linear")} />
+              <Rect x={curve("0:1960:linear, 0.73:1960:linear, 0.83:240:ease_out, 0.92:-580:ease_in, 2.19:1960:linear, 2.29:620:ease_out, 2.39:-580:ease_in, 3.73:1960:linear, 3.83:380:ease_out, 3.95:-580:ease_in, 5.19:1960:linear, 5.29:760:ease_out, 5.42:-580:ease_in, 6.43:1960:linear, 6.53:300:ease_out, 6.64:-580:ease_in, 7:-580:linear")}
+                    y="602" width="460" height="14" color="#F472B6"
+                    opacity={curve("0:0:linear, 0.73:0:linear, 0.79:0.64:ease_out, 0.92:0:ease_in, 2.19:0:linear, 2.25:0.70:ease_out, 2.39:0:ease_in, 3.73:0:linear, 3.79:0.66:ease_out, 3.95:0:ease_in, 5.19:0:linear, 5.25:0.76:ease_out, 5.42:0:ease_in, 6.43:0:linear, 6.49:0.60:ease_out, 6.64:0:ease_in, 7:0:linear")} />
+              <Rect x="0"
+                    y={curve("0:1040:linear, 0.76:1040:linear, 0.86:402:ease_out, 0.92:1040:ease_in, 2.22:1040:linear, 2.32:748:ease_out, 2.40:1040:ease_in, 3.76:1040:linear, 3.86:520:ease_out, 3.96:1040:ease_in, 5.22:1040:linear, 5.32:684:ease_out, 5.42:1040:ease_in, 6.46:1040:linear, 6.56:456:ease_out, 6.66:1040:ease_in, 7:1040:linear")}
+                    width="1920" height="4" color="#FFFFFF"
+                    opacity={curve("0:0.08:linear, 0.76:0.08:linear, 0.82:0.72:ease_out, 0.92:0.08:ease_in, 2.22:0.08:linear, 2.28:0.68:ease_out, 2.40:0.08:ease_in, 3.76:0.08:linear, 3.82:0.72:ease_out, 3.96:0.08:ease_in, 5.22:0.08:linear, 5.28:0.76:ease_out, 5.42:0.08:ease_in, 6.46:0.08:linear, 6.52:0.64:ease_out, 6.66:0.08:ease_in, 7:0.08:linear")} />
+            </Group>
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="NeonLoadingGlow">
+    <Tex id="src" fmt="rgba16f" from="scene:neon_loading_uplink" />
+    <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="loading_bloom" kind="compute" effect="bloom"
+          in={["src"]} out={["out"]}
+          params={{ threshold: "0.34", intensity: "1.26", sigma: "10.0" }} />
+  </Process>
+  <Present from="NeonLoadingGlow" />
+</Graph>
