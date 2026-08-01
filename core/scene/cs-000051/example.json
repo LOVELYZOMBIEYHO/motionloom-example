@@ -1,0 +1,17 @@
+{
+  "id": "cs-000051",
+  "type": "core",
+  "title": "Advanced Component Composition",
+  "domain": "scene",
+  "features": ["scene", "component", "enum-param", "boolean-param", "derived", "slot"],
+  "dsl": ["Graph", "Background", "Scene", "Defs", "Component", "Param", "Derived", "Slot", "Use", "Fill", "Timeline", "Track", "Sequence", "Layer", "Rect", "Circle", "Text", "Present"],
+  "teaches": [
+    "Validate enum and boolean Component parameters.",
+    "Build a reusable geometry expression with Derived.",
+    "Replace default Component content through Slot and Fill."
+  ],
+  "source_path": "core/scene/cs-000051",
+  "demo_url": "",
+  "related": ["cs-000048"],
+  "requires": ["Graph", "Scene", "Component", "Param", "Derived", "Slot", "Use", "Fill", "Present"]
+}

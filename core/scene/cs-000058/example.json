@@ -1,0 +1,13 @@
+{
+  "id": "cs-000058",
+  "type": "core",
+  "title": "Exact Limb Envelope Bone IK",
+  "domain": "scene",
+  "features": ["scene", "puppet-warp", "puppet-pin", "limb-envelope", "two-bone-ik", "deformation", "curve"],
+  "dsl": ["Graph", "Background", "Scene", "Timeline", "Track", "Sequence", "Layer", "Group", "Path", "PuppetWarp", "LimbEnvelope", "PuppetPin", "Text", "Present"],
+  "teaches": ["Draw a closed Path-like envelope around one exact limb.", "Generate a local Two-Bone IK mesh without authoring MeshTopology vertices.", "Keep pixels outside the envelope unchanged and bind the hand from the wrist pin."],
+  "source_path": "core/scene/cs-000058",
+  "demo_url": "",
+  "related": ["cs-000035", "cs-000056", "cs-000057"],
+  "requires": ["Graph", "Scene", "Layer", "PuppetWarp", "LimbEnvelope", "PuppetPin", "Present"]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "s-000062",
+  "type": "showcase",
+  "title": "Declarative Layout Gallery",
+  "domain": "scene",
+  "features": ["scene", "declarative-layout", "row", "column", "grid", "automatic-positioning", "gpu-friendly"],
+  "dsl": ["Graph", "Background", "Scene", "Timeline", "Track", "Sequence", "Layer", "Layout", "Group", "Rect", "Circle", "Path", "Repeat", "Text", "Present", "curve"],
+  "teaches": [
+    "Use row, column, and grid layout modes inside normal Timeline sequences.",
+    "Separate item geometry from container positioning.",
+    "Animate the lowered layout through standard parent Group properties."
+  ],
+  "source_path": "showcase/s-000062",
+  "demo_url": "",
+  "related": ["cs-000050", "cs-000008"],
+  "requires": ["Graph", "Scene", "Layout", "Present"]
+}

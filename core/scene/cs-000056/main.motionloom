@@ -1,0 +1,59 @@
+<Graph fps={30} duration="3s" size={[640,360]} renderSize={[640,360]}>
+  <Background color="#0B101B" />
+  <Scene id="SurfaceBendPinsCore">
+    <Timeline>
+      <Track id="surface_pin_track" space="screen" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer id="surface_pin_layer">
+            <Group id="ribbon_art">
+              <Path d="M 145 215 C 210 145 285 135 350 175 C 405 208 455 196 505 126 L 535 154 C 472 244 400 260 326 218 C 270 187 220 197 173 250 Z"
+                    fill="#63D9FF" stroke="#DDF8FF" strokeWidth="4" />
+              <Circle x="160" y="231" radius="13" color="#B9FF39" />
+              <Circle x="520" y="140" radius="13" color="#FF7AC6" />
+            </Group>
+
+            <PuppetWarp id="ribbon_surface_warp"
+                        target="@layer" capture="before"
+                        mesh="alpha" solver="soft"
+                        width="640" height="360" density="12x8">
+              <MeshTopology id="ribbon_alpha_mesh" mode="alpha">
+                <Vertex id="v0" x="130" y="270" />
+                <Vertex id="v1" x="130" y="125" />
+                <Vertex id="v2" x="260" y="125" />
+                <Vertex id="v3" x="260" y="270" />
+                <Vertex id="v4" x="390" y="125" />
+                <Vertex id="v5" x="390" y="270" />
+                <Vertex id="v6" x="550" y="100" />
+                <Vertex id="v7" x="550" y="270" />
+                <Triangle id="t0" a="v0" b="v1" c="v2" />
+                <Triangle id="t1" a="v0" b="v2" c="v3" />
+                <Triangle id="t2" a="v3" b="v2" c="v4" />
+                <Triangle id="t3" a="v3" b="v4" c="v5" />
+                <Triangle id="t4" a="v5" b="v4" c="v6" />
+                <Triangle id="t5" a="v5" b="v6" c="v7" />
+              </MeshTopology>
+
+              <!-- Arbitrary surface pins: no shoulder, ankle, or joint naming. -->
+              <PuppetPin id="hold_pin" role="position"
+                         x="160" y="231" targetX="160" targetY="231"
+                         fixed="true" radius="120" strength="1" falloff="smooth" />
+              <PuppetPin id="bend_pin" role="bend"
+                         x="335" y="205" targetX="335" targetY="205"
+                         rotation={curve("0:0:linear, 1.5:-28:ease_in_out, 3:0:ease_in_out")}
+                         scale="1" radius="145" strength="1" falloff="smooth" />
+              <PuppetPin id="move_pin" role="position"
+                         x="520" y="140"
+                         targetX={curve("0:520:linear, 1.5:545:ease_in_out, 3:520:ease_in_out")}
+                         targetY={curve("0:140:linear, 1.5:88:ease_in_out, 3:140:ease_in_out")}
+                         radius="130" strength="1" falloff="smooth" />
+            </PuppetWarp>
+
+            <Text value="POSITION + BEND PINS" x="320" y="326"
+                  fontSize="18" fontWeight="700" color="#B9FF39" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="SurfaceBendPinsCore" />
+</Graph>

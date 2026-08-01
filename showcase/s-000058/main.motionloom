@@ -1,0 +1,134 @@
+<Graph fps={30} duration="4s" size={[960,720]} renderSize={[960,720]}>
+  <Background color="#0A0E17" />
+
+  <Scene id="quick_puppet_arm_lab">
+    <Timeline>
+      <Track id="arm_lab_track" space="screen" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer id="arm_lab_layer">
+            <Text value="QUICK PUPPET / ARM IK" x="480" y="68"
+                  fontSize="34" fontWeight="900" color="#B9FF39" />
+            <Text value="DRAG THE WRIST CONTROL · THE ELBOW FOLLOWS" x="480" y="106"
+                  fontSize="16" color="#63D9FF" />
+
+            <!-- One isolated visual surface: no body, hair, or second arm. -->
+            <Group id="character_art_arm">
+              <Circle x="270" y="220" radius="72" color="#27344F"
+                      stroke="#7183A8" strokeWidth="5" />
+
+              <!-- Upper arm / sleeve. -->
+              <Path d="M 270 220 C 304 284 354 354 400 410"
+                    fill="none" stroke="#3E4D70" strokeWidth="126"
+                    lineCap="round" lineJoin="round" />
+              <Path d="M 270 220 C 304 284 354 354 400 410"
+                    fill="none" stroke="#61739B" strokeWidth="92"
+                    lineCap="round" lineJoin="round" />
+
+              <!-- Forearm. -->
+              <Path d="M 400 410 C 454 466 516 510 575 545"
+                    fill="none" stroke="#F0C7B0" strokeWidth="96"
+                    lineCap="round" lineJoin="round" />
+              <Path d="M 400 410 C 454 466 516 510 575 545"
+                    fill="none" stroke="#F8DDCC" strokeWidth="68"
+                    lineCap="round" lineJoin="round" />
+
+              <!-- Elbow and hand make the three rig landmarks obvious. -->
+              <Circle x="400" y="410" radius="50" color="#53658C"
+                      stroke="#91A5CF" strokeWidth="5" />
+              <Path d="M 575 491
+                       C 612 491 643 513 651 544
+                       C 658 575 641 606 611 620
+                       C 581 634 545 623 528 596
+                       C 511 568 520 531 548 510
+                       C 556 503 565 497 575 491 Z"
+                    fill="#F8DDCC" stroke="#5F4B49" strokeWidth="5" />
+              <Line x1="566" y1="535" x2="620" y2="552"
+                    stroke="#D79E91" strokeWidth="7" lineCap="round" />
+              <Line x1="558" y1="555" x2="611" y2="576"
+                    stroke="#D79E91" strokeWidth="7" lineCap="round" />
+            </Group>
+
+            <!-- Pre-rigged shoulder → elbow → wrist chain for Quick Puppet UI. -->
+            <PuppetWarp id="character_art_arm_puppet_warp"
+                        target="character_art_arm"
+                        solver="bones" bend="auto" stretch="0"
+                        jointSoftness="34" preserveVolume="true"
+                        width="960" height="720" density="16x16">
+              <!-- Duplicate elbow seams let each rigid bone rotate without stretching the other. -->
+              <MeshTopology id="character_art_arm_mesh">
+                <Vertex id="arm_mesh_sl" x="220" y="255" bone="upper" />
+                <Vertex id="arm_mesh_sc" x="270" y="220" bone="upper" />
+                <Vertex id="arm_mesh_sr" x="320" y="185" bone="upper" />
+                <Vertex id="arm_mesh_uel" x="350" y="460" bone="upper" />
+                <Vertex id="arm_mesh_uec" x="400" y="410" bone="upper" />
+                <Vertex id="arm_mesh_uer" x="450" y="360" bone="upper" />
+                <Vertex id="arm_mesh_fel" x="350" y="460" bone="forearm" />
+                <Vertex id="arm_mesh_fec" x="400" y="410" bone="forearm" />
+                <Vertex id="arm_mesh_fer" x="450" y="360" bone="forearm" />
+                <Vertex id="arm_mesh_wl" x="500" y="600" bone="forearm" />
+                <Vertex id="arm_mesh_wc" x="575" y="545" bone="forearm" />
+                <Vertex id="arm_mesh_wr" x="620" y="485" bone="forearm" />
+                <Vertex id="arm_mesh_hl" x="585" y="665" bone="hand" />
+                <Vertex id="arm_mesh_hc" x="650" y="590" bone="hand" />
+                <Vertex id="arm_mesh_hr" x="700" y="520" bone="hand" />
+                <Vertex id="arm_mesh_jc" x="400" y="410" bone="joint" />
+                <Vertex id="arm_mesh_j0" x="400" y="355" bone="joint" />
+                <Vertex id="arm_mesh_j1" x="439" y="371" bone="joint" />
+                <Vertex id="arm_mesh_j2" x="455" y="410" bone="joint" />
+                <Vertex id="arm_mesh_j3" x="439" y="449" bone="joint" />
+                <Vertex id="arm_mesh_j4" x="400" y="465" bone="joint" />
+                <Vertex id="arm_mesh_j5" x="361" y="449" bone="joint" />
+                <Vertex id="arm_mesh_j6" x="345" y="410" bone="joint" />
+                <Vertex id="arm_mesh_j7" x="361" y="371" bone="joint" />
+
+                // Paint rigid limb segments first and the round joint last.
+                <Triangle id="arm_mesh_t9" a="arm_mesh_sl" b="arm_mesh_sc" c="arm_mesh_uec" />
+                <Triangle id="arm_mesh_t10" a="arm_mesh_sl" b="arm_mesh_uec" c="arm_mesh_uel" />
+                <Triangle id="arm_mesh_t11" a="arm_mesh_sc" b="arm_mesh_sr" c="arm_mesh_uer" />
+                <Triangle id="arm_mesh_t12" a="arm_mesh_sc" b="arm_mesh_uer" c="arm_mesh_uec" />
+                <Triangle id="arm_mesh_t1" a="arm_mesh_fel" b="arm_mesh_fec" c="arm_mesh_wc" />
+                <Triangle id="arm_mesh_t2" a="arm_mesh_fel" b="arm_mesh_wc" c="arm_mesh_wl" />
+                <Triangle id="arm_mesh_t3" a="arm_mesh_fec" b="arm_mesh_fer" c="arm_mesh_wr" />
+                <Triangle id="arm_mesh_t4" a="arm_mesh_fec" b="arm_mesh_wr" c="arm_mesh_wc" />
+                <Triangle id="arm_mesh_t5" a="arm_mesh_wl" b="arm_mesh_wc" c="arm_mesh_hc" />
+                <Triangle id="arm_mesh_t6" a="arm_mesh_wl" b="arm_mesh_hc" c="arm_mesh_hl" />
+                <Triangle id="arm_mesh_t7" a="arm_mesh_wc" b="arm_mesh_wr" c="arm_mesh_hr" />
+                <Triangle id="arm_mesh_t8" a="arm_mesh_wc" b="arm_mesh_hr" c="arm_mesh_hc" />
+                <Triangle id="arm_mesh_jt0" a="arm_mesh_jc" b="arm_mesh_j0" c="arm_mesh_j1" />
+                <Triangle id="arm_mesh_jt1" a="arm_mesh_jc" b="arm_mesh_j1" c="arm_mesh_j2" />
+                <Triangle id="arm_mesh_jt2" a="arm_mesh_jc" b="arm_mesh_j2" c="arm_mesh_j3" />
+                <Triangle id="arm_mesh_jt3" a="arm_mesh_jc" b="arm_mesh_j3" c="arm_mesh_j4" />
+                <Triangle id="arm_mesh_jt4" a="arm_mesh_jc" b="arm_mesh_j4" c="arm_mesh_j5" />
+                <Triangle id="arm_mesh_jt5" a="arm_mesh_jc" b="arm_mesh_j5" c="arm_mesh_j6" />
+                <Triangle id="arm_mesh_jt6" a="arm_mesh_jc" b="arm_mesh_j6" c="arm_mesh_j7" />
+                <Triangle id="arm_mesh_jt7" a="arm_mesh_jc" b="arm_mesh_j7" c="arm_mesh_j0" />
+              </MeshTopology>
+              <PuppetPin id="character_art_arm_anchor_pin"
+                         role="anchor"
+                         vertex="arm_mesh_sc" x="270" y="220" targetX="270" targetY="220"
+                         fixed="true" radius="160" strength="8" falloff="constant" />
+              <PuppetPin id="character_art_arm_joint_pin"
+                         role="joint"
+                         vertex="arm_mesh_fec" x="400" y="410" targetX="400" targetY="410"
+                         radius="160" strength="8" falloff="constant" />
+              <PuppetPin id="character_art_arm_control_pin"
+                         role="control"
+                         vertex="arm_mesh_wc" x="575" y="545" targetX="575" targetY="545"
+                         radius="160" strength="8" falloff="constant" />
+            </PuppetWarp>
+
+            <Circle x="270" y="220" radius="9" color="#0A0E17" />
+            <Text value="SHOULDER / FIXED" x="172" y="148"
+                  fontSize="15" color="#91A5CF" />
+            <Text value="ELBOW / AUTO" x="400" y="490"
+                  fontSize="15" color="#91A5CF" />
+            <Text value="WRIST / DRAG" x="650" y="648"
+                  fontSize="15" color="#B9FF39" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="quick_puppet_arm_lab" />
+</Graph>

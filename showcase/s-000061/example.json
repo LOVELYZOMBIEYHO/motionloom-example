@@ -1,0 +1,17 @@
+{
+  "id": "s-000061",
+  "type": "showcase",
+  "title": "Deterministic Variation Fields",
+  "domain": "scene",
+  "features": ["scene", "repeat-variation", "scatter", "seeded-random", "procedural-field", "gpu-friendly"],
+  "dsl": ["Graph", "Background", "Scene", "Defs", "Component", "Use", "Repeat", "Timeline", "Track", "Sequence", "Layer", "Group", "Rect", "Circle", "Path", "Text", "Present", "curve"],
+  "teaches": [
+    "Generate large irregular fields with Repeat distribution=scatter.",
+    "Keep procedural output deterministic with explicit seeds.",
+    "Apply independent scale, rotation, and opacity ranges to repeated artwork."
+  ],
+  "source_path": "showcase/s-000061",
+  "demo_url": "",
+  "related": ["cs-000049", "cs-000046"],
+  "requires": ["Graph", "Scene", "Repeat", "Present"]
+}

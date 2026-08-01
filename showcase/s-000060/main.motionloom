@@ -1,0 +1,70 @@
+<Graph fps={30} duration="8s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#040914" />
+
+  <Scene id="parametric_skyline_showcase">
+    <Defs>
+      <LinearGradient id="parametric_sky" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#071426, 0.65:#102A43, 1:#164E63" />
+      <Component id="parametric_tower">
+        <Param name="left" type="number"  />
+        <Param name="top" type="number"  />
+        <Param name="width" type="number" />
+        <Param name="height" type="number"  />
+        <Param name="windowStart" type="number"  />
+        <Param name="windowStep" type="number"  />
+        <Param name="antennaTop" type="number" default="-300" />
+        <Param name="antennaEnd" type="number" default="-360" />
+        <Param name="body" type="color" default="#0E7490" />
+        <Param name="accent" type="color" default="#67E8F9" />
+        <Rect x={param("left")} y={param("top")} width={param("width")} height={param("height")}
+              radius="18" fill={param("body")} stroke={param("accent")} strokeWidth="4" />
+        <Repeat count="7" x="-45" y={param("windowStart")} yStep={param("windowStep")} opacity="0.9" opacityStep="-0.06">
+          <Rect x="0" y="0" width="90" height="12" radius="6" fill={param("accent")} />
+        </Repeat>
+        <Line x1="0" y1={param("antennaTop")} x2="0" y2={param("antennaEnd")} stroke={param("accent")} strokeWidth="5" />
+        <Circle x="0" y={param("antennaEnd")} radius="10" fill={param("accent")} />
+      </Component>
+    </Defs>
+
+    <Timeline>
+      <Track id="parametric_showcase_track" space="screen" z="0">
+        <Sequence from="0s" duration="8s" out="hold">
+          <Layer id="parametric_showcase_layer">
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#parametric_sky)" />
+            <Text value="PARAMETRIC CITY" x="120" y="120" fontSize="74"
+                  fontWeight="900" color="#F8FAFC" />
+            <Text value="ONE COMPONENT · FIVE DATA-DRIVEN SILHOUETTES" x="125" y="178"
+                  fontSize="24" color="#67E8F9" />
+            <Line x1="100" y1="900" x2="1820" y2="900" stroke="#67E8F9" strokeWidth="3" opacity="0.45" />
+
+            <Group id="parametric_tower_instances"
+                   opacity={curve("0:0:linear, 0.4:1:ease_out, 8:1:linear")}>
+              <Use id="tower_1980" ref="parametric_tower" x="270" y="900"
+                   params={{ left: "-80", top: "-260", width: "160", height: "260", windowStart: "-42", windowStep: "-30", antennaTop: "-260", antennaEnd: "-315", body: "#5B4334", accent: "#F4C68B" }} />
+              <Use id="tower_2000" ref="parametric_tower" x="600" y="900"
+                   params={{ left: "-70", top: "-390", width: "140", height: "390", windowStart: "-55", windowStep: "-44", antennaTop: "-390", antennaEnd: "-450", body: "#075985", accent: "#22D3EE" }} />
+              <Use id="tower_2025" ref="parametric_tower" x="930" y="900"
+                   params={{ left: "-95", top: "-520", width: "190", height: "520", windowStart: "-70", windowStep: "-60", antennaTop: "-520", antennaEnd: "-580", body: "#4C1D95", accent: "#C4B5FD" }} />
+              <Use id="tower_2035" ref="parametric_tower" x="1280" y="900"
+                   params={{ left: "-75", top: "-620", width: "150", height: "620", windowStart: "-75", windowStep: "-72", antennaTop: "-620", antennaEnd: "-680", body: "#065F46", accent: "#4ADE80" }} />
+              <Use id="tower_2050" ref="parametric_tower" x="1620" y="900"
+                   params={{ left: "-110", top: "-720", width: "220", height: "720", windowStart: "-85", windowStep: "-84", antennaTop: "-720", antennaEnd: "-780", body: "#0F766E", accent: "#A7F3D0" }} />
+            </Group>
+
+            <Text value="1980" x="270" y="970" fontSize="30" color="#F4C68B" />
+            <Text value="2000" x="600" y="970" fontSize="30" color="#67E8F9" />
+            <Text value="2025" x="930" y="970" fontSize="30" color="#C4B5FD" />
+            <Text value="2035" x="1280" y="970" fontSize="30" color="#86EFAC" />
+            <Text value="2050" x="1620" y="970" fontSize="30" color="#A7F3D0" />
+
+            <Path d="M 210 600 C 520 500 760 560 930 380 C 1160 140 1400 330 1700 170"
+                  fill="none" stroke="#F8FAFC" strokeWidth="5"
+                  trimEnd={curve("0:0:linear, 5:1:ease_out, 8:1:linear")} opacity="0.65" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="parametric_skyline_showcase" />
+</Graph>

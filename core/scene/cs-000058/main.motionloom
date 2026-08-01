@@ -1,0 +1,45 @@
+<Graph fps={30} duration="3s" size={[640,360]} renderSize={[640,360]}>
+  <Background color="#0B101B" />
+  <Scene id="LimbEnvelopeCore">
+    <Timeline>
+      <Track id="main" space="screen" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer id="character_layer">
+            <Group id="character_art">
+              <Circle x="260" y="92" radius="38" color="#F3C9A8" />
+              <Rect x="220" y="128" width="88" height="122" radius="32"
+                    color="#3559A8" />
+              <Path d="M 300 145 L 390 174 L 472 142 L 486 172 L 395 214 L 294 184 Z"
+                    fill="#F3C9A8" stroke="#6D4938" strokeWidth="3" />
+              <Circle x="476" y="157" radius="22" color="#F3C9A8"
+                      stroke="#6D4938" strokeWidth="3" />
+            </Group>
+
+            <PuppetWarp id="right_arm_rig" target="@layer"
+                        solver="bones" preserveOutside="true"
+                        jointSoftness="18">
+              <LimbEnvelope
+                id="right_arm_area"
+                d="M 292 136 L 322 142 L 391 164 L 468 132 L 494 142 L 500 174 L 478 184 L 401 222 L 382 219 L 286 190 Z"
+                alphaClip="true"
+                handFrom="wrist"
+              />
+              <PuppetPin id="shoulder" role="anchor"
+                         x="304" y="163" fixed="true" />
+              <PuppetPin id="elbow" role="joint"
+                         x="392" y="190" />
+              <PuppetPin id="wrist" role="control"
+                         x="476" y="157"
+                         targetX={curve("0:476:linear, 1.5:420:ease_in_out, 3:476:ease_in_out")}
+                         targetY={curve("0:157:linear, 1.5:76:ease_in_out, 3:157:ease_in_out")} />
+            </PuppetWarp>
+
+            <Text value="EXACT LIMB ENVELOPE" x="320" y="316"
+                  fontSize="20" fontWeight="700" color="#B9FF39" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="LimbEnvelopeCore" />
+</Graph>

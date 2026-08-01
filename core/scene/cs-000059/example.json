@@ -1,0 +1,13 @@
+{
+  "id": "cs-000059",
+  "type": "core",
+  "title": "Unified Scene Composite Order and Process Effect",
+  "domain": "scene",
+  "features": ["scene", "composite-order", "composite-group", "effect-scope", "process-effect", "render-pass-dag"],
+  "dsl": ["Graph", "Background", "Process", "Input", "Tex", "Pass", "Scene", "Timeline", "Track", "Sequence", "Layer", "CompositeGroup", "Rect", "Circle", "Text", "PostEffects", "Effects", "Effect", "Param", "Present"],
+  "teaches": ["Order 2D passes with compositeOrder inside one Scene.", "Create an explicit offscreen CompositeGroup without introducing a second render domain.", "Apply an existing Process to the completed Scene texture with a Param override."],
+  "source_path": "core/scene/cs-000059",
+  "demo_url": "",
+  "related": ["cs-000051", "cs-000052", "cs-000053"],
+  "requires": ["Graph", "Process", "Scene", "CompositeGroup", "Effect", "Present"]
+}

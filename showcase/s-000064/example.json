@@ -1,0 +1,13 @@
+{
+  "id": "s-000064",
+  "type": "showcase",
+  "title": "Full-Character Puppet Rig Progression",
+  "domain": "scene",
+  "features": ["scene", "puppet-warp", "puppet-pin", "mesh-topology", "alpha-mesh", "position-pin", "two-bone-ik", "universal-layer-target", "capture-before", "preserve-outside", "deformation", "gpu-friendly"],
+  "dsl": ["Graph", "Background", "Scene", "Timeline", "Track", "Sequence", "Layer", "Group", "Path", "PuppetWarp", "MeshTopology", "Vertex", "Triangle", "PuppetPin", "Present"],
+  "teaches": ["Compare an authored single-limb topology, one full-character alpha mesh, and five local Bone Pin solvers on the same artwork.", "Use fixed and moving seam vertices to keep shoulders, elbows, hips, knees, and the neck connected during large poses.", "Store a complete full-body puppet rig as portable MotionLoom text."],
+  "source_path": "showcase/s-000064",
+  "demo_url": "",
+  "related": ["s-000063", "cs-000054", "cs-000055"],
+  "requires": ["Graph", "Scene", "Layer", "PuppetWarp", "MeshTopology", "PuppetPin", "Present"]
+}

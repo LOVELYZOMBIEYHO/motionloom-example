@@ -1,0 +1,17 @@
+{
+  "id": "cs-000050",
+  "type": "core",
+  "title": "Declarative Layout",
+  "domain": "scene",
+  "features": ["scene", "layout", "grid", "automatic-positioning"],
+  "dsl": ["Graph", "Background", "Scene", "Timeline", "Track", "Sequence", "Layer", "Layout", "Group", "Rect", "Text", "Present"],
+  "teaches": [
+    "Arrange scene children with a declarative grid.",
+    "Control columns, item size, and gap without writing child positions.",
+    "Animate the lowered Layout as one normal scene group."
+  ],
+  "source_path": "core/scene/cs-000050",
+  "demo_url": "",
+  "related": ["cs-000008"],
+  "requires": ["Graph", "Scene", "Layout", "Present"]
+}

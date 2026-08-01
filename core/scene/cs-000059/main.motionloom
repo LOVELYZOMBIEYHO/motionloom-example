@@ -1,0 +1,57 @@
+<Graph fps={30} duration="3s" size={[640,360]} renderSize={[640,360]}>
+  <Background color="#070B14" />
+
+  <!-- A Process remains a reusable texture effect definition. -->
+  <Process id="fx_scene_grade">
+    <Input id="effect_input" type="video" />
+    <Tex id="effect_src" fmt="rgba16f" from="input:effect_input" />
+    <Tex id="effect_out" fmt="rgba16f" size={[640,360]} />
+    <Pass id="grade_pass" kind="compute" effect="brightness"
+          in={["effect_src"]} out={["effect_out"]}
+          params={{ brightness: "0.0" }} />
+  </Process>
+
+  <Scene id="UnifiedScene">
+    <Timeline>
+      <Track id="background" space="screen" compositeOrder="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="640" height="360" color="#10182A" />
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="accent" space="screen" compositeOrder="20">
+        <Sequence from="0s" duration="3s" out="hold">
+          <CompositeGroup id="accent_pass" space="screen"
+                          compositeOrder="20" format="rgba16f">
+            <Circle x="320" y="180"
+                    radius={curve("0:72:linear, 1.5:118:ease_in_out, 3:72:ease_in_out")}
+                    color="#29D8FF" opacity="0.42" />
+            <Circle x="320" y="180" radius="58"
+                    color="#B9FF39" opacity="0.88" />
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+
+      <Track id="titles" space="screen" compositeOrder="100">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer id="title_layer" space="screen">
+            <Text value="ONE SCENE · ORDERED PASSES"
+                  x="320" y="310" align="center"
+                  fontSize="22" fontWeight="700" color="#FFFFFF" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+
+    <!-- Scene scope: feed the composited Scene texture through an existing Process. -->
+    <PostEffects>
+      <Effect process="fx_scene_grade">
+        <Param name="brightness" value="0.08" />
+      </Effect>
+    </PostEffects>
+  </Scene>
+
+  <Present from="UnifiedScene" />
+</Graph>

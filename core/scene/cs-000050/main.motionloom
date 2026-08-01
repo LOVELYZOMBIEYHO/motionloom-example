@@ -1,0 +1,45 @@
+<Graph fps={30} duration="4s" size={[640,360]} renderSize={[640,360]}>
+  <Background color="#07111F" />
+
+  <Scene id="declarative_layout_core">
+    <Timeline>
+      <Track id="declarative_layout_track" space="screen" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer id="declarative_layout_layer">
+            <Text value="DECLARATIVE GRID LAYOUT" x="320" y="42"
+                  fontSize="20" fontWeight="900" color="#F8FAFC" />
+            <Layout id="card_grid" mode="grid" x="65" y="80"
+                    columns="3" itemWidth="150" itemHeight="90" gap="25">
+              <Group>
+                <Rect x="0" y="0" width="150" height="90" radius="16" color="#0E7490" />
+                <Text value="A" x="75" y="55" fontSize="28" color="#FFFFFF" />
+              </Group>
+              <Group>
+                <Rect x="0" y="0" width="150" height="90" radius="16" color="#7C3AED" />
+                <Text value="B" x="75" y="55" fontSize="28" color="#FFFFFF" />
+              </Group>
+              <Group>
+                <Rect x="0" y="0" width="150" height="90" radius="16" color="#047857" />
+                <Text value="C" x="75" y="55" fontSize="28" color="#FFFFFF" />
+              </Group>
+              <Group>
+                <Rect x="0" y="0" width="150" height="90" radius="16" color="#BE123C" />
+                <Text value="D" x="75" y="55" fontSize="28" color="#FFFFFF" />
+              </Group>
+              <Group>
+                <Rect x="0" y="0" width="150" height="90" radius="16" color="#B45309" />
+                <Text value="E" x="75" y="55" fontSize="28" color="#FFFFFF" />
+              </Group>
+              <Group>
+                <Rect x="0" y="0" width="150" height="90" radius="16" color="#1D4ED8" />
+                <Text value="F" x="75" y="55" fontSize="28" color="#FFFFFF" />
+              </Group>
+            </Layout>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="declarative_layout_core" />
+</Graph>

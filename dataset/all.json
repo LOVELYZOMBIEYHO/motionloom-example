@@ -1,14 +1,14 @@
 {
-  "example_count": 150,
-  "core_count": 93,
-  "showcase_count": 57,
+  "example_count": 173,
+  "core_count": 107,
+  "showcase_count": 66,
   "domain_counts": {
-    "scene": 101,
+    "scene": 123,
     "world": 6,
     "process": 13,
     "process_with_time": 3,
     "composition": 1,
-    "text": 14,
+    "text": 15,
     "simulation": 12
   },
   "id_prefixes": {
@@ -1783,6 +1783,675 @@
         "Present"
       ],
       "path": "core/scene/cs-000047/"
+    },
+    {
+      "id": "cs-000048",
+      "type": "core",
+      "title": "Parametric Component",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "component",
+        "component-params",
+        "reuse"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Component",
+        "Param",
+        "Use",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Rect",
+        "Line",
+        "Text",
+        "Present"
+      ],
+      "teaches": [
+        "Declare typed Component parameters with Param.",
+        "Bind number and color values through Use.params.",
+        "Create visibly different instances from one reusable component."
+      ],
+      "source_path": "core/scene/cs-000048",
+      "demo_url": "",
+      "related": [
+        "cs-000003"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Component",
+        "Param",
+        "Use",
+        "Present"
+      ],
+      "path": "core/scene/cs-000048/"
+    },
+    {
+      "id": "cs-000049",
+      "type": "core",
+      "title": "Seeded Repeat Variation",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "repeat",
+        "scatter",
+        "deterministic-variation"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Repeat",
+        "Circle",
+        "Rect",
+        "Text",
+        "Present"
+      ],
+      "teaches": [
+        "Scatter repeated artwork inside explicit bounds.",
+        "Use a fixed seed for deterministic output.",
+        "Vary scale, rotation, and opacity without using an index expression."
+      ],
+      "source_path": "core/scene/cs-000049",
+      "demo_url": "",
+      "related": [
+        "cs-000005",
+        "cs-000046"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Repeat",
+        "Present"
+      ],
+      "path": "core/scene/cs-000049/"
+    },
+    {
+      "id": "cs-000050",
+      "type": "core",
+      "title": "Declarative Layout",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "layout",
+        "grid",
+        "automatic-positioning"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Layout",
+        "Group",
+        "Rect",
+        "Text",
+        "Present"
+      ],
+      "teaches": [
+        "Arrange scene children with a declarative grid.",
+        "Control columns, item size, and gap without writing child positions.",
+        "Animate the lowered Layout as one normal scene group."
+      ],
+      "source_path": "core/scene/cs-000050",
+      "demo_url": "",
+      "related": [
+        "cs-000008"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Layout",
+        "Present"
+      ],
+      "path": "core/scene/cs-000050/"
+    },
+    {
+      "id": "cs-000051",
+      "type": "core",
+      "title": "Advanced Component Composition",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "component",
+        "enum-param",
+        "boolean-param",
+        "derived",
+        "slot"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Component",
+        "Param",
+        "Derived",
+        "Slot",
+        "Use",
+        "Fill",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Rect",
+        "Circle",
+        "Text",
+        "Present"
+      ],
+      "teaches": [
+        "Validate enum and boolean Component parameters.",
+        "Build a reusable geometry expression with Derived.",
+        "Replace default Component content through Slot and Fill."
+      ],
+      "source_path": "core/scene/cs-000051",
+      "demo_url": "",
+      "related": [
+        "cs-000048"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Component",
+        "Param",
+        "Derived",
+        "Slot",
+        "Use",
+        "Fill",
+        "Present"
+      ],
+      "path": "core/scene/cs-000051/"
+    },
+    {
+      "id": "cs-000052",
+      "type": "core",
+      "title": "Weighted Repeat Variants",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "repeat",
+        "weighted-variants",
+        "vary",
+        "deterministic-random"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Repeat",
+        "Variants",
+        "Vary",
+        "Circle",
+        "Rect",
+        "Path",
+        "Text",
+        "Present"
+      ],
+      "teaches": [
+        "Choose repeated artwork through deterministic weights.",
+        "Vary colors from a literal set.",
+        "Vary numeric transform properties from seeded ranges."
+      ],
+      "source_path": "core/scene/cs-000052",
+      "demo_url": "",
+      "related": [
+        "cs-000049"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Repeat",
+        "Variants",
+        "Vary",
+        "Present"
+      ],
+      "path": "core/scene/cs-000052/"
+    },
+    {
+      "id": "cs-000053",
+      "type": "core",
+      "title": "Advanced Declarative Layout",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "layout",
+        "padding",
+        "alignment",
+        "justification",
+        "span"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Layout",
+        "Group",
+        "Rect",
+        "Text",
+        "Present"
+      ],
+      "teaches": [
+        "Create internal Layout space with padding and independent gaps.",
+        "Distribute grid columns with align and justify.",
+        "Reserve multiple layout cells with layoutSpan."
+      ],
+      "source_path": "core/scene/cs-000053",
+      "demo_url": "",
+      "related": [
+        "cs-000050"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Layout",
+        "Present"
+      ],
+      "path": "core/scene/cs-000053/"
+    },
+    {
+      "id": "cs-000054",
+      "type": "core",
+      "title": "Bone Puppet Two-Bone IK",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "puppet-warp",
+        "puppet-pin",
+        "ik-controls",
+        "mesh-topology",
+        "deformation",
+        "curve"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Line",
+        "Circle",
+        "PuppetWarp",
+        "MeshTopology",
+        "Vertex",
+        "Triangle",
+        "PuppetPin",
+        "Present"
+      ],
+      "teaches": [
+        "Use solver=bones with anchor, joint, and control roles.",
+        "Preserve upper-arm and forearm length while a wrist control moves.",
+        "Bind mesh vertices to rigid upper, forearm, hand, and joint regions."
+      ],
+      "source_path": "core/scene/cs-000054",
+      "demo_url": "",
+      "related": [
+        "cs-000047",
+        "s-000058"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Group",
+        "PuppetWarp",
+        "MeshTopology",
+        "PuppetPin",
+        "Present"
+      ],
+      "path": "core/scene/cs-000054/"
+    },
+    {
+      "id": "cs-000055",
+      "type": "core",
+      "title": "Universal Layer Puppet",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "puppet-warp",
+        "universal-layer-target",
+        "capture-before",
+        "alpha-mesh",
+        "deformation",
+        "curve"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Rect",
+        "Circle",
+        "Line",
+        "PuppetWarp",
+        "PuppetPin",
+        "Text",
+        "Present"
+      ],
+      "teaches": [
+        "Capture all earlier Layer artwork as one Puppet surface.",
+        "Use @layer without naming or restructuring a Group.",
+        "Keep later Layer nodes outside the deformation as overlays."
+      ],
+      "source_path": "core/scene/cs-000055",
+      "demo_url": "",
+      "related": [
+        "cs-000047",
+        "cs-000054",
+        "s-000063"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Layer",
+        "PuppetWarp",
+        "PuppetPin",
+        "Present"
+      ],
+      "path": "core/scene/cs-000055/"
+    },
+    {
+      "id": "cs-000056",
+      "type": "core",
+      "title": "Alpha Surface Position and Bend Pins",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "puppet-warp",
+        "alpha-mesh",
+        "position-pin",
+        "bend-pin",
+        "mesh-topology",
+        "deformation",
+        "curve"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Path",
+        "Circle",
+        "PuppetWarp",
+        "MeshTopology",
+        "Vertex",
+        "Triangle",
+        "PuppetPin",
+        "Text",
+        "Present"
+      ],
+      "teaches": [
+        "Triangulate only the visible artwork instead of the full canvas.",
+        "Add unlimited arbitrary Position and Bend pins without semantic body-part roles.",
+        "Use Bend Pin rotation to rotate a local part of a soft deformation surface."
+      ],
+      "source_path": "core/scene/cs-000056",
+      "demo_url": "",
+      "related": [
+        "cs-000047",
+        "cs-000055",
+        "s-000058"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Layer",
+        "PuppetWarp",
+        "MeshTopology",
+        "PuppetPin",
+        "Present"
+      ],
+      "path": "core/scene/cs-000056/"
+    },
+    {
+      "id": "cs-000057",
+      "type": "core",
+      "title": "Parent-Linked Chain Puppet",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "puppet-warp",
+        "puppet-pin",
+        "mesh-topology",
+        "spring-chain",
+        "deformation",
+        "curve"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Path",
+        "PuppetWarp",
+        "MeshTopology",
+        "Vertex",
+        "Triangle",
+        "PuppetPin",
+        "SpringChain",
+        "Text",
+        "Present"
+      ],
+      "teaches": [
+        "Create a serial root-to-tip pin hierarchy with explicit parent ids.",
+        "Preserve each authored segment length while moving the final control.",
+        "Add deterministic SpringChain follow-through without changing soft or bone rigs."
+      ],
+      "source_path": "core/scene/cs-000057",
+      "demo_url": "",
+      "related": [
+        "cs-000055",
+        "cs-000056",
+        "csim-000008"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Layer",
+        "PuppetWarp",
+        "MeshTopology",
+        "PuppetPin",
+        "SpringChain",
+        "Present"
+      ],
+      "path": "core/scene/cs-000057/"
+    },
+    {
+      "id": "cs-000058",
+      "type": "core",
+      "title": "Exact Limb Envelope Bone IK",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "puppet-warp",
+        "puppet-pin",
+        "limb-envelope",
+        "two-bone-ik",
+        "deformation",
+        "curve"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Path",
+        "PuppetWarp",
+        "LimbEnvelope",
+        "PuppetPin",
+        "Text",
+        "Present"
+      ],
+      "teaches": [
+        "Draw a closed Path-like envelope around one exact limb.",
+        "Generate a local Two-Bone IK mesh without authoring MeshTopology vertices.",
+        "Keep pixels outside the envelope unchanged and bind the hand from the wrist pin."
+      ],
+      "source_path": "core/scene/cs-000058",
+      "demo_url": "",
+      "related": [
+        "cs-000035",
+        "cs-000056",
+        "cs-000057"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Layer",
+        "PuppetWarp",
+        "LimbEnvelope",
+        "PuppetPin",
+        "Present"
+      ],
+      "path": "core/scene/cs-000058/"
+    },
+    {
+      "id": "cs-000059",
+      "type": "core",
+      "title": "Unified Scene Composite Order and Process Effect",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "composite-order",
+        "composite-group",
+        "effect-scope",
+        "process-effect",
+        "render-pass-dag"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Process",
+        "Input",
+        "Tex",
+        "Pass",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "CompositeGroup",
+        "Rect",
+        "Circle",
+        "Text",
+        "PostEffects",
+        "Effects",
+        "Effect",
+        "Param",
+        "Present"
+      ],
+      "teaches": [
+        "Order 2D passes with compositeOrder inside one Scene.",
+        "Create an explicit offscreen CompositeGroup without introducing a second render domain.",
+        "Apply an existing Process to the completed Scene texture with a Param override."
+      ],
+      "source_path": "core/scene/cs-000059",
+      "demo_url": "",
+      "related": [
+        "cs-000051",
+        "cs-000052",
+        "cs-000053"
+      ],
+      "requires": [
+        "Graph",
+        "Process",
+        "Scene",
+        "CompositeGroup",
+        "Effect",
+        "Present"
+      ],
+      "path": "core/scene/cs-000059/"
+    },
+    {
+      "id": "cs-000060",
+      "type": "core",
+      "title": "GLB Draco Model in a Unified Scene",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "assets",
+        "gltf",
+        "glb",
+        "draco",
+        "true-3d",
+        "composite-group",
+        "composite-order",
+        "render-pass-dag"
+      ],
+      "dsl": [
+        "Graph",
+        "Assets",
+        "ModelAsset",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "CompositeGroup",
+        "Camera3D",
+        "Model",
+        "Layer",
+        "Text",
+        "Present"
+      ],
+      "teaches": [
+        "Declare a Draco-compressed GLB once in the Graph Assets block.",
+        "Render true 3D inside a Scene CompositeGroup without using the removed World tag.",
+        "Composite a 3D model pass and screen-space title through one ordered Scene pipeline."
+      ],
+      "source_path": "core/scene/cs-000060",
+      "demo_url": "",
+      "related": [
+        "cs-000059"
+      ],
+      "requires": [
+        "Graph",
+        "Assets",
+        "ModelAsset",
+        "Scene",
+        "CompositeGroup",
+        "Camera3D",
+        "Model",
+        "Present"
+      ],
+      "path": "core/scene/cs-000060/"
     },
     {
       "id": "s-000001",
@@ -3649,12 +4318,15 @@
         "Circle",
         "Group",
         "Image",
+        "Component",
+        "Use",
         "RadialGradient",
         "curve"
       ],
       "teaches": [
         "Combine multiple MotionLoom features into a polished demo.",
         "Use this as a reference for YouTube Short or promo-style output.",
+        "Store each inline base64 image once in a Component and reuse it with Use.",
         "Study how features combine: transition, timeline, layout, defs, text, shape."
       ],
       "source_path": "showcase/s-000038",
@@ -4658,6 +5330,549 @@
         "Present"
       ],
       "path": "showcase/s-000057/"
+    },
+    {
+      "id": "s-000058",
+      "type": "showcase",
+      "title": "Quick Puppet Pre-Rigged Arm IK",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "puppet-warp",
+        "puppet-pin",
+        "ik-controls",
+        "mesh-topology",
+        "deformation",
+        "gpu-friendly"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Path",
+        "Circle",
+        "Line",
+        "Text",
+        "PuppetWarp",
+        "MeshTopology",
+        "Vertex",
+        "Triangle",
+        "PuppetPin",
+        "Present"
+      ],
+      "teaches": [
+        "Pre-place shoulder, elbow, and wrist pins using Quick Puppet role ids.",
+        "Drag one wrist control while MotionLoom solves the elbow and keeps both authored bone lengths fixed.",
+        "Use explicit vertex bone bindings so the sleeve, forearm, hand, and elbow joint remain rigid.",
+        "Debug Puppet Warp interaction on one isolated arm before applying it to complex imported artwork."
+      ],
+      "source_path": "showcase/s-000058",
+      "demo_url": "",
+      "related": [
+        "cs-000047",
+        "s-000055"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Group",
+        "PuppetWarp",
+        "PuppetPin",
+        "Present"
+      ],
+      "path": "showcase/s-000058/"
+    },
+    {
+      "id": "s-000059",
+      "type": "showcase",
+      "title": "Nova City: MotionLoom Capability Showcase",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "component",
+        "use",
+        "repeat",
+        "gallery",
+        "transition",
+        "glitch",
+        "chromatic-aberration",
+        "scan-mask",
+        "path-morph",
+        "animation-target",
+        "whiteout",
+        "stress-test",
+        "camera",
+        "curve-animation",
+        "gpu-friendly"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "LinearGradient",
+        "RadialGradient",
+        "Filter",
+        "ChromaticAberration",
+        "Mask",
+        "Component",
+        "Use",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Camera",
+        "Group",
+        "Rect",
+        "Circle",
+        "Line",
+        "Path",
+        "Text",
+        "Repeat",
+        "ParticleField",
+        "AnimationTarget",
+        "Key",
+        "Present",
+        "curve"
+      ],
+      "teaches": [
+        "Gallery all reusable components with labeled Use instances and semantic chart groups.",
+        "Run five era cards as a deterministic timed gallery with distinct texture treatments.",
+        "Demo CRT glitch, scan-mask reveal, keyed path morph, and whiteout pulse in one lab.",
+        "Stress nested Repeat to 500 buildings and 1000 sensors under a moving camera.",
+        "Report debug state with fixed labels and numeric progress geometry, never animated text."
+      ],
+      "source_path": "showcase/s-000059",
+      "demo_url": "",
+      "related": [
+        "s-000058",
+        "s-000056",
+        "s-000028"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Repeat",
+        "Present"
+      ],
+      "path": "showcase/s-000059/"
+    },
+    {
+      "id": "s-000060",
+      "type": "showcase",
+      "title": "Parametric City",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "parametric-component",
+        "component-params",
+        "data-driven-shape",
+        "gpu-friendly"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Component",
+        "Param",
+        "Use",
+        "Repeat",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Rect",
+        "Line",
+        "Circle",
+        "Path",
+        "Text",
+        "Present",
+        "curve"
+      ],
+      "teaches": [
+        "Build five different tower silhouettes from one parameterized component.",
+        "Bind numeric geometry and color inputs through Use.params.",
+        "Keep parameterized artwork compatible with the normal scene render pipeline."
+      ],
+      "source_path": "showcase/s-000060",
+      "demo_url": "",
+      "related": [
+        "cs-000048",
+        "cs-000003"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Component",
+        "Param",
+        "Use",
+        "Present"
+      ],
+      "path": "showcase/s-000060/"
+    },
+    {
+      "id": "s-000061",
+      "type": "showcase",
+      "title": "Deterministic Variation Fields",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "repeat-variation",
+        "scatter",
+        "seeded-random",
+        "procedural-field",
+        "gpu-friendly"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Component",
+        "Use",
+        "Repeat",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Rect",
+        "Circle",
+        "Path",
+        "Text",
+        "Present",
+        "curve"
+      ],
+      "teaches": [
+        "Generate large irregular fields with Repeat distribution=scatter.",
+        "Keep procedural output deterministic with explicit seeds.",
+        "Apply independent scale, rotation, and opacity ranges to repeated artwork."
+      ],
+      "source_path": "showcase/s-000061",
+      "demo_url": "",
+      "related": [
+        "cs-000049",
+        "cs-000046"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Repeat",
+        "Present"
+      ],
+      "path": "showcase/s-000061/"
+    },
+    {
+      "id": "s-000062",
+      "type": "showcase",
+      "title": "Declarative Layout Gallery",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "declarative-layout",
+        "row",
+        "column",
+        "grid",
+        "automatic-positioning",
+        "gpu-friendly"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Layout",
+        "Group",
+        "Rect",
+        "Circle",
+        "Path",
+        "Repeat",
+        "Text",
+        "Present",
+        "curve"
+      ],
+      "teaches": [
+        "Use row, column, and grid layout modes inside normal Timeline sequences.",
+        "Separate item geometry from container positioning.",
+        "Animate the lowered layout through standard parent Group properties."
+      ],
+      "source_path": "showcase/s-000062",
+      "demo_url": "",
+      "related": [
+        "cs-000050",
+        "cs-000008"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Layout",
+        "Present"
+      ],
+      "path": "showcase/s-000062/"
+    },
+    {
+      "id": "s-000063",
+      "type": "showcase",
+      "title": "Universal Layer Puppet Character",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "puppet-warp",
+        "universal-layer-target",
+        "capture-before",
+        "two-bone-ik",
+        "mesh-topology",
+        "preserve-outside",
+        "gpu-friendly"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Rect",
+        "Circle",
+        "Path",
+        "Line",
+        "Text",
+        "PuppetWarp",
+        "MeshTopology",
+        "Vertex",
+        "Triangle",
+        "PuppetPin",
+        "Present"
+      ],
+      "teaches": [
+        "Rig a complete Layer without naming an artwork Group.",
+        "Use a local bone mesh to raise one arm while preserving the rest of the captured character.",
+        "Keep post-warp labels outside the captured surface."
+      ],
+      "source_path": "showcase/s-000063",
+      "demo_url": "",
+      "related": [
+        "cs-000055",
+        "cs-000054",
+        "s-000058"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Layer",
+        "PuppetWarp",
+        "MeshTopology",
+        "PuppetPin",
+        "Present"
+      ],
+      "path": "showcase/s-000063/"
+    },
+    {
+      "id": "s-000064",
+      "type": "showcase",
+      "title": "Full-Character Puppet Rig Progression",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "puppet-warp",
+        "puppet-pin",
+        "mesh-topology",
+        "alpha-mesh",
+        "position-pin",
+        "two-bone-ik",
+        "universal-layer-target",
+        "capture-before",
+        "preserve-outside",
+        "deformation",
+        "gpu-friendly"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Path",
+        "PuppetWarp",
+        "MeshTopology",
+        "Vertex",
+        "Triangle",
+        "PuppetPin",
+        "Present"
+      ],
+      "teaches": [
+        "Compare an authored single-limb topology, one full-character alpha mesh, and five local Bone Pin solvers on the same artwork.",
+        "Use fixed and moving seam vertices to keep shoulders, elbows, hips, knees, and the neck connected during large poses.",
+        "Store a complete full-body puppet rig as portable MotionLoom text."
+      ],
+      "source_path": "showcase/s-000064",
+      "demo_url": "",
+      "related": [
+        "s-000063",
+        "cs-000054",
+        "cs-000055"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Layer",
+        "PuppetWarp",
+        "MeshTopology",
+        "PuppetPin",
+        "Present"
+      ],
+      "path": "showcase/s-000064/"
+    },
+    {
+      "id": "s-000065",
+      "type": "showcase",
+      "title": "Fox Tail Chain Puppet",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "puppet-warp",
+        "puppet-pin",
+        "mesh-topology",
+        "spring-chain",
+        "deformation",
+        "curve",
+        "gpu-friendly"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Rect",
+        "Circle",
+        "Ellipse",
+        "Path",
+        "Text",
+        "PuppetWarp",
+        "MeshTopology",
+        "Vertex",
+        "Triangle",
+        "PuppetPin",
+        "SpringChain",
+        "Present"
+      ],
+      "teaches": [
+        "Rig a fox tail with a non-branching parent-linked pin chain.",
+        "Move one tip controller while fixed-length segments follow.",
+        "Combine authored tip curves with deterministic spring overlap."
+      ],
+      "source_path": "showcase/s-000065",
+      "demo_url": "",
+      "related": [
+        "cs-000057",
+        "csim-000008",
+        "s-000058"
+      ],
+      "requires": [
+        "Graph",
+        "Scene",
+        "Layer",
+        "PuppetWarp",
+        "MeshTopology",
+        "PuppetPin",
+        "SpringChain",
+        "Present"
+      ],
+      "path": "showcase/s-000065/"
+    },
+    {
+      "id": "s-000066",
+      "type": "showcase",
+      "title": "Anica Motion 26s Product Launch Showcase",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "assets",
+        "gltf",
+        "glb",
+        "draco",
+        "true-3d",
+        "product-promotion",
+        "composite-order",
+        "effect-scope",
+        "process-effect",
+        "rgb-glitch",
+        "timeline",
+        "curve"
+      ],
+      "dsl": [
+        "Graph",
+        "Assets",
+        "ModelAsset",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "CompositeGroup",
+        "Camera3D",
+        "Model",
+        "Layer",
+        "Group",
+        "Rect",
+        "Circle",
+        "Line",
+        "Path",
+        "Repeat",
+        "Text",
+        "Effects",
+        "Effect",
+        "Process",
+        "Tex",
+        "Pass",
+        "Present"
+      ],
+      "teaches": [
+        "Translate the supplied 26.26-second HTML timeline into six deterministic MotionLoom chapters.",
+        "Composite a repository-hosted Draco phone GLB, recreated Anica product interface, vector pointer, prompt UI, RGB typography, and portal reveal in one ordered Scene.",
+        "Apply reusable Process effects after the complete Scene while retaining deterministic Scene-level composition."
+      ],
+      "source_path": "showcase/s-000066",
+      "demo_url": "",
+      "related": [
+        "s-000065",
+        "cs-000059",
+        "cs-000060"
+      ],
+      "requires": [
+        "Graph",
+        "Assets",
+        "ModelAsset",
+        "Scene",
+        "CompositeGroup",
+        "Camera3D",
+        "Model",
+        "Process",
+        "Present"
+      ],
+      "path": "showcase/s-000066/"
     },
     {
       "id": "cw-000001",
@@ -6126,6 +7341,63 @@
         "Present"
       ],
       "path": "core/text/ct-000012/"
+    },
+    {
+      "id": "ct-000013",
+      "type": "core",
+      "title": "Transparent Subtitle Shadow",
+      "domain": "text",
+      "features": [
+        "text",
+        "subtitle",
+        "transparent-background",
+        "drop-shadow",
+        "condensed-font"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "TextAnimator",
+        "Style",
+        "Present",
+        "fontFamily",
+        "fontWeight",
+        "textGap",
+        "shadowColor",
+        "shadowX",
+        "shadowY",
+        "shadowBlur"
+      ],
+      "teaches": [
+        "Use a transparent Background for overlay-ready subtitle exports.",
+        "Use Impact with a heavy weight for compact condensed subtitle lettering.",
+        "Add a soft downward shadow with TextAnimator Style shadow properties."
+      ],
+      "source_path": "core/text/ct-000013",
+      "demo_url": "",
+      "related": [
+        "ct-000004",
+        "ct-000012"
+      ],
+      "requires": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "TextAnimator",
+        "Present"
+      ],
+      "path": "core/text/ct-000013/"
     },
     {
       "id": "s-000032",

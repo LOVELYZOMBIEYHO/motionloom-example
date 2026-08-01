@@ -1,0 +1,46 @@
+<Graph fps={30} duration="4s" size={[640,360]} renderSize={[640,360]}>
+  <Assets>
+    <ModelAsset id="iphone_model"
+                src="../../../assets/sample_assets/glb/iphone.glb"
+                decoder="draco" />
+  </Assets>
+
+  <Background color="#070A12" />
+
+  <Scene id="IPhoneGlbCore">
+    <Timeline>
+      <Track id="model_pass" space="3d" compositeOrder="20">
+        <Sequence from="0s" duration="4s" out="hold">
+          <CompositeGroup id="iphone_island"
+                          space="3d"
+                          depth="true"
+                          format="rgba16f">
+            <Camera3D id="product_camera"
+                      position={[0,0,6]}
+                      target={[0,0,0]}
+                      fov="35" />
+
+            <Model id="iphone"
+                   asset="iphone_model"
+                   position={[0,0,0]}
+                   rotation={[0,0,0]}
+                   rotationY={curve("0:-24:linear, 2:24:ease_in_out, 4:-24:ease_in_out")}
+                   scale="1" />
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+
+      <Track id="caption_pass" space="screen" compositeOrder="100">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer id="caption" space="screen">
+            <Text value="GLB · DRACO · SCENE 3D"
+                  x="320" y="326" align="center"
+                  fontSize="18" fontWeight="700" color="#B9FF39" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="IPhoneGlbCore" />
+</Graph>

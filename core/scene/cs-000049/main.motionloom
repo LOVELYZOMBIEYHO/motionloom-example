@@ -1,0 +1,26 @@
+<Graph fps={30} duration="4s" size={[640,360]} renderSize={[640,360]}>
+  <Background color="#020617" />
+
+  <Scene id="repeat_variation_core">
+    <Timeline>
+      <Track id="repeat_variation_track" space="screen" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer id="repeat_variation_layer">
+            <Text value="SEEDED REPEAT VARIATION" x="320" y="42"
+                  fontSize="20" fontWeight="900" color="#F8FAFC" />
+            <Rect x="40" y="70" width="560" height="240" radius="24"
+                  color="#081426" stroke="#164E63" strokeWidth="2" />
+            <Repeat id="seeded_dots" count="48" distribution="scatter"
+                    bounds={[55,85,530,210]} seed="49049"
+                    scaleRange={[0.45,1.6]} rotationRange={[-20,20]}
+                    opacityRange={[0.25,1]}>
+              <Circle x="0" y="0" radius="7" color="#67E8F9" />
+            </Repeat>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="repeat_variation_core" />
+</Graph>

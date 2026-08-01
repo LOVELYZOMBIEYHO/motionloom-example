@@ -1,0 +1,67 @@
+<Graph fps={30} duration="3s" size={[640,360]} renderSize={[640,360]}>
+  <Background color="#0B101B" />
+  <Scene id="ChainPuppetCore">
+    <Timeline>
+      <Track id="chain_track" space="screen" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer id="chain_layer">
+            <Group id="tail_art">
+              <Path d="M 195 165 C 270 148 344 118 422 72 C 438 70 446 84 438 98 C 356 158 280 201 195 215 Z"
+                    fill="#FF8A3D" stroke="#FFD39B" strokeWidth="3" />
+            </Group>
+
+            <PuppetWarp id="tail_chain_rig" target="tail_art" solver="chain"
+                        preserveLength="true" stretch="0"
+                        stiffness="0.72" damping="0.84"
+                        drag="0.18" overlap="0.12"
+                        width="640" height="360">
+              <MeshTopology id="tail_chain_mesh">
+                <Vertex id="v0u" x="195" y="165" />
+                <Vertex id="v0d" x="195" y="215" />
+                <Vertex id="v1u" x="265" y="155" />
+                <Vertex id="v1d" x="275" y="205" />
+                <Vertex id="v2u" x="325" y="128" />
+                <Vertex id="v2d" x="345" y="172" />
+                <Vertex id="v3u" x="380" y="96" />
+                <Vertex id="v3d" x="400" y="134" />
+                <Vertex id="v4u" x="422" y="72" />
+                <Vertex id="v4d" x="438" y="98" />
+                <Triangle id="t0" a="v0u" b="v0d" c="v1d" />
+                <Triangle id="t1" a="v0u" b="v1d" c="v1u" />
+                <Triangle id="t2" a="v1u" b="v1d" c="v2d" />
+                <Triangle id="t3" a="v1u" b="v2d" c="v2u" />
+                <Triangle id="t4" a="v2u" b="v2d" c="v3d" />
+                <Triangle id="t5" a="v2u" b="v3d" c="v3u" />
+                <Triangle id="t6" a="v3u" b="v3d" c="v4d" />
+                <Triangle id="t7" a="v3u" b="v4d" c="v4u" />
+              </MeshTopology>
+              <PuppetPin id="tail_root" role="anchor"
+                         x="200" y="190" targetX="200" targetY="190"
+                         fixed="true" radius="44" strength="1" falloff="constant" />
+              <PuppetPin id="tail_1" role="chain" parent="tail_root"
+                         x="270" y="180" targetX="270" targetY="180"
+                         radius="40" strength="1" falloff="constant" />
+              <PuppetPin id="tail_2" role="chain" parent="tail_1"
+                         x="335" y="150" targetX="335" targetY="150"
+                         radius="36" strength="1" falloff="constant" />
+              <PuppetPin id="tail_3" role="chain" parent="tail_2"
+                         x="390" y="115" targetX="390" targetY="115"
+                         radius="32" strength="1" falloff="constant" />
+              <PuppetPin id="tail_tip" role="control" parent="tail_3"
+                         x="430" y="85"
+                         targetX={curve("0:430:linear, 1.5:455:ease_in_out, 3:430:ease_in_out")}
+                         targetY={curve("0:85:linear, 1.5:132:ease_in_out, 3:85:ease_in_out")}
+                         radius="28" strength="1" falloff="constant" />
+            </PuppetWarp>
+            <SpringChain target="tail_chain_rig" segments="4" pin="start"
+                         stiffness="0.72" damping="0.84" gravity={[0,18]} />
+
+            <Text value="CHAIN = PARENT LINKS + SPRING" x="320" y="320"
+                  fontSize="18" fontWeight="700" color="#B9FF39" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="ChainPuppetCore" />
+</Graph>

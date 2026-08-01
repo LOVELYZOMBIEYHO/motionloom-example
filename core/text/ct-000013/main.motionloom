@@ -1,0 +1,33 @@
+<Graph fps={30} duration="3s" size={[960,240]} renderSize={[960,240]}>
+  <Background color="transparent" />
+
+  <Scene id="transparent_subtitle_shadow">
+    <Timeline>
+      <Track id="subtitle_track" space="screen" z="10">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer id="subtitle_layer">
+            <Text id="subtitle"
+                  value="ROTOSCOPING"
+                  x="center"
+                  y="126"
+                  fontFamily="Impact"
+                  fontSize="112"
+                  fontWeight="900"
+                  textGap="0"
+                  renderScale="auto"
+                  color="#FFFFFF">
+              <TextAnimator id="subtitle_shadow" selector="word" duration="3s">
+                <Style shadowColor="#000000CC"
+                       shadowX="0"
+                       shadowY="18"
+                       shadowBlur="13" />
+              </TextAnimator>
+            </Text>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="transparent_subtitle_shadow" />
+</Graph>

@@ -1,0 +1,91 @@
+<Graph fps={30} duration="4s" size={[1280,720]} renderSize={[1280,720]}>
+  <Background color="#07101D" />
+  <Scene id="FoxTailChainShowcase">
+    <Timeline>
+      <Track id="fox_track" space="screen" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer id="fox_layer">
+            <Text value="MOTIONLOOM / CHAIN PUPPET" x="72" y="72"
+                  fontSize="24" fontWeight="700" color="#65D9FF" />
+            <Text value="PARENT-LINKED FK + SPRING FOLLOW-THROUGH" x="72" y="106"
+                  fontSize="14" fontWeight="600" color="#8E9CB5" />
+
+            <Group id="fox_body">
+              <Ellipse x="430" y="390" radiusX="155" radiusY="118"
+                       color="#E97432" stroke="#FFD49A" strokeWidth="5" />
+              <Circle x="330" y="305" radius="88" color="#F28A43"
+                      stroke="#FFD49A" strokeWidth="5" />
+              <Path d="M 268 250 L 284 168 L 330 238 Z" fill="#E97432" />
+              <Path d="M 334 232 L 390 174 L 392 270 Z" fill="#E97432" />
+              <Ellipse x="298" y="320" radiusX="42" radiusY="29" color="#FFF0D4" />
+              <Circle x="300" y="292" radius="8" color="#101827" />
+              <Circle x="357" y="286" radius="8" color="#101827" />
+            </Group>
+
+            <Group id="fox_tail">
+              <Path d="M 522 344 C 650 260 795 230 960 128 C 1000 104 1034 142 1005 176 C 850 315 704 408 548 438 Z"
+                    fill="#F27B32" stroke="#FFD49A" strokeWidth="6" />
+              <Path d="M 910 164 C 948 141 978 121 1000 112 C 1029 123 1035 151 1005 176 C 973 204 945 226 916 247 Z"
+                    fill="#FFF0D4" />
+            </Group>
+
+            <PuppetWarp id="fox_tail_chain" target="fox_tail" solver="chain"
+                        preserveLength="true" stretch="0"
+                        stiffness="0.78" damping="0.82"
+                        drag="0.22" overlap="0.18"
+                        width="1280" height="720">
+              <MeshTopology id="fox_tail_mesh">
+                <Vertex id="u0" x="522" y="344" />
+                <Vertex id="d0" x="548" y="438" />
+                <Vertex id="u1" x="635" y="276" />
+                <Vertex id="d1" x="680" y="382" />
+                <Vertex id="u2" x="760" y="236" />
+                <Vertex id="d2" x="820" y="316" />
+                <Vertex id="u3" x="875" y="176" />
+                <Vertex id="d3" x="925" y="248" />
+                <Vertex id="u4" x="960" y="128" />
+                <Vertex id="d4" x="1005" y="176" />
+                <Triangle id="a0" a="u0" b="d0" c="d1" />
+                <Triangle id="a1" a="u0" b="d1" c="u1" />
+                <Triangle id="a2" a="u1" b="d1" c="d2" />
+                <Triangle id="a3" a="u1" b="d2" c="u2" />
+                <Triangle id="a4" a="u2" b="d2" c="d3" />
+                <Triangle id="a5" a="u2" b="d3" c="u3" />
+                <Triangle id="a6" a="u3" b="d3" c="d4" />
+                <Triangle id="a7" a="u3" b="d4" c="u4" />
+              </MeshTopology>
+              <PuppetPin id="fox_tail_root" role="anchor"
+                         x="535" y="390" targetX="535" targetY="390" fixed="true"
+                         radius="80" strength="1" falloff="constant" />
+              <PuppetPin id="fox_tail_1" role="chain" parent="fox_tail_root"
+                         x="660" y="330" targetX="660" targetY="330"
+                         radius="72" strength="1" falloff="constant" />
+              <PuppetPin id="fox_tail_2" role="chain" parent="fox_tail_1"
+                         x="790" y="275" targetX="790" targetY="275"
+                         radius="64" strength="1" falloff="constant" />
+              <PuppetPin id="fox_tail_3" role="chain" parent="fox_tail_2"
+                         x="900" y="212" targetX="900" targetY="212"
+                         radius="56" strength="1" falloff="constant" />
+              <PuppetPin id="fox_tail_tip" role="control" parent="fox_tail_3"
+                         x="982" y="152"
+                         targetX={curve("0:982:linear, 1:1032:ease_in_out, 2:972:ease_in_out, 3:1018:ease_in_out, 4:982:ease_in_out")}
+                         targetY={curve("0:152:linear, 1:216:ease_in_out, 2:114:ease_in_out, 3:194:ease_in_out, 4:152:ease_in_out")}
+                         radius="48" strength="1" falloff="constant" />
+            </PuppetWarp>
+            <SpringChain target="fox_tail_chain" segments="4" pin="start"
+                         stiffness="0.78" damping="0.82" gravity={[0,22]} />
+
+            <Group id="legend" x="72" y="572">
+              <Rect x="0" y="0" width="430" height="92" radius="18"
+                    color="#101B2D" stroke="#29425F" strokeWidth="2" />
+              <Text value="ROOT FIXED" x="24" y="34" fontSize="14" fontWeight="700" color="#B9FF39" />
+              <Text value="TIP CONTROL → SEGMENTS FOLLOW" x="24" y="65"
+                    fontSize="18" fontWeight="700" color="#FFFFFF" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="FoxTailChainShowcase" />
+</Graph>

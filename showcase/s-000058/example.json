@@ -1,0 +1,45 @@
+{
+  "id": "s-000058",
+  "type": "showcase",
+  "title": "Quick Puppet Pre-Rigged Arm IK",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "puppet-warp",
+    "puppet-pin",
+    "ik-controls",
+    "mesh-topology",
+    "deformation",
+    "gpu-friendly"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Path",
+    "Circle",
+    "Line",
+    "Text",
+    "PuppetWarp",
+    "MeshTopology",
+    "Vertex",
+    "Triangle",
+    "PuppetPin",
+    "Present"
+  ],
+  "teaches": [
+    "Pre-place shoulder, elbow, and wrist pins using Quick Puppet role ids.",
+    "Drag one wrist control while MotionLoom solves the elbow and keeps both authored bone lengths fixed.",
+    "Use explicit vertex bone bindings so the sleeve, forearm, hand, and elbow joint remain rigid.",
+    "Debug Puppet Warp interaction on one isolated arm before applying it to complex imported artwork."
+  ],
+  "source_path": "showcase/s-000058",
+  "demo_url": "",
+  "related": ["cs-000047", "s-000055"],
+  "requires": ["Graph", "Scene", "Group", "PuppetWarp", "PuppetPin", "Present"]
+}

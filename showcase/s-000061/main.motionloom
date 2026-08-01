@@ -1,0 +1,76 @@
+<Graph fps={30} duration="8s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#030712" />
+
+  <Scene id="repeat_variation_showcase">
+    <Defs>
+      <RadialGradient id="repeat_glow" cx="0.5" cy="0.5" r="0.5"
+                      stops="0:#FFFFFF, 0.3:#67E8F9, 1:#22D3EE00" />
+      <Component id="variation_sensor">
+        <Circle x="0" y="0" radius="14" fill="url(#repeat_glow)" />
+        <Circle x="0" y="0" radius="3" color="#FFFFFF" />
+      </Component>
+    </Defs>
+
+    <Timeline>
+      <Track id="repeat_variation_showcase_track" space="screen" z="0">
+        <Sequence from="0s" duration="8s" out="hold">
+          <Layer id="repeat_variation_showcase_layer">
+            <Text value="DETERMINISTIC VARIATION FIELDS" x="960" y="90"
+                  fontSize="54" fontWeight="900" color="#F8FAFC" />
+            <Text value="SCATTER · SCALE · ROTATION · OPACITY · FIXED SEEDS" x="960" y="145"
+                  fontSize="22" color="#67E8F9" />
+
+            <Group id="variation_fields_enter"
+                   opacity={curve("0:0:linear, 0.5:1:ease_out, 8:1:linear")}>
+              <Group id="sensor_field_panel">
+                <Rect x="70" y="220" width="820" height="690" radius="34"
+                      color="#071426" stroke="#164E63" strokeWidth="3" />
+                <Text value="SENSOR CLOUD / SEED 63001" x="120" y="280"
+                      fontSize="25" color="#A5F3FC" />
+                <Repeat id="sensor_cloud" count="150" distribution="scatter"
+                        bounds={[110,320,730,520]} seed="63001"
+                        scaleRange={[0.35,1.8]} rotationRange={[-30,30]}
+                        opacityRange={[0.2,1]}>
+                  <Use ref="variation_sensor" />
+                </Repeat>
+              </Group>
+
+              <Group id="shard_field_panel">
+                <Rect x="950" y="220" width="900" height="320" radius="34"
+                      color="#100B24" stroke="#7C3AED" strokeWidth="3" />
+                <Text value="SHARD FIELD / SEED 63002" x="1000" y="280"
+                      fontSize="25" color="#C4B5FD" />
+                <Repeat id="shard_cloud" count="90" distribution="scatter"
+                        bounds={[990,320,810,165]} seed="63002"
+                        scaleRange={[0.35,1.7]} rotationRange={[-80,80]}
+                        opacityRange={[0.25,0.95]}>
+                  <Rect x="-16" y="-4" width="32" height="8" radius="4" color="#A78BFA" />
+                </Repeat>
+              </Group>
+
+              <Group id="signal_field_panel">
+                <Rect x="950" y="590" width="900" height="320" radius="34"
+                      color="#071A18" stroke="#059669" strokeWidth="3" />
+                <Text value="SIGNAL FIELD / SEED 63003" x="1000" y="650"
+                      fontSize="25" color="#A7F3D0" />
+                <Repeat id="signal_cloud" count="80" distribution="scatter"
+                        bounds={[990,690,810,165]} seed="63003"
+                        scaleRange={[0.45,1.5]} rotationRange={[-45,45]}
+                        opacityRange={[0.3,1]}>
+                  <Path d="M -12 8 L 0 -14 L 12 8 Z" fill="#4ADE80" stroke="none" />
+                </Repeat>
+              </Group>
+            </Group>
+
+            <Rect x="370" y="955" width="1180" height="62" radius="20"
+                  color="#020617" opacity="0.88" stroke="#334155" strokeWidth="2" />
+            <Text value="The same seed produces the same instance geometry on every render."
+                  x="960" y="995" fontSize="23" color="#CBD5E1" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="repeat_variation_showcase" />
+</Graph>

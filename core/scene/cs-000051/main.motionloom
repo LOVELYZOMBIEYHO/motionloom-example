@@ -1,0 +1,47 @@
+<Graph fps={30} duration="4s" size={[640,360]} renderSize={[640,360]}>
+  <Background color="#07111F" />
+
+  <Scene id="advanced_component_core">
+    <Defs>
+      <Component id="metric_card">
+        <Param name="width" type="number" default="220" />
+        <Param name="accent" type="enum"
+               values={["#22D3EE","#A3E635","#F472B6"]} default="#22D3EE" />
+        <Param name="showBadge" type="boolean" default="true" />
+        <Derived name="halfWidth" value={param("width") * 0.5} />
+        <Rect x="0" y="0" width={param("width")} height="150"
+              radius="20" color="#0F1F33" stroke={param("accent")} strokeWidth="3" />
+        <Circle x={derived("halfWidth")} y="36" radius="12"
+                color={param("accent")} opacity={param("showBadge")} />
+        <Slot name="title">
+          <Text x="20" y="92" value="DEFAULT SLOT" fontSize="18"
+                fontWeight="800" color="#F8FAFC" />
+        </Slot>
+      </Component>
+    </Defs>
+
+    <Timeline>
+      <Track id="advanced_component_track" space="screen" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer id="advanced_component_layer">
+            <Text x="320" y="44" value="PARAMS + DERIVED + SLOT"
+                  fontSize="20" fontWeight="900" color="#F8FAFC" />
+            <Use ref="metric_card" x="55" y="105"
+                 params={{ width: "220", accent: "#22D3EE", showBadge: "true" }} />
+            <Use ref="metric_card" x="345" y="105"
+                 params={{ width: "240", accent: "#F472B6", showBadge: "false" }}>
+              <Fill slot="title">
+                <Text x="20" y="92" value="CUSTOM FILL"
+                      fontSize="18" fontWeight="800" color="#F472B6" />
+                <Text x="20" y="120" value="badge=false"
+                      fontSize="13" color="#94A3B8" />
+              </Fill>
+            </Use>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="advanced_component_core" />
+</Graph>

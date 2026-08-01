@@ -1,0 +1,17 @@
+{
+  "id": "cs-000049",
+  "type": "core",
+  "title": "Seeded Repeat Variation",
+  "domain": "scene",
+  "features": ["scene", "repeat", "scatter", "deterministic-variation"],
+  "dsl": ["Graph", "Background", "Scene", "Timeline", "Track", "Sequence", "Layer", "Repeat", "Circle", "Rect", "Text", "Present"],
+  "teaches": [
+    "Scatter repeated artwork inside explicit bounds.",
+    "Use a fixed seed for deterministic output.",
+    "Vary scale, rotation, and opacity without using an index expression."
+  ],
+  "source_path": "core/scene/cs-000049",
+  "demo_url": "",
+  "related": ["cs-000005", "cs-000046"],
+  "requires": ["Graph", "Scene", "Repeat", "Present"]
+}

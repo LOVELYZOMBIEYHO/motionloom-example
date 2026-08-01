@@ -1,0 +1,36 @@
+<Graph fps={30} duration="4s" size={[640,360]} renderSize={[640,360]}>
+  <Background color="#07111F" />
+
+  <Scene id="parametric_component_core">
+    <Defs>
+      <Component id="data_bar_component">
+        <Param name="top" type="number" default="-120" />
+        <Param name="height" type="number" default="120" />
+        <Param name="paint" type="color" default="#22D3EE" />
+        <Rect x="-45" y={param("top")} width="90" height={param("height")}
+              radius="12" fill={param("paint")} />
+      </Component>
+    </Defs>
+
+    <Timeline>
+      <Track id="parametric_component_track" space="screen" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer id="parametric_component_layer">
+            <Text value="PARAMETRIC COMPONENT" x="320" y="48"
+                  fontSize="22" fontWeight="900" color="#F8FAFC" />
+            <Line x1="90" y1="300" x2="550" y2="300"
+                  stroke="#334155" strokeWidth="3" />
+            <Use id="short_bar" ref="data_bar_component" x="170" y="300"
+                 params={{ top: "-90", height: "90", paint: "#22D3EE" }} />
+            <Use id="medium_bar" ref="data_bar_component" x="320" y="300"
+                 params={{ top: "-150", height: "150", paint: "#A78BFA" }} />
+            <Use id="tall_bar" ref="data_bar_component" x="470" y="300"
+                 params={{ top: "-220", height: "220", paint: "#4ADE80" }} />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="parametric_component_core" />
+</Graph>

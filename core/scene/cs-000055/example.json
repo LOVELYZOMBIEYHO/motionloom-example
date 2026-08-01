@@ -1,0 +1,13 @@
+{
+  "id": "cs-000055",
+  "type": "core",
+  "title": "Universal Layer Puppet",
+  "domain": "scene",
+  "features": ["scene", "puppet-warp", "universal-layer-target", "capture-before", "alpha-mesh", "deformation", "curve"],
+  "dsl": ["Graph", "Background", "Scene", "Timeline", "Track", "Sequence", "Layer", "Rect", "Circle", "Line", "PuppetWarp", "PuppetPin", "Text", "Present"],
+  "teaches": ["Capture all earlier Layer artwork as one Puppet surface.", "Use @layer without naming or restructuring a Group.", "Keep later Layer nodes outside the deformation as overlays."],
+  "source_path": "core/scene/cs-000055",
+  "demo_url": "",
+  "related": ["cs-000047", "cs-000054", "s-000063"],
+  "requires": ["Graph", "Scene", "Layer", "PuppetWarp", "PuppetPin", "Present"]
+}

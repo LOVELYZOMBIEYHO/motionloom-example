@@ -5,6 +5,7 @@
     "abstract-background",
     "action",
     "actor",
+    "assets",
     "alpha",
     "animation-target",
     "anime",
@@ -30,6 +31,8 @@
     "circle",
     "color",
     "color-wash",
+    "composite-group",
+    "composite-order",
     "component",
     "component-reuse",
     "curve",
@@ -42,6 +45,7 @@
     "edge-smoothing",
     "editor-overlay",
     "environment",
+    "effect-scope",
     "external-texture",
     "eye",
     "eyes",
@@ -54,7 +58,10 @@
     "gaussian_5tap_h",
     "gaussian_5tap_v",
     "gaze-animation",
+    "gltf",
+    "glb",
     "glb-asset",
+    "draco",
     "glow",
     "glow_stack",
     "glass",
@@ -89,6 +96,7 @@
     "light_sweep",
     "light-streak",
     "line",
+    "limb-envelope",
     "lineargradient",
     "logo-motion",
     "luma-mask",
@@ -118,6 +126,8 @@
     "procedural-texture",
     "procedural",
     "process",
+    "process-effect",
+    "product-promotion",
     "promo",
     "puppet",
     "puppet-pin",
@@ -129,6 +139,7 @@
     "refraction",
     "region",
     "render-scale",
+    "render-pass-dag",
     "repeat",
     "rgb-glitch",
     "rounded-panel",
@@ -157,6 +168,7 @@
     "transition",
     "transform",
     "triangle",
+    "true-3d",
     "typing-effect",
     "typography",
     "use",
@@ -178,23 +190,70 @@
     ,"hair"
     ,"rigid-body-2d"
     ,"particle-emitter"
+    ,"position-pin"
     ,"cloth"
     ,"cache-bake"
     ,"deterministic-timestep"
+    ,"alignment"
+    ,"alpha-mesh"
+    ,"bend-pin"
+    ,"automatic-positioning"
+    ,"boolean-param"
+    ,"capture-before"
+    ,"chromatic-aberration"
+    ,"column"
+    ,"component-params"
+    ,"condensed-font"
+    ,"data-driven-shape"
+    ,"declarative-layout"
+    ,"derived"
+    ,"deterministic-random"
+    ,"deterministic-variation"
+    ,"drop-shadow"
+    ,"enum-param"
+    ,"gallery"
+    ,"glitch"
+    ,"grid"
+    ,"justification"
+    ,"padding"
+    ,"parametric-component"
+    ,"path-morph"
+    ,"preserve-outside"
+    ,"procedural-field"
+    ,"repeat-variation"
+    ,"reuse"
+    ,"row"
+    ,"scan-mask"
+    ,"scatter"
+    ,"seeded-random"
+    ,"slot"
+    ,"span"
+    ,"stress-test"
+    ,"subtitle"
+    ,"transparent-background"
+    ,"two-bone-ik"
+    ,"universal-layer-target"
+    ,"vary"
+    ,"weighted-variants"
+    ,"whiteout"
   ],
   "dsl_tags": [
     "Action",
     "Actor",
+    "Assets",
+    "AudioAsset",
     "AnimationTarget",
     "ApplyAction",
     "Background",
     "Bone",
     "Brush",
     "Camera",
+    "Camera3D",
     "Character",
     "Circle",
     "ChromaticAberration",
     "ColorBleed",
+    "CompositeGroup",
     "Component",
     "Constraint",
     "Control",
@@ -202,7 +261,10 @@
     "Edge",
     "EdgeRoughness",
     "EdgeSoftness",
+    "Effects",
+    "Effect",
     "Ellipse",
+    "EnvironmentLight",
     "FaceJaw",
     "Filter",
     "Graph",
@@ -211,18 +273,23 @@
     "HighlightCompression",
     "IK",
     "Image",
+    "ImageAsset",
     "Input",
     "Key",
     "Layer",
     "Layer3D",
     "Landmark",
     "Line",
+    "LimbEnvelope",
     "LightStreak",
     "LinearGradient",
     "Mask",
     "Material",
+    "MaterialBinding",
     "Measure",
     "MeshTopology",
+    "Model",
+    "ModelAsset",
     "Noise",
     "Part",
     "Pass",
@@ -234,6 +301,7 @@
     "Pose",
     "Present",
     "Process",
+    "PostEffects",
     "Puppet",
     "PuppetPin",
     "PuppetWarp",
@@ -255,6 +323,8 @@
     "Triangle",
     "Use",
     "Vertex",
+    "Video",
+    "VideoAsset",
     "World",
     "Curve",
     "Gravity",
@@ -329,6 +399,20 @@
     "tone_map",
     "track",
     "use"
+    ,"Derived"
+    ,"Fill"
+    ,"Layout"
+    ,"Param"
+    ,"Slot"
+    ,"Style"
+    ,"TextAnimator"
+    ,"Variants"
+    ,"Vary"
+    ,"fontFamily"
+    ,"shadowBlur"
+    ,"shadowColor"
+    ,"shadowX"
+    ,"shadowY"
   ],
   "reserved_feature_tags": [
     "composition"

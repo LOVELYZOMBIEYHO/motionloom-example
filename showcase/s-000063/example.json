@@ -1,0 +1,13 @@
+{
+  "id": "s-000063",
+  "type": "showcase",
+  "title": "Universal Layer Puppet Character",
+  "domain": "scene",
+  "features": ["scene", "puppet-warp", "universal-layer-target", "capture-before", "two-bone-ik", "mesh-topology", "preserve-outside", "gpu-friendly"],
+  "dsl": ["Graph", "Background", "Scene", "Timeline", "Track", "Sequence", "Layer", "Group", "Rect", "Circle", "Path", "Line", "Text", "PuppetWarp", "MeshTopology", "Vertex", "Triangle", "PuppetPin", "Present"],
+  "teaches": ["Rig a complete Layer without naming an artwork Group.", "Use a local bone mesh to raise one arm while preserving the rest of the captured character.", "Keep post-warp labels outside the captured surface."],
+  "source_path": "showcase/s-000063",
+  "demo_url": "",
+  "related": ["cs-000055", "cs-000054", "s-000058"],
+  "requires": ["Graph", "Scene", "Layer", "PuppetWarp", "MeshTopology", "PuppetPin", "Present"]
+}

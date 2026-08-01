@@ -1,0 +1,435 @@
+<Graph fps={30} duration="26.26s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Assets>
+    <ModelAsset id="anica_device_model"
+                src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000066/assets/iphone.glb"
+                decoder="draco" />
+  </Assets>
+
+  <Background color="#030407" />
+
+  <Scene id="AnicaProductLaunch">
+    <Timeline>
+      <Track id="spectral66_chapter_backgrounds" space="screen" compositeOrder="0">
+        <Sequence from="0s" duration="3.1s" out="hide">
+          <Layer id="spectral66_intro_energy_background" space="screen">
+            <Rect x="0" y="0" width="1920" height="1080" color="#010205" />
+          </Layer>
+        </Sequence>
+
+        <Sequence from="3.1s" duration="3.38s" out="hide">
+          <Layer id="spectral66_html_canvas_background" space="screen">
+            <Rect x="0" y="0" width="1920" height="1080" color="#050509" />
+            <Ellipse x={curve("0:60:linear, 1.7:620:ease_in_out, 3.38:160:ease_in_out")}
+                     y="20" radiusX="520" radiusY="360"
+                     color="#FF451E" opacity="0.40" />
+            <Ellipse x={curve("0:1500:linear, 1.7:1120:ease_in_out, 3.38:1580:ease_in_out")}
+                     y="510" radiusX="680" radiusY="320"
+                     color="#00D5FF" opacity="0.45" />
+            <Ellipse x="720" y="650" radiusX="740" radiusY="240"
+                     color="#2038FF" opacity="0.32" />
+            <Ellipse x="1120" y="780" radiusX="540" radiusY="220"
+                     color="#FFB100" opacity="0.28" />
+          </Layer>
+        </Sequence>
+
+        <Sequence from="5.58s" duration="4.04s" out="hide">
+          <Layer id="spectral66_phone_stage_background" space="screen">
+            <Rect x="0" y="0" width="1920" height="1080" color="#030306" />
+            <Ellipse x={curve("0:240:linear, 2.02:740:ease_in_out, 4.04:260:ease_in_out")}
+                     y="40" radiusX="460" radiusY="190"
+                     fill="none" stroke="#00E9FF" strokeWidth="54" opacity="0.66" />
+            <Ellipse x={curve("0:1450:linear, 2.02:1060:ease_in_out, 4.04:1480:ease_in_out")}
+                     y="580" radiusX="610" radiusY="250"
+                     fill="none" stroke="#FF2B30" strokeWidth="68" opacity="0.61" />
+            <Ellipse x="720" y="610" radiusX="510" radiusY="170"
+                     fill="none" stroke="#FFB100" strokeWidth="38" opacity="0.54" />
+            <Ellipse x="1540" y="80" radiusX="360" radiusY="120"
+                     fill="none" stroke="#4B39FF" strokeWidth="42" opacity="0.66" />
+          </Layer>
+        </Sequence>
+
+        <Sequence from="9.66s" duration="3.84s" out="hide">
+          <Layer id="spectral66_prompt_background" space="screen">
+            <Rect x="0" y="0" width="1920" height="1080" color="#F4F0E8" />
+            <Rect x="0" y="0" width="1920" height="86" color="#E9E4DA" />
+            <Line x1="0" y1="86" x2="1920" y2="86"
+                  stroke="#CFC7B8" strokeWidth="2" />
+            <Circle x="60" y="43" radius="10" color="#F2645A" />
+            <Circle x="94" y="43" radius="10" color="#E9B949" />
+            <Circle x="128" y="43" radius="10" color="#62B273" />
+          </Layer>
+        </Sequence>
+
+        <Sequence from="13.5s" duration="3.52s" out="hide">
+          <Layer id="spectral66_chromatic_background" space="screen">
+            <Rect x="0" y="0" width="1920" height="1080" color="#020205" />
+            <Ellipse x="630" y="500" radiusX="570" radiusY="350"
+                     color="#00DFFF" opacity="0.18" />
+            <Ellipse x="1260" y="500" radiusX="570" radiusY="350"
+                     color="#FF0048" opacity="0.17" />
+            <Repeat id="spectral66_chromatic_scanlines" count="54" x="0" y="0" yStep="20">
+              <Rect x="0" y="0" width="1920" height="1"
+                    color="#FFFFFF" opacity="0.055" />
+            </Repeat>
+            <Rect x={curve("0:-700:linear, 1.76:1960:ease_in_out, 3.52:-700:ease_in_out")}
+                  y="262" width="760" height="6" color="#00F5FF" opacity="0.78" />
+            <Rect x={curve("0:1960:linear, 1.76:-700:ease_in_out, 3.52:1960:ease_in_out")}
+                  y="814" width="680" height="7" color="#FF2759" opacity="0.82" />
+          </Layer>
+        </Sequence>
+
+        <Sequence from="17.02s" duration="9.24s" out="hold">
+          <Layer id="spectral66_portal_background" space="screen">
+            <Rect x="0" y="0" width="1920" height="1080" color="#020205" />
+            <Ellipse x="960" y="540"
+                     radiusX={curve("0:8:linear, 1.1:58:ease_out, 3.2:460:ease_in_out, 7.59:1320:ease_in")}
+                     radiusY={curve("0:5:linear, 1.1:34:ease_out, 3.2:250:ease_in_out, 7.59:720:ease_in")}
+                     color="#00F1FF"
+                     opacity={curve("0:0:linear, 0.12:0.94:ease_out, 3.4:0.45:ease_in_out, 7.59:0.08:ease_in")} />
+            <Ellipse x="960" y="540"
+                     radiusX={curve("0:4:linear, 1.05:38:ease_out, 3.1:390:ease_in_out, 7.59:1160:ease_in")}
+                     radiusY={curve("0:3:linear, 1.05:25:ease_out, 3.1:205:ease_in_out, 7.59:630:ease_in")}
+                     color="#FF006E"
+                     opacity={curve("0:0:linear, 0.1:0.96:ease_out, 3.4:0.48:ease_in_out, 7.59:0.06:ease_in")} />
+            <Ellipse x="960" y="540"
+                     radiusX={curve("0:2:linear, 1:20:ease_out, 3:250:ease_in_out, 7.59:940:ease_in")}
+                     radiusY={curve("0:2:linear, 1:14:ease_out, 3:142:ease_in_out, 7.59:520:ease_in")}
+                     color="#FFFFFF"
+                     opacity={curve("0:0:linear, 0.08:1:ease_out, 3.2:0.82:linear, 4.1:0.15:ease_in, 7.59:0.04:linear")} />
+            <Repeat id="spectral66_portal_rays" count="18"
+                    x="40" y="536" xStep="108">
+              <Rect x="0"
+                    y={curve("0:0:linear, 3.2:-80:ease_in_out, 7.59:0:ease_in_out")}
+                    width="54"
+                    height={curve("0:4:linear, 3.2:14:ease_out, 7.59:3:ease_in")}
+                    color="#FFFFFF"
+                    opacity={curve("0:0:linear, 0.4:0.7:ease_out, 3.8:0.18:linear, 7.59:0:ease_in")} />
+            </Repeat>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="spectral66_opening_titles" space="screen" compositeOrder="20">
+        <Sequence from="0s" duration="3.1s" out="hide">
+          <Layer id="spectral66_opening_title_layer" space="screen">
+            <Group id="spectral66_opening_logo"
+                   scale={curve("0:1.16:linear, 0.72:1:ease_out, 2.9:1:linear, 3.1:0.4:ease_in")}
+                   opacity={curve("0:0:linear, 0.18:1:ease_out, 2.9:1:linear, 3.1:0:ease_in")}
+                   transformOriginX="960" transformOriginY="540">
+              <Text value="Anica"
+                    x={curve("0:396:linear, 0.72:438:ease_out, 3.1:438:linear")}
+                    y="510" fontSize="118" fontWeight="900"
+                    fontFamily="Arial Black"
+                    color="#FFFFFF" />
+              <Text value="Motion"
+                    x={curve("0:394:linear, 0.72:438:ease_out, 3.1:438:linear")}
+                    y="672" fontSize="160" fontWeight="900"
+                    fontFamily="Arial Black"
+                    color="#FFFFFF" />
+              <Group id="spectral66_opening_mark"
+                     x={curve("0:70:linear, 0.72:0:ease_out, 3.1:0:linear")}>
+                <Path d="M 1278 430 C 1278 414 1287 401 1301 393 L 1375 351 C 1390 342 1407 353 1407 370 L 1407 492 C 1407 510 1387 521 1372 511 L 1298 463 C 1285 455 1278 444 1278 430 Z"
+                      fill="#36F4D2" />
+                <Path d="M 1431 370 C 1431 352 1450 342 1465 351 L 1539 394 C 1553 402 1562 415 1562 431 C 1562 445 1555 456 1542 464 L 1466 512 C 1451 521 1431 511 1431 493 Z"
+                      fill="#63FF6E" />
+              </Group>
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="spectral66_html_canvas_card" space="screen" compositeOrder="30">
+        <Sequence from="3.1s" duration="3.38s" out="hide">
+          <Layer id="spectral66_html_canvas_card_layer" space="screen">
+            <Group id="spectral66_glass_panel"
+                   y={curve("0:1140:linear, 0.55:0:ease_out, 2.75:0:linear, 3.38:-1200:ease_in")}
+                   scale={curve("0:1.45:linear, 0.72:0.88:ease_out, 2.75:0.88:linear, 3.38:0.96:ease_in")}
+                   transformOriginX="960" transformOriginY="540">
+              <Rect x="250" y="164" width="1420" height="752" radius="58"
+                    color="#131419" opacity="0.86"
+                    stroke="#FFFFFF" strokeWidth="2" />
+              <Rect x="252" y="166" width="1416" height="96" radius="56"
+                    color="#FFFFFF" opacity="0.055" />
+              <Text value="HTML"
+                    x="488" y="526" fontSize="154" fontWeight="900"
+                    color="#EEFF63" />
+              <Text value="-in"
+                    x="944" y="526" fontSize="154" fontWeight="900"
+                    color="#FFFFFF" />
+              <Text value="canvas"
+                    x="535" y="716" fontSize="174" fontWeight="900"
+                    color="#FFFFFF" />
+              <Text value="Now natively supported."
+                    x="960" y="820" align="center"
+                    fontSize="28" fontWeight="700" color="#B8BDC8"
+                    opacity={curve("0:0:linear, 1.65:0:linear, 2.05:1:ease_out, 3.1:1:linear, 3.38:0:ease_in")} />
+              <Rect x={curve("0:488:linear, 1.5:1226:ease_in_out, 3.38:1226:linear")}
+                    y="552" width="5" height="108"
+                    color="#F5FF72"
+                    opacity={curve("0:1:linear, 0.2:0.2:linear, 0.4:1:linear, 0.6:0.2:linear, 0.8:1:linear, 1:0.2:linear, 3.38:0.2:linear")} />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="spectral66_device_3d" space="3d" compositeOrder="40">
+        <Sequence from="5.58s" duration="4.04s" out="hide">
+          <CompositeGroup id="spectral66_device_3d_island"
+                          space="3d" depth="true" format="rgba16f">
+            <Camera3D id="spectral66_device_camera"
+                      position={[0,0,6]} target={[0,0,0]} fov="34" />
+            <Model id="spectral66_device_model"
+                   asset="anica_device_model"
+                   positionX={curve("0:0:linear, 3.43:0:linear, 4.04:-3.6:ease_in")}
+                   positionY={curve("0:-3.45:linear, 0.78:0.02:ease_out, 3.43:-0.08:linear, 4.04:0.25:ease_in")}
+                   positionZ={curve("0:0:linear, 3.43:0:linear, 4.04:-0.8:ease_in")}
+                   rotationX={curve("0:3:linear, 2.2:3:linear, 3.93:3:ease_in_out, 4.04:8:ease_in")}
+                   rotationY={curve("0:-178:linear, 0.18:-178:linear, 0.78:0:ease_out, 2.2:0:linear, 3.93:900:ease_in_out, 4.04:920:ease_in")}
+                   rotationZ={curve("0:0:linear, 3.43:0:linear, 3.93:90:ease_in_out, 4.04:90:linear")}
+                   scale={curve("0:2.3:linear, 0.78:2.7:ease_out, 3.43:2.7:linear, 4.04:2.2:ease_in")} />
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+
+      <Track id="spectral66_phone_screen_and_finger" space="screen" compositeOrder="80">
+        <Sequence from="5.58s" duration="4.04s" out="hide">
+          <Layer id="spectral66_phone_screen_overlay" space="screen">
+            <Group id="spectral66_phone_screen"
+                   x={curve("0:650:linear, 0.78:650:ease_out, 3.43:650:linear, 4.04:-760:ease_in")}
+                   y={curve("0:1180:linear, 0.78:92:ease_out, 3.43:92:linear, 4.04:160:ease_in")}
+                   scale="0.72">
+              <Rect x="0" y="0" width="520" height="890" radius="44"
+                    color="#F5F1E9" stroke="#101014" strokeWidth="10" />
+              <Rect x="188" y="18" width="144" height="34" radius="17"
+                    color="#09090B" />
+              <Text value="Anica" x="34" y="92"
+                    fontSize="28" fontWeight="800" color="#131313" />
+              <Rect x="358" y="58" width="124" height="52" radius="26"
+                    color="#D8FF3F" />
+              <Text value="Get Started" x="420" y="91" align="center"
+                    fontSize="15" fontWeight="800" color="#111111" />
+              <Text value="Turn your" x="36" y="182"
+                    fontSize="54" fontWeight="900" color="#080808" />
+              <Text value="ideas into" x="36" y="240"
+                    fontSize="54" fontWeight="900" color="#080808" />
+              <Text value="videos in" x="36" y="298"
+                    fontSize="54" fontWeight="900" color="#080808" />
+              <Text value="minutes" x="36" y="356"
+                    fontSize="54" fontWeight="900" color="#080808" />
+              <Text value="Go from script, image, presentation,"
+                    x="36" y="428" fontSize="17" color="#454545" />
+              <Text value="or PDF to finished video."
+                    x="36" y="454" fontSize="17" color="#454545" />
+              <Rect x="36" y="492" width="184" height="54" radius="27"
+                    color="#111111" />
+              <Text value="AI Video Generator" x="128" y="525" align="center"
+                    fontSize="14" fontWeight="800" color="#FFFFFF" />
+              <Rect x="234" y="492" width="154" height="54" radius="27"
+                    color="#D8FF3F" />
+              <Text value="Free to start" x="311" y="525" align="center"
+                    fontSize="14" fontWeight="800" color="#111111" />
+              <Rect x="36" y="590" width="448" height="218" radius="30"
+                    color="#4C6BDE" />
+              <Circle x="438" y="768" radius="96" color="#D8FF3F" opacity="0.64" />
+              <Text value="One-Shot Text-to-Video" x="62" y="650"
+                    fontSize="27" fontWeight="900" color="#FFFFFF" />
+              <Text value="Type your idea. Click generate." x="62" y="692"
+                    fontSize="17" fontWeight="700" color="#FFFFFF" />
+              <Rect x="62" y="730" width="170" height="52" radius="18"
+                    color="#FFFFFF" />
+              <Text value="Generate" x="147" y="763" align="center"
+                    fontSize="15" fontWeight="800" color="#171717" />
+            </Group>
+
+            <Group id="spectral66_finger_motion"
+                   x={curve("0:1260:linear, 0.92:1260:linear, 1.74:805:ease_out, 2.77:805:linear, 3.26:1260:ease_in, 4.04:1260:linear")}
+                   y={curve("0:1220:linear, 0.92:1220:linear, 1.74:532:ease_out, 2.27:532:linear, 2.77:-1900:ease_in_out, 4.04:-1900:linear")}
+                   rotation="-75"
+                   scale="1.145"
+                   transformOriginX="174" transformOriginY="0">
+              <Path id="spectral66_pointer_shape"
+                    d="M 0 0 L 0 210 L 48 164 L 102 276 L 158 248 L 104 142 L 174 138 Z"
+                    fill="#F5F1E9" stroke="#16181D" strokeWidth="8" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="spectral66_prompt_interface" space="screen" compositeOrder="100">
+        <Sequence from="9.66s" duration="3.84s" out="hide">
+          <Layer id="spectral66_prompt_interface_layer" space="screen">
+            <Text value="Anica Project"
+                  x="52" y="55" fontSize="21" fontWeight="800"
+                  color="#38342B" />
+            <Text value="Create a cinematic launch in one command."
+                  x="960" y="230" align="center"
+                  fontSize="48" fontWeight="900" color="#29261F" />
+            <Group id="spectral66_command_card"
+                   y={curve("0:840:linear, 0.55:0:ease_out, 3.24:0:linear, 3.84:-90:ease_in")}>
+              <Rect x="260" y="330" width="1400" height="318" radius="34"
+                    color="#FFFFFF" stroke="#CEC6B8" strokeWidth="2" />
+              <Text value="Anica Agent"
+                    x="310" y="390" fontSize="18" fontWeight="800"
+                    color="#857D6E" />
+              <Line x1="310" y1="418" x2="1610" y2="418"
+                    stroke="#E4DFD5" strokeWidth="2" />
+              <Text value="anica create device-canvas"
+                    x="310" y="508"
+                    fontSize="37" fontWeight="800" color="#25221D" />
+              <Rect x="1430" y="540" width="150" height="64" radius="32"
+                    color="#25221D" />
+              <Text value="SEND" x="1505" y="580" align="center"
+                    fontSize="18" fontWeight="900" color="#F7F2E9" />
+              <Group id="spectral66_prompt_cursor"
+                     x={curve("0:1070:linear, 1.15:1070:linear, 1.95:1500:ease_in_out, 2.52:1500:linear, 3.84:1570:ease_in")}
+                     y={curve("0:720:linear, 1.15:720:linear, 1.95:570:ease_in_out, 2.52:570:linear, 3.84:500:ease_in")}>
+                <Path d="M 0 0 L 0 34 L 9 26 L 19 45 L 28 40 L 18 22 L 32 21 Z"
+                      fill="#25221D" stroke="#FFFFFF" strokeWidth="2" />
+              </Group>
+              <Circle x="1505" y="570"
+                      radius={curve("0:0:linear, 1.9:0:linear, 2.12:54:ease_out, 2.48:0:ease_in, 3.84:0:linear")}
+                      fill="none" stroke="#D5FF3C" strokeWidth="6" />
+            </Group>
+            <Text value="You can make this too"
+                  x="960" y="790" align="center"
+                  fontSize="76" fontWeight="900" color="#29261F"
+                  opacity={curve("0:0:linear, 2.96:0:linear, 3.26:1:ease_out, 3.84:1:linear")} />
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="spectral66_rgb_typography" space="screen" compositeOrder="120">
+        <Sequence from="13.5s" duration="3.52s" out="hide">
+          <CompositeGroup id="spectral66_rgb_text_island"
+                          space="screen"
+                          format="rgba16f">
+            <Group id="spectral66_rgb_text_planes"
+                   scale={curve("0:0.58:linear, 0.48:1.08:ease_out, 2.65:1:linear, 3.52:1.42:ease_in")}
+                   rotation={curve("0:-9:linear, 0.48:0:ease_out, 2.65:0:linear, 3.52:13:ease_in")}
+                   transformOriginX="960" transformOriginY="540">
+              <Text value="You can make"
+                    x={curve("0:260:linear, 0.42:454:ease_out, 2.65:454:linear, 3.52:640:ease_in")}
+                    y="478" fontSize="132" fontWeight="900"
+                    color="#00EEFF" opacity="0.86" />
+              <Text value="You can make"
+                    x={curve("0:650:linear, 0.42:478:ease_out, 2.65:478:linear, 3.52:300:ease_in")}
+                    y="478" fontSize="132" fontWeight="900"
+                    color="#FF164B" opacity="0.84" />
+              <Text value="You can make"
+                    x="466" y="478" fontSize="132" fontWeight="900"
+                    color="#FFFFFF" />
+              <Text value="this too"
+                    x={curve("0:850:linear, 0.5:626:ease_out, 2.7:626:linear, 3.52:420:ease_in")}
+                    y="640" fontSize="160" fontWeight="900"
+                    color="#4FFF73" opacity="0.82" />
+              <Text value="this too"
+                    x={curve("0:420:linear, 0.5:650:ease_out, 2.7:650:linear, 3.52:850:ease_in")}
+                    y="640" fontSize="160" fontWeight="900"
+                    color="#8A51FF" opacity="0.82" />
+              <Text value="this too"
+                    x="638" y="640" fontSize="160" fontWeight="900"
+                    color="#FFFFFF" />
+            </Group>
+            <Text value="HTML → CANVAS → GPU"
+                  x="960" y="904" align="center"
+                  fontSize="21" fontWeight="800" color="#B7BAC6" />
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+
+      <Track id="spectral66_portal_call_to_action" space="screen" compositeOrder="200">
+        <Sequence from="17.02s" duration="9.24s" out="hold">
+          <Layer id="spectral66_portal_call_to_action_layer" space="screen">
+            <Group id="spectral66_catalog_words"
+                   opacity={curve("0:0:linear, 0.2:1:ease_out, 2.5:1:linear, 2.95:0:ease_in, 9.24:0:linear")}
+                   scale={curve("0:0.72:linear, 0.45:1:ease_out, 2.5:1:linear, 2.95:1.24:ease_in")}
+                   transformOriginX="960" transformOriginY="540">
+              <Text value="Full catalog"
+                    x="470" y="500" fontSize="126" fontWeight="900"
+                    color="#FFFFFF" />
+              <Text value="available now"
+                    x="452" y="638" fontSize="126" fontWeight="900"
+                    color="#E8FF58" />
+            </Group>
+
+            <Repeat id="spectral66_portal_sparks" count="22"
+                    x="330" y="300" xStep="58" yStep="17">
+              <Circle x="0"
+                      y={curve("0:0:linear, 4.2:-110:ease_out, 9.24:-20:ease_in_out")}
+                      radius={curve("0:2:linear, 4.2:7:ease_out, 9.24:1:ease_in")}
+                      color="#FFFFFF"
+                      opacity={curve("0:0:linear, 1.2:0.72:ease_out, 5.4:0.3:linear, 9.24:0:ease_in")} />
+            </Repeat>
+
+            <Group id="spectral66_final_brand_card"
+                   opacity={curve("0:0:linear, 3.1:0:linear, 3.65:1:ease_out, 9.24:1:linear")}
+                   scale={curve("0:0.72:linear, 3.1:0.72:linear, 3.75:1:ease_out, 9.24:1:linear")}
+                   transformOriginX="960" transformOriginY="540">
+              <Rect x="520" y="354" width="880" height="372" radius="54"
+                    color="#F7F5EF" opacity="0.95"
+                    stroke="#FFFFFF" strokeWidth="2" />
+              <Group id="spectral66_anica_logo" x="690" y="420">
+                <Path d="M 0 92 L 62 0 L 124 92 L 96 92 L 62 42 L 28 92 Z"
+                      fill="#16181D" />
+                <Circle x="62" y="92" radius="13" color="#D8FF3F" />
+                <Text value="ANICA" x="158" y="92"
+                      fontSize="88" fontWeight="900" color="#16181D" />
+              </Group>
+              <Text value="Create extraordinary visuals in HTML."
+                    x="960" y="630" align="center"
+                    fontSize="27" fontWeight="800" color="#15151A" />
+            </Group>
+
+            <Text value="anica.dev/catalog"
+                  x="960" y="916" align="center"
+                  fontSize="25" fontWeight="800" color="#FFFFFF"
+                  opacity={curve("0:0:linear, 4.05:0:linear, 4.55:1:ease_out, 9.24:1:linear")} />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+
+    <Effects>
+      <Effect process="SpectralLaunchFinish" />
+    </Effects>
+  </Scene>
+
+  <Process id="SpectralLaunchFinish">
+    <Tex id="spectral66_scene_tex"
+         fmt="rgba16f"
+         from="scene" />
+    <Tex id="spectral66_energy_tex"
+         fmt="rgba16f"
+         size={[1920,1080]} />
+    <Tex id="spectral66_bloom_tex"
+         fmt="rgba16f"
+         size={[1920,1080]} />
+    <Tex id="spectral66_final_tex"
+         fmt="rgba16f"
+         size={[1920,1080]} />
+    <Pass id="spectral66_energy_pass"
+          kind="compute"
+          effect="spectral_energy"
+          in={["spectral66_scene_tex"]}
+          out={["spectral66_energy_tex"]}
+          params={{ mode: "granular",
+                    active: "curve('0:1:linear, 3.08:1:linear, 3.1:0:linear, 26.26:0:linear')",
+                    intensity: "1.34", density: "0.90",
+                    drift: "curve('0:0.02:linear, 0.18:0.10:ease_out, 1.1:0.42:ease_out, 2.15:0.72:ease_in_out, 3.08:1:ease_in')",
+                    seed: "66" }} />
+    <Pass id="spectral66_bloom_pass"
+          kind="compute"
+          effect="glow_bloom"
+          in={["spectral66_energy_tex"]}
+          out={["spectral66_bloom_tex"]}
+          params={{ threshold: "0.58", intensity: "0.44", sigma: "7.0" }} />
+    <Pass id="spectral66_grain_pass"
+          kind="compute"
+          effect="film_grain"
+          in={["spectral66_bloom_tex"]}
+          out={["spectral66_final_tex"]}
+          params={{ kind: "film_grain", amount: "0.018", scale: "1.0", seed: "66" }} />
+  </Process>
+
+  <Present from="AnicaProductLaunch" />
+</Graph>

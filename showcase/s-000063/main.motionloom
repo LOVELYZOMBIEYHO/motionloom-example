@@ -1,0 +1,136 @@
+<Graph fps={30} duration="4s" size={[960,540]} renderSize={[960,540]}>
+  <Background color="#0A0E17" />
+  <Scene id="UniversalPuppetWave">
+    <Timeline>
+      <Track id="universal_wave_track" space="screen" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer id="character_layer">
+            <Text value="UNIVERSAL LAYER PUPPET" x="500" y="64"
+                  fontSize="32" fontWeight="900" color="#B9FF39" />
+            <Text value="ONE CAPTURE · LOCAL ARM IK · NO GROUP TARGET"
+                  x="500" y="98" fontSize="14" color="#63D9FF" />
+
+            <!-- The complete character is ordinary Layer artwork. -->
+            <Group id="complete_character_art">
+              <Circle x="145" y="112" radius="58" color="#F8DDCC"
+                      stroke="#5F4B49" strokeWidth="5" />
+              <Path d="M 92 105 C 98 42 177 31 202 98
+                       C 166 69 123 68 92 105 Z"
+                    fill="#52658A" stroke="#25334D" strokeWidth="5" />
+              <Circle x="126" y="110" radius="6" color="#263149" />
+              <Circle x="164" y="110" radius="6" color="#263149" />
+              <Path d="M 127 139 C 140 147 153 147 166 138"
+                    fill="none" stroke="#C47A82" strokeWidth="4" lineCap="round" />
+              <Rect x="80" y="169" width="130" height="245" radius="42"
+                    color="#33425E" stroke="#7183A8" strokeWidth="5" />
+              <Rect x="105" y="212" width="80" height="157" radius="20"
+                    color="#26344D" />
+              <Line x1="111" y1="405" x2="102" y2="496"
+                    stroke="#26344D" strokeWidth="48" lineCap="round" />
+              <Line x1="179" y1="405" x2="191" y2="496"
+                    stroke="#26344D" strokeWidth="48" lineCap="round" />
+
+              <!-- This arm uses the same tested geometry as the rigid IK core. -->
+              <Line x1="210" y1="95" x2="300" y2="185"
+                    stroke="#61739B" strokeWidth="64" lineCap="round" />
+              <Line x1="300" y1="185" x2="474" y2="245"
+                    stroke="#F8DDCC" strokeWidth="54" lineCap="round" />
+              <Circle x="300" y="185" radius="32" color="#53658C" />
+              <Circle x="474" y="245" radius="30" color="#F8DDCC" />
+            </Group>
+
+            <!-- Universal capture: no Group id is used as the target. -->
+            <PuppetWarp id="character_layer_puppet"
+                        target="@layer" capture="before"
+                        mesh="alpha" solver="bones" bend="auto" stretch="0"
+                        jointSoftness="32" preserveVolume="true"
+                        preserveOutside="true"
+                        width="960" height="540" density="16x12">
+              <MeshTopology id="arm_bone_mesh">
+                <Vertex id="a_l" x="187" y="118" bone="upper" />
+                <Vertex id="a_c" x="210" y="95" bone="upper" />
+                <Vertex id="a_r" x="233" y="72" bone="upper" />
+                <Vertex id="ju_l" x="277" y="208" bone="upper" />
+                <Vertex id="ju_c" x="300" y="185" bone="upper" />
+                <Vertex id="ju_r" x="323" y="162" bone="upper" />
+                <Vertex id="jf_l" x="289" y="216" bone="forearm" />
+                <Vertex id="jf_c" x="300" y="185" bone="forearm" />
+                <Vertex id="jf_r" x="311" y="154" bone="forearm" />
+                <Vertex id="w_l" x="420" y="258" bone="forearm" />
+                <Vertex id="w_c" x="430" y="230" bone="forearm" />
+                <Vertex id="w_r" x="440" y="202" bone="forearm" />
+                <Vertex id="h_l" x="462" y="271" bone="hand" />
+                <Vertex id="h_c" x="474" y="245" bone="hand" />
+                <Vertex id="h_r" x="484" y="217" bone="hand" />
+                <Vertex id="hand_0" x="474" y="209" bone="hand" />
+                <Vertex id="hand_1" x="499" y="220" bone="hand" />
+                <Vertex id="hand_2" x="510" y="245" bone="hand" />
+                <Vertex id="hand_3" x="499" y="270" bone="hand" />
+                <Vertex id="hand_4" x="474" y="281" bone="hand" />
+                <Vertex id="hand_5" x="449" y="270" bone="hand" />
+                <Vertex id="hand_6" x="438" y="245" bone="hand" />
+                <Vertex id="hand_7" x="449" y="220" bone="hand" />
+                <Vertex id="j_c" x="300" y="185" bone="joint" />
+                <Vertex id="j_0" x="300" y="153" bone="joint" />
+                <Vertex id="j_1" x="323" y="162" bone="joint" />
+                <Vertex id="j_2" x="332" y="185" bone="joint" />
+                <Vertex id="j_3" x="323" y="208" bone="joint" />
+                <Vertex id="j_4" x="300" y="217" bone="joint" />
+                <Vertex id="j_5" x="277" y="208" bone="joint" />
+                <Vertex id="j_6" x="268" y="185" bone="joint" />
+                <Vertex id="j_7" x="277" y="162" bone="joint" />
+
+                <Triangle id="u0" a="a_l" b="a_c" c="ju_c" />
+                <Triangle id="u1" a="a_l" b="ju_c" c="ju_l" />
+                <Triangle id="u2" a="a_c" b="a_r" c="ju_r" />
+                <Triangle id="u3" a="a_c" b="ju_r" c="ju_c" />
+                <Triangle id="f0" a="jf_l" b="jf_c" c="w_c" />
+                <Triangle id="f1" a="jf_l" b="w_c" c="w_l" />
+                <Triangle id="f2" a="jf_c" b="jf_r" c="w_r" />
+                <Triangle id="f3" a="jf_c" b="w_r" c="w_c" />
+                <Triangle id="h0" a="w_l" b="w_c" c="h_c" />
+                <Triangle id="h1" a="w_l" b="h_c" c="h_l" />
+                <Triangle id="h2" a="w_c" b="w_r" c="h_r" />
+                <Triangle id="h3" a="w_c" b="h_r" c="h_c" />
+                <Triangle id="hd0" a="h_c" b="hand_0" c="hand_1" />
+                <Triangle id="hd1" a="h_c" b="hand_1" c="hand_2" />
+                <Triangle id="hd2" a="h_c" b="hand_2" c="hand_3" />
+                <Triangle id="hd3" a="h_c" b="hand_3" c="hand_4" />
+                <Triangle id="hd4" a="h_c" b="hand_4" c="hand_5" />
+                <Triangle id="hd5" a="h_c" b="hand_5" c="hand_6" />
+                <Triangle id="hd6" a="h_c" b="hand_6" c="hand_7" />
+                <Triangle id="hd7" a="h_c" b="hand_7" c="hand_0" />
+                <Triangle id="j0" a="j_c" b="j_0" c="j_1" />
+                <Triangle id="j1" a="j_c" b="j_1" c="j_2" />
+                <Triangle id="j2" a="j_c" b="j_2" c="j_3" />
+                <Triangle id="j3" a="j_c" b="j_3" c="j_4" />
+                <Triangle id="j4" a="j_c" b="j_4" c="j_5" />
+                <Triangle id="j5" a="j_c" b="j_5" c="j_6" />
+                <Triangle id="j6" a="j_c" b="j_6" c="j_7" />
+                <Triangle id="j7" a="j_c" b="j_7" c="j_0" />
+              </MeshTopology>
+              <PuppetPin id="wave_shoulder" role="anchor" vertex="a_c"
+                         x="210" y="95" targetX="210" targetY="95"
+                         fixed="true" radius="48" strength="8" falloff="constant" />
+              <PuppetPin id="wave_elbow" role="joint" vertex="jf_c"
+                         x="300" y="185" targetX="300" targetY="185"
+                         radius="48" strength="8" falloff="constant" />
+              <PuppetPin id="wave_wrist" role="control" vertex="w_c"
+                         x="430" y="230"
+                         targetX={curve("0:430:linear, 2:350:ease_in_out, 4:430:ease_in_out")}
+                         targetY={curve("0:230:linear, 2:82:ease_in_out, 4:230:ease_in_out")}
+                         radius="48" strength="8" falloff="constant" />
+            </PuppetWarp>
+
+            <!-- These labels are after the capture boundary and stay static. -->
+            <Text value="@layer" x="800" y="442"
+                  fontSize="30" fontWeight="900" color="#B9FF39" />
+            <Text value="CAPTURE BEFORE" x="800" y="474"
+                  fontSize="14" color="#63D9FF" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="UniversalPuppetWave" />
+</Graph>

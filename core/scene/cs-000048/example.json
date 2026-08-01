@@ -1,0 +1,17 @@
+{
+  "id": "cs-000048",
+  "type": "core",
+  "title": "Parametric Component",
+  "domain": "scene",
+  "features": ["scene", "component", "component-params", "reuse"],
+  "dsl": ["Graph", "Background", "Scene", "Defs", "Component", "Param", "Use", "Timeline", "Track", "Sequence", "Layer", "Rect", "Line", "Text", "Present"],
+  "teaches": [
+    "Declare typed Component parameters with Param.",
+    "Bind number and color values through Use.params.",
+    "Create visibly different instances from one reusable component."
+  ],
+  "source_path": "core/scene/cs-000048",
+  "demo_url": "",
+  "related": ["cs-000003"],
+  "requires": ["Graph", "Scene", "Component", "Param", "Use", "Present"]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "s-000065",
+  "type": "showcase",
+  "title": "Fox Tail Chain Puppet",
+  "domain": "scene",
+  "features": ["scene", "puppet-warp", "puppet-pin", "mesh-topology", "spring-chain", "deformation", "curve", "gpu-friendly"],
+  "dsl": ["Graph", "Background", "Scene", "Timeline", "Track", "Sequence", "Layer", "Group", "Rect", "Circle", "Ellipse", "Path", "Text", "PuppetWarp", "MeshTopology", "Vertex", "Triangle", "PuppetPin", "SpringChain", "Present"],
+  "teaches": ["Rig a fox tail with a non-branching parent-linked pin chain.", "Move one tip controller while fixed-length segments follow.", "Combine authored tip curves with deterministic spring overlap."],
+  "source_path": "showcase/s-000065",
+  "demo_url": "",
+  "related": ["cs-000057", "csim-000008", "s-000058"],
+  "requires": ["Graph", "Scene", "Layer", "PuppetWarp", "MeshTopology", "PuppetPin", "SpringChain", "Present"]
+}

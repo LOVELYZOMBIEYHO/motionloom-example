@@ -1,0 +1,48 @@
+<Graph fps={30} duration="4s" size={[640,360]} renderSize={[640,360]}>
+  <Background color="#07111F" />
+
+  <Scene id="advanced_layout_core">
+    <Timeline>
+      <Track id="advanced_layout_track" space="screen" z="0">
+        <Sequence from="0s" duration="4s" out="hold">
+          <Layer id="advanced_layout_layer">
+            <Text x="320" y="42" value="LAYOUT ALIGN + JUSTIFY + SPAN"
+                  fontSize="20" fontWeight="900" color="#F8FAFC" />
+            <Layout id="dashboard_grid" mode="grid" x="50" y="72"
+                    width="540" height="255" columns="4"
+                    itemWidth="110" itemHeight="70"
+                    padding={[16,20]} rowGap="18" columnGap="16"
+                    align="center" justify="spaceBetween">
+              <Group layoutSpan="2">
+                <Rect x="0" y="0" width="240" height="70" radius="16" color="#0E7490" />
+                <Text x="120" y="43" value="SPAN 2" fontSize="20" color="#FFFFFF" />
+              </Group>
+              <Group>
+                <Rect x="0" y="0" width="110" height="70" radius="16" color="#7C3AED" />
+                <Text x="55" y="43" value="B" fontSize="20" color="#FFFFFF" />
+              </Group>
+              <Group>
+                <Rect x="0" y="0" width="110" height="70" radius="16" color="#047857" />
+                <Text x="55" y="43" value="C" fontSize="20" color="#FFFFFF" />
+              </Group>
+              <Group>
+                <Rect x="0" y="0" width="110" height="70" radius="16" color="#BE123C" />
+                <Text x="55" y="43" value="D" fontSize="20" color="#FFFFFF" />
+              </Group>
+              <Group layoutSpan="2">
+                <Rect x="0" y="0" width="240" height="70" radius="16" color="#B45309" />
+                <Text x="120" y="43" value="SPAN 2" fontSize="20" color="#FFFFFF" />
+              </Group>
+              <Group>
+                <Rect x="0" y="0" width="110" height="70" radius="16" color="#1D4ED8" />
+                <Text x="55" y="43" value="F" fontSize="20" color="#FFFFFF" />
+              </Group>
+            </Layout>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="advanced_layout_core" />
+</Graph>

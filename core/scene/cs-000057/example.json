@@ -1,0 +1,13 @@
+{
+  "id": "cs-000057",
+  "type": "core",
+  "title": "Parent-Linked Chain Puppet",
+  "domain": "scene",
+  "features": ["scene", "puppet-warp", "puppet-pin", "mesh-topology", "spring-chain", "deformation", "curve"],
+  "dsl": ["Graph", "Background", "Scene", "Timeline", "Track", "Sequence", "Layer", "Group", "Path", "PuppetWarp", "MeshTopology", "Vertex", "Triangle", "PuppetPin", "SpringChain", "Text", "Present"],
+  "teaches": ["Create a serial root-to-tip pin hierarchy with explicit parent ids.", "Preserve each authored segment length while moving the final control.", "Add deterministic SpringChain follow-through without changing soft or bone rigs."],
+  "source_path": "core/scene/cs-000057",
+  "demo_url": "",
+  "related": ["cs-000055", "cs-000056", "csim-000008"],
+  "requires": ["Graph", "Scene", "Layer", "PuppetWarp", "MeshTopology", "PuppetPin", "SpringChain", "Present"]
+}

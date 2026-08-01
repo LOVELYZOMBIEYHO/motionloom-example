@@ -1,0 +1,13 @@
+{
+  "id": "cs-000060",
+  "type": "core",
+  "title": "GLB Draco Model in a Unified Scene",
+  "domain": "scene",
+  "features": ["scene", "assets", "gltf", "glb", "draco", "true-3d", "composite-group", "composite-order", "render-pass-dag"],
+  "dsl": ["Graph", "Assets", "ModelAsset", "Background", "Scene", "Timeline", "Track", "Sequence", "CompositeGroup", "Camera3D", "Model", "Layer", "Text", "Present"],
+  "teaches": ["Declare a Draco-compressed GLB once in the Graph Assets block.", "Render true 3D inside a Scene CompositeGroup without using the removed World tag.", "Composite a 3D model pass and screen-space title through one ordered Scene pipeline."],
+  "source_path": "core/scene/cs-000060",
+  "demo_url": "",
+  "related": ["cs-000059"],
+  "requires": ["Graph", "Assets", "ModelAsset", "Scene", "CompositeGroup", "Camera3D", "Model", "Present"]
+}

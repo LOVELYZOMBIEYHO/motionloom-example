@@ -1,0 +1,17 @@
+{
+  "id": "s-000060",
+  "type": "showcase",
+  "title": "Parametric City",
+  "domain": "scene",
+  "features": ["scene", "parametric-component", "component-params", "data-driven-shape", "gpu-friendly"],
+  "dsl": ["Graph", "Background", "Scene", "Defs", "Component", "Param", "Use", "Repeat", "Timeline", "Track", "Sequence", "Layer", "Rect", "Line", "Circle", "Path", "Text", "Present", "curve"],
+  "teaches": [
+    "Build five different tower silhouettes from one parameterized component.",
+    "Bind numeric geometry and color inputs through Use.params.",
+    "Keep parameterized artwork compatible with the normal scene render pipeline."
+  ],
+  "source_path": "showcase/s-000060",
+  "demo_url": "",
+  "related": ["cs-000048", "cs-000003"],
+  "requires": ["Graph", "Scene", "Component", "Param", "Use", "Present"]
+}

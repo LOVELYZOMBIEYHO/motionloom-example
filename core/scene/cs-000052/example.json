@@ -1,0 +1,17 @@
+{
+  "id": "cs-000052",
+  "type": "core",
+  "title": "Weighted Repeat Variants",
+  "domain": "scene",
+  "features": ["scene", "repeat", "weighted-variants", "vary", "deterministic-random"],
+  "dsl": ["Graph", "Background", "Scene", "Timeline", "Track", "Sequence", "Layer", "Repeat", "Variants", "Vary", "Circle", "Rect", "Path", "Text", "Present"],
+  "teaches": [
+    "Choose repeated artwork through deterministic weights.",
+    "Vary colors from a literal set.",
+    "Vary numeric transform properties from seeded ranges."
+  ],
+  "source_path": "core/scene/cs-000052",
+  "demo_url": "",
+  "related": ["cs-000049"],
+  "requires": ["Graph", "Scene", "Repeat", "Variants", "Vary", "Present"]
+}

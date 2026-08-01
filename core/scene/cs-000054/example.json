@@ -1,0 +1,13 @@
+{
+  "id": "cs-000054",
+  "type": "core",
+  "title": "Bone Puppet Two-Bone IK",
+  "domain": "scene",
+  "features": ["scene", "puppet-warp", "puppet-pin", "ik-controls", "mesh-topology", "deformation", "curve"],
+  "dsl": ["Graph", "Background", "Scene", "Timeline", "Track", "Sequence", "Layer", "Group", "Line", "Circle", "PuppetWarp", "MeshTopology", "Vertex", "Triangle", "PuppetPin", "Present"],
+  "teaches": ["Use solver=bones with anchor, joint, and control roles.", "Preserve upper-arm and forearm length while a wrist control moves.", "Bind mesh vertices to rigid upper, forearm, hand, and joint regions."],
+  "source_path": "core/scene/cs-000054",
+  "demo_url": "",
+  "related": ["cs-000047", "s-000058"],
+  "requires": ["Graph", "Scene", "Group", "PuppetWarp", "MeshTopology", "PuppetPin", "Present"]
+}

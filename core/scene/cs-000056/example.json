@@ -1,0 +1,44 @@
+{
+  "id": "cs-000056",
+  "type": "core",
+  "title": "Alpha Surface Position and Bend Pins",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "puppet-warp",
+    "alpha-mesh",
+    "position-pin",
+    "bend-pin",
+    "mesh-topology",
+    "deformation",
+    "curve"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Path",
+    "Circle",
+    "PuppetWarp",
+    "MeshTopology",
+    "Vertex",
+    "Triangle",
+    "PuppetPin",
+    "Text",
+    "Present"
+  ],
+  "teaches": [
+    "Triangulate only the visible artwork instead of the full canvas.",
+    "Add unlimited arbitrary Position and Bend pins without semantic body-part roles.",
+    "Use Bend Pin rotation to rotate a local part of a soft deformation surface."
+  ],
+  "source_path": "core/scene/cs-000056",
+  "demo_url": "",
+  "related": ["cs-000047", "cs-000055", "s-000058"],
+  "requires": ["Graph", "Scene", "Layer", "PuppetWarp", "MeshTopology", "PuppetPin", "Present"]
+}

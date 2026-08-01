@@ -1,0 +1,39 @@
+<Graph fps={30} duration="3s" size={[640,360]} renderSize={[640,360]}>
+  <Background color="#101722" />
+  <Scene id="UniversalLayerPuppetCore">
+    <Timeline>
+      <Track id="universal_layer_track" space="screen" z="0">
+        <Sequence from="0s" duration="3s" out="hold">
+          <Layer id="universal_layer">
+            <Rect x="110" y="105" width="420" height="150" radius="34"
+                  color="#23334B" stroke="#6383AE" strokeWidth="4" />
+            <Circle x="205" y="180" radius="48" color="#77D8FF" />
+            <Circle x="435" y="180" radius="48" color="#B9FF39" />
+            <Line x1="205" y1="180" x2="435" y2="180"
+                  stroke="#EAF2FF" strokeWidth="26" lineCap="round" />
+
+            <!-- Universal mode captures every earlier visual sibling once. -->
+            <PuppetWarp id="universal_layer_warp"
+                        target="@layer" capture="before"
+                        mesh="alpha" solver="arap"
+                        width="640" height="360" density="16x10">
+              <PuppetPin id="layer_anchor"
+                         x="205" y="180" targetX="205" targetY="180"
+                         fixed="true" radius="115" strength="1" falloff="smooth" />
+              <PuppetPin id="layer_control"
+                         x="435" y="180"
+                         targetX={curve("0:435:linear, 1.5:470:ease_in_out, 3:435:ease_in_out")}
+                         targetY={curve("0:180:linear, 1.5:105:ease_in_out, 3:180:ease_in_out")}
+                         radius="145" strength="1" falloff="smooth" />
+            </PuppetWarp>
+
+            <!-- Nodes after the warp are overlays and are not captured. -->
+            <Text value="@layer · capture=before" x="320" y="320"
+                  fontSize="18" fontWeight="700" color="#B9FF39" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="UniversalLayerPuppetCore" />
+</Graph>

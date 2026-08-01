@@ -1,0 +1,17 @@
+{
+  "id": "cs-000053",
+  "type": "core",
+  "title": "Advanced Declarative Layout",
+  "domain": "scene",
+  "features": ["scene", "layout", "padding", "alignment", "justification", "span"],
+  "dsl": ["Graph", "Background", "Scene", "Timeline", "Track", "Sequence", "Layer", "Layout", "Group", "Rect", "Text", "Present"],
+  "teaches": [
+    "Create internal Layout space with padding and independent gaps.",
+    "Distribute grid columns with align and justify.",
+    "Reserve multiple layout cells with layoutSpan."
+  ],
+  "source_path": "core/scene/cs-000053",
+  "demo_url": "",
+  "related": ["cs-000050"],
+  "requires": ["Graph", "Scene", "Layout", "Present"]
+}

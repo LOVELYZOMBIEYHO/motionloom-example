@@ -1,0 +1,56 @@
+{
+  "id": "ct-000013",
+  "type": "core",
+  "title": "Transparent Subtitle Shadow",
+  "domain": "text",
+  "features": [
+    "text",
+    "subtitle",
+    "transparent-background",
+    "drop-shadow",
+    "condensed-font"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Text",
+    "TextAnimator",
+    "Style",
+    "Present",
+    "fontFamily",
+    "fontWeight",
+    "textGap",
+    "shadowColor",
+    "shadowX",
+    "shadowY",
+    "shadowBlur"
+  ],
+  "teaches": [
+    "Use a transparent Background for overlay-ready subtitle exports.",
+    "Use Impact with a heavy weight for compact condensed subtitle lettering.",
+    "Add a soft downward shadow with TextAnimator Style shadow properties."
+  ],
+  "source_path": "core/text/ct-000013",
+  "demo_url": "",
+  "related": [
+    "ct-000004",
+    "ct-000012"
+  ],
+  "requires": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Text",
+    "TextAnimator",
+    "Present"
+  ]
+}

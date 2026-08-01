@@ -11,9 +11,16 @@
     "cw-000002",
     "cm-000001"
   ],
+  "alignment": [
+    "cs-000053"
+  ],
   "alpha": [
     "cp-000011",
     "cpt-000002"
+  ],
+  "alpha-mesh": [
+    "cs-000055",
+    "cs-000056"
   ],
   "animation-target": [
     "cs-000036",
@@ -21,6 +28,9 @@
   ],
   "antialias": [
     "ct-000012"
+  ],
+  "assets": [
+    "cs-000060"
   ],
   "attraction": [
     "csim-000003"
@@ -30,6 +40,12 @@
   ],
   "auto-mesh": [
     "cs-000034"
+  ],
+  "automatic-positioning": [
+    "cs-000050"
+  ],
+  "bend-pin": [
+    "cs-000056"
   ],
   "blend": [
     "cs-000046"
@@ -52,6 +68,9 @@
     "cs-000037",
     "cw-000003"
   ],
+  "boolean-param": [
+    "cs-000051"
+  ],
   "brightness": [
     "cp-000001"
   ],
@@ -66,6 +85,9 @@
   ],
   "capsule-collision": [
     "csim-000005"
+  ],
+  "capture-before": [
+    "cs-000055"
   ],
   "character-action": [
     "cs-000033",
@@ -105,11 +127,32 @@
   ],
   "component": [
     "cs-000003",
-    "cs-000025"
+    "cs-000025",
+    "cs-000048",
+    "cs-000051"
+  ],
+  "component-params": [
+    "cs-000048"
+  ],
+  "composite-group": [
+    "cs-000059",
+    "cs-000060"
+  ],
+  "composite-order": [
+    "cs-000059",
+    "cs-000060"
+  ],
+  "condensed-font": [
+    "ct-000013"
   ],
   "curve": [
     "cs-000004",
-    "cs-000047"
+    "cs-000047",
+    "cs-000054",
+    "cs-000055",
+    "cs-000056",
+    "cs-000057",
+    "cs-000058"
   ],
   "curve-animation": [
     "cs-000027",
@@ -128,17 +171,37 @@
   ],
   "deformation": [
     "cs-000034",
-    "cs-000035"
+    "cs-000035",
+    "cs-000054",
+    "cs-000055",
+    "cs-000056",
+    "cs-000057",
+    "cs-000058"
   ],
   "defs": [
     "cs-000005",
     "cs-000025"
   ],
+  "derived": [
+    "cs-000051"
+  ],
+  "deterministic-random": [
+    "cs-000052"
+  ],
   "deterministic-timestep": [
     "csim-000012"
   ],
+  "deterministic-variation": [
+    "cs-000049"
+  ],
   "distance-constraint": [
     "csim-000006"
+  ],
+  "draco": [
+    "cs-000060"
+  ],
+  "drop-shadow": [
+    "ct-000013"
   ],
   "dynamic-curve": [
     "csim-000001"
@@ -153,6 +216,12 @@
     "cs-000040",
     "cs-000043",
     "ct-000012"
+  ],
+  "effect-scope": [
+    "cs-000059"
+  ],
+  "enum-param": [
+    "cs-000051"
   ],
   "environment": [
     "cw-000006"
@@ -181,6 +250,9 @@
   "glass": [
     "cs-000046"
   ],
+  "glb": [
+    "cs-000060"
+  ],
   "glb-asset": [
     "cw-000006"
   ],
@@ -193,6 +265,9 @@
   ],
   "glow-stack": [
     "cp-000008"
+  ],
+  "gltf": [
+    "cs-000060"
   ],
   "gpu-friendly": [
     "cs-000040",
@@ -236,6 +311,9 @@
   "gravity": [
     "csim-000001"
   ],
+  "grid": [
+    "cs-000050"
+  ],
   "group": [
     "cs-000007",
     "cs-000041"
@@ -260,12 +338,18 @@
   "ik": [
     "cs-000033"
   ],
+  "ik-controls": [
+    "cs-000054"
+  ],
   "image": [
     "cs-000008"
   ],
   "image-asset": [
     "cs-000026",
     "cw-000006"
+  ],
+  "justification": [
+    "cs-000053"
   ],
   "keyframe-animation": [
     "cs-000036",
@@ -290,6 +374,8 @@
   ],
   "layout": [
     "cs-000026",
+    "cs-000050",
+    "cs-000053",
     "ct-000002",
     "ct-000003",
     "ct-000004",
@@ -312,6 +398,9 @@
   "light-sweep": [
     "cp-000010",
     "cpt-000001"
+  ],
+  "limb-envelope": [
+    "cs-000058"
   ],
   "line": [
     "cs-000010",
@@ -342,7 +431,10 @@
     "cs-000013"
   ],
   "mesh-topology": [
-    "cs-000035"
+    "cs-000035",
+    "cs-000054",
+    "cs-000056",
+    "cs-000057"
   ],
   "noise": [
     "cs-000044"
@@ -351,6 +443,9 @@
     "cs-000041",
     "cp-000011",
     "cpt-000002"
+  ],
+  "padding": [
+    "cs-000053"
   ],
   "paper-texture": [
     "cp-000013"
@@ -388,6 +483,9 @@
     "cs-000033",
     "cw-000005"
   ],
+  "position-pin": [
+    "cs-000056"
+  ],
   "procedural": [
     "cs-000046"
   ],
@@ -411,16 +509,27 @@
     "cpt-000003",
     "cm-000001"
   ],
+  "process-effect": [
+    "cs-000059"
+  ],
   "puppet": [
     "cs-000034",
     "cs-000035",
     "cs-000037"
   ],
   "puppet-pin": [
-    "cs-000047"
+    "cs-000047",
+    "cs-000054",
+    "cs-000057",
+    "cs-000058"
   ],
   "puppet-warp": [
-    "cs-000047"
+    "cs-000047",
+    "cs-000054",
+    "cs-000055",
+    "cs-000056",
+    "cs-000057",
+    "cs-000058"
   ],
   "radialgradient": [
     "cs-000016"
@@ -441,11 +550,25 @@
   "region": [
     "cs-000035"
   ],
+  "render-pass-dag": [
+    "cs-000059",
+    "cs-000060"
+  ],
   "render-scale": [
     "ct-000012"
   ],
+  "repeat": [
+    "cs-000049",
+    "cs-000052"
+  ],
+  "reuse": [
+    "cs-000048"
+  ],
   "rigid-body-2d": [
     "csim-000009"
+  ],
+  "scatter": [
+    "cs-000049"
   ],
   "scene": [
     "cs-000018",
@@ -466,6 +589,19 @@
     "cs-000045",
     "cs-000046",
     "cs-000047",
+    "cs-000048",
+    "cs-000049",
+    "cs-000050",
+    "cs-000051",
+    "cs-000052",
+    "cs-000053",
+    "cs-000054",
+    "cs-000055",
+    "cs-000056",
+    "cs-000057",
+    "cs-000058",
+    "cs-000059",
+    "cs-000060",
     "cm-000001"
   ],
   "semantic-bind": [
@@ -498,13 +634,23 @@
   "sin": [
     "cs-000020"
   ],
+  "slot": [
+    "cs-000051"
+  ],
   "soft-edge": [
     "cs-000043",
     "cs-000045",
     "ct-000012"
   ],
+  "span": [
+    "cs-000053"
+  ],
   "spring-chain": [
+    "cs-000057",
     "csim-000008"
+  ],
+  "subtitle": [
+    "ct-000013"
   ],
   "text": [
     "cs-000021",
@@ -523,7 +669,8 @@
     "ct-000009",
     "ct-000010",
     "ct-000011",
-    "ct-000012"
+    "ct-000012",
+    "ct-000013"
   ],
   "text-box": [
     "ct-000001"
@@ -564,17 +711,35 @@
     "cs-000023",
     "cs-000038"
   ],
+  "transparent-background": [
+    "ct-000013"
+  ],
   "triangle": [
     "cs-000035"
+  ],
+  "true-3d": [
+    "cs-000060"
   ],
   "turbulence": [
     "csim-000002"
   ],
+  "two-bone-ik": [
+    "cs-000058"
+  ],
+  "universal-layer-target": [
+    "cs-000055"
+  ],
   "use": [
     "cs-000024"
   ],
+  "vary": [
+    "cs-000052"
+  ],
   "vertex": [
     "cs-000035"
+  ],
+  "weighted-variants": [
+    "cs-000052"
   ],
   "wind": [
     "csim-000002"
