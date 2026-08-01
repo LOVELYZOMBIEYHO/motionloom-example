@@ -8,8 +8,8 @@ with MotionLoom curves, native vector artwork, and GPU render passes.
 1. **0.00–3.10s — Launch identity:** RGB energy fields introduce Anica Motion.
 2. **3.10–6.48s — HTML-in-canvas:** a glass interface card enters and exits
    while the phone chapter begins underneath it at 5.58 seconds.
-3. **5.58–9.62s — Device demonstration:** a local true-3D device, a reconstructed
-   product interface, and a DSL-authored pointer animate together.
+3. **5.58–9.62s — Device demonstration:** the true-3D iPhone GLB enters, turns,
+   and exits without a screen-space phone illustration covering the model.
 4. **9.66–13.50s — Prompt workflow:** the command and AI scene request appear
    in the cream desktop interface.
 5. **13.50–17.02s — RGB capability cut:** layered chromatic typography and
@@ -21,8 +21,8 @@ with MotionLoom curves, native vector artwork, and GPU render passes.
 
 The device uses the checked-in `assets/iphone.glb` model and loads it from the
 MotionLoom example repository's raw GitHub URL so browser and WASM previews can
-resolve it after publication. The pointer, Anica identity mark, animated color
-fields, shapes, and text are authored directly in MotionLoom DSL.
+resolve it after publication. The Anica identity mark, animated color fields,
+shapes, and text are authored directly in MotionLoom DSL.
 
 The phone model is **Apple iPhone 15 Pro Max Black** by
 [polyman](https://sketchfab.com/Polyman_3D), sourced from
