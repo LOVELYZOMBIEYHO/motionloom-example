@@ -1,0 +1,303 @@
+<!--
+=====================================================================
+S70 · SPARTAN DECK VAULT
+3.2 s · 1920x1080 · 30 fps · one Jump_Over clip · three camera cuts
+
+The same imported Mixamo Jump Over performance is sampled continuously inside
+the mv_spartan.glb environment. Surface and Anchor declarations provide one
+shared coordinate vocabulary for the actor root, ground and three cameras:
+  0.00-0.82  establishing view across the vessel deck
+  0.82-1.68  close contact view over the covered hold
+  1.68-3.20  reverse landing view toward the wheelhouse
+=====================================================================
+-->
+<Graph fps={30} duration="3.2s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Assets>
+    <ModelAsset id="s70_character1_model"
+                src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/character1/character1.glb" />
+    <ModelAsset id="s70_spartan_environment"
+                src="assets/environment/mv_spartan.glb" />
+    <AnimationAsset id="s70_jump_clip" src="assets/actions/Jump Over.glb" />
+    <ImageAsset id="s70_deck_light"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPj/HwADAgH/5ncLrgAAAABJRU5ErkJggg==" />
+  </Assets>
+
+  <Action id="s70_jump_over"
+          source="s70_jump_clip"
+          sourceProfile="mixamo_humanoid"
+          clip="Jump_Over"
+          skeleton="humanoid_v1" duration="3s">
+    <Marker id="takeoff" role="takeoff" time="0.62s" />
+    <Marker id="contact" role="contact" time="1.42s" />
+    <Marker id="landing" role="landing" time="2.34s" />
+  </Action>
+
+  <ModelProfile id="s70_character1_profile" kind="3d" model="s70_character1_model"
+                preset="humanoid_v1">
+    <Retarget preset="humanoid_v1">
+      <Map from="pelvis" to="hips" />
+      <Map from="spine_01" to="spine" />
+      <Map from="spine_03" to="chest" />
+      <Map from="neck_01" to="neck" />
+      <Map from="Head" to="head" />
+      <Map from="clavicle_l" to="shoulder_l" />
+      <Map from="upperarm_l" to="upper_arm_l" />
+      <Map from="lowerarm_l" to="forearm_l" />
+      <Map from="hand_l" to="hand_l" />
+      <Map from="clavicle_r" to="shoulder_r" />
+      <Map from="upperarm_r" to="upper_arm_r" />
+      <Map from="lowerarm_r" to="forearm_r" />
+      <Map from="hand_r" to="hand_r" />
+      <Map from="thigh_l" to="upper_leg_l" />
+      <Map from="calf_l" to="lower_leg_l" />
+      <Map from="foot_l" to="foot_l" />
+      <Map from="ball_l" to="toe_l" />
+      <Map from="thigh_r" to="upper_leg_r" />
+      <Map from="calf_r" to="lower_leg_r" />
+      <Map from="foot_r" to="foot_r" />
+      <Map from="ball_r" to="toe_r" />
+    </Retarget>
+    <BoneAxisMap>
+      <Axis bone="hips" turn="rotationY:1" />
+      <Axis bone="spine" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="chest" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="neck" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="head" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="upper_arm_l" forward="rotationX:1" side="rotationZ:1"
+            twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
+      <Axis bone="forearm_l" bend="rotationX:1" twist="rotationY:1" />
+      <Axis bone="upper_arm_r" forward="rotationX:1" side="rotationZ:-1"
+            twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
+      <Axis bone="forearm_r" bend="rotationX:1" twist="rotationY:1" />
+      <Axis bone="upper_leg_l" forward="rotationX:-1" side="rotationZ:-1"
+            twist="rotationY:1" />
+      <Axis bone="lower_leg_l" bend="rotationX:-1" twist="rotationY:1" />
+      <Axis bone="upper_leg_r" forward="rotationX:-1" side="rotationZ:1"
+            twist="rotationY:1" />
+      <Axis bone="lower_leg_r" bend="rotationX:-1" twist="rotationY:1" />
+    </BoneAxisMap>
+  </ModelProfile>
+
+  <ApplyAction target="s70_runner" action="s70_jump_over" at="0s"
+               duration="3s" loop="false" speed="1"
+               rootMotion="match_target"
+               takeoff="s70_takeoff" contact="s70_contact"
+               landing="s70_landing" destination="s70_landing"
+               face="s70_landing" ground="s70_deck_surface"
+               groundOffset="-0.58" footLock="auto"
+               blendIn="0s" blendOut="0s" mask="full_body" />
+
+  <Background color="#040713" />
+
+  <Scene id="S70SpartanDeckVault">
+    <Defs>
+      <LinearGradient id="s70_sky" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#101A42, 0.52:#101633, 1:#050816" />
+      <LinearGradient id="s70_roof" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#18294A, 0.25:#0D1830, 1:#050814" />
+      <LinearGradient id="s70_glass" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#294A78, 0.45:#142748, 1:#091327" />
+      <RadialGradient id="s70_cyan_glow" cx="0.5" cy="0.5" r="0.5"
+                      stops="0:#8EF9FF, 0.3:#36DDED88, 1:#2ACDDF00" />
+      <RadialGradient id="s70_magenta_glow" cx="0.5" cy="0.5" r="0.5"
+                      stops="0:#FFB5F2, 0.32:#E95BC877, 1:#D446C400" />
+      <RadialGradient id="s70_vignette" cx="0.5" cy="0.5" r="0.72"
+                      stops="0:#00000000, 0.58:#00000018, 1:#000000B8" />
+    </Defs>
+
+    <Timeline>
+      <Track id="s70_environment" space="screen" compositeOrder="10">
+        <Sequence from="0s" duration="3.2s" out="hold">
+          <Layer space="screen">
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#s70_sky)" />
+
+            <!-- Cut 1: symmetrical frontal roof, like the first reference. -->
+            <Group opacity="0">
+              <Rect x="0" y="620" width="1920" height="460" fill="url(#s70_roof)" />
+              <Rect x="72" y="180" width="340" height="440" color="#09142B" />
+              <Rect x="1510" y="150" width="350" height="470" color="#081228" />
+              <Path d="M 690 620 L 770 200 L 1130 200 L 1245 620 Z"
+                    fill="url(#s70_glass)" />
+              <Line x1="770" y1="200" x2="1130" y2="200"
+                    stroke="#A8EFFF" strokeWidth="9" opacity="0.78" />
+              <Repeat count="9" x="0" y="0" xStep="36" opacity="0.75">
+                <Rect x="805" y="275" width="8" height="16" color="#E6A6FF" />
+                <Rect x="805" y="330" width="8" height="12" color="#7EEBFF" />
+                <Rect x="805" y="390" width="8" height="19" color="#B99CFF" />
+              </Repeat>
+              <Rect x="0" y="682" width="1920" height="24" color="#121F39" />
+              <Repeat count="18" x="0" y="0" xStep="116">
+                <Line x1="18" y1="645" x2="18" y2="790"
+                      stroke="#324A6B" strokeWidth="9" />
+              </Repeat>
+              <Line x1="0" y1="652" x2="1920" y2="652"
+                    stroke="#6884A8" strokeWidth="12" />
+              <Line x1="0" y1="754" x2="1920" y2="754"
+                    stroke="#273D5C" strokeWidth="8" />
+            </Group>
+
+            <!-- Cut 2: ground-level diagonal roof and landing strip. -->
+            <Group opacity="0">
+              <Rect x="0" y="0" width="1920" height="1080" color="#080D21" />
+              <Path d="M 0 690 L 1920 520 L 1920 1080 L 0 1080 Z"
+                    fill="url(#s70_roof)" />
+              <Path d="M 0 250 L 460 170 L 560 620 L 0 690 Z" color="#0B1730" />
+              <Path d="M 1920 120 L 1440 210 L 1300 575 L 1920 520 Z" color="#101B34" />
+              <Line x1="0" y1="690" x2="1920" y2="520"
+                    stroke="#6A83A8" strokeWidth="12" opacity="0.7" />
+              <Line x1="0" y1="935" x2="1920" y2="680"
+                    stroke="#223A5E" strokeWidth="7" />
+              <Line x1="220" y1="1080" x2="1460" y2="590"
+                    stroke="#42DDE8" strokeWidth="5" opacity="0.42" />
+              <Circle x="1430" y="585" radius="180" fill="url(#s70_cyan_glow)"
+                      blend="screen" opacity="0.38" />
+            </Group>
+
+            <!-- Cut 3: rear-side service alley with aggressive perspective. -->
+            <Group opacity="0">
+              <Rect x="0" y="0" width="1920" height="1080" color="#070B18" />
+              <Path d="M 0 0 L 700 0 L 830 1080 L 0 1080 Z" color="#0B152B" />
+              <Path d="M 1920 0 L 1370 0 L 1110 1080 L 1920 1080 Z" color="#0D1830" />
+              <Path d="M 700 0 L 1370 0 L 1110 1080 L 830 1080 Z"
+                    fill="url(#s70_sky)" />
+              <Repeat count="8" x="0" y="0" yStep="112">
+                <Line x1="30" y1="110" x2="680" y2="110"
+                      stroke="#26395B" strokeWidth="8" />
+                <Line x1="1400" y1="110" x2="1890" y2="110"
+                      stroke="#3B315D" strokeWidth="7" />
+              </Repeat>
+              <Line x1="830" y1="1080" x2="930" y2="470"
+                    stroke="#4EE8F2" strokeWidth="7" opacity="0.55" />
+              <Line x1="1110" y1="1080" x2="990" y2="470"
+                    stroke="#EA6DD0" strokeWidth="7" opacity="0.45" />
+              <Circle x="770" y="770" radius="210" fill="url(#s70_cyan_glow)"
+                      blend="screen" opacity="0.28" />
+              <Circle x="1240" y="550" radius="220" fill="url(#s70_magenta_glow)"
+                      blend="screen" opacity="0.24" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="s70_character" space="3d" compositeOrder="40">
+        <Sequence from="0s" duration="3.2s" out="hold">
+          <CompositeGroup id="s70_3d_island" space="3d" depth="true" format="rgba16f">
+            <Environment id="s70_spartan"
+                         asset="s70_spartan_environment"
+                         static="true" collision="mesh"
+                         up="+Y" forward="+X" unitScale="1"
+                         scaleMode="normalize_height"
+                         castShadow="true" receiveShadow="true"
+                         position={[0,0,0]} rotation={[0,0,0]} scale="8"
+                         exposure="1.15">
+              <!-- Geometry-derived semantic surfaces in transformed GLB space. -->
+              <Surface id="s70_deck_surface" kind="ground" space="asset"
+                       height="3.6116223"
+                       normal={[-0.01527196,0.9997723,0.014906186]}
+                       centroid={[2.1131961,3.6116214,0.104578935]}
+                       boundsMin={[-8.417,3.5169,-2.8465]}
+                       boundsMax={[8.6912,3.7173,3.1697]} />
+              <Surface id="s70_hold_obstacle" kind="obstacle" space="asset"
+                       height="4.472035"
+                       normal={[0.016691484,0.99985886,-0.0018993911]}
+                       centroid={[-2.1497872,4.4720373,0.056119364]}
+                       boundsMin={[-11.1939,4.3633,-2.7139]}
+                       boundsMax={[6.7327,4.5863,3.0858]} />
+              <Anchor id="s70_takeoff" surface="s70_deck_surface"
+                      uv={[0.20,0.45]} offset={[0,0,0]} />
+              <Anchor id="s70_contact" surface="s70_deck_surface"
+                      uv={[0.30,0.45]} offset={[0,1.0,0]} />
+              <Anchor id="s70_landing" surface="s70_deck_surface"
+                      uv={[0.40,0.45]} offset={[0,0,0]} />
+              <Anchor id="s70_camera_establish_pos" surface="s70_deck_surface"
+                      uv={[0.30,0.15]} offset={[0,3.4,7.0]} />
+              <Anchor id="s70_camera_contact_pos" surface="s70_deck_surface"
+                      uv={[0.30,0.20]} offset={[-4.0,3.5,6.0]} />
+              <Anchor id="s70_camera_follow_pos" surface="s70_deck_surface"
+                      uv={[0.36,0.20]} offset={[4.0,3.8,6.0]} />
+            </Environment>
+
+            <EnvironmentDebug axes="true" bounds="true" surfaces="true"
+                              anchors="true" actionPath="true" cameras="true" />
+
+            <EnvironmentLight id="s70_environment_light"
+                              asset="s70_deck_light" intensity="1.35" />
+
+            <Model id="s70_runner"
+                   asset="s70_character1_model"
+                   profile="s70_character1_profile"
+                   collision="kinematic"
+                   position="@s70_takeoff"
+                   rotationY="0"
+                   scale="1.35"
+                   exposure="1.8" />
+
+            <Camera3D id="s70_camera_front"
+                      position="@s70_camera_establish_pos"
+                      target="@s70_contact"
+                      up={[0,1,0]} horizonLock="true" roll="0" fov="35" />
+            <Camera3D id="s70_camera_low"
+                      position="@s70_camera_contact_pos"
+                      target="@s70_contact"
+                      up={[0,1,0]} horizonLock="true" roll="-2" fov="32" />
+            <Camera3D id="s70_camera_rear"
+                      position="@s70_camera_follow_pos"
+                      target="@s70_landing"
+                      up={[0,1,0]} horizonLock="true" roll="1.5" fov="34" />
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+
+      <Track id="s70_speed_graphics" space="screen" compositeOrder="55">
+        <Sequence from="0s" duration="3.2s" out="hold">
+          <Layer space="screen">
+            <Group opacity={curve("0:0.12:linear, 0.35:0.48:ease_out, 0.82:0.08:ease_in, 1.15:0.46:ease_out, 1.72:0.12:ease_in, 2.25:0.52:ease_out, 3.2:0:ease_in")}>
+              <Line x1="110" y1="330" x2="560" y2="510"
+                    stroke="#65ECFF" strokeWidth="7" opacity="0.5" />
+              <Line x1="1810" y1="250" x2="1330" y2="480"
+                    stroke="#EF79DA" strokeWidth="6" opacity="0.42" />
+              <Line x1="80" y1="850" x2="620" y2="690"
+                    stroke="#8CB8FF" strokeWidth="5" opacity="0.34" />
+              <Line x1="1840" y1="820" x2="1320" y2="670"
+                    stroke="#9B8CFF" strokeWidth="5" opacity="0.32" />
+            </Group>
+            <Rect x="0" y="0" width="1920" height="1080"
+                  fill="url(#s70_vignette)" opacity="0.72" />
+            <Group opacity={curve("0:1:linear, 0.55:1:linear, 0.8:0:ease_in, 3.2:0:linear")}>
+              <Text x="74" y="930" value="SPARTAN DECK / JUMP OVER"
+                    fontFamily="Arial" fontSize="24" fontWeight="800"
+                    tracking="7" color="#E9F8FF" />
+              <Text x="74" y="970" value="ONE ACTION · ONE GLB ENVIRONMENT · THREE CAMERAS"
+                    fontFamily="Arial" fontSize="14" fontWeight="700"
+                    tracking="6" color="#64DBEB" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+
+    <Effects>
+      <Effect process="S70Finish" />
+    </Effects>
+  </Scene>
+
+  <AnimationTarget node="S70SpartanDeckVault" property="activeCamera">
+    <Key time="0s" value="s70_camera_front" />
+    <Key time="0.82s" value="s70_camera_low" />
+    <Key time="1.68s" value="s70_camera_rear" />
+  </AnimationTarget>
+
+  <Process id="S70Finish">
+    <Tex id="s70_scene_tex" fmt="rgba16f" from="scene" />
+    <Tex id="s70_bloom_tex" fmt="rgba16f" size={[1920,1080]} />
+    <Tex id="s70_final_tex" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="s70_bloom" kind="compute" effect="glow_bloom"
+          in={["s70_scene_tex"]} out={["s70_bloom_tex"]}
+          params={{ threshold: "0.36", intensity: "0.52", sigma: "6.0" }} />
+    <Pass id="s70_grain" kind="compute" effect="film_grain"
+          in={["s70_bloom_tex"]} out={["s70_final_tex"]}
+          params={{ kind: "film_grain", amount: "0.009", scale: "1.0", seed: "70" }} />
+  </Process>
+
+  <Present from="S70SpartanDeckVault" />
+</Graph>

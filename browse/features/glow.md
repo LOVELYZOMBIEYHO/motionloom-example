@@ -3,7 +3,6 @@
 | ID | Type | Domain | Title | Features | Teaches |
 |---|---|---|---|---|---|
 | [cs-000025](../../core/scene/cs-000025/) | core | scene | Audio Spectrum | audio-reactive, random-animation, component, gradient, glow | Combine multiple MotionLoom features into a polished demo.<br>Use this as a reference for YouTube Short or promo-style output. |
-| [cs-000026](../../core/scene/cs-000026/) | core | scene | Asset Card Layout | layout, image-asset, timeline, shape, text | Compose background, asset image, card shape, labels, glow, and animation timing into one scene.<br>Use layout as a feature label, while keeping domain as scene for graph-family classification. |
 | [s-000004](../../showcase/s-000004/) | showcase | scene | ANICA Typewriter Float 8s | scene, text, text-render-scale, glow, curve-animation | Build a vertical typewriter-style title sequence.<br>Layer ghost text, scanlines, stars, and cut lines for a mobile promo look. |
 | [s-000005](../../showcase/s-000005/) | showcase | scene | ANICA Core Overload Reactor Explosion 10s | scene, process, bloom, glow, gradient | Create a high-energy logo reactor explosion with scene layers and post passes.<br>Chain hsla_overlay, glow_bloom, and gaussian blur in a GPU process pipeline. |
 | [s-000007](../../showcase/s-000007/) | showcase | scene | Neon Collapse 5s | scene, process, bloom, glow, gradient | Create a cyberpunk black-hole collapse with layered city planes and neon glows.<br>Use bloom and HSLA process passes for high-contrast sci-fi grading. |

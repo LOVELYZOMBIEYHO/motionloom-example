@@ -104,11 +104,14 @@
     "mask",
     "masking",
     "material",
+    "material-binding",
     "matte",
     "mesh-topology",
+    "metallic-roughness",
     "mirrored-character",
     "neon",
     "noise",
+    "normal-map",
     "oil-canvas",
     "opacity",
     "page-turn",
@@ -121,6 +124,7 @@
     "portrait",
     "polar-noise",
     "pose",
+    "pbr",
     "proportion-profile",
     "prompt-ui",
     "procedural-texture",
@@ -151,6 +155,7 @@
     "sin",
     "skeleton",
     "soft-edge",
+    "specular",
     "static-composition",
     "squint-animation",
     "starburst",
@@ -236,16 +241,43 @@
     ,"vary"
     ,"weighted-variants"
     ,"whiteout"
+    ,"action-blending"
+    ,"body-mask"
+    ,"bone-animation"
+    ,"boolean-op"
+    ,"camera-3d"
+    ,"camera-cut"
+    ,"environment-inspection"
+    ,"external-action"
+    ,"glb-environment"
+    ,"grounding"
+    ,"humanoid-action"
+    ,"humanoid-retarget"
+    ,"mixamo-animation-import"
+    ,"model"
+    ,"path-offset"
+    ,"path-taper"
+    ,"path-trim"
+    ,"root-motion"
+    ,"screen-blend"
+    ,"semantic-anchor"
+    ,"semantic-surface"
+    ,"skinned-model"
+    ,"storytelling"
   ],
   "dsl_tags": [
     "Action",
+    "Anchor",
     "Actor",
+    "AnimationAsset",
     "Assets",
     "AudioAsset",
     "AnimationTarget",
     "ApplyAction",
+    "Axis",
     "Background",
     "Bone",
+    "BoneAxisMap",
     "Brush",
     "Camera",
     "Camera3D",
@@ -265,6 +297,7 @@
     "Effect",
     "Ellipse",
     "EnvironmentLight",
+    "Environment",
     "FaceJaw",
     "Filter",
     "Graph",
@@ -284,12 +317,14 @@
     "LightStreak",
     "LinearGradient",
     "Mask",
+    "Map",
     "Material",
     "MaterialBinding",
     "Measure",
     "MeshTopology",
     "Model",
     "ModelAsset",
+    "ModelProfile",
     "Noise",
     "Part",
     "Pass",
@@ -308,12 +343,14 @@
     "RadialGradient",
     "RadialRays",
     "Rect",
+    "Retarget",
     "Region",
     "Ratio",
     "Repeat",
     "Scene",
     "Sequence",
     "Skeleton",
+    "Surface",
     "Svg",
     "Tex",
     "Text",

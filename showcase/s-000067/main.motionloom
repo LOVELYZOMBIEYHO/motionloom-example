@@ -1,0 +1,365 @@
+<!--
+========================================================================
+ANIMATIONTARGET CONTROL ROOM
+12 s, 1920x1080, 30 fps. Every visible movement is authored through explicit
+AnimationTarget channels so an editor or LLM can inspect and rewrite the keys.
+========================================================================
+-->
+<Graph fps={30} duration="12s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Assets>
+    <ModelAsset id="at67_device_asset"
+                src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000066/assets/iphone.glb"
+                decoder="draco" />
+  </Assets>
+
+  <Background color="#030507" />
+
+  <Skeleton id="at67_meter_rig">
+    <Bone id="at67_meter_root" x="0" y="0" />
+    <Bone id="at67_meter_bone" parent="at67_meter_root" x="0" y="0" rotation="-62" />
+  </Skeleton>
+
+  <Action id="at67_meter_bind" skeleton="at67_meter_rig" duration="12s">
+    <Pose t="0">
+      <Bone id="at67_meter_bone" rotation="0" />
+    </Pose>
+    <Pose t="12">
+      <Bone id="at67_meter_bone" rotation="0" />
+    </Pose>
+  </Action>
+
+  <Scene id="AnimationTargetControlRoom">
+    <Defs>
+      <LinearGradient id="at67_panel_gradient" x1="0" y1="0" x2="1" y2="1"
+                      stops="0:#111827, 0.52:#0A1020, 1:#05070D" />
+      <LinearGradient id="at67_ribbon_gradient" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#55F7D5, 0.48:#98FF45, 1:#E8FF69" />
+      <RadialGradient id="at67_core_glow" cx="0.5" cy="0.5" r="0.5"
+                      stops="0:#FFFFFF, 0.18:#CFFF5A, 0.58:#52E8FF55, 1:#52E8FF00" />
+    </Defs>
+
+    <Timeline>
+      <Track id="at67_camera_track" role="camera" z="1000">
+        <Sequence from="0s" duration="12s" out="hold">
+          <Camera id="at67_camera" target="at67_camera_target"
+                  anchorX="50%" anchorY="50%"
+                  zoom="1" rotation="0" offsetX="0" offsetY="0"
+                  worldBounds="-120,-80,2160,1240" />
+        </Sequence>
+      </Track>
+
+      <Track id="at67_world" space="world" compositeOrder="0">
+        <Sequence from="0s" duration="12s" out="hold">
+          <Layer id="at67_stage">
+            <Rect id="at67_backdrop" x="-120" y="-80" width="2160" height="1240"
+                  color="#060A12" />
+            <Circle id="at67_camera_target" x="960" y="540" radius="2"
+                    color="#FFFFFF" opacity="0" />
+
+            <Repeat id="at67_grid_vertical" count="25" x="0" y="0" xStep="80" opacity="0.13">
+              <Line x1="0" y1="0" x2="0" y2="1080" stroke="#9FB7D8" strokeWidth="1" />
+            </Repeat>
+            <Repeat id="at67_grid_horizontal" count="15" x="0" y="0" yStep="80" opacity="0.10">
+              <Line x1="0" y1="0" x2="1920" y2="0" stroke="#9FB7D8" strokeWidth="1" />
+            </Repeat>
+
+            <Text value="MOTIONLOOM / ANIMATIONTARGET" x="72" y="76"
+                  fontSize="22" fontWeight="900" tracking="4" color="#B9FF39" />
+            <Text id="at67_phase_title" value="01 / NUMERIC CHANNELS" x="72" y="152"
+                  fontSize="54" fontWeight="900" tracking="0" color="#F8FAFC" />
+            <Text value="ONE GRAPH · TYPED KEYS · STATICALLY INSPECTABLE" x="74" y="216"
+                  fontSize="16" fontWeight="800" tracking="3" color="#8190A8" />
+
+            <Group id="at67_registry_panel" x="72" y="246">
+              <Rect id="at67_registry_card" x="0" y="0" width="500" height="720" radius="34"
+                    fill="url(#at67_panel_gradient)" stroke="#35445D" strokeWidth="2" />
+              <Text value="CHANNEL REGISTRY" x="34" y="54" fontSize="18"
+                    fontWeight="900" tracking="3" color="#E8FF69" />
+              <Text value="NUMBER" x="34" y="112" fontSize="16" fontWeight="800" color="#55F7D5" />
+              <Text value="x · y · rotation · scale · opacity" x="34" y="144"
+                    fontSize="18" fontWeight="700" color="#D7DEEA" />
+              <Text value="SHAPE" x="34" y="204" fontSize="16" fontWeight="800" color="#52E8FF" />
+              <Text value="width · radius · strokeWidth" x="34" y="236"
+                    fontSize="18" fontWeight="700" color="#D7DEEA" />
+              <Text value="TYPED" x="34" y="296" fontSize="16" fontWeight="800" color="#FF6FAB" />
+              <Text value="color · path · text · Vector3" x="34" y="328"
+                    fontSize="18" fontWeight="700" color="#D7DEEA" />
+              <Text value="DOMAINS" x="34" y="388" fontSize="16" fontWeight="800" color="#FFBF5A" />
+              <Text value="camera · pin · bone · particles" x="34" y="420"
+                    fontSize="18" fontWeight="700" color="#D7DEEA" />
+              <Text value="GPU GRAPH" x="34" y="480" fontSize="16" fontWeight="800" color="#A88BFF" />
+              <Text value="model · camera · process params" x="34" y="512"
+                    fontSize="18" fontWeight="700" color="#D7DEEA" />
+
+              <Rect x="34" y="562" width="432" height="112" radius="22"
+                    color="#080C14" stroke="#26344A" strokeWidth="2" />
+              <Text value="EXPLICIT EDITOR OVERRIDE" x="58" y="604"
+                    fontSize="15" fontWeight="900" tracking="2" color="#B9FF39" />
+              <Text value="inline curve() remains compatible" x="58" y="640"
+                    fontSize="17" fontWeight="700" color="#A7B1C2" />
+            </Group>
+
+            <Group id="at67_shape_lab" x="650" y="278">
+              <Rect x="0" y="0" width="630" height="688" radius="38"
+                    color="#09101C" stroke="#273950" strokeWidth="2" />
+              <Text value="TYPED CHANNEL LAB" x="34" y="54" fontSize="18"
+                    fontWeight="900" tracking="3" color="#52E8FF" />
+
+              <Circle id="at67_glow" x="315" y="302" radius="216"
+                      fill="url(#at67_core_glow)" opacity="0.42" />
+              <Path id="at67_morph_core"
+                    d="M 315 146 L 432 194 L 476 310 L 428 426 L 315 472 L 202 426 L 154 310 L 198 194 Z"
+                    fill="#B9FF39" stroke="#FFFFFF" strokeWidth="6"
+                    transformOriginX="315" transformOriginY="310" />
+              <Circle x="315" y="310" radius="82" color="#071019" opacity="0.94" />
+              <Text value="A" x="315" y="342" align="center" fontSize="94"
+                    fontWeight="900" color="#FFFFFF" />
+
+              <Rect id="at67_meter_bar" x="82" y="564" width="466" height="26" radius="13"
+                    color="#52E8FF" stroke="#DDFBFF" strokeWidth="2" />
+              <Text value="PROPERTY COVERAGE" x="82" y="636" fontSize="15"
+                    fontWeight="900" tracking="2" color="#8290A6" />
+              <Text id="at67_channel_readout" value="TRANSFORM / NUMBER" x="500" y="636"
+                    align="right" fontSize="17" fontWeight="900" color="#B9FF39" />
+            </Group>
+
+            <Group id="at67_rig_panel" x="1328" y="246">
+              <Rect x="0" y="0" width="520" height="300" radius="34"
+                    color="#0A101B" stroke="#2C3A50" strokeWidth="2" />
+              <Text value="PIN + BONE + SIMULATION" x="30" y="50" fontSize="17"
+                    fontWeight="900" tracking="2" color="#FFBF5A" />
+
+              <Puppet id="at67_ribbon_puppet" x="42" y="94" width="294" height="110"
+                      density="high" amount="1">
+                <Path d="M 0 18 C 84 -8 188 46 292 12 L 292 88 C 196 124 88 70 0 98 Z"
+                      fill="url(#at67_ribbon_gradient)" stroke="#FFFFFF" strokeWidth="3" />
+                <Pin id="at67_ribbon_anchor" x="18" y="56" fixed="true"
+                     strength="1" radius="120" />
+                <Pin id="at67_ribbon_control" x="274" y="52" fixed="false"
+                     strength="1" radius="130" falloff="smooth" />
+              </Puppet>
+
+              <Character id="at67_meter_character" rig="at67_meter_rig" x="412" y="166">
+                <Part id="at67_meter_part" attachTo="at67_meter_bone">
+                  <Rect x="0" y="-7" width="72" height="14" radius="7" color="#FF6FAB" />
+                  <Circle x="0" y="0" radius="14" color="#FFFFFF" />
+                </Part>
+              </Character>
+              <Circle x="412" y="166" radius="62" fill="none" stroke="#334155" strokeWidth="2" />
+              <Text value="BONE" x="412" y="258" align="center" fontSize="13"
+                    fontWeight="900" tracking="2" color="#8290A6" />
+            </Group>
+
+            <Group id="at67_emitter_anchor" x="1578" y="690">
+              <Circle x="0" y="0" radius="18" color="#B9FF39" />
+              <Circle x="0" y="0" radius="46" fill="none" stroke="#B9FF39"
+                      strokeWidth="3" opacity="0.45" />
+            </Group>
+            <ParticleEmitter id="at67_particles" target="at67_emitter_anchor"
+                             x="0" y="0" rate="24" lifetime="2.4"
+                             velocity={[0,-210]} gravity={[0,260]}
+                             radius="6" color="#B9FF39" />
+
+            <Text value="PARTICLE RATE" x="1578" y="774" align="center"
+                  fontSize="14" fontWeight="900" tracking="2" color="#8290A6" />
+
+            <Group id="at67_footer" x="72" y="1008">
+              <Rect x="0" y="0" width="1776" height="2" color="#263349" />
+              <Text value="S67" x="0" y="42" fontSize="18" fontWeight="900" color="#B9FF39" />
+              <Text value="MACHINE-READABLE MOTION" x="82" y="42" fontSize="18"
+                    fontWeight="800" tracking="3" color="#7F8CA2" />
+              <Text value="12.00 SEC / 30 FPS" x="1776" y="42" align="right"
+                    fontSize="18" fontWeight="800" color="#7F8CA2" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="at67_device_track" space="3d" compositeOrder="60">
+        <Sequence from="0s" duration="12s" out="hold">
+          <CompositeGroup id="at67_device_island" space="3d" depth="true" format="rgba16f">
+            <Camera3D id="at67_device_camera" position={[0,0,6.4]} target={[0,0,0]} fov="36" />
+            <Model id="at67_device" asset="at67_device_asset"
+                   position={[2.65,-1.35,0]}
+                   rotationX="1" rotationY="-152" rotationZ="0"
+                   scale="2.35" exposure="2.1" />
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+    </Timeline>
+
+    <Effects>
+      <Effect process="AnimationTargetFinish" />
+    </Effects>
+  </Scene>
+
+  <Process id="AnimationTargetFinish">
+    <Tex id="at67_scene_tex" fmt="rgba16f" from="scene" />
+    <Tex id="at67_bloom_tex" fmt="rgba16f" size={[1920,1080]} />
+    <Tex id="at67_final_tex" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="at67_bloom_pass" kind="compute" effect="glow_bloom"
+          in={["at67_scene_tex"]} out={["at67_bloom_tex"]}
+          params={{ threshold: "0.64", intensity: "0.24", sigma: "5.0" }} />
+    <Pass id="at67_grain_pass" kind="compute" effect="film_grain"
+          in={["at67_bloom_tex"]} out={["at67_final_tex"]}
+          params={{ kind: "film_grain", amount: "0.012", scale: "1.0", seed: "67" }} />
+  </Process>
+
+  <!-- Numeric transforms compile to reusable curve expressions. -->
+  <AnimationTarget node="at67_shape_lab" property="rotation">
+    <Key time="0s" value="-2" /><Key time="3s" value="2" ease="ease_in_out" />
+    <Key time="6s" value="-1" ease="ease_in_out" /><Key time="9s" value="2" ease="ease_in_out" />
+    <Key time="12s" value="-2" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_morph_core" property="scale">
+    <Key time="0s" value="0.82" /><Key time="1.2s" value="1.08" ease="ease_out" />
+    <Key time="3s" value="0.92" ease="ease_in_out" /><Key time="6s" value="1.12" ease="ease_in_out" />
+    <Key time="9s" value="0.94" ease="ease_in_out" /><Key time="12s" value="0.82" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_morph_core" property="rotation">
+    <Key time="0s" value="0" /><Key time="4s" value="120" ease="ease_in_out" />
+    <Key time="8s" value="240" ease="ease_in_out" /><Key time="12s" value="360" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_glow" property="opacity">
+    <Key time="0s" value="0.18" /><Key time="2s" value="0.62" ease="ease_out" />
+    <Key time="6s" value="0.28" ease="ease_in_out" /><Key time="9s" value="0.72" ease="ease_out" />
+    <Key time="12s" value="0.18" ease="ease_in" />
+  </AnimationTarget>
+
+  <!-- Shape properties remain explicit editable channels. -->
+  <AnimationTarget node="at67_meter_bar" property="width">
+    <Key time="0s" value="80" /><Key time="3s" value="466" ease="ease_out" />
+    <Key time="6s" value="246" ease="ease_in_out" /><Key time="9s" value="466" ease="ease_out" />
+    <Key time="12s" value="80" ease="ease_in" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_meter_bar" property="radius">
+    <Key time="0s" value="4" /><Key time="4s" value="13" ease="ease_in_out" />
+    <Key time="8s" value="2" ease="ease_in_out" /><Key time="12s" value="13" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_meter_bar" property="strokeWidth">
+    <Key time="0s" value="1" /><Key time="6s" value="8" ease="ease_in_out" />
+    <Key time="12s" value="1" ease="ease_in_out" />
+  </AnimationTarget>
+
+  <!-- Typed path and RGBA color interpolation. -->
+  <AnimationTarget node="at67_morph_core" property="d">
+    <Key time="0s" value="M 315 146 L 432 194 L 476 310 L 428 426 L 315 472 L 202 426 L 154 310 L 198 194 Z" />
+    <Key time="3s" value="M 315 126 L 374 236 L 500 252 L 404 342 L 430 478 L 315 410 L 190 478 L 222 342 Z" ease="ease_in_out" />
+    <Key time="6s" value="M 315 162 L 462 162 L 462 270 L 510 310 L 462 358 L 462 458 L 315 458 L 168 310 Z" ease="ease_in_out" />
+    <Key time="9s" value="M 315 122 L 356 254 L 492 310 L 356 362 L 315 494 L 270 362 L 138 310 L 270 254 Z" ease="ease_in_out" />
+    <Key time="12s" value="M 315 146 L 432 194 L 476 310 L 428 426 L 315 472 L 202 426 L 154 310 L 198 194 Z" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_morph_core" property="fill">
+    <Key time="0s" value="#B9FF39" /><Key time="3s" value="#52E8FF" ease="ease_in_out" />
+    <Key time="6s" value="#FF6FAB" ease="ease_in_out" /><Key time="9s" value="#A88BFF" ease="ease_in_out" />
+    <Key time="12s" value="#B9FF39" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_backdrop" property="color">
+    <Key time="0s" value="#060A12" /><Key time="4s" value="#07131A" ease="ease_in_out" />
+    <Key time="8s" value="#120817" ease="ease_in_out" /><Key time="12s" value="#060A12" ease="ease_in_out" />
+  </AnimationTarget>
+
+  <!-- Discrete text uses hold sampling while typography stays numeric. -->
+  <AnimationTarget node="at67_phase_title" property="value">
+    <Key time="0s" value="01 / NUMERIC CHANNELS" />
+    <Key time="2.9s" value="02 / COLOR + PATH" />
+    <Key time="5.9s" value="03 / PIN + BONE + PHYSICS" />
+    <Key time="8.9s" value="04 / GPU + PROCESS" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_phase_title" property="color">
+    <Key time="0s" value="#F8FAFC" /><Key time="3s" value="#52E8FF" ease="ease_out" />
+    <Key time="6s" value="#FFBF5A" ease="ease_out" /><Key time="9s" value="#B9FF39" ease="ease_out" />
+    <Key time="12s" value="#F8FAFC" ease="ease_in" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_phase_title" property="tracking">
+    <Key time="0s" value="0" /><Key time="2.6s" value="5" ease="ease_out" />
+    <Key time="3s" value="0" ease="ease_in" /><Key time="5.6s" value="5" ease="ease_out" />
+    <Key time="6s" value="0" ease="ease_in" /><Key time="8.6s" value="5" ease="ease_out" />
+    <Key time="9s" value="0" ease="ease_in" /><Key time="12s" value="5" ease="ease_out" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_channel_readout" property="value">
+    <Key time="0s" value="TRANSFORM / NUMBER" /><Key time="2.9s" value="PATH / COLOR" />
+    <Key time="5.9s" value="PIN / BONE / RATE" /><Key time="8.9s" value="VECTOR3 / PARAMS" />
+  </AnimationTarget>
+
+  <!-- Camera, Pin, Bone, and simulation bindings use the same target model. -->
+  <AnimationTarget node="at67_camera" property="zoom">
+    <Key time="0s" value="1" /><Key time="3s" value="1.035" ease="ease_in_out" />
+    <Key time="6s" value="0.985" ease="ease_in_out" /><Key time="9s" value="1.04" ease="ease_in_out" />
+    <Key time="12s" value="1" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_camera" property="offsetX">
+    <Key time="0s" value="0" /><Key time="4s" value="-22" ease="ease_in_out" />
+    <Key time="8s" value="24" ease="ease_in_out" /><Key time="12s" value="0" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_ribbon_control" property="x">
+    <Key time="0s" value="274" /><Key time="3s" value="300" ease="ease_in_out" />
+    <Key time="6s" value="252" ease="ease_in_out" /><Key time="9s" value="310" ease="ease_in_out" />
+    <Key time="12s" value="274" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_ribbon_control" property="y">
+    <Key time="0s" value="52" /><Key time="3s" value="88" ease="ease_in_out" />
+    <Key time="6s" value="18" ease="ease_in_out" /><Key time="9s" value="74" ease="ease_in_out" />
+    <Key time="12s" value="52" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_meter_bone" property="rotation">
+    <Key time="0s" value="-62" /><Key time="3s" value="54" ease="ease_in_out" />
+    <Key time="6s" value="-22" ease="ease_in_out" /><Key time="9s" value="66" ease="ease_in_out" />
+    <Key time="12s" value="-62" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_particles" property="rate">
+    <Key time="0s" value="8" /><Key time="3s" value="28" ease="ease_out" />
+    <Key time="6s" value="64" ease="ease_out" /><Key time="9s" value="110" ease="ease_out" />
+    <Key time="12s" value="8" ease="ease_in" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_particles" property="radius">
+    <Key time="0s" value="3" /><Key time="6s" value="8" ease="ease_in_out" />
+    <Key time="12s" value="3" ease="ease_in_out" />
+  </AnimationTarget>
+
+  <!-- Vector3, 3D scalar, and Process parameter channels share one registry. -->
+  <AnimationTarget node="at67_device" property="position">
+    <Key time="0s" value="[2.95,-2.6,0]" />
+    <Key time="2s" value="[2.65,-1.35,0]" ease="ease_out" />
+    <Key time="6s" value="[2.45,-1.25,0.2]" ease="ease_in_out" />
+    <Key time="9s" value="[2.75,-1.35,-0.1]" ease="ease_in_out" />
+    <Key time="12s" value="[2.95,-2.6,0]" ease="ease_in" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_device" property="rotationY">
+    <Key time="0s" value="-152" /><Key time="4s" value="-35" ease="ease_in_out" />
+    <Key time="8s" value="42" ease="ease_in_out" /><Key time="12s" value="208" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_device" property="scale">
+    <Key time="0s" value="2.1" /><Key time="2s" value="2.35" ease="ease_out" />
+    <Key time="9s" value="2.55" ease="ease_in_out" /><Key time="12s" value="2.1" ease="ease_in" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_device" property="exposure">
+    <Key time="0s" value="1.7" /><Key time="6s" value="2.35" ease="ease_in_out" />
+    <Key time="12s" value="1.7" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_device_camera" property="fov">
+    <Key time="0s" value="39" /><Key time="6s" value="33" ease="ease_in_out" />
+    <Key time="12s" value="39" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_device_camera" property="position">
+    <Key time="0s" value="[0,0,6.8]" /><Key time="4s" value="[0.18,0.08,6.2]" ease="ease_in_out" />
+    <Key time="8s" value="[-0.16,-0.06,6.5]" ease="ease_in_out" />
+    <Key time="12s" value="[0,0,6.8]" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_device_camera" property="target">
+    <Key time="0s" value="[0,0,0]" /><Key time="6s" value="[0.12,-0.08,0]" ease="ease_in_out" />
+    <Key time="12s" value="[0,0,0]" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_bloom_pass" property="params.intensity">
+    <Key time="0s" value="0.16" /><Key time="3s" value="0.34" ease="ease_out" />
+    <Key time="6s" value="0.22" ease="ease_in_out" /><Key time="9s" value="0.48" ease="ease_out" />
+    <Key time="12s" value="0.16" ease="ease_in" />
+  </AnimationTarget>
+  <AnimationTarget node="at67_bloom_pass" property="params.sigma">
+    <Key time="0s" value="3" /><Key time="6s" value="8" ease="ease_in_out" />
+    <Key time="12s" value="3" ease="ease_in_out" />
+  </AnimationTarget>
+
+  <ApplyAction target="at67_meter_character" action="at67_meter_bind" at="0s" />
+  <Present from="AnimationTargetControlRoom" />
+</Graph>

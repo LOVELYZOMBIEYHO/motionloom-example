@@ -8,6 +8,11 @@ This directory contains small sample assets used by MotionLoom examples and test
   - License: CC0 / public domain sample asset.
   - Use: MotionLoom GLB loading and world-rendering examples/tests.
 
+- `characters/character1/character1.glb`
+  - Source: Quaternius Universal Animation Library 1 (`UAL1_Standard.glb`).
+  - License: CC0.
+  - Use: canonical MotionLoom sample humanoid, named Character 1.
+
 ## Background Images
 
 - `backgrounds/forest_path_static.png`

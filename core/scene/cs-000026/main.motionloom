@@ -1,83 +1,131 @@
-<Graph fps={30} duration="6s" size={[1280,720]} renderSize={[1280,720]}>
-  <Background color="#F7F3EA" />
+<!--
+  Character 1 Humanoid Action
+  Minimal canonical pipeline:
+  ModelAsset -> ModelProfile -> Action -> ApplyAction
 
-  <Scene id="AssetCardLayout">
+  AnimationAsset is intentionally kept as the raw clip container. ApplyAction
+  references only the executable Action id.
+-->
+<Graph fps={30} duration="6s" size={[1280,720]} renderSize={[1280,720]}>
+  <Assets>
+    <ModelAsset id="character1_model"
+                src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/character1/character1.glb" />
+    <AnimationAsset id="character1_clips"
+                    src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/character1/character1.glb" />
+  </Assets>
+
+  <ModelProfile id="character1_profile" kind="3d" model="character1_model"
+                preset="humanoid_v1">
+    <Retarget preset="humanoid_v1">
+      <Map from="pelvis" to="hips" />
+      <Map from="spine_01" to="spine" />
+      <Map from="spine_03" to="chest" />
+      <Map from="neck_01" to="neck" />
+      <Map from="Head" to="head" />
+      <Map from="clavicle_l" to="shoulder_l" />
+      <Map from="upperarm_l" to="upper_arm_l" />
+      <Map from="lowerarm_l" to="forearm_l" />
+      <Map from="hand_l" to="hand_l" />
+      <Map from="clavicle_r" to="shoulder_r" />
+      <Map from="upperarm_r" to="upper_arm_r" />
+      <Map from="lowerarm_r" to="forearm_r" />
+      <Map from="hand_r" to="hand_r" />
+      <Map from="thigh_l" to="upper_leg_l" />
+      <Map from="calf_l" to="lower_leg_l" />
+      <Map from="foot_l" to="foot_l" />
+      <Map from="ball_l" to="toe_l" />
+      <Map from="thigh_r" to="upper_leg_r" />
+      <Map from="calf_r" to="lower_leg_r" />
+      <Map from="foot_r" to="foot_r" />
+      <Map from="ball_r" to="toe_r" />
+    </Retarget>
+    <BoneAxisMap>
+      <Axis bone="hips" turn="rotationY:1" />
+      <Axis bone="spine" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="chest" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="neck" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="head" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="upper_arm_l" forward="rotationX:1" side="rotationZ:1"
+            twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
+      <Axis bone="forearm_l" bend="rotationX:1" twist="rotationY:1" />
+      <Axis bone="upper_arm_r" forward="rotationX:1" side="rotationZ:-1"
+            twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
+      <Axis bone="forearm_r" bend="rotationX:1" twist="rotationY:1" />
+      <Axis bone="upper_leg_l" forward="rotationX:-1" side="rotationZ:-1"
+            twist="rotationY:1" />
+      <Axis bone="lower_leg_l" bend="rotationX:-1" twist="rotationY:1" />
+      <Axis bone="upper_leg_r" forward="rotationX:-1" side="rotationZ:1"
+            twist="rotationY:1" />
+      <Axis bone="lower_leg_r" bend="rotationX:-1" twist="rotationY:1" />
+    </BoneAxisMap>
+  </ModelProfile>
+
+  <Action id="character1_walk"
+          source="character1_clips"
+          sourceProfile="quaternius_humanoid"
+          clip="Walk_Loop"
+          skeleton="humanoid_v1" />
+
+  <ApplyAction target="character1" action="character1_walk" at="0s"
+               loop="true" rootMotion="in_place"
+               blendIn="0s" blendOut="0.15s" mask="full_body" />
+
+  <Background color="#07101D" />
+
+  <Scene id="Character1HumanoidAction">
     <Defs>
-      <LinearGradient id="paper_grad" x1="0" y1="0" x2="1" y2="1"
-                      stops="0:#FFF8EA, 0.55:#F3E7D1, 1:#E9D3AE" />
-      <LinearGradient id="card_grad" x1="0" y1="0" x2="1" y2="1"
-                      stops="0:#FFFFFF, 0.64:#FFF5DE, 1:#F0D394" />
-      <LinearGradient id="label_grad" x1="0" y1="0" x2="1" y2="0"
-                      stops="0:#111827, 0.64:#23344F, 1:#335C67" />
-      <RadialGradient id="warm_glow" cx="0.50" cy="0.42" r="0.74"
-                      stops="0:#FFCF6B77, 0.48:#FF8F3D30, 1:#FF8F3D00" />
-      <RadialGradient id="mint_glow" cx="0.50" cy="0.50" r="0.68"
-                      stops="0:#78E7B777, 0.50:#51C4A830, 1:#51C4A800" />
+      <LinearGradient id="character1_backdrop" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#14243D, 0.62:#0B1527, 1:#050A12" />
+      <RadialGradient id="character1_floor_glow" cx="0.5" cy="0.5" r="0.5"
+                      stops="0:#7EA6D955, 0.55:#38577A22, 1:#07101D00" />
     </Defs>
 
     <Timeline>
-      <Track id="background" space="world" z="0">
+      <Track id="character1_stage" space="screen" compositeOrder="10">
         <Sequence from="0s" duration="6s" out="hold">
-          <Layer>
-            <Rect x="0" y="0" width="1280" height="720" fill="url(#paper_grad)" />
-            <Circle x="1080" y="112" radius="320" fill="url(#warm_glow)" blend="screen" opacity="0.72" />
-            <Circle x="155" y="620" radius="300" fill="url(#mint_glow)" blend="screen" opacity="0.62" />
-            <Line x1="88" y1="585" x2="1180" y2="585" stroke="#7D6B4A33" strokeWidth="2" />
+          <Layer space="screen">
+            <Rect x="0" y="0" width="1280" height="720" fill="url(#character1_backdrop)" />
+            <Ellipse x="640" y="592" radiusX="310" radiusY="82"
+                     fill="url(#character1_floor_glow)" />
+            <Line x1="160" y1="590" x2="1120" y2="590"
+                  stroke="#7393B833" strokeWidth="2" />
           </Layer>
         </Sequence>
       </Track>
 
-      <Track id="asset_card" space="world" z="10">
+      <Track id="character1_model_track" space="3d" compositeOrder="30">
         <Sequence from="0s" duration="6s" out="hold">
-          <Layer>
-            <Group id="character1_card"
-                   x={curve("0:88:ease_out, 0.85:128:ease_out, 6:128:linear")}
-                   y={curve("0:64:ease_out, 0.85:44:ease_out, 6:44:linear")}
-                   opacity={curve("0:0:linear, 0.45:1:ease_in_out, 6:1:linear")}>
-              <Rect id="card_shadow" x="26" y="32" width="488" height="550" radius="34" color="#463A2544" />
-              <Rect id="card_body" x="0" y="0" width="488" height="550" radius="34" fill="url(#card_grad)" stroke="#6E573D33" strokeWidth="2" />
-              <Rect id="image_window" x="36" y="38" width="416" height="392" radius="28" color="#F7E9C9" opacity="0.82" />
-              <Image id="character1_composite_asset"
-                     src="../motionloom-example/assets/sample_assets/characters/character1/character1_composite_preview.png"
-                     x="66"
-                     y="52"
-                     scale="0.54"
-                     opacity="1" />
-              <Rect id="caption_bar" x="36" y="456" width="416" height="64" radius="20" fill="url(#label_grad)" />
-              <Text id="asset_label" x="64" y="496" value="CHARACTER 1" fontSize="26" color="#FFFFFF" />
-              <Text id="asset_note" x="270" y="497" value="image asset" fontSize="18" color="#B9F2E3" opacity="0.86" />
-            </Group>
-          </Layer>
+          <CompositeGroup id="character1_island" space="3d" depth="true" format="rgba16f">
+            <Camera3D id="character1_camera"
+                      position={[0,0.62,5.0]}
+                      target={[0,0.50,0]}
+                      fov="31" />
+            <Model id="character1"
+                   asset="character1_model"
+                   profile="character1_profile"
+                   position={[0,-0.62,0]}
+                   rotationY="0"
+                   scale="1.05"
+                   exposure="1.65" />
+          </CompositeGroup>
         </Sequence>
       </Track>
 
-      <Track id="layout_notes" space="world" z="20">
+      <Track id="character1_labels" space="screen" compositeOrder="50">
         <Sequence from="0s" duration="6s" out="hold">
-          <Layer>
-            <Group id="notes"
-                   x={curve("0:720:ease_out, 0.7:670:ease_out, 6:670:linear")}
-                   y="142"
-                   opacity={curve("0.15:0:linear, 0.85:1:ease_in_out, 6:1:linear")}>
-              <Text x="0" y="0" value="Layout" fontSize="64" color="#1B2430" />
-              <Text x="4" y="48" value="One scene, several visual layers" fontSize="24" color="#6C5D45" opacity="0.86" />
-
-              <Rect x="4" y="104" width="392" height="52" radius="16" color="#FFFFFF" opacity="0.72" />
-              <Text x="28" y="138" value="1. Background atmosphere" fontSize="24" color="#23344F" />
-
-              <Rect x="4" y="174" width="392" height="52" radius="16" color="#FFFFFF" opacity="0.72" />
-              <Text x="28" y="208" value="2. Asset card + image" fontSize="24" color="#23344F" />
-
-              <Rect x="4" y="244" width="392" height="52" radius="16" color="#FFFFFF" opacity="0.72" />
-              <Text x="28" y="278" value="3. Labels and motion timing" fontSize="24" color="#23344F" />
-
-              <Line x1="-28" y1="332" x2="430" y2="332" stroke="#23344F44" strokeWidth="2" />
-              <Text x="4" y="374" value="Use layout when one Scene combines assets, labels, shapes, and timing." fontSize="21" color="#5C4930" opacity="0.82" />
-            </Group>
+          <Layer space="screen">
+            <Text x="64" y="76" value="CHARACTER 1" fontSize="34"
+                  fontWeight="800" tracking="6" color="#F4F7FB" />
+            <Text x="66" y="108" value="HUMANOID_V1 · WALK_LOOP · CC0"
+                  fontSize="15" fontWeight="700" tracking="4" color="#91B5E5" />
+            <Text x="64" y="662"
+                  value="ModelAsset  →  ModelProfile  →  Action  →  ApplyAction"
+                  fontSize="18" color="#B9CAE0" opacity="0.86" />
           </Layer>
         </Sequence>
       </Track>
     </Timeline>
   </Scene>
 
-  <Present from="AssetCardLayout" />
+  <Present from="Character1HumanoidAction" />
 </Graph>

@@ -115,6 +115,22 @@ def validate_example_record(path: Path, record: dict, domain_dir: str) -> None:
         fail(path, f"unknown DSL tag(s): {', '.join(unknown_dsl)}")
 
 
+def validate_showcase_learning_schema(example_path: Path) -> None:
+    schema_path = example_path.parent / "schema.json"
+    if not schema_path.is_file():
+        fail(schema_path, "missing per-showcase learning schema")
+    try:
+        schema = json.loads(schema_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        fail(schema_path, f"invalid JSON: {error}")
+    if schema.get("schemaVersion") != "1.0":
+        fail(schema_path, "schemaVersion must be '1.0'")
+    if schema.get("rootTag") != "Graph":
+        fail(schema_path, "rootTag must be 'Graph'")
+    if not isinstance(schema.get("tags"), list) or not schema["tags"]:
+        fail(schema_path, "tags must be a non-empty array")
+
+
 def load_records() -> list[dict]:
     out: list[dict] = []
     seen_ids: set[str] = set()
@@ -131,6 +147,7 @@ def load_records() -> list[dict]:
     for path in sorted(SHOWCASE_ROOT.glob("*/example.json")):
         record = json.loads(path.read_text(encoding="utf-8"))
         validate_example_record(path, record, record.get("domain", "scene"))
+        validate_showcase_learning_schema(path)
         if record["type"] != "showcase":
             fail(path, "showcase records must use type 'showcase'")
         if not re.fullmatch(r"s-[0-9]{6}", record["id"]):

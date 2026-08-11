@@ -3,7 +3,6 @@
 | ID | Type | Domain | Title | Features | Teaches |
 |---|---|---|---|---|---|
 | [cs-000025](../../core/scene/cs-000025/) | core | scene | Audio Spectrum | audio-reactive, random-animation, component, gradient, glow | Combine multiple MotionLoom features into a polished demo.<br>Use this as a reference for YouTube Short or promo-style output. |
-| [cs-000026](../../core/scene/cs-000026/) | core | scene | Asset Card Layout | layout, image-asset, timeline, shape, text | Compose background, asset image, card shape, labels, glow, and animation timing into one scene.<br>Use layout as a feature label, while keeping domain as scene for graph-family classification. |
 | [cs-000027](../../core/scene/cs-000027/) | core | scene | Pinwheel Layer zDepth Logo | zdepth, layer, shape, curve-animation, logo-motion | zDepth uses camera-space depth: negative is closer, positive is farther.<br>Use Layer zDepth for 3D-style ordering: larger positive values are farther and draw first. |
 | [cs-000028](../../core/scene/cs-000028/) | core | scene | DSL FaceJaw Basic | facejaw, path, curve-animation, shape | Use <FaceJaw> to generate a character jaw or face-outline path from simple face-shape parameters.<br>Use closed=false for an open jaw curve, or closed=true with fill for a filled face/jaw shape. |
 | [cs-000029](../../core/scene/cs-000029/) | core | scene | Mask Follow Target | masking, curve-animation, shape | Use <Mask follow="node:id"> to make a mask track another scene node.<br>Apply the followed mask to a Group to reveal color or effects around the moving target. |

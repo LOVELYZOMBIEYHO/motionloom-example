@@ -1,0 +1,293 @@
+<!--
+=====================================================================
+S68 · QUATERNIUS NIGHT WALK
+16 s · 1920x1080 · 30 fps · side walk + frontal approach
+
+PURPOSE
+  Directly exercise the CC0 Quaternius Universal Animation Library 1 GLB.
+  AnimationAsset remains a raw clip container; Action is the executable,
+  canonical MotionLoom layer; ApplyAction references only the Action id.
+
+  The canonical character1.glb uses in-place locomotion. The street moves
+  behind the mannequin while Walk_Loop supplies the authored walk cycle.
+=====================================================================
+-->
+<Graph fps={30} duration="16s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Assets>
+    <ModelAsset id="s68g_character1_model"
+                src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/character1/character1.glb" />
+    <AnimationAsset id="s68g_character1_clips"
+                    src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/character1/character1.glb" />
+  </Assets>
+
+  <Action id="s68g_walk"
+          source="s68g_character1_clips"
+          sourceProfile="quaternius_humanoid"
+          clip="Walk_Loop"
+          skeleton="humanoid_v1" />
+
+  <ModelProfile id="s68g_character1_profile" kind="3d" model="s68g_character1_model"
+                preset="humanoid_v1">
+    <Retarget preset="humanoid_v1">
+      <Map from="pelvis" to="hips" />
+      <Map from="spine_01" to="spine" />
+      <Map from="spine_03" to="chest" />
+      <Map from="neck_01" to="neck" />
+      <Map from="Head" to="head" />
+      <Map from="clavicle_l" to="shoulder_l" />
+      <Map from="upperarm_l" to="upper_arm_l" />
+      <Map from="lowerarm_l" to="forearm_l" />
+      <Map from="hand_l" to="hand_l" />
+      <Map from="clavicle_r" to="shoulder_r" />
+      <Map from="upperarm_r" to="upper_arm_r" />
+      <Map from="lowerarm_r" to="forearm_r" />
+      <Map from="hand_r" to="hand_r" />
+      <Map from="thigh_l" to="upper_leg_l" />
+      <Map from="calf_l" to="lower_leg_l" />
+      <Map from="foot_l" to="foot_l" />
+      <Map from="ball_l" to="toe_l" />
+      <Map from="thigh_r" to="upper_leg_r" />
+      <Map from="calf_r" to="lower_leg_r" />
+      <Map from="foot_r" to="foot_r" />
+      <Map from="ball_r" to="toe_r" />
+    </Retarget>
+    <BoneAxisMap>
+      <Axis bone="hips" turn="rotationY:1" />
+      <Axis bone="spine" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="chest" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="neck" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="head" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="upper_arm_l" forward="rotationX:1" side="rotationZ:1"
+            twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
+      <Axis bone="forearm_l" bend="rotationX:1" twist="rotationY:1" />
+      <Axis bone="upper_arm_r" forward="rotationX:1" side="rotationZ:-1"
+            twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
+      <Axis bone="forearm_r" bend="rotationX:1" twist="rotationY:1" />
+      <Axis bone="upper_leg_l" forward="rotationX:-1" side="rotationZ:-1"
+            twist="rotationY:1" />
+      <Axis bone="lower_leg_l" bend="rotationX:-1" twist="rotationY:1" />
+      <Axis bone="upper_leg_r" forward="rotationX:-1" side="rotationZ:1"
+            twist="rotationY:1" />
+      <Axis bone="lower_leg_r" bend="rotationX:-1" twist="rotationY:1" />
+    </BoneAxisMap>
+  </ModelProfile>
+
+  <ApplyAction target="s68g_mannequin" action="s68g_walk" at="0s"
+               loop="true" rootMotion="in_place"
+               blendIn="0s" blendOut="0.18s" mask="full_body" />
+  <ApplyAction target="s68g_front_mannequin" action="s68g_walk" at="0s"
+               loop="true" rootMotion="in_place"
+               blendIn="0s" blendOut="0.18s" mask="full_body" />
+
+  <Background color="#050810" />
+
+  <Scene id="QuaterniusNightWalk">
+    <Defs>
+      <LinearGradient id="s68g_sky" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#111A35, 0.58:#091126, 1:#050810" />
+      <LinearGradient id="s68g_ground" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#202B45, 1:#0B1120" />
+      <RadialGradient id="s68g_glow" cx="0.5" cy="0.5" r="0.5"
+                      stops="0:#FFE9B8, 0.35:#FFD77A66, 1:#FFD77A00" />
+      <RadialGradient id="s68g_vignette" cx="0.5" cy="0.5" r="0.72"
+                      stops="0:#00000000, 0.65:#00000020, 1:#000000A8" />
+    </Defs>
+
+    <Timeline>
+      <Track id="s68g_backdrop" space="screen" compositeOrder="10">
+        <Sequence from="0s" duration="8s" out="hide">
+          <Layer space="screen">
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#s68g_sky)" />
+            <Circle x="1530" y="190" radius="54" color="#F4F1E8" />
+            <Circle x="1530" y="190" radius="125" fill="url(#s68g_glow)"
+                    opacity="0.28" blend="screen" />
+
+            <Repeat id="s68g_buildings" count="4"
+                    x={curve("0:0:linear, 8:-760:linear")} y="0" xStep="1920">
+              <Group>
+                <Rect x="0" y="390" width="270" height="450" color="#0A1226" />
+                <Rect x="300" y="280" width="230" height="560" color="#0C1630" />
+                <Rect x="565" y="420" width="320" height="420" color="#091125" />
+                <Rect x="920" y="330" width="250" height="510" color="#0D1730" />
+                <Rect x="1205" y="400" width="310" height="440" color="#091124" />
+                <Rect x="1550" y="300" width="330" height="540" color="#0B142B" />
+                <Rect x="336" y="440" width="10" height="13" color="#FFD77A" opacity="0.32" />
+                <Rect x="985" y="470" width="10" height="13" color="#FFD77A" opacity="0.25" />
+                <Rect x="1620" y="420" width="10" height="13" color="#FFD77A" opacity="0.28" />
+              </Group>
+            </Repeat>
+
+            <Rect x="0" y="840" width="1920" height="240" fill="url(#s68g_ground)" />
+            <Line x1="0" y1="840" x2="1920" y2="840"
+                  stroke="#516184" strokeWidth="4" opacity="0.7" />
+
+            <Repeat id="s68g_ground_marks" count="5"
+                    x={curve("0:0:linear, 8:-1920:linear")} y="0" xStep="960">
+              <Rect x="110" y="950" width="500" height="5" color="#607296" opacity="0.38" />
+              <Rect x="700" y="950" width="170" height="5" color="#607296" opacity="0.22" />
+            </Repeat>
+
+            <Repeat id="s68g_lamps" count="5"
+                    x={curve("0:0:linear, 8:-1920:linear")} y="0" xStep="960">
+              <Group>
+                <Line x1="250" y1="580" x2="250" y2="855"
+                      stroke="#263652" strokeWidth="7" />
+                <Line x1="250" y1="580" x2="320" y2="580"
+                      stroke="#263652" strokeWidth="6" />
+                <Circle x="326" y="580" radius="18" color="#FFE9B8" />
+                <Circle x="326" y="580" radius="110" fill="url(#s68g_glow)"
+                        opacity="0.42" blend="screen" />
+                <Circle x="250" y="855" radius="170" fill="url(#s68g_glow)"
+                        opacity="0.18" blend="screen" />
+              </Group>
+            </Repeat>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="s68g_character_track" space="3d" compositeOrder="40">
+        <Sequence from="0s" duration="8s" out="hide">
+          <CompositeGroup id="s68g_character_island" space="3d" depth="true" format="rgba16f">
+            <Camera3D id="s68g_camera"
+                      position={[0,0.62,5.0]}
+                      target={[0,0.52,0]}
+                      fov="31" />
+            <Model id="s68g_mannequin"
+                   asset="s68g_character1_model"
+                   profile="s68g_character1_profile"
+                   position={[0,-0.62,0]}
+                   rotationY="70"
+                   scale="1.05"
+                   exposure="1.65" />
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+
+      <Track id="s68g_labels" space="screen" compositeOrder="60">
+        <Sequence from="0s" duration="8s" out="hide">
+          <Layer space="screen">
+            <Group opacity={curve("0:0:linear, 0.3:0:linear, 0.75:1:ease_out, 6.9:1:linear, 7.5:0:ease_in")}>
+              <Text value="QUATERNIUS NIGHT WALK" x="960" y="104" align="center"
+                    fontFamily="Arial" fontSize="46" fontWeight="800" tracking="10"
+                    color="#F4F1E8" />
+              <Text value="UAL1 · WALK_LOOP · CC0" x="960" y="150" align="center"
+                    fontFamily="Arial" fontSize="18" fontWeight="700" tracking="7"
+                    color="#9CB5E7" />
+            </Group>
+            <Rect x="0" y="0" width="1920" height="1080"
+                  fill="url(#s68g_vignette)" opacity="0.74" />
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="s68g_front_backdrop" space="screen" compositeOrder="10">
+        <Sequence from="8s" duration="8s" out="hold">
+          <Layer space="screen">
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#s68g_sky)" />
+            <Circle x="960" y="170" radius="48" color="#F4F1E8" />
+            <Circle x="960" y="170" radius="118" fill="url(#s68g_glow)"
+                    opacity="0.28" blend="screen" />
+
+            <!-- Left and right street walls frame the central approach. -->
+            <Group x={curve("0:0:linear, 8:-54:ease_in_out")}>
+              <Rect x="0" y="330" width="330" height="510" color="#0A1226" />
+              <Rect x="350" y="390" width="250" height="450" color="#0D1730" />
+              <Rect x="620" y="455" width="175" height="385" color="#0A1429" />
+              <Rect x="54" y="500" width="210" height="220" color="#FFD77A" opacity="0.10" />
+              <Rect x="398" y="548" width="160" height="172" color="#FFD77A" opacity="0.08" />
+            </Group>
+            <Group x={curve("0:0:linear, 8:54:ease_in_out")}>
+              <Rect x="1590" y="330" width="330" height="510" color="#0A1226" />
+              <Rect x="1320" y="390" width="250" height="450" color="#0D1730" />
+              <Rect x="1125" y="455" width="175" height="385" color="#0A1429" />
+              <Rect x="1656" y="500" width="210" height="220" color="#FFD77A" opacity="0.10" />
+              <Rect x="1362" y="548" width="160" height="172" color="#FFD77A" opacity="0.08" />
+            </Group>
+
+            <!-- Perspective road and pavements converge at x=960, y=590. -->
+            <Path d="M 0 1080 L 0 840 L 800 590 L 850 590 L 610 1080 Z"
+                  color="#182239" />
+            <Path d="M 1920 1080 L 1920 840 L 1120 590 L 1070 590 L 1310 1080 Z"
+                  color="#182239" />
+            <Path d="M 610 1080 L 850 590 L 1070 590 L 1310 1080 Z"
+                  color="#0B1120" />
+            <Line x1="610" y1="1080" x2="850" y2="590"
+                  stroke="#526587" strokeWidth="5" opacity="0.55" />
+            <Line x1="1310" y1="1080" x2="1070" y2="590"
+                  stroke="#526587" strokeWidth="5" opacity="0.55" />
+            <Line x1="960" y1="1080" x2="960" y2="590"
+                  stroke="#7688A8" strokeWidth="3" opacity="0.22" />
+
+            <!-- Road marks recede toward the vanishing point, opposite to the
+                 character's approach direction. -->
+            <Group transformOriginX="960" transformOriginY="590"
+                   y={curve("0:125:linear, 8:0:linear")}
+                   scale={curve("0:1.18:linear, 8:0.78:ease_out")}>
+              <Rect x="952" y="650" width="16" height="34" color="#9CB5E7" opacity="0.26" />
+              <Rect x="948" y="735" width="24" height="54" color="#9CB5E7" opacity="0.30" />
+              <Rect x="942" y="855" width="36" height="88" color="#9CB5E7" opacity="0.34" />
+            </Group>
+
+            <!-- Symmetrical lamps make the camera axis explicit. -->
+            <Group>
+              <Line x1="760" y1="610" x2="760" y2="785" stroke="#2A3A58" strokeWidth="5" />
+              <Line x1="760" y1="610" x2="806" y2="610" stroke="#2A3A58" strokeWidth="4" />
+              <Circle x="812" y="610" radius="13" color="#FFE9B8" />
+              <Circle x="812" y="610" radius="72" fill="url(#s68g_glow)" opacity="0.32" blend="screen" />
+              <Line x1="1160" y1="610" x2="1160" y2="785" stroke="#2A3A58" strokeWidth="5" />
+              <Line x1="1160" y1="610" x2="1114" y2="610" stroke="#2A3A58" strokeWidth="4" />
+              <Circle x="1108" y="610" radius="13" color="#FFE9B8" />
+              <Circle x="1108" y="610" radius="72" fill="url(#s68g_glow)" opacity="0.32" blend="screen" />
+
+              <Line x1="470" y1="520" x2="470" y2="905" stroke="#263652" strokeWidth="8" />
+              <Line x1="470" y1="520" x2="552" y2="520" stroke="#263652" strokeWidth="7" />
+              <Circle x="560" y="520" radius="20" color="#FFE9B8" />
+              <Circle x="560" y="520" radius="125" fill="url(#s68g_glow)" opacity="0.38" blend="screen" />
+              <Line x1="1450" y1="520" x2="1450" y2="905" stroke="#263652" strokeWidth="8" />
+              <Line x1="1450" y1="520" x2="1368" y2="520" stroke="#263652" strokeWidth="7" />
+              <Circle x="1360" y="520" radius="20" color="#FFE9B8" />
+              <Circle x="1360" y="520" radius="125" fill="url(#s68g_glow)" opacity="0.38" blend="screen" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="s68g_front_character_track" space="3d" compositeOrder="40">
+        <Sequence from="8s" duration="8s" out="hold">
+          <CompositeGroup id="s68g_front_character_island" space="3d" depth="true" format="rgba16f">
+            <Camera3D id="s68g_front_camera"
+                      position={[0,0.62,5.0]}
+                      target={[0,0.50,0]}
+                      fov="31" />
+            <Model id="s68g_front_mannequin"
+                   asset="s68g_character1_model"
+                   profile="s68g_character1_profile"
+                   position={[0,-0.62,0]}
+                   rotationY="0"
+                   scale={curve("0:0.78:linear, 8:1.16:ease_in_out")}
+                   exposure="1.65" />
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+
+      <Track id="s68g_front_labels" space="screen" compositeOrder="60">
+        <Sequence from="8s" duration="8s" out="hold">
+          <Layer space="screen">
+            <Group opacity={curve("0:0:linear, 0.35:0:linear, 0.8:1:ease_out, 6.9:1:linear, 7.5:0:ease_in")}>
+              <Text value="FRONT APPROACH" x="960" y="104" align="center"
+                    fontFamily="Arial" fontSize="46" fontWeight="800" tracking="12"
+                    color="#F4F1E8" />
+              <Text value="THE SAME WALK · A NEW CAMERA AXIS" x="960" y="150" align="center"
+                    fontFamily="Arial" fontSize="18" fontWeight="700" tracking="6"
+                    color="#9CB5E7" />
+            </Group>
+            <Rect x="0" y="0" width="1920" height="1080"
+                  fill="url(#s68g_vignette)" opacity="0.68" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="QuaterniusNightWalk" />
+</Graph>

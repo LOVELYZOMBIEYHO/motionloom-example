@@ -2,7 +2,6 @@
 
 | ID | Type | Domain | Title | Features | Teaches |
 |---|---|---|---|---|---|
-| [cs-000026](../../core/scene/cs-000026/) | core | scene | Asset Card Layout | layout, image-asset, timeline, shape, text | Compose background, asset image, card shape, labels, glow, and animation timing into one scene.<br>Use layout as a feature label, while keeping domain as scene for graph-family classification. |
 | [cs-000050](../../core/scene/cs-000050/) | core | scene | Declarative Layout | scene, layout, grid, automatic-positioning | Arrange scene children with a declarative grid.<br>Control columns, item size, and gap without writing child positions. |
 | [cs-000053](../../core/scene/cs-000053/) | core | scene | Advanced Declarative Layout | scene, layout, padding, alignment, justification | Create internal Layout space with padding and independent gaps.<br>Distribute grid columns with align and justify. |
 | [s-000001](../../showcase/s-000001/) | showcase | scene | Pinwheel zDepth Layer Sorting 4s | scene, zdepth, layer, shape, curve-animation | Demonstrate layer zDepth ordering with four overlapping pinwheel blades.<br>Use separate layers and subtle curve animation to make depth sorting visible. |

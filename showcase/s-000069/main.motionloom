@@ -1,0 +1,485 @@
+<!--
+=====================================================================
+S69 · BEYOND THE LAST MERIDIAN — 最後經線
+16.5 s · 1920x1080 · 30 fps · a night-chart film prologue
+
+A deep-sea chart draws itself on indigo paper. A golden route traces
+across the map, a whale breaches, a storm gathers, a lighthouse beam
+sweeps the dark, stars light the course, and the title surfaces.
+
+PALETTE (strict): navy paper / gold ink / ivory ink / one teal accent
+MATERIALS: sea-base, sea-depth, ink-cloud, horizon-glow, beam, sweep
+MOTION: trim draw-on, taper calligraphy, offsetPath ripples, gold
+sweeps (screen blend), breathing light, meaningful act transitions
+=====================================================================
+-->
+<Graph fps={30} duration="16.5s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#05070F" />
+
+  <Scene id="LastMeridianChart">
+    <Defs>
+      <RadialGradient id="s69_sea_base" cx="0.5" cy="0.42" r="0.95"
+                      stops="0:#13234E, 0.45:#0D1B3A, 0.8:#081126, 1:#050811" />
+      <LinearGradient id="s69_sea_depth" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#00000000, 0.55:#00000000, 0.8:#04101F66, 1:#02060DB8" />
+      <RadialGradient id="s69_ink_cloud" cx="0.5" cy="0.5" r="0.7"
+                      stops="0:#03060FF2, 0.4:#040810D8, 0.75:#060B185C, 1:#060B1800" />
+      <RadialGradient id="s69_horizon_glow" cx="0.5" cy="0.5" r="0.5"
+                      stops="0:#F7E7B4, 0.35:#F7E7B44D, 1:#F7E7B400" />
+      <LinearGradient id="s69_gold_line" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#E5C97B00, 0.3:#E5C97BAA, 0.7:#E5C97BAA, 1:#E5C97B00" />
+      <LinearGradient id="s69_beam_grad" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#F7E7B4D0, 0.55:#F7E7B42B, 1:#F7E7B400" />
+      <LinearGradient id="s69_gold_sweep" x1="0" y1="0" x2="1" y2="0"
+                      stops="0:#FFFFFF00, 0.34:#FFE7A355, 0.5:#FFFFFFB0, 0.66:#FFE7A355, 1:#FFFFFF00" />
+      <LinearGradient id="s69_film_scratch" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#FFFFFF00, 0.32:#FFF1BE33, 0.66:#0A102233, 1:#FFFFFF00" />
+      <LinearGradient id="s69_beam_lin" x1="1" y1="0" x2="0" y2="0"
+                      stops="0:#FDF3D8, 0.22:#F7E7B4C0, 0.55:#F7E7B455, 1:#F7E7B408" />
+      <LinearGradient id="s69_beam_core" x1="1" y1="0" x2="0" y2="0"
+                      stops="0:#FFFFFF, 0.3:#FDF3D8CC, 0.7:#F7E7B466, 1:#F7E7B400" />
+      <Filter id="s69_beam_blur">
+        <Blur radius="34" />
+      </Filter>
+      <RadialGradient id="s69_vignette" cx="0.5" cy="0.5" r="0.72"
+                      stops="0:#00000000, 0.62:#00000022, 1:#000000B0" />
+    </Defs>
+
+    <Timeline>
+      <Track id="s69_chart_track" space="screen" compositeOrder="10">
+        <Sequence from="0s" duration="16.5s" out="hold">
+          <Layer id="s69_chart_layer" space="screen">
+            <Rect id="s69_sea" x="0" y="0" width="1920" height="1080"
+                  fill="url(#s69_sea_base)" />
+            <Rect id="s69_sea_depth" x="0" y="0" width="1920" height="1080"
+                  fill="url(#s69_sea_depth)" />
+
+            <Repeat id="s69_dust" count="44" x="48" y="42" xStep="42" yStep="24"
+                    opacity="0.30" opacityStep="-0.002">
+              <Circle x="random(-14, 14, floor($time.sec*3)+17)"
+                      y="random(-10, 10, floor($time.sec*3)+31)"
+                      radius="1.6" color="#B9CDF0" opacity="0.14" />
+            </Repeat>
+            <Repeat id="s69_scratches" count="6" x="180" y="-40" xStep="290"
+                    opacity="0.14" opacityStep="-0.008">
+              <Rect x="random(-16, 16, floor($time.sec*2)+91)" y="0" width="1.8" height="1160"
+                    fill="url(#s69_film_scratch)" opacity="0.30" />
+            </Repeat>
+
+            <Path id="s69_frame_outer"
+                  d="M 100 70 L 1820 70 L 1820 1010 L 100 1010 Z"
+                  fill="none" stroke="#E5C97B" strokeWidth="2.5"
+                  trimStart={curve("0:0:linear, 16.5:0:linear")}
+                  trimEnd={curve("0:0.01:linear, 1.6:1:ease_in_out, 16.5:1:linear")} />
+            <Path id="s69_frame_inner"
+                  d="M 122 92 L 1798 92 L 1798 988 L 122 988 Z"
+                  fill="none" stroke="#F2EFE6" strokeWidth="1.2" opacity="0.55"
+                  trimStart={curve("0:0:linear, 16.5:0:linear")}
+                  trimEnd={curve("0:0.01:linear, 2.0:1:ease_in_out, 16.5:1:linear")} />
+
+            <Repeat id="s69_corner_diamonds" count="4" x="100" y="70" xStep="1720"
+                    yStep="940" rotation="45" opacity="0.8">
+              <Rect x="0" y="0" width="16" height="16" radius="2"
+                    fill="none" stroke="#E5C97B" strokeWidth="2" />
+            </Repeat>
+
+            <Path id="s69_lat_1" d="M 122 300 C 640 282 1280 282 1798 300"
+                  fill="none" stroke="#F2EFE6" strokeWidth="1" opacity="0.14"
+                  trimStart={curve("0:0:linear, 16.5:0:linear")}
+                  trimEnd={curve("0:0.01:linear, 1.5:1:ease_in_out, 16.5:1:linear")} />
+            <Path id="s69_lat_2" d="M 122 540 C 640 524 1280 524 1798 540"
+                  fill="none" stroke="#F2EFE6" strokeWidth="1" opacity="0.12"
+                  trimStart={curve("0:0:linear, 16.5:0:linear")}
+                  trimEnd={curve("0:0.01:linear, 1.7:1:ease_in_out, 16.5:1:linear")} />
+            <Path id="s69_lat_3" d="M 122 780 C 640 766 1280 766 1798 780"
+                  fill="none" stroke="#F2EFE6" strokeWidth="1" opacity="0.10"
+                  trimStart={curve("0:0:linear, 16.5:0:linear")}
+                  trimEnd={curve("0:0.01:linear, 1.9:1:ease_in_out, 16.5:1:linear")} />
+
+            <Path id="s69_mer_1" d="M 420 92 C 432 400 432 700 416 988"
+                  fill="none" stroke="#F2EFE6" strokeWidth="1" opacity="0.10"
+                  trimStart={curve("0:0:linear, 16.5:0:linear")}
+                  trimEnd={curve("0:0.01:linear, 2.1:1:ease_in_out, 16.5:1:linear")} />
+            <Path id="s69_mer_2" d="M 900 92 C 912 400 912 700 898 988"
+                  fill="none" stroke="#F2EFE6" strokeWidth="1" opacity="0.10"
+                  trimStart={curve("0:0:linear, 16.5:0:linear")}
+                  trimEnd={curve("0:0.01:linear, 2.3:1:ease_in_out, 16.5:1:linear")} />
+            <Path id="s69_mer_3" d="M 1380 92 C 1392 400 1392 700 1378 988"
+                  fill="none" stroke="#F2EFE6" strokeWidth="1" opacity="0.10"
+                  trimStart={curve("0:0:linear, 16.5:0:linear")}
+                  trimEnd={curve("0:0.01:linear, 2.5:1:ease_in_out, 16.5:1:linear")} />
+
+            <!-- 黃金航線：先掃一道微光，再由光線本身沿線描出 -->
+            <Group id="s69_route_glow"
+                   opacity={curve("0:0:linear, 4.3:0:linear, 4.7:0.10:ease_out, 16.5:0.10:linear")}>
+              <Path id="s69_route_glow_path"
+                    d="M 300 880 C 520 850 700 700 900 620 C 1100 540 1300 480 1500 430"
+                    fill="none" stroke="#E5C97B" strokeWidth="11"
+                    trimStart={curve("0:0:linear, 16.5:0:linear")}
+                    trimEnd={curve("0:0.01:linear, 4.4:0:linear, 6.6:1:ease_in_out, 16.5:1:linear")} />
+            </Group>
+            <Path id="s69_route"
+                  d="M 300 880 C 520 850 700 700 900 620 C 1100 540 1300 480 1500 430"
+                  fill="none" stroke="#E5C97B" strokeWidth="3.5"
+                  taperStart="0.12" taperEnd="0.15"
+                  trimStart={curve("0:0:linear, 16.5:0:linear")}
+                  trimEnd={curve("0:0.01:linear, 4.4:0:linear, 6.6:1:ease_in_out, 16.5:1:linear")}
+                  offsetPath={curve("0:0:linear, 12.4:0:linear, 13.2:9:ease_in_out, 13.8:0:ease_in_out, 16.5:0:linear")} />
+
+            <!-- 波浪帶：平靜時微動，風暴時洶湧 -->
+            <Repeat id="s69_wave_1" count="8" x="120" y="906" xStep="260"
+                    opacity={curve("0:0.16:linear, 8.0:0.16:linear, 9.0:0.42:ease_in_out, 10.6:0.42:linear, 11.6:0.18:ease_in_out, 16.5:0.18:linear")}>
+              <Path d="M 0 40 C 40 -20 90 100 130 40 C 170 -20 220 100 260 40"
+                    fill="none" stroke="#F2EFE6" strokeWidth="2"
+                    offsetPath={curve("0:0:linear, 8:0:linear, 9.5:8:ease_in_out, 11:0:ease_in_out, 16.5:0:linear")} />
+            </Repeat>
+            <Repeat id="s69_wave_2" count="8" x="120" y="958" xStep="260"
+                    opacity={curve("0:0.12:linear, 8.0:0.12:linear, 9.0:0.32:ease_in_out, 10.6:0.32:linear, 11.6:0.13:ease_in_out, 16.5:0.13:linear")}>
+              <Path d="M 0 40 C 40 -20 90 100 130 40 C 170 -20 220 100 260 40"
+                    fill="none" stroke="#F2EFE6" strokeWidth="1.5"
+                    offsetPath={curve("0:6:linear, 8:6:linear, 9.5:16:ease_in_out, 11:8:ease_in_out, 16.5:6:linear")} />
+            </Repeat>
+            <Repeat id="s69_wave_3" count="8" x="120" y="1006" xStep="260"
+                    opacity={curve("0:0.09:linear, 8.0:0.09:linear, 9.0:0.24:ease_in_out, 10.6:0.24:linear, 11.6:0.10:ease_in_out, 16.5:0.10:linear")}>
+              <Path d="M 0 40 C 40 -20 90 100 130 40 C 170 -20 220 100 260 40"
+                    fill="none" stroke="#F2EFE6" strokeWidth="1"
+                    offsetPath={curve("0:3:linear, 8:3:linear, 9.5:12:ease_in_out, 11:5:ease_in_out, 16.5:3:linear")} />
+            </Repeat>
+
+            <!-- 羅盤玫瑰：長短星 + 雙環 + 方位刻度，自繪並歸位 -->
+            <Group id="s69_compass"
+                   x="1560" y="250"
+                   rotation={curve("0:0:linear, 2.6:14:linear, 3.4:0:ease_in_out, 16.5:0:linear")}
+                   transformOriginX="0" transformOriginY="0">
+              <Circle id="s69_compass_halo" x="0" y="0" radius="240"
+                      fill="url(#s69_horizon_glow)" opacity="0.20" />
+              <Path id="s69_compass_ring"
+                    d="M 195 0 C 195 108 108 195 0 195 C -108 195 -195 108 -195 0 C -195 -108 -108 -195 0 -195 C 108 -195 195 -108 195 0 Z M 168 0 C 168 93 93 168 0 168 C -93 168 -168 93 -168 0 C -168 -93 -93 -168 0 -168 C 93 -168 168 -93 168 0 Z"
+                    fill="#E5C97B0D" fillRule="evenodd" booleanOp="subtract"
+                    stroke="#E5C97B" strokeWidth="1.5"
+                    trimStart={curve("0:0:linear, 16.5:0:linear")}
+                    trimEnd={curve("0:0.01:linear, 2.4:0:linear, 3.0:1:ease_in_out, 16.5:1:linear")} />
+              <Path id="s69_compass_long"
+                    d="M 0 -150 L 24 -24 L 150 0 L 24 24 L 0 150 L -24 24 L -150 0 L -24 -24 Z"
+                    fill="none" stroke="#E5C97B" strokeWidth="2.5"
+                    trimStart={curve("0:0:linear, 16.5:0:linear")}
+                    trimEnd={curve("0:0.01:linear, 2.2:0:linear, 3.2:1:ease_in_out, 16.5:1:linear")} />
+              <Path id="s69_compass_short"
+                    d="M 0 -80 L 57 -57 L 80 0 L 57 57 L 0 80 L -57 57 L -80 0 L -57 -57 Z"
+                    fill="none" stroke="#E5C97B" strokeWidth="2" opacity="0.7"
+                    trimStart={curve("0:0:linear, 16.5:0:linear")}
+                    trimEnd={curve("0:0.01:linear, 2.6:0:linear, 3.5:1:ease_in_out, 16.5:1:linear")} />
+              <Line id="s69_compass_n" x1="0" y1="-200" x2="0" y2="-220"
+                    stroke="#F2EFE6" strokeWidth="2"
+                    trimStart={curve("0:0:linear, 16.5:0:linear")}
+                    trimEnd={curve("0:0.01:linear, 3.0:0:linear, 3.6:1:ease_out, 16.5:1:linear")} />
+              <Line id="s69_compass_e" x1="200" y1="0" x2="220" y2="0"
+                    stroke="#F2EFE6" strokeWidth="2"
+                    trimStart={curve("0:0:linear, 16.5:0:linear")}
+                    trimEnd={curve("0:0.01:linear, 3.1:0:linear, 3.7:1:ease_out, 16.5:1:linear")} />
+              <Text id="s69_compass_n_text" value="N" x="0" y="-238" align="center"
+                    fontFamily="Times New Roman" fontSize="26" fontWeight="700"
+                    color="#E5C97B" opacity="0.9" />
+            </Group>
+
+            <!-- 比例尺 -->
+            <Group id="s69_scale_bar" x="300" y="948"
+                   opacity={curve("0:0:linear, 3.2:0:linear, 3.8:0.85:ease_out, 16.5:0.85:linear")}>
+              <Line x1="0" y1="0" x2="130" y2="0" stroke="#F2EFE6" strokeWidth="2" />
+              <Line x1="0" y1="-8" x2="0" y2="8" stroke="#F2EFE6" strokeWidth="2" />
+              <Line x1="65" y1="-6" x2="65" y2="6" stroke="#F2EFE6" strokeWidth="1.5" />
+              <Line x1="130" y1="-8" x2="130" y2="8" stroke="#F2EFE6" strokeWidth="2" />
+              <Text value="100 LEAGUES" x="140" y="6" fontFamily="Times New Roman"
+                    fontSize="18" fontWeight="600" tracking="3" color="#A9B8D8" opacity="0.8" />
+            </Group>
+
+            <!-- 呼吸暖光 + 暗角：令畫面有「活」嘅光 -->
+            <Rect id="s69_breathe" x="0" y="0" width="1920" height="1080"
+                  color="#F7E7B4" blend="screen"
+                  opacity="0.016 + 0.013*(0.5 + 0.5*sin($time.sec*11.0))" />
+            <Rect id="s69_vignette" x="0" y="0" width="1920" height="1080"
+                  fill="url(#s69_vignette)" opacity="0.8" />
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="s69_voyage_track" space="screen" compositeOrder="20">
+        <Sequence from="4.2s" duration="3.8s" out="hide">
+          <Layer id="s69_voyage_layer" space="screen">
+            <!-- 出發港 -->
+            <Group id="s69_port" x="300" y="880"
+                   opacity={curve("0:0:linear, 0.2:0:linear, 0.6:1:ease_out, 3.8:1:linear")}>
+              <Circle x="0" y="0" radius="8" color="#F2EFE6" />
+              <Circle x="0" y="0" radius="17" fill="none" stroke="#E5C97B" strokeWidth="1.5" opacity="0.8" />
+              <Line x1="0" y1="-24" x2="0" y2="-34" stroke="#F2EFE6" strokeWidth="2" />
+            </Group>
+
+            <!-- 帆船：沿航線前進，隨浪搖晃 -->
+            <Group id="s69_ship"
+                   x={curve("0:300:linear, 0.7:560:linear, 1.4:820:linear, 2.1:1080:linear, 2.8:1360:linear, 3.4:1510:linear, 3.8:1510:linear")}
+                   y={curve("0:880:linear, 0.7:790:linear, 1.4:650:linear, 2.1:560:linear, 2.8:472:linear, 3.4:430:linear, 3.8:430:linear")}
+                   rotation={curve("0:0:linear, 0.4:5:ease_in_out, 0.8:-4:ease_in_out, 1.2:5:ease_in_out, 1.6:-4:ease_in_out, 2.0:5:ease_in_out, 2.4:-4:ease_in_out, 2.8:3:ease_in_out, 3.4:0:ease_in_out")}
+                   transformOriginX="0" transformOriginY="6"
+                   opacity={curve("0:0:linear, 0.25:0:linear, 0.6:1:ease_out, 3.4:1:linear, 3.8:1:linear")}>
+              <Path d="M -22 6 L 22 6 L 14 16 L -14 16 Z" fill="#F2EFE6" opacity="0.9" />
+              <Path d="M -2 -16 L 14 6 L -2 6 Z" fill="#E5C97B" />
+              <Line x1="-2" y1="-16" x2="-2" y2="6" stroke="#F2EFE6" strokeWidth="1.5" />
+            </Group>
+
+            <!-- 目的地 X -->
+            <Group id="s69_destination" x="1500" y="430"
+                   opacity={curve("0:0:linear, 2.3:0:linear, 2.8:1:ease_out, 3.8:1:linear")}>
+              <Path d="M -16 -16 L 16 16 M 16 -16 L -16 16" fill="none"
+                    stroke="#E5C97B" strokeWidth="5" lineCap="round" />
+              <Circle x="0" y="0" radius="26" fill="none" stroke="#E5C97B" strokeWidth="1.5" opacity="0.7" />
+            </Group>
+
+            <!-- 巨鯨：青綠 accent，破浪而出 -->
+            <Group id="s69_whale" x="430"
+                   y={curve("0:640:linear, 2.4:640:linear, 2.8:556:ease_in_out, 3.2:640:ease_in_out, 3.8:640:linear")}
+                   opacity={curve("0:0:linear, 2.3:0:linear, 2.7:0.95:ease_out, 3.4:0.9:linear, 3.8:0.7:linear")}>
+              <Circle id="s69_whale_splash_1" x="20" y="8" radius={curve("2.5:6:linear, 2.9:34:ease_out, 3.4:60:ease_out")}
+                      fill="none" stroke="#F2EFE6" strokeWidth="1.5"
+                      opacity={curve("2.5:0:linear, 2.75:0.8:ease_out, 3.3:0:ease_in")} />
+              <Circle id="s69_whale_splash_2" x="20" y="8" radius={curve("2.7:6:linear, 3.2:46:ease_out")}
+                      fill="none" stroke="#5FD4C8" strokeWidth="1.2"
+                      opacity={curve("2.7:0:linear, 2.95:0.6:ease_out, 3.5:0:ease_in")} />
+              <Path id="s69_whale_back"
+                    d="M -280 0 C -240 -46 -170 -70 -110 -60 C -50 -50 0 -20 40 10 C 90 -40 150 -80 230 -70 C 290 -62 340 -36 380 0"
+                    fill="none" stroke="#5FD4C8" strokeWidth="5" lineCap="round"
+                    taperStart="0.18" taperEnd="0.18"
+                    trimStart={curve("0:0:linear, 3.8:0:linear")}
+                    trimEnd={curve("0:0.01:linear, 2.55:0:linear, 3.1:1:ease_in_out, 3.8:1:linear")} />
+              <Path id="s69_whale_tail_1"
+                    d="M -280 0 C -320 -30 -360 -18 -380 8"
+                    fill="none" stroke="#F2EFE6" strokeWidth="4" lineCap="round"
+                    trimStart={curve("0:0:linear, 3.8:0:linear")}
+                    trimEnd={curve("0:0.01:linear, 2.7:0:linear, 3.15:1:ease_out, 3.8:1:linear")} />
+              <Path id="s69_whale_tail_2"
+                    d="M -280 0 C -318 12 -348 30 -370 52"
+                    fill="none" stroke="#F2EFE6" strokeWidth="4" lineCap="round"
+                    trimStart={curve("0:0:linear, 3.8:0:linear")}
+                    trimEnd={curve("0:0.01:linear, 2.85:0:linear, 3.3:1:ease_out, 3.8:1:linear")} />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="s69_storm_track" space="screen" compositeOrder="30">
+        <Sequence from="8s" duration="2.6s" out="hide">
+          <Layer id="s69_storm_layer" space="screen">
+            <Rect id="s69_storm_band" x="0" y="0" width="1920" height="430"
+                  fill="url(#s69_ink_cloud)"
+                  opacity={curve("0:0:linear, 0.6:0.55:ease_out, 2.6:0.6:linear")} />
+            <Circle id="s69_cloud_1" x="960" y="190" radius={curve("0:130:linear, 1.4:430:ease_out, 2.6:470:linear")}
+                    fill="url(#s69_ink_cloud)" opacity={curve("0:0:linear, 0.9:0.92:ease_out, 2.6:0.92:linear")} />
+            <Circle id="s69_cloud_2" x="600" y="140" radius={curve("0:100:linear, 1.4:330:ease_out, 2.6:360:linear")}
+                    fill="url(#s69_ink_cloud)" opacity={curve("0:0:linear, 1.0:0.85:ease_out, 2.6:0.85:linear")} />
+            <Circle id="s69_cloud_3" x="1340" y="160" radius={curve("0:110:linear, 1.4:360:ease_out, 2.6:390:linear")}
+                    fill="url(#s69_ink_cloud)" opacity={curve("0:0:linear, 1.0:0.88:ease_out, 2.6:0.88:linear")} />
+            <Circle id="s69_cloud_4" x="820" y="60" radius={curve("0:80:linear, 1.4:270:ease_out, 2.6:300:linear")}
+                    fill="url(#s69_ink_cloud)" opacity={curve("0:0:linear, 1.1:0.8:ease_out, 2.6:0.8:linear")} />
+
+            <Group id="s69_lightning_glow" x="1120" y="300"
+                   opacity={curve("0:0:linear, 0.6:0:linear, 0.68:0.9:ease_out, 0.82:0.2:ease_in, 1.15:0:linear, 1.25:0.7:ease_out, 1.4:0:linear, 2.6:0:linear")}>
+              <Circle x="20" y="-110" radius="180" fill="url(#s69_horizon_glow)"
+                      blend="screen" opacity="0.9" />
+            </Group>
+            <Group id="s69_lightning" x="1120" y="300"
+                   opacity={curve("0:0:linear, 0.5:0:linear, 0.6:0:linear, 0.65:1:linear, 0.7:0.15:linear, 0.75:0.85:linear, 0.8:0:linear, 1.1:0:linear, 1.2:0.9:linear, 1.25:0.1:linear, 1.3:0.7:linear, 1.35:0:linear, 2.6:0:linear")}>
+              <Path d="M 0 0 L 40 -70 L 0 -50 L 60 -160 L 20 -140 L 90 -260"
+                    fill="none" stroke="#F7E7B4" strokeWidth="3.5" lineCap="round" />
+              <Path d="M 40 -70 L 110 -120 L 80 -100 L 160 -180"
+                    fill="none" stroke="#F7E7B4" strokeWidth="2" lineCap="round" />
+            </Group>
+            <Repeat id="s69_rain" count="26" x="420" y="40" xStep="44" yStep="26"
+                    opacity="0.5">
+              <Line x1="0" y1="0" x2="-16" y2="30" stroke="#F2EFE6" strokeWidth="1"
+                    opacity={curve("0:0.12:linear, 0.7:0.22:ease_out, 2.6:0.22:linear")}
+                    x={curve("0:0:linear, 2.6:26:linear")} />
+            </Repeat>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="s69_light_track" space="screen" compositeOrder="40">
+        <Sequence from="10.6s" duration="3.4s" out="hide">
+          <Layer id="s69_light_layer" space="screen">
+            <!-- 燈塔 -->
+            <Group id="s69_lighthouse" x="1650" y="870"
+                   opacity={curve("0:0:linear, 0.5:0:linear, 0.9:1:ease_out, 3.4:1:linear")}>
+              <Path d="M -16 0 L -9 -80 L -9 -100 L 9 -100 L 9 -80 L 16 0 Z"
+                    fill="none" stroke="#F2EFE6" strokeWidth="2.5" />
+              <Circle id="s69_lamp" x="0" y="-104" radius="9" color="#F7E7B4" />
+              <Circle id="s69_lamp_halo" x="0" y="-104" radius="34"
+                      fill="url(#s69_horizon_glow)" opacity="0.75" />
+            </Group>
+
+            <!-- 光源：只保留燈塔本身 + 柔和光暈；掃射光由 spectral_energy 體積光提供 -->
+            <Circle id="s69_beam_glow" x="1650" y="766" radius="180"
+                    fill="url(#s69_horizon_glow)" blend="screen"
+                    opacity={curve("0:0:linear, 0.5:0:linear, 0.9:0.9:ease_out, 3.4:0.9:linear")} />
+            <Circle id="s69_beam_glow_2" x="1650" y="766" radius="90"
+                    fill="url(#s69_horizon_glow)" blend="screen"
+                    opacity={curve("0:0:linear, 0.6:0:linear, 0.95:0.9:ease_out, 3.4:0.9:linear")} />
+
+            <!-- 星座：細線連星，trim 繪製 -->
+            <Group id="s69_constellation"
+                   opacity={curve("0:0:linear, 0.9:0:linear, 1.3:1:ease_out, 3.4:1:linear")}>
+              <Path id="s69_const_line_1" d="M 720 220 L 880 160 L 1010 250 L 1160 180"
+                    fill="none" stroke="#F2EFE6" strokeWidth="1"
+                    trimStart={curve("0:0:linear, 3.4:0:linear")}
+                    trimEnd={curve("0:0.01:linear, 0.9:0:linear, 1.7:1:ease_in_out, 3.4:1:linear")} />
+              <Path id="s69_const_line_2" d="M 1010 250 L 900 310 L 720 220 M 1160 180 L 1280 300"
+                    fill="none" stroke="#F2EFE6" strokeWidth="1"
+                    trimStart={curve("0:0:linear, 3.4:0:linear")}
+                    trimEnd={curve("0:0.01:linear, 1.2:0:linear, 2.1:1:ease_in_out, 3.4:1:linear")} />
+              <Repeat id="s69_stars" count="6" x="720" y="220" xStep="140" opacity="0.95">
+                <Circle x="random(-8, 8, floor($time.sec*3)+61)"
+                        y="random(-8, 8, floor($time.sec*3)+71)" radius="2.6" color="#F7E7B4"
+                        opacity="0.9" />
+              </Repeat>
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="s69_title_track" space="screen" compositeOrder="50">
+        <Sequence from="14s" duration="2.5s" out="hold">
+          <Layer id="s69_title_layer" space="screen">
+            <Group id="s69_title_group"
+                   opacity={curve("0:0:linear, 0.35:0:linear, 0.85:1:ease_out, 2.5:1:linear")}
+                   scale={curve("0:1.06:linear, 0.85:1:ease_out, 2.5:1:linear")}
+                   transformOriginX="960" transformOriginY="540">
+              <Line id="s69_title_rule_t" x1="700" y1="382" x2="1220" y2="382"
+                    stroke="#E5C97B" strokeWidth="2"
+                    trimStart={curve("0:0:linear, 2.5:0:linear")}
+                    trimEnd={curve("0:0.01:linear, 0.5:0:linear, 0.9:1:ease_out, 2.5:1:linear")} />
+              <Text value="BEYOND THE" x="960" y="450" align="center"
+                    fontFamily="Times New Roman" fontSize="62" renderScale="4x"
+                    color="#05070F" opacity="0.75" />
+              <Text value="BEYOND THE" x="960" y="440" align="center"
+                    fontFamily="Times New Roman" fontSize="62" renderScale="4x"
+                    color="#E5C97B" />
+              <Text value="LAST MERIDIAN" x="960" y="576" align="center"
+                    fontFamily="Times New Roman" fontSize="134" renderScale="4x"
+                    color="#05070F" opacity="0.8" />
+              <Text value="LAST MERIDIAN" x="960" y="560" align="center"
+                    fontFamily="Times New Roman" fontSize="134" renderScale="4x"
+                    color="#F2EFE6" />
+              <Text value="AN ORIGINAL MOTIONLOOM CHART" x="960" y="668" align="center"
+                    fontFamily="Times New Roman" fontSize="30" renderScale="4x"
+                    tracking="8" color="#A9B8D8"
+                    opacity={curve("0:0:linear, 1.1:0:linear, 1.5:0.9:ease_out, 2.5:0.9:linear")} />
+              <Line id="s69_title_rule_b" x1="700" y1="706" x2="1220" y2="706"
+                    stroke="#E5C97B" strokeWidth="1.5" opacity="0.6"
+                    trimStart={curve("0:0:linear, 2.5:0:linear")}
+                    trimEnd={curve("0:0.01:linear, 0.7:0:linear, 1.1:1:ease_out, 2.5:1:linear")} />
+            </Group>
+
+            <Rect id="s69_title_sweep"
+                  x={curve("0:-540:linear, 1.3:1580:ease_in_out, 2.5:2080:linear")}
+                  y="330" width="380" height="420" rotation="-8"
+                  fill="url(#s69_gold_sweep)" blend="screen"
+                  opacity={curve("0:0:linear, 0.35:0:linear, 0.7:0.5:ease_out, 1.5:0.12:ease_in, 2.5:0:linear")} />
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="s69_transition_track" space="screen" compositeOrder="60">
+        <Sequence from="0s" duration="16.5s" out="hold">
+          <Layer id="s69_transition_layer" space="screen">
+            <!-- 4.2s：經線閃光，航線啟航 -->
+            <Rect id="s69_tr_meridian"
+                  x={curve("0:1900:linear, 4.2:1900:linear, 4.6:420:ease_in_out, 5.2:-300:ease_in_out, 16.5:-300:linear")}
+                  y="0" width="4" height="1080"
+                  fill="url(#s69_gold_line)" blend="screen"
+                  opacity={curve("0:0:linear, 4.32:0:linear, 4.48:0.8:ease_out, 4.8:0.35:ease_in, 5.1:0:linear, 16.5:0:linear")} />
+
+            <!-- 8s：墨浪掀蓋，風暴降臨 -->
+            <Group id="s69_tr_wavewash"
+                   opacity={curve("0:0:linear, 8.0:0:linear, 8.2:1:ease_out, 8.75:1:linear, 9.0:0:ease_in, 16.5:0:linear")}>
+              <Rect x={curve("8.0:-2040:linear, 8.5:-260:ease_in_out, 9.0:2040:ease_in")}
+                    y="200" width="2040" height="150" color="#04070F" opacity="0.85" />
+              <Rect x={curve("8.0:2040:linear, 8.5:120:ease_in_out, 9.0:-2040:ease_in")}
+                    y="560" width="2040" height="160" color="#04070F" opacity="0.85" />
+            </Group>
+
+            <!-- 10.6s：墨水日蝕收攏 -->
+            <Group id="s69_tr_eclipse"
+                   opacity={curve("0:0:linear, 10.6:0:linear, 10.75:1:ease_out, 11.2:1:linear, 11.5:0:ease_in, 16.5:0:linear")}>
+              <Circle id="s69_tr_eclipse_ink" x="960" y="540"
+                      radius={curve("10.6:1250:linear, 11.2:430:ease_in_out, 11.5:140:ease_in")}
+                      fill="url(#s69_ink_cloud)" opacity="0.95" />
+              <Circle id="s69_tr_eclipse_ring" x="960" y="540"
+                      radius={curve("10.6:1100:linear, 11.2:300:ease_in_out, 11.5:60:ease_in")}
+                      fill="none" stroke="#E5C97B" strokeWidth="6"
+                      opacity={curve("10.6:0:linear, 10.9:0.8:ease_out, 11.5:0:ease_in")} />
+            </Group>
+
+            <!-- 14s：上下黑框收窄，讓出最終片名 -->
+            <Group id="s69_tr_aperture"
+                   opacity={curve("0:0:linear, 14.2:0:linear, 14.4:1:ease_out, 16.5:1:linear")}>
+              <Rect x="0" y={curve("14.2:-350:linear, 14.55:0:ease_in_out, 16.5:0:linear")}
+                    width="1920" height="350" color="#03050B" opacity="0.96" />
+              <Rect x="0" y={curve("14.2:1430:linear, 14.55:730:ease_in_out, 16.5:730:linear")}
+                    width="1920" height="350" color="#03050B" opacity="0.96" />
+              <Rect x="0" y="525" width="1920" height="30" fill="url(#s69_gold_sweep)"
+                    blend="screen"
+                    opacity={curve("14.2:0:linear, 14.5:0.8:ease_out, 14.8:0.2:ease_in, 15.4:0:linear, 16.5:0:linear")} />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="s69_caption_track" space="screen" compositeOrder="70">
+        <Sequence from="0s" duration="16.5s" out="hold">
+          <Layer id="s69_caption_layer" space="screen">
+            <Text id="s69_cap_1" value="ACT I · THE CHART DRAWS ITSELF" x="960" y="1016" align="center"
+                  fontFamily="Times New Roman" fontSize="22" fontWeight="600" tracking="6"
+                  color="#A9B8D8"
+                  opacity={curve("0:0:linear, 0.7:0.75:ease_out, 3.6:0.75:linear, 4.1:0:ease_in, 16.5:0:linear")} />
+            <Text id="s69_cap_2" value="ACT II · THE GOLDEN ROUTE" x="960" y="1016" align="center"
+                  fontFamily="Times New Roman" fontSize="22" fontWeight="600" tracking="6"
+                  color="#A9B8D8"
+                  opacity={curve("0:0:linear, 4.4:0.75:ease_out, 7.5:0.75:linear, 7.9:0:ease_in, 16.5:0:linear")} />
+            <Text id="s69_cap_3" value="ACT III · THE STORM" x="960" y="1016" align="center"
+                  fontFamily="Times New Roman" fontSize="22" fontWeight="600" tracking="6"
+                  color="#A9B8D8"
+                  opacity={curve("0:0:linear, 8.3:0.75:ease_out, 10.2:0.75:linear, 10.5:0:ease_in, 16.5:0:linear")} />
+            <Text id="s69_cap_4" value="ACT IV · THE LAST LIGHT" x="960" y="1016" align="center"
+                  fontFamily="Times New Roman" fontSize="22" fontWeight="600" tracking="6"
+                  color="#A9B8D8"
+                  opacity={curve("0:0:linear, 11.0:0.75:ease_out, 13.6:0.75:linear, 14.0:0:ease_in, 16.5:0:linear")} />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+
+    <Effects>
+      <Effect process="MeridianFinish" />
+    </Effects>
+  </Scene>
+
+  <Process id="MeridianFinish">
+    <Tex id="s69_scene_tex" fmt="rgba16f" from="scene" />
+    <Tex id="s69_energy_tex" fmt="rgba16f" size={[1920,1080]} />
+    <Tex id="s69_bloom_tex" fmt="rgba16f" size={[1920,1080]} />
+    <Tex id="s69_final_tex" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="s69_energy_pass" kind="compute" effect="spectral_energy"
+          in={["s69_scene_tex"]} out={["s69_energy_tex"]}
+          params={{ mode: "granular",
+                    active: "curve('0:0:linear, 11.2:0:linear, 11.7:1:ease_out, 13.8:1:linear, 14.2:0:ease_in, 16.5:0:linear')",
+                    intensity: "0.9", density: "0.9",
+                    drift: "curve('0:0.12:linear, 10.6:0.12:linear, 11.6:0.55:ease_in_out, 12.8:0.3:ease_in_out, 13.9:0.8:ease_in_out, 16.5:0.8:linear')",
+                    seed: "69" }} />
+    <Pass id="s69_bloom_pass" kind="compute" effect="glow_bloom"
+          in={["s69_energy_tex"]} out={["s69_bloom_tex"]}
+          params={{ threshold: "0.30", intensity: "0.75", sigma: "7.0" }} />
+    <Pass id="s69_grain_pass" kind="compute" effect="film_grain"
+          in={["s69_bloom_tex"]} out={["s69_final_tex"]}
+          params={{ kind: "film_grain", amount: "0.010", scale: "1.0", seed: "69" }} />
+  </Process>
+
+  <Present from="LastMeridianChart" />
+</Graph>

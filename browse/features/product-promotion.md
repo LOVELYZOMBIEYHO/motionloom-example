@@ -2,4 +2,4 @@
 
 | ID | Type | Domain | Title | Features | Teaches |
 |---|---|---|---|---|---|
-| [s-000066](../../showcase/s-000066/) | showcase | scene | Anica Motion 26s Product Launch Showcase | scene, assets, gltf, glb, draco | Translate the supplied 26.26-second HTML timeline into six deterministic MotionLoom chapters.<br>Composite a repository-hosted Draco phone GLB, recreated Anica product interface, vector pointer, prompt UI, RGB typography, and portal reveal in one ordered Scene. |
+| [s-000066](../../showcase/s-000066/) | showcase | scene | iPhone Titanium Reveal | scene, assets, glb, true-3d, material-binding | Bind a resolution-independent MotionLoom Scene to a named GLB screen material as a live texture.<br>Animate a repository-hosted phone GLB and Camera3D with typed AnimationTarget keyframes. |

@@ -1,22 +1,24 @@
 {
   "id": "s-000066",
   "type": "showcase",
-  "title": "Anica Motion 26s Product Launch Showcase",
+  "title": "iPhone Titanium Reveal",
   "domain": "scene",
   "features": [
     "scene",
     "assets",
-    "gltf",
     "glb",
-    "draco",
     "true-3d",
+    "material-binding",
+    "pbr",
+    "normal-map",
+    "metallic-roughness",
+    "specular",
     "product-promotion",
     "composite-order",
-    "effect-scope",
+    "animation-target",
+    "camera-3d",
     "process-effect",
-    "rgb-glitch",
-    "timeline",
-    "curve"
+    "timeline"
   ],
   "dsl": [
     "Graph",
@@ -30,28 +32,29 @@
     "CompositeGroup",
     "Camera3D",
     "Model",
+    "MaterialBinding",
     "Layer",
     "Group",
     "Rect",
-    "Circle",
-    "Line",
-    "Path",
-    "Repeat",
+    "Ellipse",
     "Text",
     "Effects",
     "Effect",
     "Process",
     "Tex",
     "Pass",
+    "AnimationTarget",
+    "Key",
     "Present"
   ],
   "teaches": [
-    "Translate the supplied 26.26-second HTML timeline into six deterministic MotionLoom chapters.",
-    "Composite a repository-hosted Draco phone GLB, prompt UI, RGB typography, and portal reveal in one ordered Scene without covering the 3D model with a 2D phone mockup.",
-    "Apply reusable Process effects after the complete Scene while retaining deterministic Scene-level composition."
+    "Bind a resolution-independent MotionLoom Scene to a named GLB screen material as a live texture.",
+    "Animate a repository-hosted phone GLB and Camera3D with typed AnimationTarget keyframes.",
+    "Preserve GLB PBR materials while presenting readable front, side, and rear product views.",
+    "Apply bloom and film grain after the complete Scene through an explicit Process texture pipeline."
   ],
   "source_path": "showcase/s-000066",
   "demo_url": "",
-  "related": ["s-000065", "cs-000059", "cs-000060"],
-  "requires": ["Graph", "Assets", "ModelAsset", "Scene", "CompositeGroup", "Camera3D", "Model", "Process", "Present"]
+  "related": ["s-000065", "s-000067"],
+  "requires": ["Graph", "Assets", "ModelAsset", "Scene", "CompositeGroup", "Camera3D", "Model", "MaterialBinding", "AnimationTarget", "Process", "Present"]
 }
