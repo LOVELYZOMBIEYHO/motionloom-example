@@ -1,47 +1,28 @@
-# S72 — Rigid Body Drop Lab
+# S72 — Cinematic Lighting / HDRI Lab
 
-This five-second WebGPU showcase demonstrates MotionLoom's unified 3D
-`RigidBody` contract. One Scene contains static arena walls, an authored
-kinematic pedestal and eight closely staged dynamic objects simulated by the
-same fixed-step `Physics` context. Their lower, converging spawn positions make
-the collision sequence denser and reach the settling phase sooner.
+This eight-second WebGPU showcase demonstrates MotionLoom's complete public
+Scene 3D lighting stack. A Radiance HDR equirectangular environment supplies a
+visible background, diffuse image-based lighting and roughness-aware specular
+reflections. A shadow-casting directional key, warm point practical, cool spot
+rim and rectangular softbox add controllable cinematic shaping.
 
-The objects use cube, tower, slab, bar and brick proportions together with
-different mass, friction, restitution, damping, initial velocity and angular
-velocity. The small lime object travels at high
-speed with `continuousCollision="true"`, exercising adaptive collision
-substeps instead of passing through the opposite wall.
-
-Each dynamic body uses `shape="auto"`. MotionLoom derives the effective box
-collider from the same authored Model bounds and scale used by rendering, so
-the visible object and its physics shape share one transform contract.
-
-Dynamic orientation is integrated as a quaternion. Shape-derived inertia,
-normal and tangential contact impulses, rolling friction and persistent
-linear-plus-angular sleep thresholds allow each body to bounce and tumble,
-then become completely still after sustained rest.
-
-No `AnimationTarget` or `ApplyAction` controls the dynamic Models. Physics is
-their only transform owner, which keeps preview, scrubbing and export
-deterministic. Static initial poses are eligible for retained timeline baking,
-so every rendered frame reads the prepared simulation result directly.
+The same 3D island also enables ambient occlusion, contact shadow controls and
+ACES color management. `AnimationTarget` rotates the HDRI and animates direct
+light intensity and exposure without introducing a second animation grammar.
 
 ## What this example teaches
 
-- Use one `<RigidBody>` tag for every 3D body type.
-- Keep `dimension="3d"` and `type` explicit for schema-driven authoring.
-- Share gravity, fixed step and solver iterations through `<Physics>`.
-- Use static bodies for floors and containment walls.
-- Use kinematic bodies for authored non-dynamic collision geometry.
-- Compare light/bouncy and heavy/high-friction dynamic behavior.
-- Use `rollingFriction` to dissipate residual spin at supported contacts.
-- Gate bounce with `restitutionThreshold` to avoid micro-bouncing at rest.
-- Require both linear and angular stillness for `sleepTime` before sleeping.
-- Enable CCD for fast objects.
-- Use `shape="auto"` when the rendered Model bounds are the desired collider.
-- Use `PhysicsDebug` for collider, contact-manifold, sweep and correction evidence.
-- Avoid assigning animation and dynamic physics to the same transform.
+- Load `.hdr` or `.exr` through `ImageAsset` and bind it with `EnvironmentLight`.
+- Control IBL background, diffuse and specular contributions independently.
+- Combine directional, point, spot and rectangular area lights.
+- Enable the primary directional shadow map with `castShadow`.
+- Add AO and contact darkening without baking it into model textures.
+- Finish HDR shading with exposure, white balance, contrast and ACES.
+- Animate registered lighting properties through `AnimationTarget`.
 
-All visible 3D assets use first-class typed `PrimitiveAsset` declarations. The
-environment light uses an inline one-pixel data URI, so the Showcase remains
-self-contained and requires no network asset download.
+The HDR environment is generated from the included source SVG in linear color
+space with values above `1.0`; converting an integer SVG raster directly to
+Radiance without color-space conversion can produce an almost-black IBL map.
+The executable DSL loads both the HDR environment and Character 1 from this
+repository's GitHub Raw URLs so the example remains usable outside a local
+checkout.

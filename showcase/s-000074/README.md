@@ -1,107 +1,118 @@
-# S74 — Primitive Stair Pavilion
+# S74 — Rain-Night Metro Ascent
 
-This eight-second architectural showcase builds a complete stone stair pavilion
-from first-class typed `PrimitiveAsset` geometry, then sends the canonical
-Character 1 up all eleven steps. A Radiance HDR courtyard supplies environment
-light and reflections while simplified 3D courtyard architecture adds scale,
-parallax and shadow-receiving surfaces.
+This nine-second cinematic test turns the reusable primitive staircase into a
+rainy underground-station exit. Character 1 climbs from the lower concourse,
+passes wet walls and illuminated poster cases, then continues across a puddled
+street-level pavement while the edit cuts through first-person, stair-follow
+and street-establishing cameras.
 
-## What this example teaches
+## What this example tests
 
-- Reuse one typed box asset across eleven precisely aligned stair treads.
-- Use `MaterialAsset shading="pbr"` to apply `Texture_Stone.jpg` as a lit
-  base-color texture instead of a screen-space texture overlay.
-- Share project-owned generated base color, tangent-space normal, packed
-  metallic/roughness and AO maps across the courtyard, plaster walls,
-  weathered wall bases, glazing and every brushed-metal architectural part.
-- Add deterministic per-instance UV variation so eleven reused steps do not
-  sample an identical patch of stone.
-- Round visible step, landing, rail and canopy edges while retaining the exact
-  original box colliders used by the character controller.
-- Build nosing, recessed joints, rail base plates, connectors and bolts from
-  additional non-colliding typed primitives.
-- Use wedges as structural stair stringers instead of encoding geometry in a
-  `src` string.
-- Assemble railings from shared cylinders and inclined box handrails.
-- Combine all six v1 shapes: box, sphere, plane, cylinder, cone and wedge.
-- Dress a primitive-only scene with PBR lighting, shadows, ambient occlusion,
-  contact shadows and ACES color management.
-- Wrap `Texture_Wood.jpg` around the cylinder UVs to give both courtyard tree
-  trunks rough, vertically tiled PBR bark instead of a flat brown color.
-- Reuse one compound primitive tree with visible branching, three foliage
-  tones and twenty-seven alpha-masked leaf clusters; reuse the same foliage
-  atlas in compound shrubs, then vary seed, rotation, scale and tint so neither
-  trees nor planters read as repeated green spheres.
-- Build each practical lamp from a metal collar, translucent glass globe and
-  emissive core whose position matches the warm landing light.
-- Add non-colliding wall plinths, drains, paving seams, glass clamps, welds and
-  canopy trim without making the character controller solve detailed meshes.
-- Combine HDR image-based lighting with a directional key, warm platform
-  practical, cyan character rim and rectangular fill light.
-- Finish the HDR scene with restrained bloom and deterministic film grain.
-- Combine an in-place `Walk_Loop` action with a measured root position path so
-  the 1.8 m-tall Character 1 rises exactly 0.32 m per tread and reaches the
-  upper landing without sinking below the primitive surfaces.
-- Alternate short weight-bearing plateaus with quick eased rises instead of
-  moving the root along one continuous slope; a 3 cm sole clearance protects
-  the animated toe swing from intersecting each riser.
-- Use neutral stone, brushed metal, warm sunset light and restrained cool
-  accents while preserving tread silhouette and contact readability.
+- Reuse typed `PrimitiveAsset` boxes as ten collider-owning stair treads while
+  keeping nosings, drains, stains, posters and façade dressing non-colliding.
+- Keep one kinematic Character 1 and one looping walk action alive across all
+  three `Camera3D` shots.
+- Use matched, deterministic stair-synchronised `Camera3D` position and target
+  keys for the 0–3 s first-person camera. Its camera-local `hiddenBones`
+  selects the owner's `hips` root so no skinned body surface can cross the
+  near plane; animation, collision and shadow casting remain active.
+- Cut at 3 s to an interior stair-follow shot which restores the complete
+  character, then at 6 s to a street-side wide shot facing back toward the
+  metro entrance.
+- Share the existing S73 wet concrete, plaster, weathered concrete and brushed
+  metal PBR resources instead of duplicating texture files.
+- Combine low-roughness wet paving, transparent puddle planes, wall-water
+  stains, drain grates and a curb to establish recent rainfall.
+- Build the station enclosure, canopy, glazing, rails, posts, bollards, poster
+  cases and distant building masses entirely from reusable typed primitives.
+- Replace the original oversized demonstration roof with a short landing-only
+  canopy, separate fascia, edge beams, structural columns, rain gutter,
+  downpipes, wall caps and a layered metro roundel/label sign so the entrance
+  keeps believable public-space proportions.
+- Replace the placeholder roundel and bar glyphs with a full-UV station artwork
+  derived from the shared official Anica logo, carrying the readable message
+  `Welcome to Anica Station !` on a bevelled architectural sign backing.
+  The artwork pipeline blooms the official logo first, composites the station
+  wording afterwards, and supplies a separate black-field emissive mask so the
+  3D sign never turns the wording into a glowing sticker.
+- Give the entrance a structural portal and add façade joints, service door,
+  utility box, transmissive poster glazing and interior shelf silhouettes so
+  the opening reads as part of an occupied building rather than a freestanding
+  stair prop.
+- Split each long entrance glass wall into three framed single-surface panes.
+  Their shared PBR material uses transmission, IOR, optical thickness and
+  attenuation with automatic non-writing transparent depth behavior, keeping
+  Character 1 visible behind glass throughout the side-camera shot.
+- Extend the street into foreground, middle ground and background using framed
+  façades, storefront glass, awnings and recessed dark/warm/cool window modules.
+  Every window combines a reveal, metal frame, transmissive wet outer pane and
+  deeper interior layer so oblique views have real parallax instead of a flat
+  emissive card. Street lamps, distant towers and a primitive-built passing
+  vehicle complete the depth. Tactile paving,
+  slab seams, a patterned manhole, hydrant, bin and street sign supply human
+  scale at ground level.
+- Place three additional non-colliding skyline masses and sparse warm/cool
+  window strips beyond the entrance, so the camera cuts reveal real parallax
+  and several depth planes rather than stopping at the HDR background.
+- Apply two purpose-made portrait poster textures to full-UV double-sided planes
+  inside metal display frames, preserving readable `NIGHT CITY` and
+  `ECHO STATION` artwork instead of using single-colour emissive panels.
+- Layer cyan, magenta and amber practical lighting over low-intensity HDR image
+  lighting and a cool shadow-casting moon key.
+- Simulate a passing vehicle-light sweep with three timed `SpotLight` intensity
+  curves, avoiding unsupported light-position animation.
+- Use three deterministic `Repeat mode="volume"` rain layers in world space,
+  with shorter near/mid/far streak geometry, camera parallax, depth testing and
+  bounds beginning beyond the canopy edge. Keep only seven faint screen-space
+  drops for lens proximity, then add animated canopy runoff, alpha-ring puddle
+  ripples, compound splash crowns and restrained low mist.
+- Reuse one compact alpha rivulet sheet across all six entrance panes with
+  slight orientation and vertical-drift variation. Shared sticker/repair art,
+  wall scratches, paper scraps and drain-side leaf clusters add restrained
+  evidence of maintenance and daily use without adding colliders.
+- Reduce stair and paving normal frequency, material variation and specular
+  peaks while retaining bounded puddle reflections and the timed vehicle-light
+  sweep. The passing car now also carries red tail lamps and a restrained red
+  reflection sequence.
+- Finish the HDR scene through ACES colour management, bloom and deterministic
+  film grain.
 
-The upper landing, canopy, paired columns, lamps, mullioned glazing, planters,
-shrubs and trees make the result a courtyard rather than an isolated geometry
-test. The explicit model placement and root animation keys keep every
-architectural measurement and character step height easy to inspect and modify.
+## Camera schedule
 
-## Multi-camera composition
+- **0–3 s / frames 0–89:** character first-person stair ascent; the owner's
+  beauty pass is camera-locally excluded while animation, collision and shadow
+  casting remain.
+- **3–6 s / frames 90–179:** close interior follow angle from the right side of
+  the stair, under the canopy, with the complete character visible and a
+  restrained forward dolly that never overtakes the actor.
+- **6–9 s / frames 180–269:** street-level establishing view looking back at
+  the exit as the character continues walking forward across the upper paving;
+  a road-level car briefly crosses the lower foreground and then clears frame.
 
-`main.motionloom` keeps one complete Character 1 and one continuous stair-walk
-action across four editorial shots. From 0–3 s, a head-bone `Anchor` drives a
-first-person `Camera3D`, whose `hiddenBones={["s74_walker:head"]}` selector hides
-only the owner's head from that camera while preserving its body and shadow.
-At 3 s, `activeCamera` cuts to a third-person follow shot and the complete head
-returns. At 5 s, it cuts to a front-facing close shot from a fixed world-space
-camera ahead of the still-forward-walking character. A world-space `Anchor`
-tracks the character's upper body as the camera target, so only the camera angle
-changes and the reverse shot reveals a genuinely different background. The
-camera cuts use existing `AnimationTarget` and `Key` features; camera-local bone
-visibility is expressed through `Camera3D.hiddenBones`.
+## Resource and validation notes
 
-At frame 180 (6 s), the edit restores the original pre-multi-camera S74
-overview: `position={[12.8,5.75,14.6]}`, `target={[0,2.05,-1.65]}` and
-`fov="35"`. The landing extends rearward from 3.4 m to 7.0 m while preserving
-its original stair-facing edge. During the final two seconds the walk action
-continues and the character advances about 3.3 m across that collider-owning
-platform, rather than walking in place. Extended side rails and rear support
-posts finish the longer platform in the establishing shot.
+The cold representative-frame run decodes 21 textures (46,587,904 bytes).
+The seven repository-hosted runtime decodes are the two 1024×1536 poster artworks,
+the 1600×240 station sign, its 1600×240 logo-only emissive mask, one 512×256
+ripple sprite, one 512×1024 rivulet sheet and one 512×512 human-trace sheet.
+The logo-bloom intermediate is used only while authoring the final station-sign
+artwork. All concrete, plaster, weathered concrete and metal maps remain shared
+with S73. After preload, warm frames do not decode those resources again. The
+rain volumes add no texture decode beyond the one shared ripple sprite:
+their three retained primitive meshes and materials are shared while only
+seeded transforms change. Transmission adds one reusable 1920×1080
+RGBA8 opaque-scene snapshot (about 7.9 MiB) and one GPU texture copy per frame;
+it adds no image decode and no per-pane render target. The authoring analyzer reports `clean`:
+parsing and compilation both succeed with zero errors and zero warnings.
 
-## Realism baseline and resource budget
-
-The baseline was checked at frame 0 (first person), frame 90 (third person) and
-frame 170 (front close-up). Its strongest artificial cues were uniformly flat
-ground and walls, plastic-looking rails, colour-panel glass, sphere shrubs,
-solid primitive foliage and lamps without a visible light source. The realism
-pass addresses those cues without changing the stair dimensions, colliders,
-character path or camera schedule.
-
-All runtime textures are project-owned assets generated specifically for this
-showcase: pale stair stone, vertical tree bark, courtyard concrete, mineral
-plaster, brushed architectural metal, restrained glass roughness, weathered
-concrete and a transparent broad-leaf cluster. No Texturelabs source or
-Texturelabs-derived map remains in the repository. The exact generation briefs
-and asset roles are recorded in `assets/ASSET_PROVENANCE.md`.
-
-The three foliage materials share one generated transparent cluster; mapping a
-complete rectangular atlas onto every plate would make a distant crown read as
-stacked cards. Derived normal, metallic/roughness and AO images are 512 px. The
-deterministic `tools/build-project-pbr-textures.sh` script rebuilds those maps
-from the generated project-owned base images and strips ancillary metadata.
-All instances reference shared
-`ImageAsset` and `MaterialAsset` resources, so the renderer decodes each map
-once. The validated scene decodes 21 textures (55,734,784 bytes), then renders
-all 239 subsequent warm frames without further texture decoding.
-
-The final acceptance run renders frames 0–239 in one renderer instance. It
-confirms all four `Camera3D` cuts, the unchanged step-contact walk, stable
-texture sampling and a clean authoring report with no ignored attributes,
-unknown tags or missing assets.
+The visual baseline was checked at frames 0, 30, 89, 90, 120, 179, 180, 225
+and 269. Those frames cover the moving first-person view, both camera-cut
+boundaries, full-character stair follow, vehicle pass and wet street overview.
+Frame 120 is an explicit transparent-depth regression point: the complete GLB
+must remain visible while the camera grazes the right entrance glazing.
+The final acceptance render covers all 270 frames in one GPU
+renderer instance to exercise both camera cuts, the character's continuous
+collider-driven ascent, the primitive vehicle and timed light sweep, and the
+transition onto the street collider. Camera-cut boundary frames 89/90 and
+179/180 preserve one continuous character, while frame 269 confirms that the
+walk continues through the extended street shot.

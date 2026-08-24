@@ -1,7 +1,7 @@
-<!-- S75 station logo glow derived from assets/sample_assets/icons/logo_official.motionloom. -->
+<!-- S74 station logo glow derived from assets/sample_assets/icons/logo_official.motionloom. -->
 <Graph fps={30} duration="1s" size={[1600,240]} renderSize={[1600,240]}>
   <Background color="#063A5B" />
-  <Scene id="S75AnicaStationLogoSource">
+  <Scene id="S74AnicaStationLogoSource">
     <Timeline>
       <Track id="logo_art" space="screen" z="0">
         <Sequence from="0s" duration="1s" out="hold">
@@ -17,7 +17,7 @@
   </Scene>
 
   <Process id="BloomAliasProcess">
-    <Tex id="src" fmt="rgba16f" from="scene:S75AnicaStationLogoSource" />
+    <Tex id="src" fmt="rgba16f" from="scene:S74AnicaStationLogoSource" />
     <Tex id="out" fmt="rgba16f" size={[1600,240]} />
     <Pass id="post_bloom" kind="compute"
           effect="bloom"

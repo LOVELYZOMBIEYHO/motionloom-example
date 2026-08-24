@@ -1,12 +1,12 @@
-<!-- S75 station sign composites sharp type after the official logo-only bloom pass. -->
+<!-- S74 station sign composites sharp type after the official logo-only bloom pass. -->
 <Graph fps={30} duration="1s" size={[1600,240]} renderSize={[1600,240]}>
   <Background color="#063A5B" />
-  <Scene id="S75AnicaStationSign">
+  <Scene id="S74AnicaStationSign">
     <Timeline>
       <Track id="sign_art" space="screen" z="0">
         <Sequence from="0s" duration="1s" out="hold">
           <Layer space="screen">
-            <Image src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000075/assets/signage/anica-station-logo-bloom.png" x="0" y="0" width="1600" height="240" />
+            <Image src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000074/assets/signage/anica-station-logo-bloom.png" x="0" y="0" width="1600" height="240" />
             <Text value="Welcome to Anica Station !"
                   x="490" y="75" fontFamily="Arial" fontSize="66"
                   fontWeight="700" tracking="0.4" color="#DCEAF0" />
@@ -15,5 +15,5 @@
       </Track>
     </Timeline>
   </Scene>
-  <Present from="S75AnicaStationSign" />
+  <Present from="S74AnicaStationSign" />
 </Graph>

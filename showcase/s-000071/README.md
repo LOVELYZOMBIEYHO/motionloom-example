@@ -1,36 +1,47 @@
-# S71 — Character 1 Action Gauntlet
+# S71 — Rigid Body Drop Lab
 
-This 54-second WebGPU showcase turns the canonical `character1.glb` into a
-complete animation-library reel without editing the source model. Character 1
-provides one humanoid skeleton and 43 embedded clips; MotionLoom exposes every
-clip as a typed `Action` node and schedules it through `ApplyAction`.
+This five-second WebGPU showcase demonstrates MotionLoom's unified 3D
+`RigidBody` contract. One Scene contains static arena walls, an authored
+kinematic pedestal and eight closely staged dynamic objects simulated by the
+same fixed-step `Physics` context. Their lower, converging spawn positions make
+the collision sequence denser and reach the settling phase sooner.
 
-The reel is completely linear: `01 / A_TPOSE` starts at zero, every following
-entry advances by one, and `43 / WALK LOOP` closes the graph. Each clip gets an
-equal 1.4-second action window with a 0.12-second crossfade. Exact source clip
-names remain visible in the HUD; numbering never resets or repeats.
+The objects use cube, tower, slab, bar and brick proportions together with
+different mass, friction, restitution, damping, initial velocity and angular
+velocity. The small lime object travels at high
+speed with `continuousCollision="true"`, exercising adaptive collision
+substeps instead of passing through the opposite wall.
 
-The 3D island also declares a finite box `Surface` and deterministic
-`Physics`. Character 1 opts into `gravity="scene"` with a kinematic collider.
-Because the performance has active `ApplyAction` choreography, the authored
-root path continues to own deliberate jumps while Physics prevents floor
-penetration and keeps grounded phases aligned with the stage. The visible
-20-by-20 blue floor uses the same 0.08-thick box as collision, so its rendered
-top surface is direct evidence of the physical ground rather than decoration.
+Each dynamic body uses `shape="auto"`. MotionLoom derives the effective box
+collider from the same authored Model bounds and scale used by rendering, so
+the visible object and its physics shape share one transform contract.
+
+Dynamic orientation is integrated as a quaternion. Shape-derived inertia,
+normal and tangential contact impulses, rolling friction and persistent
+linear-plus-angular sleep thresholds allow each body to bounce and tumble,
+then become completely still after sustained rest.
+
+No `AnimationTarget` or `ApplyAction` controls the dynamic Models. Physics is
+their only transform owner, which keeps preview, scrubbing and export
+deterministic. Static initial poses are eligible for retained timeline baking,
+so every rendered frame reads the prepared simulation result directly.
 
 ## What this example teaches
 
-- Reuse one canonical GLB as both `ModelAsset` and raw `AnimationAsset` source.
-- Enumerate and play all 43 embedded animation clips in their exact GLB order.
-- Wrap embedded clips in executable `Action` nodes.
-- Crossfade many `ApplyAction` phases without exposing raw clip ids downstream.
-- Combine upper- and lower-body clips through body masks.
-- Keep clip animation in-place and author root choreography separately.
-- Layer semantic bone channels over baked animation.
-- Direct four `Camera3D` nodes through a typed `activeCamera` channel.
-- Ground an action-driven humanoid on a finite box `Surface` through Scene
-  `Physics`, without flattening its authored jump arc.
-- Finish the scene through an explicit bloom and grain texture pipeline.
+- Use one `<RigidBody>` tag for every 3D body type.
+- Keep `dimension="3d"` and `type` explicit for schema-driven authoring.
+- Share gravity, fixed step and solver iterations through `<Physics>`.
+- Use static bodies for floors and containment walls.
+- Use kinematic bodies for authored non-dynamic collision geometry.
+- Compare light/bouncy and heavy/high-friction dynamic behavior.
+- Use `rollingFriction` to dissipate residual spin at supported contacts.
+- Gate bounce with `restitutionThreshold` to avoid micro-bouncing at rest.
+- Require both linear and angular stillness for `sleepTime` before sleeping.
+- Enable CCD for fast objects.
+- Use `shape="auto"` when the rendered Model bounds are the desired collider.
+- Use `PhysicsDebug` for collider, contact-manifold, sweep and correction evidence.
+- Avoid assigning animation and dynamic physics to the same transform.
 
-The model asset is loaded from the repository's canonical GitHub raw URL, so
-the same DSL can run in the desktop renderer and in the browser showcase.
+All visible 3D assets use first-class typed `PrimitiveAsset` declarations. The
+environment light uses an inline one-pixel data URI, so the Showcase remains
+self-contained and requires no network asset download.

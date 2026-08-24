@@ -1,7 +1,7 @@
-<!-- S75 black-field emissive mask: only the official logo enters the 3D bloom range. -->
+<!-- S74 black-field emissive mask: only the official logo enters the 3D bloom range. -->
 <Graph fps={30} duration="1s" size={[1600,240]} renderSize={[1600,240]}>
   <Background color="#000000" />
-  <Scene id="S75AnicaStationLogoEmissiveSource">
+  <Scene id="S74AnicaStationLogoEmissiveSource">
     <Timeline>
       <Track id="logo_emissive" space="screen" z="0">
         <Sequence from="0s" duration="1s" out="hold">
@@ -16,7 +16,7 @@
     </Timeline>
   </Scene>
   <Process id="BloomAliasProcess">
-    <Tex id="src" fmt="rgba16f" from="scene:S75AnicaStationLogoEmissiveSource" />
+    <Tex id="src" fmt="rgba16f" from="scene:S74AnicaStationLogoEmissiveSource" />
     <Tex id="out" fmt="rgba16f" size={[1600,240]} />
     <Pass id="post_bloom" kind="compute" effect="bloom"
           in={["src"]} out={["out"]}

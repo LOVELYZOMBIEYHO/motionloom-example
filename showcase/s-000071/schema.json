@@ -4,309 +4,11 @@
   "rootTag": "Graph",
   "tags": [
     {
-      "tag": "Action",
-      "occurrences": 43,
-      "recognized": true,
-      "validationCoverage": "open",
-      "attributes": [
-        {
-          "name": "clip",
-          "occurrences": 43,
-          "examples": [
-            "\"A_TPose\"",
-            "\"Crouch_Fwd_Loop\"",
-            "\"Crouch_Idle_Loop\"",
-            "\"Dance_Loop\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "id",
-          "occurrences": 43,
-          "examples": [
-            "\"s71_a_tpose\"",
-            "\"s71_crouch_fwd\"",
-            "\"s71_crouch_idle\"",
-            "\"s71_dance\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "skeleton",
-          "occurrences": 43,
-          "examples": [
-            "\"humanoid_v1\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "source",
-          "occurrences": 43,
-          "examples": [
-            "\"s71_character1_clips\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "sourceProfile",
-          "occurrences": 43,
-          "examples": [
-            "\"quaternius_humanoid\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        }
-      ]
-    },
-    {
-      "tag": "AnimationAsset",
-      "occurrences": 1,
-      "recognized": true,
-      "validationCoverage": "strict",
-      "attributes": [
-        {
-          "name": "id",
-          "occurrences": 1,
-          "examples": [
-            "\"s71_character1_clips\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "src",
-          "occurrences": 1,
-          "examples": [
-            "\"https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/c…"
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        }
-      ]
-    },
-    {
-      "tag": "AnimationTarget",
-      "occurrences": 1,
-      "recognized": true,
-      "validationCoverage": "strict",
-      "attributes": [
-        {
-          "name": "node",
-          "occurrences": 1,
-          "examples": [
-            "\"s71_bloom\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "property",
-          "occurrences": 1,
-          "examples": [
-            "\"params.intensity\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        }
-      ]
-    },
-    {
-      "tag": "ApplyAction",
-      "occurrences": 43,
-      "recognized": true,
-      "validationCoverage": "strict",
-      "attributes": [
-        {
-          "name": "action",
-          "occurrences": 43,
-          "examples": [
-            "\"s71_a_tpose\"",
-            "\"s71_crouch_fwd\"",
-            "\"s71_crouch_idle\"",
-            "\"s71_dance\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "at",
-          "occurrences": 43,
-          "examples": [
-            "\"0s\"",
-            "\"1.25s\"",
-            "\"10s\"",
-            "\"11.25s\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "blendIn",
-          "occurrences": 43,
-          "examples": [
-            "\"0.12s\"",
-            "\"0s\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "blendOut",
-          "occurrences": 43,
-          "examples": [
-            "\"0.12s\"",
-            "\"0s\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "duration",
-          "occurrences": 43,
-          "examples": [
-            "\"1.4s\"",
-            "\"1.5s\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "loop",
-          "occurrences": 43,
-          "examples": [
-            "\"false\"",
-            "\"true\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "mask",
-          "occurrences": 43,
-          "examples": [
-            "\"full_body\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "rootMotion",
-          "occurrences": 43,
-          "examples": [
-            "\"in_place\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "target",
-          "occurrences": 43,
-          "examples": [
-            "\"s71_performer\""
-          ],
-          "recognized": true,
-          "valueType": "vector3",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        }
-      ]
-    },
-    {
       "tag": "Assets",
       "occurrences": 1,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": []
-    },
-    {
-      "tag": "Axis",
-      "occurrences": 13,
-      "recognized": true,
-      "validationCoverage": "open",
-      "attributes": [
-        {
-          "name": "bend",
-          "occurrences": 8,
-          "examples": [
-            "\"rotationX:-1\"",
-            "\"rotationX:1\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "bone",
-          "occurrences": 13,
-          "examples": [
-            "\"chest\"",
-            "\"forearm_l\"",
-            "\"forearm_r\"",
-            "\"head\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "forward",
-          "occurrences": 4,
-          "examples": [
-            "\"rotationX:-1\"",
-            "\"rotationX:1\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "restForward",
-          "occurrences": 2,
-          "examples": [
-            "\"-4.8\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "restSide",
-          "occurrences": 2,
-          "examples": [
-            "\"-89.8\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "side",
-          "occurrences": 4,
-          "examples": [
-            "\"rotationZ:-1\"",
-            "\"rotationZ:1\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "turn",
-          "occurrences": 5,
-          "examples": [
-            "\"rotationY:1\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "twist",
-          "occurrences": 8,
-          "examples": [
-            "\"rotationY:1\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        }
-      ]
     },
     {
       "tag": "Background",
@@ -318,7 +20,7 @@
           "name": "color",
           "occurrences": 1,
           "examples": [
-            "\"#030612\""
+            "\"#050914\""
           ],
           "recognized": true,
           "valueType": "color",
@@ -328,24 +30,16 @@
       ]
     },
     {
-      "tag": "BoneAxisMap",
-      "occurrences": 1,
-      "recognized": true,
-      "validationCoverage": "strict",
-      "attributes": []
-    },
-    {
       "tag": "Camera3D",
-      "occurrences": 4,
+      "occurrences": 1,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
           "name": "fov",
-          "occurrences": 4,
+          "occurrences": 1,
           "examples": [
-            "\"33\"",
-            "\"34\""
+            "\"39\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -354,7 +48,7 @@
         },
         {
           "name": "horizonLock",
-          "occurrences": 4,
+          "occurrences": 1,
           "examples": [
             "\"true\""
           ],
@@ -363,24 +57,18 @@
         },
         {
           "name": "id",
-          "occurrences": 4,
+          "occurrences": 1,
           "examples": [
-            "\"s71_camera_close\"",
-            "\"s71_camera_low\"",
-            "\"s71_camera_track\"",
-            "\"s71_camera_wide\""
+            "\"s71_camera\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "position",
-          "occurrences": 4,
+          "occurrences": 1,
           "examples": [
-            "{[-0.9,0.4,5.8]}",
-            "{[0,0.42,6.2]}",
-            "{[0.55,0.42,5.5]}",
-            "{[2.0,0.0,5.7]}"
+            "{[10.5,7.2,12.5]}"
           ],
           "recognized": true,
           "valueType": "vector3",
@@ -388,23 +76,10 @@
           "supportsAnimationTarget": true
         },
         {
-          "name": "roll",
-          "occurrences": 2,
-          "examples": [
-            "\"-1.5\"",
-            "\"2\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
           "name": "target",
-          "occurrences": 4,
+          "occurrences": 1,
           "examples": [
-            "{[0,0.02,0]}",
-            "{[0.15,0.04,0]}",
-            "{[0.18,0.02,0]}",
-            "{[0.35,-0.02,0]}"
+            "{[0,1.8,0]}"
           ],
           "recognized": true,
           "valueType": "vector3",
@@ -413,88 +88,12 @@
         },
         {
           "name": "up",
-          "occurrences": 4,
+          "occurrences": 1,
           "examples": [
             "{[0,1,0]}"
           ],
           "recognized": true,
           "supportsAnimationTarget": false
-        }
-      ]
-    },
-    {
-      "tag": "Circle",
-      "occurrences": 2,
-      "recognized": true,
-      "validationCoverage": "strict",
-      "attributes": [
-        {
-          "name": "blend",
-          "occurrences": 2,
-          "examples": [
-            "\"screen\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "fill",
-          "occurrences": 2,
-          "examples": [
-            "\"url(#s71_cyan)\"",
-            "\"url(#s71_violet)\""
-          ],
-          "recognized": true,
-          "valueType": "color",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
-          "name": "opacity",
-          "occurrences": 2,
-          "examples": [
-            "{curve(\"0:0.05:linear, 7.8:0.14:ease_out, 11.7:0.34:ease_out, 14:0.1:ease_in\")}",
-            "{curve(\"0:0.08:linear, 5.3:0.16:ease_in_out, 8:0.09:ease_in, 11.7:0.32:ease_out, 14:0.12:ease_in\")}"
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
-          "name": "radius",
-          "occurrences": 2,
-          "examples": [
-            "\"310\"",
-            "\"430\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
-          "name": "x",
-          "occurrences": 2,
-          "examples": [
-            "\"960\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
-          "name": "y",
-          "occurrences": 2,
-          "examples": [
-            "\"470\"",
-            "\"500\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
         }
       ]
     },
@@ -526,7 +125,7 @@
           "name": "id",
           "occurrences": 1,
           "examples": [
-            "\"s71_3d_island\""
+            "\"s71_rigid_island\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -541,13 +140,6 @@
           "supportsAnimationTarget": false
         }
       ]
-    },
-    {
-      "tag": "Defs",
-      "occurrences": 1,
-      "recognized": true,
-      "validationCoverage": "strict",
-      "attributes": []
     },
     {
       "tag": "Effect",
@@ -574,6 +166,52 @@
       "attributes": []
     },
     {
+      "tag": "EnvironmentLight",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "asset",
+          "occurrences": 1,
+          "examples": [
+            "\"s71_studio_light\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"s71_environment_light\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "intensity",
+          "occurrences": 1,
+          "examples": [
+            "\"0.35\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "visible",
+          "occurrences": 1,
+          "examples": [
+            "\"false\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
       "tag": "Graph",
       "occurrences": 1,
       "recognized": true,
@@ -588,7 +226,7 @@
           "name": "duration",
           "occurrences": 1,
           "examples": [
-            "\"54s\""
+            "\"5s\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -623,78 +261,40 @@
       ]
     },
     {
-      "tag": "Group",
+      "tag": "ImageAsset",
       "occurrences": 1,
-      "recognized": true,
-      "validationCoverage": "open",
-      "attributes": [
-        {
-          "name": "opacity",
-          "occurrences": 1,
-          "examples": [
-            "{curve(\"0:0.2:linear, 1.6:0.5:ease_out, 3.8:0.18:ease_in, 5.3:0.48:ease_out, 6.7:0.12:ease_in, 7.9:0.44:ease_out, 9.4:0…"
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        }
-      ]
-    },
-    {
-      "tag": "Key",
-      "occurrences": 5,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
-          "name": "ease",
-          "occurrences": 4,
+          "name": "id",
+          "occurrences": 1,
           "examples": [
-            "\"ease_in\"",
-            "\"ease_in_out\"",
-            "\"ease_out\""
+            "\"s71_studio_light\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
-          "name": "time",
-          "occurrences": 5,
+          "name": "src",
+          "occurrences": 1,
           "examples": [
-            "\"0s\"",
-            "\"11.7s\"",
-            "\"14s\"",
-            "\"5.3s\""
+            "\"https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000071/assets/white.pn…"
           ],
           "recognized": true,
           "supportsAnimationTarget": false
-        },
-        {
-          "name": "value",
-          "occurrences": 5,
-          "examples": [
-            "\"0.24\"",
-            "\"0.3\"",
-            "\"0.34\"",
-            "\"0.38\""
-          ],
-          "recognized": true,
-          "valueType": "discrete",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
         }
       ]
     },
     {
       "tag": "Layer",
-      "occurrences": 45,
+      "occurrences": 1,
       "recognized": true,
       "validationCoverage": "open",
       "attributes": [
         {
           "name": "space",
-          "occurrences": 2,
+          "occurrences": 1,
           "examples": [
             "\"screen\""
           ],
@@ -704,228 +304,31 @@
       ]
     },
     {
-      "tag": "Line",
-      "occurrences": 11,
-      "recognized": true,
-      "validationCoverage": "open",
-      "attributes": [
-        {
-          "name": "opacity",
-          "occurrences": 11,
-          "examples": [
-            "\"0.3\"",
-            "\"0.36\"",
-            "\"0.44\"",
-            "\"0.5\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
-          "name": "stroke",
-          "occurrences": 11,
-          "examples": [
-            "\"#293B60\"",
-            "\"#31466E\"",
-            "\"#334A72\"",
-            "\"#55E7F4\""
-          ],
-          "recognized": true,
-          "valueType": "color",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
-          "name": "strokeWidth",
-          "occurrences": 11,
-          "examples": [
-            "\"3\"",
-            "\"4\"",
-            "\"5\"",
-            "\"7\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
-          "name": "x1",
-          "occurrences": 11,
-          "examples": [
-            "\"0\"",
-            "\"110\"",
-            "\"1270\"",
-            "\"1660\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "x2",
-          "occurrences": 11,
-          "examples": [
-            "\"1040\"",
-            "\"1130\"",
-            "\"1260\"",
-            "\"1320\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "y1",
-          "occurrences": 11,
-          "examples": [
-            "\"1080\"",
-            "\"142\"",
-            "\"220\"",
-            "\"250\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "y2",
-          "occurrences": 11,
-          "examples": [
-            "\"142\"",
-            "\"470\"",
-            "\"670\"",
-            "\"735\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        }
-      ]
-    },
-    {
-      "tag": "LinearGradient",
-      "occurrences": 2,
-      "recognized": true,
-      "validationCoverage": "strict",
-      "attributes": [
-        {
-          "name": "id",
-          "occurrences": 2,
-          "examples": [
-            "\"s71_floor\"",
-            "\"s71_sky\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "stops",
-          "occurrences": 2,
-          "examples": [
-            "\"0:#142348, 1:#050916\"",
-            "\"0:#151B3D, 0.58:#080E24, 1:#030612\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "x1",
-          "occurrences": 2,
-          "examples": [
-            "\"0\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "x2",
-          "occurrences": 2,
-          "examples": [
-            "\"0\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "y1",
-          "occurrences": 2,
-          "examples": [
-            "\"0\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "y2",
-          "occurrences": 2,
-          "examples": [
-            "\"1\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        }
-      ]
-    },
-    {
-      "tag": "Map",
-      "occurrences": 21,
-      "recognized": true,
-      "validationCoverage": "strict",
-      "attributes": [
-        {
-          "name": "from",
-          "occurrences": 21,
-          "examples": [
-            "\"Head\"",
-            "\"ball_l\"",
-            "\"ball_r\"",
-            "\"calf_l\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "to",
-          "occurrences": 21,
-          "examples": [
-            "\"chest\"",
-            "\"foot_l\"",
-            "\"foot_r\"",
-            "\"forearm_l\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        }
-      ]
-    },
-    {
       "tag": "Model",
-      "occurrences": 1,
+      "occurrences": 13,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
           "name": "asset",
-          "occurrences": 1,
+          "occurrences": 13,
           "examples": [
-            "\"s71_character1_model\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "collision",
-          "occurrences": 1,
-          "examples": [
-            "\"kinematic\""
+            "\"s71_amber_tower_asset\"",
+            "\"s71_blue_die_asset\"",
+            "\"s71_coral_cube_asset\"",
+            "\"s71_cyan_cube_asset\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "exposure",
-          "occurrences": 1,
+          "occurrences": 13,
           "examples": [
-            "\"1.8\""
+            "\"1.15\"",
+            "\"1.25\"",
+            "\"1.35\"",
+            "\"1.55\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -933,37 +336,25 @@
           "supportsAnimationTarget": true
         },
         {
-          "name": "gravity",
-          "occurrences": 1,
-          "examples": [
-            "\"scene\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "ground",
-          "occurrences": 1,
-          "examples": [
-            "\"s71_stage_floor\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
           "name": "id",
-          "occurrences": 1,
+          "occurrences": 13,
           "examples": [
-            "\"s71_performer\""
+            "\"s71_amber_tower\"",
+            "\"s71_back_wall\"",
+            "\"s71_blue_die\"",
+            "\"s71_coral_cube\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "position",
-          "occurrences": 1,
+          "occurrences": 13,
           "examples": [
-            "{[0,-0.62,0]}"
+            "{[-0.45,5.75,0.5]}",
+            "{[-1.45,3.25,-0.35]}",
+            "{[-2.05,4.15,0.85]}",
+            "{[-3.15,1.05,-0.75]}"
           ],
           "recognized": true,
           "valueType": "vector3",
@@ -971,114 +362,18 @@
           "supportsAnimationTarget": true
         },
         {
-          "name": "profile",
-          "occurrences": 1,
+          "name": "rotation",
+          "occurrences": 9,
           "examples": [
-            "\"s71_character1_profile\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "rotationY",
-          "occurrences": 1,
-          "examples": [
-            "\"0\""
+            "{[-15,28,34]}",
+            "{[0,0,0]}",
+            "{[0,24,8]}",
+            "{[12,32,-20]}"
           ],
           "recognized": true,
           "valueType": "number",
           "supportsInlineExpression": true,
           "supportsAnimationTarget": true
-        },
-        {
-          "name": "scale",
-          "occurrences": 1,
-          "examples": [
-            "\"1.3\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
-          "name": "scaleMode",
-          "occurrences": 1,
-          "examples": [
-            "\"normalize_height\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        }
-      ]
-    },
-    {
-      "tag": "ModelAsset",
-      "occurrences": 1,
-      "recognized": true,
-      "validationCoverage": "strict",
-      "attributes": [
-        {
-          "name": "id",
-          "occurrences": 1,
-          "examples": [
-            "\"s71_character1_model\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "src",
-          "occurrences": 1,
-          "examples": [
-            "\"https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/c…"
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        }
-      ]
-    },
-    {
-      "tag": "ModelProfile",
-      "occurrences": 1,
-      "recognized": true,
-      "validationCoverage": "strict",
-      "attributes": [
-        {
-          "name": "id",
-          "occurrences": 1,
-          "examples": [
-            "\"s71_character1_profile\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "kind",
-          "occurrences": 1,
-          "examples": [
-            "\"3d\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "model",
-          "occurrences": 1,
-          "examples": [
-            "\"s71_character1_model\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "preset",
-          "occurrences": 1,
-          "examples": [
-            "\"humanoid_v1\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
         }
       ]
     },
@@ -1141,8 +436,8 @@
           "name": "params",
           "occurrences": 2,
           "examples": [
-            "{{ kind: \"film_grain\", amount: \"0.008\", scale: \"1.0\", seed: \"71\" }}",
-            "{{ threshold: \"0.48\", intensity: \"0.34\", sigma: \"5.4\" }}"
+            "{{ kind: \"film_grain\", amount: \"0.007\", scale: \"1.0\", seed: \"74\" }}",
+            "{{ threshold: \"0.68\", intensity: \"0.22\", sigma: \"4.2\" }}"
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1159,7 +454,7 @@
           "name": "fixedStep",
           "occurrences": 1,
           "examples": [
-            "\"1/120s\""
+            "\"1/240s\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1177,7 +472,51 @@
           "name": "iterations",
           "occurrences": 1,
           "examples": [
-            "\"4\""
+            "\"16\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "PhysicsDebug",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "colliders",
+          "occurrences": 1,
+          "examples": [
+            "\"true\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "contacts",
+          "occurrences": 1,
+          "examples": [
+            "\"true\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "corrections",
+          "occurrences": 1,
+          "examples": [
+            "\"true\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "sweep",
+          "occurrences": 1,
+          "examples": [
+            "\"true\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1194,7 +533,282 @@
           "name": "from",
           "occurrences": 1,
           "examples": [
-            "\"S71CharacterActionGauntlet\""
+            "\"S71RigidBodyDropLab\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "PrimitiveAsset",
+      "occurrences": 12,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "id",
+        "shape"
+      ],
+      "discriminator": "shape",
+      "variants": {
+        "box": {
+          "required": [
+            "id",
+            "shape",
+            "size"
+          ],
+          "optional": [
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
+        "cone": {
+          "required": [
+            "id",
+            "shape",
+            "radius",
+            "height"
+          ],
+          "optional": [
+            "segments",
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
+        "cylinder": {
+          "required": [
+            "id",
+            "shape",
+            "radius",
+            "height"
+          ],
+          "optional": [
+            "segments",
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
+        "plane": {
+          "required": [
+            "id",
+            "shape",
+            "size"
+          ],
+          "optional": [
+            "segments",
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
+        "sphere": {
+          "required": [
+            "id",
+            "shape",
+            "radius"
+          ],
+          "optional": [
+            "segments",
+            "rings",
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
+        "wedge": {
+          "required": [
+            "id",
+            "shape",
+            "size"
+          ],
+          "optional": [
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        }
+      },
+      "attributes": [
+        {
+          "name": "color",
+          "occurrences": 12,
+          "examples": [
+            "\"#131B2E\"",
+            "\"#263A5B\"",
+            "\"#334968\"",
+            "\"#50E3E6\""
+          ],
+          "recognized": true,
+          "valueType": "color",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "height",
+          "occurrences": 2,
+          "examples": [
+            "\"1.6\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "id",
+          "occurrences": 12,
+          "examples": [
+            "\"s71_amber_tower_asset\"",
+            "\"s71_blue_die_asset\"",
+            "\"s71_coral_cube_asset\"",
+            "\"s71_cyan_cube_asset\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "radius",
+          "occurrences": 6,
+          "examples": [
+            "\"0.25\"",
+            "\"0.325\"",
+            "\"0.35\"",
+            "\"0.5\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "segments",
+          "occurrences": 6,
+          "examples": [
+            "\"24\"",
+            "\"32\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "shape",
+          "occurrences": 12,
+          "examples": [
+            "\"box\"",
+            "\"cone\"",
+            "\"cylinder\"",
+            "\"sphere\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "size",
+          "occurrences": 6,
+          "examples": [
+            "{[0.35,3.4,8]}",
+            "{[1.5,0.55,1.1]}",
+            "{[1.8,0.35,0.8]}",
+            "{[12,0.4,8]}"
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1219,76 +833,17 @@
       ]
     },
     {
-      "tag": "RadialGradient",
-      "occurrences": 3,
-      "recognized": true,
-      "validationCoverage": "strict",
-      "attributes": [
-        {
-          "name": "cx",
-          "occurrences": 3,
-          "examples": [
-            "\"0.5\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "cy",
-          "occurrences": 3,
-          "examples": [
-            "\"0.5\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "id",
-          "occurrences": 3,
-          "examples": [
-            "\"s71_cyan\"",
-            "\"s71_vignette\"",
-            "\"s71_violet\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "r",
-          "occurrences": 3,
-          "examples": [
-            "\"0.5\"",
-            "\"0.74\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "stops",
-          "occurrences": 3,
-          "examples": [
-            "\"0:#00000000, 0.63:#00000020, 1:#000000C4\"",
-            "\"0:#A8FBFF, 0.25:#43E5F699, 1:#1CBED700\"",
-            "\"0:#F2C4FF, 0.24:#B96BFF88, 1:#7D48E800\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        }
-      ]
-    },
-    {
       "tag": "Rect",
-      "occurrences": 3,
+      "occurrences": 2,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
-          "name": "fill",
-          "occurrences": 3,
+          "name": "color",
+          "occurrences": 2,
           "examples": [
-            "\"url(#s71_floor)\"",
-            "\"url(#s71_sky)\"",
-            "\"url(#s71_vignette)\""
+            "\"#060A13CC\"",
+            "\"#08101DDD\""
           ],
           "recognized": true,
           "valueType": "color",
@@ -1297,10 +852,10 @@
         },
         {
           "name": "height",
-          "occurrences": 3,
+          "occurrences": 2,
           "examples": [
-            "\"1080\"",
-            "\"345\""
+            "\"102\"",
+            "\"116\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -1308,10 +863,35 @@
           "supportsAnimationTarget": true
         },
         {
-          "name": "opacity",
-          "occurrences": 1,
+          "name": "radius",
+          "occurrences": 2,
           "examples": [
-            "\"0.76\""
+            "\"14\"",
+            "\"18\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "stroke",
+          "occurrences": 2,
+          "examples": [
+            "\"#6EF2FF66\"",
+            "\"#FFFFFF22\""
+          ],
+          "recognized": true,
+          "valueType": "color",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "strokeWidth",
+          "occurrences": 2,
+          "examples": [
+            "\"1\"",
+            "\"2\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -1320,9 +900,10 @@
         },
         {
           "name": "width",
-          "occurrences": 3,
+          "occurrences": 2,
           "examples": [
-            "\"1920\""
+            "\"1780\"",
+            "\"720\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -1331,9 +912,10 @@
         },
         {
           "name": "x",
-          "occurrences": 3,
+          "occurrences": 2,
           "examples": [
-            "\"0\""
+            "\"54\"",
+            "\"70\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -1342,10 +924,10 @@
         },
         {
           "name": "y",
-          "occurrences": 3,
+          "occurrences": 2,
           "examples": [
-            "\"0\"",
-            "\"735\""
+            "\"48\"",
+            "\"910\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -1355,64 +937,242 @@
       ]
     },
     {
-      "tag": "Repeat",
-      "occurrences": 1,
-      "recognized": true,
-      "validationCoverage": "open",
-      "attributes": [
-        {
-          "name": "count",
-          "occurrences": 1,
-          "examples": [
-            "\"7\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "x",
-          "occurrences": 1,
-          "examples": [
-            "\"0\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
-          "name": "y",
-          "occurrences": 1,
-          "examples": [
-            "\"0\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
-          "name": "yStep",
-          "occurrences": 1,
-          "examples": [
-            "\"52\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        }
-      ]
-    },
-    {
-      "tag": "Retarget",
-      "occurrences": 1,
+      "tag": "RigidBody",
+      "occurrences": 13,
       "recognized": true,
       "validationCoverage": "strict",
+      "requiredAttributes": [
+        "id",
+        "target",
+        "dimension",
+        "type"
+      ],
       "attributes": [
         {
-          "name": "preset",
-          "occurrences": 1,
+          "name": "angularDamping",
+          "occurrences": 8,
           "examples": [
-            "\"humanoid_v1\""
+            "\"0.08\"",
+            "\"0.12\"",
+            "\"0.13\"",
+            "\"0.14\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "angularVelocity",
+          "occurrences": 8,
+          "examples": [
+            "{[-0.6,1.25,0.95]}",
+            "{[0.2,-0.45,0.3]}",
+            "{[0.4,-0.8,0.55]}",
+            "{[0.5,0.9,-0.7]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "continuousCollision",
+          "occurrences": 8,
+          "examples": [
+            "\"true\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "dimension",
+          "occurrences": 13,
+          "examples": [
+            "\"3d\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "friction",
+          "occurrences": 13,
+          "examples": [
+            "\"0.18\"",
+            "\"0.28\"",
+            "\"0.3\"",
+            "\"0.34\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 13,
+          "examples": [
+            "\"s71_amber_body\"",
+            "\"s71_back_wall_body\"",
+            "\"s71_blue_body\"",
+            "\"s71_coral_body\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "linearDamping",
+          "occurrences": 8,
+          "examples": [
+            "\"0.03\"",
+            "\"0.04\"",
+            "\"0.05\"",
+            "\"0.06\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "mass",
+          "occurrences": 8,
+          "examples": [
+            "\"0.3\"",
+            "\"0.55\"",
+            "\"0.75\"",
+            "\"0.85\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "restitution",
+          "occurrences": 13,
+          "examples": [
+            "\"0.08\"",
+            "\"0.12\"",
+            "\"0.16\"",
+            "\"0.2\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "restitutionThreshold",
+          "occurrences": 8,
+          "examples": [
+            "\"0.4\"",
+            "\"0.42\"",
+            "\"0.48\"",
+            "\"0.5\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "rollingFriction",
+          "occurrences": 8,
+          "examples": [
+            "\"0.12\"",
+            "\"0.13\"",
+            "\"0.14\"",
+            "\"0.15\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "shape",
+          "occurrences": 13,
+          "examples": [
+            "\"auto\"",
+            "\"box\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "size",
+          "occurrences": 5,
+          "examples": [
+            "{[0.35,3.4,8]}",
+            "{[12,0.4,8]}",
+            "{[12,3.4,0.35]}",
+            "{[2.2,0.45,2.2]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "sleep",
+          "occurrences": 8,
+          "examples": [
+            "\"true\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "sleepAngularThreshold",
+          "occurrences": 8,
+          "examples": [
+            "\"0.03\"",
+            "\"0.035\"",
+            "\"0.04\"",
+            "\"0.045\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "sleepLinearThreshold",
+          "occurrences": 8,
+          "examples": [
+            "\"0.02\"",
+            "\"0.025\"",
+            "\"0.03\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "sleepTime",
+          "occurrences": 8,
+          "examples": [
+            "\"0.45\"",
+            "\"0.48\"",
+            "\"0.5\"",
+            "\"0.55\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "target",
+          "occurrences": 13,
+          "examples": [
+            "\"s71_amber_tower\"",
+            "\"s71_back_wall\"",
+            "\"s71_blue_die\"",
+            "\"s71_coral_cube\""
+          ],
+          "recognized": true,
+          "valueType": "vector3",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "type",
+          "occurrences": 13,
+          "examples": [
+            "\"dynamic\"",
+            "\"kinematic\"",
+            "\"static\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "velocity",
+          "occurrences": 8,
+          "examples": [
+            "{[-0.35,-0.3,0.4]}",
+            "{[-1.1,-0.25,0.5]}",
+            "{[-1.35,-0.1,-0.05]}",
+            "{[-1.55,-0.1,-0.35]}"
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1429,7 +1189,7 @@
           "name": "id",
           "occurrences": 1,
           "examples": [
-            "\"S71CharacterActionGauntlet\""
+            "\"S71RigidBodyDropLab\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1438,103 +1198,33 @@
     },
     {
       "tag": "Sequence",
-      "occurrences": 46,
+      "occurrences": 2,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
           "name": "duration",
-          "occurrences": 46,
+          "occurrences": 2,
           "examples": [
-            "\"1.24s\"",
-            "\"1.5s\"",
-            "\"54s\""
+            "\"5s\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "from",
-          "occurrences": 46,
+          "occurrences": 2,
           "examples": [
-            "\"0s\"",
-            "\"1.25s\"",
-            "\"10s\"",
-            "\"11.25s\""
+            "\"0s\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "out",
-          "occurrences": 46,
+          "occurrences": 2,
           "examples": [
-            "\"hide\"",
             "\"hold\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        }
-      ]
-    },
-    {
-      "tag": "Surface",
-      "occurrences": 1,
-      "recognized": true,
-      "validationCoverage": "strict",
-      "attributes": [
-        {
-          "name": "center",
-          "occurrences": 1,
-          "examples": [
-            "{[0,-0.649,0]}"
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "collider",
-          "occurrences": 1,
-          "examples": [
-            "\"box\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "color",
-          "occurrences": 1,
-          "examples": [
-            "\"#123A66C8\""
-          ],
-          "recognized": true,
-          "valueType": "color",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
-          "name": "id",
-          "occurrences": 1,
-          "examples": [
-            "\"s71_stage_floor\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "kind",
-          "occurrences": 1,
-          "examples": [
-            "\"ground\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "size",
-          "occurrences": 1,
-          "examples": [
-            "{[20,0.08,20]}"
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1575,32 +1265,32 @@
           ],
           "recognized": true,
           "supportsAnimationTarget": false
+        },
+        {
+          "name": "size",
+          "occurrences": 2,
+          "examples": [
+            "{[1920,1080]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
         }
       ]
     },
     {
       "tag": "Text",
-      "occurrences": 46,
+      "occurrences": 5,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
-          "name": "align",
-          "occurrences": 1,
-          "examples": [
-            "\"right\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
           "name": "color",
-          "occurrences": 46,
+          "occurrences": 5,
           "examples": [
-            "\"#64DDEA\"",
-            "\"#7187B8\"",
-            "\"#77F1FA\"",
-            "\"#ECFAFF\""
+            "\"#73E8F3\"",
+            "\"#74F4F6\"",
+            "\"#C9FF82\"",
+            "\"#F4FAFF\""
           ],
           "recognized": true,
           "valueType": "color",
@@ -1609,7 +1299,7 @@
         },
         {
           "name": "fontFamily",
-          "occurrences": 46,
+          "occurrences": 5,
           "examples": [
             "\"Arial\""
           ],
@@ -1618,12 +1308,11 @@
         },
         {
           "name": "fontSize",
-          "occurrences": 46,
+          "occurrences": 5,
           "examples": [
             "\"14\"",
             "\"18\"",
-            "\"22\"",
-            "\"27\""
+            "\"29\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -1632,7 +1321,7 @@
         },
         {
           "name": "fontWeight",
-          "occurrences": 46,
+          "occurrences": 5,
           "examples": [
             "\"700\"",
             "\"800\""
@@ -1642,11 +1331,10 @@
         },
         {
           "name": "tracking",
-          "occurrences": 46,
+          "occurrences": 2,
           "examples": [
-            "\"5\"",
-            "\"6\"",
-            "\"7\""
+            "\"3\"",
+            "\"6\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -1655,12 +1343,12 @@
         },
         {
           "name": "value",
-          "occurrences": 46,
+          "occurrences": 5,
           "examples": [
-            "\"01 / A_TPOSE\"",
-            "\"02 / CROUCH FWD LOOP\"",
-            "\"03 / CROUCH IDLE LOOP\"",
-            "\"04 / DANCE LOOP\""
+            "\"8 BODIES · 6 PROPORTIONS · CONTACT IMPULSES · SLEEP\"",
+            "\"CORAL  mass 0.75 / bounce 0.72\"",
+            "\"CYAN  mass 4 / friction 0.86\"",
+            "\"LIME  speed 12.5 / CCD on\""
           ],
           "recognized": true,
           "valueType": "discrete",
@@ -1669,11 +1357,12 @@
         },
         {
           "name": "x",
-          "occurrences": 46,
+          "occurrences": 5,
           "examples": [
-            "\"1850\"",
-            "\"68\"",
-            "\"70\""
+            "\"100\"",
+            "\"1350\"",
+            "\"735\"",
+            "\"82\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -1682,11 +1371,11 @@
         },
         {
           "name": "y",
-          "occurrences": 46,
+          "occurrences": 5,
           "examples": [
-            "\"116\"",
-            "\"76\"",
-            "\"960\""
+            "\"130\"",
+            "\"91\"",
+            "\"950\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -1704,37 +1393,33 @@
     },
     {
       "tag": "Track",
-      "occurrences": 4,
+      "occurrences": 2,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
           "name": "compositeOrder",
-          "occurrences": 4,
+          "occurrences": 2,
           "examples": [
-            "\"10\"",
-            "\"40\"",
-            "\"60\"",
-            "\"61\""
+            "\"30\"",
+            "\"70\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "id",
-          "occurrences": 4,
+          "occurrences": 2,
           "examples": [
-            "\"s71_character_track\"",
-            "\"s71_clip_name_reel\"",
-            "\"s71_hud\"",
-            "\"s71_stage\""
+            "\"s71_interface\"",
+            "\"s71_physics_stage\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "space",
-          "occurrences": 4,
+          "occurrences": 2,
           "examples": [
             "\"3d\"",
             "\"screen\""
@@ -1745,11 +1430,9 @@
       ]
     }
   ],
-  "animationProperties": [
-    "params.intensity"
-  ],
+  "animationProperties": [],
   "assetKinds": [
-    "animation",
-    "model"
+    "image",
+    "primitive"
   ]
 }

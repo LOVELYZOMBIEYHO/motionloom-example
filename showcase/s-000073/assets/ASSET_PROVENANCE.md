@@ -1,4 +1,4 @@
-# S74/S75 Generated Texture Provenance
+# S73/S74 Generated Texture Provenance
 
 The raster sources in `textures/` and `textures/pbr/` were generated expressly
 for the MotionLoom example project with OpenAI's built-in image generation tool

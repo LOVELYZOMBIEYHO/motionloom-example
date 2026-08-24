@@ -1,555 +1,223 @@
 <!--
 =====================================================================
-S71 · CHARACTER 1 COMPLETE ACTION LIBRARY
-54 s · 1920x1080 · 30 fps · one canonical GLB · all 43 embedded clips
+S71 · RIGID BODY DROP LAB
+5 s · 1920x1080 · 30 fps · unified 3D rigid-body contract
 
 PURPOSE
-  Stress-test the canonical Character 1 action pipeline without importing a
-  second character or hiding choreography inside one long baked clip.
-
-  One character1.glb supplies the model, humanoid rig and 43 embedded clips.
-  MotionLoom exposes all clips as executable Action nodes and schedules them
-  with ApplyAction in the exact source order. Every numbered HUD entry maps
-  one-to-one to one GLB clip: 01 starts the reel and 43 ends it.
+  Demonstrate one explicit RigidBody tag across static, kinematic and dynamic
+  3D objects. Scene Physics owns gravity; dynamic Models own no animation
+  channels, so deterministic simulation is the only transform authority.
 =====================================================================
 -->
-<Graph fps={30} duration="54s" size={[1920,1080]} renderSize={[1920,1080]}>
+<Graph fps={30} duration="5s" size={[1920,1080]} renderSize={[1920,1080]}>
   <Assets>
-    <ModelAsset id="s71_character1_model"
-                src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/character1/character1.glb" />
-    <AnimationAsset id="s71_character1_clips"
-                    src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/character1/character1.glb" />
+    <PrimitiveAsset id="s71_floor_asset" shape="box" size={[12,0.4,8]} color="#131B2E" />
+    <PrimitiveAsset id="s71_wall_asset" shape="box" size={[0.35,3.4,8]} color="#263A5B" />
+    <PrimitiveAsset id="s71_end_wall_asset" shape="box" size={[12,3.4,0.35]} color="#263A5B" />
+    <PrimitiveAsset id="s71_pedestal_asset" shape="box" size={[2.2,0.45,2.2]} color="#334968" />
+    <PrimitiveAsset id="s71_coral_cube_asset" shape="sphere" radius="0.5" segments="32" color="#FF6B6B" />
+    <PrimitiveAsset id="s71_cyan_cube_asset" shape="sphere" radius="0.625" segments="32" color="#50E3E6" />
+    <PrimitiveAsset id="s71_lime_cube_asset" shape="sphere" radius="0.25" segments="24" color="#B8FF5A" />
+    <PrimitiveAsset id="s71_amber_tower_asset" shape="cylinder" radius="0.325" height="1.6" segments="32" color="#FFB347" />
+    <PrimitiveAsset id="s71_violet_slab_asset" shape="wedge" size={[1.8,0.35,0.8]} color="#9B7BFF" />
+    <PrimitiveAsset id="s71_pink_bar_asset" shape="cone" radius="0.5" height="1.6" segments="32" color="#FF73C8" />
+    <PrimitiveAsset id="s71_blue_die_asset" shape="sphere" radius="0.35" segments="24" color="#5D8CFF" />
+    <PrimitiveAsset id="s71_white_brick_asset" shape="box" size={[1.5,0.55,1.1]} color="#E8F0FF" />
+    <ImageAsset id="s71_studio_light"
+                src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000071/assets/white.png" />
   </Assets>
 
-  <!-- Raw GLB clips become named, executable MotionLoom Actions. -->
-  <Action id="s71_idle" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Idle_Talking_Loop"
-          skeleton="humanoid_v1" />
-  <Action id="s71_sprint" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Sprint_Loop"
-          skeleton="humanoid_v1" />
-  <Action id="s71_roll" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Roll"
-          skeleton="humanoid_v1" />
-  <Action id="s71_jump_start" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Jump_Start"
-          skeleton="humanoid_v1" />
-  <Action id="s71_jump_loop" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Jump_Loop"
-          skeleton="humanoid_v1" />
-  <Action id="s71_jump_land" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Jump_Land"
-          skeleton="humanoid_v1" />
-  <Action id="s71_punch_jab" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Punch_Jab"
-          skeleton="humanoid_v1" />
-  <Action id="s71_punch_cross" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Punch_Cross"
-          skeleton="humanoid_v1" />
-  <Action id="s71_sword" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Sword_Attack"
-          skeleton="humanoid_v1" />
-  <Action id="s71_spell_enter" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Spell_Simple_Enter"
-          skeleton="humanoid_v1" />
-  <Action id="s71_spell_idle" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Spell_Simple_Idle_Loop"
-          skeleton="humanoid_v1" />
-  <Action id="s71_spell_shoot" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Spell_Simple_Shoot"
-          skeleton="humanoid_v1" />
-  <Action id="s71_a_tpose" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="A_TPose" skeleton="humanoid_v1" />
-  <Action id="s71_crouch_fwd" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Crouch_Fwd_Loop" skeleton="humanoid_v1" />
-  <Action id="s71_crouch_idle" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Crouch_Idle_Loop" skeleton="humanoid_v1" />
-  <Action id="s71_dance" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Dance_Loop" skeleton="humanoid_v1" />
-  <Action id="s71_death" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Death01" skeleton="humanoid_v1" />
-  <Action id="s71_driving" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Driving_Loop" skeleton="humanoid_v1" />
-  <Action id="s71_fixing_kneeling" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Fixing_Kneeling" skeleton="humanoid_v1" />
-  <Action id="s71_hit_chest" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Hit_Chest" skeleton="humanoid_v1" />
-  <Action id="s71_hit_head" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Hit_Head" skeleton="humanoid_v1" />
-  <Action id="s71_idle_loop" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Idle_Loop" skeleton="humanoid_v1" />
-  <Action id="s71_idle_torch" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Idle_Torch_Loop" skeleton="humanoid_v1" />
-  <Action id="s71_interact" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Interact" skeleton="humanoid_v1" />
-  <Action id="s71_jog" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Jog_Fwd_Loop" skeleton="humanoid_v1" />
-  <Action id="s71_pickup_table" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="PickUp_Table" skeleton="humanoid_v1" />
-  <Action id="s71_pistol_aim_down" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Pistol_Aim_Down" skeleton="humanoid_v1" />
-  <Action id="s71_pistol_aim_neutral" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Pistol_Aim_Neutral" skeleton="humanoid_v1" />
-  <Action id="s71_pistol_aim_up" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Pistol_Aim_Up" skeleton="humanoid_v1" />
-  <Action id="s71_pistol_idle" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Pistol_Idle_Loop" skeleton="humanoid_v1" />
-  <Action id="s71_pistol_reload" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Pistol_Reload" skeleton="humanoid_v1" />
-  <Action id="s71_pistol_shoot" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Pistol_Shoot" skeleton="humanoid_v1" />
-  <Action id="s71_push" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Push_Loop" skeleton="humanoid_v1" />
-  <Action id="s71_sitting_enter" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Sitting_Enter" skeleton="humanoid_v1" />
-  <Action id="s71_sitting_exit" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Sitting_Exit" skeleton="humanoid_v1" />
-  <Action id="s71_sitting_idle" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Sitting_Idle_Loop" skeleton="humanoid_v1" />
-  <Action id="s71_sitting_talking" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Sitting_Talking_Loop" skeleton="humanoid_v1" />
-  <Action id="s71_spell_exit" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Spell_Simple_Exit" skeleton="humanoid_v1" />
-  <Action id="s71_swim_fwd" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Swim_Fwd_Loop" skeleton="humanoid_v1" />
-  <Action id="s71_swim_idle" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Swim_Idle_Loop" skeleton="humanoid_v1" />
-  <Action id="s71_sword_idle" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Sword_Idle" skeleton="humanoid_v1" />
-  <Action id="s71_walk_formal" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Walk_Formal_Loop" skeleton="humanoid_v1" />
-  <Action id="s71_walk" source="s71_character1_clips"
-          sourceProfile="quaternius_humanoid" clip="Walk_Loop" skeleton="humanoid_v1" />
+  <Background color="#050914" />
 
-  <ModelProfile id="s71_character1_profile" kind="3d"
-                model="s71_character1_model" preset="humanoid_v1">
-    <Retarget preset="humanoid_v1">
-      <Map from="pelvis" to="hips" />
-      <Map from="spine_01" to="spine" />
-      <Map from="spine_03" to="chest" />
-      <Map from="neck_01" to="neck" />
-      <Map from="Head" to="head" />
-      <Map from="clavicle_l" to="shoulder_l" />
-      <Map from="upperarm_l" to="upper_arm_l" />
-      <Map from="lowerarm_l" to="forearm_l" />
-      <Map from="hand_l" to="hand_l" />
-      <Map from="clavicle_r" to="shoulder_r" />
-      <Map from="upperarm_r" to="upper_arm_r" />
-      <Map from="lowerarm_r" to="forearm_r" />
-      <Map from="hand_r" to="hand_r" />
-      <Map from="thigh_l" to="upper_leg_l" />
-      <Map from="calf_l" to="lower_leg_l" />
-      <Map from="foot_l" to="foot_l" />
-      <Map from="ball_l" to="toe_l" />
-      <Map from="thigh_r" to="upper_leg_r" />
-      <Map from="calf_r" to="lower_leg_r" />
-      <Map from="foot_r" to="foot_r" />
-      <Map from="ball_r" to="toe_r" />
-    </Retarget>
-    <BoneAxisMap>
-      <Axis bone="hips" turn="rotationY:1" />
-      <Axis bone="spine" bend="rotationX:-1" turn="rotationY:1" />
-      <Axis bone="chest" bend="rotationX:-1" turn="rotationY:1" />
-      <Axis bone="neck" bend="rotationX:-1" turn="rotationY:1" />
-      <Axis bone="head" bend="rotationX:-1" turn="rotationY:1" />
-      <Axis bone="upper_arm_l" forward="rotationX:1" side="rotationZ:1"
-            twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
-      <Axis bone="forearm_l" bend="rotationX:1" twist="rotationY:1" />
-      <Axis bone="upper_arm_r" forward="rotationX:1" side="rotationZ:-1"
-            twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
-      <Axis bone="forearm_r" bend="rotationX:1" twist="rotationY:1" />
-      <Axis bone="upper_leg_l" forward="rotationX:-1" side="rotationZ:-1"
-            twist="rotationY:1" />
-      <Axis bone="lower_leg_l" bend="rotationX:-1" twist="rotationY:1" />
-      <Axis bone="upper_leg_r" forward="rotationX:-1" side="rotationZ:1"
-            twist="rotationY:1" />
-      <Axis bone="lower_leg_r" bend="rotationX:-1" twist="rotationY:1" />
-    </BoneAxisMap>
-  </ModelProfile>
-
-  <!-- Complete GLB library in source order. Each clip owns one equal viewing
-       window; the slight overlap is used only for crossfade continuity. -->
-  <ApplyAction target="s71_performer" action="s71_a_tpose" at="0s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_crouch_fwd" at="1.25s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_crouch_idle" at="2.5s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_dance" at="3.75s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_death" at="5s" duration="1.4s" loop="false" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_driving" at="6.25s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_fixing_kneeling" at="7.5s" duration="1.4s" loop="false" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_hit_chest" at="8.75s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_hit_head" at="10s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_idle_loop" at="11.25s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_idle" at="12.5s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_idle_torch" at="13.75s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_interact" at="15s" duration="1.4s" loop="false" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_jog" at="16.25s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_jump_land" at="17.5s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_jump_loop" at="18.75s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_jump_start" at="20s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_pickup_table" at="21.25s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_pistol_aim_down" at="22.5s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_pistol_aim_neutral" at="23.75s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_pistol_aim_up" at="25s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_pistol_idle" at="26.25s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_pistol_reload" at="27.5s" duration="1.4s" loop="false" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_pistol_shoot" at="28.75s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_punch_cross" at="30s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_punch_jab" at="31.25s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_push" at="32.5s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_roll" at="33.75s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_sitting_enter" at="35s" duration="1.4s" loop="false" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_sitting_exit" at="36.25s" duration="1.4s" loop="false" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_sitting_idle" at="37.5s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_sitting_talking" at="38.75s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_spell_enter" at="40s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_spell_exit" at="41.25s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_spell_idle" at="42.5s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_spell_shoot" at="43.75s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_sprint" at="45s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_swim_fwd" at="46.25s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_swim_idle" at="47.5s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_sword" at="48.75s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_sword_idle" at="50s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_walk_formal" at="51.25s" duration="1.4s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" mask="full_body" />
-  <ApplyAction target="s71_performer" action="s71_walk" at="52.5s" duration="1.5s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0s" mask="full_body" />
-
-  <Background color="#030612" />
-
-  <Scene id="S71CharacterActionGauntlet">
-    <Defs>
-      <LinearGradient id="s71_sky" x1="0" y1="0" x2="0" y2="1"
-                      stops="0:#151B3D, 0.58:#080E24, 1:#030612" />
-      <LinearGradient id="s71_floor" x1="0" y1="0" x2="0" y2="1"
-                      stops="0:#142348, 1:#050916" />
-      <RadialGradient id="s71_cyan" cx="0.5" cy="0.5" r="0.5"
-                      stops="0:#A8FBFF, 0.25:#43E5F699, 1:#1CBED700" />
-      <RadialGradient id="s71_violet" cx="0.5" cy="0.5" r="0.5"
-                      stops="0:#F2C4FF, 0.24:#B96BFF88, 1:#7D48E800" />
-      <RadialGradient id="s71_vignette" cx="0.5" cy="0.5" r="0.74"
-                      stops="0:#00000000, 0.63:#00000020, 1:#000000C4" />
-    </Defs>
-
+  <Scene id="S71RigidBodyDropLab">
     <Timeline>
-      <Track id="s71_stage" space="screen" compositeOrder="10">
-        <Sequence from="0s" duration="54s" out="hold">
-          <Layer space="screen">
-            <Rect x="0" y="0" width="1920" height="1080" fill="url(#s71_sky)" />
-            <Circle x="960" y="470" radius="430" fill="url(#s71_cyan)"
-                    opacity={curve("0:0.08:linear, 5.3:0.16:ease_in_out, 8:0.09:ease_in, 11.7:0.32:ease_out, 14:0.12:ease_in")}
-                    blend="screen" />
-            <Circle x="960" y="500" radius="310" fill="url(#s71_violet)"
-                    opacity={curve("0:0.05:linear, 7.8:0.14:ease_out, 11.7:0.34:ease_out, 14:0.1:ease_in")}
-                    blend="screen" />
+      <Track id="s71_physics_stage" space="3d" compositeOrder="30">
+        <Sequence from="0s" duration="5s" out="hold">
+          <CompositeGroup id="s71_rigid_island" space="3d" depth="true"
+                          format="rgba16f">
+            <Physics gravity={[0,-9.81,0]} fixedStep="1/240s" iterations="16" />
 
-            <Rect x="0" y="735" width="1920" height="345" fill="url(#s71_floor)" />
-            <Line x1="0" y1="735" x2="1920" y2="735"
-                  stroke="#74E8F6" strokeWidth="5" opacity="0.55" />
-            <Line x1="260" y1="1080" x2="790" y2="735"
-                  stroke="#31466E" strokeWidth="4" opacity="0.7" />
-            <Line x1="1660" y1="1080" x2="1130" y2="735"
-                  stroke="#31466E" strokeWidth="4" opacity="0.7" />
-            <Line x1="650" y1="1080" x2="880" y2="735"
-                  stroke="#293B60" strokeWidth="3" opacity="0.55" />
-            <Line x1="1270" y1="1080" x2="1040" y2="735"
-                  stroke="#293B60" strokeWidth="3" opacity="0.55" />
-            <Repeat count="7" x="0" y="0" yStep="52">
-              <Line x1="330" y1="765" x2="1590" y2="765"
-                    stroke="#334A72" strokeWidth="3" opacity="0.36" />
-            </Repeat>
+            <EnvironmentLight id="s71_environment_light"
+                              asset="s71_studio_light" intensity="0.35"
+                              visible="false" />
+            <Camera3D id="s71_camera"
+                      position={[10.5,7.2,12.5]}
+                      target={[0,1.8,0]}
+                      up={[0,1,0]} horizonLock="true" fov="39" />
 
-            <Group opacity={curve("0:0.2:linear, 1.6:0.5:ease_out, 3.8:0.18:ease_in, 5.3:0.48:ease_out, 6.7:0.12:ease_in, 7.9:0.44:ease_out, 9.4:0.16:ease_in, 11.7:0.68:ease_out, 14:0.1:ease_in")}>
-              <Line x1="80" y1="250" x2="610" y2="470"
-                    stroke="#55E7F4" strokeWidth="7" opacity="0.5" />
-              <Line x1="1840" y1="220" x2="1320" y2="470"
-                    stroke="#CD7CFF" strokeWidth="7" opacity="0.44" />
-              <Line x1="110" y1="870" x2="670" y2="670"
-                    stroke="#6F91FF" strokeWidth="5" opacity="0.3" />
-              <Line x1="1810" y1="870" x2="1260" y2="670"
-                    stroke="#D46BE8" strokeWidth="5" opacity="0.3" />
-            </Group>
+            <!-- Static bodies form the arena and never move. -->
+            <Model id="s71_floor" asset="s71_floor_asset"
+                   position={[0,-0.2,0]} exposure="1.25" />
+            <RigidBody id="s71_floor_body" target="s71_floor"
+                       dimension="3d" type="static" shape="box"
+                       size={[12,0.4,8]} friction="0.82" restitution="0.08" />
 
-            <Rect x="0" y="0" width="1920" height="1080"
-                  fill="url(#s71_vignette)" opacity="0.76" />
-          </Layer>
-        </Sequence>
-      </Track>
+            <Model id="s71_left_wall" asset="s71_wall_asset"
+                   position={[-5.82,1.5,0]} exposure="1.15" />
+            <RigidBody id="s71_left_wall_body" target="s71_left_wall"
+                       dimension="3d" type="static" shape="box"
+                       size={[0.35,3.4,8]} friction="0.7" restitution="0.35" />
 
-      <Track id="s71_character_track" space="3d" compositeOrder="40">
-        <Sequence from="0s" duration="54s" out="hold">
-          <CompositeGroup id="s71_3d_island" space="3d" depth="true" format="rgba16f">
-            <Physics gravity={[0,-9.81,0]} fixedStep="1/120s" iterations="4" />
-            <Surface id="s71_stage_floor"
-                     kind="ground"
-                     collider="box"
-                     center={[0,-0.649,0]}
-                     size={[20,0.08,20]}
-                     color="#123A66C8" />
+            <Model id="s71_right_wall" asset="s71_wall_asset"
+                   position={[5.82,1.5,0]} exposure="1.15" />
+            <RigidBody id="s71_right_wall_body" target="s71_right_wall"
+                       dimension="3d" type="static" shape="box"
+                       size={[0.35,3.4,8]} friction="0.7" restitution="0.35" />
 
-            <Camera3D id="s71_camera_wide"
-                      position={[0,0.42,6.2]} target={[0,0.02,0]}
-                      up={[0,1,0]} horizonLock="true" fov="34" />
-            <Camera3D id="s71_camera_track"
-                      position={[-0.9,0.4,5.8]} target={[0.18,0.02,0]}
-                      up={[0,1,0]} horizonLock="true" roll="-1.5" fov="34" />
-            <Camera3D id="s71_camera_low"
-                      position={[2.0,0.0,5.7]} target={[0.35,-0.02,0]}
-                      up={[0,1,0]} horizonLock="true" roll="2" fov="33" />
-            <Camera3D id="s71_camera_close"
-                      position={[0.55,0.42,5.5]} target={[0.15,0.04,0]}
-                      up={[0,1,0]} horizonLock="true" fov="33" />
+            <Model id="s71_back_wall" asset="s71_end_wall_asset"
+                   position={[0,1.5,-3.82]} exposure="1.15" />
+            <RigidBody id="s71_back_wall_body" target="s71_back_wall"
+                       dimension="3d" type="static" shape="box"
+                       size={[12,3.4,0.35]} friction="0.7" restitution="0.35" />
 
-            <Model id="s71_performer"
-                   asset="s71_character1_model"
-                   profile="s71_character1_profile"
-                   position={[0,-0.62,0]}
-                   rotationY="0"
-                   scaleMode="normalize_height"
-                   scale="1.3"
-                   collision="kinematic"
-                   gravity="scene"
-                   ground="s71_stage_floor"
-                   exposure="1.8" />
+            <!-- Kinematic bodies retain authored placement while colliding. -->
+            <Model id="s71_pedestal" asset="s71_pedestal_asset"
+                   position={[0,0.225,0]} rotation={[0,0,0]} exposure="1.35" />
+            <RigidBody id="s71_pedestal_body" target="s71_pedestal"
+                       dimension="3d" type="kinematic" shape="box"
+                       size={[2.2,0.45,2.2]} friction="0.9" restitution="0.12" />
+
+            <!-- A light, bouncy body arrives with lateral velocity and spin. -->
+            <Model id="s71_coral_cube" asset="s71_coral_cube_asset"
+                   position={[-1.45,3.25,-0.35]} rotation={[14,0,20]} exposure="1.7" />
+            <RigidBody id="s71_coral_body" target="s71_coral_cube"
+                       dimension="3d" type="dynamic" shape="auto" mass="0.75"
+                       velocity={[1.25,-0.15,0.15]}
+                       angularVelocity={[0.8,1.4,0.45]}
+                       friction="0.28" rollingFriction="0.14"
+                       restitution="0.72" restitutionThreshold="0.55"
+                       linearDamping="0.04" angularDamping="0.12"
+                       continuousCollision="true" sleep="true"
+                       sleepLinearThreshold="0.025"
+                       sleepAngularThreshold="0.035" sleepTime="0.55" />
+
+            <!-- A heavier body falls more quietly and keeps more friction. -->
+            <Model id="s71_cyan_cube" asset="s71_cyan_cube_asset"
+                   position={[1.05,4.55,-0.25]} rotation={[0,24,8]} exposure="1.6" />
+            <RigidBody id="s71_cyan_body" target="s71_cyan_cube"
+                       dimension="3d" type="dynamic" shape="auto" mass="4"
+                       velocity={[-1.35,-0.1,-0.05]}
+                       angularVelocity={[0.2,-0.45,0.3]}
+                       friction="0.86" rollingFriction="0.18"
+                       restitution="0.16" restitutionThreshold="0.4"
+                       linearDamping="0.12" angularDamping="0.2"
+                       continuousCollision="true" sleep="true"
+                       sleepLinearThreshold="0.02"
+                       sleepAngularThreshold="0.03" sleepTime="0.45" />
+
+            <!-- The fast small body exercises adaptive CCD substeps. -->
+            <Model id="s71_lime_cube" asset="s71_lime_cube_asset"
+                   position={[-3.15,1.05,-0.75]} rotation={[0,0,0]} exposure="1.9" />
+            <RigidBody id="s71_lime_body" target="s71_lime_cube"
+                       dimension="3d" type="dynamic" shape="auto" mass="0.3"
+                       velocity={[12.5,0.75,0.15]}
+                       angularVelocity={[2.2,0.6,3.1]}
+                       friction="0.18" rollingFriction="0.12"
+                       restitution="0.58" restitutionThreshold="0.5"
+                       linearDamping="0.03" angularDamping="0.08"
+                       continuousCollision="true" sleep="true"
+                       sleepLinearThreshold="0.025"
+                       sleepAngularThreshold="0.04" sleepTime="0.6" />
+
+            <!-- Five contrasting proportions turn the test into a dense pile-up. -->
+            <Model id="s71_amber_tower" asset="s71_amber_tower_asset"
+                   position={[-0.45,5.75,0.5]} rotation={[8,18,-12]} exposure="1.7" />
+            <RigidBody id="s71_amber_body" target="s71_amber_tower"
+                       dimension="3d" type="dynamic" shape="auto" mass="1.4"
+                       velocity={[0.45,-0.2,-0.15]}
+                       angularVelocity={[0.5,0.9,-0.7]}
+                       friction="0.52" rollingFriction="0.16"
+                       restitution="0.28" restitutionThreshold="0.48"
+                       linearDamping="0.08" angularDamping="0.16"
+                       continuousCollision="true" sleep="true"
+                       sleepLinearThreshold="0.025"
+                       sleepAngularThreshold="0.035" sleepTime="0.5" />
+
+            <Model id="s71_violet_slab" asset="s71_violet_slab_asset"
+                   position={[1.75,3.25,0.65]} rotation={[25,-8,16]} exposure="1.75" />
+            <RigidBody id="s71_violet_body" target="s71_violet_slab"
+                       dimension="3d" type="dynamic" shape="auto" mass="1.1"
+                       velocity={[-1.55,-0.1,-0.35]}
+                       angularVelocity={[1.1,-0.35,0.8]}
+                       friction="0.42" rollingFriction="0.14"
+                       restitution="0.38" restitutionThreshold="0.5"
+                       linearDamping="0.07" angularDamping="0.14"
+                       continuousCollision="true" sleep="true"
+                       sleepLinearThreshold="0.025"
+                       sleepAngularThreshold="0.035" sleepTime="0.5" />
+
+            <Model id="s71_pink_bar" asset="s71_pink_bar_asset"
+                   position={[-2.05,4.15,0.85]} rotation={[-15,28,34]} exposure="1.75" />
+            <RigidBody id="s71_pink_body" target="s71_pink_bar"
+                       dimension="3d" type="dynamic" shape="auto" mass="0.85"
+                       velocity={[1.15,-0.15,-0.3]}
+                       angularVelocity={[-0.6,1.25,0.95]}
+                       friction="0.34" rollingFriction="0.13"
+                       restitution="0.46" restitutionThreshold="0.52"
+                       linearDamping="0.06" angularDamping="0.13"
+                       continuousCollision="true" sleep="true"
+                       sleepLinearThreshold="0.025"
+                       sleepAngularThreshold="0.04" sleepTime="0.55" />
+
+            <Model id="s71_blue_die" asset="s71_blue_die_asset"
+                   position={[0.25,6.75,-0.75]} rotation={[18,-20,10]} exposure="1.8" />
+            <RigidBody id="s71_blue_body" target="s71_blue_die"
+                       dimension="3d" type="dynamic" shape="auto" mass="0.55"
+                       velocity={[-0.35,-0.3,0.4]}
+                       angularVelocity={[1.3,0.75,-1.1]}
+                       friction="0.3" rollingFriction="0.15"
+                       restitution="0.6" restitutionThreshold="0.55"
+                       linearDamping="0.05" angularDamping="0.12"
+                       continuousCollision="true" sleep="true"
+                       sleepLinearThreshold="0.03"
+                       sleepAngularThreshold="0.045" sleepTime="0.58" />
+
+            <Model id="s71_white_brick" asset="s71_white_brick_asset"
+                   position={[2.15,5.45,-1]} rotation={[12,32,-20]} exposure="1.55" />
+            <RigidBody id="s71_white_body" target="s71_white_brick"
+                       dimension="3d" type="dynamic" shape="auto" mass="2.2"
+                       velocity={[-1.1,-0.25,0.5]}
+                       angularVelocity={[0.4,-0.8,0.55]}
+                       friction="0.68" rollingFriction="0.19"
+                       restitution="0.2" restitutionThreshold="0.42"
+                       linearDamping="0.11" angularDamping="0.2"
+                       continuousCollision="true" sleep="true"
+                       sleepLinearThreshold="0.02"
+                       sleepAngularThreshold="0.03" sleepTime="0.48" />
+
+            <PhysicsDebug colliders="true" contacts="true"
+                          sweep="true" corrections="true" />
           </CompositeGroup>
         </Sequence>
       </Track>
 
-      <Track id="s71_hud" space="screen" compositeOrder="60">
-        <Sequence from="0s" duration="54s" out="hold">
+      <Track id="s71_interface" space="screen" compositeOrder="70">
+        <Sequence from="0s" duration="5s" out="hold">
           <Layer space="screen">
-            <Text x="68" y="76" value="CHARACTER 1 / COMPLETE ACTION LIBRARY"
-                  fontFamily="Arial" fontSize="27" fontWeight="800"
-                  tracking="7" color="#ECFAFF" />
-            <Text x="70" y="116" value="ONE GLB · ALL 43 EMBEDDED CLIPS · 54 SECOND FULL LIBRARY"
+            <Rect x="54" y="48" width="720" height="116" radius="18"
+                  color="#08101DDD" stroke="#6EF2FF66" strokeWidth="2" />
+            <Text x="82" y="91" value="RIGID BODY / DROP LAB"
+                  fontFamily="Arial" fontSize="29" fontWeight="800"
+                  tracking="6" color="#F4FAFF" />
+            <Text x="84" y="130"
+                  value="8 BODIES · 6 PROPORTIONS · CONTACT IMPULSES · SLEEP"
                   fontFamily="Arial" fontSize="14" fontWeight="700"
-                  tracking="5" color="#64DDEA" />
-            <Line x1="70" y1="142" x2="510" y2="142"
-                  stroke="#64DDEA" strokeWidth="3" opacity="0.68" />
+                  tracking="3" color="#73E8F3" />
 
-            <Text x="1850" y="960" value="S71" align="right"
-                  fontFamily="Arial" fontSize="18" fontWeight="800"
-                  tracking="6" color="#7187B8" />
+            <Rect x="70" y="910" width="1780" height="102" radius="14"
+                  color="#060A13CC" stroke="#FFFFFF22" strokeWidth="1" />
+            <Text x="100" y="950" value="CORAL  mass 0.75 / bounce 0.72"
+                  fontFamily="Arial" fontSize="18" fontWeight="700"
+                  color="#FF8A8A" />
+            <Text x="735" y="950" value="CYAN  mass 4 / friction 0.86"
+                  fontFamily="Arial" fontSize="18" fontWeight="700"
+                  color="#74F4F6" />
+            <Text x="1350" y="950" value="LIME  speed 12.5 / CCD on"
+                  fontFamily="Arial" fontSize="18" fontWeight="700"
+                  color="#C9FF82" />
           </Layer>
         </Sequence>
       </Track>
-
-      <Track id="s71_clip_name_reel" space="screen" compositeOrder="61">
-        <Sequence from="0s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="01 / A_TPOSE" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="1.25s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="02 / CROUCH FWD LOOP" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="2.5s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="03 / CROUCH IDLE LOOP" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="3.75s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="04 / DANCE LOOP" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="5s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="05 / DEATH01" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="6.25s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="06 / DRIVING LOOP" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="7.5s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="07 / FIXING KNEELING" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="8.75s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="08 / HIT CHEST" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="10s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="09 / HIT HEAD" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="11.25s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="10 / IDLE LOOP" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="12.5s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="11 / IDLE TALKING LOOP" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="13.75s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="12 / IDLE TORCH LOOP" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="15s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="13 / INTERACT" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="16.25s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="14 / JOG FWD LOOP" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="17.5s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="15 / JUMP LAND" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="18.75s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="16 / JUMP LOOP" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="20s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="17 / JUMP START" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="21.25s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="18 / PICKUP TABLE" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="22.5s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="19 / PISTOL AIM DOWN" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="23.75s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="20 / PISTOL AIM NEUTRAL" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="25s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="21 / PISTOL AIM UP" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="26.25s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="22 / PISTOL IDLE LOOP" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="27.5s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="23 / PISTOL RELOAD" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="28.75s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="24 / PISTOL SHOOT" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="30s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="25 / PUNCH CROSS" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="31.25s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="26 / PUNCH JAB" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="32.5s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="27 / PUSH LOOP" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="33.75s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="28 / ROLL" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="35s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="29 / SITTING ENTER" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="36.25s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="30 / SITTING EXIT" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="37.5s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="31 / SITTING IDLE LOOP" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="38.75s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="32 / SITTING TALKING LOOP" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="40s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="33 / SPELL SIMPLE ENTER" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="41.25s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="34 / SPELL SIMPLE EXIT" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="42.5s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="35 / SPELL SIMPLE IDLE LOOP" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="43.75s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="36 / SPELL SIMPLE SHOOT" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="45s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="37 / SPRINT LOOP" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="46.25s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="38 / SWIM FWD LOOP" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="47.5s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="39 / SWIM IDLE LOOP" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="48.75s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="40 / SWORD ATTACK" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="50s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="41 / SWORD IDLE" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="51.25s" duration="1.24s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="42 / WALK FORMAL LOOP" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-        <Sequence from="52.5s" duration="1.5s" out="hide">
-          <Layer>
-            <Text x="70" y="960" value="43 / WALK LOOP" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="5" color="#77F1FA" />
-          </Layer>
-        </Sequence>
-      </Track>
-
     </Timeline>
 
     <Effects>
@@ -559,23 +227,15 @@ PURPOSE
 
   <Process id="S71Finish">
     <Tex id="s71_scene_tex" fmt="rgba16f" from="scene" />
-    <Tex id="s71_bloom_tex" fmt="rgba16f" />
-    <Tex id="s71_final_tex" fmt="rgba16f" />
+    <Tex id="s71_bloom_tex" fmt="rgba16f" size={[1920,1080]} />
+    <Tex id="s71_final_tex" fmt="rgba16f" size={[1920,1080]} />
     <Pass id="s71_bloom" kind="compute" effect="glow_bloom"
           in={["s71_scene_tex"]} out={["s71_bloom_tex"]}
-          params={{ threshold: "0.48", intensity: "0.34", sigma: "5.4" }} />
+          params={{ threshold: "0.68", intensity: "0.22", sigma: "4.2" }} />
     <Pass id="s71_grain" kind="compute" effect="film_grain"
           in={["s71_bloom_tex"]} out={["s71_final_tex"]}
-          params={{ kind: "film_grain", amount: "0.008", scale: "1.0", seed: "71" }} />
+          params={{ kind: "film_grain", amount: "0.007", scale: "1.0", seed: "74" }} />
   </Process>
 
-  <AnimationTarget node="s71_bloom" property="params.intensity">
-    <Key time="0s" value="0.24" />
-    <Key time="5.3s" value="0.38" ease="ease_in_out" />
-    <Key time="8s" value="0.3" ease="ease_in" />
-    <Key time="11.7s" value="0.56" ease="ease_out" />
-    <Key time="14s" value="0.34" ease="ease_in" />
-  </AnimationTarget>
-
-  <Present from="S71CharacterActionGauntlet" />
+  <Present from="S71RigidBodyDropLab" />
 </Graph>

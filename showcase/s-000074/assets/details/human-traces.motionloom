@@ -1,7 +1,7 @@
-<!-- S75 compact alpha decal sheet for layered stickers and repair residue. -->
+<!-- S74 compact alpha decal sheet for layered stickers and repair residue. -->
 <Graph fps={30} duration="1s" size={[512,512]} renderSize={[512,512]}>
   <Background color="#00000000" />
-  <Scene id="S75HumanTracesSprite">
+  <Scene id="S74HumanTracesSprite">
     <Timeline>
       <Track id="traces" space="screen" z="0">
         <Sequence from="0s" duration="1s" out="hold">
@@ -25,5 +25,5 @@
       </Track>
     </Timeline>
   </Scene>
-  <Present from="S75HumanTracesSprite" />
+  <Present from="S74HumanTracesSprite" />
 </Graph>

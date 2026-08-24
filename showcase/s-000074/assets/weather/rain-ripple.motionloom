@@ -1,7 +1,7 @@
-<!-- S75 reusable alpha ripple sprite; kept compact for shared decoding. -->
+<!-- S74 reusable alpha ripple sprite; kept compact for shared decoding. -->
 <Graph fps={30} duration="1s" size={[512,256]} renderSize={[512,256]}>
   <Background color="#00000000" />
-  <Scene id="S75RainRippleSprite">
+  <Scene id="S74RainRippleSprite">
     <Timeline>
       <Track id="ripple" space="screen" z="0">
         <Sequence from="0s" duration="1s" out="hold">
@@ -17,5 +17,5 @@
       </Track>
     </Timeline>
   </Scene>
-  <Present from="S75RainRippleSprite" />
+  <Present from="S74RainRippleSprite" />
 </Graph>
