@@ -1,0 +1,160 @@
+<!--
+=====================================================================
+S73 · CINEMATIC LIGHTING LAB
+8 s · 1920x1080 · 30 fps · HDRI/IBL + authored lights + ACES
+
+PURPOSE
+  Demonstrate the complete public Scene 3D lighting stack. A Radiance HDR
+  environment supplies the visible background, diffuse irradiance and glossy
+  reflections. Authored key, fill, rim and area lights shape one canonical
+  GLB character and a small procedural studio set.
+=====================================================================
+-->
+<Graph fps={30} duration="8s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Assets>
+    <ImageAsset id="s73_courtyard_hdri"
+                src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/cinematic_courtyard.hdr" />
+    <ModelAsset id="s73_character1"
+                src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/character1/character1.glb" />
+    <PrimitiveAsset id="s73_floor" shape="box" size={[12,0.3,8]} color="#1A2130" />
+    <PrimitiveAsset id="s73_plinth" shape="box" size={[2.8,0.55,2.4]} color="#303C55" />
+    <PrimitiveAsset id="s73_warm_card" shape="box" size={[0.25,3.8,3.5]} color="#8A4938" />
+    <PrimitiveAsset id="s73_cool_card" shape="box" size={[0.25,3.2,3.2]} color="#274D78" />
+  </Assets>
+
+  <Background color="#050811" />
+
+  <Scene id="S73CinematicLightingLab">
+    <Timeline>
+      <Track id="s73_stage" space="3d" compositeOrder="30">
+        <Sequence from="0s" duration="8s" out="hold">
+          <CompositeGroup id="s73_lighting_island" space="3d" depth="true"
+                          format="rgba16f">
+            <EnvironmentLight id="s73_ibl"
+                              asset="s73_courtyard_hdri"
+                              mapping="equirectangular"
+                              rotationY="-28"
+                              intensity="1.05"
+                              visible="true"
+                              backgroundIntensity="0.72"
+                              backgroundBlur="0.08"
+                              diffuseIntensity="0.82"
+                              specularIntensity="1.28" />
+
+            <DirectionalLight id="s73_sun"
+                              direction={[-0.48,-1,-0.32]}
+                              color="#FFE0B0"
+                              intensity="3.8"
+                              castShadow="true"
+                              shadowStrength="0.9" />
+            <PointLight id="s73_practical"
+                        position={[2.8,2.25,1.6]}
+                        color="#FF8A58"
+                        intensity="19"
+                        range="8" />
+            <SpotLight id="s73_rim"
+                       position={[-2.8,3.4,-1.4]}
+                       direction={[0.62,-0.56,0.55]}
+                       color="#74CFFF"
+                       intensity="28"
+                       range="11"
+                       innerCone="16"
+                       outerCone="34" />
+            <RectAreaLight id="s73_softbox"
+                           position={[0.8,4.2,3.1]}
+                           direction={[-0.12,-0.78,-0.62]}
+                           color="#FFF7E8"
+                           intensity="9.5"
+                           width="3.5"
+                           height="2.1" />
+
+            <AmbientOcclusion id="s73_ao" intensity="0.68" radius="1.15" />
+            <ContactShadow id="s73_contact"
+                           intensity="0.82" distance="0.38" softness="0.62" />
+            <ColorManagement id="s73_grade"
+                             toneMapping="aces"
+                             exposure="1.05"
+                             whiteBalance="5700"
+                             contrast="1.08" />
+
+            <Camera3D id="s73_camera"
+                      position={[7.8,4.7,9.4]}
+                      target={[0,1.45,0]}
+                      up={[0,1,0]} horizonLock="true" fov="37" />
+
+            <Model id="s73_floor_model" asset="s73_floor"
+                   position={[0,-0.2,0]} receiveShadow="true" exposure="1" />
+            <Model id="s73_plinth_model" asset="s73_plinth"
+                   position={[0,0.18,0]} castShadow="true"
+                   receiveShadow="true" exposure="1.05" />
+            <Model id="s73_warm_card_model" asset="s73_warm_card"
+                   position={[4.6,1.55,-1.2]} rotationY="-18"
+                   castShadow="true" receiveShadow="true" exposure="1" />
+            <Model id="s73_cool_card_model" asset="s73_cool_card"
+                   position={[-4.5,1.35,-1.7]} rotationY="22"
+                   castShadow="true" receiveShadow="true" exposure="1" />
+            <Model id="s73_hero" asset="s73_character1"
+                   position={[0,0.45,0]}
+                   rotationY="-18"
+                   scaleMode="normalize_height" scale="2.85"
+                   castShadow="true" receiveShadow="true" exposure="1.08" />
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+
+      <Track id="s73_titles" space="screen" compositeOrder="70">
+        <Sequence from="0s" duration="8s" out="hold">
+          <Layer space="screen">
+            <Rect x="52" y="44" width="650" height="112" radius="17"
+                  color="#07101CDD" stroke="#7BD8FF66" strokeWidth="2" />
+            <Text x="82" y="88" value="CINEMATIC LIGHTING / HDRI LAB"
+                  fontFamily="Arial" fontSize="29" fontWeight="800"
+                  tracking="5" color="#F5FAFF" />
+            <Text x="84" y="128"
+                  value="IBL · 4 LIGHT TYPES · SHADOW MAP · AO · ACES"
+                  fontFamily="Arial" fontSize="14" fontWeight="700"
+                  tracking="3" color="#83DFFF" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+
+    <Effects>
+      <Effect process="S73Finish" />
+    </Effects>
+  </Scene>
+
+  <AnimationTarget node="s73_ibl" property="rotationY">
+    <Key time="0s" value="-28" />
+    <Key time="8s" value="38" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="s73_sun" property="intensity">
+    <Key time="0s" value="2.8" />
+    <Key time="3.4s" value="4.5" ease="ease_in_out" />
+    <Key time="8s" value="3.4" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="s73_practical" property="intensity">
+    <Key time="0s" value="11" />
+    <Key time="4.2s" value="24" ease="ease_in_out" />
+    <Key time="8s" value="16" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="s73_grade" property="exposure">
+    <Key time="0s" value="0.92" />
+    <Key time="2s" value="1.08" ease="ease_out" />
+    <Key time="8s" value="1.02" ease="ease_in_out" />
+  </AnimationTarget>
+
+  <Process id="S73Finish">
+    <Tex id="s73_scene_tex" fmt="rgba16f" from="scene" />
+    <Tex id="s73_bloom_tex" fmt="rgba16f" size={[1920,1080]} />
+    <Tex id="s73_final_tex" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="s73_bloom" kind="compute" effect="glow_bloom"
+          in={["s73_scene_tex"]} out={["s73_bloom_tex"]}
+          params={{ threshold: "0.82", intensity: "0.12", sigma: "3.2" }} />
+    <Pass id="s73_grain" kind="compute" effect="film_grain"
+          in={["s73_bloom_tex"]} out={["s73_final_tex"]}
+          params={{ kind: "film_grain", amount: "0.005", scale: "1.0", seed: "75" }} />
+  </Process>
+
+  <Present from="S73CinematicLightingLab" />
+</Graph>

@@ -1,0 +1,21 @@
+<!-- S75 reusable alpha ripple sprite; kept compact for shared decoding. -->
+<Graph fps={30} duration="1s" size={[512,256]} renderSize={[512,256]}>
+  <Background color="#00000000" />
+  <Scene id="S75RainRippleSprite">
+    <Timeline>
+      <Track id="ripple" space="screen" z="0">
+        <Sequence from="0s" duration="1s" out="hold">
+          <Layer space="screen">
+            <Ellipse x="256" y="128" radiusX="212" radiusY="70"
+                     fill="#00000000" stroke="#D9F4FA9C" strokeWidth="8" />
+            <Ellipse x="256" y="128" radiusX="154" radiusY="48"
+                     fill="#00000000" stroke="#A9DCE56A" strokeWidth="5" />
+            <Ellipse x="256" y="128" radiusX="92" radiusY="27"
+                     fill="#00000000" stroke="#F2FCFF3E" strokeWidth="3" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="S75RainRippleSprite" />
+</Graph>

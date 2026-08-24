@@ -296,6 +296,11 @@
       "occurrences": 1,
       "recognized": true,
       "validationCoverage": "strict",
+      "requiredAttributes": [
+        "fps",
+        "duration",
+        "size"
+      ],
       "attributes": [
         {
           "name": "duration",
@@ -678,7 +683,9 @@
             "\"1.46\""
           ],
           "recognized": true,
-          "supportsAnimationTarget": false
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
         },
         {
           "name": "evolution",

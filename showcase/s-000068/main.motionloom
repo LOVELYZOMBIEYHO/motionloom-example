@@ -157,6 +157,7 @@ PURPOSE
                    profile="s68g_character1_profile"
                    position={[0,-0.62,0]}
                    rotationY="70"
+                   scaleMode="normalize_height"
                    scale="1.05"
                    exposure="1.65" />
           </CompositeGroup>
@@ -264,6 +265,7 @@ PURPOSE
                    profile="s68g_character1_profile"
                    position={[0,-0.62,0]}
                    rotationY="0"
+                   scaleMode="normalize_height"
                    scale={curve("0:0.78:linear, 8:1.16:ease_in_out")}
                    exposure="1.65" />
           </CompositeGroup>

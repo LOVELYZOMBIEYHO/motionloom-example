@@ -1,0 +1,29 @@
+<!-- S75 compact alpha decal sheet for layered stickers and repair residue. -->
+<Graph fps={30} duration="1s" size={[512,512]} renderSize={[512,512]}>
+  <Background color="#00000000" />
+  <Scene id="S75HumanTracesSprite">
+    <Timeline>
+      <Track id="traces" space="screen" z="0">
+        <Sequence from="0s" duration="1s" out="hold">
+          <Layer space="screen">
+            <Rect x="38" y="72" width="176" height="92" radius="8"
+                  color="#D9CBAAD8" stroke="#756B5CC0" strokeWidth="5" rotation="-6" />
+            <Text x="66" y="101" value="LAST TRAIN" fontFamily="Arial"
+                  fontSize="24" fontWeight="800" color="#25343BCC" rotation="-6" />
+            <Text x="98" y="135" value="00:42" fontFamily="Arial"
+                  fontSize="22" fontWeight="700" color="#A33F38D8" rotation="-6" />
+            <Rect x="290" y="54" width="142" height="74" radius="5"
+                  color="#2E8395CC" stroke="#D8EFF280" strokeWidth="4" rotation="8" />
+            <Path d="M 302 190 L 438 166 L 424 244 L 286 258 Z"
+                  fill="#202C32A8" stroke="#6B777C70" strokeWidth="4" />
+            <Path d="M 48 330 C 112 292 172 354 234 316 C 278 290 326 314 370 286 L 446 390 L 72 430 Z"
+                  fill="#27373C70" />
+            <Path d="M 52 328 C 108 300 164 344 220 318" fill="none"
+                  stroke="#90A1A666" strokeWidth="5" lineCap="round" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="S75HumanTracesSprite" />
+</Graph>

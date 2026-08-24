@@ -141,6 +141,11 @@
       "occurrences": 1,
       "recognized": true,
       "validationCoverage": "strict",
+      "requiredAttributes": [
+        "fps",
+        "duration",
+        "size"
+      ],
       "attributes": [
         {
           "name": "duration",

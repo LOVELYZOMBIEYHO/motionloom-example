@@ -1,0 +1,29 @@
+<Graph fps={30} duration="4s" size={[640,360]} renderSize={[640,360]}>
+  <Assets>
+    <PrimitiveAsset id="floor_asset" shape="box" size={[8,0.5,5]} color="#25324A" />
+    <PrimitiveAsset id="cube_asset" shape="box" size={[1,1,1]} color="#FB7185" />
+  </Assets>
+  <Background color="#080C16" />
+  <Scene id="rigid_body_3d_contract">
+    <Timeline>
+      <Track space="3d">
+        <Sequence from="0s" duration="4s" out="hold">
+          <CompositeGroup id="rigid_body_stage" space="3d" depth="true" format="rgba16f">
+            <Physics gravity={[0,-9.81,0]} fixedStep="1/120s" iterations="6" />
+            <Camera3D position={[4,3.2,7]} target={[0,0.8,0]} fov="38" />
+            <Model id="floor" asset="floor_asset" position={[0,-0.25,0]} />
+            <RigidBody id="floor_body" target="floor" dimension="3d" type="static"
+                       shape="auto" />
+            <Model id="falling_cube" asset="cube_asset" position={[0,3,0]} />
+            <RigidBody id="falling_cube_body" target="falling_cube"
+                       dimension="3d" type="dynamic" shape="auto"
+                       mass="1" restitution="0.3" friction="0.65"
+                       angularVelocity={[0.4,0.7,0.2]}
+                       continuousCollision="true" />
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="rigid_body_3d_contract" />
+</Graph>

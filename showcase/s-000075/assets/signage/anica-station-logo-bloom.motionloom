@@ -1,0 +1,29 @@
+<!-- S75 station logo glow derived from assets/sample_assets/icons/logo_official.motionloom. -->
+<Graph fps={30} duration="1s" size={[1600,240]} renderSize={[1600,240]}>
+  <Background color="#063A5B" />
+  <Scene id="S75AnicaStationLogoSource">
+    <Timeline>
+      <Track id="logo_art" space="screen" z="0">
+        <Sequence from="0s" duration="1s" out="hold">
+          <Layer space="screen">
+            <Group id="official_logo" x="42" y="49">
+              <Rect x="0" y="0" width="300" height="142" radius="32" color="#101827" />
+              <Circle x="150" y="71" radius="42" color="#FFFFFF" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Process id="BloomAliasProcess">
+    <Tex id="src" fmt="rgba16f" from="scene:S75AnicaStationLogoSource" />
+    <Tex id="out" fmt="rgba16f" size={[1600,240]} />
+    <Pass id="post_bloom" kind="compute"
+          effect="bloom"
+          in={["src"]} out={["out"]}
+          params={{ threshold: "0.72", intensity: "1.45", sigma: "18.0" }} />
+  </Process>
+
+  <Present from="BloomAliasProcess" />
+</Graph>

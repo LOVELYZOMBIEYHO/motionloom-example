@@ -1,0 +1,29 @@
+<!-- S75 reusable alpha glass-rain sheet; one 512x1024 decode serves every pane. -->
+<Graph fps={30} duration="1s" size={[512,1024]} renderSize={[512,1024]}>
+  <Background color="#00000000" />
+  <Scene id="S75GlassRivuletsSprite">
+    <Timeline>
+      <Track id="rivulets" space="screen" z="0">
+        <Sequence from="0s" duration="1s" out="hold">
+          <Layer space="screen">
+            <Path d="M 74 24 C 58 144 94 236 66 358 C 48 452 82 580 54 748 C 46 812 58 892 42 1000"
+                  fill="none" stroke="#DDF7FC6C" strokeWidth="6" lineCap="round" />
+            <Path d="M 154 0 C 142 96 178 214 148 328 C 130 402 168 478 146 612 C 138 676 158 760 140 860"
+                  fill="none" stroke="#B9E5ED45" strokeWidth="3" lineCap="round" />
+            <Path d="M 282 62 C 248 184 292 264 266 410 C 252 498 292 596 268 706 C 258 772 282 856 266 1008"
+                  fill="none" stroke="#E7FBFF72" strokeWidth="5" lineCap="round" />
+            <Path d="M 402 8 C 384 104 422 206 394 312 C 372 404 420 500 390 638 C 370 728 408 842 382 962"
+                  fill="none" stroke="#AFD9E13D" strokeWidth="4" lineCap="round" />
+            <Path d="M 466 172 C 448 246 474 314 454 398 C 438 466 466 532 452 614"
+                  fill="none" stroke="#F0FCFF58" strokeWidth="3" lineCap="round" />
+            <Ellipse x="65" y="358" radiusX="10" radiusY="18" color="#E9FAFE62" />
+            <Ellipse x="267" y="410" radiusX="9" radiusY="16" color="#E9FAFE68" />
+            <Ellipse x="392" y="638" radiusX="8" radiusY="14" color="#D8F2F75A" />
+            <Ellipse x="454" y="398" radiusX="6" radiusY="11" color="#F2FCFF52" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="S75GlassRivuletsSprite" />
+</Graph>

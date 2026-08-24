@@ -1,0 +1,29 @@
+<Graph fps={30} duration="4s" size={[640,360]}>
+  <Background color="#111827" />
+  <Scene id="rigid_body_2d_contract">
+    <Timeline>
+      <Track>
+        <Sequence from="0s" duration="4s">
+          <Layer>
+            <Group id="body" x="260" y="120">
+              <Rect width="120" height="80" radius="18" color="#FB7185" />
+            </Group>
+            <RigidBody id="body_physics"
+                       target="body"
+                       dimension="2d"
+                       type="dynamic"
+                       shape="box"
+                       size={[120,80]}
+                       mass="2"
+                       velocity={[90,0]}
+                       angularVelocity="0.8"
+                       gravity={[0,180]}
+                       linearDamping="0.08"
+                       angularDamping="0.12" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="rigid_body_2d_contract" />
+</Graph>

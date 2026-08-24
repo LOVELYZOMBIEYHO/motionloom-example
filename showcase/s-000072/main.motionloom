@@ -1,0 +1,241 @@
+<!--
+=====================================================================
+S72 · RIGID BODY DROP LAB
+5 s · 1920x1080 · 30 fps · unified 3D rigid-body contract
+
+PURPOSE
+  Demonstrate one explicit RigidBody tag across static, kinematic and dynamic
+  3D objects. Scene Physics owns gravity; dynamic Models own no animation
+  channels, so deterministic simulation is the only transform authority.
+=====================================================================
+-->
+<Graph fps={30} duration="5s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Assets>
+    <PrimitiveAsset id="s72_floor_asset" shape="box" size={[12,0.4,8]} color="#131B2E" />
+    <PrimitiveAsset id="s72_wall_asset" shape="box" size={[0.35,3.4,8]} color="#263A5B" />
+    <PrimitiveAsset id="s72_end_wall_asset" shape="box" size={[12,3.4,0.35]} color="#263A5B" />
+    <PrimitiveAsset id="s72_pedestal_asset" shape="box" size={[2.2,0.45,2.2]} color="#334968" />
+    <PrimitiveAsset id="s72_coral_cube_asset" shape="sphere" radius="0.5" segments="32" color="#FF6B6B" />
+    <PrimitiveAsset id="s72_cyan_cube_asset" shape="sphere" radius="0.625" segments="32" color="#50E3E6" />
+    <PrimitiveAsset id="s72_lime_cube_asset" shape="sphere" radius="0.25" segments="24" color="#B8FF5A" />
+    <PrimitiveAsset id="s72_amber_tower_asset" shape="cylinder" radius="0.325" height="1.6" segments="32" color="#FFB347" />
+    <PrimitiveAsset id="s72_violet_slab_asset" shape="wedge" size={[1.8,0.35,0.8]} color="#9B7BFF" />
+    <PrimitiveAsset id="s72_pink_bar_asset" shape="cone" radius="0.5" height="1.6" segments="32" color="#FF73C8" />
+    <PrimitiveAsset id="s72_blue_die_asset" shape="sphere" radius="0.35" segments="24" color="#5D8CFF" />
+    <PrimitiveAsset id="s72_white_brick_asset" shape="box" size={[1.5,0.55,1.1]} color="#E8F0FF" />
+    <ImageAsset id="s72_studio_light"
+                src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000072/assets/white.png" />
+  </Assets>
+
+  <Background color="#050914" />
+
+  <Scene id="S72RigidBodyDropLab">
+    <Timeline>
+      <Track id="s72_physics_stage" space="3d" compositeOrder="30">
+        <Sequence from="0s" duration="5s" out="hold">
+          <CompositeGroup id="s72_rigid_island" space="3d" depth="true"
+                          format="rgba16f">
+            <Physics gravity={[0,-9.81,0]} fixedStep="1/240s" iterations="16" />
+
+            <EnvironmentLight id="s72_environment_light"
+                              asset="s72_studio_light" intensity="0.35"
+                              visible="false" />
+            <Camera3D id="s72_camera"
+                      position={[10.5,7.2,12.5]}
+                      target={[0,1.8,0]}
+                      up={[0,1,0]} horizonLock="true" fov="39" />
+
+            <!-- Static bodies form the arena and never move. -->
+            <Model id="s72_floor" asset="s72_floor_asset"
+                   position={[0,-0.2,0]} exposure="1.25" />
+            <RigidBody id="s72_floor_body" target="s72_floor"
+                       dimension="3d" type="static" shape="box"
+                       size={[12,0.4,8]} friction="0.82" restitution="0.08" />
+
+            <Model id="s72_left_wall" asset="s72_wall_asset"
+                   position={[-5.82,1.5,0]} exposure="1.15" />
+            <RigidBody id="s72_left_wall_body" target="s72_left_wall"
+                       dimension="3d" type="static" shape="box"
+                       size={[0.35,3.4,8]} friction="0.7" restitution="0.35" />
+
+            <Model id="s72_right_wall" asset="s72_wall_asset"
+                   position={[5.82,1.5,0]} exposure="1.15" />
+            <RigidBody id="s72_right_wall_body" target="s72_right_wall"
+                       dimension="3d" type="static" shape="box"
+                       size={[0.35,3.4,8]} friction="0.7" restitution="0.35" />
+
+            <Model id="s72_back_wall" asset="s72_end_wall_asset"
+                   position={[0,1.5,-3.82]} exposure="1.15" />
+            <RigidBody id="s72_back_wall_body" target="s72_back_wall"
+                       dimension="3d" type="static" shape="box"
+                       size={[12,3.4,0.35]} friction="0.7" restitution="0.35" />
+
+            <!-- Kinematic bodies retain authored placement while colliding. -->
+            <Model id="s72_pedestal" asset="s72_pedestal_asset"
+                   position={[0,0.225,0]} rotation={[0,0,0]} exposure="1.35" />
+            <RigidBody id="s72_pedestal_body" target="s72_pedestal"
+                       dimension="3d" type="kinematic" shape="box"
+                       size={[2.2,0.45,2.2]} friction="0.9" restitution="0.12" />
+
+            <!-- A light, bouncy body arrives with lateral velocity and spin. -->
+            <Model id="s72_coral_cube" asset="s72_coral_cube_asset"
+                   position={[-1.45,3.25,-0.35]} rotation={[14,0,20]} exposure="1.7" />
+            <RigidBody id="s72_coral_body" target="s72_coral_cube"
+                       dimension="3d" type="dynamic" shape="auto" mass="0.75"
+                       velocity={[1.25,-0.15,0.15]}
+                       angularVelocity={[0.8,1.4,0.45]}
+                       friction="0.28" rollingFriction="0.14"
+                       restitution="0.72" restitutionThreshold="0.55"
+                       linearDamping="0.04" angularDamping="0.12"
+                       continuousCollision="true" sleep="true"
+                       sleepLinearThreshold="0.025"
+                       sleepAngularThreshold="0.035" sleepTime="0.55" />
+
+            <!-- A heavier body falls more quietly and keeps more friction. -->
+            <Model id="s72_cyan_cube" asset="s72_cyan_cube_asset"
+                   position={[1.05,4.55,-0.25]} rotation={[0,24,8]} exposure="1.6" />
+            <RigidBody id="s72_cyan_body" target="s72_cyan_cube"
+                       dimension="3d" type="dynamic" shape="auto" mass="4"
+                       velocity={[-1.35,-0.1,-0.05]}
+                       angularVelocity={[0.2,-0.45,0.3]}
+                       friction="0.86" rollingFriction="0.18"
+                       restitution="0.16" restitutionThreshold="0.4"
+                       linearDamping="0.12" angularDamping="0.2"
+                       continuousCollision="true" sleep="true"
+                       sleepLinearThreshold="0.02"
+                       sleepAngularThreshold="0.03" sleepTime="0.45" />
+
+            <!-- The fast small body exercises adaptive CCD substeps. -->
+            <Model id="s72_lime_cube" asset="s72_lime_cube_asset"
+                   position={[-3.15,1.05,-0.75]} rotation={[0,0,0]} exposure="1.9" />
+            <RigidBody id="s72_lime_body" target="s72_lime_cube"
+                       dimension="3d" type="dynamic" shape="auto" mass="0.3"
+                       velocity={[12.5,0.75,0.15]}
+                       angularVelocity={[2.2,0.6,3.1]}
+                       friction="0.18" rollingFriction="0.12"
+                       restitution="0.58" restitutionThreshold="0.5"
+                       linearDamping="0.03" angularDamping="0.08"
+                       continuousCollision="true" sleep="true"
+                       sleepLinearThreshold="0.025"
+                       sleepAngularThreshold="0.04" sleepTime="0.6" />
+
+            <!-- Five contrasting proportions turn the test into a dense pile-up. -->
+            <Model id="s72_amber_tower" asset="s72_amber_tower_asset"
+                   position={[-0.45,5.75,0.5]} rotation={[8,18,-12]} exposure="1.7" />
+            <RigidBody id="s72_amber_body" target="s72_amber_tower"
+                       dimension="3d" type="dynamic" shape="auto" mass="1.4"
+                       velocity={[0.45,-0.2,-0.15]}
+                       angularVelocity={[0.5,0.9,-0.7]}
+                       friction="0.52" rollingFriction="0.16"
+                       restitution="0.28" restitutionThreshold="0.48"
+                       linearDamping="0.08" angularDamping="0.16"
+                       continuousCollision="true" sleep="true"
+                       sleepLinearThreshold="0.025"
+                       sleepAngularThreshold="0.035" sleepTime="0.5" />
+
+            <Model id="s72_violet_slab" asset="s72_violet_slab_asset"
+                   position={[1.75,3.25,0.65]} rotation={[25,-8,16]} exposure="1.75" />
+            <RigidBody id="s72_violet_body" target="s72_violet_slab"
+                       dimension="3d" type="dynamic" shape="auto" mass="1.1"
+                       velocity={[-1.55,-0.1,-0.35]}
+                       angularVelocity={[1.1,-0.35,0.8]}
+                       friction="0.42" rollingFriction="0.14"
+                       restitution="0.38" restitutionThreshold="0.5"
+                       linearDamping="0.07" angularDamping="0.14"
+                       continuousCollision="true" sleep="true"
+                       sleepLinearThreshold="0.025"
+                       sleepAngularThreshold="0.035" sleepTime="0.5" />
+
+            <Model id="s72_pink_bar" asset="s72_pink_bar_asset"
+                   position={[-2.05,4.15,0.85]} rotation={[-15,28,34]} exposure="1.75" />
+            <RigidBody id="s72_pink_body" target="s72_pink_bar"
+                       dimension="3d" type="dynamic" shape="auto" mass="0.85"
+                       velocity={[1.15,-0.15,-0.3]}
+                       angularVelocity={[-0.6,1.25,0.95]}
+                       friction="0.34" rollingFriction="0.13"
+                       restitution="0.46" restitutionThreshold="0.52"
+                       linearDamping="0.06" angularDamping="0.13"
+                       continuousCollision="true" sleep="true"
+                       sleepLinearThreshold="0.025"
+                       sleepAngularThreshold="0.04" sleepTime="0.55" />
+
+            <Model id="s72_blue_die" asset="s72_blue_die_asset"
+                   position={[0.25,6.75,-0.75]} rotation={[18,-20,10]} exposure="1.8" />
+            <RigidBody id="s72_blue_body" target="s72_blue_die"
+                       dimension="3d" type="dynamic" shape="auto" mass="0.55"
+                       velocity={[-0.35,-0.3,0.4]}
+                       angularVelocity={[1.3,0.75,-1.1]}
+                       friction="0.3" rollingFriction="0.15"
+                       restitution="0.6" restitutionThreshold="0.55"
+                       linearDamping="0.05" angularDamping="0.12"
+                       continuousCollision="true" sleep="true"
+                       sleepLinearThreshold="0.03"
+                       sleepAngularThreshold="0.045" sleepTime="0.58" />
+
+            <Model id="s72_white_brick" asset="s72_white_brick_asset"
+                   position={[2.15,5.45,-1]} rotation={[12,32,-20]} exposure="1.55" />
+            <RigidBody id="s72_white_body" target="s72_white_brick"
+                       dimension="3d" type="dynamic" shape="auto" mass="2.2"
+                       velocity={[-1.1,-0.25,0.5]}
+                       angularVelocity={[0.4,-0.8,0.55]}
+                       friction="0.68" rollingFriction="0.19"
+                       restitution="0.2" restitutionThreshold="0.42"
+                       linearDamping="0.11" angularDamping="0.2"
+                       continuousCollision="true" sleep="true"
+                       sleepLinearThreshold="0.02"
+                       sleepAngularThreshold="0.03" sleepTime="0.48" />
+
+            <PhysicsDebug colliders="true" contacts="true"
+                          sweep="true" corrections="true" />
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+
+      <Track id="s72_interface" space="screen" compositeOrder="70">
+        <Sequence from="0s" duration="5s" out="hold">
+          <Layer space="screen">
+            <Rect x="54" y="48" width="720" height="116" radius="18"
+                  color="#08101DDD" stroke="#6EF2FF66" strokeWidth="2" />
+            <Text x="82" y="91" value="RIGID BODY / DROP LAB"
+                  fontFamily="Arial" fontSize="29" fontWeight="800"
+                  tracking="6" color="#F4FAFF" />
+            <Text x="84" y="130"
+                  value="8 BODIES · 6 PROPORTIONS · CONTACT IMPULSES · SLEEP"
+                  fontFamily="Arial" fontSize="14" fontWeight="700"
+                  tracking="3" color="#73E8F3" />
+
+            <Rect x="70" y="910" width="1780" height="102" radius="14"
+                  color="#060A13CC" stroke="#FFFFFF22" strokeWidth="1" />
+            <Text x="100" y="950" value="CORAL  mass 0.75 / bounce 0.72"
+                  fontFamily="Arial" fontSize="18" fontWeight="700"
+                  color="#FF8A8A" />
+            <Text x="735" y="950" value="CYAN  mass 4 / friction 0.86"
+                  fontFamily="Arial" fontSize="18" fontWeight="700"
+                  color="#74F4F6" />
+            <Text x="1350" y="950" value="LIME  speed 12.5 / CCD on"
+                  fontFamily="Arial" fontSize="18" fontWeight="700"
+                  color="#C9FF82" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+
+    <Effects>
+      <Effect process="S72Finish" />
+    </Effects>
+  </Scene>
+
+  <Process id="S72Finish">
+    <Tex id="s72_scene_tex" fmt="rgba16f" from="scene" />
+    <Tex id="s72_bloom_tex" fmt="rgba16f" size={[1920,1080]} />
+    <Tex id="s72_final_tex" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="s72_bloom" kind="compute" effect="glow_bloom"
+          in={["s72_scene_tex"]} out={["s72_bloom_tex"]}
+          params={{ threshold: "0.68", intensity: "0.22", sigma: "4.2" }} />
+    <Pass id="s72_grain" kind="compute" effect="film_grain"
+          in={["s72_bloom_tex"]} out={["s72_final_tex"]}
+          params={{ kind: "film_grain", amount: "0.007", scale: "1.0", seed: "74" }} />
+  </Process>
+
+  <Present from="S72RigidBodyDropLab" />
+</Graph>

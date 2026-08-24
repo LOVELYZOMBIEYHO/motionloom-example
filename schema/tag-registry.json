@@ -193,7 +193,7 @@
     ,"hinge"
     ,"spring-chain"
     ,"hair"
-    ,"rigid-body-2d"
+    ,"rigid-body"
     ,"particle-emitter"
     ,"position-pin"
     ,"cloth"
@@ -203,6 +203,36 @@
     ,"alpha-mesh"
     ,"bend-pin"
     ,"automatic-positioning"
+    ,"action-collider-profile"
+    ,"action-contact"
+    ,"action-crossfade"
+    ,"action-sequencing"
+    ,"bone-animation-target"
+    ,"character-turn"
+    ,"coarse-collider"
+    ,"contact-correction"
+    ,"contact-ik"
+    ,"embedded-animation-clip"
+    ,"embedded-animation-clips"
+    ,"environment-gltf"
+    ,"environment-surface"
+    ,"finite-ground-surface"
+    ,"finite-plane-collider"
+    ,"foot-lock"
+    ,"kinematic-collision"
+    ,"layered-animation"
+    ,"mesh-ground-surface"
+    ,"motion-warping"
+    ,"remote-glb"
+    ,"rig-ground-offset"
+    ,"root-choreography"
+    ,"root-debug-trace"
+    ,"scene-gravity"
+    ,"scene-physics"
+    ,"semantic-obstacle"
+    ,"semantic-surface-collision"
+    ,"stair-ascent"
+    ,"swept-collision"
     ,"boolean-param"
     ,"capture-before"
     ,"chromatic-aberration"
@@ -263,6 +293,13 @@
     ,"semantic-anchor"
     ,"semantic-surface"
     ,"skinned-model"
+    ,"hdr-environment"
+    ,"image-based-lighting"
+    ,"pbr-lighting"
+    ,"shadow-map"
+    ,"ambient-occlusion"
+    ,"color-management"
+    ,"complete-clip-catalogue"
     ,"storytelling"
   ],
   "dsl_tags": [
@@ -286,6 +323,7 @@
     "ChromaticAberration",
     "ColorBleed",
     "CompositeGroup",
+    "CompoundAsset",
     "Component",
     "Constraint",
     "Control",
@@ -296,6 +334,13 @@
     "Effects",
     "Effect",
     "Ellipse",
+    "DirectionalLight",
+    "PointLight",
+    "SpotLight",
+    "RectAreaLight",
+    "AmbientOcclusion",
+    "ContactShadow",
+    "ColorManagement",
     "EnvironmentLight",
     "Environment",
     "FaceJaw",
@@ -308,6 +353,7 @@
     "Image",
     "ImageAsset",
     "Input",
+    "Instance",
     "Key",
     "Layer",
     "Layer3D",
@@ -319,11 +365,13 @@
     "Mask",
     "Map",
     "Material",
+    "MaterialAsset",
     "MaterialBinding",
     "Measure",
     "MeshTopology",
     "Model",
     "ModelAsset",
+    "PrimitiveAsset",
     "ModelProfile",
     "Noise",
     "Part",
@@ -372,7 +420,11 @@
     "DynamicCurve",
     "DistanceConstraint",
     "Hinge",
-    "RigidBody2D",
+    "RigidBody",
+    "Physics",
+    "PhysicsDebug",
+    "Contact",
+    "EnvironmentDebug",
     "ParticleEmitter",
     "Cloth",
     "HairStrandField",

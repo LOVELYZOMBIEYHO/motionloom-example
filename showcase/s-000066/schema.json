@@ -275,6 +275,11 @@
       "occurrences": 1,
       "recognized": true,
       "validationCoverage": "strict",
+      "requiredAttributes": [
+        "fps",
+        "duration",
+        "size"
+      ],
       "attributes": [
         {
           "name": "duration",
@@ -593,6 +598,15 @@
           "valueType": "number",
           "supportsInlineExpression": true,
           "supportsAnimationTarget": true
+        },
+        {
+          "name": "scaleMode",
+          "occurrences": 1,
+          "examples": [
+            "\"normalize_height\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
         }
       ]
     },

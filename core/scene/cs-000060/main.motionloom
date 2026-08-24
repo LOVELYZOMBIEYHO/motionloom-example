@@ -25,6 +25,7 @@
                    position={[0,0,0]}
                    rotation={[0,0,0]}
                    rotationY={curve("0:-24:linear, 2:24:ease_in_out, 4:-24:ease_in_out")}
+                   scaleMode="normalize_height"
                    scale="1" />
           </CompositeGroup>
         </Sequence>

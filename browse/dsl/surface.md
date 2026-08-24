@@ -2,4 +2,4 @@
 
 | ID | Type | Domain | Title | Features | Teaches |
 |---|---|---|---|---|---|
-| [s-000070](../../showcase/s-000070/) | showcase | scene | Spartan Deck Vault | scene, assets, glb, true-3d, skinned-model | Retarget an imported Jump_Over clip onto canonical Character 1 through an executable Action.<br>Describe a GLB environment with semantic ground and obstacle surfaces plus reusable local anchors. |
+| [s-000071](../../showcase/s-000071/) | showcase | scene | Character 1 Complete Action Library | scene, assets, glb, true-3d, skinned-model | Expose all 43 clips embedded in one canonical Character 1 GLB as executable Action nodes.<br>Number the complete clip catalogue monotonically from 01 through 43 without resets or duplicates. |
