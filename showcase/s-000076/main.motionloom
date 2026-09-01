@@ -1,0 +1,203 @@
+<!--
+S76 · LANDING PAGE ACTION LIBRARY / LOCOMOTION REEL
+The character walks in, waves, runs out, and idles using copied Action Editor code.
+Every executable action is selectively imported from the landing-page action set.
+-->
+<Graph fps={30} duration="10.5s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Assets>
+    <ModelAsset id="s76_character"
+                src="../../assets/sample_assets/characters/character1/character1.glb" />
+    <MaterialAsset id="s76_floor_mat" shading="pbr" baseColor="#10162A"
+                   metallic="0.24" roughness="0.44" specular="0.62" />
+    <MaterialAsset id="s76_plinth_mat" shading="pbr" baseColor="#283B67"
+                   metallic="0.38" roughness="0.28" specular="0.78" />
+    <MaterialAsset id="s76_arch_mat" shading="pbr" baseColor="#5D2F77"
+                   metallic="0.16" roughness="0.38" emissive="#9B54D1"
+                   emissiveStrength="0.35" />
+    <PrimitiveAsset id="s76_floor" shape="box" size={[14,0.24,10]}
+                    material="s76_floor_mat" collision="solid" collider="box" />
+    <PrimitiveAsset id="s76_plinth" shape="box" size={[4.6,0.22,9.4]}
+                    material="s76_plinth_mat" collision="solid" collider="box" />
+    <PrimitiveAsset id="s76_arch" shape="box" size={[0.16,4.4,0.18]}
+                    material="s76_arch_mat" collision="none" />
+    <PrimitiveAsset id="s76_marker" shape="cylinder" radius="0.1" height="0.025"
+                    segments="32" color="#8FF7FF" collision="none" />
+  </Assets>
+
+  <ActionLibrary id="walk"
+                 src="../../assets/action_libraries/landing_page/standard-walk.motionloom"
+                 actions={["standard_walk_loop"]} />
+  <ActionLibrary id="run"
+                 src="../../assets/action_libraries/landing_page/run-standard.motionloom"
+                 actions={["run_standard_loop"]} />
+  <ActionLibrary id="wave"
+                 src="../../assets/action_libraries/landing_page/wave-greeting.motionloom"
+                 actions={["wave_greeting"]} />
+  <ActionLibrary id="idle"
+                 src="../../assets/action_libraries/landing_page/listening-idle.motionloom"
+                 actions={["listening_idle_loop"]} />
+
+  <ModelProfile id="s76_character_profile" kind="3d"
+                model="s76_character" preset="humanoid_v1">
+    <Retarget preset="humanoid_v1">
+      <Map from="pelvis" to="hips" />
+      <Map from="spine_01" to="spine" />
+      <Map from="spine_02" to="chest" />
+      <Map from="spine_03" to="upper_chest" />
+      <Map from="neck_01" to="neck" />
+      <Map from="Head" to="head" />
+      <Map from="clavicle_l" to="shoulder_l" />
+      <Map from="upperarm_l" to="upper_arm_l" />
+      <Map from="lowerarm_l" to="forearm_l" />
+      <Map from="hand_l" to="hand_l" />
+      <Map from="clavicle_r" to="shoulder_r" />
+      <Map from="upperarm_r" to="upper_arm_r" />
+      <Map from="lowerarm_r" to="forearm_r" />
+      <Map from="hand_r" to="hand_r" />
+      <Map from="thigh_l" to="upper_leg_l" />
+      <Map from="calf_l" to="lower_leg_l" />
+      <Map from="foot_l" to="foot_l" />
+      <Map from="ball_l" to="toe_l" />
+      <Map from="thigh_r" to="upper_leg_r" />
+      <Map from="calf_r" to="lower_leg_r" />
+      <Map from="foot_r" to="foot_r" />
+      <Map from="ball_r" to="toe_r" />
+    </Retarget>
+    <BoneAxisMap>
+      <Axis bone="hips" turn="rotationY:1" />
+      <Axis bone="spine" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="chest" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="upper_chest" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="neck" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="head" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="upper_arm_l" forward="rotationX:1" side="rotationZ:1"
+            twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
+      <Axis bone="forearm_l" bend="rotationX:1" twist="rotationY:1" />
+      <Axis bone="upper_arm_r" forward="rotationX:1" side="rotationZ:-1"
+            twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
+      <Axis bone="forearm_r" bend="rotationX:1" twist="rotationY:1" />
+      <Axis bone="upper_leg_l" forward="rotationX:-1" side="rotationZ:-1" twist="rotationY:1" />
+      <Axis bone="lower_leg_l" bend="rotationX:-1" twist="rotationY:1" />
+      <Axis bone="upper_leg_r" forward="rotationX:-1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="lower_leg_r" bend="rotationX:-1" twist="rotationY:1" />
+    </BoneAxisMap>
+  </ModelProfile>
+
+  <ApplyAction target="s76_actor" action="walk.standard_walk_loop"
+               at="0s" duration="3.8s" loop="true" rootMotion="in_place"
+               blendIn="0.08s" blendOut="0s" mask="full_body" />
+  <ApplyAction target="s76_actor" action="wave.wave_greeting"
+               at="3.8s" duration="1.7s" loop="true" rootMotion="in_place"
+               blendIn="0s" blendOut="0s" mask="full_body" />
+  <ApplyAction target="s76_actor" action="run.run_standard_loop"
+               at="5.5s" duration="2.4s" loop="true" speed="1.1"
+               rootMotion="in_place" blendIn="0s" blendOut="0s"
+               mask="full_body" />
+  <ApplyAction target="s76_actor" action="idle.listening_idle_loop"
+               at="7.9s" duration="2.6s" loop="true" rootMotion="in_place"
+               blendIn="0s" blendOut="0.08s" mask="full_body" />
+
+  <Background color="#080B17" />
+  <Scene id="S76ActionLibrary">
+    <Defs>
+      <LinearGradient id="s76_backdrop" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#090D1D, 0.54:#17213D, 1:#46275C" />
+      <RadialGradient id="s76_glow" cx="0.5" cy="0.48" r="0.58"
+                      stops="0:#77E9FF55, 0.42:#8A62D422, 1:#080B1700" />
+    </Defs>
+    <Timeline>
+      <Track id="s76_backdrop_track" space="screen" compositeOrder="10">
+        <Sequence from="0s" duration="10.5s" out="hold">
+          <Layer space="screen">
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#s76_backdrop)" />
+            <Circle x="960" y="510" radius="510" fill="url(#s76_glow)" blend="screen" />
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="s76_stage_track" space="3d" compositeOrder="30">
+        <Sequence from="0s" duration="10.5s" out="hold">
+          <CompositeGroup id="s76_stage" space="3d" depth="true" format="rgba16f">
+            <DirectionalLight id="s76_key" direction={[-0.5,-0.9,-0.35]}
+                              color="#FFE0C1" intensity="2.6"
+                              castShadow="true" shadowStrength="0.88" />
+            <RectAreaLight id="s76_fill" position={[3.4,3.0,3.5]}
+                           direction={[-0.7,-0.45,-0.55]} width="3.2" height="2.4"
+                           color="#73DFFF" intensity="5.2" />
+            <PointLight id="s76_rim" position={[-2.8,2.5,-2.4]}
+                        color="#CF79FF" intensity="18" range="8" />
+            <AmbientOcclusion id="s76_ao" intensity="0.72" radius="0.58" />
+            <ContactShadow id="s76_contact" intensity="0.9" distance="0.16" softness="0.34" />
+            <ColorManagement id="s76_grade" toneMapping="aces" exposure="1.08"
+                             contrast="1.06" whiteBalance="6100" />
+
+            <Camera3D id="s76_wide" position={[5.4,2.25,7.2]} target={[0,0.95,-0.2]} fov="43" />
+            <Camera3D id="s76_profile" position={[-5.6,1.9,2.0]} target={[0,0.95,0.55]} fov="42" />
+            <Camera3D id="s76_low" position={[3.5,1.05,4.2]} target={[-0.6,0.92,-0.8]} fov="43" />
+            <Camera3D id="s76_run_exit" position={[4.4,1.45,0.8]} target={[0,1.0,-4.0]} fov="40" />
+            <Camera3D id="s76_close" position={[5.2,2.05,6.4]} target={[0,1.0,0.65]} fov="43" />
+
+            <Model id="s76_floor_model" asset="s76_floor" position={[0,-0.16,0]} />
+            <Model id="s76_plinth_model" asset="s76_plinth" position={[0,0.02,0]} />
+            <Model id="s76_arch_l" asset="s76_arch" position={[-3.0,2.15,-2.5]} />
+            <Model id="s76_arch_r" asset="s76_arch" position={[3.0,2.15,-2.5]} />
+            <Model id="s76_arch_top" asset="s76_arch" position={[0,4.28,-2.5]} rotation={[0,0,90]} scale="1.38" />
+            <Model id="s76_mark_a" asset="s76_marker" position={[-1.35,0.17,1.45]} exposure="2" />
+            <Model id="s76_mark_b" asset="s76_marker" position={[0,0.17,1.45]} exposure="2" />
+            <Model id="s76_mark_c" asset="s76_marker" position={[1.35,0.17,1.45]} exposure="2" />
+            <Model id="s76_actor" asset="s76_character" profile="s76_character_profile"
+                   position={[0,0.13,0]} rotationY="180" scale="1.3"
+                   castShadow="true" receiveShadow="true" exposure="1.8" />
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+
+      <Track id="s76_titles" space="screen" compositeOrder="70">
+        <Sequence from="0s" duration="10.5s" out="hold">
+          <Layer space="screen">
+            <Rect x="54" y="46" width="780" height="118" radius="18"
+                  color="#070B18DD" stroke="#7BE9FF66" strokeWidth="2" />
+            <Text x="84" y="91" value="LANDING PAGE ACTIONS / LOCOMOTION REEL"
+                  fontFamily="Arial" fontSize="28" fontWeight="800" tracking="4" color="#F5FAFF" />
+            <Text x="86" y="132" value="4 SELECTIVE IMPORTS · ACTION EDITOR CODE · HUMANOID V1"
+                  fontFamily="Arial" fontSize="14" fontWeight="700" tracking="2.4" color="#7BE9FF" />
+            <Text x="70" y="990"
+                  value="WALK IN · WAVE · RUN OUT · IDLE FINISH"
+                  fontFamily="Arial" fontSize="22" fontWeight="800" tracking="3.2" color="#F3E8FF" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+    <Effects>
+      <Effect process="S76Finish" />
+    </Effects>
+  </Scene>
+
+  <AnimationTarget node="s76_actor" property="position">
+    <Key time="0s" value="[0,0.13,3.6]" />
+    <Key time="3.8s" value="[0,0.13,0.6]" ease="linear" />
+    <Key time="5.5s" value="[0,0.13,0.6]" ease="linear" />
+    <Key time="7.9s" value="[0,0.13,-4.4]" ease="linear" />
+    <Key time="10.5s" value="[0,0.13,-4.4]" ease="linear" />
+  </AnimationTarget>
+
+  <AnimationTarget node="S76ActionLibrary" property="activeCamera">
+    <Key time="0s" value="s76_wide" />
+    <Key time="3.8s" value="s76_close" />
+    <Key time="5.5s" value="s76_low" />
+    <Key time="6.8s" value="s76_run_exit" />
+  </AnimationTarget>
+
+  <Process id="S76Finish">
+    <Tex id="s76_src" fmt="rgba16f" from="scene" />
+    <Tex id="s76_bloom" fmt="rgba16f" size={[1920,1080]} />
+    <Tex id="s76_out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="s76_bloom_pass" kind="compute" effect="glow_bloom"
+          in={["s76_src"]} out={["s76_bloom"]}
+          params={{ threshold: "0.82", intensity: "0.16", sigma: "3.6" }} />
+    <Pass id="s76_grain_pass" kind="compute" effect="film_grain"
+          in={["s76_bloom"]} out={["s76_out"]}
+          params={{ kind: "film_grain", amount: "0.005", scale: "1", seed: "76" }} />
+  </Process>
+  <Present from="S76ActionLibrary" />
+</Graph>

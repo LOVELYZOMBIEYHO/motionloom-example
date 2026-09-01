@@ -1,0 +1,222 @@
+<!-- S75 · NATIVE PRIMITIVE HUMANOID · 18.5 s · 555 frames -->
+<Graph fps={30} duration="18.5s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Assets>
+    <MaterialAsset id="s75_skin" shading="pbr" baseColor="#F2A06B" metallic="0" roughness="0.5" specular="0.42" />
+    <MaterialAsset id="s75_skin_shadow" shading="pbr" baseColor="#C96F52" metallic="0" roughness="0.56" specular="0.36" />
+    <MaterialAsset id="s75_jacket" shading="pbr" baseColor="#2967E8" metallic="0.18" roughness="0.3" specular="0.72" />
+    <MaterialAsset id="s75_jacket_dark" shading="pbr" baseColor="#123382" metallic="0.2" roughness="0.34" specular="0.68" />
+    <MaterialAsset id="s75_trouser" shading="pbr" baseColor="#17233F" metallic="0.05" roughness="0.58" specular="0.28" />
+    <MaterialAsset id="s75_hair" shading="pbr" baseColor="#321D31" metallic="0.02" roughness="0.67" specular="0.24" />
+    <MaterialAsset id="s75_eye" shading="pbr" baseColor="#EFFFFF" metallic="0" roughness="0.16" emissive="#BCEFFF" emissiveStrength="0.18" specular="0.9" />
+    <MaterialAsset id="s75_accent" shading="pbr" baseColor="#FFCF47" metallic="0.6" roughness="0.24" specular="0.92" />
+    <MaterialAsset id="s75_floor_mat" shading="pbr" baseColor="#171C2D" metallic="0.12" roughness="0.48" specular="0.5" />
+    <MaterialAsset id="s75_wall_mat" shading="pbr" baseColor="#252D46" metallic="0.08" roughness="0.62" specular="0.32" />
+
+    <PrimitiveAsset id="s75_pelvis" shape="capsule" radius="0.18" height="0.38" segments="24" rings="12" material="s75_trouser" />
+    <PrimitiveAsset id="s75_abdomen" shape="capsule" radius="0.17" height="0.34" segments="24" rings="12" material="s75_jacket_dark" />
+    <PrimitiveAsset id="s75_chest" shape="capsule" radius="0.24" height="0.48" segments="28" rings="14" material="s75_jacket" />
+    <PrimitiveAsset id="s75_neck" shape="cylinder" radius="0.075" height="0.15" segments="20" material="s75_skin_shadow" />
+    <PrimitiveAsset id="s75_head" shape="sphere" radius="0.19" segments="28" rings="16" material="s75_skin" />
+    <PrimitiveAsset id="s75_face" shape="sphere" radius="0.145" segments="24" rings="14" material="s75_skin" />
+    <PrimitiveAsset id="s75_nose" shape="capsule" radius="0.026" height="0.09" segments="16" rings="8" material="s75_skin_shadow" />
+    <PrimitiveAsset id="s75_ear" shape="sphere" radius="0.04" segments="16" rings="8" material="s75_skin_shadow" />
+    <PrimitiveAsset id="s75_eye_shape" shape="sphere" radius="0.031" segments="16" rings="8" material="s75_eye" />
+    <PrimitiveAsset id="s75_brow" shape="capsule" radius="0.012" height="0.09" segments="14" rings="8" material="s75_hair" />
+    <PrimitiveAsset id="s75_hair_cap" shape="sphere" radius="0.198" segments="24" rings="12" material="s75_hair" />
+    <PrimitiveAsset id="s75_hair_lock" shape="capsule" radius="0.035" height="0.22" segments="16" rings="8" material="s75_hair" />
+    <PrimitiveAsset id="s75_limb" shape="capsule" radius="0.075" height="0.34" segments="20" rings="10" material="s75_jacket" />
+    <PrimitiveAsset id="s75_forearm" shape="capsule" radius="0.065" height="0.31" segments="20" rings="10" material="s75_skin" />
+    <PrimitiveAsset id="s75_hand" shape="capsule" radius="0.055" height="0.16" segments="18" rings="8" material="s75_skin" />
+    <PrimitiveAsset id="s75_thigh" shape="capsule" radius="0.105" height="0.44" segments="22" rings="10" material="s75_trouser" />
+    <PrimitiveAsset id="s75_shin" shape="capsule" radius="0.085" height="0.43" segments="22" rings="10" material="s75_jacket_dark" />
+    <PrimitiveAsset id="s75_shoe" shape="capsule" radius="0.09" height="0.28" segments="22" rings="10" material="s75_hair" />
+    <PrimitiveAsset id="s75_guard" shape="sphere" radius="0.11" segments="20" rings="10" material="s75_accent" />
+    <PrimitiveAsset id="s75_belt" shape="cylinder" radius="0.185" height="0.07" segments="28" material="s75_accent" />
+    <PrimitiveAsset id="s75_badge" shape="box" size={[0.075,0.075,0.025]} material="s75_accent" bevelRadius="0.012" bevelSegments="2" />
+    <PrimitiveAsset id="s75_floor" shape="box" size={[18,0.22,24]} material="s75_floor_mat" collision="solid" collider="box" />
+    <PrimitiveAsset id="s75_wall" shape="box" size={[18,6,0.25]} material="s75_wall_mat" collision="solid" collider="box" />
+    <PrimitiveAsset id="s75_light_bar" shape="box" size={[0.08,2.6,0.08]} color="#69E7FF" bevelRadius="0.015" bevelSegments="2" />
+
+    <CompoundAsset id="s75_native_character" rig="s75_humanoid_rig" materialSeed="75">
+      <Instance id="pelvis" asset="s75_pelvis" bone="hips" position={[0,-0.06,0]} />
+      <Instance id="abdomen" asset="s75_abdomen" bone="spine" position={[0,0.08,0]} />
+      <Instance id="chest" asset="s75_chest" bone="chest" position={[0,0.08,0]} />
+      <Instance id="chest_accent" asset="s75_badge" bone="chest" position={[0.13,0.11,0.21]} rotation={[0,0,45]} />
+      <Instance id="neck" asset="s75_neck" bone="neck" position={[0,0.05,0]} />
+      <Instance id="head" asset="s75_head" bone="head" position={[0,0.12,0]} />
+      <Instance id="face" asset="s75_face" bone="head" position={[0,0.105,0.085]} />
+      <Instance id="nose" asset="s75_nose" bone="head" position={[0,0.10,0.215]} rotation={[90,0,0]} />
+      <Instance id="ear_l" asset="s75_ear" bone="head" position={[-0.19,0.12,0]} />
+      <Instance id="ear_r" asset="s75_ear" bone="head" position={[0.19,0.12,0]} />
+      <Instance id="eye_l" asset="s75_eye_shape" bone="head" position={[-0.065,0.16,0.225]} />
+      <Instance id="eye_r" asset="s75_eye_shape" bone="head" position={[0.065,0.16,0.225]} />
+      <Instance id="brow_l" asset="s75_brow" bone="head" position={[-0.068,0.215,0.22]} rotation={[0,0,82]} />
+      <Instance id="brow_r" asset="s75_brow" bone="head" position={[0.068,0.215,0.22]} rotation={[0,0,98]} />
+      <Instance id="hair_cap" asset="s75_hair_cap" bone="head" position={[0,0.185,-0.015]} />
+      <Instance id="hair_lock_l" asset="s75_hair_lock" bone="head" position={[-0.13,0.15,0.10]} rotation={[0,0,-18]} />
+      <Instance id="hair_lock_r" asset="s75_hair_lock" bone="head" position={[0.13,0.15,0.10]} rotation={[0,0,18]} />
+      <Instance id="upper_arm_l" asset="s75_limb" bone="upper_arm_l" position={[0,-0.15,0]} />
+      <Instance id="upper_arm_r" asset="s75_limb" bone="upper_arm_r" position={[0,-0.15,0]} />
+      <Instance id="forearm_l" asset="s75_forearm" bone="forearm_l" position={[0,-0.14,0]} />
+      <Instance id="forearm_r" asset="s75_forearm" bone="forearm_r" position={[0,-0.14,0]} />
+      <Instance id="hand_l" asset="s75_hand" bone="hand_l" position={[0,-0.065,0]} />
+      <Instance id="hand_r" asset="s75_hand" bone="hand_r" position={[0,-0.065,0]} />
+      <Instance id="shoulder_l" asset="s75_guard" bone="upper_arm_l" position={[0,0.01,0]} />
+      <Instance id="shoulder_r" asset="s75_guard" bone="upper_arm_r" position={[0,0.01,0]} />
+      <Instance id="thigh_l" asset="s75_thigh" bone="upper_leg_l" position={[0,-0.20,0]} />
+      <Instance id="thigh_r" asset="s75_thigh" bone="upper_leg_r" position={[0,-0.20,0]} />
+      <Instance id="shin_l" asset="s75_shin" bone="lower_leg_l" position={[0,-0.20,0]} />
+      <Instance id="shin_r" asset="s75_shin" bone="lower_leg_r" position={[0,-0.20,0]} />
+      <Instance id="foot_l" asset="s75_shoe" bone="foot_l" position={[0,-0.04,0.09]} rotation={[90,0,0]} />
+      <Instance id="foot_r" asset="s75_shoe" bone="foot_r" position={[0,-0.04,0.09]} rotation={[90,0,0]} />
+      <Instance id="knee_l" asset="s75_guard" bone="lower_leg_l" position={[0,0.01,0.05]} scale="0.72" />
+      <Instance id="knee_r" asset="s75_guard" bone="lower_leg_r" position={[0,0.01,0.05]} scale="0.72" />
+      <Instance id="belt" asset="s75_belt" bone="hips" position={[0,0.12,0]} />
+      <Instance id="belt_badge" asset="s75_badge" bone="hips" position={[0,0.12,0.185]} rotation={[0,0,45]} />
+    </CompoundAsset>
+  </Assets>
+
+  <Skeleton id="s75_humanoid_rig" profile="motionloom_humanoid_v1"
+            sourceRig="character1_reference_v1"
+            space="3d" height="1.82" facing="front" validation="warn">
+    <Bone id="root" role="root" position={[0,0,0]} />
+    <Bone id="hips" role="pelvis" parent="root" position={[0,0.94,0]} />
+    <Bone id="spine" role="spine" parent="hips" position={[0,0.20,0]} />
+    <Bone id="chest" role="chest" parent="spine" position={[0,0.23,0]} />
+    <Bone id="upper_chest" role="upper_chest" parent="chest" position={[0,0.12,0]} />
+    <Bone id="neck" role="neck" parent="upper_chest" position={[0,0.13,0]} />
+    <Bone id="head" role="head" parent="neck" position={[0,0.10,0]} />
+    <Bone id="shoulder_l" role="shoulder" side="left" parent="upper_chest" position={[-0.20,0.04,0]} />
+    <Bone id="upper_arm_l" role="upper_arm" side="left" parent="shoulder_l" position={[-0.07,0,0]} />
+    <Bone id="forearm_l" role="forearm" side="left" parent="upper_arm_l" position={[0,-0.30,0]} />
+    <Bone id="hand_l" role="hand" side="left" parent="forearm_l" position={[0,-0.28,0]} />
+    <Bone id="shoulder_r" role="shoulder" side="right" parent="upper_chest" position={[0.20,0.04,0]} />
+    <Bone id="upper_arm_r" role="upper_arm" side="right" parent="shoulder_r" position={[0.07,0,0]} />
+    <Bone id="forearm_r" role="forearm" side="right" parent="upper_arm_r" position={[0,-0.30,0]} />
+    <Bone id="hand_r" role="hand" side="right" parent="forearm_r" position={[0,-0.28,0]} />
+    <Bone id="upper_leg_l" role="thigh" side="left" parent="hips" position={[-0.11,-0.08,0]} />
+    <Bone id="lower_leg_l" role="shin" side="left" parent="upper_leg_l" position={[0,-0.42,0]} />
+    <Bone id="foot_l" role="foot" side="left" parent="lower_leg_l" position={[0,-0.42,0]} />
+    <Bone id="toe_l" role="toe" side="left" parent="foot_l" position={[0,-0.04,0.18]} />
+    <Bone id="upper_leg_r" role="thigh" side="right" parent="hips" position={[0.11,-0.08,0]} />
+    <Bone id="lower_leg_r" role="shin" side="right" parent="upper_leg_r" position={[0,-0.42,0]} />
+    <Bone id="foot_r" role="foot" side="right" parent="lower_leg_r" position={[0,-0.42,0]} />
+    <Bone id="toe_r" role="toe" side="right" parent="foot_r" position={[0,-0.04,0.18]} />
+    <BoneAxisMap>
+      <Axis bone="hips" turn="rotationY:1" />
+      <Axis bone="spine" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="chest" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="upper_chest" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="neck" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="head" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="upper_arm_l" forward="rotationX:1" side="rotationZ:-1" twist="rotationY:1" />
+      <Axis bone="forearm_l" bend="rotationX:-1" twist="rotationY:1" />
+      <Axis bone="hand_l" twist="rotationY:1" />
+      <Axis bone="upper_arm_r" forward="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="forearm_r" bend="rotationX:-1" twist="rotationY:1" />
+      <Axis bone="hand_r" twist="rotationY:1" />
+      <Axis bone="upper_leg_l" forward="rotationX:1" side="rotationZ:-1" twist="rotationY:1" />
+      <Axis bone="lower_leg_l" bend="rotationX:-1" twist="rotationY:1" />
+      <Axis bone="foot_l" bend="rotationX:1" />
+      <Axis bone="upper_leg_r" forward="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="lower_leg_r" bend="rotationX:-1" twist="rotationY:1" />
+      <Axis bone="foot_r" bend="rotationX:1" />
+    </BoneAxisMap>
+  </Skeleton>
+
+  <ActionLibrary id="walk"
+                 src="../../assets/action_libraries/landing_page/standard-walk.motionloom"
+                 actions={["standard_walk_loop"]} />
+  <ActionLibrary id="run"
+                 src="../../assets/action_libraries/landing_page/run-standard.motionloom"
+                 actions={["run_standard_loop"]} />
+  <ActionLibrary id="wave"
+                 src="../../assets/action_libraries/landing_page/wave-greeting.motionloom"
+                 actions={["wave_greeting"]} />
+  <ActionLibrary id="idle"
+                 src="../../assets/action_libraries/landing_page/listening-idle.motionloom"
+                 actions={["listening_idle_loop"]} />
+
+  <Background color="#070A14" />
+  <Scene id="S75NativePrimitiveHumanoid">
+    <Timeline>
+      <Track id="s75_stage" space="3d" compositeOrder="30">
+        <Sequence from="0s" duration="18.5s" out="hold">
+          <CompositeGroup id="s75_world" space="3d" depth="true" format="rgba16f">
+            <Physics gravity={[0,-9.81,0]} fixedStep="1/240s" iterations="12" />
+            <DirectionalLight id="s75_key" direction={[-0.5,-1,-0.35]} color="#FFD4AD" intensity="2.2" castShadow="true" shadowStrength="0.9" />
+            <RectAreaLight id="s75_fill" position={[3.2,3.4,2.5]} direction={[-0.7,-0.6,-0.3]} width="3" height="2" color="#61CFFF" intensity="4.5" />
+            <PointLight id="s75_rim" position={[-2.4,2.1,-2.5]} color="#B47AFF" intensity="18" range="7" />
+            <AmbientOcclusion id="s75_ao" radius="0.7" intensity="0.75" />
+            <ContactShadow id="s75_contact" distance="0.15" softness="0.38" intensity="0.85" />
+            <ColorManagement id="s75_grade" toneMapping="aces" exposure="1.0" contrast="1.05" whiteBalance="6200" />
+            <Camera3D id="s75_wide" position={[5.8,2.6,8.2]} target={[0,1.05,0]} fov="43" />
+            <Camera3D id="s75_front" position={[4.0,2.0,-1.2]} target={[0,1.0,1.0]} fov="45" />
+            <Camera3D id="s75_run_side" position={[7.4,2.3,-2.6]} target={[0,1.0,-2.8]} fov="49" />
+            <Camera3D id="s75_turn" position={[4.0,2.0,-9.2]} target={[0,1.0,-7.0]} fov="45" />
+            <Camera3D id="s75_return" position={[-6.8,2.4,-1.4]} target={[0,1.0,-1.5]} fov="50" />
+            <Model id="s75_floor_model" asset="s75_floor" position={[0,-0.11,-1.5]} />
+            <RigidBody id="s75_floor_body" target="s75_floor_model" dimension="3d" type="static" shape="box" size={[18,0.22,24]} friction="0.9" />
+            <Model id="s75_back_wall" asset="s75_wall" position={[0,2.9,-11.5]} />
+            <RigidBody id="s75_wall_body" target="s75_back_wall" dimension="3d" type="static" shape="box" size={[18,6,0.25]} friction="0.9" />
+            <Model id="s75_light_l" asset="s75_light_bar" position={[-5.5,1.8,-11.25]} exposure="3" />
+            <Model id="s75_light_r" asset="s75_light_bar" position={[5.5,1.8,-11.25]} exposure="3" />
+            <Model id="s75_actor" asset="s75_native_character" position={[0,0,4]} rotationY="180" castShadow="true" receiveShadow="true" exposure="1.35" />
+            <RigidBody id="s75_actor_body" target="s75_actor" dimension="3d" type="kinematic" shape="capsule" size={[0.62,1.82,0.62]} radius="0.31" height="1.20" friction="0.8" continuousCollision="true" />
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+      <Track id="s75_titles" space="screen" compositeOrder="70">
+        <Sequence from="0s" duration="18.5s" out="hold">
+          <Layer space="screen">
+            <Rect x="54" y="48" width="760" height="116" radius="18" color="#07101DDD" stroke="#6EE7FF66" strokeWidth="2" />
+            <Text x="84" y="91" value="NATIVE PRIMITIVE HUMANOID" fontFamily="Arial" fontSize="29" fontWeight="800" tracking="5" color="#F5FAFF" />
+            <Text x="86" y="132" value="LANDING PAGE ACTION CODE · WALK · WAVE · RUN · ZERO GLB" fontFamily="Arial" fontSize="14" fontWeight="700" tracking="2.5" color="#69E7FF" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+    <Effects>
+      <Effect process="S75Finish" />
+    </Effects>
+  </Scene>
+
+  <ApplyAction target="s75_actor" action="walk.standard_walk_loop" at="0s" duration="3.5s" loop="true" />
+  <ApplyAction target="s75_actor" action="wave.wave_greeting" at="3.5s" duration="1.5s" loop="true" />
+  <ApplyAction target="s75_actor" action="run.run_standard_loop" at="5s" duration="5s" loop="true" speed="1.08" />
+  <ApplyAction target="s75_actor" action="idle.listening_idle_loop" at="10s" duration="2.25s" loop="true" />
+  <ApplyAction target="s75_actor" action="run.run_standard_loop" at="12.25s" duration="5s" loop="true" speed="1.08" />
+  <ApplyAction target="s75_actor" action="idle.listening_idle_loop" at="17.25s" duration="1.25s" loop="true" />
+  <AnimationTarget node="s75_actor" property="position">
+    <Key time="0s" value="[0,0,4]" />
+    <Key time="3.5s" value="[0,0,1]" ease="linear" />
+    <Key time="5s" value="[0,0,1]" ease="linear" />
+    <Key time="10s" value="[0,0,-7]" ease="linear" />
+    <Key time="12.25s" value="[0,0,-7]" ease="linear" />
+    <Key time="17.25s" value="[0,0,1]" ease="linear" />
+    <Key time="18.5s" value="[0,0,1]" ease="linear" />
+  </AnimationTarget>
+  <AnimationTarget node="s75_actor" property="rotationY">
+    <Key time="0s" value="180" />
+    <Key time="10s" value="180" />
+    <Key time="12.25s" value="0" ease="linear" />
+    <Key time="18.5s" value="0" />
+  </AnimationTarget>
+  <AnimationTarget node="S75NativePrimitiveHumanoid" property="activeCamera">
+    <Key time="0s" value="s75_wide" />
+    <Key time="3.5s" value="s75_front" />
+    <Key time="5s" value="s75_run_side" />
+    <Key time="9s" value="s75_turn" />
+    <Key time="12.25s" value="s75_return" />
+    <Key time="16s" value="s75_wide" />
+  </AnimationTarget>
+
+  <Process id="S75Finish">
+    <Tex id="src" fmt="rgba16f" from="scene" />
+    <Tex id="bloom" fmt="rgba16f" size={[1920,1080]} />
+    <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="post_bloom" kind="compute" effect="glow_bloom" in={["src"]} out={["bloom"]} params={{ threshold: "0.85", intensity: "0.12", sigma: "3.2" }} />
+    <Pass id="post_grain" kind="compute" effect="film_grain" in={["bloom"]} out={["out"]} params={{ kind: "film_grain", amount: "0.004", scale: "1", seed: "75" }} />
+  </Process>
+  <Present from="S75NativePrimitiveHumanoid" />
+</Graph>

@@ -975,6 +975,37 @@
             "density"
           ]
         },
+        "capsule": {
+          "required": [
+            "id",
+            "shape",
+            "radius",
+            "height"
+          ],
+          "optional": [
+            "segments",
+            "rings",
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
         "cone": {
           "required": [
             "id",

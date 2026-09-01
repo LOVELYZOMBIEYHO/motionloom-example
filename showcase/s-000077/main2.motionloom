@@ -1,0 +1,224 @@
+<!-- S77 · INTO THE FOREST · 20.5 s · 615 frames -->
+<Graph fps={30} duration="20.5s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Assets>
+    <ImageAsset id="s77_hdri" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/environment/cinematic-forest.hdr" colorSpace="linear-srgb" />
+    <ImageAsset id="s77_height" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/terrain/forest-height.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s77_splat" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/terrain/forest-splat.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s77_soil_color" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/terrain/soil-base.png" colorSpace="srgb" />
+    <ImageAsset id="s77_moss_color" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/terrain/moss-base.png" colorSpace="srgb" />
+    <ImageAsset id="s77_stone_color" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/terrain/stone-base.png" colorSpace="srgb" />
+    <ImageAsset id="s77_leaves_color" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/terrain/leaves-base.png" colorSpace="srgb" />
+    <ImageAsset id="s77_bark_color" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/vegetation/bark-base.png" colorSpace="srgb" />
+    <ImageAsset id="s77_broadleaf_atlas" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/vegetation/broadleaf-atlas.png" colorSpace="srgb" />
+    <ImageAsset id="s77_grass_atlas" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/vegetation/grass-atlas.png" colorSpace="srgb" />
+    <ImageAsset id="s77_flower_atlas" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/vegetation/flower-atlas.png" colorSpace="srgb" />
+    <ImageAsset id="s77_fern_atlas" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/vegetation/fern-atlas.png" colorSpace="srgb" />
+    <ModelAsset id="s77_character" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/character1/character1.glb" />
+
+    <MaterialAsset id="s77_soil" shading="pbr" baseColorTexture="s77_soil_color" metallic="0" roughness="0.96" specular="0.12" mapping="uv" textureScale={[7,7]} />
+    <MaterialAsset id="s77_moss" shading="pbr" baseColorTexture="s77_moss_color" metallic="0" roughness="0.9" specular="0.16" mapping="uv" textureScale={[8,8]} />
+    <MaterialAsset id="s77_stone" shading="pbr" baseColorTexture="s77_stone_color" metallic="0" roughness="0.84" specular="0.28" mapping="uv" textureScale={[6,6]} />
+    <MaterialAsset id="s77_leaves" shading="pbr" baseColorTexture="s77_leaves_color" metallic="0" roughness="0.94" specular="0.1" mapping="uv" textureScale={[8,8]} />
+    <MaterialAsset id="s77_bark" shading="pbr" baseColorTexture="s77_bark_color" metallic="0" roughness="0.96" specular="0.12" mapping="uv" textureScale={[2.4,3.8]} />
+    <MaterialAsset id="s77_foliage" shading="pbr" baseColor="#47733D" baseColorTexture="s77_broadleaf_atlas" metallic="0" roughness="0.88" specular="0.14" alphaMode="mask" alphaCutoff="0.38" doubleSided="true" />
+    <MaterialAsset id="s77_grass" shading="pbr" baseColor="#5F8140" baseColorTexture="s77_grass_atlas" metallic="0" roughness="0.92" specular="0.1" alphaMode="mask" alphaCutoff="0.42" doubleSided="true" />
+    <MaterialAsset id="s77_flower" shading="pbr" baseColor="#D8C9C0" baseColorTexture="s77_flower_atlas" metallic="0" roughness="0.86" specular="0.13" alphaMode="mask" alphaCutoff="0.4" doubleSided="true" />
+    <MaterialAsset id="s77_fern" shading="pbr" baseColor="#537943" baseColorTexture="s77_fern_atlas" metallic="0" roughness="0.9" specular="0.1" alphaMode="mask" alphaCutoff="0.4" doubleSided="true" />
+    <MaterialAsset id="s77_stem" shading="pbr" baseColor="#315B2B" metallic="0" roughness="0.94" specular="0.08" />
+    <MaterialAsset id="s77_rock" shading="pbr" baseColorTexture="s77_stone_color" metallic="0" roughness="0.86" specular="0.22" mapping="triplanar" textureScale={[1.6,1.6]} />
+    <MaterialAsset id="s77_bench_wood" shading="pbr" baseColor="#6A3D21" metallic="0.02" roughness="0.54" specular="0.36" />
+    <MaterialAsset id="s77_bench_iron" shading="pbr" baseColor="#15201C" metallic="0.86" roughness="0.3" specular="0.8" />
+
+    <TerrainAsset id="s77_forest_terrain" heightMap="s77_height" size={[36,36]} heightScale="2.4" heightOffset="-1.0" layers={["s77_soil","s77_moss","s77_stone","s77_leaves"]} blendMap="s77_splat" chunks={[4,4]} lod="auto" collision="solid" />
+    <VegetationAsset id="s77_tree" kind="tree" height="7.8" trunkMaterial="s77_bark" foliageMaterial="s77_foliage" density="38" branchLevels="3" seed="7700" lod="auto" wind="true" collision="solid" />
+    <VegetationAsset id="s77_shrub" kind="shrub" height="1.45" trunkMaterial="s77_bark" foliageMaterial="s77_foliage" density="22" branchLevels="2" seed="7711" lod="auto" wind="true" />
+    <VegetationAsset id="s77_grass_clump" kind="grass" height="0.72" material="s77_grass" density="26" seed="7722" lod="auto" wind="true" />
+    <VegetationAsset id="s77_wildflowers" kind="flower" height="0.7" material="s77_flower" stemMaterial="s77_stem" density="12" seed="7733" lod="auto" wind="true" />
+    <VegetationAsset id="s77_fern_clump" kind="fern" height="1.05" material="s77_fern" density="16" seed="7744" lod="auto" wind="true" />
+    <VegetationAsset id="s77_deadwood" kind="deadwood" height="3.6" trunkMaterial="s77_bark" branchLevels="2" seed="7755" lod="auto" collision="solid" />
+    <PrimitiveAsset id="s77_rock_shape" shape="sphere" radius="0.72" segments="24" rings="14" material="s77_rock" />
+
+    <!-- Park bench, entirely composed from reusable PrimitiveAssets. -->
+    <PrimitiveAsset id="s77_bench_seat_slat" shape="box" size={[3.2,0.12,0.18]} material="s77_bench_wood" collision="none" bevelRadius="0.035" bevelSegments="2" />
+    <PrimitiveAsset id="s77_bench_back_slat" shape="box" size={[3.2,0.24,0.12]} material="s77_bench_wood" collision="none" bevelRadius="0.035" bevelSegments="2" />
+    <PrimitiveAsset id="s77_bench_leg" shape="box" size={[0.16,0.78,0.54]} material="s77_bench_iron" collision="none" bevelRadius="0.025" bevelSegments="2" />
+    <PrimitiveAsset id="s77_bench_post" shape="box" size={[0.14,1.1,0.14]} material="s77_bench_iron" collision="none" bevelRadius="0.02" bevelSegments="2" />
+    <PrimitiveAsset id="s77_bench_arm" shape="box" size={[0.12,0.12,0.9]} material="s77_bench_iron" collision="none" bevelRadius="0.025" bevelSegments="2" />
+  </Assets>
+
+  <ActionLibrary id="walk" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/action_libraries/landing_page/standard-walk.motionloom" actions={["standard_walk_loop"]} />
+  <ActionLibrary id="sit" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/action_libraries/landing_page/sit-down.motionloom" actions={["sit_down"]} />
+  <ActionLibrary id="seated" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/action_libraries/landing_page/sit-idle.motionloom" actions={["sit_idle_loop"]} />
+
+  <ModelProfile id="s77_character_profile" kind="3d" model="s77_character" preset="humanoid_v1">
+    <Retarget preset="humanoid_v1">
+      <Map from="pelvis" to="hips" />
+      <Map from="spine_01" to="spine" />
+      <Map from="spine_02" to="chest" />
+      <Map from="spine_03" to="upper_chest" />
+      <Map from="neck_01" to="neck" />
+      <Map from="Head" to="head" />
+      <Map from="clavicle_l" to="shoulder_l" />
+      <Map from="upperarm_l" to="upper_arm_l" />
+      <Map from="lowerarm_l" to="forearm_l" />
+      <Map from="hand_l" to="hand_l" />
+      <Map from="clavicle_r" to="shoulder_r" />
+      <Map from="upperarm_r" to="upper_arm_r" />
+      <Map from="lowerarm_r" to="forearm_r" />
+      <Map from="hand_r" to="hand_r" />
+      <Map from="thigh_l" to="upper_leg_l" />
+      <Map from="calf_l" to="lower_leg_l" />
+      <Map from="foot_l" to="foot_l" />
+      <Map from="ball_l" to="toe_l" />
+      <Map from="thigh_r" to="upper_leg_r" />
+      <Map from="calf_r" to="lower_leg_r" />
+      <Map from="foot_r" to="foot_r" />
+      <Map from="ball_r" to="toe_r" />
+    </Retarget>
+    <BoneAxisMap>
+      <Axis bone="hips" turn="rotationY:1" />
+      <Axis bone="spine" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="chest" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="upper_chest" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="neck" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="head" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="upper_arm_l" forward="rotationX:1" side="rotationZ:1" twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
+      <Axis bone="forearm_l" bend="rotationX:1" twist="rotationY:1" />
+      <Axis bone="upper_arm_r" forward="rotationX:1" side="rotationZ:-1" twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
+      <Axis bone="forearm_r" bend="rotationX:1" twist="rotationY:1" />
+      <Axis bone="upper_leg_l" forward="rotationX:-1" side="rotationZ:-1" twist="rotationY:1" />
+      <Axis bone="lower_leg_l" bend="rotationX:-1" twist="rotationY:1" />
+      <Axis bone="upper_leg_r" forward="rotationX:-1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="lower_leg_r" bend="rotationX:-1" twist="rotationY:1" />
+    </BoneAxisMap>
+  </ModelProfile>
+
+  <ApplyAction target="s77_actor" action="walk.standard_walk_loop" at="0s" duration="8.2s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0s" mask="full_body" ground="s77_ground" contactCorrection="auto" footLock="auto" floorSnap="0.25" safeMargin="0.01" sweepStep="0.03" />
+  <!-- Millisecond-safe boundary: stretch the 1.3 s source across the established shot, then begin the matching seated loop on frame 315. -->
+  <ApplyAction target="s77_actor" action="sit.sit_down" at="8.2s" duration="2.267s" loop="false" speed="0.573445081" rootMotion="clip" blendIn="0s" blendOut="0s" mask="full_body" ground="s77_ground" footLock="auto" floorSnap="0.25" safeMargin="0.01" sweepStep="0.03" />
+  <ApplyAction target="s77_actor" action="seated.sit_idle_loop" at="10.467s" duration="10.033s" loop="true" rootMotion="clip" blendIn="0s" blendOut="0s" mask="full_body" ground="s77_ground" footLock="auto" floorSnap="0.25" safeMargin="0.01" sweepStep="0.03" />
+
+  <Background color="#030805" />
+  <Scene id="S77TerrainForest">
+    <Timeline>
+      <Track id="s77_world" space="3d" compositeOrder="30">
+        <Sequence from="0s" duration="20.5s" out="hold">
+          <CompositeGroup id="s77_forest" space="3d" depth="true" format="rgba16f">
+          <EnvironmentLight id="s77_hdr_light" asset="s77_hdri" mapping="equirectangular" rotationY="-34" intensity="0.92" visible="false" diffuseIntensity="0.72" specularIntensity="1.24" />
+          <DirectionalLight id="s77_sun" direction={[-0.48,-1,-0.3]} color="#FFD7A0" intensity="3.8" castShadow="true" shadowStrength="0.74" />
+          <RectAreaLight id="s77_sky_fill" position={[3,8,4]} direction={[-0.25,-1,-0.35]} width="8" height="6" color="#8CBFB2" intensity="2.8" />
+          <PointLight id="s77_character_rim" position={[-2.8,2.7,-1.8]} color="#E8A66A" intensity="18" range="8.5" />
+          <PointLight id="s77_cool_depth" position={[6.5,3.2,6]} color="#79ADA7" intensity="10" range="15" />
+          <AmbientOcclusion id="s77_ao" radius="1.0" intensity="0.74" />
+          <ContactShadow id="s77_contact" distance="0.18" softness="0.36" intensity="0.94" />
+          <ColorManagement id="s77_grade" toneMapping="aces" exposure="1.08" contrast="1.12" whiteBalance="5650" />
+
+          <Camera3D id="s77_establishing" position={[8.8,3.2,12.4]} target={[0,1.05,2.4]} fov="36" />
+          <Camera3D id="s77_track" position={[-4.8,1.65,5.1]} target={[0,1.0,2.0]} fov="40" />
+          <Camera3D id="s77_turn" position={[2.8,3.1,6.4]} target={[0,1.0,-0.3]} fov="36" />
+          <Camera3D id="s77_sit_low" position={[-5.4,1.45,3.1]} target={[0,1.0,-0.72]} fov="36" />
+          <Camera3D id="s77_portrait" position={[0,2.3,4.8]} target={[0,1.22,-0.58]} fov="29" />
+          <Camera3D id="s77_front_detail" position={[1.7,2.1,5.3]} target={[0,1.05,-0.58]} fov="35" />
+
+          <Model id="s77_ground" asset="s77_forest_terrain" position={[0,0,0]} castShadow="true" receiveShadow="true" />
+          <Model id="s77_tree_a" asset="s77_tree" position={[-8,-0.2,-6]} scale="1.15" />
+          <Model id="s77_tree_b" asset="s77_tree" position={[8,0.1,-7]} rotationY="-28" scale="1.05" />
+          <Model id="s77_tree_c" asset="s77_tree" position={[-10,0.2,5]} rotationY="34" scale="0.92" />
+          <Model id="s77_tree_d" asset="s77_tree" position={[10,-0.1,6]} rotationY="-48" scale="1.2" />
+          <Model id="s77_tree_e" asset="s77_tree" position={[1,0.45,-10]} rotationY="18" scale="1.28" />
+          <Model id="s77_tree_foreground" asset="s77_tree" position={[6.9,0.1,8.8]} rotationY="42" scale="0.94" />
+          <Model id="s77_shrub_a" asset="s77_shrub" position={[-5,0.25,-1]} rotationY="18" />
+          <Model id="s77_shrub_b" asset="s77_shrub" position={[6,0.4,2]} rotationY="-34" scale="0.85" />
+          <Model id="s77_grass_a" asset="s77_grass_clump" position={[-2,0.38,3]} />
+          <Model id="s77_grass_b" asset="s77_grass_clump" position={[3,0.42,1]} rotationY="70" />
+          <Model id="s77_grass_foreground" asset="s77_grass_clump" position={[-3.05,0.34,1.05]} rotationY="24" scale="1.2" />
+          <Model id="s77_fern_a" asset="s77_fern_clump" position={[-6,0.3,4]} rotationY="20" />
+          <Model id="s77_fern_b" asset="s77_fern_clump" position={[6,0.28,-4]} rotationY="-45" />
+          <Model id="s77_flowers" asset="s77_wildflowers" position={[-1.9,0.38,4.2]} />
+          <Model id="s77_stump" asset="s77_deadwood" position={[7,0.3,5]} rotationZ="-64" scale="0.72" />
+          <Model id="s77_rock_a" asset="s77_rock_shape" position={[-4,0.2,1]} scale="1.4" />
+          <Model id="s77_rock_b" asset="s77_rock_shape" position={[4.5,0.25,-2.5]} scale="0.9" />
+          <Model id="s77_rock_c" asset="s77_rock_shape" position={[2.4,0.0,5]} scale="0.65" />
+
+          <Model id="s77_bench_seat_1" asset="s77_bench_seat_slat" position={[0,0.74,-0.34]} />
+          <Model id="s77_bench_seat_2" asset="s77_bench_seat_slat" position={[0,0.74,-0.54]} />
+          <Model id="s77_bench_seat_3" asset="s77_bench_seat_slat" position={[0,0.74,-0.74]} />
+          <Model id="s77_bench_seat_4" asset="s77_bench_seat_slat" position={[0,0.74,-0.94]} />
+          <Model id="s77_bench_back_1" asset="s77_bench_back_slat" position={[0,0.98,-1.02]} />
+          <Model id="s77_bench_back_2" asset="s77_bench_back_slat" position={[0,1.26,-1.02]} />
+          <Model id="s77_bench_back_3" asset="s77_bench_back_slat" position={[0,1.54,-1.02]} />
+          <Model id="s77_bench_leg_l" asset="s77_bench_leg" position={[-1.25,0.31,-0.65]} />
+          <Model id="s77_bench_leg_r" asset="s77_bench_leg" position={[1.25,0.31,-0.65]} />
+          <Model id="s77_bench_post_l" asset="s77_bench_post" position={[-1.3,1.04,-1.03]} />
+          <Model id="s77_bench_post_r" asset="s77_bench_post" position={[1.3,1.04,-1.03]} />
+          <Model id="s77_bench_arm_l" asset="s77_bench_arm" position={[-1.48,0.93,-0.62]} />
+          <Model id="s77_bench_arm_r" asset="s77_bench_arm" position={[1.48,0.93,-0.62]} />
+
+          <Model id="s77_actor" asset="s77_character" profile="s77_character_profile" position={[0,0.38,6.55]} rotationY="180" scale="1.3" collision="kinematic" castShadow="true" receiveShadow="true" exposure="1.55" />
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+
+    </Timeline>
+    <Effects>
+      <Effect process="S77Finish" />
+    </Effects>
+  </Scene>
+
+  <AnimationTarget node="s77_actor" property="position">
+    <Key time="0s" value="[0,0.38,6.55]" />
+    <Key time="8.2s" value="[0,0.38,0.08]" ease="linear" />
+    <Key time="20.5s" value="[0,0.38,0.08]" ease="linear" />
+  </AnimationTarget>
+  <AnimationTarget node="s77_actor" property="rotationY">
+    <Key time="0s" value="180" />
+    <Key time="7.7s" value="180" />
+    <Key time="8.2s" value="0" ease="ease_in_out" />
+    <Key time="20.5s" value="0" />
+  </AnimationTarget>
+  <AnimationTarget node="S77TerrainForest" property="activeCamera">
+    <Key time="0s" value="s77_establishing" />
+    <Key time="3.8s" value="s77_track" />
+    <Key time="7.7s" value="s77_turn" />
+    <Key time="10.1s" value="s77_sit_low" />
+    <Key time="14.6s" value="s77_portrait" />
+    <Key time="20s" value="s77_front_detail" />
+  </AnimationTarget>
+  <AnimationTarget node="s77_establishing" property="position">
+    <Key time="0s" value="[8.8,3.2,12.4]" />
+    <Key time="3.8s" value="[7.6,2.8,10.8]" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="s77_track" property="position">
+    <Key time="3.8s" value="[-4.8,1.65,5.1]" />
+    <Key time="7.7s" value="[-4.4,1.5,1.9]" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="s77_track" property="target">
+    <Key time="3.8s" value="[0,1.0,3.3]" />
+    <Key time="7.7s" value="[0,1.0,0.25]" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="s77_turn" property="position">
+    <Key time="7.7s" value="[2.8,3.1,6.4]" />
+    <Key time="10.1s" value="[2.5,2.8,5.7]" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="s77_sit_low" property="position">
+    <Key time="10.1s" value="[-5.4,1.45,3.1]" />
+    <Key time="14.6s" value="[-4.9,1.55,2.7]" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="s77_portrait" property="position">
+    <Key time="14.6s" value="[0,2.3,4.8]" />
+    <Key time="20s" value="[0,2.15,4.25]" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="s77_front_detail" property="position">
+    <Key time="20s" value="[1.7,2.1,5.3]" />
+    <Key time="20.5s" value="[1.4,2.0,5.0]" ease="ease_in_out" />
+  </AnimationTarget>
+
+  <Process id="S77Finish">
+    <Tex id="src" fmt="rgba16f" from="scene" />
+    <Tex id="bloom" fmt="rgba16f" size={[1920,1080]} />
+    <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="post_bloom" kind="compute" effect="glow_bloom" in={["src"]} out={["bloom"]} params={{ threshold: "0.8", intensity: "0.13", sigma: "3.4" }} />
+    <Pass id="post_grain" kind="compute" effect="film_grain" in={["bloom"]} out={["out"]} params={{ kind: "film_grain", amount: "0.005", scale: "1", seed: "77" }} />
+  </Process>
+  <Present from="S77TerrainForest" />
+</Graph>

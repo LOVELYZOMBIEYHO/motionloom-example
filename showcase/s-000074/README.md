@@ -6,13 +6,23 @@ passes wet walls and illuminated poster cases, then continues across a puddled
 street-level pavement while the edit cuts through first-person, stair-follow
 and street-establishing cameras.
 
+## Variants
+
+- `main.motionloom` is the official remake. It uses one continuous portable
+  `humanoid_v1` MotionLoom `standard_walk_loop` for the complete route, plus a
+  complete 22-bone Character 1 `ModelProfile`; it is the reference version for
+  retargeting the performance to other humanoid GLBs.
+- `main2.motionloom` preserves the original Character 1-native `Walk_Loop`
+  implementation for historical comparison. Its embedded GLB clip is not the
+  portable Action Library example.
+
 ## What this example tests
 
 - Reuse typed `PrimitiveAsset` boxes as ten collider-owning stair treads while
   keeping nosings, drains, stains, posters and façade dressing non-colliding.
-- Keep one kinematic Character 1 and one looping walk action alive across all
-  three `Camera3D` shots.
-- Use matched, deterministic stair-synchronised `Camera3D` position and target
+- Keep one kinematic Character 1 and one continuous portable Walk Action alive
+  across all three `Camera3D` shots in the official remake.
+- Use matched, deterministic route-synchronised `Camera3D` position and target
   keys for the 0–3 s first-person camera. Its camera-local `hiddenBones`
   selects the owner's `hips` root so no skinned body surface can cross the
   near plane; animation, collision and shadow casting remain active.
@@ -79,7 +89,7 @@ and street-establishing cameras.
 
 ## Camera schedule
 
-- **0–3 s / frames 0–89:** character first-person stair ascent; the owner's
+- **0–3 s / frames 0–89:** character first-person walk up the station steps; the owner's
   beauty pass is camera-locally excluded while animation, collision and shadow
   casting remain.
 - **3–6 s / frames 90–179:** close interior follow angle from the right side of

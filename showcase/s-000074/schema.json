@@ -10,10 +10,10 @@
       "validationCoverage": "open",
       "attributes": [
         {
-          "name": "clip",
+          "name": "duration",
           "occurrences": 1,
           "examples": [
-            "\"Walk_Loop\""
+            "\"1.333s\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -22,7 +22,7 @@
           "name": "id",
           "occurrences": 1,
           "examples": [
-            "\"s74_walk\""
+            "\"standard_walk_loop\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -32,24 +32,6 @@
           "occurrences": 1,
           "examples": [
             "\"humanoid_v1\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "source",
-          "occurrences": 1,
-          "examples": [
-            "\"s74_character_clips\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "sourceProfile",
-          "occurrences": 1,
-          "examples": [
-            "\"quaternius_humanoid\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -153,32 +135,6 @@
       ]
     },
     {
-      "tag": "AnimationAsset",
-      "occurrences": 1,
-      "recognized": true,
-      "validationCoverage": "strict",
-      "attributes": [
-        {
-          "name": "id",
-          "occurrences": 1,
-          "examples": [
-            "\"s74_character_clips\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "src",
-          "occurrences": 1,
-          "examples": [
-            "\"https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/c…"
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        }
-      ]
-    },
-    {
       "tag": "AnimationTarget",
       "occurrences": 8,
       "recognized": true,
@@ -188,7 +144,7 @@
           "name": "node",
           "occurrences": 8,
           "examples": [
-            "\"S74RainNightMetroAscent\"",
+            "\"S74RainNightMetroAscentRemake\"",
             "\"s74_fp_safe\"",
             "\"s74_ibl\"",
             "\"s74_side_camera\""
@@ -220,7 +176,7 @@
           "name": "action",
           "occurrences": 1,
           "examples": [
-            "\"s74_walk\""
+            "\"standard_walk_loop\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -238,7 +194,7 @@
           "name": "blendIn",
           "occurrences": 1,
           "examples": [
-            "\"0s\""
+            "\"0.12s\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -247,7 +203,7 @@
           "name": "blendOut",
           "occurrences": 1,
           "examples": [
-            "\"0.15s\""
+            "\"0s\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -257,6 +213,15 @@
           "occurrences": 1,
           "examples": [
             "\"9s\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "floorSnap",
+          "occurrences": 1,
+          "examples": [
+            "\"0.25\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -298,6 +263,24 @@
           "supportsAnimationTarget": false
         },
         {
+          "name": "safeMargin",
+          "occurrences": 1,
+          "examples": [
+            "\"0.01\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "sweepStep",
+          "occurrences": 1,
+          "examples": [
+            "\"0.03\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
           "name": "target",
           "occurrences": 1,
           "examples": [
@@ -318,14 +301,133 @@
       "attributes": []
     },
     {
+      "tag": "AtmosphereFog",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "affectSky",
+          "occurrences": 1,
+          "examples": [
+            "\"true\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "boundsMax",
+          "occurrences": 1,
+          "examples": [
+            "{[20,20,-3.2]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "boundsMin",
+          "occurrences": 1,
+          "examples": [
+            "{[-20,-2,-30]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "color",
+          "occurrences": 1,
+          "examples": [
+            "\"#668FA8\""
+          ],
+          "recognized": true,
+          "valueType": "color",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "density",
+          "occurrences": 1,
+          "examples": [
+            "\"0.045\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "edgeFeather",
+          "occurrences": 1,
+          "examples": [
+            "\"1.2\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "end",
+          "occurrences": 1,
+          "examples": [
+            "\"36\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"s74_street_fog\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "mode",
+          "occurrences": 1,
+          "examples": [
+            "\"exp\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "scattering",
+          "occurrences": 1,
+          "examples": [
+            "\"0.08\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "start",
+          "occurrences": 1,
+          "examples": [
+            "\"0\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
       "tag": "Axis",
-      "occurrences": 13,
+      "occurrences": 14,
       "recognized": true,
       "validationCoverage": "open",
       "attributes": [
         {
           "name": "bend",
-          "occurrences": 8,
+          "occurrences": 9,
           "examples": [
             "\"rotationX:-1\"",
             "\"rotationX:1\""
@@ -335,7 +437,7 @@
         },
         {
           "name": "bone",
-          "occurrences": 13,
+          "occurrences": 14,
           "examples": [
             "\"chest\"",
             "\"forearm_l\"",
@@ -385,7 +487,7 @@
         },
         {
           "name": "turn",
-          "occurrences": 5,
+          "occurrences": 6,
           "examples": [
             "\"rotationY:1\""
           ],
@@ -417,6 +519,170 @@
           ],
           "recognized": true,
           "valueType": "color",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Bone",
+      "occurrences": 902,
+      "recognized": true,
+      "validationCoverage": "open",
+      "attributes": [
+        {
+          "name": "bend",
+          "occurrences": 451,
+          "examples": [
+            "\"-0.858398\"",
+            "\"-0.891587\"",
+            "\"-1.277422\"",
+            "\"-10.013828\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "forward",
+          "occurrences": 164,
+          "examples": [
+            "\"-0.07309\"",
+            "\"-1.067542\"",
+            "\"-1.163022\"",
+            "\"-12.081178\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 902,
+          "examples": [
+            "\"chest\"",
+            "\"foot_l\"",
+            "\"foot_r\"",
+            "\"forearm_l\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "rotationX",
+          "occurrences": 287,
+          "examples": [
+            "\"-0.000403\"",
+            "\"-0.000964\"",
+            "\"-0.001092\"",
+            "\"-0.004009\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "rotationY",
+          "occurrences": 246,
+          "examples": [
+            "\"-0.000123\"",
+            "\"-0.000145\"",
+            "\"-0.066644\"",
+            "\"-0.122089\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "rotationZ",
+          "occurrences": 738,
+          "examples": [
+            "\"-0.000183\"",
+            "\"-0.000642\"",
+            "\"-0.000937\"",
+            "\"-0.002876\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "side",
+          "occurrences": 164,
+          "examples": [
+            "\"-0.220849\"",
+            "\"-0.31451\"",
+            "\"-0.692769\"",
+            "\"-0.721077\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "turn",
+          "occurrences": 246,
+          "examples": [
+            "\"-0.015939\"",
+            "\"-0.024638\"",
+            "\"-0.094592\"",
+            "\"-0.107616\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "twist",
+          "occurrences": 410,
+          "examples": [
+            "\"-0.00285\"",
+            "\"-0.006558\"",
+            "\"-0.023057\"",
+            "\"-0.027754\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "x",
+          "occurrences": 41,
+          "examples": [
+            "\"-0.003696\"",
+            "\"-0.004385\"",
+            "\"-0.008904\"",
+            "\"-0.00959\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "y",
+          "occurrences": 41,
+          "examples": [
+            "\"-0.000353\"",
+            "\"-0.000371\"",
+            "\"-0.000387\"",
+            "\"-0.000442\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "z",
+          "occurrences": 41,
+          "examples": [
+            "\"-0.000258\"",
+            "\"-0.000264\"",
+            "\"0\"",
+            "\"0.000111\""
+          ],
+          "recognized": true,
+          "valueType": "number",
           "supportsInlineExpression": true,
           "supportsAnimationTarget": true
         }
@@ -653,6 +919,77 @@
       ]
     },
     {
+      "tag": "Contact",
+      "occurrences": 3,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "effector",
+          "occurrences": 3,
+          "examples": [
+            "\"foot_l\"",
+            "\"foot_r\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "from",
+          "occurrences": 3,
+          "examples": [
+            "\"0\"",
+            "\"0.3\"",
+            "\"0.8\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 3,
+          "examples": [
+            "\"loop_foot_l_1\"",
+            "\"loop_foot_r_2\"",
+            "\"loop_foot_r_3\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "mode",
+          "occurrences": 3,
+          "examples": [
+            "\"lock\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "target",
+          "occurrences": 3,
+          "examples": [
+            "\"ground\""
+          ],
+          "recognized": true,
+          "valueType": "vector3",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "to",
+          "occurrences": 3,
+          "examples": [
+            "\"0.128571\"",
+            "\"0.685714\"",
+            "\"1\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
       "tag": "ContactShadow",
       "occurrences": 1,
       "recognized": true,
@@ -785,7 +1122,7 @@
           "name": "process",
           "occurrences": 1,
           "examples": [
-            "\"S74RainNightFinish\""
+            "\"S74RainNightFinishRemake\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1295,13 +1632,13 @@
     },
     {
       "tag": "Map",
-      "occurrences": 21,
+      "occurrences": 22,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
           "name": "from",
-          "occurrences": 21,
+          "occurrences": 22,
           "examples": [
             "\"Head\"",
             "\"ball_l\"",
@@ -1313,7 +1650,7 @@
         },
         {
           "name": "to",
-          "occurrences": 21,
+          "occurrences": 22,
           "examples": [
             "\"chest\"",
             "\"foot_l\"",
@@ -2028,6 +2365,26 @@
       ]
     },
     {
+      "tag": "Pose",
+      "occurrences": 41,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "t",
+          "occurrences": 41,
+          "examples": [
+            "\"0.033s\"",
+            "\"0.067s\"",
+            "\"0.133s\"",
+            "\"0.167s\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
       "tag": "Present",
       "occurrences": 1,
       "recognized": true,
@@ -2037,7 +2394,7 @@
           "name": "from",
           "occurrences": 1,
           "examples": [
-            "\"S74RainNightMetroAscent\""
+            "\"S74RainNightMetroAscentRemake\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -2062,6 +2419,37 @@
             "size"
           ],
           "optional": [
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
+        "capsule": {
+          "required": [
+            "id",
+            "shape",
+            "radius",
+            "height"
+          ],
+          "optional": [
+            "segments",
+            "rings",
             "color",
             "material",
             "bevelRadius",
@@ -2374,7 +2762,7 @@
           "name": "id",
           "occurrences": 1,
           "examples": [
-            "\"S74RainNightFinish\""
+            "\"S74RainNightFinishRemake\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -2790,7 +3178,7 @@
           "name": "id",
           "occurrences": 1,
           "examples": [
-            "\"S74RainNightMetroAscent\""
+            "\"S74RainNightMetroAscentRemake\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -2927,6 +3315,70 @@
           "valueType": "number",
           "supportsInlineExpression": true,
           "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Surface",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "center",
+          "occurrences": 1,
+          "examples": [
+            "{[0,2.99,-9.5]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "collider",
+          "occurrences": 1,
+          "examples": [
+            "\"box\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "color",
+          "occurrences": 1,
+          "examples": [
+            "\"#00000000\""
+          ],
+          "recognized": true,
+          "valueType": "color",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"s74_walkway_ground\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "kind",
+          "occurrences": 1,
+          "examples": [
+            "\"ground\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "size",
+          "occurrences": 1,
+          "examples": [
+            "{[22,0.02,13]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
         }
       ]
     },
@@ -3130,7 +3582,6 @@
     "target"
   ],
   "assetKinds": [
-    "animation",
     "compound",
     "image",
     "material",

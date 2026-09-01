@@ -16,7 +16,7 @@ AnimationTarget channels so an editor or LLM can inspect and rewrite the keys.
 
   <Skeleton id="at67_meter_rig">
     <Bone id="at67_meter_root" x="0" y="0" />
-    <Bone id="at67_meter_bone" parent="at67_meter_root" x="0" y="0" rotation="-62" />
+    <Bone id="at67_meter_bone" parent="at67_meter_root" x="0" y="0" rotation={[0,0,-62]} />
   </Skeleton>
 
   <Action id="at67_meter_bind" skeleton="at67_meter_rig" duration="12s">

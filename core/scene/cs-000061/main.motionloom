@@ -1,0 +1,60 @@
+<!-- CS61 · VEGETATION ASSET V1 · six procedural kinds -->
+<Graph fps={30} duration="6s" size={[1280,720]}>
+  <Assets>
+    <MaterialAsset id="bark" shading="pbr" baseColor="#4B3426" roughness="0.96" />
+    <MaterialAsset id="leaf" shading="pbr" baseColor="#3F7B3B" roughness="0.88" doubleSided="true" />
+    <MaterialAsset id="grass_mat" shading="pbr" baseColor="#4F853B" roughness="0.92" doubleSided="true" />
+    <MaterialAsset id="flower_mat" shading="pbr" baseColor="#D9A3D7" roughness="0.84" doubleSided="true" />
+    <MaterialAsset id="stem" shading="pbr" baseColor="#315B2B" roughness="0.94" />
+
+    <VegetationAsset id="tree" kind="tree" height="5.5"
+                     trunkMaterial="bark" foliageMaterial="leaf"
+                     density="24" branchLevels="3" seed="61"
+                     lod="auto" wind="true" collision="solid" />
+    <VegetationAsset id="shrub" kind="shrub" height="1.5"
+                     trunkMaterial="bark" foliageMaterial="leaf"
+                     density="18" branchLevels="2" seed="62" wind="true" />
+    <VegetationAsset id="grass" kind="grass" height="0.75"
+                     material="grass_mat" density="18" seed="63" wind="true" />
+    <VegetationAsset id="flower" kind="flower" height="0.8"
+                     material="flower_mat" stemMaterial="stem"
+                     density="9" seed="64" wind="true" />
+    <VegetationAsset id="fern" kind="fern" height="1.0"
+                     material="leaf" density="12" seed="65" wind="true" />
+    <VegetationAsset id="deadwood" kind="deadwood" height="2.8"
+                     trunkMaterial="bark" branchLevels="2" seed="66"
+                     collision="solid" />
+    <PrimitiveAsset id="ground" shape="plane" size={[22,12]} color="#273522" />
+  </Assets>
+
+  <Background color="#A7C1C7" />
+  <Scene id="VegetationCatalog">
+    <Timeline>
+      <Track space="3d">
+        <Sequence duration="6s">
+          <CompositeGroup space="3d" depth="true">
+            <DirectionalLight direction={[-0.4,-1,-0.3]} color="#FFF0CF"
+                              intensity="3" castShadow="true" shadowStrength="0.55" />
+            <RectAreaLight position={[2,7,5]} direction={[0,-1,-0.4]}
+                           width="8" height="5" color="#B9D8D0" intensity="2.8" />
+            <AmbientOcclusion radius="0.8" intensity="0.45" />
+            <ColorManagement toneMapping="aces" exposure="1.1" />
+            <Camera3D id="camera" position={[9,5.5,13]} target={[0,1.8,0]} fov="48" />
+            <Model asset="ground" position={[0,-0.02,0]} />
+            <Model asset="tree" position={[-5,0,0]} />
+            <Model asset="shrub" position={[-2.6,0,0]} />
+            <Model asset="grass" position={[-0.8,0,0]} />
+            <Model asset="flower" position={[0.8,0,0]} />
+            <Model asset="fern" position={[2.6,0,0]} />
+            <Model asset="deadwood" position={[5,0,0]} rotationZ="-18" />
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <AnimationTarget node="camera" property="position">
+    <Key time="0s" value="[9,5.5,13]" />
+    <Key time="6s" value="[-9,4.8,12]" ease="ease_in_out" />
+  </AnimationTarget>
+  <Present from="VegetationCatalog" />
+</Graph>

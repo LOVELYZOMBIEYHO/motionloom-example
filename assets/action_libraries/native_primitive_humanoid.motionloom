@@ -1,0 +1,227 @@
+<!-- Canonical humanoid_v1 actions extracted from S75. -->
+<ActionLibrary id="native_primitive_humanoid" skeleton="humanoid_v1">
+<Action id="walk" skeleton="humanoid_v1" duration="1.066s">
+    <Pose t="0s">
+      <Bone id="hips" y="0.01" rotationZ="-2" />
+      <Bone id="chest" rotationY="3" rotationZ="2" />
+      <Bone id="upper_arm_l" rotationX="-27" />
+      <Bone id="upper_arm_r" rotationX="27" />
+      <Bone id="thigh_l" rotationX="28" />
+      <Bone id="shin_l" rotationX="8" />
+      <Bone id="foot_l" rotationX="-12" />
+      <Bone id="thigh_r" rotationX="-24" />
+      <Bone id="shin_r" rotationX="30" />
+      <Bone id="foot_r" rotationX="8" />
+    </Pose>
+    <Pose t="0.266s">
+      <Bone id="hips" y="-0.025" rotationZ="0" />
+      <Bone id="chest" rotationY="0" />
+      <Bone id="upper_arm_l" rotationX="0" />
+      <Bone id="upper_arm_r" rotationX="0" />
+      <Bone id="thigh_l" rotationX="4" />
+      <Bone id="shin_l" rotationX="18" />
+      <Bone id="foot_l" rotationX="-3" />
+      <Bone id="thigh_r" rotationX="-5" />
+      <Bone id="shin_r" rotationX="12" />
+      <Bone id="foot_r" rotationX="2" />
+    </Pose>
+    <Pose t="0.533s">
+      <Bone id="hips" y="0.01" rotationZ="2" />
+      <Bone id="chest" rotationY="-3" rotationZ="-2" />
+      <Bone id="upper_arm_l" rotationX="27" />
+      <Bone id="upper_arm_r" rotationX="-27" />
+      <Bone id="thigh_l" rotationX="-24" />
+      <Bone id="shin_l" rotationX="30" />
+      <Bone id="foot_l" rotationX="8" />
+      <Bone id="thigh_r" rotationX="28" />
+      <Bone id="shin_r" rotationX="8" />
+      <Bone id="foot_r" rotationX="-12" />
+    </Pose>
+    <Pose t="0.8s">
+      <Bone id="hips" y="-0.025" rotationZ="0" />
+      <Bone id="chest" rotationY="0" />
+      <Bone id="upper_arm_l" rotationX="0" />
+      <Bone id="upper_arm_r" rotationX="0" />
+      <Bone id="thigh_l" rotationX="-5" />
+      <Bone id="shin_l" rotationX="12" />
+      <Bone id="foot_l" rotationX="2" />
+      <Bone id="thigh_r" rotationX="4" />
+      <Bone id="shin_r" rotationX="18" />
+      <Bone id="foot_r" rotationX="-3" />
+    </Pose>
+    <Pose t="1.066s">
+      <Bone id="hips" y="0.01" rotationZ="-2" />
+      <Bone id="chest" rotationY="3" rotationZ="2" />
+      <Bone id="upper_arm_l" rotationX="-27" />
+      <Bone id="upper_arm_r" rotationX="27" />
+      <Bone id="thigh_l" rotationX="28" />
+      <Bone id="shin_l" rotationX="8" />
+      <Bone id="foot_l" rotationX="-12" />
+      <Bone id="thigh_r" rotationX="-24" />
+      <Bone id="shin_r" rotationX="30" />
+      <Bone id="foot_r" rotationX="8" />
+    </Pose>
+    <Contact id="left_plant" effector="foot_l" target="ground" from="0" to="0.48" mode="lock" />
+    <Contact id="right_plant" effector="foot_r" target="ground" from="0.5" to="0.98" mode="lock" />
+</Action>
+
+<Action id="idle" skeleton="humanoid_v1" duration="2s">
+    <Pose t="0s">
+      <Bone id="hips" y="0" rotationZ="-1" />
+      <Bone id="chest" rotationX="-1.5" rotationY="-2" />
+      <Bone id="head" rotationY="3" />
+      <Bone id="upper_arm_l" rotationX="-3" />
+      <Bone id="upper_arm_r" rotationX="3" />
+    </Pose>
+    <Pose t="1s">
+      <Bone id="hips" y="0.018" rotationZ="1" />
+      <Bone id="chest" rotationX="2" rotationY="2" />
+      <Bone id="head" rotationY="-3" />
+      <Bone id="upper_arm_l" rotationX="3" />
+      <Bone id="upper_arm_r" rotationX="-3" />
+    </Pose>
+    <Pose t="2s">
+      <Bone id="hips" y="0" rotationZ="-1" />
+      <Bone id="chest" rotationX="-1.5" rotationY="-2" />
+      <Bone id="head" rotationY="3" />
+      <Bone id="upper_arm_l" rotationX="-3" />
+      <Bone id="upper_arm_r" rotationX="3" />
+    </Pose>
+</Action>
+
+<Action id="wave" skeleton="humanoid_v1" duration="3s">
+    <Pose t="0s">
+      <Bone id="hips" rotationZ="-1" />
+      <Bone id="chest" rotationX="-1.5" rotationY="-2" />
+      <Bone id="head" rotationY="3" />
+      <Bone id="upper_arm_r" rotationX="3" rotationZ="0" />
+      <Bone id="forearm_r" rotationX="0" rotationZ="0" />
+      <Bone id="hand_r" rotationZ="0" />
+    </Pose>
+    <Pose t="0.45s">
+      <Bone id="hips" rotationZ="-1" />
+      <Bone id="chest" rotationY="-5" rotationZ="1" />
+      <Bone id="head" rotationY="8" />
+      <Bone id="upper_arm_r" rotationZ="108" rotationX="-5" />
+      <Bone id="forearm_r" rotationZ="52" rotationX="-6" />
+      <Bone id="hand_r" rotationZ="-8" />
+    </Pose>
+    <Pose t="0.85s">
+      <Bone id="hips" rotationZ="-2" />
+      <Bone id="chest" rotationY="-6" rotationZ="2" />
+      <Bone id="head" rotationY="10" />
+      <Bone id="upper_arm_r" rotationZ="112" rotationX="-5" />
+      <Bone id="forearm_r" rotationZ="50" rotationX="-6" />
+      <Bone id="hand_r" rotationZ="16" />
+    </Pose>
+    <Pose t="1.2s">
+      <Bone id="hips" rotationZ="-1" />
+      <Bone id="chest" rotationY="-5" rotationZ="1" />
+      <Bone id="head" rotationY="8" />
+      <Bone id="upper_arm_r" rotationZ="108" rotationX="-5" />
+      <Bone id="forearm_r" rotationZ="54" rotationX="-6" />
+      <Bone id="hand_r" rotationZ="-16" />
+    </Pose>
+    <Pose t="1.55s">
+      <Bone id="hips" rotationZ="-2" />
+      <Bone id="chest" rotationY="-6" rotationZ="2" />
+      <Bone id="head" rotationY="10" />
+      <Bone id="upper_arm_r" rotationZ="112" rotationX="-5" />
+      <Bone id="forearm_r" rotationZ="50" rotationX="-6" />
+      <Bone id="hand_r" rotationZ="16" />
+    </Pose>
+    <Pose t="1.9s">
+      <Bone id="hips" rotationZ="-1" />
+      <Bone id="chest" rotationY="-5" rotationZ="1" />
+      <Bone id="head" rotationY="8" />
+      <Bone id="upper_arm_r" rotationZ="108" rotationX="-5" />
+      <Bone id="forearm_r" rotationZ="54" rotationX="-6" />
+      <Bone id="hand_r" rotationZ="-16" />
+    </Pose>
+    <Pose t="2.3s">
+      <Bone id="hips" rotationZ="-1" />
+      <Bone id="chest" rotationY="-5" rotationZ="1" />
+      <Bone id="head" rotationY="8" />
+      <Bone id="upper_arm_r" rotationZ="108" rotationX="-5" />
+      <Bone id="forearm_r" rotationZ="52" rotationX="-6" />
+      <Bone id="hand_r" rotationZ="0" />
+    </Pose>
+    <Pose t="3s">
+      <Bone id="hips" rotationZ="-1" />
+      <Bone id="chest" rotationX="-1.5" rotationY="-2" />
+      <Bone id="head" rotationY="3" />
+      <Bone id="upper_arm_r" rotationX="3" rotationZ="0" />
+      <Bone id="forearm_r" rotationX="0" rotationZ="0" />
+      <Bone id="hand_r" rotationZ="0" />
+    </Pose>
+</Action>
+
+<Action id="jog" skeleton="humanoid_v1" duration="0.666s">
+    <Pose t="0s">
+      <Bone id="hips" y="0.035" rotationZ="-4" />
+      <Bone id="chest" rotationX="7" rotationY="5" rotationZ="4" />
+      <Bone id="upper_arm_l" rotationX="-44" />
+      <Bone id="forearm_l" rotationX="-38" />
+      <Bone id="upper_arm_r" rotationX="44" />
+      <Bone id="forearm_r" rotationX="-42" />
+      <Bone id="thigh_l" rotationX="40" />
+      <Bone id="shin_l" rotationX="12" />
+      <Bone id="foot_l" rotationX="-18" />
+      <Bone id="thigh_r" rotationX="-34" />
+      <Bone id="shin_r" rotationX="48" />
+      <Bone id="foot_r" rotationX="12" />
+    </Pose>
+    <Pose t="0.166s">
+      <Bone id="hips" y="-0.018" rotationZ="0" />
+      <Bone id="chest" rotationX="8" />
+      <Bone id="upper_arm_l" rotationX="-8" />
+      <Bone id="forearm_l" rotationX="-34" />
+      <Bone id="upper_arm_r" rotationX="8" />
+      <Bone id="forearm_r" rotationX="-34" />
+      <Bone id="thigh_l" rotationX="8" />
+      <Bone id="shin_l" rotationX="28" />
+      <Bone id="thigh_r" rotationX="-10" />
+      <Bone id="shin_r" rotationX="22" />
+    </Pose>
+    <Pose t="0.333s">
+      <Bone id="hips" y="0.035" rotationZ="4" />
+      <Bone id="chest" rotationX="7" rotationY="-5" rotationZ="-4" />
+      <Bone id="upper_arm_l" rotationX="44" />
+      <Bone id="forearm_l" rotationX="-42" />
+      <Bone id="upper_arm_r" rotationX="-44" />
+      <Bone id="forearm_r" rotationX="-38" />
+      <Bone id="thigh_l" rotationX="-34" />
+      <Bone id="shin_l" rotationX="48" />
+      <Bone id="foot_l" rotationX="12" />
+      <Bone id="thigh_r" rotationX="40" />
+      <Bone id="shin_r" rotationX="12" />
+      <Bone id="foot_r" rotationX="-18" />
+    </Pose>
+    <Pose t="0.5s">
+      <Bone id="hips" y="-0.018" rotationZ="0" />
+      <Bone id="chest" rotationX="8" />
+      <Bone id="upper_arm_l" rotationX="8" />
+      <Bone id="forearm_l" rotationX="-34" />
+      <Bone id="upper_arm_r" rotationX="-8" />
+      <Bone id="forearm_r" rotationX="-34" />
+      <Bone id="thigh_l" rotationX="-10" />
+      <Bone id="shin_l" rotationX="22" />
+      <Bone id="thigh_r" rotationX="8" />
+      <Bone id="shin_r" rotationX="28" />
+    </Pose>
+    <Pose t="0.666s">
+      <Bone id="hips" y="0.035" rotationZ="-4" />
+      <Bone id="chest" rotationX="7" rotationY="5" rotationZ="4" />
+      <Bone id="upper_arm_l" rotationX="-44" />
+      <Bone id="forearm_l" rotationX="-38" />
+      <Bone id="upper_arm_r" rotationX="44" />
+      <Bone id="forearm_r" rotationX="-42" />
+      <Bone id="thigh_l" rotationX="40" />
+      <Bone id="shin_l" rotationX="12" />
+      <Bone id="foot_l" rotationX="-18" />
+      <Bone id="thigh_r" rotationX="-34" />
+      <Bone id="shin_r" rotationX="48" />
+      <Bone id="foot_r" rotationX="12" />
+    </Pose>
+</Action>
+</ActionLibrary>

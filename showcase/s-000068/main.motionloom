@@ -31,7 +31,8 @@ PURPOSE
     <Retarget preset="humanoid_v1">
       <Map from="pelvis" to="hips" />
       <Map from="spine_01" to="spine" />
-      <Map from="spine_03" to="chest" />
+      <Map from="spine_02" to="chest" />
+      <Map from="spine_03" to="upper_chest" />
       <Map from="neck_01" to="neck" />
       <Map from="Head" to="head" />
       <Map from="clavicle_l" to="shoulder_l" />
@@ -55,6 +56,7 @@ PURPOSE
       <Axis bone="hips" turn="rotationY:1" />
       <Axis bone="spine" bend="rotationX:-1" turn="rotationY:1" />
       <Axis bone="chest" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="upper_chest" bend="rotationX:-1" turn="rotationY:1" />
       <Axis bone="neck" bend="rotationX:-1" turn="rotationY:1" />
       <Axis bone="head" bend="rotationX:-1" turn="rotationY:1" />
       <Axis bone="upper_arm_l" forward="rotationX:1" side="rotationZ:1"
@@ -65,10 +67,10 @@ PURPOSE
       <Axis bone="forearm_r" bend="rotationX:1" twist="rotationY:1" />
       <Axis bone="upper_leg_l" forward="rotationX:-1" side="rotationZ:-1"
             twist="rotationY:1" />
-      <Axis bone="lower_leg_l" bend="rotationX:-1" twist="rotationY:1" />
+      <Axis bone="lower_leg_l" bend="rotationX:1" twist="rotationY:1" />
       <Axis bone="upper_leg_r" forward="rotationX:-1" side="rotationZ:1"
             twist="rotationY:1" />
-      <Axis bone="lower_leg_r" bend="rotationX:-1" twist="rotationY:1" />
+      <Axis bone="lower_leg_r" bend="rotationX:1" twist="rotationY:1" />
     </BoneAxisMap>
   </ModelProfile>
 
