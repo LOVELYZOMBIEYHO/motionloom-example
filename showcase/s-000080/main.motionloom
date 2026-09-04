@@ -1,0 +1,248 @@
+<!-- S80: Scene-owned RenderStyle. Shared assets, camera and light rig; no external assets. -->
+<Graph fps={30} duration="30s" size={[1280,720]}>
+  <Background color="#00000000" />
+  <RenderStyle id="s80_physical">
+    <SurfaceStyle shading="physical" />
+    <PostStyle toneMapping="aces" exposure="1.0" saturation="1.0" contrast="1.0" />
+  </RenderStyle>
+  <RenderStyle id="s80_stylized">
+    <SurfaceStyle shading="stylized" diffuseWrap="0.35" specular="0.12" />
+    <PostStyle toneMapping="aces" exposure="1.0" saturation="1.0" contrast="1.0" />
+  </RenderStyle>
+  <RenderStyle id="s80_toon_two">
+    <SurfaceStyle shading="toon" shadingSteps="2" diffuseWrap="0" specular="0" />
+    <PostStyle toneMapping="aces" exposure="1.0" saturation="1.0" contrast="1.05" />
+  </RenderStyle>
+  <RenderStyle id="s80_toon">
+    <SurfaceStyle shading="toon" shadingSteps="3" rimLight="0.12" specular="0.05" />
+    <PostStyle toneMapping="aces" exposure="1.0" saturation="1.0" contrast="1.0" />
+  </RenderStyle>
+  <RenderStyle id="s80_clay">
+    <SurfaceStyle shading="clay" specular="0.08" />
+    <PostStyle toneMapping="aces" exposure="1.0" saturation="1.0" contrast="1.0" />
+  </RenderStyle>
+  <RenderStyle id="s80_toon_five">
+    <SurfaceStyle shading="toon" shadingSteps="5" diffuseWrap="0.1" specular="0.05" />
+    <PostStyle toneMapping="aces" exposure="1.0" saturation="1.0" contrast="1.0" />
+  </RenderStyle>
+  <RenderStyle id="s80_anime">
+    <SurfaceStyle shading="toon" shadingSteps="4" diffuseWrap="0.25" rimLight="0.15" specular="0.05" />
+    <PostStyle toneMapping="aces" exposure="1.1" saturation="1.25" contrast="1.0" />
+  </RenderStyle>
+  <RenderStyle id="s80_pastel">
+    <SurfaceStyle shading="stylized" diffuseWrap="0.65" specular="0" roughnessBias="0.3" />
+    <PostStyle toneMapping="aces" exposure="1.2" saturation="0.4" contrast="0.65" />
+  </RenderStyle>
+  <RenderStyle id="s80_matte">
+    <SurfaceStyle shading="stylized" diffuseWrap="0.55" specular="0" roughnessBias="0.5" />
+    <PostStyle toneMapping="reinhard" exposure="1.35" saturation="0.85" contrast="0.9" />
+  </RenderStyle>
+  <RenderStyle id="s80_vivid">
+    <SurfaceStyle shading="toon" shadingSteps="2" diffuseWrap="0.1" specular="0" saturation="1.6" />
+    <PostStyle toneMapping="aces" exposure="1.15" saturation="1.0" contrast="1.0" />
+  </RenderStyle>
+  <RenderStyle id="s80_storybook">
+    <SurfaceStyle shading="stylized" diffuseWrap="0.4" specular="0.03" />
+    <LightingStyle ambientColor="#FFD5A0" ambientIntensity="1.15" />
+    <PostStyle toneMapping="reinhard" exposure="1.15" saturation="0.5" contrast="0.95" whiteBalance="11000" />
+  </RenderStyle>
+  <RenderStyle id="s80_warm">
+    <SurfaceStyle shading="physical" roughnessBias="0.12" specular="0.65" />
+    <LightingStyle ambientColor="#FFAD59" ambientIntensity="2.0" />
+    <PostStyle toneMapping="aces" exposure="1.0" saturation="0.9" contrast="1.04" whiteBalance="11000" />
+  </RenderStyle>
+  <RenderStyle id="s80_cool">
+    <SurfaceStyle shading="physical" roughnessBias="0.12" specular="0.65" />
+    <LightingStyle ambientColor="#659DFF" ambientIntensity="2.0" />
+    <PostStyle toneMapping="aces" exposure="0.85" saturation="0.8" contrast="1.04" whiteBalance="1800" />
+  </RenderStyle>
+  <RenderStyle id="s80_low_key">
+    <SurfaceStyle shading="physical" specular="0.7" />
+    <LightingStyle ambientIntensity="0.35" />
+    <PostStyle toneMapping="aces" exposure="0.42" saturation="0.7" contrast="1.08" />
+  </RenderStyle>
+  <RenderStyle id="s80_high_key">
+    <SurfaceStyle shading="stylized" diffuseWrap="0.7" specular="0.05" />
+    <LightingStyle ambientIntensity="1.5" />
+    <PostStyle toneMapping="aces" exposure="1.65" saturation="0.65" contrast="0.6" />
+  </RenderStyle>
+  <RenderStyle id="s80_mono">
+    <SurfaceStyle shading="physical" />
+    <PostStyle toneMapping="aces" exposure="1.0" saturation="0" contrast="1.05" />
+  </RenderStyle>
+  <RenderStyle id="s80_graphic_mono">
+    <SurfaceStyle shading="toon" shadingSteps="2" diffuseWrap="0" specular="0" />
+    <PostStyle toneMapping="aces" exposure="1.0" saturation="0" contrast="1.3" />
+  </RenderStyle>
+  <RenderStyle id="s80_sculpt">
+    <SurfaceStyle shading="clay" specular="0" diffuseWrap="0" />
+    <LightingStyle ambientIntensity="0.2" shadowStyle="hard" />
+    <PostStyle toneMapping="aces" exposure="0.8" saturation="0" contrast="1.25" />
+  </RenderStyle>
+  <RenderStyle id="s80_rim">
+    <SurfaceStyle shading="stylized" diffuseWrap="0.05" rimLight="1.5" rimPower="2.0" specular="0.02" />
+    <LightingStyle ambientIntensity="0.4" />
+    <PostStyle toneMapping="aces" exposure="0.7" saturation="0.95" contrast="1.1" />
+  </RenderStyle>
+  <RenderStyle id="s80_dream">
+    <SurfaceStyle shading="stylized" diffuseWrap="0.65" rimLight="0.85" rimPower="2.5" specular="0.15" />
+    <PostStyle toneMapping="aces" exposure="1.05" saturation="0.7" contrast="0.9" />
+  </RenderStyle>
+  <RenderQuality id="s80_quality">
+    <Resolution scale="1.0" />
+    <Shadows resolution="1536" filtering="pcf" />
+    <AntiAliasing mode="fxaa" />
+  </RenderQuality>
+  <Assets>
+    <MaterialAsset id="s80_grass" baseColor="#73A954" roughness="0.8" />
+    <MaterialAsset id="s80_leaves" baseColor="#428961" roughness="0.7" />
+    <MaterialAsset id="s80_bark" baseColor="#735541" roughness="0.75" />
+    <MaterialAsset id="s80_stone" baseColor="#738998" roughness="0.7" />
+    <MaterialAsset id="s80_path" baseColor="#D7C79D" roughness="0.9" />
+    <MaterialAsset id="s80_blue" baseColor="#3BAAC7" metallic="0.28" roughness="0.26" />
+    <MaterialAsset id="s80_gold" baseColor="#EBA642" metallic="0.6" roughness="0.22" />
+    <MaterialAsset id="s80_white" baseColor="#F4ECD9" roughness="0.35" />
+    <MaterialAsset id="s80_eyes" baseColor="#121B25" roughness="0.2" />
+    <PrimitiveAsset id="s80_land" shape="cylinder" radius="4.8" height="0.4" material="s80_grass" />
+    <PrimitiveAsset id="s80_walkway" shape="box" size={[2.1,0.06,7.0]} material="s80_path" bevelRadius="0.025" bevelSegments="2" />
+    <PrimitiveAsset id="s80_trunk" shape="cylinder" radius="0.16" height="2.4" material="s80_bark" />
+    <PrimitiveAsset id="s80_crown" shape="ellipsoid" radii={[1.0,1.2,0.85]} material="s80_leaves" />
+    <PrimitiveAsset id="s80_rock" shape="ellipsoid" radii={[0.8,0.5,0.6]} material="s80_stone" />
+    <PrimitiveAsset id="s80_body" shape="ellipsoid" radii={[0.62,0.85,0.5]} material="s80_blue" />
+    <PrimitiveAsset id="s80_head" shape="sphere" radius="0.58" material="s80_blue" />
+    <PrimitiveAsset id="s80_eye" shape="sphere" radius="0.21" material="s80_white" />
+    <PrimitiveAsset id="s80_pupil" shape="sphere" radius="0.095" material="s80_eyes" />
+    <PrimitiveAsset id="s80_beak" shape="cone" radius="0.14" height="0.3" material="s80_gold" />
+    <PrimitiveAsset id="s80_wing" shape="ellipsoid" radii={[0.2,0.58,0.35]} material="s80_gold" />
+    <PrimitiveAsset id="s80_foot" shape="ellipsoid" radii={[0.22,0.12,0.33]} material="s80_gold" />
+    <PrimitiveAsset id="s80_bench" shape="box" size={[2.0,0.14,0.65]} material="s80_bark" bevelRadius="0.04" bevelSegments="3" />
+    <PrimitiveAsset id="s80_leg" shape="box" size={[0.15,0.65,0.5]} material="s80_stone" />
+    <CompoundAsset id="s80_owl">
+      <Instance asset="s80_body" position={[0,1.05,0]} />
+      <Instance asset="s80_head" position={[0,1.96,0]} />
+      <Instance asset="s80_eye" position={[-0.23,2.0,0.46]} />
+      <Instance asset="s80_eye" position={[0.23,2.0,0.46]} />
+      <Instance asset="s80_pupil" position={[-0.23,2.0,0.64]} />
+      <Instance asset="s80_pupil" position={[0.23,2.0,0.64]} />
+      <Instance asset="s80_beak" position={[0,1.78,0.55]} rotation={[90,0,0]} />
+      <Instance asset="s80_wing" position={[-0.57,1.05,0]} rotation={[0,0,-12]} />
+      <Instance asset="s80_wing" position={[0.57,1.05,0]} rotation={[0,0,12]} />
+      <Instance asset="s80_foot" position={[-0.27,0.32,0.16]} />
+      <Instance asset="s80_foot" position={[0.27,0.32,0.16]} />
+    </CompoundAsset>
+  </Assets>
+  <Scene id="s80_anime_scene" renderStyle="s80_physical" renderQuality="s80_quality">
+    <Timeline>
+      <Track z="-10">
+        <Sequence from="0s" duration="30s" out="hide">
+          <Layer>
+            <Rect x="0" y="0" width="1280" height="720" color="#C7DFEB" />
+          </Layer>
+        </Sequence>
+      </Track>
+      <Track id="s80_anime_stage" space="3d">
+        <Sequence from="0s" duration="30s" out="hide">
+          <CompositeGroup id="s80_anime_island" space="3d" depth="true" format="rgba16f">
+            <Camera3D id="s80_anime_camera" position={[8.6,6.7,11.6]} target={[0,1.1,0]} fov="42" />
+            <DirectionalLight direction={[-0.45,-1,-0.5]} color="#FFF0D8" intensity="3.2" castShadow="true" shadowStrength="0.75" />
+            <ContactShadow intensity="0.55" distance="0.28" softness="0.6" />
+            <Model asset="s80_land" position={[0,-0.25,0]} />
+            <Model asset="s80_walkway" position={[0,-0.02,0]} />
+            <Model asset="s80_owl" position={[-0.25,0,0.65]} rotationY="14" />
+            <Model asset="s80_bench" position={[2.3,0.67,-0.8]} />
+            <Model asset="s80_bench" position={[2.3,1.06,-1.05]} rotationX="90" />
+            <Model asset="s80_leg" position={[1.65,0.3,-0.8]} />
+            <Model asset="s80_leg" position={[2.95,0.3,-0.8]} />
+            <Model asset="s80_trunk" position={[-3,1.1,-1.7]} scale="1" />
+            <Model asset="s80_crown" position={[-3,2.7,-1.7]} scale="1" />
+            <Model asset="s80_trunk" position={[-1.4,1.1,-3.4]} scale="1.2" />
+            <Model asset="s80_crown" position={[-1.4,3.24,-3.4]} scale="1.2" />
+            <Model asset="s80_trunk" position={[1.5,1.1,-3.4]} scale="1.1" />
+            <Model asset="s80_crown" position={[1.5,2.97,-3.4]} scale="1.1" />
+            <Model asset="s80_trunk" position={[4.1,1.1,-2.4]} scale="0.85" />
+            <Model asset="s80_crown" position={[4.1,2.295,-2.4]} scale="0.85" />
+            <Model asset="s80_rock" position={[-2.4,0.22,1.6]} rotationY="23" />
+            <Model asset="s80_rock" position={[1.5,0.13,2.7]} scale="0.6" />
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+      <Track id="s80_anime_label" z="100">
+        <Sequence from="0s" duration="30s" out="hide">
+          <Layer>
+            <Rect x="32" y="24" width="560" height="106" color="#142536" opacity="0.92" />
+            <Text x="54" y="36" id="s80_style_label" value="01 / 20 · PHYSICAL / PBR" fontSize="24" color="#FFFFFF" />
+            <Text x="54" y="70" id="s80_style_detail" value="Continuous shading · material reflections" fontSize="16" color="#9FDACF" />
+            <Text x="54" y="101" value="SAME ASSETS / CAMERA / KEY LIGHT · 1.5s EACH" fontSize="13" color="#BDCAD4" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <AnimationTarget node="s80_anime_scene" property="renderStyle">
+    <Key time="0s" value="s80_physical" />
+    <Key time="1.5s" value="s80_stylized" />
+    <Key time="3s" value="s80_toon_two" />
+    <Key time="4.5s" value="s80_toon" />
+    <Key time="6s" value="s80_toon_five" />
+    <Key time="7.5s" value="s80_anime" />
+    <Key time="9s" value="s80_pastel" />
+    <Key time="10.5s" value="s80_matte" />
+    <Key time="12s" value="s80_vivid" />
+    <Key time="13.5s" value="s80_storybook" />
+    <Key time="15s" value="s80_warm" />
+    <Key time="16.5s" value="s80_cool" />
+    <Key time="18s" value="s80_low_key" />
+    <Key time="19.5s" value="s80_high_key" />
+    <Key time="21s" value="s80_mono" />
+    <Key time="22.5s" value="s80_graphic_mono" />
+    <Key time="24s" value="s80_clay" />
+    <Key time="25.5s" value="s80_sculpt" />
+    <Key time="27s" value="s80_rim" />
+    <Key time="28.5s" value="s80_dream" />
+  </AnimationTarget>
+  <AnimationTarget node="s80_style_label" property="value">
+    <Key time="0s" value="01 / 20 · PHYSICAL / PBR" />
+    <Key time="1.5s" value="02 / 20 · SOFT STYLIZED" />
+    <Key time="3s" value="03 / 20 · TOON 2-STEP" />
+    <Key time="4.5s" value="04 / 20 · TOON 3-STEP" />
+    <Key time="6s" value="05 / 20 · TOON 5-STEP" />
+    <Key time="7.5s" value="06 / 20 · BRIGHT ANIME" />
+    <Key time="9s" value="07 / 20 · PASTEL" />
+    <Key time="10.5s" value="08 / 20 · MATTE ILLUSTRATION" />
+    <Key time="12s" value="09 / 20 · VIVID GRAPHIC" />
+    <Key time="13.5s" value="10 / 20 · MUTED STORYBOOK" />
+    <Key time="15s" value="11 / 20 · WARM AMBER" />
+    <Key time="16.5s" value="12 / 20 · COOL BLUE" />
+    <Key time="18s" value="13 / 20 · LOW-KEY" />
+    <Key time="19.5s" value="14 / 20 · HIGH-KEY" />
+    <Key time="21s" value="15 / 20 · MONOCHROME" />
+    <Key time="22.5s" value="16 / 20 · GRAPHIC MONOCHROME" />
+    <Key time="24s" value="17 / 20 · SOFT CLAY" />
+    <Key time="25.5s" value="18 / 20 · SCULPT CLAY" />
+    <Key time="27s" value="19 / 20 · RIM ACCENT" />
+    <Key time="28.5s" value="20 / 20 · DREAM RIM" />
+  </AnimationTarget>
+  <AnimationTarget node="s80_style_detail" property="value">
+    <Key time="0s" value="Continuous shading · material reflections" />
+    <Key time="1.5s" value="Wrapped diffuse · reduced highlights" />
+    <Key time="3s" value="Two light bands · bold forms" />
+    <Key time="4.5s" value="Three light bands · restrained rim" />
+    <Key time="6s" value="Five light bands · finer tonal steps" />
+    <Key time="7.5s" value="Four-band toon · vivid colour" />
+    <Key time="9s" value="Soft contrast · low saturation" />
+    <Key time="10.5s" value="Matte surfaces · soft tonal rolloff" />
+    <Key time="12s" value="Two-band toon · saturated graphic grade" />
+    <Key time="13.5s" value="Muted colour · warm ambient grade" />
+    <Key time="15s" value="Warm ambient tint · amber balance" />
+    <Key time="16.5s" value="Cool ambient tint · blue balance" />
+    <Key time="18s" value="Lower exposure · deep shadows" />
+    <Key time="19.5s" value="Bright diffuse · gentle contrast" />
+    <Key time="21s" value="Grey grade · original material response" />
+    <Key time="22.5s" value="Grey grade · two-band shading" />
+    <Key time="24s" value="Unified clay material · soft form study" />
+    <Key time="25.5s" value="Unified clay · stronger form contrast" />
+    <Key time="27s" value="Emphasised rim · darker interior" />
+    <Key time="28.5s" value="Soft colour · luminous surface rim" />
+  </AnimationTarget>
+  <Present from="s80_anime_scene" />
+</Graph>

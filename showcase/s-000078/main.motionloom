@@ -1,0 +1,274 @@
+<!-- S78 · PRIMITIVE ASSET COMPARISON GALLERY · 14 s · 420 frames -->
+<Graph fps={30} duration="14s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Assets>
+    <MaterialAsset id="s78_gallery_floor" shading="pbr" baseColor="#111A2B" metallic="0.24" roughness="0.34" specular="0.76" />
+    <MaterialAsset id="s78_pedestal_mat" shading="pbr" baseColor="#18243A" metallic="0.58" roughness="0.22" specular="0.9" />
+    <MaterialAsset id="s78_compare_mat" shading="pbr" baseColor="#D9783D" metallic="0.72" roughness="0.24" specular="0.94" />
+    <MaterialAsset id="s78_surface_mat" shading="pbr" baseColor="#DDEAFF" metallic="0.12" roughness="0.2" specular="0.96" />
+    <MaterialAsset id="s78_shape_mat" shading="pbr" baseColor="#58CFE8" metallic="0.48" roughness="0.2" specular="0.92" />
+    <MaterialAsset id="s78_hero_mat" shading="pbr" baseColor="#D86A32" metallic="0.9" roughness="0.18" specular="0.98" />
+    <MaterialAsset id="s78_hero_white" shading="pbr" baseColor="#EFF7FF" metallic="0.06" roughness="0.14" specular="0.96" />
+    <MaterialAsset id="s78_glow" shading="pbr" baseColor="#79F2FF" metallic="0.08" roughness="0.12" specular="0.94"
+                   emissive="#4DE5FF" emissiveStrength="4.2" />
+
+    <PrimitiveAsset id="s78_floor" shape="roundedBox" size={[18,0.28,39]} radius="0.1" segments="3"
+                    material="s78_gallery_floor" collision="solid" collider="box" />
+    <PrimitiveAsset id="s78_pedestal" shape="roundedBox" size={[2.1,0.38,1.8]} radius="0.14" segments="4"
+                    material="s78_pedestal_mat">
+      <Modifiers>
+        <WeightedNormals strength="1" keepSharpEdges="true" />
+      </Modifiers>
+      <MeshBuild topology="quads" quality="high" maxTriangles="4000" />
+      <LOD mode="auto" levels="3" preserveSilhouette="true" />
+    </PrimitiveAsset>
+
+    <!-- Row 1: one source form, then one clearly isolated deformation. -->
+    <PrimitiveAsset id="s78_mod_base" shape="roundedBox" size={[0.9,2.4,0.9]} radius="0.16" segments="5" material="s78_compare_mat">
+      <MeshBuild topology="quads" quality="high" maxTriangles="5000" />
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s78_mod_taper" shape="roundedBox" size={[0.9,2.4,0.9]} radius="0.16" segments="5" material="s78_compare_mat">
+      <Modifiers>
+        <Taper axis="y" start="1.3" end="0.42" />
+      </Modifiers>
+      <MeshBuild topology="quads" quality="high" maxTriangles="5000" />
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s78_mod_bend" shape="roundedBox" size={[0.9,2.4,0.9]} radius="0.16" segments="6" material="s78_compare_mat">
+      <Modifiers>
+        <Subdivision levels="1" />
+        <Bend axis="y" angle="62" pivot={[0,-1.2,0]} />
+      </Modifiers>
+      <MeshBuild topology="quads" quality="high" maxTriangles="18000" />
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s78_mod_twist" shape="roundedBox" size={[0.9,2.4,0.9]} radius="0.16" segments="6" material="s78_compare_mat">
+      <Modifiers>
+        <Subdivision levels="1" />
+        <Twist axis="y" angle="105" />
+      </Modifiers>
+      <MeshBuild topology="quads" quality="high" maxTriangles="18000" />
+    </PrimitiveAsset>
+
+    <!-- Row 2: cumulative mesh and normal processing on the same low-poly source. -->
+    <PrimitiveAsset id="s78_surface_raw" shape="ellipsoid" radii={[0.82,1.12,0.82]} segments="10" rings="6" material="s78_surface_mat" />
+    <PrimitiveAsset id="s78_surface_subdiv" shape="ellipsoid" radii={[0.82,1.12,0.82]} segments="10" rings="6" material="s78_surface_mat">
+      <Modifiers>
+        <Subdivision levels="1" />
+      </Modifiers>
+      <MeshBuild quality="high" maxTriangles="1200" />
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s78_surface_smooth" shape="ellipsoid" radii={[0.82,1.12,0.82]} segments="10" rings="6" material="s78_surface_mat">
+      <Modifiers>
+        <Subdivision levels="1" />
+        <Smooth angle="180" />
+      </Modifiers>
+      <MeshBuild quality="high" maxTriangles="1200" />
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s78_surface_weighted" shape="ellipsoid" radii={[0.82,1.12,0.82]} segments="10" rings="6" material="s78_surface_mat">
+      <Modifiers>
+        <Subdivision levels="1" />
+        <Smooth angle="180" />
+        <WeightedNormals strength="1" keepSharpEdges="false" />
+      </Modifiers>
+      <MeshBuild topology="triangles" triangulation="shortestDiagonal" quality="cinematic" maxTriangles="1200" />
+      <LOD mode="auto" levels="4" preserveSilhouette="true" />
+    </PrimitiveAsset>
+
+    <!-- Row 3: legacy shapes beside their new parametric counterparts. -->
+    <PrimitiveAsset id="s78_shape_box" shape="box" size={[1.25,1.6,1.25]} material="s78_shape_mat" />
+    <PrimitiveAsset id="s78_shape_rounded" shape="roundedBox" size={[1.25,1.6,1.25]} radius="0.22" segments="5" material="s78_shape_mat">
+      <Modifiers>
+        <WeightedNormals strength="1" keepSharpEdges="true" />
+      </Modifiers>
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s78_shape_sphere" shape="sphere" radius="0.76" segments="20" rings="12" material="s78_shape_mat" />
+    <PrimitiveAsset id="s78_shape_ellipsoid" shape="ellipsoid" radii={[0.6,1.02,0.76]} segments="20" rings="12" material="s78_shape_mat" />
+    <PrimitiveAsset id="s78_shape_frustum_source" shape="box" size={[1.25,1.6,1.25]} material="s78_shape_mat" />
+    <PrimitiveAsset id="s78_shape_frustum" shape="frustum" topSize={[0.58,0.58]} bottomSize={[1.25,1.25]} height="1.6" material="s78_shape_mat">
+      <MeshBuild topology="quads" triangulation="shortestDiagonal" quality="high" maxTriangles="1000" />
+    </PrimitiveAsset>
+
+    <!-- Final build: the same features combined into one authored object. -->
+    <PrimitiveAsset id="s78_hero_plinth" shape="roundedBox" size={[3.7,0.52,3.2]} radius="0.2" segments="6" material="s78_pedestal_mat">
+      <Modifiers>
+        <Taper axis="y" start="1.08" end="0.94" />
+        <WeightedNormals strength="1" keepSharpEdges="true" />
+      </Modifiers>
+      <MeshBuild topology="quads" triangulation="shortestDiagonal" quality="cinematic" maxTriangles="16000" />
+      <LOD mode="auto" levels="4" preserveSilhouette="true" />
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s78_hero_core" shape="ellipsoid" radii={[0.72,1.35,0.56]} segments="28" rings="14" material="s78_hero_mat">
+      <Modifiers>
+        <Taper axis="y" start="1.08" end="0.74" />
+        <Twist axis="y" angle="18" />
+        <Bend axis="x" angle="-9" pivot={[0,0,0]} />
+        <Subdivision levels="1" />
+        <Smooth angle="180" />
+        <WeightedNormals strength="0.9" keepSharpEdges="false" />
+      </Modifiers>
+      <MeshBuild topology="quads" triangulation="shortestDiagonal" quality="cinematic" maxTriangles="9000" />
+      <LOD mode="auto" levels="4" preserveSilhouette="true" />
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s78_hero_fin" shape="ellipsoid" radii={[0.16,1.0,0.08]} segments="20" rings="10" material="s78_hero_white">
+      <Modifiers>
+        <Taper axis="y" start="1.2" end="0.36" />
+        <Bend axis="y" angle="28" pivot={[0,-0.46,0]} />
+        <Twist axis="y" angle="-22" />
+        <Smooth angle="180" />
+      </Modifiers>
+      <MeshBuild topology="quads" quality="high" maxTriangles="2400" />
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s78_hero_light" shape="ellipsoid" radii={[0.12,0.38,0.12]} segments="18" rings="9" material="s78_glow">
+      <Modifiers>
+        <Twist axis="y" angle="24" />
+        <Smooth angle="180" />
+      </Modifiers>
+      <MeshBuild quality="high" maxTriangles="800" />
+    </PrimitiveAsset>
+  </Assets>
+
+  <Background color="#040711" />
+  <Scene id="S78PrimitiveComparisonGallery">
+    <Timeline>
+      <Track id="s78_stage" space="3d" compositeOrder="30">
+        <Sequence from="0s" duration="14s" out="hold">
+          <CompositeGroup id="s78_world" space="3d" depth="true" format="rgba16f">
+            <DirectionalLight id="s78_key" direction={[-0.42,-1,-0.3]} color="#FFD7B8" intensity="5.2" castShadow="true" shadowStrength="0.94" />
+            <RectAreaLight id="s78_fill" position={[4.5,5.2,5.5]} direction={[-0.58,-0.68,-0.45]} width="5" height="3" color="#8ADEFF" intensity="6.2" />
+            <PointLight id="s78_rim" position={[-5,3.4,-11]} color="#B77CFF" intensity="28" range="18" />
+            <PointLight id="s78_hero_light_source" position={[0,2.3,-25.5]} color="#52EAFF" intensity="20" range="6" />
+            <AmbientOcclusion id="s78_ao" radius="0.72" intensity="0.78" />
+            <ContactShadow id="s78_contact" distance="0.2" softness="0.4" intensity="0.88" />
+            <ColorManagement id="s78_grade" toneMapping="aces" exposure="1.05" contrast="1.1" whiteBalance="6000" />
+            <Camera3D id="s78_mod_camera" position={[0,3.5,8.2]} target={[0,1.15,0]} fov="43" />
+            <Camera3D id="s78_surface_camera" position={[0,3.5,-0.8]} target={[0,1.15,-9]} fov="43" />
+            <Camera3D id="s78_shape_camera" position={[0,3.7,-9.4]} target={[0,1.1,-18]} fov="49" />
+            <Camera3D id="s78_hero_camera" position={[5.4,3.1,-18.6]} target={[0,1.75,-27]} fov="38" />
+            <Model id="s78_floor_model" asset="s78_floor" position={[0,-0.22,-13.5]} castShadow="true" receiveShadow="true" />
+
+            <Model id="s78_mod_pedestal_0" asset="s78_pedestal" position={[-4.5,0.05,0]} />
+            <Model id="s78_mod_pedestal_1" asset="s78_pedestal" position={[-1.5,0.05,0]} />
+            <Model id="s78_mod_pedestal_2" asset="s78_pedestal" position={[1.5,0.05,0]} />
+            <Model id="s78_mod_pedestal_3" asset="s78_pedestal" position={[4.5,0.05,0]} />
+            <Model id="s78_mod_model_0" asset="s78_mod_base" position={[-4.5,1.42,0]} castShadow="true" />
+            <Model id="s78_mod_model_1" asset="s78_mod_taper" position={[-1.5,1.42,0]} castShadow="true" />
+            <Model id="s78_mod_model_2" asset="s78_mod_bend" position={[1.5,1.42,0]} castShadow="true" />
+            <Model id="s78_mod_model_3" asset="s78_mod_twist" position={[4.5,1.42,0]} rotationY="18" castShadow="true" />
+
+            <Model id="s78_surface_pedestal_0" asset="s78_pedestal" position={[-4.5,0.05,-9]} />
+            <Model id="s78_surface_pedestal_1" asset="s78_pedestal" position={[-1.5,0.05,-9]} />
+            <Model id="s78_surface_pedestal_2" asset="s78_pedestal" position={[1.5,0.05,-9]} />
+            <Model id="s78_surface_pedestal_3" asset="s78_pedestal" position={[4.5,0.05,-9]} />
+            <Model id="s78_surface_model_0" asset="s78_surface_raw" position={[-4.5,1.35,-9]} castShadow="true" />
+            <Model id="s78_surface_model_1" asset="s78_surface_subdiv" position={[-1.5,1.35,-9]} castShadow="true" />
+            <Model id="s78_surface_model_2" asset="s78_surface_smooth" position={[1.5,1.35,-9]} castShadow="true" />
+            <Model id="s78_surface_model_3" asset="s78_surface_weighted" position={[4.5,1.35,-9]} castShadow="true" />
+
+            <Model id="s78_shape_pedestal_0" asset="s78_pedestal" position={[-6.25,0.05,-18]} scale="0.76" />
+            <Model id="s78_shape_pedestal_1" asset="s78_pedestal" position={[-3.75,0.05,-18]} scale="0.76" />
+            <Model id="s78_shape_pedestal_2" asset="s78_pedestal" position={[-1.25,0.05,-18]} scale="0.76" />
+            <Model id="s78_shape_pedestal_3" asset="s78_pedestal" position={[1.25,0.05,-18]} scale="0.76" />
+            <Model id="s78_shape_pedestal_4" asset="s78_pedestal" position={[3.75,0.05,-18]} scale="0.76" />
+            <Model id="s78_shape_pedestal_5" asset="s78_pedestal" position={[6.25,0.05,-18]} scale="0.76" />
+            <Model id="s78_shape_model_0" asset="s78_shape_box" position={[-6.25,1.05,-18]} castShadow="true" />
+            <Model id="s78_shape_model_1" asset="s78_shape_rounded" position={[-3.75,1.05,-18]} castShadow="true" />
+            <Model id="s78_shape_model_2" asset="s78_shape_sphere" position={[-1.25,1.05,-18]} castShadow="true" />
+            <Model id="s78_shape_model_3" asset="s78_shape_ellipsoid" position={[1.25,1.05,-18]} castShadow="true" />
+            <Model id="s78_shape_model_4" asset="s78_shape_frustum_source" position={[3.75,1.05,-18]} castShadow="true" />
+            <Model id="s78_shape_model_5" asset="s78_shape_frustum" position={[6.25,1.05,-18]} castShadow="true" />
+
+            <Model id="s78_hero_plinth_model" asset="s78_hero_plinth" position={[0,0.22,-27]} castShadow="true" receiveShadow="true" />
+            <Model id="s78_hero_core_model" asset="s78_hero_core" position={[0,1.95,-27]} castShadow="true" />
+            <Model id="s78_hero_fin_l" asset="s78_hero_fin" position={[-0.7,2.02,-26.96]} rotation={[0,0,-25]} castShadow="true" />
+            <Model id="s78_hero_fin_r" asset="s78_hero_fin" position={[0.7,2.02,-26.96]} rotation={[0,180,25]} castShadow="true" />
+            <Model id="s78_hero_light_model" asset="s78_hero_light" position={[0,3.62,-26.94]} exposure="2.5" />
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+
+      <Track id="s78_labels" space="screen" compositeOrder="70">
+        <Sequence from="0s" duration="3.5s" out="hide">
+          <Layer space="screen">
+          <Rect x="50" y="42" width="850" height="116" radius="18" color="#07101DDD" stroke="#77E9FF88" strokeWidth="2" />
+          <Text x="80" y="84" value="01 · MODIFIER STACK" fontFamily="Arial" fontSize="30" fontWeight="800" tracking="4" color="#F5FAFF" />
+          <Text x="82" y="126" value="SAME SOURCE MESH · ONE DEFORMATION AT A TIME" fontFamily="Arial" fontSize="14" fontWeight="700" tracking="2" color="#73E7FF" />
+          <Text x="220" y="940" value="BASE" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="2" color="#FFFFFF" />
+          <Text x="625" y="940" value="TAPER" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="2" color="#FFFFFF" />
+          <Text x="1032" y="940" value="BEND" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="2" color="#FFFFFF" />
+          <Text x="1425" y="940" value="TWIST" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="2" color="#FFFFFF" />
+          </Layer>
+        </Sequence>
+
+        <Sequence from="3.5s" duration="3.5s" out="hide">
+          <Layer space="screen">
+          <Rect x="50" y="42" width="940" height="116" radius="18" color="#07101DDD" stroke="#77E9FF88" strokeWidth="2" />
+          <Text x="80" y="84" value="02 · MESH &amp; NORMALS" fontFamily="Arial" fontSize="30" fontWeight="800" tracking="4" color="#F5FAFF" />
+          <Text x="82" y="126" value="GEOMETRY DENSITY AND SHADING ARE SEPARATE CONTROLS" fontFamily="Arial" fontSize="14" fontWeight="700" tracking="2" color="#73E7FF" />
+          <Text x="205" y="920" value="RAW" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="2" color="#FFFFFF" />
+          <Text x="570" y="920" value="SUBDIVISION" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="2" color="#FFFFFF" />
+          <Text x="585" y="950" value="4× TRIANGLES" fontFamily="Arial" fontSize="13" fontWeight="700" tracking="1.5" color="#73E7FF" />
+          <Text x="1010" y="920" value="SMOOTH" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="2" color="#FFFFFF" />
+          <Text x="1360" y="920" value="WEIGHTED NORMALS" fontFamily="Arial" fontSize="22" fontWeight="800" tracking="2" color="#FFFFFF" />
+          </Layer>
+        </Sequence>
+
+        <Sequence from="7s" duration="3.5s" out="hide">
+          <Layer space="screen">
+          <Rect x="50" y="42" width="850" height="116" radius="18" color="#07101DDD" stroke="#77E9FF88" strokeWidth="2" />
+          <Text x="80" y="84" value="03 · PARAMETRIC SHAPES" fontFamily="Arial" fontSize="30" fontWeight="800" tracking="4" color="#F5FAFF" />
+          <Text x="82" y="126" value="LEGACY SOURCE → NEW CONTROLLED GEOMETRY" fontFamily="Arial" fontSize="14" fontWeight="700" tracking="2" color="#73E7FF" />
+          <Text x="95" y="925" value="BOX" fontFamily="Arial" fontSize="18" fontWeight="800" color="#FFFFFF" />
+          <Text x="340" y="925" value="ROUNDED BOX" fontFamily="Arial" fontSize="18" fontWeight="800" color="#FFFFFF" />
+          <Text x="715" y="925" value="SPHERE" fontFamily="Arial" fontSize="18" fontWeight="800" color="#FFFFFF" />
+          <Text x="990" y="925" value="ELLIPSOID" fontFamily="Arial" fontSize="18" fontWeight="800" color="#FFFFFF" />
+          <Text x="1320" y="925" value="BOX" fontFamily="Arial" fontSize="18" fontWeight="800" color="#FFFFFF" />
+          <Text x="1570" y="925" value="FRUSTUM" fontFamily="Arial" fontSize="18" fontWeight="800" color="#FFFFFF" />
+          <Text x="280" y="973" value="→" fontFamily="Arial" fontSize="30" fontWeight="800" color="#73E7FF" />
+          <Text x="925" y="973" value="→" fontFamily="Arial" fontSize="30" fontWeight="800" color="#73E7FF" />
+          <Text x="1510" y="973" value="→" fontFamily="Arial" fontSize="30" fontWeight="800" color="#73E7FF" />
+          </Layer>
+        </Sequence>
+
+        <Sequence from="10.5s" duration="3.5s" out="hide">
+          <Layer space="screen">
+          <Rect x="50" y="42" width="930" height="116" radius="18" color="#07101DDD" stroke="#77E9FF88" strokeWidth="2" />
+          <Text x="80" y="84" value="04 · FINAL COMBINED BUILD" fontFamily="Arial" fontSize="30" fontWeight="800" tracking="4" color="#F5FAFF" />
+          <Text x="82" y="126" value="SHAPES + MODIFIERS + NORMALS + BUILD POLICY + LOD" fontFamily="Arial" fontSize="14" fontWeight="700" tracking="2" color="#73E7FF" />
+          <Text x="690" y="950" value="100% PROCEDURAL · NO GLB MODEL" fontFamily="Arial" fontSize="18" fontWeight="800" tracking="3" color="#FFFFFF" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+    <Effects>
+      <Effect process="S78Finish" />
+    </Effects>
+  </Scene>
+
+  <AnimationTarget node="s78_hero_core_model" property="rotationY">
+    <Key time="10.5s" value="0" />
+    <Key time="14s" value="150" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="s78_hero_fin_l" property="rotationY">
+    <Key time="10.5s" value="0" />
+    <Key time="14s" value="-28" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="s78_hero_fin_r" property="rotationY">
+    <Key time="10.5s" value="180" />
+    <Key time="14s" value="208" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="S78PrimitiveComparisonGallery" property="activeCamera">
+    <Key time="0s" value="s78_mod_camera" />
+    <Key time="3.5s" value="s78_surface_camera" />
+    <Key time="7s" value="s78_shape_camera" />
+    <Key time="10.5s" value="s78_hero_camera" />
+  </AnimationTarget>
+
+  <Process id="S78Finish">
+    <Tex id="src" fmt="rgba16f" from="scene" />
+    <Tex id="bloom" fmt="rgba16f" size={[1920,1080]} />
+    <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
+    <Pass id="s78_bloom" kind="compute" effect="glow_bloom" in={["src"]} out={["bloom"]}
+          params={{ threshold: "0.9", intensity: "0.1", sigma: "3.2" }} />
+    <Pass id="s78_grain" kind="compute" effect="film_grain" in={["bloom"]} out={["out"]}
+          params={{ kind: "film_grain", amount: "0.0025", scale: "1", seed: "78" }} />
+  </Process>
+  <Present from="S78PrimitiveComparisonGallery" />
+</Graph>
