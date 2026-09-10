@@ -1,0 +1,54 @@
+{
+  "reportVersion": "1.0",
+  "status": "clean",
+  "parseSucceeded": true,
+  "compileSucceeded": true,
+  "renderable": true,
+  "summary": {
+    "errors": 0,
+    "warnings": 0,
+    "info": 51,
+    "ignoredAttributes": 0,
+    "unknownTags": 0,
+    "noOpNodes": 0,
+    "animationConflicts": 0,
+    "missingAssets": 0
+  },
+  "schemaVersion": "1.0",
+  "gpuViews": [
+    "front",
+    "left",
+    "back",
+    "three-quarter"
+  ],
+  "orbitFrame": 180,
+  "fitConstraints": "fit-constraints.json",
+  "fitMeasurements": "fit-measurements.json",
+  "reference": "face-reference.png",
+  "hairReference": "hair-reference.png",
+  "faceDiagnosticViews": [
+    "face-front",
+    "face-left",
+    "face-back"
+  ],
+  "overlays": [
+    "face-overlay-front.png",
+    "face-overlay-left.png",
+    "face-overlay-back.png",
+    "overlay-front.png",
+    "overlay-three-quarter.png",
+    "overlay-back.png"
+  ],
+  "hairAssets": 8,
+  "hairGuides": 73,
+  "mainVisibleHair": false,
+  "mainGeneratedFromBuild": true,
+  "mainSha256": "0a8634362cf4598698808b5738afee45865e33129ad10f432b8796b841259e5b",
+  "roundedClayFeatures": {
+    "orbitalCapsulesPerSide": 20,
+    "browCapsulesPerSide": 8,
+    "noseVolumes": 2,
+    "lipVolumes": 3,
+    "orbitalRibbonsRemoved": true
+  }
+}

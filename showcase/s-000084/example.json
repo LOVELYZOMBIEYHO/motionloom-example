@@ -1,0 +1,13 @@
+{
+  "id": "s-000084",
+  "type": "showcase",
+  "title": "Cel Shading comparison",
+  "domain": "scene",
+  "features": ["scene", "assets", "true-3d", "character", "character-rig", "gltf", "glb", "material-binding", "camera-3d", "pbr-lighting", "shadow-map", "ambient-occlusion", "color-management", "animation-target", "process-effect"],
+  "dsl": ["Graph", "Background", "Assets", "ImageAsset", "ModelAsset", "AnimationAsset", "MaterialAsset", "PrimitiveAsset", "ModelProfile", "Retarget", "Map", "BoneAxisMap", "Axis", "Action", "ApplyAction", "Scene", "Timeline", "Track", "Sequence", "CompositeGroup", "Camera3D", "DirectionalLight", "Model", "MaterialBinding", "Layer", "Text", "AnimationTarget", "Key", "Present"],
+  "teaches": ["Compare physical, toon and cel surface recipes over the same Character1 geometry and camera path.", "Use geometric outlines and a control map for an inspectable stylized shading study."],
+  "source_path": "showcase/s-000084",
+  "demo_url": "",
+  "related": ["s-000080", "s-000076", "s-000085"],
+  "requires": ["Graph", "RenderStyle", "ModelAsset", "Scene", "Camera3D", "Present"]
+}

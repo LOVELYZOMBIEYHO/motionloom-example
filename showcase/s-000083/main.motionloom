@@ -1,0 +1,66 @@
+<!-- S83 / MOTIONLOOM / ROSE COPPER / GPU procedural liquid relief. Silent, 20 seconds. -->
+<Graph fps={30} duration="20s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <Background color="#00000000" />
+  <Scene id="s83_surface_scene">
+    <Defs>
+      <RadialGradient id="s83_vignette" cx="0.5" cy="0.48" r="0.75" stops="0:#00000000, 0.5:#00000000, 1:#100508C0" />
+      <RadialGradient id="s83_mote" cx="0.5" cy="0.5" r="0.5" stops="0:#F2D9CA70, 0.3:#B9827522, 1:#D4A39200" />
+    </Defs>
+    <Timeline>
+      <Track>
+        <Sequence from="0s" duration="20s" out="hold">
+          <Layer>
+            <Rect x="0" y="0" width="1920" height="1080" fill="#160A0E" />
+          </Layer>
+        </Sequence>
+      </Track>
+      <Track id="s83_picture" space="screen">
+        <Sequence from="0s" duration="20s" out="hold">
+          <Layer>
+            <Repeat count="18" x="70" y="110" xStep="107" yStep="43">
+              <Group x="20*sin($time.sec*0.18)" y="18*sin($time.sec*0.23)">
+                <Circle x="0" y="0" radius="13" fill="url(#s83_mote)" opacity="0.3" />
+              </Group>
+            </Repeat>
+            <Rect x="0" y="0" width="1920" height="1080" fill="url(#s83_vignette)" />
+            <Rect x="0" y="0" width="1920" height="1080" fill="#10070A" opacity={curve("0:1:ease_in_out, 1.4:0:linear, 18.6:0:ease_in_out, 20:1:linear")} />
+            <Group opacity={curve("0:0:ease_in_out, 3:1:ease_in_out, 4.5:0:ease_in_out, 17:0:ease_in_out, 18.5:1:ease_in_out, 20:0:ease_in_out")}>
+              <Text x="650" y="465" value="MOTIONLOOM" fontFamily="Georgia" fontSize="76" textGap="8" color="#F5E8D9" />
+              <Path d="M850 574 L1070 574" stroke="#C39582" strokeWidth="0.7" fill="none" />
+              <Text x="803" y="608" value="ROSE COPPER / LIGHT IN MOTION" fontSize="14" textGap="3" color="#D9BBB0" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+    <Effects>
+      <Effect process="s83_surface" />
+    </Effects>
+  </Scene>
+  <Process id="s83_surface">
+    <Tex id="src" fmt="rgba16f" from="scene" />
+    <Tex id="surface" fmt="rgba16f" />
+    <Tex id="focused" fmt="rgba16f" />
+    <Tex id="out" fmt="rgba16f" />
+    <Pass id="s83_liquid" kind="compute" effect="procedural_surface" in={["src"]} out={["surface"]} params={{ seed: "83", flowStrength: "1", scale: "3.8", evolution: "$time.sec*0.20", warpStrength: "1.2", detailStrength: "1.1", baseColor: "#351820", veinColor: "#BD8C79", veinWidth: "0.006", poolAmount: "0", relief: "0.30", roughness: "0.48", lightAzimuth: "125", lightElevation: "40", viewX: "0.12*sin($time.sec*0.22)", viewY: "0.08*sin($time.sec*0.17)", viewZoom: "1", viewRotation: "2*sin($time.sec*0.15)", amount: "0.68" }} />
+    <Pass id="s83_focus" kind="compute" effect="gaussian_blur" in={["surface"]} out={["focused"]} params={{ sigma: "1.2" }} />
+    <Pass id="s83_bloom" kind="compute" effect="bloom" in={["focused"]} out={["out"]} params={{ threshold: "0.7", intensity: "0.08", sigma: "7" }} />
+  </Process>
+  <AnimationTarget node="s83_liquid" property="params.viewZoom">
+    <Key time="0s" value="1" />
+    <Key time="4s" value="1.05" ease="ease_in_out" />
+    <Key time="8s" value="1.4" ease="ease_in_out" />
+    <Key time="11.5s" value="2.1" ease="ease_in_out" />
+    <Key time="16s" value="1.2" ease="ease_in_out" />
+    <Key time="20s" value="1" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="s83_focus" property="params.sigma">
+    <Key time="0s" value="6" />
+    <Key time="2.5s" value="1.2" ease="ease_in_out" />
+    <Key time="8s" value="1.2" />
+    <Key time="9.3s" value="4.5" ease="ease_in_out" />
+    <Key time="11.5s" value="1.2" ease="ease_in_out" />
+    <Key time="20s" value="1.2" />
+  </AnimationTarget>
+  <Present from="s83_surface_scene" />
+</Graph>

@@ -33,27 +33,6 @@
       ]
     },
     {
-      "tag": "AntiAliasing",
-      "occurrences": 1,
-      "recognized": true,
-      "validationCoverage": "strict",
-      "requiredAttributes": [
-        "mode"
-      ],
-      "attributes": [
-        {
-          "name": "mode",
-          "occurrences": 1,
-          "examples": [
-            "\"fxaa\""
-          ],
-          "recognized": true,
-          "supportsInlineExpression": false,
-          "supportsAnimationTarget": false
-        }
-      ]
-    },
-    {
       "tag": "Assets",
       "occurrences": 1,
       "recognized": true,
@@ -1179,27 +1158,6 @@
       ]
     },
     {
-      "tag": "RenderQuality",
-      "occurrences": 1,
-      "recognized": true,
-      "validationCoverage": "strict",
-      "requiredAttributes": [
-        "id"
-      ],
-      "attributes": [
-        {
-          "name": "id",
-          "occurrences": 1,
-          "examples": [
-            "\"s80_quality\""
-          ],
-          "recognized": true,
-          "supportsInlineExpression": false,
-          "supportsAnimationTarget": false
-        }
-      ]
-    },
-    {
       "tag": "RenderStyle",
       "occurrences": 20,
       "recognized": true,
@@ -1224,28 +1182,6 @@
       ]
     },
     {
-      "tag": "Resolution",
-      "occurrences": 1,
-      "recognized": true,
-      "validationCoverage": "strict",
-      "requiredAttributes": [
-        "scale"
-      ],
-      "attributes": [
-        {
-          "name": "scale",
-          "occurrences": 1,
-          "examples": [
-            "\"1.0\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": false,
-          "supportsAnimationTarget": false
-        }
-      ]
-    },
-    {
       "tag": "Scene",
       "occurrences": 1,
       "recognized": true,
@@ -1256,15 +1192,6 @@
           "occurrences": 1,
           "examples": [
             "\"s80_anime_scene\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "renderQuality",
-          "occurrences": 1,
-          "examples": [
-            "\"s80_quality\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1313,37 +1240,6 @@
             "\"hide\""
           ],
           "recognized": true,
-          "supportsAnimationTarget": false
-        }
-      ]
-    },
-    {
-      "tag": "Shadows",
-      "occurrences": 1,
-      "recognized": true,
-      "validationCoverage": "strict",
-      "requiredAttributes": [
-        "resolution"
-      ],
-      "attributes": [
-        {
-          "name": "filtering",
-          "occurrences": 1,
-          "examples": [
-            "\"pcf\""
-          ],
-          "recognized": true,
-          "supportsInlineExpression": false,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "resolution",
-          "occurrences": 1,
-          "examples": [
-            "\"1536\""
-          ],
-          "recognized": true,
-          "supportsInlineExpression": false,
           "supportsAnimationTarget": false
         }
       ]

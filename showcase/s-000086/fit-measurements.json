@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "2.0",
+  "measurementDate": "2026-09-05",
+  "measurementStatus": "baseline-before-eye-occlusion-revision",
+  "measurementNote": "The current S86 eye revision changes iris height, surface-normal depth and eyelid clipping. Re-run the Metal GPU review to refresh finalRenderPixels and finalRegisteredResiduals.",
+  "reference": "face-reference.png",
+  "normalization": "crown-to-chin height; one uniform registration scale across front, left and back",
+  "sourceReferencePixels": {
+    "crownY": 237.0,
+    "chinY": 692.0,
+    "crownToChin": 455.0,
+    "leftIrisCenter": [177.6, 512.7],
+    "rightIrisCenter": [338.1, 505.6],
+    "irisCenterDistance": 160.66,
+    "meanIrisWidth": 45.0,
+    "meanIrisHeight": 51.5,
+    "referenceEyeVerticalAsymmetry": 7.1
+  },
+  "registeredReferencePixels": {
+    "crownToChin": 600.0,
+    "leftIrisCenter": [343.6, 471.2],
+    "rightIrisCenter": [555.2, 462.1],
+    "irisCenterDistance": 211.8,
+    "meanIrisWidth": 59.5,
+    "meanIrisHeight": 67.5
+  },
+  "finalRenderPixels": {
+    "leftIrisCenter": [342.7, 465.5],
+    "rightIrisCenter": [556.3, 465.5],
+    "irisCenterDistance": 213.6,
+    "meanIrisWidth": 59.0,
+    "meanIrisHeight": 63.0
+  },
+  "finalRegisteredResiduals": {
+    "irisCenterDistancePercent": 0.85,
+    "irisMeanWidthPercent": -0.84,
+    "irisMeanHeightPercent": -6.67,
+    "symmetricEyeLineVsReferenceMeanPixels": -1.15,
+    "crownAndUpperCranium": "visually coincident within approximately 2 to 4 pixels after registration",
+    "frontJawAndChin": "visually coincident within approximately 3 to 6 pixels after registration"
+  },
+  "semanticFrontOutline": [
+    { "id": "chin_point", "sourceY": 692, "sourceFullWidth": 18, "authoredWidth": 0.018 },
+    { "id": "chin_side", "sourceY": 682, "sourceFullWidth": 54, "authoredWidth": 0.217 },
+    { "id": "jawline", "sourceY": 663, "sourceFullWidth": 122, "authoredWidth": 0.491 },
+    { "id": "jaw_angle", "sourceY": 633, "sourceFullWidth": 201, "authoredWidth": 0.810 },
+    { "id": "cheek_transition", "sourceY": 594, "sourceFullWidth": 261, "authoredWidth": 1.051 },
+    { "id": "cheekbone", "sourceY": 551, "sourceFullWidth": 303, "authoredWidth": 1.221 },
+    { "id": "temple", "sourceY": 498, "sourceFullWidth": 323, "authoredWidth": 1.301 },
+    { "id": "forehead", "sourceY": 436, "sourceFullWidth": 347, "authoredWidth": 1.398 }
+  ],
+  "changesFromHairOccludedFit": {
+    "eyeLineRaisedWorldUnits": 0.087,
+    "eyeHalfSpacingBefore": 0.289,
+    "eyeHalfSpacingAfter": 0.316,
+    "foreheadWidthBefore": 1.520,
+    "foreheadWidthAfter": 1.398,
+    "templeWidthBefore": 1.430,
+    "templeWidthAfter": 1.301,
+    "earCenterYBefore": -0.340,
+    "earCenterYAfter": -0.270,
+    "earCenterDepthBefore": -0.005,
+    "earCenterDepthAfter": -0.285
+  },
+  "featureCorrections": {
+    "noseVerticalShiftWorldUnits": 0.113,
+    "noseTipDepthBefore": 0.765,
+    "noseTipDepthAfter": 0.735,
+    "mouthCenterY": -0.565,
+    "mouthSurfaceOffset": 0.018,
+    "neckBottomYBefore": -1.50,
+    "neckBottomYAfter": -1.31,
+    "approximateNeckReductionPixels": 62
+  },
+  "limitations": [
+    "The source is an illustrated turnaround rather than calibrated camera imagery.",
+    "The supplied front eyes differ vertically by 7.1 pixels; the model uses their mean eye line and remains symmetric.",
+    "A perspective Camera3D approximates the orthographic reference, so the side chin retains a small view-dependent residual.",
+    "Pixel residuals measure registered geometry and color regions; they are not a perceptual identity score."
+  ]
+}

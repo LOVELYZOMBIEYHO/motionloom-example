@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "1.0",
+  "reference": {
+    "image": "face-reference.png",
+    "width": 1448,
+    "height": 1086,
+    "views": {
+      "front": { "crop": [0, 0, 482, 1086], "confidence": 1.0 },
+      "left": { "crop": [482, 0, 483, 1086], "confidence": 0.98 },
+      "back": { "crop": [965, 0, 483, 1086], "confidence": 0.98 }
+    }
+  },
+  "lockedFaceBaseline": {
+    "eyeHalfSpacing": 0.316,
+    "eyeCenterY": -0.113,
+    "chinY": -0.833,
+    "headTopY": 1.0
+  },
+  "frontOutline": [
+    { "id": "chin_point", "y": -0.833, "width": 0.018, "frontDepth": 0.462, "backDepth": 0.450 },
+    { "id": "chin_side", "y": -0.793, "width": 0.217, "frontDepth": 0.500, "backDepth": -0.466 },
+    { "id": "jawline", "y": -0.714, "width": 0.491, "frontDepth": 0.537, "backDepth": -0.454 },
+    { "id": "jaw_angle", "y": -0.596, "width": 0.810, "frontDepth": 0.609, "backDepth": -0.434 },
+    { "id": "cheek_transition", "y": -0.438, "width": 1.051, "frontDepth": 0.690, "backDepth": -0.538 },
+    { "id": "cheekbone", "y": -0.263, "width": 1.221, "frontDepth": 0.638, "backDepth": -0.688 },
+    { "id": "temple", "y": -0.050, "width": 1.301, "frontDepth": 0.657, "backDepth": -0.813 },
+    { "id": "forehead", "y": 0.200, "width": 1.398, "frontDepth": 0.726, "backDepth": -0.861 }
+  ],
+  "hair": {
+    "topY": 1.09,
+    "sideX": 1.04,
+    "frontDepth": 0.78,
+    "rearDepth": -0.94,
+    "bobBottomY": -0.74,
+    "partX": -0.12,
+    "innerLayerY": -0.62
+  },
+  "eyes": {
+    "halfWidth": 0.190,
+    "halfHeight": 0.105,
+    "irisHalfWidth": 0.080,
+    "irisHalfHeight": 0.125,
+    "upperLidWidth": 0.03
+  },
+  "ears": {
+    "centerY": -0.27,
+    "centerDepth": -0.285,
+    "halfHeight": 0.19,
+    "projectionX": 0.655,
+    "depth": 0.090
+  }
+}

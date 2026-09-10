@@ -1,74 +1,57 @@
-# S81 — Night Owl / Rain-night convenience store
+# S81 — NEXT IN LINE
 
-Narrative pass: the S79 penguin waits for its frog friend, leads it into shelter,
-answers a happy hop with a small bow, and watches the rain together.
-The established architecture and toon style are retained. There is no Character1.
+A 60-second English-language horror promo set in the existing Night Owl convenience store. The penguin and frog discover a receipt that predicts their next actions, try to escape, and become the store's newest merchandise.
 
-The current revision follows the user's September 3 corner-store reference:
-dark tiled upper storeys, inset windows, a warm wraparound lightbox with orange
-and green bands, poster-covered glazing, a blue vending machine, recycling bins,
-delivery crates, a parked bicycle, utility poles and overhead cables. The opening
-camera is closer to street height. The reference image itself is not redistributed.
+Open `preview.mp4` for the rendered edit and `main.motionloom` for the complete editable scene. 1280 × 720, 24 fps, 1,440 frames. The export includes a cut and automated horror score.
 
-## Shot layout
+## Story and shot timing
 
-| Time | Camera study |
+| Time | Beat |
 | --- | --- |
-| 0–5 s | Exterior push; penguin waits while frog hops closer |
-| 5–13 s | Penguin waddles and frog hops through the open entrance |
-| 13–19 s | Two-shot from the doorway; greeting hop and answering bow |
-| 19–24 s | Both turn toward the rainy window; restrained depth of field |
-| 24–30 s | Exterior pull-back looking into the store |
+| 0–5.5 s | Warm storefront advertising, coffee insert, then a lit empty bay marked “RESERVED / ARRIVAL 00:48”; two silhouettes flicker inside. |
+| 5.5–9 s | Checkout two-shot; a paper prop advances from the printer. |
+| 9–14 s | Vector receipt insert predicts “00:17 / CAN DROPS”. |
+| 14–19 s | Visible store clock; the red can falls at 17 seconds. |
+| 19–23 s | First event confirmed; receipt predicts “00:26 / LIGHTS OUT”. |
+| 23–29 s | Ceiling shot, blackout at 26 seconds, screen-lit aftermath. |
+| 29–33 s | Receipt predicts “00:48 / CUSTOMER EXITS”. |
+| 33–41 s | Characters run toward the entrance; exterior cut then reappearance inside the shop. |
+| 41–45 s | “CUSTOMER EXITS” is crossed out and replaced by “CUSTOMERS STOCKED”. |
+| 45–48 s | Countdown and retreat. |
+| 48–53 s | Both characters become miniature, motionless shelf merchandise: “NIGHT SHIFT FRIENDS”. |
+| 53–58 s | Store advertisement returns, followed by NEXT IN LINE title and COMING SOON. |
+| 58–60 s | Final receipt: “NEXT CUSTOMER / YOU.” |
 
-The 30-second graph is authored at 30 FPS and 1280 × 720.
+## Assets and soundtrack
 
-## Scene contents
+The store, surrounding street, rain, penguin and frog reuse S81's existing PrimitiveAsset/CompoundAsset geometry. New printer, paper, can and display bay are native primitives. Receipts, torn edge, barcodes, correction lines and signage are authored with Text, Rect and SVG-style Path nodes directly in the DSL.
 
-- Four-sided convenience-store shell, glazing and open central doorway.
-- Wraparound cream lightbox, orange/green stripes and metal canopy seams.
-- Tiled upper-storey facade, windows, rear service door, grille and crates.
-- Refrigerated back-wall cases and two stocked wall aisles; central stand removed for clearance.
-- Checkout counter, register, coffee unit, tiled floor and modular ceiling.
-- Forecourt bench, bin, bollards, parking markings and exterior rain volumes.
-- Two compact parked cars, additional marked bays, wheel stops, a pedestrian
-  crossing, cones and a parking sign, with the central entrance kept clear.
-- Four planted islands and six low-detail background buildings with window
-  strips, rooftop equipment and perimeter rails to give the store a neighborhood.
-- Small glossy road patches; these are surface accents, not simulated puddles.
+All former external ImageAsset URLs, normal-texture references and HDR environment lighting have been removed from the main film. No outsourced visual assets, GLB imports, Python asset generator or baked image inserts are used. All on-screen copy is English. The pre-existing `main2.motionloom` alternative is not part of this film and was left unchanged.
 
-`Scene.renderStyle="s81_cinema"` uses three-step toon shading, restrained specular,
-slightly boosted saturation and ACES grading,
-cool exterior light and warmer interior lamps. This is a procedural look study,
-not a photorealistic finished commercial or a ray-traced reflection demo.
+The sole external-origin asset is Rafael Krux's **Horror Suspense**, downloaded from Wikimedia Commons and originally published through FreePD. It is dedicated to the public domain under CC0 1.0. The Ogg Vorbis source is vendored at `assets/audio/rafael-krux-horror-suspense.ogg`; full URLs, checksum and licence notes are in `assets/audio/LICENSE.md`.
 
-## Assets and scope
+The score is edited in MotionLoom as four source trims rather than a continuous needle-drop. `AudioTarget gainDb` keys build pressure into the 17-second can drop, cut to near-silence at the 26-second blackout, restart the pursuit, punctuate the 48-second transformation, and use the composition's late climax as a two-second sting under “YOU.”
 
-Environment geometry is authored with PrimitiveAsset and Model nodes in this file.
-Penguin and frog geometry/materials are copied from S79 with S81-specific IDs.
-Their CompoundAssets use scene-authored translation, hop, sway, bow and heading
-keyframes: simple whole-body animation, not an articulated skeletal walk or IK.
-No GLB, humanoid profile or ActionLibrary is required for these two characters.
-Three normal maps reuse the existing S73 project textures via GitHub raw URLs:
-plaster, weathered concrete and brushed metal. The S72 project HDR provides
-image-based material lighting with its background hidden. Browser hosts must preload these
-ImageAsset URIs using the existing asset-loading path.
+Animation is hand-authored transform blocking, not skeletal acting or physical simulation. The exit loop and transformation use deliberate cuts. The paper close-ups and product label are screen-space graphic inserts rather than texture-mapped text. Rain is procedural geometry; no physically simulated reflections are claimed.
 
-No previous showcase, shared action library, character asset or engine source
-is changed by this scene.
+## Verification and reproduction
 
-## Validation status
+The source passes native-WebGPU authoring analysis with zero warnings/errors. Visual review uses native GPU frames and a temporal contact sheet. MotionLoom decodes and mixes the score, then the existing FFmpeg export path muxes AAC audio into the MP4.
 
-The animal revision parses and analyzes without warnings. Representative native
-WGPU frames are rendered for the entrance, greeting and window shots.
-The five-shot edit replaces the old 360-degree study and avoids reverse-facing
-interior camera quadrants. The previously observed near-plane renderer problem
-is not fixed by this scene change. The earlier Character1 revision passed browser
-WASM seek tests; that is not a new browser validation of this animal revision.
-This is not a frame-by-frame collision or pixel-parity certification.
-The current lighting remains stylized; photoreal wet reflections are not claimed.
-
-Run from the anica repository:
+From the sibling anica checkout:
 
 ```sh
-cargo run -p motionloom --example wgpu_live_preview -- ../motionloom-example/showcase/s-000081/main.motionloom
+cargo run -p motionloom --example authoring_report -- \
+  ../motionloom-example/showcase/s-000081/main.motionloom native-webgpu
+
+ANICA_FFMPEG=/opt/homebrew/bin/ffmpeg cargo run -p motionloom --example render_file_video -- \
+  ../motionloom-example/showcase/s-000081/main.motionloom \
+  ../motionloom-example/showcase/s-000081/preview.mp4 gpu
 ```
+
+Choose the FFmpeg location appropriate for your machine. Use a renderer build containing the homogeneous near-plane clipping fix used for S88. This film uses MotionLoom's `AudioAsset`, `AudioClip` and `AudioTarget` syntax; no engine code was changed specifically for S81.
+
+The standalone native `wgpu_live_preview` now plays the same prepared soundtrack
+through the default audio device. It resolves the Ogg path from this showcase
+directory, so run it from the sibling Anica checkout with the `.motionloom` path
+shown above.

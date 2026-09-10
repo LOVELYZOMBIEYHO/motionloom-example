@@ -1,0 +1,13 @@
+{
+  "id": "s-000083",
+  "type": "showcase",
+  "title": "MotionLoom / Rose Copper",
+  "domain": "scene",
+  "features": ["scene", "procedural-texture", "procedural", "gpu-pipeline", "process", "process-effect", "gradient", "blur", "bloom", "glow", "text", "typography", "animation-target", "composite-order"],
+  "dsl": ["Graph", "Background", "Scene", "Timeline", "Track", "Sequence", "Layer", "Rect", "Effects", "Effect", "Defs", "RadialGradient", "Repeat", "Group", "Circle", "Text", "Path", "Process", "Tex", "Pass", "AnimationTarget", "Key", "Present"],
+  "teaches": ["Generate a domain-warped rose-copper surface in a GPU Process while keeping titles and motes in a separate composited Scene.", "Drive evolution from absolute time so seeking remains deterministic, then finish with blur and bloom."],
+  "source_path": "showcase/s-000083",
+  "demo_url": "",
+  "related": ["s-000082", "s-000080"],
+  "requires": ["Graph", "Scene", "Process", "Effects", "Present"]
+}

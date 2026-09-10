@@ -1,19 +1,13 @@
-<!-- S81: Rain-night convenience store / exterior and interior look development. -->
-<!-- Narrative pass: S79 penguin and frog share a rainy-night visit to the store. -->
-<!-- Five forward-facing shots; 30 seconds at 30 FPS. No renderer changes. -->
-<Graph fps={30} duration="30s" size={[1280,720]}>
+<!-- S81 / NEXT IN LINE / 60-second horror promo with native visuals and a locally vendored CC0 score. -->
+<Graph fps={24} duration="60s" size={[1280,720]}>
   <Background color="#08131F" />
   <RenderStyle id="s81_cinema">
     <SurfaceStyle shading="toon" shadingSteps="3" diffuseWrap="0.25" rimLight="0.12" specular="0.05" roughnessBias="0.25" />
-    <LightingStyle preset="cinematic" ambientIntensity="0.7" ambientColor="#BCAD96" shadowStyle="soft" />
-    <PostStyle toneMapping="aces" exposure="1.15" saturation="1.2" contrast="1.0" whiteBalance="8000" />
+    <LightingStyle preset="cinematic" ambientIntensity="0.32" ambientColor="#BCAD96" shadowStyle="soft" />
+    <PostStyle toneMapping="aces" exposure="0.95" saturation="0.85" contrast="1.08" whiteBalance="8000" />
   </RenderStyle>
-  <RenderQuality id="s81_quality">
-    <Resolution scale="1" />
-    <Shadows resolution="1536" filtering="pcf" />
-    <AntiAliasing mode="fxaa" />
-  </RenderQuality>
   <Assets>
+    <AudioAsset id="s81_horror_score" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000081/assets/audio/rafael-krux-horror-suspense.ogg" />
     <PrimitiveAsset id="s81_street_sized_0" shape="box" size={[1.7,0.62,3.35]} material="s81_street_car_red_mat" collision="none" />
     <PrimitiveAsset id="s81_street_sized_1" shape="box" size={[1.5,0.65,1.8]} material="s81_street_car_red_mat" collision="none" />
     <PrimitiveAsset id="s81_street_sized_2" shape="box" size={[1.32,0.45,0.035]} material="s81_street_window_cool_mat" collision="none" />
@@ -231,20 +225,15 @@
       <Instance id="foot_l" asset="s81_guest_frog_foot" position={[-0.82,0.15,0.72]} />
       <Instance id="foot_r" asset="s81_guest_frog_foot" position={[0.82,0.15,0.72]} />
     </CompoundAsset>
-
-    <ImageAsset id="s81_reference_ibl" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000072/assets/cinematic_courtyard.hdr" />
-    <ImageAsset id="s81_wall_normal" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/textures/pbr/plaster_normal.png" colorSpace="linear-srgb" />
-    <ImageAsset id="s81_road_normal" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/textures/pbr/weathered_concrete_normal.png" colorSpace="linear-srgb" />
-    <ImageAsset id="s81_metal_normal" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/textures/pbr/brushed_metal_normal.png" colorSpace="linear-srgb" />
-    <MaterialAsset id="s81_asphalt" baseColor="#182A35" normalTexture="s81_road_normal" normalScale="0.38" mapping="triplanar" textureScale={[0.55,0.55]} roughness="0.24" metallic="0.2" />
+    <MaterialAsset id="s81_asphalt" baseColor="#182A35" mapping="triplanar" textureScale={[0.55,0.55]} roughness="0.24" metallic="0.2" />
     <MaterialAsset id="s81_concrete" baseColor="#526471" roughness="0.65" />
-    <MaterialAsset id="s81_wall" baseColor="#68858A" normalTexture="s81_wall_normal" normalScale="0.32" mapping="triplanar" textureScale={[0.7,0.7]} roughness="0.55" />
+    <MaterialAsset id="s81_wall" baseColor="#68858A" mapping="triplanar" textureScale={[0.7,0.7]} roughness="0.55" />
     <MaterialAsset id="s81_tile" baseColor="#B9B8A9" roughness="0.3" />
     <MaterialAsset id="s81_tile_alt" baseColor="#A4AAA3" roughness="0.34" />
     <MaterialAsset id="s81_grout" baseColor="#46565C" roughness="0.8" />
     <MaterialAsset id="s81_cream" baseColor="#E4D4B4" emissive="#A8662D" emissiveStrength="0.12" roughness="0.5" />
     <MaterialAsset id="s81_metal" baseColor="#162E38" metallic="0.7" roughness="0.26" />
-    <MaterialAsset id="s81_steel" baseColor="#9EADB0" normalTexture="s81_metal_normal" normalScale="0.2" mapping="triplanar" textureScale={[1.5,1.5]} metallic="0.75" roughness="0.3" />
+    <MaterialAsset id="s81_steel" baseColor="#9EADB0" mapping="triplanar" textureScale={[1.5,1.5]} metallic="0.75" roughness="0.3" />
     <MaterialAsset id="s81_wood" baseColor="#90522F" roughness="0.42" />
     <MaterialAsset id="s81_sign" baseColor="#11373D" roughness="0.35" />
     <MaterialAsset id="s81_cyan" baseColor="#CFBF97" emissive="#DCB779" emissiveStrength="0.35" roughness="0.28" />
@@ -344,7 +333,7 @@
     <PrimitiveAsset id="s81_geo_84" shape="box" size={[0.075,0.7,0.48]} material="s81_metal" bevelRadius="0.01650" bevelSegments="2" collision="none" />
     <PrimitiveAsset id="s81_geo_85" shape="box" size={[0.012,0.32,0.012]} material="s81_rain" collision="none" />
     <PrimitiveAsset id="s81_ceiling_tile" shape="box" size={[0.99,0.08,0.99]} material="s81_cream" collision="none" />
-    <MaterialAsset id="s81_ref_cladding" baseColor="#25373A" roughness="0.34" metallic="0.15" normalTexture="s81_wall_normal" normalScale="0.22" mapping="triplanar" textureScale={[2,2]} />
+    <MaterialAsset id="s81_ref_cladding" baseColor="#25373A" roughness="0.34" metallic="0.15" mapping="triplanar" textureScale={[2,2]} />
     <MaterialAsset id="s81_ref_joint" baseColor="#0D181B" roughness="0.7" />
     <MaterialAsset id="s81_ref_orange" baseColor="#CA7846" emissive="#BA6031" emissiveStrength="0.3" roughness="0.43" />
     <MaterialAsset id="s81_ref_green" baseColor="#406D60" emissive="#335F50" emissiveStrength="0.2" roughness="0.4" />
@@ -358,7 +347,7 @@
     <MaterialAsset id="s81_ref_crate" baseColor="#A77830" roughness="0.7" />
     <MaterialAsset id="s81_ref_poster" baseColor="#C9B798" roughness="0.8" />
     <MaterialAsset id="s81_ref_pole" baseColor="#4D5753" metallic="0.4" roughness="0.52" />
-    <MaterialAsset id="s81_ref_wet" baseColor="#18272B" roughness="0.09" metallic="0.3" normalTexture="s81_road_normal" normalScale="0.2" mapping="triplanar" textureScale={[1.3,1.3]} />
+    <MaterialAsset id="s81_ref_wet" baseColor="#18272B" roughness="0.09" metallic="0.3" mapping="triplanar" textureScale={[1.3,1.3]} />
     <PrimitiveAsset id="s81_ref_geo_0" shape="box" size={[12.2,6.3,9.15]} material="s81_ref_cladding" bevelRadius="0.035" bevelSegments="2" collision="none" />
     <PrimitiveAsset id="s81_ref_geo_1" shape="box" size={[0.015,6.2,0.016]} material="s81_ref_joint" collision="none" />
     <PrimitiveAsset id="s81_ref_geo_2" shape="box" size={[12.1,0.012,0.018]} material="s81_ref_joint" collision="none" />
@@ -498,25 +487,92 @@
     <Instance id="light1" asset="s81_street_sized_16" position={[0.56,0.65,1.69]} scale="1" rotation={[0,0,0]} />
     <Instance id="bumper" asset="s81_street_sized_17" position={[0,0.38,1.7]} scale="1" rotation={[0,0,0]} />
     </CompoundAsset>
+    <!-- Hero props and display bay are authored directly with native primitives. -->
+    <MaterialAsset id="receipt_stock" baseColor="#E5DECA" roughness="0.85" />
+    <MaterialAsset id="printer_dark" baseColor="#101B20" roughness="0.5" />
+    <PrimitiveAsset id="receipt_printer" shape="box" size={[0.55,0.24,0.44]} material="printer_dark" />
+    <PrimitiveAsset id="receipt_paper" shape="box" size={[0.32,0.007,0.6]} material="receipt_stock" />
+    <PrimitiveAsset id="hero_can" shape="cylinder" radius="0.14" height="0.4" segments="20" material="s81_red" />
+    <PrimitiveAsset id="display_back" shape="box" size={[2.6,1.7,0.12]} material="printer_dark" />
+    <PrimitiveAsset id="display_shelf" shape="box" size={[2.6,0.12,1]} material="receipt_stock" />
+    <PrimitiveAsset id="display_side" shape="box" size={[0.12,1.7,1]} material="printer_dark" />
   </Assets>
-  <Scene id="s81_scene" renderStyle="s81_cinema" renderQuality="s81_quality">
+  <!-- Four trims reshape one CC0 composition around the receipt, blackout, transformation and final sting. -->
+  <AudioClip id="s81_music_unease" asset="s81_horror_score" from="0s" duration="26s" sourceIn="0s" sourceOut="26s" />
+  <AudioClip id="s81_music_trap" asset="s81_horror_score" from="26.35s" duration="21.65s" sourceIn="31s" sourceOut="52.65s" />
+  <AudioClip id="s81_music_stocked" asset="s81_horror_score" from="48s" duration="10s" sourceIn="66s" sourceOut="76s" />
+  <AudioClip id="s81_music_you" asset="s81_horror_score" from="58s" duration="2s" sourceIn="132s" sourceOut="134s" />
+  <AudioTarget node="s81_music_unease" property="gainDb">
+    <Key time="0s" value="-60" />
+    <Key time="1.2s" value="-17" ease="ease_out" />
+    <Key time="5.5s" value="-15" />
+    <Key time="9s" value="-12" />
+    <Key time="14s" value="-9" />
+    <Key time="17s" value="-5" ease="ease_in" />
+    <Key time="19s" value="-10" />
+    <Key time="23s" value="-6" />
+    <Key time="25.65s" value="-3" ease="ease_in" />
+    <Key time="26s" value="-60" />
+  </AudioTarget>
+  <AudioTarget node="s81_music_trap" property="gainDb">
+    <Key time="26.35s" value="-60" />
+    <Key time="26.7s" value="-10" ease="ease_out" />
+    <Key time="29s" value="-9" />
+    <Key time="33s" value="-6" />
+    <Key time="37.5s" value="-4" />
+    <Key time="41s" value="-2" />
+    <Key time="45s" value="-1" />
+    <Key time="47.75s" value="1" ease="ease_in" />
+    <Key time="48s" value="-60" />
+  </AudioTarget>
+  <AudioTarget node="s81_music_stocked" property="gainDb">
+    <Key time="48s" value="-60" />
+    <Key time="48.12s" value="-2" ease="ease_out" />
+    <Key time="49s" value="-6" />
+    <Key time="53s" value="-8" />
+    <Key time="55s" value="-5" />
+    <Key time="57.65s" value="-10" />
+    <Key time="58s" value="-60" />
+  </AudioTarget>
+  <AudioTarget node="s81_music_you" property="gainDb">
+    <Key time="58s" value="-60" />
+    <Key time="58.08s" value="-2" ease="ease_out" />
+    <Key time="58.35s" value="-6" />
+    <Key time="59.7s" value="-9" />
+    <Key time="60s" value="-60" />
+  </AudioTarget>
+  <Scene id="s81_scene" renderStyle="s81_cinema">
     <Timeline>
       <Track space="3d">
-        <Sequence from="0s" duration="30s" out="hide">
+        <Sequence from="0s" duration="60s" out="hide">
           <CompositeGroup id="s81_store" space="3d" depth="true" format="rgba16f">
-            <Camera3D id="s81_camera" position={[10,3.2,17]} target={[0,2.5,1]} fov="46" horizonLock="true" />
-            <Camera3D id="s81_follow" position={[0.6,1.8,9.5]} target={[0,1.1,5.2]} fov="53" horizonLock="true" />
-            <Camera3D id="s81_aisle" position={[-0.9,1.6,5.5]} target={[-0.9,1.0,2.0]} fov="46" horizonLock="true" />
-            <Camera3D id="s81_window" position={[-2.5,1.9,5.3]} target={[-0.9,1.0,2.0]} fov="46" horizonLock="true" depthOfField="true" focusDistance="3.5" focalLength="60" fStop="3.2" maxBlur="5" />
-            <Camera3D id="s81_return" position={[5.8,2.5,12.5]} target={[-0.7,1.4,2.4]} fov="44" horizonLock="true" />
+            <!-- Each shot has its own rail; no orbit through walls. -->
+            <Camera3D id="establish" position={[10,3.4,17]} target={[0,2.1,2]} fov="46" />
+            <Camera3D id="coffee" position={[3.6,2.1,4.3]} target={[4.8,1.6,2.5]} fov="40" />
+            <Camera3D id="checkout" position={[0.1,2.15,4.1]} target={[3.3,1.35,2.6]} fov="51" />
+            <Camera3D id="can_close" position={[4.8,1.65,3.95]} target={[3.45,0.9,3.4]} fov="64" />
+            <Camera3D id="ceiling" position={[0,1.6,3]} target={[0,3.15,-2]} fov="59" />
+            <Camera3D id="escape" position={[0,1.7,0.1]} target={[0,1,4.3]} fov="58" />
+            <Camera3D id="outside" position={[0,1.7,10]} target={[0,1.2,4.5]} fov="45" />
+            <Camera3D id="loop" position={[1.7,1.9,3.1]} target={[-0.15,1,-1]} fov="54" />
+            <Camera3D id="panic" position={[2.2,2.4,3.4]} target={[-0.15,1,-1]} fov="55" />
+            <Camera3D id="product" position={[-2,1.35,3.4]} target={[-2,1.18,0.45]} fov="43" />
+            <Model asset="receipt_printer" position={[4.2,1.42,2.9]} />
+            <Model id="paper_prop" asset="receipt_paper" position={[4.2,1.55,3]} />
+            <Model id="can_prop" asset="hero_can" position={[3.35,1.5,2.9]} />
+            <Model asset="display_back" position={[-2,1.48,-0.05]} />
+            <Model asset="display_shelf" position={[-2,0.69,0.4]} />
+            <Model asset="display_shelf" position={[-2,2.27,0.4]} />
+            <Model asset="display_side" position={[-3.24,1.48,0.4]} />
+            <Model asset="display_side" position={[-0.76,1.48,0.4]} />
+            <PointLight position={[3.8,1.7,3]} color="#A1EAD8" intensity="curve(0:0,26:0,26.4:8,48:8,48.2:0)" range="4" />
             <Surface id="s81_ground" kind="ground" collider="box" center={[0,0.1575,1.5]} size={[11.8,0.02,12]} color="#00000000" />
-            <Model id="s81_penguin_actor" asset="s81_guest_penguin" position={[-0.4,0.1,6.1]} rotationY="90" scale="0.75" castShadow="true" receiveShadow="true" />
-            <Model id="s81_frog_actor" asset="s81_guest_frog_character" position={[1.4,0.126,6.2]} rotationY="270" scale="0.6" castShadow="true" receiveShadow="true" />
-            <EnvironmentLight id="s81_reference_environment" asset="s81_reference_ibl" mapping="equirectangular" rotationY="35" intensity="0.5" visible="false" diffuseIntensity="0.55" specularIntensity="0.7" />
-            <DirectionalLight direction={[-0.5,-1,0.25]} color="#D5C7AA" intensity="1.2" castShadow="true" shadowStrength="0.48" />
-            <PointLight position={[-3,2.95,0]} color="#FFD09A" intensity="32" range="11" />
-            <PointLight position={[3,2.95,-1]} color="#FFE2B6" intensity="28" range="11" />
-            <PointLight position={[0,3,5.5]} color="#FFD08B" intensity="26" range="12" />
+            <Model id="s81_penguin_actor" asset="s81_guest_penguin" position={[3.15,0.1,1.5]} rotationY="0" scale="0.75" castShadow="true" receiveShadow="true" />
+            <Model id="s81_frog_actor" asset="s81_guest_frog_character" position={[2.8,0.1,3.8]} rotationY="180" scale="0.6" castShadow="true" receiveShadow="true" />
+            <DirectionalLight direction={[-0.5,-1,0.25]} color="#D5C7AA" intensity="curve(0:1.2,25.95:1.2,26:0.08,48:0.08,48.2:0.65,53:1.2)" castShadow="true" shadowStrength="0.48" />
+            <PointLight position={[-3,2.95,0]} color="#FFD09A" intensity="curve(0:32,25.95:32,26:0,48:0,48.2:22)" range="11" />
+            <PointLight position={[3,2.95,-1]} color="#FFE2B6" intensity="curve(0:28,25.95:28,26:0,48:0,48.2:18)" range="11" />
+            <PointLight position={[0,3,5.5]} color="#FFD08B" intensity="curve(0:26,25.95:26,26:0,48:0,48.2:20)" range="12" />
             <AmbientOcclusion intensity="0.6" radius="0.3" />
             <ContactShadow intensity="0.65" distance="0.18" softness="0.5" />
             <Model id="s81_part_0" asset="s81_geo_0" position={[0,-0.22,0]} castShadow="true" receiveShadow="true" />
@@ -1807,356 +1863,316 @@
           </CompositeGroup>
         </Sequence>
       </Track>
-      <Track z="100">
-        <Sequence from="0s" duration="30s" out="hide">
-          <Layer>
-            <Rect x="0" y="0" width="1280" height="40" color="#03090D" />
-            <Rect x="0" y="680" width="1280" height="40" color="#03090D" />
-            <Text x="34" y="12" value="S81 / NIGHT OWL — CORNER STORE / RAIN STUDY" fontSize="15" color="#D7E5E8" />
-            <Text id="s81_chapter" x="34" y="693" value="01 / TWO FRIENDS · ONE RAINY NIGHT" fontSize="13" color="#8FCBD3" />
+      <Track id="film_graphics" space="screen" compositeOrder="100">
+        <Sequence from="0s" duration="60s" out="hide">
+          <Layer space="screen">
+            <Rect x="0" y="0" width="1280" height="46" color="#030607" />
+            <Rect x="0" y="674" width="1280" height="46" color="#030607" />
+            <Text x="40" y="702" value="NIGHT OWL PICTURES" fontSize="12" tracking="3" color="#77918D" />
+            <Text x="1060" y="702" value="NEXT IN LINE" fontSize="12" tracking="2" color="#77918D" />
+          </Layer>
+        </Sequence>
+        <Sequence from="0.5s" duration="2.5s" out="hide">
+          <Layer space="screen" opacity="curve(0:0,0.7:1,2.7:1,3:0)">
+            <Text x="66" y="440" value="NIGHT OWL" fontSize="64" tracking="6" color="#F0E6CC" />
+            <Text x="70" y="530" value="Always one step ahead." fontSize="25" color="#F0E6CC" />
+            <Path d="M 72 555 L 470 555 M 72 565 L 280 565" stroke="#C87642" strokeWidth="3" fill="none" />
+          </Layer>
+        </Sequence>
+        <Sequence from="4s" duration="1.5s" out="hide">
+          <Layer space="screen">
+            <Text x="820" y="575" value="A PLACE FOR SOMETHING NEW." fontSize="19" color="#E8DEBD" />
+          </Layer>
+        </Sequence>
+        <Sequence from="9s" duration="5s" out="hide">
+          <Layer space="screen">
+            <Rect width="1280" height="720" color="#050E10ED" />
+            <Rect x="398" y="94" width="500" height="560" color="#00000070" />
+            <Path d="M 390 80 H 890 V 624 L 870 613 L 850 624 L 830 613 L 810 624 L 790 613 L 770 624 L 750 613 L 730 624 L 710 613 L 690 624 L 670 613 L 650 624 L 630 613 L 610 624 L 590 613 L 570 624 L 550 613 L 530 624 L 510 613 L 490 624 L 470 613 L 450 624 L 430 613 L 410 624 L 390 613 Z" fill="#E7E0CE" />
+            <Text x="435" y="142" value="NIGHT OWL" fontSize="34" tracking="4" color="#142B28" />
+            <Text x="435" y="178" value="YOUR NEXT MOMENT. PRINTED." fontSize="16" color="#42504A" />
+            <Path d="M 435 205 H 845 M 435 390 H 845" stroke="#46564F" strokeWidth="1" fill="none" />
+            <Text x="435" y="240" value="TRANSACTION 0081" fontSize="16" color="#42504A" />
+            <Text x="435" y="298" value="00:17" fontSize="39" color="#142B28" />
+            <Text x="435" y="347" value="CAN DROPS" fontSize="35" tracking="2" color="#142B28" />
+            <Text x="435" y="442" value="STATUS: NOT YET" fontSize="23" color="#A13B31" />
+            <Text x="435" y="493" value="THANK YOU FOR WAITING." fontSize="16" color="#42504A" />
+            <Path d="M 436 526 V 568 M 443 526 V 568 M 455 526 V 568 M 477 526 V 568 M 489 526 V 568 M 503 526 V 568 M 520 526 V 568 M 528 526 V 568 M 549 526 V 568 M 566 526 V 568 M 578 526 V 568 M 596 526 V 568 M 614 526 V 568 M 625 526 V 568 M 649 526 V 568 M 657 526 V 568 M 678 526 V 568 M 699 526 V 568 M 717 526 V 568 M 728 526 V 568 M 749 526 V 568 M 767 526 V 568 M 787 526 V 568 M 799 526 V 568 M 821 526 V 568 M 838 526 V 568" stroke="#142B28" strokeWidth="5" fill="none" />
+          </Layer>
+        </Sequence>
+        <Sequence from="14s" duration="5s" out="hide">
+          <Layer space="screen">
+            <Rect x="1000" y="77" width="218" height="80" color="#06130DE8" />
+            <Text x="1028" y="99" value="STORE TIME" fontSize="12" tracking="2" color="#9FC1AD" />
+            <Text id="clock_drop" x="1028" y="114" value="00:14" fontSize="35" color="#E8DCC3" />
+            <Text x="66" y="632" value="IT KNEW BEFORE IT HAPPENED." fontSize="19" tracking="2" color="#E8DCC3" opacity="curve(0:0,3.7:0,4:1)" />
+          </Layer>
+        </Sequence>
+        <Sequence from="19s" duration="4s" out="hide">
+          <Layer space="screen">
+            <Rect width="1280" height="720" color="#050E10F5" />
+            <Rect x="350" y="95" width="580" height="540" color="#E7E0CE" />
+            <Text x="400" y="155" value="NIGHT OWL / RECEIPT 0081" fontSize="24" color="#142B28" />
+            <Path d="M 400 187 H 880 M 400 540 H 880" stroke="#52625A" strokeWidth="1" fill="none" />
+            <Text x="400" y="245" value="00:17  CAN DROPS" fontSize="27" color="#53635B" />
+            <Text x="400" y="285" value="CONFIRMED" fontSize="17" tracking="3" color="#53635B" />
+            <Text x="400" y="371" value="00:26" fontSize="46" color="#142B28" />
+            <Text x="400" y="425" value="LIGHTS OUT" fontSize="43" color="#142B28" />
+            <Text x="400" y="491" value="STATUS: NOT YET" fontSize="22" color="#A13B31" />
+            <Text x="400" y="584" value="PLEASE REMAIN IN THE STORE." fontSize="19" color="#142B28" />
+          </Layer>
+        </Sequence>
+        <Sequence from="24s" duration="4s" out="hide">
+          <Layer space="screen">
+            <Rect x="1000" y="77" width="218" height="80" color="#06130DE8" />
+            <Text id="clock_dark" x="1028" y="110" value="00:24" fontSize="35" color="#E8DCC3" />
+          </Layer>
+        </Sequence>
+        <Sequence from="26s" duration="0.35s" out="hide">
+          <Layer space="screen">
+            <Rect width="1280" height="720" color="#00070B" />
+          </Layer>
+        </Sequence>
+        <Sequence from="26.35s" duration="21.65s" out="hide">
+          <Layer space="screen">
+            <Rect width="1280" height="720" color="#00070B" opacity="0.12" />
+          </Layer>
+        </Sequence>
+        <Sequence from="27s" duration="2s" out="hide">
+          <Layer space="screen">
+            <Text x="64" y="566" value="PREDICTION ACCURACY" fontSize="19" tracking="3" color="#93CCB5" />
+            <Text x="64" y="630" value="100%" fontSize="55" color="#C3F3CE" />
+          </Layer>
+        </Sequence>
+        <Sequence from="29s" duration="4s" out="hide">
+          <Layer space="screen">
+            <Rect width="1280" height="720" color="#02090CF5" />
+            <Rect x="350" y="95" width="580" height="540" color="#D3CEBB" />
+            <Text x="400" y="155" value="NIGHT OWL / RECEIPT 0081" fontSize="24" color="#142B28" />
+            <Text x="400" y="233" value="00:17  CAN DROPS       OK" fontSize="23" color="#53635B" />
+            <Text x="400" y="277" value="00:26  LIGHTS OUT      OK" fontSize="23" color="#53635B" />
+            <Path d="M 400 305 H 880" stroke="#52625A" strokeWidth="1" fill="none" />
+            <Text x="400" y="370" value="00:48" fontSize="44" color="#142B28" />
+            <Text x="400" y="425" value="CUSTOMER EXITS" fontSize="33" color="#142B28" />
+            <Text x="400" y="496" value="STATUS: NOT YET" fontSize="22" color="#A13B31" />
+            <Text x="400" y="583" value="NO RETURNS. NO EXCEPTIONS." fontSize="19" color="#142B28" />
+          </Layer>
+        </Sequence>
+        <Sequence from="33s" duration="3s" out="hide">
+          <Layer space="screen">
+            <Text x="66" y="632" value="THEN WHY WAIT?" fontSize="29" tracking="3" color="#D5DDD0" />
+            <Path d="M 1110 96 H 1190 L 1170 78 M 1190 96 L 1170 114" stroke="#98CBA7" strokeWidth="3" fill="none" />
+            <Text x="1030" y="102" value="EXIT" fontSize="19" color="#98CBA7" />
+          </Layer>
+        </Sequence>
+        <Sequence from="37.5s" duration="3.5s" out="hide">
+          <Layer space="screen">
+            <Text x="66" y="630" value="YOU HAVE NOT LEFT." fontSize="29" tracking="3" color="#DFD9C6" />
+          </Layer>
+        </Sequence>
+        <Sequence from="41s" duration="4s" out="hide">
+          <Layer space="screen">
+            <Rect width="1280" height="720" color="#02090CFA" />
+            <Rect x="350" y="95" width="580" height="540" color="#D3CEBB" />
+            <Text x="400" y="158" value="CORRECTION / RECEIPT 0081" fontSize="23" color="#142B28" />
+            <Text x="400" y="256" value="00:48" fontSize="49" color="#142B28" />
+            <Text x="400" y="326" value="CUSTOMER EXITS" fontSize="34" color="#66665B" />
+            <Path d="M 392 333 L 872 351 M 392 351 L 872 333" stroke="#9F2827" strokeWidth="4" fill="none" opacity="curve(0:0,0.7:0,0.9:1)" />
+            <Text x="400" y="410" value="CUSTOMERS STOCKED" fontSize="32" color="#9F2827" opacity="curve(0:0,1:0,1.2:1)" />
+            <Text x="400" y="486" value="QUANTITY: 02" fontSize="26" color="#142B28" />
+            <Text x="400" y="577" value="THE STORE NEVER MAKES A MISTAKE." fontSize="17" color="#142B28" />
+          </Layer>
+        </Sequence>
+        <Sequence from="45s" duration="3s" out="hide">
+          <Layer space="screen">
+            <Rect x="985" y="73" width="238" height="106" color="#100806D9" />
+            <Text x="1010" y="102" value="TIME TO RESTOCK" fontSize="15" color="#DC8070" />
+            <Text id="clock_end" x="1010" y="124" value="00:45" fontSize="43" color="#F2D7C0" />
+          </Layer>
+        </Sequence>
+        <Sequence from="48s" duration="0.18s" out="hide">
+          <Layer space="screen">
+            <Rect width="1280" height="720" color="#000000" />
+</Layer>
+        </Sequence>
+        <Sequence from="49s" duration="4s" out="hide">
+          <Layer space="screen">
+            <Rect x="770" y="493" width="430" height="146" color="#DED5B9" />
+            <Text x="799" y="530" value="NIGHT SHIFT FRIENDS" fontSize="24" color="#172723" />
+            <Text x="799" y="563" value="2-PACK / NEW ARRIVAL" fontSize="19" color="#172723" />
+            <Path d="M 800 595 V 619 M 808 595 V 619 M 823 595 V 619 M 840 595 V 619 M 855 595 V 619 M 871 595 V 619 M 893 595 V 619 M 906 595 V 619 M 922 595 V 619 M 940 595 V 619" stroke="#172723" strokeWidth="5" fill="none" />
+            <Text x="999" y="618" value="IN STOCK" fontSize="20" color="#9F2827" />
+          </Layer>
+        </Sequence>
+        <Sequence from="53s" duration="2s" out="hide">
+          <Layer space="screen">
+            <Text x="66" y="496" value="NIGHT OWL" fontSize="61" tracking="6" color="#E8DDC0" />
+            <Text x="70" y="578" value="There's a place for everyone." fontSize="28" color="#E8DDC0" />
+          </Layer>
+        </Sequence>
+        <Sequence from="55s" duration="3s" out="hide">
+          <Layer space="screen">
+            <Rect width="1280" height="720" color="#06100F" />
+            <Path d="M 104 155 H 1176 M 104 548 H 1176 M 104 163 H 1176" stroke="#536B5B" strokeWidth="1" fill="none" />
+            <Text x="108" y="226" value="A NIGHT OWL ORIGINAL" fontSize="22" tracking="6" color="#92A899" />
+            <Text x="102" y="310" value="NEXT IN LINE" fontSize="111" tracking="4" color="#E5DDC5" />
+            <Text x="110" y="460" value="YOUR FUTURE IS ALREADY ON THE RECEIPT." fontSize="22" tracking="2" color="#A9B5A1" />
+            <Text x="109" y="601" value="COMING SOON" fontSize="23" tracking="6" color="#CA715D" />
+          </Layer>
+        </Sequence>
+        <Sequence from="58s" duration="2s" out="hide">
+          <Layer space="screen">
+            <Rect width="1280" height="720" color="#020706" />
+            <Rect x="307" y="225" width="666" height="262" color="#E7E0CE" />
+            <Text x="349" y="290" value="NEXT CUSTOMER" fontSize="26" tracking="5" color="#24372E" />
+            <Path d="M 350 316 H 930" stroke="#546052" strokeWidth="1" fill="none" />
+            <Text x="347" y="352" value="YOU." fontSize="91" color="#952B27" />
+            <Text x="750" y="450" value="NO. 0082" fontSize="20" color="#24372E" />
           </Layer>
         </Sequence>
       </Track>
     </Timeline>
   </Scene>
+  <!-- Cut timing and sparse, hand-authored blocking keys. -->
   <AnimationTarget node="s81_scene" property="activeCamera">
-    <Key time="0s" value="s81_camera" />
-    <Key time="5s" value="s81_follow" />
-    <Key time="13s" value="s81_aisle" />
-    <Key time="19s" value="s81_window" />
-    <Key time="24s" value="s81_return" />
+    <Key time="0s" value="establish" />
+    <Key time="3s" value="coffee" />
+    <Key time="4s" value="product" />
+    <Key time="5.5s" value="checkout" />
+    <Key time="14s" value="can_close" />
+    <Key time="23s" value="ceiling" />
+    <Key time="26.7s" value="checkout" />
+    <Key time="33s" value="escape" />
+    <Key time="36s" value="outside" />
+    <Key time="37.5s" value="loop" />
+    <Key time="45s" value="panic" />
+    <Key time="48s" value="product" />
+    <Key time="53s" value="establish" />
   </AnimationTarget>
-  <AnimationTarget node="s81_camera" property="position">
-    <Key time="0s" value="[10,3.2,17]" />
-    <Key time="5s" value="[8,2.7,14.8]" />
+  <AnimationTarget node="establish" property="position">
+    <Key time="0s" value="[10,3.4,17]" />
+    <Key time="3s" value="[8,3.1,14]" />
+    <Key time="53s" value="[8,3.1,14]" />
+    <Key time="55s" value="[10,3.4,17]" />
   </AnimationTarget>
-  <AnimationTarget node="s81_follow" property="position">
-    <Key time="5s" value="[0.5,1.85,9.4]" />
-    <Key time="10s" value="[0.5,1.7,6]" />
-    <Key time="13s" value="[0.1,1.65,4]" />
+  <AnimationTarget node="checkout" property="position">
+    <Key time="5.5s" value="[0.1,2.15,4.1]" />
+    <Key time="9s" value="[0.8,2,4]" />
+    <Key time="26.7s" value="[0.8,2,4]" />
+    <Key time="29s" value="[1.2,1.85,4]" />
   </AnimationTarget>
-  <AnimationTarget node="s81_follow" property="target">
-    <Key time="5s" value="[0,1.05,5.7]" />
-    <Key time="10s" value="[-0.8,1.05,3.2]" />
-    <Key time="13s" value="[-0.9,1.0,2.0]" />
+  <AnimationTarget node="paper_prop" property="position">
+    <Key time="5.5s" value="[4.2,1.55,2.72]" />
+    <Key time="8s" value="[4.2,1.55,3.12]" />
   </AnimationTarget>
-  <AnimationTarget node="s81_aisle" property="position">
-    <Key time="13s" value="[-0.9,1.6,5.5]" />
-    <Key time="19s" value="[-0.7,1.5,5.2]" />
+  <AnimationTarget node="can_prop" property="position">
+    <Key time="0s" value="[3.35,1.5,2.9]" />
+    <Key time="16.95s" value="[3.35,1.5,2.9]" />
+    <Key time="17s" value="[3.35,1.5,3.22]" />
+    <Key time="17.4s" value="[3.35,0.23,3.55]" />
+    <Key time="18s" value="[2.6,0.23,4]" />
+    <Key time="19s" value="[2.1,0.23,4.15]" />
   </AnimationTarget>
-  <AnimationTarget node="s81_window" property="position">
-    <Key time="19s" value="[-2.5,1.9,5.3]" />
-    <Key time="24s" value="[-2.1,1.8,5.2]" />
-  </AnimationTarget>
-  <AnimationTarget node="s81_return" property="position">
-    <Key time="24s" value="[5.8,2.5,12.5]" />
-    <Key time="30s" value="[9,3.1,17]" />
-  </AnimationTarget>
-  <AnimationTarget node="s81_chapter" property="value">
-    <Key time="0s" value="01 / WAIT FOR ME · A HOP THROUGH THE RAIN" />
-    <Key time="5s" value="02 / TOGETHER · WADDLE AND HOP INSIDE" />
-    <Key time="13s" value="03 / THANK YOU · A HOP AND A LITTLE BOW" />
-    <Key time="19s" value="04 / SHELTER · WATCHING THE RAIN TOGETHER" />
-    <Key time="24s" value="05 / STREET · LOOKING BACK" />
+  <AnimationTarget node="can_prop" property="rotationZ">
+    <Key time="16.95s" value="0" />
+    <Key time="17.4s" value="90" />
+    <Key time="19s" value="450" />
   </AnimationTarget>
   <AnimationTarget node="s81_penguin_actor" property="position">
-    <Key time="0s" value="[-0.4,0.1,6.1]" />
-    <Key time="0.25s" value="[-0.4,0.1,6.1]" />
-    <Key time="0.5s" value="[-0.4,0.1,6.1]" />
-    <Key time="0.75s" value="[-0.4,0.1,6.1]" />
-    <Key time="1s" value="[-0.4,0.1,6.1]" />
-    <Key time="1.25s" value="[-0.4,0.1,6.1]" />
-    <Key time="1.5s" value="[-0.4,0.1,6.1]" />
-    <Key time="1.75s" value="[-0.4,0.1,6.1]" />
-    <Key time="2s" value="[-0.4,0.1,6.1]" />
-    <Key time="2.25s" value="[-0.4,0.1,6.1]" />
-    <Key time="2.5s" value="[-0.4,0.1,6.1]" />
-    <Key time="2.75s" value="[-0.4,0.1,6.1]" />
-    <Key time="3s" value="[-0.4,0.1,6.1]" />
-    <Key time="3.25s" value="[-0.4,0.1,6.1]" />
-    <Key time="3.5s" value="[-0.4,0.1,6.1]" />
-    <Key time="3.75s" value="[-0.4,0.1,6.1]" />
-    <Key time="4s" value="[-0.4,0.1,6.1]" />
-    <Key time="4.25s" value="[-0.4,0.128,5.95]" />
-    <Key time="4.5s" value="[-0.4,0.1,5.8]" />
-    <Key time="4.75s" value="[-0.4,0.128,5.65]" />
-    <Key time="5s" value="[-0.4,0.1,5.5]" />
-    <Key time="5.25s" value="[-0.4,0.128,5.35]" />
-    <Key time="5.5s" value="[-0.4,0.1,5.2]" />
-    <Key time="5.75s" value="[-0.4,0.128,5.05]" />
-    <Key time="6s" value="[-0.4,0.1,4.9]" />
-    <Key time="6.25s" value="[-0.4,0.128,4.75]" />
-    <Key time="6.5s" value="[-0.4,0.1,4.6]" />
-    <Key time="6.75s" value="[-0.4,0.128,4.45]" />
-    <Key time="7s" value="[-0.4,0.1,4.3]" />
-    <Key time="7.25s" value="[-0.4,0.128,4.15]" />
-    <Key time="7.5s" value="[-0.4,0.1,4]" />
-    <Key time="7.75s" value="[-0.4,0.128,3.85]" />
-    <Key time="8s" value="[-0.4,0.1,3.7]" />
-    <Key time="8.25s" value="[-0.4625,0.128,3.61]" />
-    <Key time="8.5s" value="[-0.525,0.1,3.52]" />
-    <Key time="8.75s" value="[-0.5875,0.128,3.43]" />
-    <Key time="9s" value="[-0.65,0.1,3.34]" />
-    <Key time="9.25s" value="[-0.7125,0.128,3.25]" />
-    <Key time="9.5s" value="[-0.775,0.1,3.16]" />
-    <Key time="9.75s" value="[-0.8375,0.128,3.07]" />
-    <Key time="10s" value="[-0.9,0.1,2.98]" />
-    <Key time="10.25s" value="[-0.9625,0.128,2.89]" />
-    <Key time="10.5s" value="[-1.025,0.1,2.8]" />
-    <Key time="10.75s" value="[-1.0875,0.128,2.71]" />
-    <Key time="11s" value="[-1.15,0.1,2.62]" />
-    <Key time="11.25s" value="[-1.2125,0.128,2.53]" />
-    <Key time="11.5s" value="[-1.275,0.1,2.44]" />
-    <Key time="11.75s" value="[-1.3375,0.128,2.35]" />
-    <Key time="12s" value="[-1.4,0.1,2.26]" />
-    <Key time="12.25s" value="[-1.4625,0.128,2.17]" />
-    <Key time="12.5s" value="[-1.525,0.1,2.08]" />
-    <Key time="12.75s" value="[-1.5875,0.128,1.99]" />
-    <Key time="13s" value="[-1.65,0.1,1.9]" />
-    <Key time="13.25s" value="[-1.65,0.1,1.9]" />
-    <Key time="13.5s" value="[-1.65,0.1,1.9]" />
-    <Key time="13.75s" value="[-1.65,0.1,1.9]" />
-    <Key time="14s" value="[-1.65,0.1,1.9]" />
-    <Key time="14.25s" value="[-1.65,0.1,1.9]" />
-    <Key time="14.5s" value="[-1.65,0.1,1.9]" />
-    <Key time="14.75s" value="[-1.65,0.1,1.9]" />
-    <Key time="15s" value="[-1.65,0.1,1.9]" />
-    <Key time="15.25s" value="[-1.65,0.1,1.9]" />
-    <Key time="15.5s" value="[-1.65,0.1,1.9]" />
-    <Key time="15.75s" value="[-1.65,0.1,1.9]" />
-    <Key time="16s" value="[-1.65,0.1,1.9]" />
-    <Key time="16.25s" value="[-1.65,0.1,1.9]" />
-    <Key time="16.5s" value="[-1.65,0.1,1.9]" />
-    <Key time="16.75s" value="[-1.65,0.1,1.9]" />
-    <Key time="17s" value="[-1.65,0.1,1.9]" />
-    <Key time="17.25s" value="[-1.65,0.1,1.9]" />
-    <Key time="17.5s" value="[-1.65,0.1,1.9]" />
-    <Key time="17.75s" value="[-1.65,0.1,1.9]" />
-    <Key time="18s" value="[-1.65,0.1,1.9]" />
-    <Key time="18.25s" value="[-1.65,0.1,1.9]" />
-    <Key time="18.5s" value="[-1.65,0.1,1.9]" />
-    <Key time="18.75s" value="[-1.65,0.1,1.9]" />
-    <Key time="19s" value="[-1.65,0.1,1.9]" />
-    <Key time="19.25s" value="[-1.65,0.1,1.9]" />
-    <Key time="19.5s" value="[-1.65,0.1,1.9]" />
-    <Key time="19.75s" value="[-1.65,0.1,1.9]" />
-    <Key time="20s" value="[-1.65,0.1,1.9]" />
-    <Key time="20.25s" value="[-1.65,0.1,1.9]" />
-    <Key time="20.5s" value="[-1.65,0.1,1.9]" />
-    <Key time="20.75s" value="[-1.65,0.1,1.9]" />
-    <Key time="21s" value="[-1.65,0.1,1.9]" />
-    <Key time="21.25s" value="[-1.65,0.1,1.9]" />
-    <Key time="21.5s" value="[-1.65,0.1,1.9]" />
-    <Key time="21.75s" value="[-1.65,0.1,1.9]" />
-    <Key time="22s" value="[-1.65,0.1,1.9]" />
-    <Key time="22.25s" value="[-1.65,0.1,1.9]" />
-    <Key time="22.5s" value="[-1.65,0.1,1.9]" />
-    <Key time="22.75s" value="[-1.65,0.1,1.9]" />
-    <Key time="23s" value="[-1.65,0.1,1.9]" />
-    <Key time="23.25s" value="[-1.65,0.1,1.9]" />
-    <Key time="23.5s" value="[-1.65,0.1,1.9]" />
-    <Key time="23.75s" value="[-1.65,0.1,1.9]" />
-    <Key time="24s" value="[-1.65,0.1,1.9]" />
-    <Key time="24.25s" value="[-1.65,0.1,1.9]" />
-    <Key time="24.5s" value="[-1.65,0.1,1.9]" />
-    <Key time="24.75s" value="[-1.65,0.1,1.9]" />
-    <Key time="25s" value="[-1.65,0.1,1.9]" />
-    <Key time="25.25s" value="[-1.65,0.1,1.9]" />
-    <Key time="25.5s" value="[-1.65,0.1,1.9]" />
-    <Key time="25.75s" value="[-1.65,0.1,1.9]" />
-    <Key time="26s" value="[-1.65,0.1,1.9]" />
-    <Key time="26.25s" value="[-1.65,0.1,1.9]" />
-    <Key time="26.5s" value="[-1.65,0.1,1.9]" />
-    <Key time="26.75s" value="[-1.65,0.1,1.9]" />
-    <Key time="27s" value="[-1.65,0.1,1.9]" />
-    <Key time="27.25s" value="[-1.65,0.1,1.9]" />
-    <Key time="27.5s" value="[-1.65,0.1,1.9]" />
-    <Key time="27.75s" value="[-1.65,0.1,1.9]" />
-    <Key time="28s" value="[-1.65,0.1,1.9]" />
-    <Key time="28.25s" value="[-1.65,0.1,1.9]" />
-    <Key time="28.5s" value="[-1.65,0.1,1.9]" />
-    <Key time="28.75s" value="[-1.65,0.1,1.9]" />
-    <Key time="29s" value="[-1.65,0.1,1.9]" />
-    <Key time="29.25s" value="[-1.65,0.1,1.9]" />
-    <Key time="29.5s" value="[-1.65,0.1,1.9]" />
-    <Key time="29.75s" value="[-1.65,0.1,1.9]" />
-    <Key time="30s" value="[-1.65,0.1,1.9]" />
-  </AnimationTarget>
-  <AnimationTarget node="s81_penguin_actor" property="rotationZ">
-    <Key time="0s" value="0" />
-    <Key time="0.25s" value="0" />
-    <Key time="0.5s" value="0" />
-    <Key time="0.75s" value="0" />
-    <Key time="1s" value="0" />
-    <Key time="1.25s" value="0" />
-    <Key time="1.5s" value="0" />
-    <Key time="1.75s" value="0" />
-    <Key time="2s" value="0" />
-    <Key time="2.25s" value="0" />
-    <Key time="2.5s" value="0" />
-    <Key time="2.75s" value="0" />
-    <Key time="3s" value="0" />
-    <Key time="3.25s" value="0" />
-    <Key time="3.5s" value="0" />
-    <Key time="3.75s" value="0" />
-    <Key time="4s" value="0" />
-    <Key time="4.25s" value="4" />
-    <Key time="4.5s" value="0" />
-    <Key time="4.75s" value="-4" />
-    <Key time="5s" value="0" />
-    <Key time="5.25s" value="4" />
-    <Key time="5.5s" value="0" />
-    <Key time="5.75s" value="-4" />
-    <Key time="6s" value="0" />
-    <Key time="6.25s" value="4" />
-    <Key time="6.5s" value="0" />
-    <Key time="6.75s" value="-4" />
-    <Key time="7s" value="0" />
-    <Key time="7.25s" value="4" />
-    <Key time="7.5s" value="0" />
-    <Key time="7.75s" value="-4" />
-    <Key time="8s" value="0" />
-    <Key time="8.25s" value="4" />
-    <Key time="8.5s" value="0" />
-    <Key time="8.75s" value="-4" />
-    <Key time="9s" value="0" />
-    <Key time="9.25s" value="4" />
-    <Key time="9.5s" value="0" />
-    <Key time="9.75s" value="-4" />
-    <Key time="10s" value="0" />
-    <Key time="10.25s" value="4" />
-    <Key time="10.5s" value="0" />
-    <Key time="10.75s" value="-4" />
-    <Key time="11s" value="0" />
-    <Key time="11.25s" value="4" />
-    <Key time="11.5s" value="0" />
-    <Key time="11.75s" value="-4" />
-    <Key time="12s" value="0" />
-    <Key time="12.25s" value="4" />
-    <Key time="12.5s" value="0" />
-    <Key time="12.75s" value="-4" />
-    <Key time="13s" value="0" />
-    <Key time="13.25s" value="0" />
-    <Key time="13.5s" value="0" />
-    <Key time="13.75s" value="0" />
-    <Key time="14s" value="0" />
-    <Key time="14.25s" value="0" />
-    <Key time="14.5s" value="0" />
-    <Key time="14.75s" value="0" />
-    <Key time="15s" value="0" />
-    <Key time="15.25s" value="0" />
-    <Key time="15.5s" value="0" />
-    <Key time="15.75s" value="0" />
-    <Key time="16s" value="0" />
-    <Key time="16.25s" value="0" />
-    <Key time="16.5s" value="0" />
-    <Key time="16.75s" value="0" />
-    <Key time="17s" value="0" />
-    <Key time="17.25s" value="0" />
-    <Key time="17.5s" value="0" />
-    <Key time="17.75s" value="0" />
-    <Key time="18s" value="0" />
-    <Key time="18.25s" value="0" />
-    <Key time="18.5s" value="0" />
-    <Key time="18.75s" value="0" />
-    <Key time="19s" value="0" />
-    <Key time="19.25s" value="0" />
-    <Key time="19.5s" value="0" />
-    <Key time="19.75s" value="0" />
-    <Key time="20s" value="0" />
-    <Key time="20.25s" value="0" />
-    <Key time="20.5s" value="0" />
-    <Key time="20.75s" value="0" />
-    <Key time="21s" value="0" />
-    <Key time="21.25s" value="0" />
-    <Key time="21.5s" value="0" />
-    <Key time="21.75s" value="0" />
-    <Key time="22s" value="0" />
-    <Key time="22.25s" value="0" />
-    <Key time="22.5s" value="0" />
-    <Key time="22.75s" value="0" />
-    <Key time="23s" value="0" />
-    <Key time="23.25s" value="0" />
-    <Key time="23.5s" value="0" />
-    <Key time="23.75s" value="0" />
-    <Key time="24s" value="0" />
-    <Key time="24.25s" value="0" />
-    <Key time="24.5s" value="0" />
-    <Key time="24.75s" value="0" />
-    <Key time="25s" value="0" />
-    <Key time="25.25s" value="0" />
-    <Key time="25.5s" value="0" />
-    <Key time="25.75s" value="0" />
-    <Key time="26s" value="0" />
-    <Key time="26.25s" value="0" />
-    <Key time="26.5s" value="0" />
-    <Key time="26.75s" value="0" />
-    <Key time="27s" value="0" />
-    <Key time="27.25s" value="0" />
-    <Key time="27.5s" value="0" />
-    <Key time="27.75s" value="0" />
-    <Key time="28s" value="0" />
-    <Key time="28.25s" value="0" />
-    <Key time="28.5s" value="0" />
-    <Key time="28.75s" value="0" />
-    <Key time="29s" value="0" />
-    <Key time="29.25s" value="0" />
-    <Key time="29.5s" value="0" />
-    <Key time="29.75s" value="0" />
-    <Key time="30s" value="0" />
+    <Key time="0s" value="[3.15,0.1,1.5]" />
+    <Key time="32.9s" value="[3.15,0.1,1.5]" />
+    <Key time="33.5s" value="[1.3,0.1,2.2]" />
+    <Key time="34.3s" value="[-0.5,0.15,3.4]" />
+    <Key time="35.4s" value="[-0.5,0.1,5.1]" />
+    <Key time="36s" value="[-0.5,0.1,6.7]" />
+    <Key time="36.04s" value="[-0.5,-10,6.7]" />
+    <Key time="37.45s" value="[-0.8,-10,-2.5]" />
+    <Key time="37.5s" value="[-0.8,0.1,-2.5]" />
+    <Key time="39s" value="[-0.8,0.1,-0.9]" />
+    <Key time="45s" value="[-0.8,0.1,-0.9]" />
+    <Key time="47.95s" value="[-0.8,0.1,-1.5]" />
+    <Key time="48s" value="[-2.45,0.76,0.45]" />
+    <Key time="60s" value="[-2.45,0.76,0.45]" />
   </AnimationTarget>
   <AnimationTarget node="s81_frog_actor" property="position">
-    <Key time="0s" value="[1.4,0.126,6.2]" />
-    <Key time="1s" value="[1.4,0.126,6.2]" />
-    <Key time="1.4s" value="[0.9249999999999999,0.426,6.2]" />
-    <Key time="1.8s" value="[0.45,0.126,6.2]" />
-    <Key time="5s" value="[0.45,0.126,6.2]" />
-    <Key time="5.5s" value="[0.45,0.426,5.7]" />
-    <Key time="6s" value="[0.45,0.126,5.2]" />
-    <Key time="6.6s" value="[0.45,0.126,5.2]" />
-    <Key time="7.1s" value="[0.45,0.426,4.7]" />
-    <Key time="7.6s" value="[0.45,0.126,4.2]" />
-    <Key time="8.2s" value="[0.45,0.126,4.2]" />
-    <Key time="8.7s" value="[0.4,0.426,3.7]" />
-    <Key time="9.2s" value="[0.35,0.126,3.2]" />
-    <Key time="10s" value="[0.35,0.126,3.2]" />
-    <Key time="10.5s" value="[0.09999999999999999,0.426,2.675]" />
-    <Key time="11s" value="[-0.15,0.126,2.15]" />
-    <Key time="15s" value="[-0.15,0.126,2.15]" />
-    <Key time="15.325s" value="[-0.15,0.376,2.15]" />
-    <Key time="15.65s" value="[-0.15,0.126,2.15]" />
-    <Key time="30s" value="[-0.15,0.126,2.15]" />
+    <Key time="0s" value="[2.8,0.1,3.8]" />
+    <Key time="6s" value="[2.8,0.1,3.8]" />
+    <Key time="6.4s" value="[2.8,0.25,3.8]" />
+    <Key time="6.8s" value="[2.8,0.1,3.8]" />
+    <Key time="32.9s" value="[2.8,0.1,3.8]" />
+    <Key time="33.7s" value="[0.4,0.18,3.9]" />
+    <Key time="34.1s" value="[0.4,0.1,4.4]" />
+    <Key time="34.5s" value="[0.4,0.28,5]" />
+    <Key time="35s" value="[0.4,0.1,5.8]" />
+    <Key time="36s" value="[0.4,0.1,7.5]" />
+    <Key time="36.04s" value="[0.4,-10,7.5]" />
+    <Key time="37.45s" value="[0.5,-10,-2]" />
+    <Key time="37.5s" value="[0.5,0.1,-2]" />
+    <Key time="38.1s" value="[0.5,0.25,-1.3]" />
+    <Key time="39s" value="[0.5,0.1,-0.5]" />
+    <Key time="45s" value="[0.5,0.1,-0.5]" />
+    <Key time="47.95s" value="[0.5,0.1,-1.2]" />
+    <Key time="48s" value="[-1.5,0.76,0.45]" />
+    <Key time="60s" value="[-1.5,0.76,0.45]" />
   </AnimationTarget>
   <AnimationTarget node="s81_penguin_actor" property="rotationY">
-    <Key time="0s" value="90" />
-    <Key time="3s" value="90" />
-    <Key time="4s" value="180" />
-    <Key time="8s" value="180" />
-    <Key time="10s" value="215" />
-    <Key time="13s" value="215" />
-    <Key time="14s" value="90" />
-    <Key time="18s" value="90" />
-    <Key time="20s" value="0" />
-    <Key time="30s" value="0" />
+    <Key time="0s" value="0" />
+<Key time="32.8s" value="0" />
+<Key time="33.2s" value="-60" />
+    <Key time="34s" value="0" />
+<Key time="39s" value="0" />
+<Key time="40s" value="35" />
+<Key time="45s" value="0" />
   </AnimationTarget>
   <AnimationTarget node="s81_frog_actor" property="rotationY">
-    <Key time="0s" value="270" />
-    <Key time="3s" value="270" />
-    <Key time="4.8s" value="180" />
-    <Key time="9s" value="180" />
-    <Key time="10s" value="205" />
-    <Key time="11.5s" value="205" />
-    <Key time="13.5s" value="270" />
-    <Key time="18s" value="270" />
-    <Key time="20s" value="360" />
-    <Key time="30s" value="360" />
+    <Key time="0s" value="180" />
+<Key time="32.8s" value="180" />
+<Key time="33.3s" value="0" />
+    <Key time="39s" value="0" />
+<Key time="40s" value="-45" />
+<Key time="45s" value="0" />
   </AnimationTarget>
   <AnimationTarget node="s81_penguin_actor" property="rotationX">
-    <Key time="0s" value="0" />
-    <Key time="15s" value="0" />
-    <Key time="15.5s" value="12" />
-    <Key time="16.2s" value="0" />
-    <Key time="30s" value="0" />
+    <Key time="14s" value="0" />
+<Key time="17.5s" value="15" />
+<Key time="19s" value="0" />
+    <Key time="24s" value="-13" />
+<Key time="26.7s" value="0" />
+  </AnimationTarget>
+  <AnimationTarget node="s81_frog_actor" property="rotationX">
+    <Key time="14s" value="0" />
+<Key time="17.5s" value="15" />
+<Key time="19s" value="0" />
+    <Key time="24s" value="-13" />
+<Key time="26.7s" value="0" />
+  </AnimationTarget>
+  <AnimationTarget node="s81_penguin_actor" property="scale">
+    <Key time="0s" value="0.75" />
+<Key time="47.95s" value="0.75" />
+<Key time="48s" value="0.25" />
+  </AnimationTarget>
+  <AnimationTarget node="s81_frog_actor" property="scale">
+    <Key time="0s" value="0.6" />
+<Key time="47.95s" value="0.6" />
+<Key time="48s" value="0.27" />
+  </AnimationTarget>
+  <AnimationTarget node="clock_drop" property="value">
+    <Key time="14s" value="00:14" />
+<Key time="15s" value="00:15" />
+<Key time="16s" value="00:16" />
+<Key time="17s" value="00:17" />
+<Key time="18s" value="00:18" />
+  </AnimationTarget>
+  <AnimationTarget node="clock_dark" property="value">
+    <Key time="24s" value="00:24" />
+<Key time="25s" value="00:25" />
+<Key time="26s" value="00:26" />
+<Key time="27s" value="00:27" />
+  </AnimationTarget>
+  <AnimationTarget node="clock_end" property="value">
+    <Key time="45s" value="00:45" />
+<Key time="46s" value="00:46" />
+<Key time="47s" value="00:47" />
   </AnimationTarget>
   <Present from="s81_scene" />
 </Graph>

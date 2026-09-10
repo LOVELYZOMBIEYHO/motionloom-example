@@ -1,0 +1,2976 @@
+{
+  "schemaVersion": "1.0",
+  "engineVersion": "0.1.0",
+  "rootTag": "Graph",
+  "tags": [
+    {
+      "tag": "AnimationTarget",
+      "occurrences": 3,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "node",
+          "occurrences": 3,
+          "examples": [
+            "\"S86AnimeHead\"",
+            "\"camera\"",
+            "\"s86_style_label\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "property",
+          "occurrences": 3,
+          "examples": [
+            "\"position\"",
+            "\"renderStyle\"",
+            "\"value\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "Assets",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": []
+    },
+    {
+      "tag": "Background",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "color",
+          "occurrences": 1,
+          "examples": [
+            "\"#EBE8E5\""
+          ],
+          "recognized": true,
+          "valueType": "color",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Camera3D",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "fov",
+          "occurrences": 1,
+          "examples": [
+            "\"7.8\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"camera\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "position",
+          "occurrences": 1,
+          "examples": [
+            "{[0.00000,-0.20,17.50000]}"
+          ],
+          "recognized": true,
+          "valueType": "vector3",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "target",
+          "occurrences": 1,
+          "examples": [
+            "{[0,-.22,0]}"
+          ],
+          "recognized": true,
+          "valueType": "vector3",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "CompositeGroup",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "depth",
+          "occurrences": 1,
+          "examples": [
+            "\"true\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"head_stage\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "space",
+          "occurrences": 1,
+          "examples": [
+            "\"3d\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "DirectionalLight",
+      "occurrences": 2,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "color",
+          "occurrences": 2,
+          "examples": [
+            "\"#DFE5FF\"",
+            "\"#FFF2E8\""
+          ],
+          "recognized": true,
+          "valueType": "color",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "direction",
+          "occurrences": 2,
+          "examples": [
+            "{[-.3,-.5,-1]}",
+            "{[.6,.1,.8]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "intensity",
+          "occurrences": 2,
+          "examples": [
+            "\"0.7\"",
+            "\"1.8\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Eye",
+      "occurrences": 2,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 2,
+          "examples": [
+            "\"eye_a\"",
+            "\"eye_b\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "opening",
+          "occurrences": 2,
+          "examples": [
+            "\"0.210\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "position",
+          "occurrences": 2,
+          "examples": [
+            "{[-0.316,-0.149,-0.018]}",
+            "{[0.316,-0.149,-0.018]}"
+          ],
+          "recognized": true,
+          "valueType": "vector3",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "socketDepth",
+          "occurrences": 2,
+          "examples": [
+            "\"0.045\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "socketHeight",
+          "occurrences": 2,
+          "examples": [
+            "\"0.510\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "socketWidth",
+          "occurrences": 2,
+          "examples": [
+            "\"0.550\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "tilt",
+          "occurrences": 2,
+          "examples": [
+            "\"-4\"",
+            "\"4\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "width",
+          "occurrences": 2,
+          "examples": [
+            "\"0.350\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Eyebrow",
+      "occurrences": 2,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "arch",
+          "occurrences": 2,
+          "examples": [
+            "\"0.035\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 2,
+          "examples": [
+            "\"brow_a\"",
+            "\"brow_b\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "position",
+          "occurrences": 2,
+          "examples": [
+            "{[-0.316,0.080,0]}",
+            "{[0.316,0.080,0]}"
+          ],
+          "recognized": true,
+          "valueType": "vector3",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "thickness",
+          "occurrences": 2,
+          "examples": [
+            "\"0.018\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "tilt",
+          "occurrences": 2,
+          "examples": [
+            "\"-5\"",
+            "\"5\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "width",
+          "occurrences": 2,
+          "examples": [
+            "\"0.300\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Eyeliner",
+      "occurrences": 4,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "edge",
+          "occurrences": 4,
+          "examples": [
+            "\"lower\"",
+            "\"upper\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "extension",
+          "occurrences": 4,
+          "examples": [
+            "{[0,0.028]}",
+            "{[0,0]}",
+            "{[0.028,0]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 4,
+          "examples": [
+            "\"liner_a_lower\"",
+            "\"liner_a_upper\"",
+            "\"liner_b_lower\"",
+            "\"liner_b_upper\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "span",
+          "occurrences": 4,
+          "examples": [
+            "{[0,1]}",
+            "{[0.12,0.88]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "taper",
+          "occurrences": 4,
+          "examples": [
+            "{[0.10,0.50]}",
+            "{[0.20,0.85]}",
+            "{[0.50,0.10]}",
+            "{[0.85,0.20]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "thickness",
+          "occurrences": 4,
+          "examples": [
+            "\"0.003\"",
+            "\"0.014\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "tipLift",
+          "occurrences": 4,
+          "examples": [
+            "{[0,0.012]}",
+            "{[0,0]}",
+            "{[0.012,0]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "FaceLayout",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": []
+    },
+    {
+      "tag": "FacialCage",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "generatorVersion",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "mouthRings",
+          "occurrences": 1,
+          "examples": [
+            "\"8\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "orbitalRings",
+          "occurrences": 1,
+          "examples": [
+            "\"10\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "preserveProfile",
+          "occurrences": 1,
+          "examples": [
+            "\"true\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "profileSegments",
+          "occurrences": 1,
+          "examples": [
+            "\"96\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "samplesPerSection",
+          "occurrences": 1,
+          "examples": [
+            "\"6\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "segments",
+          "occurrences": 1,
+          "examples": [
+            "\"192\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "subdivision",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "uvMode",
+          "occurrences": 1,
+          "examples": [
+            "\"frontBack\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "Graph",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "fps",
+        "duration",
+        "size"
+      ],
+      "attributes": [
+        {
+          "name": "duration",
+          "occurrences": 1,
+          "examples": [
+            "\"20s\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "fps",
+          "occurrences": 1,
+          "examples": [
+            "{30}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "size",
+          "occurrences": 1,
+          "examples": [
+            "{[900,1000]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "HairAsset",
+      "occurrences": 5,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "id",
+        "material"
+      ],
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 5,
+          "examples": [
+            "\"bob_crown\"",
+            "\"bob_flyaways\"",
+            "\"bob_fringe\"",
+            "\"bob_temples\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "material",
+          "occurrences": 5,
+          "examples": [
+            "\"s86_hair\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "space",
+          "occurrences": 5,
+          "examples": [
+            "\"asset_local\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "HairCards",
+      "occurrences": 5,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "id"
+      ],
+      "attributes": [
+        {
+          "name": "crossSection",
+          "occurrences": 5,
+          "examples": [
+            "\"arched\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 5,
+          "examples": [
+            "\"cards\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "lengthSegments",
+          "occurrences": 5,
+          "examples": [
+            "\"48\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "thickness",
+          "occurrences": 5,
+          "examples": [
+            "\"0.022\"",
+            "\"0.045\"",
+            "\"0.06\"",
+            "\"0.065\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "tipShape",
+          "occurrences": 5,
+          "examples": [
+            "\"point\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "widthSegments",
+          "occurrences": 5,
+          "examples": [
+            "\"12\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "HairDefaults",
+      "occurrences": 5,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "camber",
+          "occurrences": 5,
+          "examples": [
+            "\"0.2\"",
+            "\"0.22\"",
+            "\"0.23\"",
+            "\"0.24\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "roll",
+          "occurrences": 5,
+          "examples": [
+            "\"0\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "width",
+          "occurrences": 5,
+          "examples": [
+            "\"0.25\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "HairGroom",
+      "occurrences": 5,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": []
+    },
+    {
+      "tag": "HairGroup",
+      "occurrences": 5,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "id"
+      ],
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 5,
+          "examples": [
+            "\"locks\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "role",
+          "occurrences": 5,
+          "examples": [
+            "\"silhouette\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "HairGuide",
+      "occurrences": 46,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "id"
+      ],
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 46,
+          "examples": [
+            "\"crown_0\"",
+            "\"crown_1\"",
+            "\"crown_10\"",
+            "\"crown_11\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "normal",
+          "occurrences": 46,
+          "examples": [
+            "{[-0.06493,1,-0.29289]}",
+            "{[-0.12679,1,-0.27189]}",
+            "{[-0.18263,1,-0.23801]}",
+            "{[-0.22981,1,-0.19284]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "HairMirror",
+      "occurrences": 3,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "id",
+        "source",
+        "axis"
+      ],
+      "attributes": [
+        {
+          "name": "axis",
+          "occurrences": 3,
+          "examples": [
+            "\"x\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 3,
+          "examples": [
+            "\"temple_right_0\"",
+            "\"temple_right_1\"",
+            "\"temple_right_2\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "source",
+          "occurrences": 3,
+          "examples": [
+            "\"temple_left_0\"",
+            "\"temple_left_1\"",
+            "\"temple_left_2\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "HairPoint",
+      "occurrences": 273,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "position"
+      ],
+      "attributes": [
+        {
+          "name": "position",
+          "occurrences": 273,
+          "examples": [
+            "{[-0.007,0.57,0.78]}",
+            "{[-0.01948,1.075,-0.15787]}",
+            "{[-0.0248,1.055,0.03]}",
+            "{[-0.0338,1.055,0.03]}"
+          ],
+          "recognized": true,
+          "valueType": "vector3",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "width",
+          "occurrences": 273,
+          "examples": [
+            "\"0.004\"",
+            "\"0.005\"",
+            "\"0.014\"",
+            "\"0.018\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "HairRepresentations",
+      "occurrences": 5,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": []
+    },
+    {
+      "tag": "HeadAsset",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "id",
+        "material",
+        "archetype"
+      ],
+      "attributes": [
+        {
+          "name": "archetype",
+          "occurrences": 1,
+          "examples": [
+            "\"humanoid\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"s86_head\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "material",
+          "occurrences": 1,
+          "examples": [
+            "\"s86_skin\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "symmetry",
+          "occurrences": 1,
+          "examples": [
+            "\"x\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "topology",
+          "occurrences": 1,
+          "examples": [
+            "\"facialCage\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "variant",
+          "occurrences": 1,
+          "examples": [
+            "\"anime\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "HeadDome",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "start",
+        "top",
+        "centerDepth",
+        "frontRadius",
+        "backRadius"
+      ],
+      "attributes": [
+        {
+          "name": "backRadius",
+          "occurrences": 1,
+          "examples": [
+            "\"0.80\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "centerDepth",
+          "occurrences": 1,
+          "examples": [
+            "\"-0.07\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "frontRadius",
+          "occurrences": 1,
+          "examples": [
+            "\"0.80\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "samples",
+          "occurrences": 1,
+          "examples": [
+            "\"80\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "start",
+          "occurrences": 1,
+          "examples": [
+            "\"0.200\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "top",
+          "occurrences": 1,
+          "examples": [
+            "\"1.0\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "HeadMorph",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "faceHeight",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "faceWidth",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "featureScale",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "headDepth",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "headHeight",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "headWidth",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "jawWidth",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "muzzleLength",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "HeadProfile",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": []
+    },
+    {
+      "tag": "HeadSection",
+      "occurrences": 9,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "id",
+        "at",
+        "width",
+        "frontDepth",
+        "backDepth"
+      ],
+      "attributes": [
+        {
+          "name": "at",
+          "occurrences": 9,
+          "examples": [
+            "\"-0.050\"",
+            "\"-0.263\"",
+            "\"-0.438\"",
+            "\"-0.596\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "backDepth",
+          "occurrences": 9,
+          "examples": [
+            "\"-0.434\"",
+            "\"-0.454\"",
+            "\"-0.466\"",
+            "\"-0.538\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "frontDepth",
+          "occurrences": 9,
+          "examples": [
+            "\"0.462\"",
+            "\"0.500\"",
+            "\"0.537\"",
+            "\"0.609\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 9,
+          "examples": [
+            "\"cheek_transition\"",
+            "\"cheekbone\"",
+            "\"chin_point\"",
+            "\"chin_side\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "width",
+          "occurrences": 9,
+          "examples": [
+            "\"0.018\"",
+            "\"0.217\"",
+            "\"0.491\"",
+            "\"0.810\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "HeadShape",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "size"
+      ],
+      "attributes": [
+        {
+          "name": "cheekWidth",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "chinLength",
+          "occurrences": 1,
+          "examples": [
+            "\"0\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "chinRoundness",
+          "occurrences": 1,
+          "examples": [
+            "\"0.6\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "forehead",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "jawWidth",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "size",
+          "occurrences": 1,
+          "examples": [
+            "{[1.50,1.833,1.67]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "ImageAsset",
+      "occurrences": 11,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "colorSpace",
+          "occurrences": 9,
+          "examples": [
+            "\"srgb\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 11,
+          "examples": [
+            "\"s86_brow_left\"",
+            "\"s86_brow_right\"",
+            "\"s86_eye_left\"",
+            "\"s86_eye_right\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "src",
+          "occurrences": 11,
+          "examples": [
+            "\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAX…",
+            "\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALgAAAEACAYAAAAA3bxrAACAAElEQVR42qz9d5AlR5ofCP7cQzydmS91ZZauAlBAQQPdALrR…",
+            "\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANwAAAEACAYAAADY0RhhAACAAElEQVR42uz9aZBsSZYehn1+l9gjcl/f/l7t1VW9T8/SmJ4h…",
+            "\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAEACAMAAAAa+/QWAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAX…"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "Iris",
+      "occurrences": 2,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 2,
+          "examples": [
+            "\"iris_a\"",
+            "\"iris_b\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "position",
+          "occurrences": 2,
+          "examples": [
+            "{[0,0,0]}"
+          ],
+          "recognized": true,
+          "valueType": "vector3",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "pupilRadius",
+          "occurrences": 2,
+          "examples": [
+            "\"0.032\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "radius",
+          "occurrences": 2,
+          "examples": [
+            "\"0.082\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "scale",
+          "occurrences": 2,
+          "examples": [
+            "{[0.78,1]}"
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "shape",
+          "occurrences": 2,
+          "examples": [
+            "\"ellipse\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "Key",
+      "occurrences": 93,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "time",
+          "occurrences": 93,
+          "examples": [
+            "\"0s\"",
+            "\"10.00000s\"",
+            "\"10.22222s\"",
+            "\"10.44444s\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "value",
+          "occurrences": 93,
+          "examples": [
+            "\"01 · SOFT PORTRAIT\"",
+            "\"02 · SOFT STUDIO\"",
+            "\"03 · ANIME 4-STEP\"",
+            "\"04 · TOON 3-STEP\""
+          ],
+          "recognized": true,
+          "valueType": "discrete",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Layer",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "open",
+      "attributes": []
+    },
+    {
+      "tag": "LightingStyle",
+      "occurrences": 10,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "ambientColor",
+          "occurrences": 10,
+          "examples": [
+            "\"#3D4659\"",
+            "\"#7798D8\"",
+            "\"#D8DCE2\"",
+            "\"#E8DDEA\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "ambientIntensity",
+          "occurrences": 10,
+          "examples": [
+            "\"0.22\"",
+            "\"0.38\"",
+            "\"0.55\"",
+            "\"0.62\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "shadowStyle",
+          "occurrences": 3,
+          "examples": [
+            "\"hard\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "Loft",
+      "occurrences": 4,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "capEnd",
+          "occurrences": 4,
+          "examples": [
+            "\"true\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "capStart",
+          "occurrences": 4,
+          "examples": [
+            "\"true\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "closed",
+          "occurrences": 4,
+          "examples": [
+            "\"true\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "segments",
+          "occurrences": 4,
+          "examples": [
+            "\"48\"",
+            "\"80\"",
+            "\"96\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "MaterialAsset",
+      "occurrences": 7,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "id"
+      ],
+      "attributes": [
+        {
+          "name": "baseColor",
+          "occurrences": 7,
+          "examples": [
+            "\"#6F7477\"",
+            "\"#85898C\"",
+            "\"#ADB0B2\"",
+            "\"#B7B9BA\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "baseColorTexture",
+          "occurrences": 3,
+          "examples": [
+            "\"s86_hair_base\"",
+            "\"s86_skin_base\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "doubleSided",
+          "occurrences": 1,
+          "examples": [
+            "\"true\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "emissive",
+          "occurrences": 5,
+          "examples": [
+            "\"#6F7477\"",
+            "\"#85898C\"",
+            "\"#ADB0B2\"",
+            "\"#B7B9BA\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "emissiveStrength",
+          "occurrences": 5,
+          "examples": [
+            "\"0.005\"",
+            "\"0.01\"",
+            "\"0.018\"",
+            "\"0.025\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 7,
+          "examples": [
+            "\"clay\"",
+            "\"clay_cavity\"",
+            "\"clay_ear_recess\"",
+            "\"clay_shadow\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "mapping",
+          "occurrences": 3,
+          "examples": [
+            "\"uv\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "metallic",
+          "occurrences": 3,
+          "examples": [
+            "\"0\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "roughness",
+          "occurrences": 7,
+          "examples": [
+            "\"0.72\"",
+            "\"0.9\"",
+            "\"0.94\"",
+            "\"0.96\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "shading",
+          "occurrences": 7,
+          "examples": [
+            "\"pbr\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "specular",
+          "occurrences": 7,
+          "examples": [
+            "\"0.02\"",
+            "\"0.03\"",
+            "\"0.04\"",
+            "\"0.05\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "textureScale",
+          "occurrences": 3,
+          "examples": [
+            "{[1,1]}"
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "MaterialBinding",
+      "occurrences": 6,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "material",
+          "occurrences": 6,
+          "examples": [
+            "\"*\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "outlineWidth",
+          "occurrences": 6,
+          "examples": [
+            "\"0\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "Model",
+      "occurrences": 18,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "asset",
+          "occurrences": 18,
+          "examples": [
+            "\"bob_cap\"",
+            "\"bob_crown\"",
+            "\"bob_flyaways\"",
+            "\"bob_fringe\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 18,
+          "examples": [
+            "\"bob_cap_model\"",
+            "\"bob_crown_model\"",
+            "\"bob_flyaways_model\"",
+            "\"bob_fringe_model\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "position",
+          "occurrences": 12,
+          "examples": [
+            "{[-0.610,-0.255,-0.285]}",
+            "{[-0.661,-0.255,-0.274]}",
+            "{[-0.664,-0.280,-0.220]}",
+            "{[0,0,0]}"
+          ],
+          "recognized": true,
+          "valueType": "vector3",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "rotation",
+          "occurrences": 12,
+          "examples": [
+            "{[0,0,0]}"
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Mouth",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"mouth\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "lowerLip",
+          "occurrences": 1,
+          "examples": [
+            "\"0.03\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "muzzleLength",
+          "occurrences": 1,
+          "examples": [
+            "\"0\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "muzzleWidth",
+          "occurrences": 1,
+          "examples": [
+            "\"0.3\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "opening",
+          "occurrences": 1,
+          "examples": [
+            "\"0.014\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "position",
+          "occurrences": 1,
+          "examples": [
+            "{[0,-0.561,0]}"
+          ],
+          "recognized": true,
+          "valueType": "vector3",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "upperLip",
+          "occurrences": 1,
+          "examples": [
+            "\"0.025\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "width",
+          "occurrences": 1,
+          "examples": [
+            "\"0.086\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Nose",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"nose\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "length",
+          "occurrences": 1,
+          "examples": [
+            "\"0.180\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "position",
+          "occurrences": 1,
+          "examples": [
+            "{[0,-0.363,0]}"
+          ],
+          "recognized": true,
+          "valueType": "vector3",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "projection",
+          "occurrences": 1,
+          "examples": [
+            "\"0.060\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "width",
+          "occurrences": 1,
+          "examples": [
+            "\"0.100\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "OutlineStyle",
+      "occurrences": 3,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "color",
+          "occurrences": 3,
+          "examples": [
+            "\"#17141D\"",
+            "\"#211E28\"",
+            "\"#29222F\""
+          ],
+          "recognized": true,
+          "valueType": "color",
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "distanceMode",
+          "occurrences": 3,
+          "examples": [
+            "\"screen\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "enabled",
+          "occurrences": 3,
+          "examples": [
+            "\"true\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "method",
+          "occurrences": 3,
+          "examples": [
+            "\"geometry\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "width",
+          "occurrences": 3,
+          "examples": [
+            "\"0.7\"",
+            "\"1\"",
+            "\"1.35\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "PathPoint",
+      "occurrences": 20,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "position"
+      ],
+      "attributes": [
+        {
+          "name": "position",
+          "occurrences": 20,
+          "examples": [
+            "{[-0.652000,-0.116000,-0.261000]}",
+            "{[-0.660000,-0.128000,-0.232000]}",
+            "{[-0.660000,-0.390000,-0.253000]}",
+            "{[-0.668000,-0.160000,-0.294000]}"
+          ],
+          "recognized": true,
+          "valueType": "vector3",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "roll",
+          "occurrences": 20,
+          "examples": [
+            "\"89\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "PostStyle",
+      "occurrences": 10,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "contrast",
+          "occurrences": 10,
+          "examples": [
+            "\"0.72\"",
+            "\"0.88\"",
+            "\"1\"",
+            "\"1.02\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "exposure",
+          "occurrences": 10,
+          "examples": [
+            "\"0.48\"",
+            "\"0.72\"",
+            "\"0.82\"",
+            "\"0.9\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "saturation",
+          "occurrences": 10,
+          "examples": [
+            "\"0\"",
+            "\"0.42\"",
+            "\"0.72\"",
+            "\"0.82\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "toneMapping",
+          "occurrences": 10,
+          "examples": [
+            "\"aces\"",
+            "\"reinhard\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "whiteBalance",
+          "occurrences": 2,
+          "examples": [
+            "\"3200\"",
+            "\"8500\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "Present",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "from",
+          "occurrences": 1,
+          "examples": [
+            "\"S86AnimeHead\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "PrimitiveAsset",
+      "occurrences": 12,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "id",
+        "shape"
+      ],
+      "discriminator": "shape",
+      "variants": {
+        "box": {
+          "required": [
+            "id",
+            "shape",
+            "size"
+          ],
+          "optional": [
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
+        "capsule": {
+          "required": [
+            "id",
+            "shape",
+            "radius",
+            "height"
+          ],
+          "optional": [
+            "segments",
+            "rings",
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
+        "cone": {
+          "required": [
+            "id",
+            "shape",
+            "radius",
+            "height"
+          ],
+          "optional": [
+            "segments",
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
+        "cylinder": {
+          "required": [
+            "id",
+            "shape",
+            "radius",
+            "height"
+          ],
+          "optional": [
+            "segments",
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
+        "ellipsoid": {
+          "required": [
+            "id",
+            "shape",
+            "radii"
+          ],
+          "optional": [
+            "segments",
+            "rings",
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
+        "frustum": {
+          "required": [
+            "id",
+            "shape",
+            "topSize",
+            "bottomSize",
+            "height"
+          ],
+          "optional": [
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
+        "plane": {
+          "required": [
+            "id",
+            "shape",
+            "size"
+          ],
+          "optional": [
+            "segments",
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
+        "roundedBox": {
+          "required": [
+            "id",
+            "shape",
+            "size",
+            "radius"
+          ],
+          "optional": [
+            "segments",
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
+        "sphere": {
+          "required": [
+            "id",
+            "shape",
+            "radius"
+          ],
+          "optional": [
+            "segments",
+            "rings",
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
+        "wedge": {
+          "required": [
+            "id",
+            "shape",
+            "size"
+          ],
+          "optional": [
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        }
+      },
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 12,
+          "examples": [
+            "\"bob_cap\"",
+            "\"clay_antihelix_l\"",
+            "\"clay_antihelix_r\"",
+            "\"clay_concha_l\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "material",
+          "occurrences": 12,
+          "examples": [
+            "\"s86_hair\"",
+            "\"s86_skin\"",
+            "\"s86_skin_recess\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "radii",
+          "occurrences": 4,
+          "examples": [
+            "{[0.006,0.046,0.028]}",
+            "{[0.009,0.024,0.013]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "rings",
+          "occurrences": 4,
+          "examples": [
+            "\"24\"",
+            "\"32\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "segments",
+          "occurrences": 4,
+          "examples": [
+            "\"40\"",
+            "\"48\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "shape",
+          "occurrences": 12,
+          "examples": [
+            "\"ellipsoid\"",
+            "\"loft\"",
+            "\"ribbon\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "Rect",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "color",
+          "occurrences": 1,
+          "examples": [
+            "\"#17141D\""
+          ],
+          "recognized": true,
+          "valueType": "color",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "height",
+          "occurrences": 1,
+          "examples": [
+            "\"48\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "opacity",
+          "occurrences": 1,
+          "examples": [
+            "\"0.78\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "radius",
+          "occurrences": 1,
+          "examples": [
+            "\"12\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "width",
+          "occurrences": 1,
+          "examples": [
+            "\"300\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "x",
+          "occurrences": 1,
+          "examples": [
+            "\"24\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "y",
+          "occurrences": 1,
+          "examples": [
+            "\"24\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "RenderStyle",
+      "occurrences": 10,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "id"
+      ],
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 10,
+          "examples": [
+            "\"anime_four_step\"",
+            "\"cool_moon\"",
+            "\"graphic_two_step\"",
+            "\"horror_low_key\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "Ribbon",
+      "occurrences": 4,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "width"
+      ],
+      "attributes": [
+        {
+          "name": "capEnd",
+          "occurrences": 4,
+          "examples": [
+            "\"true\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "capStart",
+          "occurrences": 4,
+          "examples": [
+            "\"true\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "facing",
+          "occurrences": 4,
+          "examples": [
+            "\"stable\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "thickness",
+          "occurrences": 4,
+          "examples": [
+            "\"0.0007\"",
+            "\"0.001\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "width",
+          "occurrences": 4,
+          "examples": [
+            "\"0.011\"",
+            "\"0.012\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Scene",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"S86AnimeHead\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "renderStyle",
+          "occurrences": 1,
+          "examples": [
+            "\"portrait\""
+          ],
+          "recognized": true,
+          "valueType": "discrete",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Section",
+      "occurrences": 74,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "at",
+        "width",
+        "depth"
+      ],
+      "attributes": [
+        {
+          "name": "at",
+          "occurrences": 74,
+          "examples": [
+            "\"-0.075\"",
+            "\"-0.130\"",
+            "\"-0.150\"",
+            "\"-0.450000\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "depth",
+          "occurrences": 74,
+          "examples": [
+            "\"0.00733\"",
+            "\"0.046\"",
+            "\"0.076\"",
+            "\"0.078\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "offset",
+          "occurrences": 74,
+          "examples": [
+            "{[0,-0.002]}",
+            "{[0,-0.006]}",
+            "{[0,-0.012]}",
+            "{[0,-0.07]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "profile",
+          "occurrences": 74,
+          "examples": [
+            "\"ellipse\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "width",
+          "occurrences": 74,
+          "examples": [
+            "\"0.00716\"",
+            "\"0.046\"",
+            "\"0.048\"",
+            "\"0.074\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Sequence",
+      "occurrences": 2,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "duration",
+          "occurrences": 2,
+          "examples": [
+            "\"20s\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "SurfaceStyle",
+      "occurrences": 10,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "diffuseWrap",
+          "occurrences": 8,
+          "examples": [
+            "\"0\"",
+            "\"0.02\"",
+            "\"0.05\"",
+            "\"0.08\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "rimLight",
+          "occurrences": 5,
+          "examples": [
+            "\"0\"",
+            "\"0.08\"",
+            "\"0.18\"",
+            "\"0.3\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "rimPower",
+          "occurrences": 3,
+          "examples": [
+            "\"2\"",
+            "\"2.4\"",
+            "\"3\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "roughnessBias",
+          "occurrences": 7,
+          "examples": [
+            "\"0.08\"",
+            "\"0.12\"",
+            "\"0.16\"",
+            "\"0.22\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "shading",
+          "occurrences": 10,
+          "examples": [
+            "\"clay\"",
+            "\"physical\"",
+            "\"stylized\"",
+            "\"toon\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "shadingSteps",
+          "occurrences": 3,
+          "examples": [
+            "\"2\"",
+            "\"3\"",
+            "\"4\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "specular",
+          "occurrences": 10,
+          "examples": [
+            "\"0\"",
+            "\"0.02\"",
+            "\"0.03\"",
+            "\"0.04\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "Text",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "color",
+          "occurrences": 1,
+          "examples": [
+            "\"#F5EFF8\""
+          ],
+          "recognized": true,
+          "valueType": "color",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "fontSize",
+          "occurrences": 1,
+          "examples": [
+            "\"18\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"s86_style_label\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "value",
+          "occurrences": 1,
+          "examples": [
+            "\"01 · SOFT PORTRAIT\""
+          ],
+          "recognized": true,
+          "valueType": "discrete",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "x",
+          "occurrences": 1,
+          "examples": [
+            "\"44\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "y",
+          "occurrences": 1,
+          "examples": [
+            "\"35\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Texture",
+      "occurrences": 8,
+      "recognized": true,
+      "validationCoverage": "open",
+      "attributes": [
+        {
+          "name": "asset",
+          "occurrences": 8,
+          "examples": [
+            "\"s86_brow_left\"",
+            "\"s86_brow_right\"",
+            "\"s86_iris_v3\"",
+            "\"s86_liner\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "offset",
+          "occurrences": 6,
+          "examples": [
+            "{[0,0]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "rotation",
+          "occurrences": 6,
+          "examples": [
+            "\"0\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "scale",
+          "occurrences": 6,
+          "examples": [
+            "{[-1,1]}",
+            "{[1,1.2]}",
+            "{[1,1]}"
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Timeline",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": []
+    },
+    {
+      "tag": "Track",
+      "occurrences": 2,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 2,
+          "examples": [
+            "\"portrait\"",
+            "\"style_readout\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "space",
+          "occurrences": 1,
+          "examples": [
+            "\"3d\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "z",
+          "occurrences": 1,
+          "examples": [
+            "\"100\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    }
+  ],
+  "animationProperties": [
+    "position",
+    "renderStyle",
+    "value"
+  ],
+  "assetKinds": [
+    "image",
+    "material",
+    "primitive"
+  ]
+}

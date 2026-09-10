@@ -3,3 +3,4 @@
 | ID | Type | Domain | Title | Features | Teaches |
 |---|---|---|---|---|---|
 | [s-000034](../../showcase/s-000034/) | showcase | scene | Dual Eye Gaze Blink | scene, character, eyes, gaze-animation, blink-animation | Reuse a detailed eye component to build a mirrored two-eye character shot.<br>Animate coordinated gaze shifts with iris movement, squash, and subtle deformation. |
+| [s-000079](../../showcase/s-000079/) | showcase | scene | Ten Procedural Creatures | scene, assets, true-3d, procedural, character | Build ten distinct stylized creatures from reusable primitive and compound assets.<br>Share eyes, materials, stage elements and lighting while varying each creature's silhouette. |

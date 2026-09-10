@@ -1,0 +1,155 @@
+<!-- S84 / CEL SHADING / native and browser comparison. -->
+<Graph fps="30" duration="20s" size={[1980,1080]}>
+  <Background color="#B9C6D4" />
+  <RenderStyle id="cel_shaded">
+    <SurfaceStyle shading="cel" shadingSteps="3" shadowColor="#75658F" specular="0.05" />
+    <OutlineStyle enabled="true" color="#000000" width="2" method="geometry" distanceMode="screen" />
+  </RenderStyle>
+  <RenderStyle id="toon">
+    <SurfaceStyle shading="toon" />
+  </RenderStyle>
+  <RenderStyle id="physical">
+    <SurfaceStyle shading="physical" />
+  </RenderStyle>
+  <RenderStyle id="cel_no_outline">
+    <SurfaceStyle shading="cel" shadingSteps="3" shadowColor="#75658F" specular="0.05" />
+    <OutlineStyle enabled="false" />
+  </RenderStyle>
+  <Assets>
+    <ImageAsset id="s84_cel_control" src="data:image/png;base64,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" colorSpace="linear-srgb" />
+    <ModelAsset id="s84_character" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/character1/character1.glb" />
+    <AnimationAsset id="s84_clips" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/character1/character1.glb" />
+    <MaterialAsset id="teal" baseColor="#389B9F" roughness="0.65" />
+    <MaterialAsset id="skin" baseColor="#F0BA97" roughness="0.8" />
+    <MaterialAsset id="dark" baseColor="#333850" roughness="0.8" />
+    <PrimitiveAsset id="ball" shape="sphere" radius="0.7" material="teal" />
+    <PrimitiveAsset id="head" shape="sphere" radius="0.55" material="skin" />
+    <PrimitiveAsset id="hair" shape="ellipsoid" radii={[0.56,0.25,0.525]} material="dark" />
+    <PrimitiveAsset id="body" shape="box" size={[1,1.2,0.6]} bevelRadius="0.12" material="teal" />
+    <PrimitiveAsset id="plinth" shape="box" size={[6,0.15,3]} material="dark" />
+  </Assets>
+  <ModelProfile id="s84_profile" kind="3d" model="s84_character" preset="humanoid_v1">
+    <Retarget preset="humanoid_v1">
+      <Map from="pelvis" to="hips" />
+      <Map from="spine_01" to="spine" />
+      <Map from="spine_02" to="chest" />
+      <Map from="spine_03" to="upper_chest" />
+      <Map from="neck_01" to="neck" />
+      <Map from="Head" to="head" />
+      <Map from="clavicle_l" to="shoulder_l" />
+      <Map from="upperarm_l" to="upper_arm_l" />
+      <Map from="lowerarm_l" to="forearm_l" />
+      <Map from="hand_l" to="hand_l" />
+      <Map from="clavicle_r" to="shoulder_r" />
+      <Map from="upperarm_r" to="upper_arm_r" />
+      <Map from="lowerarm_r" to="forearm_r" />
+      <Map from="hand_r" to="hand_r" />
+      <Map from="thigh_l" to="upper_leg_l" />
+      <Map from="calf_l" to="lower_leg_l" />
+      <Map from="foot_l" to="foot_l" />
+      <Map from="ball_l" to="toe_l" />
+      <Map from="thigh_r" to="upper_leg_r" />
+      <Map from="calf_r" to="lower_leg_r" />
+      <Map from="foot_r" to="foot_r" />
+      <Map from="ball_r" to="toe_r" />
+    </Retarget>
+    <BoneAxisMap>
+      <Axis bone="hips" turn="rotationY:1" />
+      <Axis bone="spine" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="chest" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="upper_chest" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="neck" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="head" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="upper_arm_l" forward="rotationX:1" side="rotationZ:1" twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
+      <Axis bone="forearm_l" bend="rotationX:1" twist="rotationY:1" />
+      <Axis bone="upper_arm_r" forward="rotationX:1" side="rotationZ:-1" twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
+      <Axis bone="forearm_r" bend="rotationX:1" twist="rotationY:1" />
+      <Axis bone="upper_leg_l" forward="rotationX:-1" side="rotationZ:-1" twist="rotationY:1" />
+      <Axis bone="lower_leg_l" bend="rotationX:-1" twist="rotationY:1" />
+      <Axis bone="upper_leg_r" forward="rotationX:-1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="lower_leg_r" bend="rotationX:-1" twist="rotationY:1" />
+    </BoneAxisMap>
+  </ModelProfile>
+  <Action id="s84_walk" source="s84_clips" sourceProfile="quaternius_humanoid" clip="Walk_Loop" skeleton="humanoid_v1" />
+  <ApplyAction target="s84_actor" action="s84_walk" at="0s" duration="20s" loop="true" rootMotion="in_place" blendIn="0s" blendOut="0s" />
+  <Scene id="cel_demo" renderStyle="physical">
+    <Timeline>
+      <Track space="3d">
+        <Sequence from="0s" duration="20s">
+          <CompositeGroup id="stage" space="3d" depth="true">
+            <Camera3D id="cam" position={[0,2.8,8]} target={[0,0.8,0]} fov="42" />
+            <DirectionalLight direction={[-0.4,-1,-0.5]} intensity="3" />
+            <Model id="base" asset="plinth" position={[0,-0.12,0]} />
+            <Model id="sphere" asset="ball" position={[-1.7,0.7,0]} />
+            <Model id="s84_actor" asset="s84_character" profile="s84_profile" position={[0,0,0]} scaleMode="normalize_height" scale="2">
+              <MaterialBinding material="*" outlineWidth="2" celShadowColor="#766A93" />
+            </Model>
+            <Model id="torso" asset="body" position={[1.7,0.6,0]} />
+            <Model id="face" asset="head" position={[1.7,1.65,0]}>
+              <MaterialBinding material="*" celRole="face" outlineWidth="1.5" celShadowColor="#B87E87" celControlMap="s84_cel_control" />
+            </Model>
+            <Model id="hair_model" asset="hair" position={[1.7,2.03,-0.10]}>
+              <MaterialBinding material="*" celRole="hair" outlineWidth="2" hairHighlight="0.5" celControlMap="s84_cel_control" />
+            </Model>
+            <Model id="occluder" asset="ball" position={[4,0.7,1]} />
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+      <Track space="screen">
+        <Sequence from="0s" duration="20s">
+          <Layer>
+            <Text x="36" y="24" value="CEL SHADING / MOTIONLOOM" fontSize="24" color="#152035" />
+            <Text x="36" y="492" value="SAME ASSETS / SAME LIGHT / CHARACTER1 CC0 / MATERIAL-SLOT OUTLINE CONTROL" fontSize="14" color="#152035" />
+          </Layer>
+        </Sequence>
+        <Sequence from="0s" duration="3s">
+          <Layer>
+            <Text x="36" y="62" value="01 / PHYSICAL" fontSize="18" color="#152035" />
+          </Layer>
+        </Sequence>
+        <Sequence from="3s" duration="3s">
+          <Layer>
+            <Text x="36" y="62" value="02 / TOON" fontSize="18" color="#152035" />
+          </Layer>
+        </Sequence>
+        <Sequence from="6s" duration="3s">
+          <Layer>
+            <Text x="36" y="62" value="03 / CEL SHADING + BLACK OUTLINE" fontSize="18" color="#152035" />
+          </Layer>
+        </Sequence>
+        <Sequence from="9s" duration="3s">
+          <Layer>
+            <Text x="36" y="62" value="04 / CEL SHADING - OUTLINE OFF" fontSize="18" color="#152035" />
+          </Layer>
+        </Sequence>
+        <Sequence from="12s" duration="8s">
+          <Layer>
+            <Text x="36" y="62" value="05 / DISTANCE + OCCLUSION + SKINNING" fontSize="18" color="#152035" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <AnimationTarget node="cel_demo" property="renderStyle">
+    <Key time="0s" value="physical" />
+    <Key time="3s" value="toon" />
+    <Key time="6s" value="cel_shaded" />
+    <Key time="9s" value="cel_no_outline" />
+    <Key time="12s" value="cel_shaded" />
+  </AnimationTarget>
+  <AnimationTarget node="cam" property="position">
+    <Key time="0s" value={[0,2.8,8]} />
+    <Key time="12s" value={[0,2.8,8]} />
+    <Key time="15s" value={[3,2.4,6]} />
+    <Key time="18s" value={[-2,3,10]} />
+    <Key time="20s" value={[0,2.8,8]} />
+  </AnimationTarget>
+  <AnimationTarget node="occluder" property="position">
+    <Key time="0s" value={[4,0.7,1]} />
+    <Key time="12s" value={[4,0.7,1]} />
+    <Key time="15s" value={[0,0.7,1.4]} />
+    <Key time="18s" value={[-4,0.7,1]} />
+    <Key time="20s" value={[-4,0.7,1]} />
+  </AnimationTarget>
+  <Present from="cel_demo" />
+</Graph>

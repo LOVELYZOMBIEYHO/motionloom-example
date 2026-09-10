@@ -88,11 +88,6 @@
     <SurfaceStyle shading="stylized" diffuseWrap="0.65" rimLight="0.85" rimPower="2.5" specular="0.15" />
     <PostStyle toneMapping="aces" exposure="1.05" saturation="0.7" contrast="0.9" />
   </RenderStyle>
-  <RenderQuality id="s80_quality">
-    <Resolution scale="1.0" />
-    <Shadows resolution="1536" filtering="pcf" />
-    <AntiAliasing mode="fxaa" />
-  </RenderQuality>
   <Assets>
     <MaterialAsset id="s80_grass" baseColor="#73A954" roughness="0.8" />
     <MaterialAsset id="s80_leaves" baseColor="#428961" roughness="0.7" />
@@ -131,7 +126,7 @@
       <Instance asset="s80_foot" position={[0.27,0.32,0.16]} />
     </CompoundAsset>
   </Assets>
-  <Scene id="s80_anime_scene" renderStyle="s80_physical" renderQuality="s80_quality">
+  <Scene id="s80_anime_scene" renderStyle="s80_physical">
     <Timeline>
       <Track z="-10">
         <Sequence from="0s" duration="30s" out="hide">

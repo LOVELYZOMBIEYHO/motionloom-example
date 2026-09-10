@@ -1,0 +1,146 @@
+<!-- MAIN2: original procedural characters, native MotionLoom CEL; MAIN is untouched. -->
+<Graph fps={24} duration="30s" size={[1280,720]}>
+<RenderStyle id="film_cel">
+<SurfaceStyle shading="cel" shadingSteps="3" shadowColor="#BBC3B3" specular="0.025" />
+<OutlineStyle enabled="true" color="#464A46" width="0.45" method="geometry" distanceMode="screen" />
+<LightingStyle ambientIntensity="0.85" ambientColor="#F2EBCF" shadowStyle="soft" />
+<PostStyle toneMapping="aces" exposure="1.20" saturation="1.04" contrast="1.01" bloomThreshold="1.15" bloomIntensity="0.07" />
+</RenderStyle>
+<Assets>
+<ModelAsset id="park_asset" src="main2/park.glb" />
+<ModelAsset id="actors_asset" src="main2/actors.glb" />
+</Assets>
+<Background color="#C4DFE8" />
+<Scene id="MAIN2" renderStyle="film_cel">
+<Timeline>
+<Track id="film" space="3d">
+<Sequence from="0s" duration="30s">
+<CompositeGroup id="stage" space="3d" depth="true">
+<Camera3D id="S01" position={[-11, 3.6, 12]} target={[0, 1.65, 0.2]} fov="48" depthOfField="true" focusDistance="16.2494" fStop="4.5" maxBlur="1.0" />
+<Camera3D id="S02" position={[-7.6, 2.35, 6.0]} target={[-5, 1.53, 1.9]} fov="34" depthOfField="true" focusDistance="4.9237" fStop="4.5" maxBlur="1.0" />
+<Camera3D id="S03" position={[7.0, 2.25, 5.6]} target={[5, 1.6, 1.75]} fov="32" depthOfField="true" focusDistance="4.3869" fStop="4.5" maxBlur="1.0" />
+<Camera3D id="S04" position={[-4.7, 2.3, 2.9]} target={[-5, 0.96, 2.15]} fov="34" depthOfField="true" focusDistance="1.5646" fStop="4.5" maxBlur="1.0" />
+<Camera3D id="S05" position={[-4.0, 1.72, 3.4]} target={[-4.85, 1.15, 2.25]} fov="36" depthOfField="true" focusDistance="1.5394" fStop="4.5" maxBlur="1.0" />
+<Camera3D id="S06" position={[-2.3, 3.1, 6]} target={[-2.4, 2.2, 3.3]} fov="35" depthOfField="true" focusDistance="2.8478" fStop="4.5" maxBlur="1.0" />
+<Camera3D id="S07A" position={[-4.4, 2.0, 8.3]} target={[-3.7, 1.35, 3.0]} fov="42" depthOfField="true" focusDistance="5.3854" fStop="4.5" maxBlur="1.0" />
+<Camera3D id="S07B" position={[1.2, 1.1, 6.3]} target={[-2.8, 1.5, 3.1]} fov="45" depthOfField="true" focusDistance="5.1381" fStop="4.5" maxBlur="1.0" />
+<Camera3D id="S07C" position={[4, 8, 7]} target={[3, 1, 2.6]} fov="43" depthOfField="true" focusDistance="8.3283" fStop="4.5" maxBlur="1.0" />
+<Camera3D id="S08" position={[6.3, 0.5, 4.4]} target={[5, 0.3, 2.5]} fov="38" depthOfField="true" focusDistance="2.3108" fStop="4.5" maxBlur="1.0" />
+<Camera3D id="S09A" position={[5, 1.65, 4.1]} target={[5, 1.34, 2.34]} fov="32" depthOfField="true" focusDistance="1.7871" fStop="4.5" maxBlur="1.0" />
+<Camera3D id="S09B" position={[4.45, 2.34, 4.1]} target={[5, 2.25, 2.0]} fov="28" depthOfField="true" focusDistance="2.1727" fStop="4.5" maxBlur="1.0" />
+<Camera3D id="S10" position={[4, 2.2, 8.3]} target={[4.05, 1.7, 2.55]} fov="36" depthOfField="true" focusDistance="5.7719" fStop="4.5" maxBlur="1.0" />
+<DirectionalLight direction={[.55,-1,.3]} color="#FFF0BC" intensity="2.7" castShadow="true" shadowStrength="0.45" />
+<DirectionalLight direction={[-.4,-.15,-1]} color="#E1F0E8" intensity="0.65" />
+<AtmosphereFog id="morning_air" mode="exp" color="#DAE5DE" density="0.022" start="14" end="65" scattering="0.06" affectSky="false" />
+<Model id="park" asset="park_asset" castShadow="true" receiveShadow="true" />
+<Model id="actors" asset="actors_asset" castShadow="true" receiveShadow="true">
+<Play clip="film" loop="false" speed="1" />
+</Model>
+</CompositeGroup>
+</Sequence>
+</Track>
+</Timeline>
+</Scene>
+<AnimationTarget node="MAIN2" property="activeCamera">
+<Key time="0s" value="S01" />
+<Key time="3s" value="S02" />
+<Key time="6s" value="S03" />
+<Key time="9s" value="S04" />
+<Key time="12s" value="S05" />
+<Key time="14s" value="S06" />
+<Key time="16s" value="S07A" />
+<Key time="18s" value="S07B" />
+<Key time="19.5s" value="S07C" />
+<Key time="21s" value="S08" />
+<Key time="24s" value="S09A" />
+<Key time="25.2s" value="S09B" />
+<Key time="27s" value="S10" />
+</AnimationTarget>
+<AnimationTarget node="S01" property="position">
+<Key time="0s" value="[-11,3.6,12]" />
+<Key time="3s" value="[-10.4,3.5,11.4]" />
+</AnimationTarget>
+<AnimationTarget node="S02" property="position">
+<Key time="3s" value="[-7.6,2.35,6]" />
+<Key time="6s" value="[-7.4,2.32,5.8]" />
+</AnimationTarget>
+<AnimationTarget node="S06" property="position">
+<Key time="14s" value="[-4.422849017000221,2.330829588602107,4.921162737668749]" />
+<Key time="14.0833s" value="[-4.381842150218483,2.3959244689803056,4.9589083111847945]" />
+<Key time="14.1667s" value="[-4.336237969057807,2.463965140233184,4.999176351394542]" />
+<Key time="14.25s" value="[-4.285591121936961,2.5341229747578993,5.041773706342784]" />
+<Key time="14.3333s" value="[-4.22942304860295,2.60539411152369,5.0864482669869755]" />
+<Key time="14.4167s" value="[-4.167222165105721,2.6765932907994587,5.132886490909639]" />
+<Key time="14.5s" value="[-4.098444314369651,2.7463492493289485,5.18071145998969]" />
+<Key time="14.5833s" value="[-4.022513491042169,2.8131017193554397,5.229481486500007]" />
+<Key time="14.6667s" value="[-3.938822847017504,2.8751000634858817,5.278689278294536]" />
+<Key time="14.75s" value="[-3.8464657825400845,2.9323953500495237,5.32861729862273]" />
+<Key time="14.8333s" value="[-3.743881177809718,2.9926086900065623,5.382693059285557]" />
+<Key time="14.9167s" value="[-3.6311440413919533,3.055797127655611,5.440919683157666]" />
+<Key time="15s" value="[-3.5086278267114928,3.1207293403458674,5.5027112547681725]" />
+<Key time="15.0833s" value="[-3.3768210720271843,3.1860138256443853,5.567386147181017]" />
+<Key time="15.1667s" value="[-3.2363261008207376,3.2501032703001327,5.634169091227436]" />
+<Key time="15.25s" value="[-3.0878568632373105,3.3113002264353213,5.70219400221916]" />
+<Key time="15.3333s" value="[-2.932235939643346,3.367764060356653,5.770507544581619]" />
+<Key time="15.4167s" value="[-2.770390731039762,3.417519133345237,5.838073411436033]" />
+<Key time="15.5s" value="[-2.603348864557922,3.4584641680515746,5.903777292919241]" />
+<Key time="15.5833s" value="[-2.432232845571366,3.4883827486914876,5.966432503960634]" />
+<Key time="15.6667s" value="[-2.258253991078114,3.5049548981099843,6.024786239336707]" />
+<Key time="15.75s" value="[-2.0827056819467393,3.505769669952875,6.077526421095268]" />
+<Key time="15.8333s" value="[-1.9057610341789377,3.4865507547825403,6.123865715146177]" />
+<Key time="15.9167s" value="[-1.722247545619554,3.4380917457552216,6.16604361979414]" />
+<Key time="16s" value="[-1.532157818656922,3.3637442171720755,6.2045051095801815]" />
+</AnimationTarget>
+<AnimationTarget node="S06" property="target">
+<Key time="14s" value="[-4.722849017000221,1.480829588602107,2.521162737668749]" />
+<Key time="14.0833s" value="[-4.681842150218483,1.5459244689803056,2.558908311184795]" />
+<Key time="14.1667s" value="[-4.636237969057807,1.6139651402331843,2.5991763513945427]" />
+<Key time="14.25s" value="[-4.585591121936961,1.6841229747578992,2.641773706342784]" />
+<Key time="14.3333s" value="[-4.52942304860295,1.7553941115236897,2.6864482669869756]" />
+<Key time="14.4167s" value="[-4.467222165105721,1.8265932907994589,2.7328864909096393]" />
+<Key time="14.5s" value="[-4.398444314369651,1.8963492493289484,2.7807114599896905]" />
+<Key time="14.5833s" value="[-4.3225134910421685,1.9631017193554396,2.8294814865000073]" />
+<Key time="14.6667s" value="[-4.238822847017504,2.0251000634858816,2.8786892782945364]" />
+<Key time="14.75s" value="[-4.146465782540084,2.0823953500495236,2.9286172986227292]" />
+<Key time="14.8333s" value="[-4.043881177809718,2.142608690006562,2.9826930592855567]" />
+<Key time="14.9167s" value="[-3.931144041391953,2.205797127655611,3.0409196831576657]" />
+<Key time="15s" value="[-3.8086278267114926,2.2707293403458673,3.102711254768173]" />
+<Key time="15.0833s" value="[-3.676821072027184,2.336013825644385,3.1673861471810167]" />
+<Key time="15.1667s" value="[-3.5363261008207374,2.4001032703001326,3.234169091227436]" />
+<Key time="15.25s" value="[-3.3878568632373103,2.461300226435321,3.302194002219161]" />
+<Key time="15.3333s" value="[-3.232235939643346,2.517764060356653,3.3705075445816193]" />
+<Key time="15.4167s" value="[-3.070390731039762,2.567519133345237,3.438073411436033]" />
+<Key time="15.5s" value="[-2.903348864557922,2.6084641680515745,3.5037772929192412]" />
+<Key time="15.5833s" value="[-2.732232845571366,2.6383827486914875,3.566432503960635]" />
+<Key time="15.6667s" value="[-2.558253991078114,2.654954898109984,3.6247862393367067]" />
+<Key time="15.75s" value="[-2.382705681946739,2.655769669952875,3.6775264210952674]" />
+<Key time="15.8333s" value="[-2.2057610341789378,2.63655075478254,3.723865715146177]" />
+<Key time="15.9167s" value="[-2.022247545619554,2.5880917457552215,3.7660436197941394]" />
+<Key time="16s" value="[-1.832157818656922,2.5137442171720754,3.8045051095801816]" />
+</AnimationTarget>
+<AnimationTarget node="S07A" property="position">
+<Key time="16s" value="[-6.0,2,8.3]" />
+<Key time="17s" value="[-5.811344853493614,2,8.3]" />
+<Key time="18s" value="[-5.2940646130728775,2,8.3]" />
+</AnimationTarget>
+<AnimationTarget node="S07A" property="target">
+<Key time="16s" value="[-4.3,1.35,3]" />
+<Key time="17s" value="[-4.1113448534936134,1.35,3]" />
+<Key time="18s" value="[-3.5940646130728773,1.35,3]" />
+</AnimationTarget>
+<AnimationTarget node="S08" property="position">
+<Key time="21s" value="[6.3,0.5,4.4]" />
+<Key time="22.5s" value="[6.3,0.5,4.4]" />
+<Key time="24s" value="[6.3,1.8,4.4]" />
+</AnimationTarget>
+<AnimationTarget node="S08" property="target">
+<Key time="21s" value="[5,0.3,2.5]" />
+<Key time="22.5s" value="[5,0.3,2.5]" />
+<Key time="24s" value="[5,1.35,2.2]" />
+</AnimationTarget>
+<AnimationTarget node="S10" property="position">
+<Key time="27s" value="[4,2.2,8.3]" />
+<Key time="30s" value="[4,2.2,8.0]" />
+</AnimationTarget>
+<Present from="MAIN2" />
+</Graph>

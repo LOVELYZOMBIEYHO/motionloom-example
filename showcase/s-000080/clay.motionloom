@@ -21,11 +21,6 @@
     <SurfaceStyle shading="toon" shadingSteps="4" diffuseWrap="0.25" rimLight="0.15" specular="0.05" />
     <PostStyle toneMapping="aces" exposure="1.1" saturation="1.25" contrast="1.0" />
   </RenderStyle>
-  <RenderQuality id="s80_quality">
-    <Resolution scale="1.0" />
-    <Shadows resolution="1536" filtering="pcf" />
-    <AntiAliasing mode="fxaa" />
-  </RenderQuality>
   <Assets>
     <MaterialAsset id="s80_grass" baseColor="#73A954" roughness="0.8" />
     <MaterialAsset id="s80_leaves" baseColor="#428961" roughness="0.7" />
@@ -64,7 +59,7 @@
       <Instance asset="s80_foot" position={[0.27,0.32,0.16]} />
     </CompoundAsset>
   </Assets>
-  <Scene id="s80_clay_scene" renderStyle="s80_clay" renderQuality="s80_quality">
+  <Scene id="s80_clay_scene" renderStyle="s80_clay">
     <Timeline>
       <Track z="-10">
         <Sequence from="0s" duration="20s" out="hide">

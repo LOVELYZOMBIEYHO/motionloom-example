@@ -1,0 +1,13 @@
+{
+  "id": "s-000085",
+  "type": "showcase",
+  "title": "HeadAsset Portrait Turntable",
+  "domain": "scene",
+  "features": ["scene", "assets", "true-3d", "procedural", "portrait", "facejaw", "eye", "camera-3d", "material", "pbr-lighting", "shadow-map", "ambient-occlusion", "color-management", "animation-target"],
+  "dsl": ["Graph", "Assets", "MaterialAsset", "PrimitiveAsset", "Background", "Scene", "Timeline", "Track", "Sequence", "CompositeGroup", "Camera3D", "RectAreaLight", "DirectionalLight", "AmbientOcclusion", "ContactShadow", "ColorManagement", "Model", "Layer", "Text", "AnimationTarget", "Key", "Present"],
+  "teaches": ["Inspect one continuous procedural HeadAsset from front, three-quarter, profile and rear views.", "Use studio key, fill and rim lighting to make facial planes, sockets, nose, mouth, jaw, chin, ears and skull silhouette readable."],
+  "source_path": "showcase/s-000085",
+  "demo_url": "",
+  "related": ["s-000086", "s-000084", "s-000075"],
+  "requires": ["Graph", "HeadAsset", "Scene", "Camera3D", "Present"]
+}

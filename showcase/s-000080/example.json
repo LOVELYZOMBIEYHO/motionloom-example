@@ -1,0 +1,13 @@
+{
+  "id": "s-000080",
+  "type": "showcase",
+  "title": "Scene RenderStyle",
+  "domain": "scene",
+  "features": ["scene", "assets", "true-3d", "material", "grading", "pbr", "camera-3d", "light", "shadow-map", "color-management", "animation-target"],
+  "dsl": ["Graph", "Background", "Assets", "MaterialAsset", "PrimitiveAsset", "CompoundAsset", "Instance", "Scene", "Timeline", "Track", "Sequence", "Layer", "Rect", "CompositeGroup", "Camera3D", "DirectionalLight", "ContactShadow", "Model", "Text", "AnimationTarget", "Key", "Present"],
+  "teaches": ["Compare twenty authored RenderStyle recipes over shared geometry, camera and lighting.", "Separate surface shading, lighting multipliers and post grading as inspectable scene-owned resources."],
+  "source_path": "showcase/s-000080",
+  "demo_url": "",
+  "related": ["s-000084", "s-000083", "s-000079"],
+  "requires": ["Graph", "RenderStyle", "Scene", "Camera3D", "Present"]
+}

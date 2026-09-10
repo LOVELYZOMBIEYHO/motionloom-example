@@ -1,0 +1,69 @@
+{
+  "id": "s-000086",
+  "type": "showcase",
+  "title": "Reference-led anime head",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "assets",
+    "true-3d",
+    "procedural",
+    "portrait",
+    "facejaw",
+    "eye",
+    "eyes",
+    "hair",
+    "texture",
+    "external-texture",
+    "anime",
+    "camera-3d",
+    "material",
+    "animation-target"
+  ],
+  "dsl": [
+    "Graph",
+    "RenderStyle",
+    "Assets",
+    "MaterialAsset",
+    "PrimitiveAsset",
+    "HairAsset",
+    "HeadAsset",
+    "FacialCage",
+    "HeadProfile",
+    "HeadSection",
+    "HeadDome",
+    "FaceLayout",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "CompositeGroup",
+    "Camera3D",
+    "DirectionalLight",
+    "Model",
+    "AnimationTarget",
+    "Key",
+    "Present"
+  ],
+  "teaches": [
+    "Author a compact, versioned facial control cage in Rust from HeadProfile, HeadDome, and FaceLayout.",
+    "Combine a welded anime head with editable Hair Cards and a seekable fixed-light model turntable."
+  ],
+  "source_path": "showcase/s-000086",
+  "demo_url": "",
+  "related": [
+    "s-000085",
+    "s-000084",
+    "s-000087"
+  ],
+  "requires": [
+    "Graph",
+    "HeadAsset",
+    "FacialCage",
+    "HairAsset",
+    "Scene",
+    "Camera3D",
+    "Present"
+  ]
+}

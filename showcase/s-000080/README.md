@@ -41,8 +41,8 @@ no-op bloom setting. Investigating that runtime limitation is separate work.
 For isolated baseline comparisons, the unchanged `physical.motionloom`,
 `stylized.motionloom`, `toon.motionloom` and `clay.motionloom` remain available.
 
-Each file uses a Scene-level RenderStyle reference and shared RenderQuality
-definition. No World DSL tag, remote assets or pre-rendered style images are
+Each file uses a Scene-level RenderStyle reference. No World DSL tag, remote
+assets or pre-rendered style images are
 used. The styles execute on the shared native WGPU / WASM WebGPU renderer.
 
 The files are deliberately standalone: cross-Scene post-process transitions

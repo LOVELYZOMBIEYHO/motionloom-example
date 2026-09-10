@@ -1,0 +1,706 @@
+<!-- S86: reference-led anime head; independent geometry, no reference images required at playback. -->
+<Graph fps={30} duration="20s" size={[900,1000]}>
+  <RenderStyle id="portrait">
+    <SurfaceStyle shading="physical" roughnessBias="0.1" specular="0.12" />
+    <LightingStyle ambientIntensity="0.85" ambientColor="#FFF3EC" />
+    <PostStyle toneMapping="aces" exposure="1" saturation="1.25" contrast="1" />
+  </RenderStyle>
+  <Assets>
+    <MaterialAsset id="clay" shading="pbr" baseColor="#B7B9BA" roughness="0.96" specular="0.05" emissive="#B7B9BA" emissiveStrength="0.025" />
+    <MaterialAsset id="clay_shadow" shading="pbr" baseColor="#85898C" roughness="0.98" specular="0.03" emissive="#85898C" emissiveStrength="0.01" />
+    <MaterialAsset id="clay_cavity" shading="pbr" baseColor="#6F7477" roughness="0.99" specular="0.02" emissive="#6F7477" emissiveStrength="0.005" />
+    <MaterialAsset id="clay_ear_recess" shading="pbr" baseColor="#ADB0B2" roughness="0.98" specular="0.03" emissive="#ADB0B2" emissiveStrength="0.018" />
+    <PrimitiveAsset id="clay_ear_l" shape="loft" material="clay">
+      <Loft segments="48" closed="true" capStart="true" capEnd="true">
+        <Section at="-0.150" width="0.046" depth="0.046" offset={[0,0.030]} profile="ellipse" />
+        <Section at="-0.130" width="0.074" depth="0.076" offset={[0,0.026]} profile="ellipse" />
+        <Section at="-0.075" width="0.103" depth="0.112" offset={[0,0.014]} profile="ellipse" />
+        <Section at="0.000" width="0.114" depth="0.132" offset={[0,-0.002]} profile="ellipse" />
+        <Section at="0.075" width="0.104" depth="0.116" offset={[0,-0.012]} profile="ellipse" />
+        <Section at="0.130" width="0.078" depth="0.078" offset={[0,-0.006]} profile="ellipse" />
+        <Section at="0.150" width="0.048" depth="0.046" offset={[0,0.008]} profile="ellipse" />
+      </Loft>
+    </PrimitiveAsset>
+    <PrimitiveAsset id="clay_concha_l" shape="ellipsoid" radii={[0.006,0.046,0.028]} segments="48" rings="32" material="clay_ear_recess" />
+    <PrimitiveAsset id="clay_tragus_l" shape="ellipsoid" radii={[0.009,0.024,0.013]} segments="40" rings="24" material="clay" />
+    <PrimitiveAsset id="clay_ear_r" shape="loft" material="clay">
+      <Loft segments="48" closed="true" capStart="true" capEnd="true">
+        <Section at="-0.150" width="0.046" depth="0.046" offset={[0,0.030]} profile="ellipse" />
+        <Section at="-0.130" width="0.074" depth="0.076" offset={[0,0.026]} profile="ellipse" />
+        <Section at="-0.075" width="0.103" depth="0.112" offset={[0,0.014]} profile="ellipse" />
+        <Section at="0.000" width="0.114" depth="0.132" offset={[0,-0.002]} profile="ellipse" />
+        <Section at="0.075" width="0.104" depth="0.116" offset={[0,-0.012]} profile="ellipse" />
+        <Section at="0.130" width="0.078" depth="0.078" offset={[0,-0.006]} profile="ellipse" />
+        <Section at="0.150" width="0.048" depth="0.046" offset={[0,0.008]} profile="ellipse" />
+      </Loft>
+    </PrimitiveAsset>
+    <PrimitiveAsset id="clay_concha_r" shape="ellipsoid" radii={[0.006,0.046,0.028]} segments="48" rings="32" material="clay_ear_recess" />
+    <PrimitiveAsset id="clay_tragus_r" shape="ellipsoid" radii={[0.009,0.024,0.013]} segments="40" rings="24" material="clay" />
+    <PrimitiveAsset id="clay_neck" shape="loft" material="clay">
+      <Loft segments="96" closed="true" capStart="true" capEnd="true">
+        <Section at="-1.310000" width="0.910000" depth="0.740000" offset={[0,-0.250000]} profile="ellipse" />
+        <Section at="-1.298333" width="0.878264" depth="0.735880" offset={[0,-0.252060]} profile="ellipse" />
+        <Section at="-1.286667" width="0.833333" depth="0.730370" offset={[0,-0.254815]} profile="ellipse" />
+        <Section at="-1.275000" width="0.780625" depth="0.723750" offset={[0,-0.258125]} profile="ellipse" />
+        <Section at="-1.263333" width="0.725556" depth="0.716296" offset={[0,-0.261852]} profile="ellipse" />
+        <Section at="-1.251667" width="0.673542" depth="0.708287" offset={[0,-0.265856]} profile="ellipse" />
+        <Section at="-1.240000" width="0.630000" depth="0.700000" offset={[0,-0.270000]} profile="ellipse" />
+        <Section at="-1.221667" width="0.593102" depth="0.690000" offset={[0,-0.275463]} profile="ellipse" />
+        <Section at="-1.203333" width="0.558148" depth="0.677778" offset={[0,-0.282593]} profile="ellipse" />
+        <Section at="-1.185000" width="0.526250" depth="0.665000" offset={[0,-0.290000]} profile="ellipse" />
+        <Section at="-1.166667" width="0.498519" depth="0.653333" offset={[0,-0.296296]} profile="ellipse" />
+        <Section at="-1.148333" width="0.476065" depth="0.644444" offset={[0,-0.300093]} profile="ellipse" />
+        <Section at="-1.130000" width="0.460000" depth="0.640000" offset={[0,-0.300000]} profile="ellipse" />
+        <Section at="-1.105000" width="0.451759" depth="0.640532" offset={[0,-0.295845]} profile="ellipse" />
+        <Section at="-1.080000" width="0.450741" depth="0.644815" offset={[0,-0.288704]} profile="ellipse" />
+        <Section at="-1.055000" width="0.455000" depth="0.651875" offset={[0,-0.279062]} profile="ellipse" />
+        <Section at="-1.030000" width="0.462593" depth="0.660741" offset={[0,-0.267407]} profile="ellipse" />
+        <Section at="-1.005000" width="0.471574" depth="0.670440" offset={[0,-0.254225]} profile="ellipse" />
+        <Section at="-0.980000" width="0.480000" depth="0.680000" offset={[0,-0.240000]} profile="ellipse" />
+        <Section at="-0.925000" width="0.489005" depth="0.690741" offset={[0,-0.222685]} profile="ellipse" />
+        <Section at="-0.870000" width="0.500370" depth="0.703704" offset={[0,-0.201481]} profile="ellipse" />
+        <Section at="-0.815000" width="0.513125" depth="0.717500" offset={[0,-0.178750]} profile="ellipse" />
+        <Section at="-0.760000" width="0.526296" depth="0.730741" offset={[0,-0.156852]} profile="ellipse" />
+        <Section at="-0.705000" width="0.538912" depth="0.742037" offset={[0,-0.138148]} profile="ellipse" />
+        <Section at="-0.650000" width="0.550000" depth="0.750000" offset={[0,-0.125000]} profile="ellipse" />
+        <Section at="-0.616667" width="0.560069" depth="0.754051" offset={[0,-0.118345]} profile="ellipse" />
+        <Section at="-0.583333" width="0.570000" depth="0.755185" offset={[0,-0.116481]} profile="ellipse" />
+        <Section at="-0.550000" width="0.579375" depth="0.754375" offset={[0,-0.117813]} profile="ellipse" />
+        <Section at="-0.516667" width="0.587778" depth="0.752593" offset={[0,-0.120741]} profile="ellipse" />
+        <Section at="-0.483333" width="0.594792" depth="0.750810" offset={[0,-0.123669]} profile="ellipse" />
+        <Section at="-0.450000" width="0.600000" depth="0.750000" offset={[0,-0.125000]} profile="ellipse" />
+      </Loft>
+    </PrimitiveAsset>
+    <PrimitiveAsset id="clay_helix_l" shape="ribbon" material="clay">
+      <Ribbon width="0.012" thickness="0.001" facing="stable" capStart="true" capEnd="true">
+        <PathPoint position={[-0.660000,-0.128000,-0.232000]} roll="89" />
+        <PathPoint position={[-0.652000,-0.116000,-0.261000]} roll="89" />
+        <PathPoint position={[-0.668000,-0.160000,-0.294000]} roll="89" />
+        <PathPoint position={[-0.678000,-0.245000,-0.312000]} roll="89" />
+        <PathPoint position={[-0.671000,-0.330000,-0.299000]} roll="89" />
+        <PathPoint position={[-0.660000,-0.390000,-0.253000]} roll="89" />
+      </Ribbon>
+    </PrimitiveAsset>
+    <PrimitiveAsset id="clay_antihelix_l" shape="ribbon" material="clay_ear_recess">
+      <Ribbon width="0.011" thickness="0.0007" facing="stable" capStart="true" capEnd="true">
+        <PathPoint position={[-0.673000,-0.185000,-0.283000]} roll="89" />
+        <PathPoint position={[-0.677000,-0.240000,-0.304000]} roll="89" />
+        <PathPoint position={[-0.675000,-0.302000,-0.289000]} roll="89" />
+        <PathPoint position={[-0.669000,-0.348000,-0.252000]} roll="89" />
+      </Ribbon>
+    </PrimitiveAsset>
+    <PrimitiveAsset id="clay_helix_r" shape="ribbon" material="clay">
+      <Ribbon width="0.012" thickness="0.001" facing="stable" capStart="true" capEnd="true">
+        <PathPoint position={[0.660000,-0.128000,-0.232000]} roll="89" />
+        <PathPoint position={[0.652000,-0.116000,-0.261000]} roll="89" />
+        <PathPoint position={[0.668000,-0.160000,-0.294000]} roll="89" />
+        <PathPoint position={[0.678000,-0.245000,-0.312000]} roll="89" />
+        <PathPoint position={[0.671000,-0.330000,-0.299000]} roll="89" />
+        <PathPoint position={[0.660000,-0.390000,-0.253000]} roll="89" />
+      </Ribbon>
+    </PrimitiveAsset>
+    <PrimitiveAsset id="clay_antihelix_r" shape="ribbon" material="clay_ear_recess">
+      <Ribbon width="0.011" thickness="0.0007" facing="stable" capStart="true" capEnd="true">
+        <PathPoint position={[0.673000,-0.185000,-0.283000]} roll="89" />
+        <PathPoint position={[0.677000,-0.240000,-0.304000]} roll="89" />
+        <PathPoint position={[0.675000,-0.302000,-0.289000]} roll="89" />
+        <PathPoint position={[0.669000,-0.348000,-0.252000]} roll="89" />
+      </Ribbon>
+    </PrimitiveAsset>
+    <HeadAsset id="s86_head" material="clay" archetype="humanoid" variant="anime" symmetry="x" topology="facialCage">
+      <HeadShape size={[1.50,1.833,1.67]} forehead="1" cheekWidth="1" jawWidth="1" chinLength="0" chinRoundness="0.6" />
+      <FacialCage generatorVersion="1" segments="192" profileSegments="96" samplesPerSection="6" subdivision="1" orbitalRings="10" mouthRings="8" preserveProfile="true" uvMode="fallbackXY" />
+      <HeadProfile>
+        <HeadSection id="chin_point" at="-0.795" width="0.018" frontDepth="0.462" backDepth="0.450" />
+        <HeadSection id="chin_side" at="-0.793" width="0.217" frontDepth="0.500" backDepth="-0.466" />
+        <HeadSection id="jawline" at="-0.714" width="0.491" frontDepth="0.537" backDepth="-0.454" />
+        <HeadSection id="jaw_angle" at="-0.596" width="0.810" frontDepth="0.609" backDepth="-0.434" />
+        <HeadSection id="cheek_transition" at="-0.438" width="1.051" frontDepth="0.690" backDepth="-0.538" />
+        <HeadSection id="cheekbone" at="-0.263" width="1.221" frontDepth="0.638" backDepth="-0.688" />
+        <HeadSection id="temple" at="-0.050" width="1.301" frontDepth="0.657" backDepth="-0.813" />
+        <HeadSection id="forehead" at="0.200" width="1.398" frontDepth="0.726" backDepth="-0.861" />
+        <HeadSection id="crown_transition" at="0.420" width="1.500" frontDepth="0.710" backDepth="-0.840" />
+      </HeadProfile>
+      <HeadDome start="0.200" top="1.0" centerDepth="-0.07" frontRadius="0.80" backRadius="0.80" samples="80" />
+      <FaceLayout>
+  <Eye id="eye_a" position={[-0.316,-0.149,0]} width="0.330" opening="0.250" tilt="0" socketWidth="0.550" socketHeight="0.510" socketDepth="0.139" />
+  <Eye id="eye_b" position={[0.316,-0.149,0]} width="0.330" opening="0.250" tilt="0" socketWidth="0.550" socketHeight="0.510" socketDepth="0.139" />
+  <Nose id="nose" position={[0,-0.363,0]} length="0.180" width="0.100" projection="0.060" />
+  <Mouth id="mouth" position={[0,-0.561,0]} width="0.086" opening="0.014" upperLip="0.025" lowerLip="0.03" muzzleLength="0" muzzleWidth="0.3" />
+</FaceLayout>
+      <HeadMorph headWidth="1" headHeight="1" headDepth="1" faceWidth="1" faceHeight="1" jawWidth="1" muzzleLength="1" featureScale="1" />
+    </HeadAsset>
+    <!-- Reference-led bob hair; explicit cards, no GLB dependency. -->
+    <PrimitiveAsset id="bob_cap" shape="loft" material="clay">
+      <Loft segments="80" closed="true" capStart="true" capEnd="true">
+        <Section at="0.84" width="1.0583" depth="1.08476" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="0.84786" width="1.04188" depth="1.06793" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="0.85571" width="1.02499" depth="1.05062" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="0.86357" width="1.00762" depth="1.03281" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="0.87143" width="0.98974" depth="1.01449" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="0.87929" width="0.97132" depth="0.99561" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="0.88714" width="0.95233" depth="0.97614" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="0.895" width="0.93274" depth="0.95606" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="0.90286" width="0.9125" depth="0.93531" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="0.91071" width="0.89157" depth="0.91386" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="0.91857" width="0.8699" depth="0.89165" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="0.92643" width="0.84745" depth="0.86863" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="0.93429" width="0.82413" depth="0.84473" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="0.94214" width="0.79987" depth="0.81987" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="0.95" width="0.7746" depth="0.79396" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="0.95786" width="0.7482" depth="0.7669" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="0.96571" width="0.72054" depth="0.73856" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="0.97357" width="0.69149" depth="0.70878" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="0.98143" width="0.66086" depth="0.67738" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="0.98929" width="0.62841" depth="0.64412" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="0.99714" width="0.59385" depth="0.60869" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="1.005" width="0.55678" depth="0.5707" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="1.01286" width="0.51666" depth="0.52958" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="1.02071" width="0.47273" depth="0.48454" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="1.02857" width="0.42378" depth="0.43438" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="1.03643" width="0.36784" depth="0.37704" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="1.04429" width="0.30102" depth="0.30854" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="1.05214" width="0.21333" depth="0.21866" offset={[0,-0.07]} profile="ellipse" />
+        <Section at="1.06" width="0.00716" depth="0.00733" offset={[0,-0.07]} profile="ellipse" />
+      </Loft>
+    </PrimitiveAsset>
+    <HairAsset id="bob_crown" material="clay" space="asset_local">
+      <HairGroom>
+        <HairGroup id="locks" role="silhouette">
+          <HairDefaults width="0.25" camber="0.27" roll="0" />
+          <HairGuide id="crown_0" normal={[0.29544,1,0.05209]}>
+            <HairPoint position={[0.08863,1.075,-0.05437]} width="0.055" />
+            <HairPoint position={[0.28559,1.035,-0.01964]} width="0.16" />
+            <HairPoint position={[0.4924,0.93,0.01682]} width="0.26" />
+            <HairPoint position={[0.7583,0.7,0.06371]} width="0.31" />
+            <HairPoint position={[0.88633,0.29,0.08628]} width="0.31" />
+            <HairPoint position={[0.92572,-0.23,0.09323]} width="0.3" />
+            <HairPoint position={[0.84693,-0.59,0.07934]} width="0.24" />
+            <HairPoint position={[0.7583,-0.77,0.06371]} width="0.17" />
+          </HairGuide>
+          <HairGuide id="crown_1" normal={[0.29971,1,-0.01309]}>
+            <HairPoint position={[0.08991,1.075,-0.07393]} width="0.055" />
+            <HairPoint position={[0.28972,1.035,-0.08265]} width="0.16" />
+            <HairPoint position={[0.49952,0.93,-0.09181]} width="0.26" />
+            <HairPoint position={[0.76927,0.7,-0.10359]} width="0.31" />
+            <HairPoint position={[0.89914,0.29,-0.10926]} width="0.31" />
+            <HairPoint position={[0.93911,-0.23,-0.111]} width="0.3" />
+            <HairPoint position={[0.85918,-0.59,-0.10751]} width="0.24" />
+            <HairPoint position={[0.76216,-0.80884,-0.17958]} width="0.17" />
+          </HairGuide>
+          <HairGuide id="crown_2" normal={[0.28978,1,-0.07765]}>
+            <HairPoint position={[0.08693,1.075,-0.09329]} width="0.055" />
+            <HairPoint position={[0.28012,1.035,-0.14506]} width="0.16" />
+            <HairPoint position={[0.48296,0.93,-0.19941]} width="0.26" />
+            <HairPoint position={[0.74376,0.7,-0.26929]} width="0.31" />
+            <HairPoint position={[0.86933,0.29,-0.30294]} width="0.31" />
+            <HairPoint position={[0.90797,-0.23,-0.31329]} width="0.3" />
+            <HairPoint position={[0.8307,-0.59,-0.29258]} width="0.24" />
+            <HairPoint position={[0.74861,-0.73078,-0.25022]} width="0.17" />
+          </HairGuide>
+          <HairGuide id="crown_3" normal={[0.2661,1,-0.13852]}>
+            <HairPoint position={[0.07983,1.075,-0.11156]} width="0.055" />
+            <HairPoint position={[0.25723,1.035,-0.20391]} width="0.16" />
+            <HairPoint position={[0.44351,0.93,-0.30087]} width="0.26" />
+            <HairPoint position={[0.683,0.7,-0.42555]} width="0.31" />
+            <HairPoint position={[0.79831,0.29,-0.48557]} width="0.31" />
+            <HairPoint position={[0.83379,-0.23,-0.50404]} width="0.3" />
+            <HairPoint position={[0.76283,-0.59,-0.4671]} width="0.24" />
+            <HairPoint position={[0.71294,-0.77076,-0.36088]} width="0.17" />
+          </HairGuide>
+          <HairGuide id="crown_4" normal={[0.22981,1,-0.19284]}>
+            <HairPoint position={[0.06894,1.075,-0.12785]} width="0.055" />
+            <HairPoint position={[0.22215,1.035,-0.25641]} width="0.16" />
+            <HairPoint position={[0.38302,0.93,-0.39139]} width="0.26" />
+            <HairPoint position={[0.58985,0.7,-0.56495]} width="0.31" />
+            <HairPoint position={[0.68944,0.29,-0.64851]} width="0.31" />
+            <HairPoint position={[0.72008,-0.23,-0.67422]} width="0.3" />
+            <HairPoint position={[0.6588,-0.59,-0.6228]} width="0.24" />
+            <HairPoint position={[0.56469,-0.80846,-0.59348]} width="0.17" />
+          </HairGuide>
+          <HairGuide id="crown_5" normal={[0.18263,1,-0.23801]}>
+            <HairPoint position={[0.05479,1.075,-0.1414]} width="0.055" />
+            <HairPoint position={[0.17654,1.035,-0.30007]} width="0.16" />
+            <HairPoint position={[0.30438,0.93,-0.46668]} width="0.26" />
+            <HairPoint position={[0.46875,0.7,-0.68088]} width="0.31" />
+            <HairPoint position={[0.54789,0.29,-0.78402]} width="0.31" />
+            <HairPoint position={[0.57224,-0.23,-0.81575]} width="0.3" />
+            <HairPoint position={[0.52353,-0.59,-0.75228]} width="0.24" />
+            <HairPoint position={[0.41853,-0.73041,-0.71632]} width="0.17" />
+          </HairGuide>
+          <HairGuide id="crown_6" normal={[0.12679,1,-0.27189]}>
+            <HairPoint position={[0.03804,1.075,-0.15157]} width="0.055" />
+            <HairPoint position={[0.12256,1.035,-0.33283]} width="0.16" />
+            <HairPoint position={[0.21131,0.93,-0.52315]} width="0.26" />
+            <HairPoint position={[0.32542,0.7,-0.76786]} width="0.31" />
+            <HairPoint position={[0.38036,0.29,-0.88568]} width="0.31" />
+            <HairPoint position={[0.39726,-0.23,-0.92193]} width="0.3" />
+            <HairPoint position={[0.36345,-0.59,-0.84942]} width="0.24" />
+            <HairPoint position={[0.37342,-0.77151,-0.74339]} width="0.17" />
+          </HairGuide>
+          <HairGuide id="crown_7" normal={[0.06493,1,-0.29289]}>
+            <HairPoint position={[0.01948,1.075,-0.15787]} width="0.055" />
+            <HairPoint position={[0.06277,1.035,-0.35313]} width="0.16" />
+            <HairPoint position={[0.10822,0.93,-0.55815]} width="0.26" />
+            <HairPoint position={[0.16666,0.7,-0.82175]} width="0.31" />
+            <HairPoint position={[0.1948,0.29,-0.94867]} width="0.31" />
+            <HairPoint position={[0.20345,-0.23,-0.98772]} width="0.3" />
+            <HairPoint position={[0.18614,-0.59,-0.90961]} width="0.24" />
+            <HairPoint position={[0.21278,-0.80806,-0.81002]} width="0.17" />
+          </HairGuide>
+          <HairGuide id="crown_8" normal={[0,1,-0.3]}>
+            <HairPoint position={[0,1.075,-0.16]} width="0.055" />
+            <HairPoint position={[0,1.035,-0.36]} width="0.16" />
+            <HairPoint position={[0,0.93,-0.57]} width="0.26" />
+            <HairPoint position={[0,0.7,-0.84]} width="0.31" />
+            <HairPoint position={[0,0.29,-0.97]} width="0.31" />
+            <HairPoint position={[0,-0.23,-1.01]} width="0.3" />
+            <HairPoint position={[0,-0.59,-0.93]} width="0.24" />
+            <HairPoint position={[-0.06607,-0.73006,-0.83716]} width="0.17" />
+          </HairGuide>
+          <HairGuide id="crown_9" normal={[-0.06493,1,-0.29289]}>
+            <HairPoint position={[-0.01948,1.075,-0.15787]} width="0.055" />
+            <HairPoint position={[-0.06277,1.035,-0.35313]} width="0.16" />
+            <HairPoint position={[-0.10822,0.93,-0.55815]} width="0.26" />
+            <HairPoint position={[-0.16666,0.7,-0.82175]} width="0.31" />
+            <HairPoint position={[-0.1948,0.29,-0.94867]} width="0.31" />
+            <HairPoint position={[-0.20345,-0.23,-0.98772]} width="0.3" />
+            <HairPoint position={[-0.18614,-0.59,-0.90961]} width="0.24" />
+            <HairPoint position={[-0.19634,-0.77227,-0.81455]} width="0.17" />
+          </HairGuide>
+          <HairGuide id="crown_10" normal={[-0.12679,1,-0.27189]}>
+            <HairPoint position={[-0.03804,1.075,-0.15157]} width="0.055" />
+            <HairPoint position={[-0.12256,1.035,-0.33283]} width="0.16" />
+            <HairPoint position={[-0.21131,0.93,-0.52315]} width="0.26" />
+            <HairPoint position={[-0.32542,0.7,-0.76786]} width="0.31" />
+            <HairPoint position={[-0.38036,0.29,-0.88568]} width="0.31" />
+            <HairPoint position={[-0.39726,-0.23,-0.92193]} width="0.3" />
+            <HairPoint position={[-0.36345,-0.59,-0.84942]} width="0.24" />
+            <HairPoint position={[-0.25692,-0.80765,-0.79587]} width="0.17" />
+          </HairGuide>
+          <HairGuide id="crown_11" normal={[-0.18263,1,-0.23801]}>
+            <HairPoint position={[-0.05479,1.075,-0.1414]} width="0.055" />
+            <HairPoint position={[-0.17654,1.035,-0.30007]} width="0.16" />
+            <HairPoint position={[-0.30438,0.93,-0.46668]} width="0.26" />
+            <HairPoint position={[-0.46875,0.7,-0.68088]} width="0.31" />
+            <HairPoint position={[-0.54789,0.29,-0.78402]} width="0.31" />
+            <HairPoint position={[-0.57224,-0.23,-0.81575]} width="0.3" />
+            <HairPoint position={[-0.52353,-0.59,-0.75228]} width="0.24" />
+            <HairPoint position={[-0.45959,-0.72972,-0.6878]} width="0.17" />
+          </HairGuide>
+          <HairGuide id="crown_12" normal={[-0.22981,1,-0.19284]}>
+            <HairPoint position={[-0.06894,1.075,-0.12785]} width="0.055" />
+            <HairPoint position={[-0.22215,1.035,-0.25641]} width="0.16" />
+            <HairPoint position={[-0.38302,0.93,-0.39139]} width="0.26" />
+            <HairPoint position={[-0.58985,0.7,-0.56495]} width="0.31" />
+            <HairPoint position={[-0.68944,0.29,-0.64851]} width="0.31" />
+            <HairPoint position={[-0.72008,-0.23,-0.67422]} width="0.3" />
+            <HairPoint position={[-0.6588,-0.59,-0.6228]} width="0.24" />
+            <HairPoint position={[-0.63631,-0.77302,-0.5036]} width="0.17" />
+          </HairGuide>
+          <HairGuide id="crown_13" normal={[-0.2661,1,-0.13852]}>
+            <HairPoint position={[-0.07983,1.075,-0.11156]} width="0.055" />
+            <HairPoint position={[-0.25723,1.035,-0.20391]} width="0.16" />
+            <HairPoint position={[-0.44351,0.93,-0.30087]} width="0.26" />
+            <HairPoint position={[-0.683,0.7,-0.42555]} width="0.31" />
+            <HairPoint position={[-0.79831,0.29,-0.48557]} width="0.31" />
+            <HairPoint position={[-0.83379,-0.23,-0.50404]} width="0.3" />
+            <HairPoint position={[-0.76283,-0.59,-0.4671]} width="0.24" />
+            <HairPoint position={[-0.6791,-0.80723,-0.43295]} width="0.17" />
+          </HairGuide>
+          <HairGuide id="crown_14" normal={[-0.28978,1,-0.07765]}>
+            <HairPoint position={[-0.08693,1.075,-0.09329]} width="0.055" />
+            <HairPoint position={[-0.28012,1.035,-0.14506]} width="0.16" />
+            <HairPoint position={[-0.48296,0.93,-0.19941]} width="0.26" />
+            <HairPoint position={[-0.74376,0.7,-0.26929]} width="0.31" />
+            <HairPoint position={[-0.86933,0.29,-0.30294]} width="0.31" />
+            <HairPoint position={[-0.90797,-0.23,-0.31329]} width="0.3" />
+            <HairPoint position={[-0.8307,-0.59,-0.29258]} width="0.24" />
+            <HairPoint position={[-0.72092,-0.72939,-0.34052]} width="0.17" />
+          </HairGuide>
+          <HairGuide id="crown_15" normal={[-0.29971,1,-0.01309]}>
+            <HairPoint position={[-0.08991,1.075,-0.07393]} width="0.055" />
+            <HairPoint position={[-0.28972,1.035,-0.08265]} width="0.16" />
+            <HairPoint position={[-0.49952,0.93,-0.09181]} width="0.26" />
+            <HairPoint position={[-0.76927,0.7,-0.10359]} width="0.31" />
+            <HairPoint position={[-0.89914,0.29,-0.10926]} width="0.31" />
+            <HairPoint position={[-0.93911,-0.23,-0.111]} width="0.3" />
+            <HairPoint position={[-0.85918,-0.59,-0.10751]} width="0.24" />
+            <HairPoint position={[-0.76998,-0.77378,-0.07595]} width="0.17" />
+          </HairGuide>
+          <HairGuide id="crown_16" normal={[-0.29544,1,0.05209]}>
+            <HairPoint position={[-0.08863,1.075,-0.05437]} width="0.055" />
+            <HairPoint position={[-0.28559,1.035,-0.01964]} width="0.16" />
+            <HairPoint position={[-0.4924,0.93,0.01682]} width="0.26" />
+            <HairPoint position={[-0.7583,0.7,0.06371]} width="0.31" />
+            <HairPoint position={[-0.88633,0.29,0.08628]} width="0.31" />
+            <HairPoint position={[-0.92572,-0.23,0.09323]} width="0.3" />
+            <HairPoint position={[-0.84693,-0.59,0.07934]} width="0.24" />
+            <HairPoint position={[-0.74363,-0.8068,0.12978]} width="0.17" />
+          </HairGuide>
+        </HairGroup>
+      </HairGroom>
+      <HairRepresentations>
+        <HairCards id="cards" lengthSegments="48" widthSegments="12" thickness="0.065" crossSection="arched" tipShape="point" />
+      </HairRepresentations>
+    </HairAsset>
+    <HairAsset id="bob_fringe" material="clay" space="asset_local">
+      <HairGroom>
+        <HairGroup id="locks" role="silhouette">
+          <HairDefaults width="0.25" camber="0.23" roll="0" />
+          <HairGuide id="fringe_0" normal={[0,0.8,1]}>
+            <HairPoint position={[-0.1112,1.055,0.03]} width="0.045" />
+            <HairPoint position={[-0.2224,1.045,0.26]} width="0.12" />
+            <HairPoint position={[-0.3784,0.91,0.49]} width="0.2" />
+            <HairPoint position={[-0.546,0.57,0.78]} width="0.21" />
+            <HairPoint position={[-0.72,0.27,0.7726]} width="0.166" />
+            <HairPoint position={[-0.59,-0.325,0.7278]} width="0.11" />
+          </HairGuide>
+          <HairGuide id="fringe_1" normal={[0,0.8,1]}>
+            <HairPoint position={[-0.0998,1.055,0.03]} width="0.045" />
+            <HairPoint position={[-0.1996,1.045,0.26]} width="0.144" />
+            <HairPoint position={[-0.2986,0.91,0.49]} width="0.24" />
+            <HairPoint position={[-0.413,0.57,0.78]} width="0.252" />
+            <HairPoint position={[-0.53,0.27,0.78305]} width="0.1992" />
+            <HairPoint position={[-0.4,-0.005,0.7354]} width="0.132" />
+          </HairGuide>
+          <HairGuide id="fringe_2" normal={[0,0.8,1]}>
+            <HairPoint position={[-0.0896,1.055,0.03]} width="0.045" />
+            <HairPoint position={[-0.1792,1.045,0.26]} width="0.144" />
+            <HairPoint position={[-0.2272,0.91,0.49]} width="0.24" />
+            <HairPoint position={[-0.294,0.57,0.78]} width="0.252" />
+            <HairPoint position={[-0.36,0.27,0.7924]} width="0.1992" />
+            <HairPoint position={[-0.23,0.08,0.7422]} width="0.132" />
+          </HairGuide>
+          <HairGuide id="fringe_3" normal={[0,0.8,1]}>
+            <HairPoint position={[-0.065,1.055,0.03]} width="0.045" />
+            <HairPoint position={[-0.13,1.045,0.26]} width="0.228" />
+            <HairPoint position={[-0.055,0.91,0.49]} width="0.38" />
+            <HairPoint position={[-0.007,0.57,0.78]} width="0.399" />
+            <HairPoint position={[0.05,0.27,0.80505]} width="0.3154" />
+            <HairPoint position={[0.18,0.05,0.7514]} width="0.209" />
+          </HairGuide>
+          <HairGuide id="fringe_4" normal={[0,0.8,1]}>
+            <HairPoint position={[-0.0494,1.055,0.03]} width="0.045" />
+            <HairPoint position={[-0.0988,1.045,0.26]} width="0.174" />
+            <HairPoint position={[0.0542,0.91,0.49]} width="0.29" />
+            <HairPoint position={[0.175,0.57,0.78]} width="0.3045" />
+            <HairPoint position={[0.31,0.27,0.79075]} width="0.2407" />
+            <HairPoint position={[0.44,0.02,0.741]} width="0.1595" />
+          </HairGuide>
+          <HairGuide id="fringe_5" normal={[0,0.8,1]}>
+            <HairPoint position={[-0.0338,1.055,0.03]} width="0.045" />
+            <HairPoint position={[-0.0676,1.045,0.26]} width="0.15" />
+            <HairPoint position={[0.1634,0.91,0.49]} width="0.25" />
+            <HairPoint position={[0.357,0.57,0.78]} width="0.2625" />
+            <HairPoint position={[0.57,0.27,0.77645]} width="0.2075" />
+            <HairPoint position={[0.7,-0.285,0.7306]} width="0.1375" />
+          </HairGuide>
+          <HairGuide id="fringe_6" normal={[0,0.8,1]}>
+            <HairPoint position={[-0.0248,1.055,0.03]} width="0.045" />
+            <HairPoint position={[-0.0496,1.045,0.26]} width="0.15" />
+            <HairPoint position={[0.2264,0.91,0.49]} width="0.25" />
+            <HairPoint position={[0.462,0.57,0.78]} width="0.2625" />
+            <HairPoint position={[0.72,0.27,0.7682]} width="0.2075" />
+            <HairPoint position={[0.85,-0.415,0.7246]} width="0.1375" />
+          </HairGuide>
+        </HairGroup>
+      </HairGroom>
+      <HairRepresentations>
+        <HairCards id="cards" lengthSegments="48" widthSegments="12" thickness="0.06" crossSection="arched" tipShape="point" />
+      </HairRepresentations>
+    </HairAsset>
+    <HairAsset id="bob_temples" material="clay" space="asset_local">
+      <HairGroom>
+        <HairGroup id="locks" role="silhouette">
+          <HairDefaults width="0.25" camber="0.24" roll="0" />
+          <HairGuide id="temple_left_0" normal={[-0.7,0.8,0.4]}>
+            <HairPoint position={[-0.48,0.94,0.23]} width="0.17" />
+            <HairPoint position={[-0.73,0.58,0.28]} width="0.24" />
+            <HairPoint position={[-0.83,0.08,0.36]} width="0.22" />
+            <HairPoint position={[-0.82,-0.43,0.32]} width="0.17" />
+            <HairPoint position={[-0.69,-0.95,0.24]} width="0.12" />
+          </HairGuide>
+          <HairMirror id="temple_right_0" source="temple_left_0" axis="x" />
+          <HairGuide id="temple_left_1" normal={[-0.7,0.8,0.4]}>
+            <HairPoint position={[-0.56,0.94,0.1]} width="0.17" />
+            <HairPoint position={[-0.755,0.58,0.1]} width="0.24" />
+            <HairPoint position={[-0.875,0.08,0.18]} width="0.22" />
+            <HairPoint position={[-0.87,-0.43,0.14]} width="0.17" />
+            <HairPoint position={[-0.745,-0.87,0.06]} width="0.12" />
+          </HairGuide>
+          <HairMirror id="temple_right_1" source="temple_left_1" axis="x" />
+          <HairGuide id="temple_left_2" normal={[-0.7,0.8,0.4]}>
+            <HairPoint position={[-0.64,0.94,-0.03]} width="0.17" />
+            <HairPoint position={[-0.78,0.58,-0.08]} width="0.24" />
+            <HairPoint position={[-0.92,0.08,0]} width="0.22" />
+            <HairPoint position={[-0.92,-0.43,-0.04]} width="0.17" />
+            <HairPoint position={[-0.8,-0.79,-0.12]} width="0.12" />
+          </HairGuide>
+          <HairMirror id="temple_right_2" source="temple_left_2" axis="x" />
+        </HairGroup>
+      </HairGroom>
+      <HairRepresentations>
+        <HairCards id="cards" lengthSegments="48" widthSegments="12" thickness="0.06" crossSection="arched" tipShape="point" />
+      </HairRepresentations>
+    </HairAsset>
+    <HairAsset id="bob_underlayer" material="clay" space="asset_local">
+      <HairGroom>
+        <HairGroup id="locks" role="silhouette">
+          <HairDefaults width="0.25" camber="0.22" roll="0" />
+          <HairGuide id="violet_0" normal={[0.90631,0,0.42262]}>
+            <HairPoint position={[0.73411,-0.18,0.27232]} width="0.2" />
+            <HairPoint position={[0.78849,-0.46,0.29768]} width="0.19" />
+            <HairPoint position={[0.71598,-0.69,0.26387]} width="0.135" />
+            <HairPoint position={[0.63442,-0.77,0.21738]} width="0.055" />
+          </HairGuide>
+          <HairGuide id="violet_1" normal={[0.98261,0,0.18567]}>
+            <HairPoint position={[0.79592,-0.18,0.08039]} width="0.2" />
+            <HairPoint position={[0.85487,-0.46,0.09153]} width="0.19" />
+            <HairPoint position={[0.77626,-0.69,0.07668]} width="0.135" />
+            <HairPoint position={[0.68783,-0.78819,0.05625]} width="0.055" />
+          </HairGuide>
+          <HairGuide id="violet_2" normal={[0.99803,0,-0.06279]}>
+            <HairPoint position={[0.8084,-0.18,-0.12086]} width="0.2" />
+            <HairPoint position={[0.86828,-0.46,-0.12463]} width="0.19" />
+            <HairPoint position={[0.78844,-0.69,-0.1196]} width="0.135" />
+            <HairPoint position={[0.69862,-0.75486,-0.1127]} width="0.055" />
+          </HairGuide>
+          <HairGuide id="violet_3" normal={[0.95159,0,-0.30736]}>
+            <HairPoint position={[0.77079,-0.18,-0.31896]} width="0.2" />
+            <HairPoint position={[0.82789,-0.46,-0.3374]} width="0.19" />
+            <HairPoint position={[0.75176,-0.69,-0.31281]} width="0.135" />
+            <HairPoint position={[0.66612,-0.76441,-0.279]} width="0.055" />
+          </HairGuide>
+          <HairGuide id="violet_4" normal={[0.84619,0,-0.53288]}>
+            <HairPoint position={[0.68542,-0.18,-0.50163]} width="0.2" />
+            <HairPoint position={[0.73619,-0.46,-0.5336]} width="0.19" />
+            <HairPoint position={[0.66849,-0.69,-0.49097]} width="0.135" />
+            <HairPoint position={[0.59234,-0.78979,-0.43236]} width="0.055" />
+          </HairGuide>
+          <HairGuide id="violet_5" normal={[0.68835,0,-0.72537]}>
+            <HairPoint position={[0.55757,-0.18,-0.65755]} width="0.2" />
+            <HairPoint position={[0.59887,-0.46,-0.70108]} width="0.19" />
+            <HairPoint position={[0.5438,-0.69,-0.64305]} width="0.135" />
+            <HairPoint position={[0.48185,-0.75912,-0.56325]} width="0.055" />
+          </HairGuide>
+          <HairGuide id="violet_6" normal={[0.48786,0,-0.87292]}>
+            <HairPoint position={[0.39517,-0.18,-0.77707]} width="0.2" />
+            <HairPoint position={[0.42444,-0.46,-0.82944]} width="0.19" />
+            <HairPoint position={[0.38541,-0.69,-0.75961]} width="0.135" />
+            <HairPoint position={[0.3415,-0.75927,-0.66359]} width="0.055" />
+          </HairGuide>
+          <HairGuide id="violet_7" normal={[0.25713,0,-0.96638]}>
+            <HairPoint position={[0.20828,-0.18,-0.85276]} width="0.2" />
+            <HairPoint position={[0.22371,-0.46,-0.91075]} width="0.19" />
+            <HairPoint position={[0.20313,-0.69,-0.83344]} width="0.135" />
+            <HairPoint position={[0.17999,-0.78981,-0.72714]} width="0.055" />
+          </HairGuide>
+          <HairGuide id="violet_8" normal={[0.01047,0,-0.99995]}>
+            <HairPoint position={[0.00848,-0.18,-0.87996]} width="0.2" />
+            <HairPoint position={[0.00911,-0.46,-0.93995]} width="0.19" />
+            <HairPoint position={[0.00827,-0.69,-0.85996]} width="0.135" />
+            <HairPoint position={[0.00733,-0.76424,-0.74996]} width="0.055" />
+          </HairGuide>
+          <HairGuide id="violet_9" normal={[-0.23684,0,-0.97155]}>
+            <HairPoint position={[-0.19184,-0.18,-0.85695]} width="0.2" />
+            <HairPoint position={[-0.20605,-0.46,-0.91525]} width="0.19" />
+            <HairPoint position={[-0.1871,-0.69,-0.83752]} width="0.135" />
+            <HairPoint position={[-0.16579,-0.75498,-0.73065]} width="0.055" />
+          </HairGuide>
+          <HairGuide id="violet_10" normal={[-0.46947,0,-0.88295]}>
+            <HairPoint position={[-0.38027,-0.18,-0.78519]} width="0.2" />
+            <HairPoint position={[-0.40844,-0.46,-0.83816]} width="0.19" />
+            <HairPoint position={[-0.37088,-0.69,-0.76753]} width="0.135" />
+            <HairPoint position={[-0.32863,-0.78826,-0.6704]} width="0.055" />
+          </HairGuide>
+          <HairGuide id="violet_11" normal={[-0.67301,0,-0.73963]}>
+            <HairPoint position={[-0.54514,-0.18,-0.6691]} width="0.2" />
+            <HairPoint position={[-0.58552,-0.46,-0.71348]} width="0.19" />
+            <HairPoint position={[-0.53168,-0.69,-0.65431]} width="0.135" />
+            <HairPoint position={[-0.47111,-0.76982,-0.57295]} width="0.055" />
+          </HairGuide>
+          <HairGuide id="violet_12" normal={[-0.83485,0,-0.55048]}>
+            <HairPoint position={[-0.67623,-0.18,-0.51589]} width="0.2" />
+            <HairPoint position={[-0.72632,-0.46,-0.54892]} width="0.19" />
+            <HairPoint position={[-0.65953,-0.69,-0.50488]} width="0.135" />
+            <HairPoint position={[-0.58439,-0.75189,-0.44433]} width="0.055" />
+          </HairGuide>
+          <HairGuide id="violet_13" normal={[-0.94495,0,-0.32722]}>
+            <HairPoint position={[-0.76541,-0.18,-0.33505]} width="0.2" />
+            <HairPoint position={[-0.82211,-0.46,-0.35468]} width="0.19" />
+            <HairPoint position={[-0.74651,-0.69,-0.3285]} width="0.135" />
+            <HairPoint position={[-0.66146,-0.78525,-0.29251]} width="0.055" />
+          </HairGuide>
+          <HairGuide id="violet_14" normal={[-0.99649,0,-0.08368]}>
+            <HairPoint position={[-0.80716,-0.18,-0.13778]} width="0.2" />
+            <HairPoint position={[-0.86695,-0.46,-0.1428]} width="0.19" />
+            <HairPoint position={[-0.78723,-0.69,-0.13611]} width="0.135" />
+            <HairPoint position={[-0.69755,-0.77542,-0.1269]} width="0.055" />
+          </HairGuide>
+          <HairGuide id="violet_15" normal={[-0.98629,0,0.16505]}>
+            <HairPoint position={[-0.79889,-0.18,0.06369]} width="0.2" />
+            <HairPoint position={[-0.85807,-0.46,0.07359]} width="0.19" />
+            <HairPoint position={[-0.77917,-0.69,0.06039]} width="0.135" />
+            <HairPoint position={[-0.6904,-0.75024,0.04223]} width="0.055" />
+          </HairGuide>
+          <HairGuide id="violet_16" normal={[-0.91496,0,0.40355]}>
+            <HairPoint position={[-0.74112,-0.18,0.25687]} width="0.2" />
+            <HairPoint position={[-0.79601,-0.46,0.28108]} width="0.19" />
+            <HairPoint position={[-0.72282,-0.69,0.2488]} width="0.135" />
+            <HairPoint position={[-0.64047,-0.78103,0.20441]} width="0.055" />
+          </HairGuide>
+        </HairGroup>
+      </HairGroom>
+      <HairRepresentations>
+        <HairCards id="cards" lengthSegments="48" widthSegments="12" thickness="0.045" crossSection="arched" tipShape="point" />
+      </HairRepresentations>
+    </HairAsset>
+    <HairAsset id="bob_flyaways" material="clay" space="asset_local">
+      <HairGroom>
+        <HairGroup id="locks" role="silhouette">
+          <HairDefaults width="0.25" camber="0.2" roll="0" />
+          <HairGuide id="loose_left" normal={[-1,0.2,0.2]}>
+            <HairPoint position={[-0.23,1.07,0.12]} width="0.018" />
+            <HairPoint position={[-0.7,0.88,0.27]} width="0.025" />
+            <HairPoint position={[-0.91,0.42,0.39]} width="0.025" />
+            <HairPoint position={[-1.1,-0.04,0.45]} width="0.032" />
+            <HairPoint position={[-1.1,-0.34,0.39]} width="0.018" />
+            <HairPoint position={[-0.99,-0.31,0.35]} width="0.005" />
+          </HairGuide>
+          <HairGuide id="loose_right" normal={[1,0.2,0.2]}>
+            <HairPoint position={[0.18,1.07,0.02]} width="0.014" />
+            <HairPoint position={[0.64,0.87,0.25]} width="0.022" />
+            <HairPoint position={[0.85,0.34,0.45]} width="0.025" />
+            <HairPoint position={[1.1,-0.13,0.4]} width="0.032" />
+            <HairPoint position={[1.07,-0.4,0.31]} width="0.018" />
+            <HairPoint position={[0.97,-0.37,0.25]} width="0.004" />
+          </HairGuide>
+        </HairGroup>
+      </HairGroom>
+      <HairRepresentations>
+        <HairCards id="cards" lengthSegments="48" widthSegments="12" thickness="0.022" crossSection="arched" tipShape="point" />
+      </HairRepresentations>
+    </HairAsset>
+  </Assets>
+  <Background color="#EBE8E5" />
+  <Scene id="S86AnimeHead" renderStyle="portrait">
+    <Timeline>
+      <Track id="portrait" space="3d">
+        <Sequence duration="20s">
+          <CompositeGroup id="head_stage" space="3d" depth="true">
+            <Camera3D id="camera" position={[0.00000,-0.20,17.50000]} target={[0,-.22,0]} fov="7.8" />
+            <DirectionalLight direction={[-.3,-.5,-1]} color="#FFF2E8" intensity="1.8" />
+            <DirectionalLight direction={[.6,.1,.8]} color="#DFE5FF" intensity="0.7" />
+            <Model id="clay_neck_model" asset="clay_neck" position={[0,0,0]} rotation={[0,0,0]} />
+            <Model id="clay_ear_l_model" asset="clay_ear_l" position={[-0.610,-0.255,-0.285]} rotation={[0,0,0]} />
+            <Model id="clay_concha_l_model" asset="clay_concha_l" position={[-0.661,-0.255,-0.274]} rotation={[0,0,0]} />
+            <Model id="clay_tragus_l_model" asset="clay_tragus_l" position={[-0.664,-0.280,-0.220]} rotation={[0,0,0]} />
+            <Model id="clay_helix_l_model" asset="clay_helix_l" position={[0,0,0]} rotation={[0,0,0]} />
+            <Model id="clay_antihelix_l_model" asset="clay_antihelix_l" position={[0,0,0]} rotation={[0,0,0]} />
+            <Model id="clay_ear_r_model" asset="clay_ear_r" position={[0.610,-0.255,-0.285]} rotation={[0,0,0]} />
+            <Model id="clay_concha_r_model" asset="clay_concha_r" position={[0.661,-0.255,-0.274]} rotation={[0,0,0]} />
+            <Model id="clay_tragus_r_model" asset="clay_tragus_r" position={[0.664,-0.280,-0.220]} rotation={[0,0,0]} />
+            <Model id="clay_helix_r_model" asset="clay_helix_r" position={[0,0,0]} rotation={[0,0,0]} />
+            <Model id="clay_antihelix_r_model" asset="clay_antihelix_r" position={[0,0,0]} rotation={[0,0,0]} />
+            <Model id="clay_connected_face_model" asset="s86_head" position={[0,0,0]} rotation={[0,0,0]} />
+            <Model id="bob_cap_model" asset="bob_cap">
+              <MaterialBinding material="*" outlineWidth="0" />
+            </Model>
+            <Model id="bob_crown_model" asset="bob_crown">
+              <MaterialBinding material="*" outlineWidth="0" />
+            </Model>
+            <Model id="bob_fringe_model" asset="bob_fringe">
+              <MaterialBinding material="*" outlineWidth="0" />
+            </Model>
+            <Model id="bob_temples_model" asset="bob_temples">
+              <MaterialBinding material="*" outlineWidth="0" />
+            </Model>
+            <Model id="bob_underlayer_model" asset="bob_underlayer">
+              <MaterialBinding material="*" outlineWidth="0" />
+            </Model>
+            <Model id="bob_flyaways_model" asset="bob_flyaways">
+              <MaterialBinding material="*" outlineWidth="0" />
+            </Model>
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <AnimationTarget node="camera" property="position">
+    <Key time="2.00000s" value={[0.000000,-.20,17.500000]} />
+    <Key time="2.22222s" value={[1.525225,-.20,17.433407]} />
+    <Key time="2.44444s" value={[3.038843,-.20,17.234136]} />
+    <Key time="2.66667s" value={[4.529333,-.20,16.903702]} />
+    <Key time="2.88889s" value={[5.985353,-.20,16.444621]} />
+    <Key time="3.11111s" value={[7.395820,-.20,15.860386]} />
+    <Key time="3.33333s" value={[8.750000,-.20,15.155445]} />
+    <Key time="3.55556s" value={[10.037588,-.20,14.335161]} />
+    <Key time="3.77778s" value={[11.248783,-.20,13.405778]} />
+    <Key time="4.00000s" value={[12.374369,-.20,12.374369]} />
+    <Key time="4.22222s" value={[13.405778,-.20,11.248783]} />
+    <Key time="4.44444s" value={[14.335161,-.20,10.037588]} />
+    <Key time="4.66667s" value={[15.155445,-.20,8.750000]} />
+    <Key time="4.88889s" value={[15.860386,-.20,7.395820]} />
+    <Key time="5.11111s" value={[16.444621,-.20,5.985353]} />
+    <Key time="5.33333s" value={[16.903702,-.20,4.529333]} />
+    <Key time="5.55556s" value={[17.234136,-.20,3.038843]} />
+    <Key time="5.77778s" value={[17.433407,-.20,1.525225]} />
+    <Key time="6.00000s" value={[17.500000,-.20,0.000000]} />
+    <Key time="6.22222s" value={[17.433407,-.20,-1.525225]} />
+    <Key time="6.44444s" value={[17.234136,-.20,-3.038843]} />
+    <Key time="6.66667s" value={[16.903702,-.20,-4.529333]} />
+    <Key time="6.88889s" value={[16.444621,-.20,-5.985353]} />
+    <Key time="7.11111s" value={[15.860386,-.20,-7.395820]} />
+    <Key time="7.33333s" value={[15.155445,-.20,-8.750000]} />
+    <Key time="7.55556s" value={[14.335161,-.20,-10.037588]} />
+    <Key time="7.77778s" value={[13.405778,-.20,-11.248783]} />
+    <Key time="8.00000s" value={[12.374369,-.20,-12.374369]} />
+    <Key time="8.22222s" value={[11.248783,-.20,-13.405778]} />
+    <Key time="8.44444s" value={[10.037588,-.20,-14.335161]} />
+    <Key time="8.66667s" value={[8.750000,-.20,-15.155445]} />
+    <Key time="8.88889s" value={[7.395820,-.20,-15.860386]} />
+    <Key time="9.11111s" value={[5.985353,-.20,-16.444621]} />
+    <Key time="9.33333s" value={[4.529333,-.20,-16.903702]} />
+    <Key time="9.55556s" value={[3.038843,-.20,-17.234136]} />
+    <Key time="9.77778s" value={[1.525225,-.20,-17.433407]} />
+    <Key time="10.00000s" value={[0.000000,-.20,-17.500000]} />
+    <Key time="10.22222s" value={[-1.525225,-.20,-17.433407]} />
+    <Key time="10.44444s" value={[-3.038843,-.20,-17.234136]} />
+    <Key time="10.66667s" value={[-4.529333,-.20,-16.903702]} />
+    <Key time="10.88889s" value={[-5.985353,-.20,-16.444621]} />
+    <Key time="11.11111s" value={[-7.395820,-.20,-15.860386]} />
+    <Key time="11.33333s" value={[-8.750000,-.20,-15.155445]} />
+    <Key time="11.55556s" value={[-10.037588,-.20,-14.335161]} />
+    <Key time="11.77778s" value={[-11.248783,-.20,-13.405778]} />
+    <Key time="12.00000s" value={[-12.374369,-.20,-12.374369]} />
+    <Key time="12.22222s" value={[-13.405778,-.20,-11.248783]} />
+    <Key time="12.44444s" value={[-14.335161,-.20,-10.037588]} />
+    <Key time="12.66667s" value={[-15.155445,-.20,-8.750000]} />
+    <Key time="12.88889s" value={[-15.860386,-.20,-7.395820]} />
+    <Key time="13.11111s" value={[-16.444621,-.20,-5.985353]} />
+    <Key time="13.33333s" value={[-16.903702,-.20,-4.529333]} />
+    <Key time="13.55556s" value={[-17.234136,-.20,-3.038843]} />
+    <Key time="13.77778s" value={[-17.433407,-.20,-1.525225]} />
+    <Key time="14.00000s" value={[-17.500000,-.20,-0.000000]} />
+    <Key time="14.22222s" value={[-17.433407,-.20,1.525225]} />
+    <Key time="14.44444s" value={[-17.234136,-.20,3.038843]} />
+    <Key time="14.66667s" value={[-16.903702,-.20,4.529333]} />
+    <Key time="14.88889s" value={[-16.444621,-.20,5.985353]} />
+    <Key time="15.11111s" value={[-15.860386,-.20,7.395820]} />
+    <Key time="15.33333s" value={[-15.155445,-.20,8.750000]} />
+    <Key time="15.55556s" value={[-14.335161,-.20,10.037588]} />
+    <Key time="15.77778s" value={[-13.405778,-.20,11.248783]} />
+    <Key time="16.00000s" value={[-12.374369,-.20,12.374369]} />
+    <Key time="16.22222s" value={[-11.248783,-.20,13.405778]} />
+    <Key time="16.44444s" value={[-10.037588,-.20,14.335161]} />
+    <Key time="16.66667s" value={[-8.750000,-.20,15.155445]} />
+    <Key time="16.88889s" value={[-7.395820,-.20,15.860386]} />
+    <Key time="17.11111s" value={[-5.985353,-.20,16.444621]} />
+    <Key time="17.33333s" value={[-4.529333,-.20,16.903702]} />
+    <Key time="17.55556s" value={[-3.038843,-.20,17.234136]} />
+    <Key time="17.77778s" value={[-1.525225,-.20,17.433407]} />
+    <Key time="18.00000s" value={[-0.000000,-.20,17.500000]} />
+  </AnimationTarget>
+  <Present from="S86AnimeHead" />
+</Graph>

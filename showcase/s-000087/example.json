@@ -1,0 +1,13 @@
+{
+  "id": "s-000087",
+  "type": "showcase",
+  "title": "The Wind Carries the Paper Away",
+  "domain": "scene",
+  "features": ["scene", "assets", "true-3d", "character", "character-rig", "glb", "glb-asset", "anime", "camera-3d", "humanoid-action", "humanoid-retarget", "material-binding", "storytelling", "wind", "animation-target", "color-management", "process-effect"],
+  "dsl": ["Graph", "Assets", "MaterialAsset", "ModelAsset", "AnimationAsset", "PrimitiveAsset", "CompoundAsset", "Instance", "ModelProfile", "Retarget", "Map", "BoneAxisMap", "Axis", "Action", "ApplyAction", "Pose", "Bone", "Background", "Scene", "Timeline", "Track", "Sequence", "CompositeGroup", "Camera3D", "DirectionalLight", "Model", "MaterialBinding", "AnimationTarget", "Key", "Present"],
+  "teaches": ["Build a 30-second silent CEL animatic around a single Character1 model, a park, a drawing and a wind-driven paper handoff.", "Use a restrained camera language: quiet observation, a short paper chase, then a held two-shot for the meeting."],
+  "source_path": "showcase/s-000087",
+  "demo_url": "",
+  "related": ["s-000086", "s-000084", "s-000081"],
+  "requires": ["Graph", "ModelAsset", "AnimationAsset", "Scene", "Camera3D", "ApplyAction", "Present"]
+}
