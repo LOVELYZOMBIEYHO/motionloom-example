@@ -1,0 +1,62 @@
+{
+  "id": "s-000093",
+  "type": "showcase",
+  "title": "PBR Anti-Aliasing Matrix: Five Methods at Four Quality Levels",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "assets",
+    "true-3d",
+    "pbr",
+    "pbr-lighting",
+    "shadow-map",
+    "camera-3d",
+    "environment",
+    "animation-target",
+    "static-composition"
+  ],
+  "dsl": [
+    "Graph",
+    "RenderStyle",
+    "SurfaceStyle",
+    "AntiAliasingStyle",
+    "Assets",
+    "ImageAsset",
+    "ModelAsset",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "CompositeGroup",
+    "Camera3D",
+    "EnvironmentLight",
+    "DirectionalLight",
+    "PointLight",
+    "AtmosphereFog",
+    "Model",
+    "AnimationTarget",
+    "Key",
+    "Present"
+  ],
+  "teaches": [
+    "Compare FXAA, SMAA, MSAA, TAA and SSAA intent across Low, Medium, High and Ultra quality using discrete two-second Scene.renderStyle cuts.",
+    "Keep physical shading, camera, geometry and lighting fixed so anti-aliasing policy is the only RenderStyle variable.",
+    "Observe requested-versus-effective fallback behaviour for methods not implemented by the active immediate-preview backend."
+  ],
+  "source_path": "showcase/s-000093",
+  "demo_url": "",
+  "related": [
+    "s-000089",
+    "s-000090"
+  ],
+  "requires": [
+    "Graph",
+    "RenderStyle",
+    "AntiAliasingStyle",
+    "ModelAsset",
+    "Scene",
+    "Camera3D",
+    "Present"
+  ]
+}

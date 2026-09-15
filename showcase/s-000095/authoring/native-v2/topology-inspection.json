@@ -1,0 +1,79 @@
+{
+  "shark_head": {
+    "connectedComponents": 1,
+    "degenerateFaces": [],
+    "diagnostics": [
+      {
+        "code": "OPEN_BOUNDARY",
+        "message": "140 boundary edges are not allowed",
+        "severity": "error"
+      }
+    ],
+    "faces": 2056,
+    "inconsistentWindingEdges": 0,
+    "nonManifoldEdges": 0,
+    "openEdges": 140,
+    "selfIntersections": 0,
+    "signedVolume": null,
+    "valid": false,
+    "vertices": 2094
+  },
+  "shark_body": {
+    "connectedComponents": 1,
+    "degenerateFaces": [],
+    "diagnostics": [
+      {
+        "code": "OPEN_BOUNDARY",
+        "message": "64 boundary edges are not allowed",
+        "severity": "error"
+      }
+    ],
+    "faces": 3712,
+    "inconsistentWindingEdges": 0,
+    "nonManifoldEdges": 0,
+    "openEdges": 64,
+    "selfIntersections": 0,
+    "signedVolume": null,
+    "valid": false,
+    "vertices": 3713
+  },
+  "dorsal": {
+    "connectedComponents": 1,
+    "degenerateFaces": [],
+    "diagnostics": [],
+    "faces": 456,
+    "inconsistentWindingEdges": 0,
+    "nonManifoldEdges": 0,
+    "openEdges": 0,
+    "selfIntersections": 0,
+    "signedVolume": 0.1080675795674324,
+    "valid": true,
+    "vertices": 456
+  },
+  "pectoral_left": {
+    "connectedComponents": 1,
+    "degenerateFaces": [],
+    "diagnostics": [],
+    "faces": 528,
+    "inconsistentWindingEdges": 0,
+    "nonManifoldEdges": 0,
+    "openEdges": 0,
+    "selfIntersections": 0,
+    "signedVolume": 0.1206086277961731,
+    "valid": true,
+    "vertices": 528
+  },
+  "tail_upper": {
+    "connectedComponents": 1,
+    "degenerateFaces": [],
+    "diagnostics": [],
+    "faces": 456,
+    "inconsistentWindingEdges": 0,
+    "nonManifoldEdges": 0,
+    "openEdges": 0,
+    "selfIntersections": 0,
+    "signedVolume": 0.041499558836221695,
+    "valid": true,
+    "vertices": 456
+  }
+}

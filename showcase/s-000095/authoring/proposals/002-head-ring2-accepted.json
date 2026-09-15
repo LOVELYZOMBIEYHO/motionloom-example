@@ -1,0 +1,183 @@
+{
+ "schemaVersion": "1.0",
+ "sourceFingerprint": "7e0d90c80b41145905e703f398ee29b733322cd97a32dc26850b04db0dead3b8",
+ "topologySignature": "9b918a0d818c88b9cab18be676e7ca0bf2956bb0719bb1c6b421dfb0989ac3f0",
+ "cameraFingerprint": "2a10a5d731d796df73a18697938273c6fe52108050acd999c2cd130945278f7b",
+ "referenceSetFingerprint": "c415f4092116f4d493a92c4ebb45b6abc4aba437ca1581328c25a6837d0a8eb8",
+ "metricProfileFingerprint": "b2c85c74dc12b00edc08e19d17694d036a4cee944d835a20f9368db38be887e2",
+ "evaluationFingerprint": "7e8848976a9563d3f004e2998cd131691a6fb7cd307c3c20f1cd7a8d86adc5d2",
+ "targetAssetId": "s95_shark_mesh",
+ "reason": "top and bottom silhouettes place the head sides narrower",
+ "changes": [
+  {
+   "vertex": 25,
+   "before": [
+    -1.78,
+    0.14722,
+    0.165
+   ],
+   "after": [
+    -1.773796,
+    0.1429142,
+    0.1560448
+   ],
+   "confidence": 0.7,
+   "evidenceViews": [
+    "left"
+   ]
+  },
+  {
+   "vertex": 35,
+   "before": [
+    -1.78,
+    0.14722,
+    -0.165
+   ],
+   "after": [
+    -1.773796,
+    0.1429142,
+    -0.1560448
+   ],
+   "confidence": 0.7,
+   "evidenceViews": [
+    "left"
+   ]
+  },
+  {
+   "vertex": 26,
+   "before": [
+    -1.78,
+    0.085,
+    0.28579
+   ],
+   "after": [
+    -1.7698714,
+    0.0814335,
+    0.2702511
+   ],
+   "confidence": 0.7,
+   "evidenceViews": [
+    "top"
+   ]
+  },
+  {
+   "vertex": 34,
+   "before": [
+    -1.78,
+    0.085,
+    -0.28579
+   ],
+   "after": [
+    -1.7698714,
+    0.0814335,
+    -0.2702511
+   ],
+   "confidence": 0.7,
+   "evidenceViews": [
+    "top"
+   ]
+  },
+  {
+   "vertex": 28,
+   "before": [
+    -1.78,
+    -0.085,
+    0.28579
+   ],
+   "after": [
+    -1.7693361,
+    -0.082541,
+    0.2706955
+   ],
+   "confidence": 0.7,
+   "evidenceViews": [
+    "bottom"
+   ]
+  },
+  {
+   "vertex": 32,
+   "before": [
+    -1.78,
+    -0.085,
+    -0.28579
+   ],
+   "after": [
+    -1.7693361,
+    -0.082541,
+    -0.2706955
+   ],
+   "confidence": 0.7,
+   "evidenceViews": [
+    "bottom"
+   ]
+  },
+  {
+   "vertex": 27,
+   "before": [
+    -1.78,
+    0.0,
+    0.33
+   ],
+   "after": [
+    -1.7681231,
+    -0.0002785,
+    0.3125038
+   ],
+   "confidence": 0.7,
+   "evidenceViews": []
+  },
+  {
+   "vertex": 33,
+   "before": [
+    -1.78,
+    -0.0,
+    -0.33
+   ],
+   "after": [
+    -1.7681231,
+    -0.0002785,
+    -0.3125038
+   ],
+   "confidence": 0.7,
+   "evidenceViews": []
+  },
+  {
+   "vertex": 29,
+   "before": [
+    -1.78,
+    -0.14722,
+    0.165
+   ],
+   "after": [
+    -1.7733151,
+    -0.1449383,
+    0.156432
+   ],
+   "confidence": 0.7,
+   "evidenceViews": []
+  },
+  {
+   "vertex": 31,
+   "before": [
+    -1.78,
+    -0.14722,
+    -0.165
+   ],
+   "after": [
+    -1.7733151,
+    -0.1449383,
+    -0.156432
+   ],
+   "confidence": 0.7,
+   "evidenceViews": []
+  }
+ ],
+ "validation": {
+  "allowBoundary": false,
+  "allowMultipleComponents": false,
+  "maxMoveRelativeToBounds": 0.02,
+  "maxChangedVertices": 16,
+  "maxEdgeLengthRatio": 1.25,
+  "maxLaplacianDeltaRelativeToBounds": 0.04
+ }
+}

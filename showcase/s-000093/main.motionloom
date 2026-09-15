@@ -1,0 +1,139 @@
+<!-- S93 / PBR ANTI-ALIASING MATRIX / Five methods by four quality levels. -->
+<Graph fps={24} duration="40s" size={[1280,720]} renderSize={[1280,720]}>
+  <!-- All twenty styles keep the same physical surface; only AA intent changes. -->
+  <RenderStyle id="aa_fxaa_low">
+    <SurfaceStyle shading="physical" />
+    <AntiAliasingStyle method="fxaa" quality="low" fallback="off" sharpness="0" />
+  </RenderStyle>
+  <RenderStyle id="aa_fxaa_medium">
+    <SurfaceStyle shading="physical" />
+    <AntiAliasingStyle method="fxaa" quality="medium" fallback="off" sharpness="0" />
+  </RenderStyle>
+  <RenderStyle id="aa_fxaa_high">
+    <SurfaceStyle shading="physical" />
+    <AntiAliasingStyle method="fxaa" quality="high" fallback="off" sharpness="0" />
+  </RenderStyle>
+  <RenderStyle id="aa_fxaa_ultra">
+    <SurfaceStyle shading="physical" />
+    <AntiAliasingStyle method="fxaa" quality="ultra" fallback="off" sharpness="0" />
+  </RenderStyle>
+
+  <RenderStyle id="aa_smaa_low">
+    <SurfaceStyle shading="physical" />
+    <AntiAliasingStyle method="smaa" quality="low" fallback="fxaa" sharpness="0" />
+  </RenderStyle>
+  <RenderStyle id="aa_smaa_medium">
+    <SurfaceStyle shading="physical" />
+    <AntiAliasingStyle method="smaa" quality="medium" fallback="fxaa" sharpness="0" />
+  </RenderStyle>
+  <RenderStyle id="aa_smaa_high">
+    <SurfaceStyle shading="physical" />
+    <AntiAliasingStyle method="smaa" quality="high" fallback="fxaa" sharpness="0" />
+  </RenderStyle>
+  <RenderStyle id="aa_smaa_ultra">
+    <SurfaceStyle shading="physical" />
+    <AntiAliasingStyle method="smaa" quality="ultra" fallback="fxaa" sharpness="0" />
+  </RenderStyle>
+
+  <RenderStyle id="aa_msaa_low">
+    <SurfaceStyle shading="physical" />
+    <AntiAliasingStyle method="msaa" quality="low" fallback="smaa" sharpness="0" />
+  </RenderStyle>
+  <RenderStyle id="aa_msaa_medium">
+    <SurfaceStyle shading="physical" />
+    <AntiAliasingStyle method="msaa" quality="medium" fallback="smaa" sharpness="0" />
+  </RenderStyle>
+  <RenderStyle id="aa_msaa_high">
+    <SurfaceStyle shading="physical" />
+    <AntiAliasingStyle method="msaa" quality="high" fallback="smaa" sharpness="0" />
+  </RenderStyle>
+  <RenderStyle id="aa_msaa_ultra">
+    <SurfaceStyle shading="physical" />
+    <AntiAliasingStyle method="msaa" quality="ultra" fallback="smaa" sharpness="0" />
+  </RenderStyle>
+
+  <RenderStyle id="aa_taa_low">
+    <SurfaceStyle shading="physical" />
+    <AntiAliasingStyle method="taa" quality="low" fallback="smaa" sharpness="0" />
+  </RenderStyle>
+  <RenderStyle id="aa_taa_medium">
+    <SurfaceStyle shading="physical" />
+    <AntiAliasingStyle method="taa" quality="medium" fallback="smaa" sharpness="0" />
+  </RenderStyle>
+  <RenderStyle id="aa_taa_high">
+    <SurfaceStyle shading="physical" />
+    <AntiAliasingStyle method="taa" quality="high" fallback="smaa" sharpness="0" />
+  </RenderStyle>
+  <RenderStyle id="aa_taa_ultra">
+    <SurfaceStyle shading="physical" />
+    <AntiAliasingStyle method="taa" quality="ultra" fallback="smaa" sharpness="0" />
+  </RenderStyle>
+
+  <RenderStyle id="aa_ssaa_low">
+    <SurfaceStyle shading="physical" />
+    <AntiAliasingStyle method="ssaa" quality="low" fallback="smaa" sharpness="0" />
+  </RenderStyle>
+  <RenderStyle id="aa_ssaa_medium">
+    <SurfaceStyle shading="physical" />
+    <AntiAliasingStyle method="ssaa" quality="medium" fallback="smaa" sharpness="0" />
+  </RenderStyle>
+  <RenderStyle id="aa_ssaa_high">
+    <SurfaceStyle shading="physical" />
+    <AntiAliasingStyle method="ssaa" quality="high" fallback="smaa" sharpness="0" />
+  </RenderStyle>
+  <RenderStyle id="aa_ssaa_ultra">
+    <SurfaceStyle shading="physical" />
+    <AntiAliasingStyle method="ssaa" quality="ultra" fallback="smaa" sharpness="0" />
+  </RenderStyle>
+
+  <Assets>
+    <ImageAsset id="s93_sky" src="../s-000089/assets/sky.png" />
+    <ModelAsset id="s93_courtyard" src="../s-000089/assets/courtyard-detail.glb" />
+    <ModelAsset id="s93_mountains" src="../s-000089/assets/mountains-detail.glb" />
+  </Assets>
+
+  <Background color="#CBDCE4" />
+  <Scene id="S93AntiAliasingMatrix" renderStyle="aa_fxaa_low">
+    <Timeline>
+      <Track id="world" space="3d">
+        <Sequence from="0s" duration="40s" out="hold">
+          <CompositeGroup id="s93_stage" space="3d" depth="true" format="rgba16f">
+            <Camera3D id="s93_camera" position={[1.25,2.35,9]} target={[0,2.9,-13]} fov="57" depthOfField="false" />
+            <EnvironmentLight id="s93_sky_light" asset="s93_sky" intensity="0.1" visible="true" backgroundIntensity="0.65" diffuseIntensity="1" specularIntensity="1" />
+            <DirectionalLight id="s93_sun" direction={[-.9,-.65,-.3]} color="#FFE3BC" intensity="3.75" castShadow="true" shadowStrength="1" />
+            <DirectionalLight id="s93_sky_fill" direction={[.35,-.45,-.8]} color="#CBDDEB" intensity="0.45" />
+            <PointLight id="s93_lantern_fill" position={[-2.8,4.2,-1.9]} color="#FFD196" intensity="12" range="4" />
+            <AtmosphereFog id="s93_mist" mode="linear" color="#C6D1D2" start="16" end="95" density="0.018" scattering="0.05" affectSky="false" />
+            <Model id="s93_courtyard_model" asset="s93_courtyard" scaleMode="none" scale="1" castShadow="true" receiveShadow="true" />
+            <Model id="s93_mountains_model" asset="s93_mountains" scaleMode="none" scale="1" />
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <!-- Two seconds per cell, ordered by method and then Low/Medium/High/Ultra. -->
+  <AnimationTarget node="S93AntiAliasingMatrix" property="renderStyle">
+    <Key time="0s" value="aa_fxaa_low" />
+    <Key time="2s" value="aa_fxaa_medium" />
+    <Key time="4s" value="aa_fxaa_high" />
+    <Key time="6s" value="aa_fxaa_ultra" />
+    <Key time="8s" value="aa_smaa_low" />
+    <Key time="10s" value="aa_smaa_medium" />
+    <Key time="12s" value="aa_smaa_high" />
+    <Key time="14s" value="aa_smaa_ultra" />
+    <Key time="16s" value="aa_msaa_low" />
+    <Key time="18s" value="aa_msaa_medium" />
+    <Key time="20s" value="aa_msaa_high" />
+    <Key time="22s" value="aa_msaa_ultra" />
+    <Key time="24s" value="aa_taa_low" />
+    <Key time="26s" value="aa_taa_medium" />
+    <Key time="28s" value="aa_taa_high" />
+    <Key time="30s" value="aa_taa_ultra" />
+    <Key time="32s" value="aa_ssaa_low" />
+    <Key time="34s" value="aa_ssaa_medium" />
+    <Key time="36s" value="aa_ssaa_high" />
+    <Key time="38s" value="aa_ssaa_ultra" />
+  </AnimationTarget>
+  <Present from="S93AntiAliasingMatrix" />
+</Graph>

@@ -1,0 +1,56 @@
+{
+  "classification": "partial_multiview_fit",
+  "implementation": "MotionLoom MeshAsset and PrimitiveAsset assembly",
+  "sourceSha256": "6e401a60d1c4a39ba3af7f5740553e7c005db33d6429da65eddb2ce6ef76f96a",
+  "meshAssets": 69,
+  "primitiveAssets": 7,
+  "externalGeometryToolsUsed": false,
+  "importedModelsUsed": false,
+  "apiExecution": {
+    "analyzeImageReference": "executed for all four views; final corrected bindings in analyses-r3",
+    "evaluateMeshAssetReference": "executed on a neutral aggregate proxy",
+    "applyMeshAssetProposal": "executed; rejected; not applied"
+  },
+  "acceptedProposals": [],
+  "rejectedProposals": [
+    "proposals/001-belly.json"
+  ],
+  "finalObjective": 0.13079324,
+  "passesQualityGates": false,
+  "views": [
+    {
+      "id": "left",
+      "maskIou": 0.71188897,
+      "p95EdgeDistancePx": 32.526913
+    },
+    {
+      "id": "front",
+      "maskIou": 0.5444375,
+      "p95EdgeDistancePx": 59.135437
+    },
+    {
+      "id": "top",
+      "maskIou": 0.67868024,
+      "p95EdgeDistancePx": 37.01351
+    },
+    {
+      "id": "bottom",
+      "maskIou": 0.6894633,
+      "p95EdgeDistancePx": 45.276924
+    }
+  ],
+  "referenceHashes": {
+    "left": "6f68010143776741437e508a8d3ab2f67143283e9497c0d7bf21e961703f8750",
+    "front": "20719fdaa732732a1b8bd7b2a132be9fab146f1484f9e424c0e8d5e662212f2a",
+    "top": "3671c7c00fb877e98f0a763e968a91f5aa599cdda5fdc53f78f15092af6507b3",
+    "bottom": "4c83e22b0d3b5c0b0dd5729f741b2307361b6e5f143823393d10e8fca8bf5a5e"
+  },
+  "limitations": [
+    "Not a watertight welded assembly",
+    "Fin roots intentionally overlap the body",
+    "Visible head/body UV transition and some texture stretching",
+    "No verified right or rear reference",
+    "Reference top/bottom tail views conflict with a vertical caudal fin",
+    "Quality gates not passed; old/new evaluation setups differ"
+  ]
+}

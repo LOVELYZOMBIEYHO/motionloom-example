@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0",
+  "sourceFingerprint": "8dadabb47cdc7b523e81cbe26cfb714b2244e17168235b56c7f4de48ba450422",
+  "topologySignature": "73df3bd364f6f2ac9fa24c9cc98939dfac3b20bc7f1470f23a657d2dfe2d9aef",
+  "cameraFingerprint": "83bdbbd37c0f7d55f0924fba23cd828ef4c492597c9c73199f843ffdc5925d50",
+  "referenceSetFingerprint": "50c2b07a2d8cad4d3a6936c32343509e3153ea1d4c269b4ff20c36ec28f128ce",
+  "metricProfileFingerprint": "2a971f96ed4a38f6af332543540aa41d261b76fbfbeefe28cefe4bcb6e5b9a3a",
+  "evaluationFingerprint": "939138ae417ec3d6b5941c551229aa013e3589d17a2aa0dd4804cf7b1e7f387b",
+  "targetAssetId": "s94_head_mesh",
+  "reason": "apply a conservative first step to the same three brow ridge controls after the larger proposal exceeded the edge-stretch gate",
+  "changes": [
+    {
+      "vertex": 771,
+      "before": [0.2592534, 0.1157119, 0.7091722],
+      "after": [0.2592534, 0.1057119, 0.7091722],
+      "confidence": 0.82,
+      "evidenceViews": ["front", "right"]
+    },
+    {
+      "vertex": 813,
+      "before": [-0.2592534, 0.1157119, 0.7091722],
+      "after": [-0.2592534, 0.1057119, 0.7091722],
+      "confidence": 0.82,
+      "evidenceViews": ["front", "left"]
+    },
+    {
+      "vertex": 816,
+      "before": [0.0, 0.2146998, 0.8596356],
+      "after": [0.0, 0.2046998, 0.8596356],
+      "confidence": 0.78,
+      "evidenceViews": ["left", "right"]
+    }
+  ],
+  "validation": {
+    "allowBoundary": false,
+    "allowMultipleComponents": false,
+    "maxMoveRelativeToBounds": 0.02,
+    "maxChangedVertices": 16,
+    "maxEdgeLengthRatio": 1.25,
+    "maxLaplacianDeltaRelativeToBounds": 0.04
+  }
+}

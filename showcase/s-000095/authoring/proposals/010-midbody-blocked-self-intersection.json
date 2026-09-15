@@ -1,0 +1,123 @@
+{
+ "schemaVersion": "1.0",
+ "sourceFingerprint": "85511f5b162a851768c415ff7875c07b0b243c5de7ebd5b7bd849946dba0ce61",
+ "topologySignature": "9b918a0d818c88b9cab18be676e7ca0bf2956bb0719bb1c6b421dfb0989ac3f0",
+ "cameraFingerprint": "2a10a5d731d796df73a18697938273c6fe52108050acd999c2cd130945278f7b",
+ "referenceSetFingerprint": "c415f4092116f4d493a92c4ebb45b6abc4aba437ca1581328c25a6837d0a8eb8",
+ "metricProfileFingerprint": "b2c85c74dc12b00edc08e19d17694d036a4cee944d835a20f9368db38be887e2",
+ "evaluationFingerprint": "4eef6ff524b1c82694bb5aad1b0f81ab0856c62c22e8f178f21b638d822174ab",
+ "targetAssetId": "s95_shark_mesh",
+ "reason": "top view narrows the rear body sides and shortens the second dorsal region",
+ "changes": [
+  {
+   "vertex": 159,
+   "before": [
+    0.5,
+    0.0,
+    0.4
+   ],
+   "after": [
+    0.4868615,
+    -0.0046419,
+    0.3467944
+   ],
+   "confidence": 0.7,
+   "evidenceViews": [
+    "top"
+   ]
+  },
+  {
+   "vertex": 165,
+   "before": [
+    0.5,
+    -0.0,
+    -0.4
+   ],
+   "after": [
+    0.4868615,
+    -0.0046419,
+    -0.3467944
+   ],
+   "confidence": 0.7,
+   "evidenceViews": [
+    "top"
+   ]
+  },
+  {
+   "vertex": 171,
+   "before": [
+    0.72,
+    0.0,
+    0.34
+   ],
+   "after": [
+    0.7145348,
+    -0.0037498,
+    0.2854008
+   ],
+   "confidence": 0.7,
+   "evidenceViews": [
+    "top"
+   ]
+  },
+  {
+   "vertex": 177,
+   "before": [
+    0.72,
+    -0.0,
+    -0.34
+   ],
+   "after": [
+    0.7145348,
+    -0.0037498,
+    -0.2854008
+   ],
+   "confidence": 0.7,
+   "evidenceViews": [
+    "top"
+   ]
+  },
+  {
+   "vertex": 183,
+   "before": [
+    0.95,
+    0.0,
+    0.26
+   ],
+   "after": [
+    0.9040647,
+    -0.0085306,
+    0.2309798
+   ],
+   "confidence": 0.7,
+   "evidenceViews": [
+    "top"
+   ]
+  },
+  {
+   "vertex": 189,
+   "before": [
+    0.95,
+    -0.0,
+    -0.26
+   ],
+   "after": [
+    0.9040647,
+    -0.0085306,
+    -0.2309798
+   ],
+   "confidence": 0.7,
+   "evidenceViews": [
+    "top"
+   ]
+  }
+ ],
+ "validation": {
+  "allowBoundary": false,
+  "allowMultipleComponents": false,
+  "maxMoveRelativeToBounds": 0.02,
+  "maxChangedVertices": 16,
+  "maxEdgeLengthRatio": 1.25,
+  "maxLaplacianDeltaRelativeToBounds": 0.04
+ }
+}

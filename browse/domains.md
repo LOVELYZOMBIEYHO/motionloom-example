@@ -2,7 +2,7 @@
 
 | Domain | Prefix | Count |
 |---|---|---:|
-| [scene](domains/scene.md) | `cs-*` | 144 |
+| [scene](domains/scene.md) | `cs-*` | 146 |
 | [world](domains/world.md) | `cw-*` | 6 |
 | [process](domains/process.md) | `cp-*` | 13 |
 | [process_with_time](domains/process_with_time.md) | `cpt-*` | 3 |

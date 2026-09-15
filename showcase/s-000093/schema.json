@@ -1,0 +1,883 @@
+{
+  "schemaVersion": "1.0",
+  "engineVersion": "0.1.0",
+  "rootTag": "Graph",
+  "tags": [
+    {
+      "tag": "AnimationTarget",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "node",
+          "occurrences": 1,
+          "examples": [
+            "\"S93AntiAliasingMatrix\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "property",
+          "occurrences": 1,
+          "examples": [
+            "\"renderStyle\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "AntiAliasingStyle",
+      "occurrences": 20,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "fallback",
+          "occurrences": 20,
+          "examples": [
+            "\"fxaa\"",
+            "\"off\"",
+            "\"smaa\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "method",
+          "occurrences": 20,
+          "examples": [
+            "\"fxaa\"",
+            "\"msaa\"",
+            "\"smaa\"",
+            "\"ssaa\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "quality",
+          "occurrences": 20,
+          "examples": [
+            "\"high\"",
+            "\"low\"",
+            "\"medium\"",
+            "\"ultra\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "sharpness",
+          "occurrences": 20,
+          "examples": [
+            "\"0\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "Assets",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": []
+    },
+    {
+      "tag": "AtmosphereFog",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "affectSky",
+          "occurrences": 1,
+          "examples": [
+            "\"false\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "color",
+          "occurrences": 1,
+          "examples": [
+            "\"#C6D1D2\""
+          ],
+          "recognized": true,
+          "valueType": "color",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "density",
+          "occurrences": 1,
+          "examples": [
+            "\"0.018\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "end",
+          "occurrences": 1,
+          "examples": [
+            "\"95\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"s93_mist\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "mode",
+          "occurrences": 1,
+          "examples": [
+            "\"linear\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "scattering",
+          "occurrences": 1,
+          "examples": [
+            "\"0.05\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "start",
+          "occurrences": 1,
+          "examples": [
+            "\"16\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Background",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "color",
+          "occurrences": 1,
+          "examples": [
+            "\"#CBDCE4\""
+          ],
+          "recognized": true,
+          "valueType": "color",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Camera3D",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "depthOfField",
+          "occurrences": 1,
+          "examples": [
+            "\"false\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "fov",
+          "occurrences": 1,
+          "examples": [
+            "\"57\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"s93_camera\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "position",
+          "occurrences": 1,
+          "examples": [
+            "{[1.25,2.35,9]}"
+          ],
+          "recognized": true,
+          "valueType": "vector3",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "target",
+          "occurrences": 1,
+          "examples": [
+            "{[0,2.9,-13]}"
+          ],
+          "recognized": true,
+          "valueType": "vector3",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "CompositeGroup",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "depth",
+          "occurrences": 1,
+          "examples": [
+            "\"true\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "format",
+          "occurrences": 1,
+          "examples": [
+            "\"rgba16f\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"s93_stage\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "space",
+          "occurrences": 1,
+          "examples": [
+            "\"3d\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "DirectionalLight",
+      "occurrences": 2,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "castShadow",
+          "occurrences": 1,
+          "examples": [
+            "\"true\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "color",
+          "occurrences": 2,
+          "examples": [
+            "\"#CBDDEB\"",
+            "\"#FFE3BC\""
+          ],
+          "recognized": true,
+          "valueType": "color",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "direction",
+          "occurrences": 2,
+          "examples": [
+            "{[-.9,-.65,-.3]}",
+            "{[.35,-.45,-.8]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 2,
+          "examples": [
+            "\"s93_sky_fill\"",
+            "\"s93_sun\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "intensity",
+          "occurrences": 2,
+          "examples": [
+            "\"0.45\"",
+            "\"3.75\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "shadowStrength",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "EnvironmentLight",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "asset",
+          "occurrences": 1,
+          "examples": [
+            "\"s93_sky\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "backgroundIntensity",
+          "occurrences": 1,
+          "examples": [
+            "\"0.65\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "diffuseIntensity",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"s93_sky_light\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "intensity",
+          "occurrences": 1,
+          "examples": [
+            "\"0.1\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "specularIntensity",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "visible",
+          "occurrences": 1,
+          "examples": [
+            "\"true\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "Graph",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "fps",
+        "duration",
+        "size"
+      ],
+      "attributes": [
+        {
+          "name": "duration",
+          "occurrences": 1,
+          "examples": [
+            "\"40s\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "fps",
+          "occurrences": 1,
+          "examples": [
+            "{24}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "renderSize",
+          "occurrences": 1,
+          "examples": [
+            "{[1280,720]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "size",
+          "occurrences": 1,
+          "examples": [
+            "{[1280,720]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "ImageAsset",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"s93_sky\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "src",
+          "occurrences": 1,
+          "examples": [
+            "\"../s-000089/assets/sky.png\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "Key",
+      "occurrences": 20,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "time",
+          "occurrences": 20,
+          "examples": [
+            "\"0s\"",
+            "\"10s\"",
+            "\"12s\"",
+            "\"14s\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "value",
+          "occurrences": 20,
+          "examples": [
+            "\"aa_fxaa_high\"",
+            "\"aa_fxaa_low\"",
+            "\"aa_fxaa_medium\"",
+            "\"aa_fxaa_ultra\""
+          ],
+          "recognized": true,
+          "valueType": "discrete",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Model",
+      "occurrences": 2,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "asset",
+          "occurrences": 2,
+          "examples": [
+            "\"s93_courtyard\"",
+            "\"s93_mountains\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "castShadow",
+          "occurrences": 1,
+          "examples": [
+            "\"true\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 2,
+          "examples": [
+            "\"s93_courtyard_model\"",
+            "\"s93_mountains_model\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "receiveShadow",
+          "occurrences": 1,
+          "examples": [
+            "\"true\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "scale",
+          "occurrences": 2,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "scaleMode",
+          "occurrences": 2,
+          "examples": [
+            "\"none\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "ModelAsset",
+      "occurrences": 2,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 2,
+          "examples": [
+            "\"s93_courtyard\"",
+            "\"s93_mountains\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "src",
+          "occurrences": 2,
+          "examples": [
+            "\"../s-000089/assets/courtyard-detail.glb\"",
+            "\"../s-000089/assets/mountains-detail.glb\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "PointLight",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "color",
+          "occurrences": 1,
+          "examples": [
+            "\"#FFD196\""
+          ],
+          "recognized": true,
+          "valueType": "color",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"s93_lantern_fill\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "intensity",
+          "occurrences": 1,
+          "examples": [
+            "\"12\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "position",
+          "occurrences": 1,
+          "examples": [
+            "{[-2.8,4.2,-1.9]}"
+          ],
+          "recognized": true,
+          "valueType": "vector3",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "range",
+          "occurrences": 1,
+          "examples": [
+            "\"4\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Present",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "from",
+          "occurrences": 1,
+          "examples": [
+            "\"S93AntiAliasingMatrix\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "RenderStyle",
+      "occurrences": 20,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "id"
+      ],
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 20,
+          "examples": [
+            "\"aa_fxaa_high\"",
+            "\"aa_fxaa_low\"",
+            "\"aa_fxaa_medium\"",
+            "\"aa_fxaa_ultra\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "Scene",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"S93AntiAliasingMatrix\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "renderStyle",
+          "occurrences": 1,
+          "examples": [
+            "\"aa_fxaa_low\""
+          ],
+          "recognized": true,
+          "valueType": "discrete",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Sequence",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "duration",
+          "occurrences": 1,
+          "examples": [
+            "\"40s\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "from",
+          "occurrences": 1,
+          "examples": [
+            "\"0s\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "out",
+          "occurrences": 1,
+          "examples": [
+            "\"hold\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "SurfaceStyle",
+      "occurrences": 20,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "shading",
+          "occurrences": 20,
+          "examples": [
+            "\"physical\""
+          ],
+          "recognized": true,
+          "supportsInlineExpression": false,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "Timeline",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": []
+    },
+    {
+      "tag": "Track",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"world\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "space",
+          "occurrences": 1,
+          "examples": [
+            "\"3d\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    }
+  ],
+  "animationProperties": [
+    "renderStyle"
+  ],
+  "assetKinds": [
+    "image",
+    "model"
+  ]
+}

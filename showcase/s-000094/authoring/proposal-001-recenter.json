@@ -1,0 +1,6530 @@
+{
+  "schemaVersion": "1.0",
+  "sourceFingerprint": "503bfb0b976adc52e679eafb982e2c749f4acea80b3d08ab0a02a924eda604e2",
+  "topologySignature": "afc62472863bad28d723cf24198a1f7fe0994624da1879c35a344520225e46f4",
+  "targetAssetId": "s94_head_mesh",
+  "reason": "recenter the authored head volume around its rotation axis; opposite signed side-view residuals show equal and opposite screen translation",
+  "changes": [
+    {
+      "vertex": 0,
+      "before": [
+        0,
+        -1.36,
+        0.24
+      ],
+      "after": [
+        0,
+        -1.36,
+        0.34
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 1,
+      "before": [
+        0.12941,
+        -1.36,
+        0.22705
+      ],
+      "after": [
+        0.12941,
+        -1.36,
+        0.32705
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 2,
+      "before": [
+        0.25,
+        -1.36,
+        0.18909
+      ],
+      "after": [
+        0.25,
+        -1.36,
+        0.28909
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 3,
+      "before": [
+        0.35355,
+        -1.36,
+        0.1287
+      ],
+      "after": [
+        0.35355,
+        -1.36,
+        0.2287
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 4,
+      "before": [
+        0.43301,
+        -1.36,
+        0.05
+      ],
+      "after": [
+        0.43301,
+        -1.36,
+        0.15
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 5,
+      "before": [
+        0.48296,
+        -1.36,
+        -0.04165
+      ],
+      "after": [
+        0.48296,
+        -1.36,
+        0.05835
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 6,
+      "before": [
+        0.5,
+        -1.36,
+        -0.14
+      ],
+      "after": [
+        0.5,
+        -1.36,
+        -0.04
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 7,
+      "before": [
+        0.48296,
+        -1.36,
+        -0.23835
+      ],
+      "after": [
+        0.48296,
+        -1.36,
+        -0.13835
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 8,
+      "before": [
+        0.43301,
+        -1.36,
+        -0.33
+      ],
+      "after": [
+        0.43301,
+        -1.36,
+        -0.23
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 9,
+      "before": [
+        0.35355,
+        -1.36,
+        -0.4087
+      ],
+      "after": [
+        0.35355,
+        -1.36,
+        -0.3087
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 10,
+      "before": [
+        0.25,
+        -1.36,
+        -0.46909
+      ],
+      "after": [
+        0.25,
+        -1.36,
+        -0.36909
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 11,
+      "before": [
+        0.12941,
+        -1.36,
+        -0.50705
+      ],
+      "after": [
+        0.12941,
+        -1.36,
+        -0.40705
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 12,
+      "before": [
+        0,
+        -1.36,
+        -0.52
+      ],
+      "after": [
+        0,
+        -1.36,
+        -0.42
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 13,
+      "before": [
+        -0.12941,
+        -1.36,
+        -0.50705
+      ],
+      "after": [
+        -0.12941,
+        -1.36,
+        -0.40705
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 14,
+      "before": [
+        -0.25,
+        -1.36,
+        -0.46909
+      ],
+      "after": [
+        -0.25,
+        -1.36,
+        -0.36909
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 15,
+      "before": [
+        -0.35355,
+        -1.36,
+        -0.4087
+      ],
+      "after": [
+        -0.35355,
+        -1.36,
+        -0.3087
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 16,
+      "before": [
+        -0.43301,
+        -1.36,
+        -0.33
+      ],
+      "after": [
+        -0.43301,
+        -1.36,
+        -0.23
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 17,
+      "before": [
+        -0.48296,
+        -1.36,
+        -0.23835
+      ],
+      "after": [
+        -0.48296,
+        -1.36,
+        -0.13835
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 18,
+      "before": [
+        -0.5,
+        -1.36,
+        -0.14
+      ],
+      "after": [
+        -0.5,
+        -1.36,
+        -0.04
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 19,
+      "before": [
+        -0.48296,
+        -1.36,
+        -0.04165
+      ],
+      "after": [
+        -0.48296,
+        -1.36,
+        0.05835
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 20,
+      "before": [
+        -0.43301,
+        -1.36,
+        0.05
+      ],
+      "after": [
+        -0.43301,
+        -1.36,
+        0.15
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 21,
+      "before": [
+        -0.35355,
+        -1.36,
+        0.1287
+      ],
+      "after": [
+        -0.35355,
+        -1.36,
+        0.2287
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 22,
+      "before": [
+        -0.25,
+        -1.36,
+        0.18909
+      ],
+      "after": [
+        -0.25,
+        -1.36,
+        0.28909
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 23,
+      "before": [
+        -0.12941,
+        -1.36,
+        0.22705
+      ],
+      "after": [
+        -0.12941,
+        -1.36,
+        0.32705
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 24,
+      "before": [
+        0,
+        -1.18,
+        0.26016
+      ],
+      "after": [
+        0,
+        -1.18,
+        0.36016
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 25,
+      "before": [
+        0.11388,
+        -1.18,
+        0.2458
+      ],
+      "after": [
+        0.11388,
+        -1.18,
+        0.3458
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 26,
+      "before": [
+        0.22,
+        -1.18,
+        0.20377
+      ],
+      "after": [
+        0.22,
+        -1.18,
+        0.30377
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 27,
+      "before": [
+        0.31113,
+        -1.18,
+        0.13699
+      ],
+      "after": [
+        0.31113,
+        -1.18,
+        0.23699
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 28,
+      "before": [
+        0.38105,
+        -1.18,
+        0.05
+      ],
+      "after": [
+        0.38105,
+        -1.18,
+        0.15
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 29,
+      "before": [
+        0.42501,
+        -1.18,
+        -0.0513
+      ],
+      "after": [
+        0.42501,
+        -1.18,
+        0.0487
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 30,
+      "before": [
+        0.44,
+        -1.18,
+        -0.16
+      ],
+      "after": [
+        0.44,
+        -1.18,
+        -0.06
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 31,
+      "before": [
+        0.42501,
+        -1.18,
+        -0.2687
+      ],
+      "after": [
+        0.42501,
+        -1.18,
+        -0.1687
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 32,
+      "before": [
+        0.38105,
+        -1.18,
+        -0.37
+      ],
+      "after": [
+        0.38105,
+        -1.18,
+        -0.27
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 33,
+      "before": [
+        0.31113,
+        -1.18,
+        -0.45698
+      ],
+      "after": [
+        0.31113,
+        -1.18,
+        -0.35698
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 34,
+      "before": [
+        0.22,
+        -1.18,
+        -0.52373
+      ],
+      "after": [
+        0.22,
+        -1.18,
+        -0.42373
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 35,
+      "before": [
+        0.11388,
+        -1.18,
+        -0.56569
+      ],
+      "after": [
+        0.11388,
+        -1.18,
+        -0.46569
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 36,
+      "before": [
+        0,
+        -1.18,
+        -0.58
+      ],
+      "after": [
+        0,
+        -1.18,
+        -0.48
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 37,
+      "before": [
+        -0.11388,
+        -1.18,
+        -0.56569
+      ],
+      "after": [
+        -0.11388,
+        -1.18,
+        -0.46569
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 38,
+      "before": [
+        -0.22,
+        -1.18,
+        -0.52373
+      ],
+      "after": [
+        -0.22,
+        -1.18,
+        -0.42373
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 39,
+      "before": [
+        -0.31113,
+        -1.18,
+        -0.45698
+      ],
+      "after": [
+        -0.31113,
+        -1.18,
+        -0.35698
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 40,
+      "before": [
+        -0.38105,
+        -1.18,
+        -0.37
+      ],
+      "after": [
+        -0.38105,
+        -1.18,
+        -0.27
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 41,
+      "before": [
+        -0.42501,
+        -1.18,
+        -0.2687
+      ],
+      "after": [
+        -0.42501,
+        -1.18,
+        -0.1687
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 42,
+      "before": [
+        -0.44,
+        -1.18,
+        -0.16
+      ],
+      "after": [
+        -0.44,
+        -1.18,
+        -0.06
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 43,
+      "before": [
+        -0.42501,
+        -1.18,
+        -0.0513
+      ],
+      "after": [
+        -0.42501,
+        -1.18,
+        0.0487
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 44,
+      "before": [
+        -0.38105,
+        -1.18,
+        0.05
+      ],
+      "after": [
+        -0.38105,
+        -1.18,
+        0.15
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 45,
+      "before": [
+        -0.31113,
+        -1.18,
+        0.13699
+      ],
+      "after": [
+        -0.31113,
+        -1.18,
+        0.23699
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 46,
+      "before": [
+        -0.22,
+        -1.18,
+        0.20377
+      ],
+      "after": [
+        -0.22,
+        -1.18,
+        0.30377
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 47,
+      "before": [
+        -0.11388,
+        -1.18,
+        0.2458
+      ],
+      "after": [
+        -0.11388,
+        -1.18,
+        0.3458
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 48,
+      "before": [
+        0,
+        -1,
+        0.35016
+      ],
+      "after": [
+        0,
+        -1,
+        0.45016
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 49,
+      "before": [
+        0.10353,
+        -1,
+        0.33075
+      ],
+      "after": [
+        0.10353,
+        -1,
+        0.43075
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 50,
+      "before": [
+        0.2,
+        -1,
+        0.27813
+      ],
+      "after": [
+        0.2,
+        -1,
+        0.37813
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 51,
+      "before": [
+        0.28284,
+        -1,
+        0.19982
+      ],
+      "after": [
+        0.28284,
+        -1,
+        0.29982
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 52,
+      "before": [
+        0.34641,
+        -1,
+        0.10003
+      ],
+      "after": [
+        0.34641,
+        -1,
+        0.20003
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 53,
+      "before": [
+        0.38637,
+        -1,
+        -0.01577
+      ],
+      "after": [
+        0.38637,
+        -1,
+        0.08423
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 54,
+      "before": [
+        0.4,
+        -1,
+        -0.14
+      ],
+      "after": [
+        0.4,
+        -1,
+        -0.04
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 55,
+      "before": [
+        0.38637,
+        -1,
+        -0.26423
+      ],
+      "after": [
+        0.38637,
+        -1,
+        -0.16423
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 56,
+      "before": [
+        0.34641,
+        -1,
+        -0.38
+      ],
+      "after": [
+        0.34641,
+        -1,
+        -0.28
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 57,
+      "before": [
+        0.28284,
+        -1,
+        -0.47941
+      ],
+      "after": [
+        0.28284,
+        -1,
+        -0.37941
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 58,
+      "before": [
+        0.2,
+        -1,
+        -0.55569
+      ],
+      "after": [
+        0.2,
+        -1,
+        -0.45569
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 59,
+      "before": [
+        0.10353,
+        -1,
+        -0.60364
+      ],
+      "after": [
+        0.10353,
+        -1,
+        -0.50364
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 60,
+      "before": [
+        0,
+        -1,
+        -0.62
+      ],
+      "after": [
+        0,
+        -1,
+        -0.52
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 61,
+      "before": [
+        -0.10353,
+        -1,
+        -0.60364
+      ],
+      "after": [
+        -0.10353,
+        -1,
+        -0.50364
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 62,
+      "before": [
+        -0.2,
+        -1,
+        -0.55569
+      ],
+      "after": [
+        -0.2,
+        -1,
+        -0.45569
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 63,
+      "before": [
+        -0.28284,
+        -1,
+        -0.47941
+      ],
+      "after": [
+        -0.28284,
+        -1,
+        -0.37941
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 64,
+      "before": [
+        -0.34641,
+        -1,
+        -0.38
+      ],
+      "after": [
+        -0.34641,
+        -1,
+        -0.28
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 65,
+      "before": [
+        -0.38637,
+        -1,
+        -0.26423
+      ],
+      "after": [
+        -0.38637,
+        -1,
+        -0.16423
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 66,
+      "before": [
+        -0.4,
+        -1,
+        -0.14
+      ],
+      "after": [
+        -0.4,
+        -1,
+        -0.04
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 67,
+      "before": [
+        -0.38637,
+        -1,
+        -0.01577
+      ],
+      "after": [
+        -0.38637,
+        -1,
+        0.08423
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 68,
+      "before": [
+        -0.34641,
+        -1,
+        0.10003
+      ],
+      "after": [
+        -0.34641,
+        -1,
+        0.20003
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 69,
+      "before": [
+        -0.28284,
+        -1,
+        0.19982
+      ],
+      "after": [
+        -0.28284,
+        -1,
+        0.29982
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 70,
+      "before": [
+        -0.2,
+        -1,
+        0.27813
+      ],
+      "after": [
+        -0.2,
+        -1,
+        0.37813
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 71,
+      "before": [
+        -0.10353,
+        -1,
+        0.33075
+      ],
+      "after": [
+        -0.10353,
+        -1,
+        0.43075
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 72,
+      "before": [
+        0,
+        -0.82,
+        0.73653
+      ],
+      "after": [
+        0,
+        -0.82,
+        0.83653
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 73,
+      "before": [
+        0.09317,
+        -0.82,
+        0.69524
+      ],
+      "after": [
+        0.09317,
+        -0.82,
+        0.79524
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 74,
+      "before": [
+        0.18,
+        -0.82,
+        0.60284
+      ],
+      "after": [
+        0.18,
+        -0.82,
+        0.70284
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 75,
+      "before": [
+        0.25456,
+        -0.82,
+        0.49109
+      ],
+      "after": [
+        0.25456,
+        -0.82,
+        0.59109
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 76,
+      "before": [
+        0.31177,
+        -0.82,
+        0.36022
+      ],
+      "after": [
+        0.31177,
+        -0.82,
+        0.46022
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 77,
+      "before": [
+        0.34774,
+        -0.82,
+        0.21048
+      ],
+      "after": [
+        0.34774,
+        -0.82,
+        0.31048
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 78,
+      "before": [
+        0.36004,
+        -0.82,
+        0.05
+      ],
+      "after": [
+        0.36004,
+        -0.82,
+        0.15
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 79,
+      "before": [
+        0.34774,
+        -0.82,
+        -0.11047
+      ],
+      "after": [
+        0.34774,
+        -0.82,
+        -0.01047
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 80,
+      "before": [
+        0.31177,
+        -0.82,
+        -0.26
+      ],
+      "after": [
+        0.31177,
+        -0.82,
+        -0.16
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 81,
+      "before": [
+        0.25456,
+        -0.82,
+        -0.38841
+      ],
+      "after": [
+        0.25456,
+        -0.82,
+        -0.28841
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 82,
+      "before": [
+        0.18,
+        -0.82,
+        -0.48694
+      ],
+      "after": [
+        0.18,
+        -0.82,
+        -0.38694
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 83,
+      "before": [
+        0.09317,
+        -0.82,
+        -0.54887
+      ],
+      "after": [
+        0.09317,
+        -0.82,
+        -0.44887
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 84,
+      "before": [
+        0,
+        -0.82,
+        -0.57
+      ],
+      "after": [
+        0,
+        -0.82,
+        -0.47
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 85,
+      "before": [
+        -0.09317,
+        -0.82,
+        -0.54887
+      ],
+      "after": [
+        -0.09317,
+        -0.82,
+        -0.44887
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 86,
+      "before": [
+        -0.18,
+        -0.82,
+        -0.48694
+      ],
+      "after": [
+        -0.18,
+        -0.82,
+        -0.38694
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 87,
+      "before": [
+        -0.25456,
+        -0.82,
+        -0.38841
+      ],
+      "after": [
+        -0.25456,
+        -0.82,
+        -0.28841
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 88,
+      "before": [
+        -0.31177,
+        -0.82,
+        -0.26
+      ],
+      "after": [
+        -0.31177,
+        -0.82,
+        -0.16
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 89,
+      "before": [
+        -0.34774,
+        -0.82,
+        -0.11047
+      ],
+      "after": [
+        -0.34774,
+        -0.82,
+        -0.01047
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 90,
+      "before": [
+        -0.36004,
+        -0.82,
+        0.05
+      ],
+      "after": [
+        -0.36004,
+        -0.82,
+        0.15
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 91,
+      "before": [
+        -0.34774,
+        -0.82,
+        0.21048
+      ],
+      "after": [
+        -0.34774,
+        -0.82,
+        0.31048
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 92,
+      "before": [
+        -0.31177,
+        -0.82,
+        0.36022
+      ],
+      "after": [
+        -0.31177,
+        -0.82,
+        0.46022
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 93,
+      "before": [
+        -0.25456,
+        -0.82,
+        0.49109
+      ],
+      "after": [
+        -0.25456,
+        -0.82,
+        0.59109
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 94,
+      "before": [
+        -0.18,
+        -0.82,
+        0.60284
+      ],
+      "after": [
+        -0.18,
+        -0.82,
+        0.70284
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 95,
+      "before": [
+        -0.09317,
+        -0.82,
+        0.69524
+      ],
+      "after": [
+        -0.09317,
+        -0.82,
+        0.79524
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 96,
+      "before": [
+        0,
+        -0.64,
+        0.74422
+      ],
+      "after": [
+        0,
+        -0.64,
+        0.84422
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 97,
+      "before": [
+        0.15012,
+        -0.64,
+        0.70088
+      ],
+      "after": [
+        0.15012,
+        -0.64,
+        0.80088
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 98,
+      "before": [
+        0.29,
+        -0.64,
+        0.61225
+      ],
+      "after": [
+        0.29,
+        -0.64,
+        0.71225
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 99,
+      "before": [
+        0.41012,
+        -0.64,
+        0.4973
+      ],
+      "after": [
+        0.41012,
+        -0.64,
+        0.5973
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 100,
+      "before": [
+        0.5023,
+        -0.64,
+        0.35767
+      ],
+      "after": [
+        0.5023,
+        -0.64,
+        0.45767
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 101,
+      "before": [
+        0.56049,
+        -0.64,
+        0.19712
+      ],
+      "after": [
+        0.56049,
+        -0.64,
+        0.29712
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 102,
+      "before": [
+        0.58098,
+        -0.64,
+        0.025
+      ],
+      "after": [
+        0.58098,
+        -0.64,
+        0.125
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 103,
+      "before": [
+        0.56049,
+        -0.64,
+        -0.14711
+      ],
+      "after": [
+        0.56049,
+        -0.64,
+        -0.04711
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 104,
+      "before": [
+        0.5023,
+        -0.64,
+        -0.3075
+      ],
+      "after": [
+        0.5023,
+        -0.64,
+        -0.2075
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 105,
+      "before": [
+        0.41012,
+        -0.64,
+        -0.44523
+      ],
+      "after": [
+        0.41012,
+        -0.64,
+        -0.34523
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 106,
+      "before": [
+        0.29,
+        -0.64,
+        -0.55091
+      ],
+      "after": [
+        0.29,
+        -0.64,
+        -0.45091
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 107,
+      "before": [
+        0.15012,
+        -0.64,
+        -0.61734
+      ],
+      "after": [
+        0.15012,
+        -0.64,
+        -0.51734
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 108,
+      "before": [
+        0,
+        -0.64,
+        -0.64
+      ],
+      "after": [
+        0,
+        -0.64,
+        -0.54
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 109,
+      "before": [
+        -0.15012,
+        -0.64,
+        -0.61734
+      ],
+      "after": [
+        -0.15012,
+        -0.64,
+        -0.51734
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 110,
+      "before": [
+        -0.29,
+        -0.64,
+        -0.55091
+      ],
+      "after": [
+        -0.29,
+        -0.64,
+        -0.45091
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 111,
+      "before": [
+        -0.41012,
+        -0.64,
+        -0.44523
+      ],
+      "after": [
+        -0.41012,
+        -0.64,
+        -0.34523
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 112,
+      "before": [
+        -0.5023,
+        -0.64,
+        -0.3075
+      ],
+      "after": [
+        -0.5023,
+        -0.64,
+        -0.2075
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 113,
+      "before": [
+        -0.56049,
+        -0.64,
+        -0.14711
+      ],
+      "after": [
+        -0.56049,
+        -0.64,
+        -0.04711
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 114,
+      "before": [
+        -0.58098,
+        -0.64,
+        0.025
+      ],
+      "after": [
+        -0.58098,
+        -0.64,
+        0.125
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 115,
+      "before": [
+        -0.56049,
+        -0.64,
+        0.19712
+      ],
+      "after": [
+        -0.56049,
+        -0.64,
+        0.29712
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 116,
+      "before": [
+        -0.5023,
+        -0.64,
+        0.35767
+      ],
+      "after": [
+        -0.5023,
+        -0.64,
+        0.45767
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 117,
+      "before": [
+        -0.41012,
+        -0.64,
+        0.4973
+      ],
+      "after": [
+        -0.41012,
+        -0.64,
+        0.5973
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 118,
+      "before": [
+        -0.29,
+        -0.64,
+        0.61225
+      ],
+      "after": [
+        -0.29,
+        -0.64,
+        0.71225
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 119,
+      "before": [
+        -0.15012,
+        -0.64,
+        0.70088
+      ],
+      "after": [
+        -0.15012,
+        -0.64,
+        0.80088
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 120,
+      "before": [
+        0,
+        -0.46,
+        0.86294
+      ],
+      "after": [
+        0,
+        -0.46,
+        0.96294
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 121,
+      "before": [
+        0.16823,
+        -0.46,
+        0.73888
+      ],
+      "after": [
+        0.16823,
+        -0.46,
+        0.83888
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 122,
+      "before": [
+        0.325,
+        -0.46,
+        0.63332
+      ],
+      "after": [
+        0.325,
+        -0.46,
+        0.73332
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 123,
+      "before": [
+        0.45962,
+        -0.46,
+        0.51405
+      ],
+      "after": [
+        0.45962,
+        -0.46,
+        0.61405
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 124,
+      "before": [
+        0.56297,
+        -0.46,
+        0.3628
+      ],
+      "after": [
+        0.56297,
+        -0.46,
+        0.4628
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 125,
+      "before": [
+        0.63065,
+        -0.46,
+        0.19006
+      ],
+      "after": [
+        0.63065,
+        -0.46,
+        0.29006
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 126,
+      "before": [
+        0.66067,
+        -0.46,
+        0.005
+      ],
+      "after": [
+        0.66067,
+        -0.46,
+        0.105
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 127,
+      "before": [
+        0.63065,
+        -0.46,
+        -0.18006
+      ],
+      "after": [
+        0.63065,
+        -0.46,
+        -0.08006
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 128,
+      "before": [
+        0.56297,
+        -0.46,
+        -0.3525
+      ],
+      "after": [
+        0.56297,
+        -0.46,
+        -0.2525
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 129,
+      "before": [
+        0.45962,
+        -0.46,
+        -0.50058
+      ],
+      "after": [
+        0.45962,
+        -0.46,
+        -0.40058
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 130,
+      "before": [
+        0.325,
+        -0.46,
+        -0.61421
+      ],
+      "after": [
+        0.325,
+        -0.46,
+        -0.51421
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 131,
+      "before": [
+        0.16823,
+        -0.46,
+        -0.68564
+      ],
+      "after": [
+        0.16823,
+        -0.46,
+        -0.58564
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 132,
+      "before": [
+        0,
+        -0.46,
+        -0.71
+      ],
+      "after": [
+        0,
+        -0.46,
+        -0.61
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 133,
+      "before": [
+        -0.16823,
+        -0.46,
+        -0.68564
+      ],
+      "after": [
+        -0.16823,
+        -0.46,
+        -0.58564
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 134,
+      "before": [
+        -0.325,
+        -0.46,
+        -0.61421
+      ],
+      "after": [
+        -0.325,
+        -0.46,
+        -0.51421
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 135,
+      "before": [
+        -0.45962,
+        -0.46,
+        -0.50058
+      ],
+      "after": [
+        -0.45962,
+        -0.46,
+        -0.40058
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 136,
+      "before": [
+        -0.56297,
+        -0.46,
+        -0.3525
+      ],
+      "after": [
+        -0.56297,
+        -0.46,
+        -0.2525
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 137,
+      "before": [
+        -0.63065,
+        -0.46,
+        -0.18006
+      ],
+      "after": [
+        -0.63065,
+        -0.46,
+        -0.08006
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 138,
+      "before": [
+        -0.66067,
+        -0.46,
+        0.005
+      ],
+      "after": [
+        -0.66067,
+        -0.46,
+        0.105
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 139,
+      "before": [
+        -0.63065,
+        -0.46,
+        0.19006
+      ],
+      "after": [
+        -0.63065,
+        -0.46,
+        0.29006
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 140,
+      "before": [
+        -0.56297,
+        -0.46,
+        0.3628
+      ],
+      "after": [
+        -0.56297,
+        -0.46,
+        0.4628
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 141,
+      "before": [
+        -0.45962,
+        -0.46,
+        0.51405
+      ],
+      "after": [
+        -0.45962,
+        -0.46,
+        0.61405
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 142,
+      "before": [
+        -0.325,
+        -0.46,
+        0.63332
+      ],
+      "after": [
+        -0.325,
+        -0.46,
+        0.73332
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 143,
+      "before": [
+        -0.16823,
+        -0.46,
+        0.73888
+      ],
+      "after": [
+        -0.16823,
+        -0.46,
+        0.83888
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 144,
+      "before": [
+        0,
+        -0.27,
+        1.09835
+      ],
+      "after": [
+        0,
+        -0.27,
+        1.19835
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 145,
+      "before": [
+        0.18117,
+        -0.27,
+        0.76822
+      ],
+      "after": [
+        0.18117,
+        -0.27,
+        0.86822
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 146,
+      "before": [
+        0.35,
+        -0.27,
+        0.66015
+      ],
+      "after": [
+        0.35,
+        -0.27,
+        0.76015
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 147,
+      "before": [
+        0.49498,
+        -0.27,
+        0.53284
+      ],
+      "after": [
+        0.49498,
+        -0.27,
+        0.63284
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 148,
+      "before": [
+        0.60648,
+        -0.27,
+        0.35904
+      ],
+      "after": [
+        0.60648,
+        -0.27,
+        0.45904
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 149,
+      "before": [
+        0.69055,
+        -0.27,
+        0.17301
+      ],
+      "after": [
+        0.69055,
+        -0.27,
+        0.27301
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 150,
+      "before": [
+        0.75494,
+        -0.27,
+        -0.025
+      ],
+      "after": [
+        0.75494,
+        -0.27,
+        0.075
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 151,
+      "before": [
+        0.69055,
+        -0.27,
+        -0.223
+      ],
+      "after": [
+        0.69055,
+        -0.27,
+        -0.123
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 152,
+      "before": [
+        0.60648,
+        -0.27,
+        -0.4075
+      ],
+      "after": [
+        0.60648,
+        -0.27,
+        -0.3075
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 153,
+      "before": [
+        0.49498,
+        -0.27,
+        -0.56594
+      ],
+      "after": [
+        0.49498,
+        -0.27,
+        -0.46594
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 154,
+      "before": [
+        0.35,
+        -0.27,
+        -0.68751
+      ],
+      "after": [
+        0.35,
+        -0.27,
+        -0.58751
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 155,
+      "before": [
+        0.18117,
+        -0.27,
+        -0.76393
+      ],
+      "after": [
+        0.18117,
+        -0.27,
+        -0.66393
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 156,
+      "before": [
+        0,
+        -0.27,
+        -0.79
+      ],
+      "after": [
+        0,
+        -0.27,
+        -0.69
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 157,
+      "before": [
+        -0.18117,
+        -0.27,
+        -0.76393
+      ],
+      "after": [
+        -0.18117,
+        -0.27,
+        -0.66393
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 158,
+      "before": [
+        -0.35,
+        -0.27,
+        -0.68751
+      ],
+      "after": [
+        -0.35,
+        -0.27,
+        -0.58751
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 159,
+      "before": [
+        -0.49498,
+        -0.27,
+        -0.56594
+      ],
+      "after": [
+        -0.49498,
+        -0.27,
+        -0.46594
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 160,
+      "before": [
+        -0.60648,
+        -0.27,
+        -0.4075
+      ],
+      "after": [
+        -0.60648,
+        -0.27,
+        -0.3075
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 161,
+      "before": [
+        -0.69055,
+        -0.27,
+        -0.223
+      ],
+      "after": [
+        -0.69055,
+        -0.27,
+        -0.123
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 162,
+      "before": [
+        -0.75494,
+        -0.27,
+        -0.025
+      ],
+      "after": [
+        -0.75494,
+        -0.27,
+        0.075
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 163,
+      "before": [
+        -0.69055,
+        -0.27,
+        0.17301
+      ],
+      "after": [
+        -0.69055,
+        -0.27,
+        0.27301
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 164,
+      "before": [
+        -0.60648,
+        -0.27,
+        0.35904
+      ],
+      "after": [
+        -0.60648,
+        -0.27,
+        0.45904
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 165,
+      "before": [
+        -0.49498,
+        -0.27,
+        0.53284
+      ],
+      "after": [
+        -0.49498,
+        -0.27,
+        0.63284
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 166,
+      "before": [
+        -0.35,
+        -0.27,
+        0.66015
+      ],
+      "after": [
+        -0.35,
+        -0.27,
+        0.76015
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 167,
+      "before": [
+        -0.18117,
+        -0.27,
+        0.76822
+      ],
+      "after": [
+        -0.18117,
+        -0.27,
+        0.86822
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 168,
+      "before": [
+        0,
+        -0.07,
+        1.18998
+      ],
+      "after": [
+        0,
+        -0.07,
+        1.28998
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 169,
+      "before": [
+        0.19153,
+        -0.07,
+        0.79085
+      ],
+      "after": [
+        0.19153,
+        -0.07,
+        0.89085
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 170,
+      "before": [
+        0.37,
+        -0.07,
+        0.68535
+      ],
+      "after": [
+        0.37,
+        -0.07,
+        0.78535
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 171,
+      "before": [
+        0.52326,
+        -0.07,
+        0.55069
+      ],
+      "after": [
+        0.52326,
+        -0.07,
+        0.65069
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 172,
+      "before": [
+        0.64141,
+        -0.07,
+        0.35519
+      ],
+      "after": [
+        0.64141,
+        -0.07,
+        0.45519
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 173,
+      "before": [
+        0.74528,
+        -0.07,
+        0.15597
+      ],
+      "after": [
+        0.74528,
+        -0.07,
+        0.25597
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 174,
+      "before": [
+        0.85631,
+        -0.07,
+        -0.055
+      ],
+      "after": [
+        0.85631,
+        -0.07,
+        0.045
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 175,
+      "before": [
+        0.74528,
+        -0.07,
+        -0.26594
+      ],
+      "after": [
+        0.74528,
+        -0.07,
+        -0.16594
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 176,
+      "before": [
+        0.64141,
+        -0.07,
+        -0.4625
+      ],
+      "after": [
+        0.64141,
+        -0.07,
+        -0.3625
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 177,
+      "before": [
+        0.52326,
+        -0.07,
+        -0.63129
+      ],
+      "after": [
+        0.52326,
+        -0.07,
+        -0.53129
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 178,
+      "before": [
+        0.37,
+        -0.07,
+        -0.76081
+      ],
+      "after": [
+        0.37,
+        -0.07,
+        -0.66081
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 179,
+      "before": [
+        0.19153,
+        -0.07,
+        -0.84223
+      ],
+      "after": [
+        0.19153,
+        -0.07,
+        -0.74223
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 180,
+      "before": [
+        0,
+        -0.07,
+        -0.87
+      ],
+      "after": [
+        0,
+        -0.07,
+        -0.77
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 181,
+      "before": [
+        -0.19153,
+        -0.07,
+        -0.84223
+      ],
+      "after": [
+        -0.19153,
+        -0.07,
+        -0.74223
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 182,
+      "before": [
+        -0.37,
+        -0.07,
+        -0.76081
+      ],
+      "after": [
+        -0.37,
+        -0.07,
+        -0.66081
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 183,
+      "before": [
+        -0.52326,
+        -0.07,
+        -0.63129
+      ],
+      "after": [
+        -0.52326,
+        -0.07,
+        -0.53129
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 184,
+      "before": [
+        -0.64141,
+        -0.07,
+        -0.4625
+      ],
+      "after": [
+        -0.64141,
+        -0.07,
+        -0.3625
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 185,
+      "before": [
+        -0.74528,
+        -0.07,
+        -0.26594
+      ],
+      "after": [
+        -0.74528,
+        -0.07,
+        -0.16594
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 186,
+      "before": [
+        -0.85631,
+        -0.07,
+        -0.055
+      ],
+      "after": [
+        -0.85631,
+        -0.07,
+        0.045
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 187,
+      "before": [
+        -0.74528,
+        -0.07,
+        0.15597
+      ],
+      "after": [
+        -0.74528,
+        -0.07,
+        0.25597
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 188,
+      "before": [
+        -0.64141,
+        -0.07,
+        0.35519
+      ],
+      "after": [
+        -0.64141,
+        -0.07,
+        0.45519
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 189,
+      "before": [
+        -0.52326,
+        -0.07,
+        0.55069
+      ],
+      "after": [
+        -0.52326,
+        -0.07,
+        0.65069
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 190,
+      "before": [
+        -0.37,
+        -0.07,
+        0.68535
+      ],
+      "after": [
+        -0.37,
+        -0.07,
+        0.78535
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 191,
+      "before": [
+        -0.19153,
+        -0.07,
+        0.79085
+      ],
+      "after": [
+        -0.19153,
+        -0.07,
+        0.89085
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 192,
+      "before": [
+        0,
+        0.14,
+        0.96149
+      ],
+      "after": [
+        0,
+        0.14,
+        1.06149
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 193,
+      "before": [
+        0.18894,
+        0.14,
+        0.72397
+      ],
+      "after": [
+        0.18894,
+        0.14,
+        0.82397
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 194,
+      "before": [
+        0.365,
+        0.14,
+        0.61968
+      ],
+      "after": [
+        0.365,
+        0.14,
+        0.71968
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 195,
+      "before": [
+        0.51619,
+        0.14,
+        0.51801
+      ],
+      "after": [
+        0.51619,
+        0.14,
+        0.61801
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 196,
+      "before": [
+        0.63261,
+        0.14,
+        0.33129
+      ],
+      "after": [
+        0.63261,
+        0.14,
+        0.43129
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 197,
+      "before": [
+        0.72797,
+        0.14,
+        0.12742
+      ],
+      "after": [
+        0.72797,
+        0.14,
+        0.22742
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 198,
+      "before": [
+        0.81714,
+        0.14,
+        -0.09
+      ],
+      "after": [
+        0.81714,
+        0.14,
+        0.01
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 199,
+      "before": [
+        0.72797,
+        0.14,
+        -0.30741
+      ],
+      "after": [
+        0.72797,
+        0.14,
+        -0.20741
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 200,
+      "before": [
+        0.63261,
+        0.14,
+        -0.51
+      ],
+      "after": [
+        0.63261,
+        0.14,
+        -0.41
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 201,
+      "before": [
+        0.51619,
+        0.14,
+        -0.68397
+      ],
+      "after": [
+        0.51619,
+        0.14,
+        -0.58397
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 202,
+      "before": [
+        0.365,
+        0.14,
+        -0.81746
+      ],
+      "after": [
+        0.365,
+        0.14,
+        -0.71746
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 203,
+      "before": [
+        0.18894,
+        0.14,
+        -0.90138
+      ],
+      "after": [
+        0.18894,
+        0.14,
+        -0.80138
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 204,
+      "before": [
+        0,
+        0.14,
+        -0.93
+      ],
+      "after": [
+        0,
+        0.14,
+        -0.83
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 205,
+      "before": [
+        -0.18894,
+        0.14,
+        -0.90138
+      ],
+      "after": [
+        -0.18894,
+        0.14,
+        -0.80138
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 206,
+      "before": [
+        -0.365,
+        0.14,
+        -0.81746
+      ],
+      "after": [
+        -0.365,
+        0.14,
+        -0.71746
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 207,
+      "before": [
+        -0.51619,
+        0.14,
+        -0.68397
+      ],
+      "after": [
+        -0.51619,
+        0.14,
+        -0.58397
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 208,
+      "before": [
+        -0.63261,
+        0.14,
+        -0.51
+      ],
+      "after": [
+        -0.63261,
+        0.14,
+        -0.41
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 209,
+      "before": [
+        -0.72797,
+        0.14,
+        -0.30741
+      ],
+      "after": [
+        -0.72797,
+        0.14,
+        -0.20741
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 210,
+      "before": [
+        -0.81714,
+        0.14,
+        -0.09
+      ],
+      "after": [
+        -0.81714,
+        0.14,
+        0.01
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 211,
+      "before": [
+        -0.72797,
+        0.14,
+        0.12742
+      ],
+      "after": [
+        -0.72797,
+        0.14,
+        0.22742
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 212,
+      "before": [
+        -0.63261,
+        0.14,
+        0.33129
+      ],
+      "after": [
+        -0.63261,
+        0.14,
+        0.43129
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 213,
+      "before": [
+        -0.51619,
+        0.14,
+        0.51801
+      ],
+      "after": [
+        -0.51619,
+        0.14,
+        0.61801
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 214,
+      "before": [
+        -0.365,
+        0.14,
+        0.61968
+      ],
+      "after": [
+        -0.365,
+        0.14,
+        0.71968
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 215,
+      "before": [
+        -0.18894,
+        0.14,
+        0.72397
+      ],
+      "after": [
+        -0.18894,
+        0.14,
+        0.82397
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 216,
+      "before": [
+        0,
+        0.34,
+        0.82147
+      ],
+      "after": [
+        0,
+        0.34,
+        0.92147
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 217,
+      "before": [
+        0.18376,
+        0.34,
+        0.72234
+      ],
+      "after": [
+        0.18376,
+        0.34,
+        0.82234
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 218,
+      "before": [
+        0.355,
+        0.34,
+        0.63216
+      ],
+      "after": [
+        0.355,
+        0.34,
+        0.73216
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 219,
+      "before": [
+        0.50205,
+        0.34,
+        0.478
+      ],
+      "after": [
+        0.50205,
+        0.34,
+        0.578
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 220,
+      "before": [
+        0.61499,
+        0.34,
+        0.29773
+      ],
+      "after": [
+        0.61499,
+        0.34,
+        0.39773
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 221,
+      "before": [
+        0.69203,
+        0.34,
+        0.0937
+      ],
+      "after": [
+        0.69203,
+        0.34,
+        0.1937
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 222,
+      "before": [
+        0.73375,
+        0.34,
+        -0.125
+      ],
+      "after": [
+        0.73375,
+        0.34,
+        -0.025
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 223,
+      "before": [
+        0.69203,
+        0.34,
+        -0.3437
+      ],
+      "after": [
+        0.69203,
+        0.34,
+        -0.2437
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 224,
+      "before": [
+        0.61499,
+        0.34,
+        -0.5475
+      ],
+      "after": [
+        0.61499,
+        0.34,
+        -0.4475
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 225,
+      "before": [
+        0.50205,
+        0.34,
+        -0.72251
+      ],
+      "after": [
+        0.50205,
+        0.34,
+        -0.62251
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 226,
+      "before": [
+        0.355,
+        0.34,
+        -0.85679
+      ],
+      "after": [
+        0.355,
+        0.34,
+        -0.75679
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 227,
+      "before": [
+        0.18376,
+        0.34,
+        -0.94121
+      ],
+      "after": [
+        0.18376,
+        0.34,
+        -0.84121
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 228,
+      "before": [
+        0,
+        0.34,
+        -0.97
+      ],
+      "after": [
+        0,
+        0.34,
+        -0.87
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 229,
+      "before": [
+        -0.18376,
+        0.34,
+        -0.94121
+      ],
+      "after": [
+        -0.18376,
+        0.34,
+        -0.84121
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 230,
+      "before": [
+        -0.355,
+        0.34,
+        -0.85679
+      ],
+      "after": [
+        -0.355,
+        0.34,
+        -0.75679
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 231,
+      "before": [
+        -0.50205,
+        0.34,
+        -0.72251
+      ],
+      "after": [
+        -0.50205,
+        0.34,
+        -0.62251
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 232,
+      "before": [
+        -0.61499,
+        0.34,
+        -0.5475
+      ],
+      "after": [
+        -0.61499,
+        0.34,
+        -0.4475
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 233,
+      "before": [
+        -0.69203,
+        0.34,
+        -0.3437
+      ],
+      "after": [
+        -0.69203,
+        0.34,
+        -0.2437
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 234,
+      "before": [
+        -0.73375,
+        0.34,
+        -0.125
+      ],
+      "after": [
+        -0.73375,
+        0.34,
+        -0.025
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 235,
+      "before": [
+        -0.69203,
+        0.34,
+        0.0937
+      ],
+      "after": [
+        -0.69203,
+        0.34,
+        0.1937
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 236,
+      "before": [
+        -0.61499,
+        0.34,
+        0.29773
+      ],
+      "after": [
+        -0.61499,
+        0.34,
+        0.39773
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 237,
+      "before": [
+        -0.50205,
+        0.34,
+        0.478
+      ],
+      "after": [
+        -0.50205,
+        0.34,
+        0.578
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 238,
+      "before": [
+        -0.355,
+        0.34,
+        0.63216
+      ],
+      "after": [
+        -0.355,
+        0.34,
+        0.73216
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 239,
+      "before": [
+        -0.18376,
+        0.34,
+        0.72234
+      ],
+      "after": [
+        -0.18376,
+        0.34,
+        0.82234
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 240,
+      "before": [
+        0,
+        0.53,
+        0.69201
+      ],
+      "after": [
+        0,
+        0.53,
+        0.79201
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 241,
+      "before": [
+        0.18635,
+        0.53,
+        0.6357
+      ],
+      "after": [
+        0.18635,
+        0.53,
+        0.7357
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 242,
+      "before": [
+        0.36,
+        0.53,
+        0.55109
+      ],
+      "after": [
+        0.36,
+        0.53,
+        0.65109
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 243,
+      "before": [
+        0.50912,
+        0.53,
+        0.41865
+      ],
+      "after": [
+        0.50912,
+        0.53,
+        0.51865
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 244,
+      "before": [
+        0.62355,
+        0.53,
+        0.24751
+      ],
+      "after": [
+        0.62355,
+        0.53,
+        0.34751
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 245,
+      "before": [
+        0.69618,
+        0.53,
+        0.04853
+      ],
+      "after": [
+        0.69618,
+        0.53,
+        0.14853
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 246,
+      "before": [
+        0.72274,
+        0.53,
+        -0.165
+      ],
+      "after": [
+        0.72274,
+        0.53,
+        -0.065
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 247,
+      "before": [
+        0.69618,
+        0.53,
+        -0.37853
+      ],
+      "after": [
+        0.69618,
+        0.53,
+        -0.27853
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 248,
+      "before": [
+        0.62355,
+        0.53,
+        -0.5775
+      ],
+      "after": [
+        0.62355,
+        0.53,
+        -0.4775
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 249,
+      "before": [
+        0.50912,
+        0.53,
+        -0.74836
+      ],
+      "after": [
+        0.50912,
+        0.53,
+        -0.64836
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 250,
+      "before": [
+        0.36,
+        0.53,
+        -0.87947
+      ],
+      "after": [
+        0.36,
+        0.53,
+        -0.77947
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 251,
+      "before": [
+        0.18635,
+        0.53,
+        -0.96189
+      ],
+      "after": [
+        0.18635,
+        0.53,
+        -0.86189
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 252,
+      "before": [
+        0,
+        0.53,
+        -0.99
+      ],
+      "after": [
+        0,
+        0.53,
+        -0.89
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 253,
+      "before": [
+        -0.18635,
+        0.53,
+        -0.96189
+      ],
+      "after": [
+        -0.18635,
+        0.53,
+        -0.86189
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 254,
+      "before": [
+        -0.36,
+        0.53,
+        -0.87947
+      ],
+      "after": [
+        -0.36,
+        0.53,
+        -0.77947
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 255,
+      "before": [
+        -0.50912,
+        0.53,
+        -0.74836
+      ],
+      "after": [
+        -0.50912,
+        0.53,
+        -0.64836
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 256,
+      "before": [
+        -0.62355,
+        0.53,
+        -0.5775
+      ],
+      "after": [
+        -0.62355,
+        0.53,
+        -0.4775
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 257,
+      "before": [
+        -0.69618,
+        0.53,
+        -0.37853
+      ],
+      "after": [
+        -0.69618,
+        0.53,
+        -0.27853
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 258,
+      "before": [
+        -0.72274,
+        0.53,
+        -0.165
+      ],
+      "after": [
+        -0.72274,
+        0.53,
+        -0.065
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 259,
+      "before": [
+        -0.69618,
+        0.53,
+        0.04853
+      ],
+      "after": [
+        -0.69618,
+        0.53,
+        0.14853
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 260,
+      "before": [
+        -0.62355,
+        0.53,
+        0.24751
+      ],
+      "after": [
+        -0.62355,
+        0.53,
+        0.34751
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 261,
+      "before": [
+        -0.50912,
+        0.53,
+        0.41865
+      ],
+      "after": [
+        -0.50912,
+        0.53,
+        0.51865
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 262,
+      "before": [
+        -0.36,
+        0.53,
+        0.55109
+      ],
+      "after": [
+        -0.36,
+        0.53,
+        0.65109
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 263,
+      "before": [
+        -0.18635,
+        0.53,
+        0.6357
+      ],
+      "after": [
+        -0.18635,
+        0.53,
+        0.7357
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 264,
+      "before": [
+        0,
+        0.72,
+        0.57604
+      ],
+      "after": [
+        0,
+        0.72,
+        0.67604
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 265,
+      "before": [
+        0.17859,
+        0.72,
+        0.54405
+      ],
+      "after": [
+        0.17859,
+        0.72,
+        0.64405
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 266,
+      "before": [
+        0.345,
+        0.72,
+        0.46617
+      ],
+      "after": [
+        0.345,
+        0.72,
+        0.56617
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 267,
+      "before": [
+        0.4879,
+        0.72,
+        0.34301
+      ],
+      "after": [
+        0.4879,
+        0.72,
+        0.44301
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 268,
+      "before": [
+        0.59756,
+        0.72,
+        0.1825
+      ],
+      "after": [
+        0.59756,
+        0.72,
+        0.2825
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 269,
+      "before": [
+        0.66652,
+        0.72,
+        -0.00442
+      ],
+      "after": [
+        0.66652,
+        0.72,
+        0.09558
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 270,
+      "before": [
+        0.69013,
+        0.72,
+        -0.205
+      ],
+      "after": [
+        0.69013,
+        0.72,
+        -0.105
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 271,
+      "before": [
+        0.66652,
+        0.72,
+        -0.40558
+      ],
+      "after": [
+        0.66652,
+        0.72,
+        -0.30558
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 272,
+      "before": [
+        0.59756,
+        0.72,
+        -0.5925
+      ],
+      "after": [
+        0.59756,
+        0.72,
+        -0.4925
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 273,
+      "before": [
+        0.4879,
+        0.72,
+        -0.75301
+      ],
+      "after": [
+        0.4879,
+        0.72,
+        -0.65301
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 274,
+      "before": [
+        0.345,
+        0.72,
+        -0.87617
+      ],
+      "after": [
+        0.345,
+        0.72,
+        -0.77617
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 275,
+      "before": [
+        0.17859,
+        0.72,
+        -0.95359
+      ],
+      "after": [
+        0.17859,
+        0.72,
+        -0.85359
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 276,
+      "before": [
+        0,
+        0.72,
+        -0.98
+      ],
+      "after": [
+        0,
+        0.72,
+        -0.88
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 277,
+      "before": [
+        -0.17859,
+        0.72,
+        -0.95359
+      ],
+      "after": [
+        -0.17859,
+        0.72,
+        -0.85359
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 278,
+      "before": [
+        -0.345,
+        0.72,
+        -0.87617
+      ],
+      "after": [
+        -0.345,
+        0.72,
+        -0.77617
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 279,
+      "before": [
+        -0.4879,
+        0.72,
+        -0.75301
+      ],
+      "after": [
+        -0.4879,
+        0.72,
+        -0.65301
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 280,
+      "before": [
+        -0.59756,
+        0.72,
+        -0.5925
+      ],
+      "after": [
+        -0.59756,
+        0.72,
+        -0.4925
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 281,
+      "before": [
+        -0.66652,
+        0.72,
+        -0.40558
+      ],
+      "after": [
+        -0.66652,
+        0.72,
+        -0.30558
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 282,
+      "before": [
+        -0.69013,
+        0.72,
+        -0.205
+      ],
+      "after": [
+        -0.69013,
+        0.72,
+        -0.105
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 283,
+      "before": [
+        -0.66652,
+        0.72,
+        -0.00442
+      ],
+      "after": [
+        -0.66652,
+        0.72,
+        0.09558
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 284,
+      "before": [
+        -0.59756,
+        0.72,
+        0.1825
+      ],
+      "after": [
+        -0.59756,
+        0.72,
+        0.2825
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 285,
+      "before": [
+        -0.4879,
+        0.72,
+        0.34301
+      ],
+      "after": [
+        -0.4879,
+        0.72,
+        0.44301
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 286,
+      "before": [
+        -0.345,
+        0.72,
+        0.46617
+      ],
+      "after": [
+        -0.345,
+        0.72,
+        0.56617
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 287,
+      "before": [
+        -0.17859,
+        0.72,
+        0.54405
+      ],
+      "after": [
+        -0.17859,
+        0.72,
+        0.64405
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 288,
+      "before": [
+        0,
+        0.9,
+        0.44074
+      ],
+      "after": [
+        0,
+        0.9,
+        0.54074
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 289,
+      "before": [
+        0.15788,
+        0.9,
+        0.41706
+      ],
+      "after": [
+        0.15788,
+        0.9,
+        0.51706
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 290,
+      "before": [
+        0.305,
+        0.9,
+        0.34957
+      ],
+      "after": [
+        0.305,
+        0.9,
+        0.44957
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 291,
+      "before": [
+        0.43134,
+        0.9,
+        0.2423
+      ],
+      "after": [
+        0.43134,
+        0.9,
+        0.3423
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 292,
+      "before": [
+        0.52828,
+        0.9,
+        0.1025
+      ],
+      "after": [
+        0.52828,
+        0.9,
+        0.2025
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 293,
+      "before": [
+        0.58922,
+        0.9,
+        -0.0603
+      ],
+      "after": [
+        0.58922,
+        0.9,
+        0.0397
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 294,
+      "before": [
+        0.61,
+        0.9,
+        -0.235
+      ],
+      "after": [
+        0.61,
+        0.9,
+        -0.135
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 295,
+      "before": [
+        0.58922,
+        0.9,
+        -0.4097
+      ],
+      "after": [
+        0.58922,
+        0.9,
+        -0.3097
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 296,
+      "before": [
+        0.52828,
+        0.9,
+        -0.5725
+      ],
+      "after": [
+        0.52828,
+        0.9,
+        -0.4725
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 297,
+      "before": [
+        0.43134,
+        0.9,
+        -0.7123
+      ],
+      "after": [
+        0.43134,
+        0.9,
+        -0.6123
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 298,
+      "before": [
+        0.305,
+        0.9,
+        -0.81957
+      ],
+      "after": [
+        0.305,
+        0.9,
+        -0.71957
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 299,
+      "before": [
+        0.15788,
+        0.9,
+        -0.887
+      ],
+      "after": [
+        0.15788,
+        0.9,
+        -0.787
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 300,
+      "before": [
+        0,
+        0.9,
+        -0.91
+      ],
+      "after": [
+        0,
+        0.9,
+        -0.81
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 301,
+      "before": [
+        -0.15788,
+        0.9,
+        -0.887
+      ],
+      "after": [
+        -0.15788,
+        0.9,
+        -0.787
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 302,
+      "before": [
+        -0.305,
+        0.9,
+        -0.81957
+      ],
+      "after": [
+        -0.305,
+        0.9,
+        -0.71957
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 303,
+      "before": [
+        -0.43134,
+        0.9,
+        -0.7123
+      ],
+      "after": [
+        -0.43134,
+        0.9,
+        -0.6123
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 304,
+      "before": [
+        -0.52828,
+        0.9,
+        -0.5725
+      ],
+      "after": [
+        -0.52828,
+        0.9,
+        -0.4725
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 305,
+      "before": [
+        -0.58922,
+        0.9,
+        -0.4097
+      ],
+      "after": [
+        -0.58922,
+        0.9,
+        -0.3097
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 306,
+      "before": [
+        -0.61,
+        0.9,
+        -0.235
+      ],
+      "after": [
+        -0.61,
+        0.9,
+        -0.135
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 307,
+      "before": [
+        -0.58922,
+        0.9,
+        -0.0603
+      ],
+      "after": [
+        -0.58922,
+        0.9,
+        0.0397
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 308,
+      "before": [
+        -0.52828,
+        0.9,
+        0.1025
+      ],
+      "after": [
+        -0.52828,
+        0.9,
+        0.2025
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 309,
+      "before": [
+        -0.43134,
+        0.9,
+        0.2423
+      ],
+      "after": [
+        -0.43134,
+        0.9,
+        0.3423
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 310,
+      "before": [
+        -0.305,
+        0.9,
+        0.34957
+      ],
+      "after": [
+        -0.305,
+        0.9,
+        0.44957
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 311,
+      "before": [
+        -0.15788,
+        0.9,
+        0.41706
+      ],
+      "after": [
+        -0.15788,
+        0.9,
+        0.51706
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 312,
+      "before": [
+        0,
+        1.06,
+        0.29007
+      ],
+      "after": [
+        0,
+        1.06,
+        0.39007
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 313,
+      "before": [
+        0.12164,
+        1.06,
+        0.27246
+      ],
+      "after": [
+        0.12164,
+        1.06,
+        0.37246
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 314,
+      "before": [
+        0.235,
+        1.06,
+        0.221
+      ],
+      "after": [
+        0.235,
+        1.06,
+        0.321
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 315,
+      "before": [
+        0.33234,
+        1.06,
+        0.13916
+      ],
+      "after": [
+        0.33234,
+        1.06,
+        0.23916
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 316,
+      "before": [
+        0.40703,
+        1.06,
+        0.0325
+      ],
+      "after": [
+        0.40703,
+        1.06,
+        0.1325
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 317,
+      "before": [
+        0.45399,
+        1.06,
+        -0.09171
+      ],
+      "after": [
+        0.45399,
+        1.06,
+        0.00829
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 318,
+      "before": [
+        0.47,
+        1.06,
+        -0.225
+      ],
+      "after": [
+        0.47,
+        1.06,
+        -0.125
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 319,
+      "before": [
+        0.45399,
+        1.06,
+        -0.35829
+      ],
+      "after": [
+        0.45399,
+        1.06,
+        -0.25829
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 320,
+      "before": [
+        0.40703,
+        1.06,
+        -0.4825
+      ],
+      "after": [
+        0.40703,
+        1.06,
+        -0.3825
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 321,
+      "before": [
+        0.33234,
+        1.06,
+        -0.58916
+      ],
+      "after": [
+        0.33234,
+        1.06,
+        -0.48916
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 322,
+      "before": [
+        0.235,
+        1.06,
+        -0.671
+      ],
+      "after": [
+        0.235,
+        1.06,
+        -0.571
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 323,
+      "before": [
+        0.12164,
+        1.06,
+        -0.72245
+      ],
+      "after": [
+        0.12164,
+        1.06,
+        -0.62245
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 324,
+      "before": [
+        0,
+        1.06,
+        -0.74
+      ],
+      "after": [
+        0,
+        1.06,
+        -0.64
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 325,
+      "before": [
+        -0.12164,
+        1.06,
+        -0.72245
+      ],
+      "after": [
+        -0.12164,
+        1.06,
+        -0.62245
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 326,
+      "before": [
+        -0.235,
+        1.06,
+        -0.671
+      ],
+      "after": [
+        -0.235,
+        1.06,
+        -0.571
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 327,
+      "before": [
+        -0.33234,
+        1.06,
+        -0.58916
+      ],
+      "after": [
+        -0.33234,
+        1.06,
+        -0.48916
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 328,
+      "before": [
+        -0.40703,
+        1.06,
+        -0.4825
+      ],
+      "after": [
+        -0.40703,
+        1.06,
+        -0.3825
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 329,
+      "before": [
+        -0.45399,
+        1.06,
+        -0.35829
+      ],
+      "after": [
+        -0.45399,
+        1.06,
+        -0.25829
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 330,
+      "before": [
+        -0.47,
+        1.06,
+        -0.225
+      ],
+      "after": [
+        -0.47,
+        1.06,
+        -0.125
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 331,
+      "before": [
+        -0.45399,
+        1.06,
+        -0.09171
+      ],
+      "after": [
+        -0.45399,
+        1.06,
+        0.00829
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 332,
+      "before": [
+        -0.40703,
+        1.06,
+        0.0325
+      ],
+      "after": [
+        -0.40703,
+        1.06,
+        0.1325
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 333,
+      "before": [
+        -0.33234,
+        1.06,
+        0.13916
+      ],
+      "after": [
+        -0.33234,
+        1.06,
+        0.23916
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 334,
+      "before": [
+        -0.235,
+        1.06,
+        0.221
+      ],
+      "after": [
+        -0.235,
+        1.06,
+        0.321
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 335,
+      "before": [
+        -0.12164,
+        1.06,
+        0.27246
+      ],
+      "after": [
+        -0.12164,
+        1.06,
+        0.37246
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 336,
+      "before": [
+        0,
+        1.18,
+        0.10001
+      ],
+      "after": [
+        0,
+        1.18,
+        0.20001
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 337,
+      "before": [
+        0.06988,
+        1.18,
+        0.08995
+      ],
+      "after": [
+        0.06988,
+        1.18,
+        0.18995
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 338,
+      "before": [
+        0.135,
+        1.18,
+        0.06048
+      ],
+      "after": [
+        0.135,
+        1.18,
+        0.16048
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 339,
+      "before": [
+        0.19092,
+        1.18,
+        0.0136
+      ],
+      "after": [
+        0.19092,
+        1.18,
+        0.1136
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 340,
+      "before": [
+        0.23383,
+        1.18,
+        -0.0475
+      ],
+      "after": [
+        0.23383,
+        1.18,
+        0.0525
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 341,
+      "before": [
+        0.2608,
+        1.18,
+        -0.11865
+      ],
+      "after": [
+        0.2608,
+        1.18,
+        -0.01865
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 342,
+      "before": [
+        0.27,
+        1.18,
+        -0.195
+      ],
+      "after": [
+        0.27,
+        1.18,
+        -0.095
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 343,
+      "before": [
+        0.2608,
+        1.18,
+        -0.27135
+      ],
+      "after": [
+        0.2608,
+        1.18,
+        -0.17135
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 344,
+      "before": [
+        0.23383,
+        1.18,
+        -0.3425
+      ],
+      "after": [
+        0.23383,
+        1.18,
+        -0.2425
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 345,
+      "before": [
+        0.19092,
+        1.18,
+        -0.4036
+      ],
+      "after": [
+        0.19092,
+        1.18,
+        -0.3036
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 346,
+      "before": [
+        0.135,
+        1.18,
+        -0.45048
+      ],
+      "after": [
+        0.135,
+        1.18,
+        -0.35048
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 347,
+      "before": [
+        0.06988,
+        1.18,
+        -0.47995
+      ],
+      "after": [
+        0.06988,
+        1.18,
+        -0.37995
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 348,
+      "before": [
+        0,
+        1.18,
+        -0.49
+      ],
+      "after": [
+        0,
+        1.18,
+        -0.39
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 349,
+      "before": [
+        -0.06988,
+        1.18,
+        -0.47995
+      ],
+      "after": [
+        -0.06988,
+        1.18,
+        -0.37995
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 350,
+      "before": [
+        -0.135,
+        1.18,
+        -0.45048
+      ],
+      "after": [
+        -0.135,
+        1.18,
+        -0.35048
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 351,
+      "before": [
+        -0.19092,
+        1.18,
+        -0.4036
+      ],
+      "after": [
+        -0.19092,
+        1.18,
+        -0.3036
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 352,
+      "before": [
+        -0.23383,
+        1.18,
+        -0.3425
+      ],
+      "after": [
+        -0.23383,
+        1.18,
+        -0.2425
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 353,
+      "before": [
+        -0.2608,
+        1.18,
+        -0.27135
+      ],
+      "after": [
+        -0.2608,
+        1.18,
+        -0.17135
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 354,
+      "before": [
+        -0.27,
+        1.18,
+        -0.195
+      ],
+      "after": [
+        -0.27,
+        1.18,
+        -0.095
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 355,
+      "before": [
+        -0.2608,
+        1.18,
+        -0.11865
+      ],
+      "after": [
+        -0.2608,
+        1.18,
+        -0.01865
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 356,
+      "before": [
+        -0.23383,
+        1.18,
+        -0.0475
+      ],
+      "after": [
+        -0.23383,
+        1.18,
+        0.0525
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 357,
+      "before": [
+        -0.19092,
+        1.18,
+        0.0136
+      ],
+      "after": [
+        -0.19092,
+        1.18,
+        0.1136
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 358,
+      "before": [
+        -0.135,
+        1.18,
+        0.06048
+      ],
+      "after": [
+        -0.135,
+        1.18,
+        0.16048
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 359,
+      "before": [
+        -0.06988,
+        1.18,
+        0.08995
+      ],
+      "after": [
+        -0.06988,
+        1.18,
+        0.18995
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 360,
+      "before": [
+        0,
+        -1.4,
+        -0.12
+      ],
+      "after": [
+        0,
+        -1.4,
+        -0.02
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "vertex": 361,
+      "before": [
+        0,
+        1.25,
+        -0.12
+      ],
+      "after": [
+        0,
+        1.25,
+        -0.02
+      ],
+      "confidence": 0.96,
+      "evidenceViews": [
+        "left",
+        "right"
+      ]
+    }
+  ],
+  "validation": {
+    "allowBoundary": false,
+    "allowMultipleComponents": false,
+    "maxMoveRelativeToBounds": 0.05
+  }
+}

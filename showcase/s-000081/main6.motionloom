@@ -1,0 +1,539 @@
+<!-- S81 / AFTER CLOSING. A forty-second miniature horror film. -->
+<Graph fps={24} duration="40s" size={[1280,720]}>
+  <Background color="#070C10" />
+  <RenderStyle id="after_closing">
+    <SurfaceStyle shading="filmic_physical_v1" specular="0.65" roughnessBias="0" />
+    <ColorStyle saturation="0.88" tint="#CBD5CD" tintStrength="0.025" />
+    <ToneStyle exposure="1" contrast="1" toneStrength="0" />
+    <LightingStyle ambientIntensity="0.055" ambientColor="#788DA0" shadowStyle="soft" />
+    <PostStyle toneMapping="filmic_aces_v1" exposure="1.08" saturation="1" contrast="1.06" whiteBalance="6000" bloomIntensity="0" />
+  </RenderStyle>
+  <Assets>
+    <AudioAsset id="score" src="assets/audio/rafael-krux-horror-suspense.ogg" />
+    <ImageAsset id="cloth_normal" src="assets/textures/pbr/penguin_feather_normal.png" colorSpace="linear-srgb" />
+    <ImageAsset id="rubber_normal" src="assets/textures/pbr/frog_skin_normal.png" colorSpace="linear-srgb" />
+    <ImageAsset id="wall_normal" src="assets/textures/pbr/nightmare_wall_normal.png" colorSpace="linear-srgb" />
+    <ImageAsset id="wall_base" src="assets/textures/pbr/nightmare_wall_base.png" />
+    <MaterialAsset id="s81_guest_black" baseColor="#485663" roughness="0.88" normalTexture="cloth_normal" normalScale="0.055" mapping="triplanar" textureScale={[5,5]} />
+    <MaterialAsset id="s81_guest_white" baseColor="#D6C9AC" roughness="0.92" normalTexture="cloth_normal" normalScale="0.035" mapping="triplanar" textureScale={[5,5]} />
+    <MaterialAsset id="s81_guest_orange" baseColor="#B17A43" roughness="0.8" />
+    <MaterialAsset id="s81_guest_frog" baseColor="#788767" roughness="0.8" normalTexture="rubber_normal" normalScale="0.04" mapping="triplanar" textureScale={[5,5]} />
+    <MaterialAsset id="eye_ivory" baseColor="#D6C9AC" roughness="0.32" />
+    <MaterialAsset id="eye_glass" baseColor="#080C0F" roughness="0.19" specular="0.65" />
+    <MaterialAsset id="plaster" baseColor="#2D403D" roughness="0.94" normalTexture="wall_normal" normalScale="0.04" mapping="triplanar" textureScale={[.7,.7]} />
+    <MaterialAsset id="wall_wear" baseColor="#778078" baseColorTexture="wall_base" roughness="0.94" />
+    <MaterialAsset id="floor_mat" baseColor="#33423F" roughness="0.64" normalTexture="wall_normal" normalScale="0.025" mapping="triplanar" textureScale={[2,2]} />
+    <MaterialAsset id="grout" baseColor="#2E3B39" roughness="1" />
+    <MaterialAsset id="trim" baseColor="#202E31" metallic="0.2" roughness="0.58" />
+    <MaterialAsset id="shelf_paint" baseColor="#807D69" metallic="0.05" roughness="0.66" />
+    <MaterialAsset id="shelf_back_mat" baseColor="#172925" roughness="0.92" />
+    <MaterialAsset id="label" baseColor="#C6B993" roughness="0.95" />
+    <MaterialAsset id="burgundy" baseColor="#422723" roughness="0.8" />
+    <MaterialAsset id="bay_velvet" baseColor="#0D1719" roughness="1" />
+    <MaterialAsset id="counter_enamel" baseColor="#A59E87" roughness="0.5" />
+    <MaterialAsset id="brass" baseColor="#9F8153" metallic="0.65" roughness="0.4" />
+    <MaterialAsset id="cold_lamp" baseColor="#BDDFD8" emissive="#B3DCD4" emissiveStrength="1.8" />
+    <MaterialAsset id="warm_lamp" baseColor="#F0D5A2" emissive="#EAC48D" emissiveStrength="1.5" />
+    <MaterialAsset id="green_lamp" baseColor="#78A592" emissive="#7EBAA0" emissiveStrength="0.7" />
+    <MaterialAsset id="red_lamp" baseColor="#CC4634" emissive="#F14528" emissiveStrength="1.6" />
+    <PrimitiveAsset id="s81_guest_eye_white" shape="sphere" radius="0.115" segments="40" rings="24" material="eye_ivory">
+      <Modifiers>
+        <Smooth angle="180" />
+      </Modifiers>
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s81_guest_eye_dark" shape="sphere" radius="0.055" segments="40" rings="24" material="eye_glass">
+      <Modifiers>
+        <Smooth angle="180" />
+      </Modifiers>
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s81_guest_penguin_body" shape="ellipsoid" radii={[0.62,0.95,0.48]} segments="40" rings="24" material="s81_guest_black">
+      <Modifiers>
+        <Taper axis="y" start="1.12" end="0.74" />
+        <Smooth angle="180" />
+      </Modifiers>
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s81_guest_penguin_belly" shape="ellipsoid" radii={[0.45,0.7,0.13]} segments="40" rings="24" material="s81_guest_white">
+      <Modifiers>
+        <Smooth angle="180" />
+      </Modifiers>
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s81_guest_penguin_head" shape="sphere" radius="0.49" segments="40" rings="24" material="s81_guest_black">
+      <Modifiers>
+        <Smooth angle="180" />
+      </Modifiers>
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s81_guest_penguin_face" shape="ellipsoid" radii={[0.35,0.27,0.12]} segments="40" rings="24" material="s81_guest_white">
+      <Modifiers>
+        <Smooth angle="180" />
+      </Modifiers>
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s81_guest_penguin_beak" shape="cone" radius="0.15" height="0.34" segments="40" material="s81_guest_orange">
+      <Modifiers>
+        <Smooth angle="180" />
+      </Modifiers>
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s81_guest_penguin_wing" shape="ellipsoid" radii={[0.15,0.68,0.075]} segments="40" rings="24" material="s81_guest_black">
+      <Modifiers>
+        <Taper axis="y" start="1.16" end="0.3" />
+        <Bend axis="y" angle="22" pivot={[0,-0.3,0]} />
+        <Smooth angle="180" />
+      </Modifiers>
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s81_guest_penguin_foot" shape="ellipsoid" radii={[0.24,0.08,0.34]} segments="40" rings="24" material="s81_guest_orange">
+      <Modifiers>
+        <Smooth angle="180" />
+      </Modifiers>
+    </PrimitiveAsset>
+    <CompoundAsset id="s81_guest_penguin" materialSeed="7901">
+      <Instance id="body" asset="s81_guest_penguin_body" position={[0,1.12,0]} />
+      <Instance id="belly" asset="s81_guest_penguin_belly" position={[0,1.05,0.43]} />
+      <Instance id="head" asset="s81_guest_penguin_head" position={[0,2.05,0]} />
+      <Instance id="face" asset="s81_guest_penguin_face" position={[0,2.02,0.43]} />
+      <Instance id="eye_l" asset="s81_guest_eye_dark" position={[-0.15,2.13,0.52]} />
+      <Instance id="eye_r" asset="s81_guest_eye_dark" position={[0.15,2.13,0.52]} />
+      <Instance id="beak" asset="s81_guest_penguin_beak" position={[0,1.98,0.7]} rotation={[90,0,0]} />
+      <Instance id="wing_l" asset="s81_guest_penguin_wing" position={[-0.57,1.18,0]} rotation={[0,0,-13]} />
+      <Instance id="wing_r" asset="s81_guest_penguin_wing" position={[0.57,1.18,0]} rotation={[0,180,13]} />
+      <Instance id="foot_l" asset="s81_guest_penguin_foot" position={[-0.27,0.17,0.17]} />
+      <Instance id="foot_r" asset="s81_guest_penguin_foot" position={[0.27,0.17,0.17]} />
+    </CompoundAsset>
+    <PrimitiveAsset id="s81_guest_frog_body" shape="ellipsoid" radii={[0.72,0.62,0.5]} segments="40" rings="24" material="s81_guest_frog">
+      <Modifiers>
+        <Smooth angle="180" />
+      </Modifiers>
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s81_guest_frog_head" shape="ellipsoid" radii={[0.68,0.48,0.48]} segments="40" rings="24" material="s81_guest_frog">
+      <Modifiers>
+        <Smooth angle="180" />
+      </Modifiers>
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s81_guest_frog_eye" shape="sphere" radius="0.2" segments="40" rings="24" material="s81_guest_frog">
+      <Modifiers>
+        <Smooth angle="180" />
+      </Modifiers>
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s81_guest_frog_thigh" shape="ellipsoid" radii={[0.44,0.24,0.58]} segments="40" rings="24" material="s81_guest_frog">
+      <Modifiers>
+        <Smooth angle="180" />
+      </Modifiers>
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s81_guest_frog_shin" shape="capsule" radius="0.14" height="0.7" segments="40" rings="24" material="s81_guest_frog">
+      <Modifiers>
+        <Smooth angle="180" />
+      </Modifiers>
+    </PrimitiveAsset>
+    <PrimitiveAsset id="s81_guest_frog_foot" shape="ellipsoid" radii={[0.26,0.08,0.5]} segments="40" rings="24" material="s81_guest_orange">
+      <Modifiers>
+        <Smooth angle="180" />
+      </Modifiers>
+    </PrimitiveAsset>
+    <CompoundAsset id="s81_guest_frog_character" materialSeed="7907">
+      <Instance id="body" asset="s81_guest_frog_body" position={[0,0.88,0]} />
+      <Instance id="head" asset="s81_guest_frog_head" position={[0,1.45,0.28]} />
+      <Instance id="eye_mount_l" asset="s81_guest_frog_eye" position={[-0.38,1.82,0.38]} />
+      <Instance id="eye_mount_r" asset="s81_guest_frog_eye" position={[0.38,1.82,0.38]} />
+      <Instance id="eye_l" asset="s81_guest_eye_white" position={[-0.38,1.84,0.54]} />
+      <Instance id="eye_r" asset="s81_guest_eye_white" position={[0.38,1.84,0.54]} />
+      <Instance id="pupil_l" asset="s81_guest_eye_dark" position={[-0.38,1.84,0.64]} />
+      <Instance id="pupil_r" asset="s81_guest_eye_dark" position={[0.38,1.84,0.64]} />
+      <Instance id="thigh_l" asset="s81_guest_frog_thigh" position={[-0.67,0.58,-0.08]} rotation={[0,0,-22]} />
+      <Instance id="thigh_r" asset="s81_guest_frog_thigh" position={[0.67,0.58,-0.08]} rotation={[0,0,22]} />
+      <Instance id="shin_l" asset="s81_guest_frog_shin" position={[-0.82,0.3,0.45]} rotation={[72,0,0]} />
+      <Instance id="shin_r" asset="s81_guest_frog_shin" position={[0.82,0.3,0.45]} rotation={[72,0,0]} />
+      <Instance id="foot_l" asset="s81_guest_frog_foot" position={[-0.82,0.15,0.72]} />
+      <Instance id="foot_r" asset="s81_guest_frog_foot" position={[0.82,0.15,0.72]} />
+    </CompoundAsset>
+    <PrimitiveAsset id="floor" shape="box" size={[9,0.15,13]} material="floor_mat" bevelRadius="0.0200" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="backwall" shape="box" size={[9,4.6,0.18]} material="plaster" bevelRadius="0.0200" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="sidewall" shape="box" size={[0.18,4.6,13]} material="plaster" bevelRadius="0.0200" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="skirting" shape="box" size={[0.07,0.25,13]} material="trim" bevelRadius="0.0154" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="backskirt" shape="box" size={[9,0.25,0.08]} material="trim" bevelRadius="0.0176" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="floor_seam_x" shape="box" size={[9,0.005,0.013]} material="grout" bevelRadius="0.0010" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="floor_seam_z" shape="box" size={[0.013,0.005,12]} material="grout" bevelRadius="0.0010" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="shelf_board" shape="box" size={[2.55,0.09,0.8]} material="shelf_paint" bevelRadius="0.0198" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="shelf_back" shape="box" size={[2.55,2.8,0.1]} material="shelf_back_mat" bevelRadius="0.0200" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="shelf_leg" shape="box" size={[0.075,3,0.82]} material="trim" bevelRadius="0.0165" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="price_rail" shape="box" size={[2.55,0.065,0.025]} material="label" bevelRadius="0.0055" bevelSegments="3" collision="none" />
+    <MaterialAsset id="stock0" baseColor="#8A795B" roughness="0.88" />
+    <PrimitiveAsset id="box0" shape="box" size={[0.24,0.39,0.21]} material="stock0" bevelRadius="0.0180" bevelSegments="3" collision="none" />
+    <MaterialAsset id="stock1" baseColor="#65766E" roughness="0.88" />
+    <PrimitiveAsset id="box1" shape="box" size={[0.24,0.39,0.21]} material="stock1" bevelRadius="0.0180" bevelSegments="3" collision="none" />
+    <MaterialAsset id="stock2" baseColor="#745654" roughness="0.88" />
+    <PrimitiveAsset id="box2" shape="box" size={[0.24,0.39,0.21]} material="stock2" bevelRadius="0.0180" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="stock_label" shape="box" size={[0.15,0.12,0.009]} material="label" bevelRadius="0.0020" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="bay_back" shape="box" size={[2.3,2.55,0.14]} material="bay_velvet" bevelRadius="0.0200" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="bay_side" shape="box" size={[0.14,2.85,0.92]} material="burgundy" bevelRadius="0.0200" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="bay_plinth" shape="box" size={[2.55,0.55,1]} material="burgundy" bevelRadius="0.0400" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="bay_shelf" shape="box" size={[2.45,0.12,0.95]} material="shelf_paint" bevelRadius="0.0200" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="bay_crown" shape="box" size={[2.55,0.32,1]} material="burgundy" bevelRadius="0.0400" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="bay_light" shape="box" size={[2.18,0.025,0.12]} material="warm_lamp" bevelRadius="0.0055" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="reserved_base" shape="box" size={[0.6,0.035,0.65]} material="label" bevelRadius="0.0060" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="ticket" shape="box" size={[0.36,0.16,0.018]} material="label" bevelRadius="0.0040" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="bay_bar" shape="box" size={[2.5,0.02,0.022]} material="brass" bevelRadius="0.0040" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="counter" shape="box" size={[1.25,1.1,2.4]} material="burgundy" bevelRadius="0.0650" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="counter_top" shape="box" size={[1.42,0.12,2.6]} material="counter_enamel" bevelRadius="0.0264" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="register" shape="box" size={[0.45,0.27,0.38]} material="trim" bevelRadius="0.0300" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="monitor" shape="box" size={[0.4,0.29,0.065]} material="trim" bevelRadius="0.0143" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="monitor_face" shape="box" size={[0.33,0.21,0.012]} material="green_lamp" bevelRadius="0.0026" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="ceiling_strip" shape="box" size={[2.5,0.1,0.28]} material="trim" bevelRadius="0.0200" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="tube" shape="box" size={[2.3,0.035,0.09]} material="cold_lamp" bevelRadius="0.0077" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="pipe" shape="box" size={[0.065,0.065,10]} material="trim" bevelRadius="0.0100" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="wall_scar" shape="box" size={[0.02,0.3,0.6]} material="wall_wear" bevelRadius="0.0010" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="red_panel" shape="box" size={[0.13,0.35,0.24]} material="red_lamp" bevelRadius="0.0200" bevelSegments="3" collision="none" />
+    <PrimitiveAsset id="hanging_wire" shape="box" size={[0.018,0.72,0.018]} material="trim" bevelRadius="0.0030" bevelSegments="3" collision="none" />
+  </Assets>
+  <AudioClip id="unease" asset="score" from="0s" duration="17s" sourceIn="0s" sourceOut="17s" />
+  <AudioClip id="dread" asset="score" from="18s" duration="9s" sourceIn="37s" sourceOut="46s" />
+  <AudioClip id="reveal_score" asset="score" from="27s" duration="8s" sourceIn="66s" sourceOut="74s" />
+  <AudioClip id="sting" asset="score" from="36s" duration="4s" sourceIn="130s" sourceOut="134s" />
+  <Scene id="night_shop" renderStyle="after_closing">
+    <Timeline>
+      <Track space="3d">
+        <Sequence from="0s" duration="40s" out="hide">
+          <CompositeGroup id="shop" space="3d" depth="true" format="rgba16f">
+            <Camera3D id="wide" position={[4,2.65,8.3]} target={[0,1.3,-1.9]} fov="42" />
+            <Camera3D id="two" position={[.4,2,5.2]} target={[0,1.1,.0]} fov="43" />
+            <Camera3D id="empty" position={[.8,1.75,.9]} target={[0,1.65,-3.8]} fov="36" />
+            <Camera3D id="reaction" position={[.8,1.95,4.2]} target={[0,1.35,.2]} fov="43" />
+            <Camera3D id="reveal" position={[2.4,1.9,.4]} target={[0,1.3,-3.9]} fov="35" />
+            <Camera3D id="witness" position={[0,1.43,-2.84]} target={[0,1.42,-3.68]} fov="43" />
+            <Camera3D id="last" position={[0,1.8,1.2]} target={[0,1.25,-3.9]} fov="33" />
+            <DirectionalLight direction={[-.5,-1,-.4]} color="#A4BBCB" intensity="0.12" castShadow="true" shadowStrength="0.65" />
+            <PointLight position={[-2.1,2.45,1.4]} color="#94BCCE" intensity="curve(0:10,16.8:10,16.95:0,17.12:10,17.22:0,18:0.5,25.9:0.5,26:0,27:0.3)" range="5.5" />
+            <PointLight position={[0,2.55,-3.3]} color="#F3C795" intensity="curve(0:2.8,16.8:2.8,17:0,18:0.7,26:0,27:4.5)" range="3.2" />
+            <PointLight position={[2.7,0.7,1.1]} color="#D64B32" intensity="curve(0:0.1,17:0.1,18:12,25.9:12,26:0,27:0.5)" range="7" />
+            <AmbientOcclusion intensity="0.35" radius="0.24" />
+            <ContactShadow intensity="0.58" distance="0.2" softness="0.5" />
+            <Model asset="floor" position={[0,-0.09,-1]}  />
+            <Model asset="backwall" position={[0,2.25,-5]}  />
+            <Model asset="sidewall" position={[-4.5,2.25,-1]}  />
+            <Model asset="sidewall" position={[4.5,2.25,-1]}  />
+            <Model asset="skirting" position={[-4.38,0.12,-1]}  />
+            <Model asset="skirting" position={[4.38,0.12,-1]}  />
+            <Model asset="backskirt" position={[0,0.12,-4.85]}  />
+            <Model asset="floor_seam_x" position={[0,0.001,-5]}  />
+            <Model asset="floor_seam_x" position={[0,0.001,-4.1]}  />
+            <Model asset="floor_seam_x" position={[0,0.001,-3.1999999999999997]}  />
+            <Model asset="floor_seam_x" position={[0,0.001,-2.3]}  />
+            <Model asset="floor_seam_x" position={[0,0.001,-1.4]}  />
+            <Model asset="floor_seam_x" position={[0,0.001,-0.4999999999999999]}  />
+            <Model asset="floor_seam_x" position={[0,0.001,0.40000000000000013]}  />
+            <Model asset="floor_seam_x" position={[0,0.001,1.3000000000000003]}  />
+            <Model asset="floor_seam_x" position={[0,0.001,2.2]}  />
+            <Model asset="floor_seam_x" position={[0,0.001,3.1]}  />
+            <Model asset="floor_seam_x" position={[0,0.001,4]}  />
+            <Model asset="floor_seam_x" position={[0,0.001,4.9]}  />
+            <Model asset="floor_seam_z" position={[-4.5,0.001,-1]}  />
+            <Model asset="floor_seam_z" position={[-3.6,0.001,-1]}  />
+            <Model asset="floor_seam_z" position={[-2.7,0.001,-1]}  />
+            <Model asset="floor_seam_z" position={[-1.8000000000000003,0.001,-1]}  />
+            <Model asset="floor_seam_z" position={[-0.9000000000000002,0.001,-1]}  />
+            <Model asset="floor_seam_z" position={[-2.220446049250313e-16,0.001,-1]}  />
+            <Model asset="floor_seam_z" position={[0.8999999999999998,0.001,-1]}  />
+            <Model asset="floor_seam_z" position={[1.7999999999999998,0.001,-1]}  />
+            <Model asset="floor_seam_z" position={[2.6999999999999997,0.001,-1]}  />
+            <Model asset="floor_seam_z" position={[3.5999999999999996,0.001,-1]}  />
+            <Model asset="floor_seam_z" position={[4.5,0.001,-1]}  />
+            <Model asset="shelf_back" position={[-3,1.55,-4.38]}  />
+            <Model asset="shelf_board" position={[-3,0.35,-3.96]}  />
+            <Model asset="price_rail" position={[-3,0.3,-3.54]}  />
+            <Model asset="shelf_board" position={[-3,1.1,-3.96]}  />
+            <Model asset="price_rail" position={[-3,1.05,-3.54]}  />
+            <Model asset="shelf_board" position={[-3,1.85,-3.96]}  />
+            <Model asset="price_rail" position={[-3,1.8,-3.54]}  />
+            <Model asset="shelf_board" position={[-3,2.6,-3.96]}  />
+            <Model asset="price_rail" position={[-3,2.5500000000000003,-3.54]}  />
+            <Model asset="shelf_leg" position={[-4.24,1.5,-3.96]}  />
+            <Model asset="shelf_leg" position={[-1.76,1.5,-3.96]}  />
+            <Model asset="shelf_back" position={[3,1.55,-4.38]}  />
+            <Model asset="shelf_board" position={[3,0.35,-3.96]}  />
+            <Model asset="price_rail" position={[3,0.3,-3.54]}  />
+            <Model asset="shelf_board" position={[3,1.1,-3.96]}  />
+            <Model asset="price_rail" position={[3,1.05,-3.54]}  />
+            <Model asset="shelf_board" position={[3,1.85,-3.96]}  />
+            <Model asset="price_rail" position={[3,1.8,-3.54]}  />
+            <Model asset="shelf_board" position={[3,2.6,-3.96]}  />
+            <Model asset="price_rail" position={[3,2.5500000000000003,-3.54]}  />
+            <Model asset="shelf_leg" position={[1.76,1.5,-3.96]}  />
+            <Model asset="shelf_leg" position={[4.24,1.5,-3.96]}  />
+            <Model asset="box1" position={[-3.69,0.59,-3.87]}  />
+            <Model asset="stock_label" position={[-3.69,0.575,-3.757]}  />
+            <Model asset="box2" position={[-3.38,0.59,-3.87]}  />
+            <Model asset="stock_label" position={[-3.38,0.575,-3.757]}  />
+            <Model asset="box0" position={[-3.0700000000000003,0.59,-3.87]}  />
+            <Model asset="stock_label" position={[-3.0700000000000003,0.575,-3.757]}  />
+            <Model asset="box1" position={[-2.76,0.59,-3.87]}  />
+            <Model asset="stock_label" position={[-2.76,0.575,-3.757]}  />
+            <Model asset="box2" position={[-2.45,0.59,-3.87]}  />
+            <Model asset="stock_label" position={[-2.45,0.575,-3.757]}  />
+            <Model asset="box0" position={[-2.14,0.59,-3.87]}  />
+            <Model asset="stock_label" position={[-2.14,0.575,-3.757]}  />
+            <Model asset="box1" position={[-4,1.34,-3.87]}  />
+            <Model asset="stock_label" position={[-4,1.3250000000000002,-3.757]}  />
+            <Model asset="box2" position={[-3.69,1.34,-3.87]}  />
+            <Model asset="stock_label" position={[-3.69,1.3250000000000002,-3.757]}  />
+            <Model asset="box1" position={[-3.0700000000000003,1.34,-3.87]}  />
+            <Model asset="stock_label" position={[-3.0700000000000003,1.3250000000000002,-3.757]}  />
+            <Model asset="box2" position={[-2.76,1.34,-3.87]}  />
+            <Model asset="stock_label" position={[-2.76,1.3250000000000002,-3.757]}  />
+            <Model asset="box0" position={[-2.45,1.34,-3.87]}  />
+            <Model asset="stock_label" position={[-2.45,1.3250000000000002,-3.757]}  />
+            <Model asset="box1" position={[-2.14,1.34,-3.87]}  />
+            <Model asset="stock_label" position={[-2.14,1.3250000000000002,-3.757]}  />
+            <Model asset="box2" position={[-4,2.09,-3.87]}  />
+            <Model asset="stock_label" position={[-4,2.0749999999999997,-3.757]}  />
+            <Model asset="box0" position={[-3.69,2.09,-3.87]}  />
+            <Model asset="stock_label" position={[-3.69,2.0749999999999997,-3.757]}  />
+            <Model asset="box1" position={[-3.38,2.09,-3.87]}  />
+            <Model asset="stock_label" position={[-3.38,2.0749999999999997,-3.757]}  />
+            <Model asset="box2" position={[-3.0700000000000003,2.09,-3.87]}  />
+            <Model asset="stock_label" position={[-3.0700000000000003,2.0749999999999997,-3.757]}  />
+            <Model asset="box1" position={[-2.45,2.09,-3.87]}  />
+            <Model asset="stock_label" position={[-2.45,2.0749999999999997,-3.757]}  />
+            <Model asset="box2" position={[-2.14,2.09,-3.87]}  />
+            <Model asset="stock_label" position={[-2.14,2.0749999999999997,-3.757]}  />
+            <Model asset="box0" position={[2,0.59,-3.87]}  />
+            <Model asset="stock_label" position={[2,0.575,-3.757]}  />
+            <Model asset="box1" position={[2.31,0.59,-3.87]}  />
+            <Model asset="stock_label" position={[2.31,0.575,-3.757]}  />
+            <Model asset="box2" position={[2.62,0.59,-3.87]}  />
+            <Model asset="stock_label" position={[2.62,0.575,-3.757]}  />
+            <Model asset="box0" position={[2.9299999999999997,0.59,-3.87]}  />
+            <Model asset="stock_label" position={[2.9299999999999997,0.575,-3.757]}  />
+            <Model asset="box1" position={[3.24,0.59,-3.87]}  />
+            <Model asset="stock_label" position={[3.24,0.575,-3.757]}  />
+            <Model asset="box2" position={[3.55,0.59,-3.87]}  />
+            <Model asset="stock_label" position={[3.55,0.575,-3.757]}  />
+            <Model asset="box1" position={[2,1.34,-3.87]}  />
+            <Model asset="stock_label" position={[2,1.3250000000000002,-3.757]}  />
+            <Model asset="box2" position={[2.31,1.34,-3.87]}  />
+            <Model asset="stock_label" position={[2.31,1.3250000000000002,-3.757]}  />
+            <Model asset="box0" position={[2.62,1.34,-3.87]}  />
+            <Model asset="stock_label" position={[2.62,1.3250000000000002,-3.757]}  />
+            <Model asset="box1" position={[2.9299999999999997,1.34,-3.87]}  />
+            <Model asset="stock_label" position={[2.9299999999999997,1.3250000000000002,-3.757]}  />
+            <Model asset="box2" position={[3.24,1.34,-3.87]}  />
+            <Model asset="stock_label" position={[3.24,1.3250000000000002,-3.757]}  />
+            <Model asset="box0" position={[3.55,1.34,-3.87]}  />
+            <Model asset="stock_label" position={[3.55,1.3250000000000002,-3.757]}  />
+            <Model asset="box1" position={[3.86,1.34,-3.87]}  />
+            <Model asset="stock_label" position={[3.86,1.3250000000000002,-3.757]}  />
+            <Model asset="box2" position={[2,2.09,-3.87]}  />
+            <Model asset="stock_label" position={[2,2.0749999999999997,-3.757]}  />
+            <Model asset="box1" position={[2.62,2.09,-3.87]}  />
+            <Model asset="stock_label" position={[2.62,2.0749999999999997,-3.757]}  />
+            <Model asset="box2" position={[2.9299999999999997,2.09,-3.87]}  />
+            <Model asset="stock_label" position={[2.9299999999999997,2.0749999999999997,-3.757]}  />
+            <Model asset="box0" position={[3.24,2.09,-3.87]}  />
+            <Model asset="stock_label" position={[3.24,2.0749999999999997,-3.757]}  />
+            <Model asset="box1" position={[3.55,2.09,-3.87]}  />
+            <Model asset="stock_label" position={[3.55,2.0749999999999997,-3.757]}  />
+            <Model asset="box2" position={[3.86,2.09,-3.87]}  />
+            <Model asset="stock_label" position={[3.86,2.0749999999999997,-3.757]}  />
+            <Model asset="bay_back" position={[0,1.67,-4.42]}  />
+            <Model asset="bay_side" position={[-1.2,1.48,-4]}  />
+            <Model asset="bay_side" position={[1.2,1.48,-4]}  />
+            <Model asset="bay_plinth" position={[0,0.3,-3.96]}  />
+            <Model asset="bay_shelf" position={[0,0.63,-3.93]}  />
+            <Model asset="bay_crown" position={[0,3.02,-3.96]}  />
+            <Model asset="bay_light" position={[0,2.82,-3.57]}  />
+            <Model asset="reserved_base" position={[-0.72,0.71,-3.92]}  />
+            <Model asset="reserved_base" position={[0,0.71,-3.92]}  />
+            <Model asset="reserved_base" position={[0.72,0.71,-3.92]}  />
+            <Model asset="ticket" position={[-0.72,0.49,-3.415]}  />
+            <Model asset="ticket" position={[0,0.49,-3.415]}  />
+            <Model asset="ticket" position={[0.72,0.49,-3.415]}  />
+            <Model asset="bay_bar" position={[0,0.43,-3.4]}  />
+            <Model asset="counter" position={[-3.2,0.55,1.4]}  />
+            <Model asset="counter_top" position={[-3.2,1.16,1.4]}  />
+            <Model asset="register" position={[-3.12,1.35,0.95]}  />
+            <Model asset="monitor" position={[-3.12,1.66,0.83]} rotationX="-12" />
+            <Model asset="monitor_face" position={[-3.12,1.66,0.873]} rotationX="-12" />
+            <Model asset="ceiling_strip" position={[0,3.55,-2.8]}  />
+            <Model asset="tube" position={[0,3.48,-2.8]}  />
+            <Model asset="ceiling_strip" position={[0,3.55,1.3]}  />
+            <Model asset="tube" position={[0,3.48,1.3]}  />
+            <Model asset="pipe" position={[-4.23,3.5,-0.5]}  />
+            <Model asset="wall_scar" position={[-4.38,0.4,-2]}  />
+            <Model asset="wall_scar" position={[4.38,0.3,1]}  />
+            <Model asset="red_panel" position={[4.3,2.3,-2.6]}  />
+            <Model asset="hanging_wire" position={[-0.94,3.97,-2.8]}  />
+            <Model asset="hanging_wire" position={[0.94,3.97,-2.8]}  />
+            <Model id="penguin" asset="s81_guest_penguin" position={[-.95,.02,-.1]} scale=".82" rotationY="8" />
+            <Model id="frog" asset="s81_guest_frog_character" position={[.9,.02,.25]} scale=".78" rotationY="-12" />
+            <Model id="shelf_penguin" asset="s81_guest_penguin" position={[-.72,.73,-3.89]} scale="curve(0:0,26.96:0,27:.35)" rotationY="0" />
+            <Model id="shelf_frog" asset="s81_guest_frog_character" position={[0,.73,-3.89]} scale="curve(0:0,26.96:0,27:.4)" rotationY="0" />
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+      <Track space="screen" compositeOrder="100">
+        <Sequence from="0s" duration="40s" out="hide">
+          <Layer space="screen">
+            <Rect width="1280" height="64" color="#06090B" />
+            <Rect y="656" width="1280" height="64" color="#06090B" />
+            <Text x="46" y="695" value="NIGHT OWL   /   AFTER CLOSING" fontSize="11" tracking="3" color="#81928B" />
+            <Text x="1120" y="695" value="02 : 13 AM" fontSize="11" tracking="2" color="#81928B" />
+          </Layer>
+        </Sequence>
+        <Sequence from="0.7s" duration="4.8s" out="hide">
+          <Layer space="screen">
+            <Text x="76" y="588" value="AFTER CLOSING" fontSize="26" tracking="3" color="#D9D0B5" />
+            <Text x="76" y="618" value="THE DOOR IS LOCKED. THE LIGHTS ARE STILL ON." fontSize="13" tracking="2" color="#849A92" />
+          </Layer>
+        </Sequence>
+        <Sequence from="7s" duration="4s" out="hide">
+          <Layer space="screen">
+            <Text x="76" y="606" value="Did you hear that?" fontSize="26" tracking="3" color="#D9D0B5" />
+          </Layer>
+        </Sequence>
+        <Sequence from="12s" duration="4.8s" out="hide">
+          <Layer space="screen">
+            <Text x="76" y="588" value="TWO PLACES RESERVED" fontSize="26" tracking="3" color="#D9D0B5" />
+            <Text x="76" y="618" value="PLEASE WAIT TO BE COLLECTED." fontSize="13" tracking="2" color="#849A92" />
+          </Layer>
+        </Sequence>
+        <Sequence from="17s" duration="1s" out="hide">
+          <Layer space="screen">
+            <Rect width="1280" height="720" color="#030506" />
+          </Layer>
+        </Sequence>
+        <Sequence from="19s" duration="4s" out="hide">
+          <Layer space="screen">
+            <Text x="76" y="606" value="Those places are our size." fontSize="26" tracking="3" color="#D9D0B5" />
+          </Layer>
+        </Sequence>
+        <Sequence from="26s" duration="1s" out="hide">
+          <Layer space="screen">
+            <Rect width="1280" height="720" color="#030506" />
+          </Layer>
+        </Sequence>
+        <Sequence from="28s" duration="6s" out="hide">
+          <Layer space="screen">
+            <Text x="76" y="588" value="NEW ARRIVALS" fontSize="26" tracking="3" color="#D9D0B5" />
+            <Text x="76" y="618" value="NIGHT SHIFT FRIENDS  /  SOLD AS A PAIR" fontSize="13" tracking="2" color="#849A92" />
+          </Layer>
+        </Sequence>
+        <Sequence from="35s" duration="1s" out="hide">
+          <Layer space="screen">
+            <Rect width="1280" height="720" color="#030506" />
+          </Layer>
+        </Sequence>
+        <Sequence from="36s" duration="3.2s" out="hide">
+          <Layer space="screen">
+            <Text x="76" y="588" value="ONE SPACE LEFT." fontSize="26" tracking="3" color="#D9D0B5" />
+            <Text x="76" y="618" value="WE KEPT IT FOR YOU." fontSize="13" tracking="2" color="#849A92" />
+          </Layer>
+        </Sequence>
+        <Sequence from="39.9s" duration=".1s" out="hide">
+          <Layer space="screen">
+            <Rect width="1280" height="720" color="#030506" />
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <AnimationTarget node="night_shop" property="activeCamera">
+    <Key time="0s" value="wide" />
+    <Key time="6s" value="two" />
+    <Key time="12s" value="empty" />
+    <Key time="18s" value="reaction" />
+    <Key time="24s" value="wide" />
+    <Key time="27s" value="reveal" />
+    <Key time="36s" value="last" />
+    <Key time="39.2s" value="witness" />
+  </AnimationTarget>
+  <AnimationTarget node="wide" property="position">
+    <Key time="0s" value="[4,2.65,8.3]" />
+    <Key time="6s" value="[3.4,2.4,7.1]" />
+    <Key time="24s" value="[3.4,2.4,7.1]" />
+    <Key time="26s" value="[3,2.25,6.4]" />
+  </AnimationTarget>
+  <AnimationTarget node="two" property="position">
+    <Key time="6s" value="[.4,2,5.8]" />
+    <Key time="12s" value="[.1,1.9,5.4]" />
+  </AnimationTarget>
+  <AnimationTarget node="reveal" property="position">
+    <Key time="27s" value="[2.4,1.9,.4]" />
+    <Key time="35s" value="[.9,1.7,-.1]" />
+  </AnimationTarget>
+  <AnimationTarget node="last" property="position">
+    <Key time="36s" value="[0,1.8,1.2]" />
+    <Key time="39.95s" value="[.45,1.5,-.65]" />
+  </AnimationTarget>
+  <AnimationTarget node="penguin" property="rotationY">
+    <Key time="0s" value="8" />
+    <Key time="6s" value="8" />
+    <Key time="7s" value="-18" />
+    <Key time="9s" value="-18" />
+    <Key time="12s" value="0" />
+    <Key time="18s" value="0" />
+    <Key time="19.5s" value="-12" />
+    <Key time="23s" value="0" />
+  </AnimationTarget>
+  <AnimationTarget node="frog" property="rotationY">
+    <Key time="0s" value="-12" />
+    <Key time="6s" value="-12" />
+    <Key time="7.5s" value="-38" />
+    <Key time="11s" value="-38" />
+    <Key time="12s" value="-12" />
+    <Key time="18s" value="-12" />
+    <Key time="20s" value="12" />
+    <Key time="22s" value="12" />
+    <Key time="24s" value="0" />
+  </AnimationTarget>
+  <AnimationTarget node="penguin" property="rotationZ">
+    <Key time="0s" value="0" />
+    <Key time="7s" value="-3" />
+    <Key time="9s" value="0" />
+    <Key time="18s" value="0" />
+    <Key time="20s" value="3" />
+    <Key time="24s" value="0" />
+  </AnimationTarget>
+  <AnimationTarget node="frog" property="rotationZ">
+    <Key time="0s" value="0" />
+    <Key time="8s" value="3" />
+    <Key time="10s" value="0" />
+    <Key time="18s" value="0" />
+    <Key time="21s" value="-3" />
+    <Key time="24s" value="0" />
+  </AnimationTarget>
+  <AnimationTarget node="penguin" property="scale">
+    <Key time="0s" value="0.82" />
+    <Key time="25.96s" value="0.82" />
+    <Key time="26s" value="0" />
+  </AnimationTarget>
+  <AnimationTarget node="frog" property="scale">
+    <Key time="0s" value="0.78" />
+    <Key time="25.96s" value="0.78" />
+    <Key time="26s" value="0" />
+  </AnimationTarget>
+  <AnimationTarget node="shelf_frog" property="rotationY">
+    <Key time="27s" value="0" />
+    <Key time="36s" value="0" />
+    <Key time="38.5s" value="0" />
+    <Key time="39.2s" value="0" />
+  </AnimationTarget>
+  <AudioTarget node="unease" property="gainDb">
+    <Key time="0s" value="-22" />
+    <Key time="3s" value="-15" />
+    <Key time="16.8s" value="-9" />
+    <Key time="17s" value="-60" />
+  </AudioTarget>
+  <AudioTarget node="dread" property="gainDb">
+    <Key time="18s" value="-19" />
+    <Key time="25.8s" value="-8" />
+    <Key time="26s" value="-60" />
+  </AudioTarget>
+  <AudioTarget node="reveal_score" property="gainDb">
+    <Key time="27s" value="-10" />
+    <Key time="32s" value="-16" />
+    <Key time="35s" value="-60" />
+  </AudioTarget>
+  <AudioTarget node="sting" property="gainDb">
+    <Key time="36s" value="-16" />
+    <Key time="38.8s" value="-16" />
+    <Key time="39.2s" value="-6" />
+    <Key time="39.9s" value="-18" />
+  </AudioTarget>
+  <Present from="night_shop" />
+</Graph>

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0",
+  "classification": "multiview_fit",
+  "referenceContentHash": "3bd0720661675fa3503f0b6b6e3ed79b12849bb0a84ac2e973242eac0c8308f8",
+  "targetAssetId": "s94_head_mesh",
+  "targetModelId": "s94_head_model",
+  "controlVertices": 362,
+  "controlFaces": 384,
+  "topologySignature": "afc62472863bad28d723cf24198a1f7fe0994624da1879c35a344520225e46f4",
+  "finalSourceFingerprint": "fd838c7d3fc439d9ff36b71178b8de96407040faba58d37ebfcf3d7176fb8b03",
+  "cameraFingerprint": "87c284d7cadc9557cb17aeffd6a5b343fec2ba1279d2eda41a29ea8aa2e9427b",
+  "comparisonFrames": {
+    "front": 0,
+    "left": 144,
+    "back": 96,
+    "right": 48
+  },
+  "firstPass": {
+    "acceptedIterations": [1, 3, 4, 5],
+    "rejectedIterations": [2],
+    "baseline": {
+      "meanObjective": 0.274343,
+      "frontIou": 0.840023,
+      "leftIou": 0.720880,
+      "backIou": 0.788780,
+      "rightIou": 0.728619
+    },
+    "acceptedControlCage": {
+      "meanObjective": 0.174223,
+      "frontIou": 0.862364,
+      "leftIou": 0.849996,
+      "backIou": 0.842172,
+      "rightIou": 0.852864
+    }
+  },
+  "secondPass": {
+    "acceptedIterations": [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
+    "rejectedIterations": [11.5, 19],
+    "baseline": {
+      "objective": 0.17422,
+      "frontIou": 0.8624,
+      "leftIou": 0.8500,
+      "backIou": 0.8422,
+      "rightIou": 0.8529
+    },
+    "acceptedControlCage": {
+      "objective": 0.08035,
+      "frontIou": 0.9756,
+      "leftIou": 0.9210,
+      "backIou": 0.9222,
+      "rightIou": 0.9137
+    },
+    "perIteration": [
+      {"iteration": 6, "proposal": "proposal-006-jaw-ear-pinch.json", "region": "rings 4-8 lateral jaw/ear band", "objective": 0.15695},
+      {"iteration": 7, "proposal": "proposal-007-neck-base-widen.json", "region": "rings 0-3 neck base flare", "objective": 0.14112},
+      {"iteration": 8, "proposal": "proposal-008-throat-recede.json", "region": "rings 1-3 submental throat", "objective": 0.13378},
+      {"iteration": 9, "proposal": "proposal-009-face-recede.json", "region": "rings 4-8 nose/lip/bridge ridge", "objective": 0.12168},
+      {"iteration": 10, "proposal": "proposal-010-nape-extend.json", "region": "rings 4-6 nape back arc", "objective": 0.11779},
+      {"iteration": 11, "proposal": "proposal-011-skull-taper.json", "region": "rings 9-13 skull lateral", "objective": 0.11716},
+      {"iteration": 11.5, "proposal": "proposal-011b-skull-crown-combined-rejected.json", "region": "combined skull taper + crown-back", "objective": 0.11728, "accepted": false, "reason": "back and right views regressed in the combined batch; kept the skull-taper-only candidate"},
+      {"iteration": 12, "proposal": "proposal-012-neck-widen2.json", "region": "rings 1-3 neck base second flare", "objective": 0.10626},
+      {"iteration": 13, "proposal": "proposal-013-face-nape-refine.json", "region": "rings 5-8 face ridge + rings 4-6 nape", "objective": 0.10196},
+      {"iteration": 14, "proposal": "proposal-014-skull-lateral2.json", "region": "rings 9-13 skull lateral second pass", "objective": 0.09684},
+      {"iteration": 15, "proposal": "proposal-015-jaw-neck-lateral.json", "region": "rings 2/5/6 jaw band and neck base", "objective": 0.09510},
+      {"iteration": 16, "proposal": "proposal-016-throat-nape3.json", "region": "rings 2-3 throat and lower nape", "objective": 0.08886},
+      {"iteration": 17, "proposal": "proposal-017-throat-nape4.json", "region": "rings 2-3 throat and lower nape second pass", "objective": 0.08469},
+      {"iteration": 18, "proposal": "proposal-018-submental-arc.json", "region": "ring 3 submental arc evening", "objective": 0.08035},
+      {"iteration": 19, "proposal": "proposal-019-crown-lift-rejected.json", "region": "rings 12-14 crown back lift", "objective": 0.08063, "accepted": false, "reason": "back IoU fell 0.9222 -> 0.9169 and right fell 0.9137 -> 0.9114 beyond tolerance; kept iteration 18"}
+    ]
+  },
+  "notes": [
+    "The reference is a four-panel composite; each panel was cropped without non-uniform scaling before guided segmentation.",
+    "The camera, frame indices, image sizes and reference analyses were frozen for the whole second pass; cameraFingerprint never changed.",
+    "Every accepted iteration was re-evaluated on all four reference views before acceptance; rejected batches kept the previous accepted source.",
+    "The residual error is dominated by the left/right panels disagreeing by about 4 percent in scale (right panel head depth 338px versus left 354px), so the fit converges between them.",
+    "The bottom rows of the profile panels are crop edges rather than anatomy and were not fitted further.",
+    "Subdivision was enabled only after the control cage converged; V1 evaluation measures the authored cage, so the final metrics are cage metrics.",
+    "Fine skin texture, iris/brow detail and exact ear anatomy remain outside silhouette-only V1 fitting confidence.",
+    "Re-running analyzeImageReference with the stored requests reproduced every foreground mask byte-for-byte (identical contentHash); only the landmark tie-break pixel moved by 1-2px, so the frozen references were kept for the fit."
+  ]
+}

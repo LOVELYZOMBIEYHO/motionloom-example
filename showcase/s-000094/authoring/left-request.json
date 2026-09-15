@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0",
+  "imageId": "s94-left-3bd07206",
+  "view": "left",
+  "segmentation": {
+    "mode": "guided",
+    "analysisRegion": [0, 0, 512, 640],
+    "foregroundPoints": [[256, 320]],
+    "backgroundPoints": [[8, 8], [504, 8], [8, 632], [504, 632]],
+    "backgroundColor": null,
+    "threshold": 36,
+    "suppliedMask": null,
+    "minComponentPixels": 256,
+    "maxContourPoints": 512
+  },
+  "requestedLandmarks": ["topmost", "bottommost", "leftmost", "rightmost"],
+  "analysisProfile": "human_head_v1",
+  "featureHints": [
+    {"id":"brow_profile","kind":"point","points":[[98,279]],"semanticLabel":"brow_profile","binding":{"type":"vertex","vertex":816},"confidence":0.9,"snapRadius":5},
+    {"id":"nose_bridge","kind":"point","points":[[91,300]],"semanticLabel":"nose_bridge","binding":{"type":"vertex","vertex":768},"confidence":0.9,"snapRadius":5},
+    {"id":"nose_tip","kind":"point","points":[[61,323]],"semanticLabel":"nose_tip","binding":{"type":"vertex","vertex":624},"confidence":1.0,"snapRadius":5},
+    {"id":"upper_lip","kind":"point","points":[[86,366]],"semanticLabel":"upper_lip","binding":{"type":"vertex","vertex":528},"confidence":0.9,"snapRadius":4},
+    {"id":"chin","kind":"point","points":[[97,425]],"semanticLabel":"chin","binding":{"type":"vertex","vertex":432},"confidence":0.95,"snapRadius":5},
+    {"id":"ear_center","kind":"point","points":[[300,333]],"semanticLabel":"ear_center","binding":{"type":"vertex","vertex":638},"confidence":0.9,"snapRadius":6},
+    {"id":"nape","kind":"point","points":[[426,437]],"semanticLabel":"nape","binding":{"type":"vertex","vertex":360},"confidence":0.85,"snapRadius":6}
+  ],
+  "depthHints": []
+}

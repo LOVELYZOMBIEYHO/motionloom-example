@@ -1,0 +1,220 @@
+{
+ "schemaVersion": "1.0",
+ "imageId": "s95-shark-top-01",
+ "view": "top",
+ "segmentation": {
+  "mode": "guided",
+  "analysisRegion": [
+   0,
+   0,
+   772,
+   429
+  ],
+  "foregroundPoints": [
+   [
+    350,
+    215
+   ],
+   [
+    180,
+    225
+   ],
+   [
+    600,
+    200
+   ]
+  ],
+  "backgroundPoints": [
+   [
+    6,
+    6
+   ],
+   [
+    765,
+    6
+   ],
+   [
+    6,
+    422
+   ],
+   [
+    765,
+    422
+   ]
+  ],
+  "backgroundColor": null,
+  "threshold": 30,
+  "suppliedMask": null,
+  "minComponentPixels": 512,
+  "maxContourPoints": 512
+ },
+ "requestedLandmarks": [
+  "topmost",
+  "bottommost",
+  "leftmost",
+  "rightmost"
+ ],
+ "featureHints": [
+  {
+   "id": "snout_tip",
+   "kind": "point",
+   "points": [
+    [
+     45,
+     204
+    ]
+   ],
+   "semanticLabel": "snout_tip",
+   "binding": {
+    "type": "vertex",
+    "vertex": 252
+   },
+   "confidence": 0.9,
+   "snapRadius": 8
+  },
+  {
+   "id": "dorsal_fin_tip",
+   "kind": "point",
+   "points": [
+    [
+     355,
+     8
+    ]
+   ],
+   "semanticLabel": "dorsal_fin_tip",
+   "binding": {
+    "type": "vertex",
+    "vertex": 132
+   },
+   "confidence": 0.8,
+   "snapRadius": 8
+  },
+  {
+   "id": "dorsal_fin_contour",
+   "kind": "polyline",
+   "points": [
+    [
+     331,
+     54
+    ],
+    [
+     355,
+     8
+    ],
+    [
+     379,
+     58
+    ]
+   ],
+   "semanticLabel": "dorsal_fin_contour",
+   "binding": {
+    "type": "vertexChain",
+    "vertices": [
+     120,
+     132,
+     144,
+     156
+    ],
+    "closed": false
+   },
+   "confidence": 0.75,
+   "snapRadius": 8
+  },
+  {
+   "id": "pectoral_tip_left",
+   "kind": "point",
+   "points": [
+    [
+     340,
+     420
+    ]
+   ],
+   "semanticLabel": "pectoral_tip_left",
+   "binding": {
+    "type": "vertex",
+    "vertex": 111
+   },
+   "confidence": 0.8,
+   "snapRadius": 8
+  },
+  {
+   "id": "tail_upper_tip",
+   "kind": "point",
+   "points": [
+    [
+     716,
+     129
+    ]
+   ],
+   "semanticLabel": "tail_upper_tip",
+   "binding": {
+    "type": "vertex",
+    "vertex": 228
+   },
+   "confidence": 0.7,
+   "snapRadius": 8
+  },
+  {
+   "id": "tail_lower_tip",
+   "kind": "point",
+   "points": [
+    [
+     719,
+     300
+    ]
+   ],
+   "semanticLabel": "tail_lower_tip",
+   "binding": {
+    "type": "vertex",
+    "vertex": 234
+   },
+   "confidence": 0.7,
+   "snapRadius": 8
+  },
+  {
+   "id": "body_centerline",
+   "kind": "polyline",
+   "points": [
+    [
+     120,
+     216
+    ],
+    [
+     300,
+     215
+    ],
+    [
+     480,
+     213
+    ],
+    [
+     620,
+     212
+    ]
+   ],
+   "semanticLabel": "body_centerline",
+   "binding": {
+    "type": "vertexChain",
+    "vertices": [
+     36,
+     96,
+     156,
+     204
+    ],
+    "closed": false
+   },
+   "confidence": 0.75,
+   "snapRadius": 8
+  }
+ ],
+ "depthHints": [
+  {
+   "relation": "inFrontOf",
+   "subject": "dorsal_fin_tip",
+   "object": "body_centerline",
+   "evidence": "topViewFinProtrusion",
+   "value": null,
+   "confidence": 0.7
+  }
+ ]
+}

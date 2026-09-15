@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0",
+  "sourceFingerprint": "7d9d572904f1ecf14f14bf55d08c7501501f7764f6ff0c5289c4c6bb0c460af4",
+  "topologySignature": "73df3bd364f6f2ac9fa24c9cc98939dfac3b20bc7f1470f23a657d2dfe2d9aef",
+  "cameraFingerprint": "83bdbbd37c0f7d55f0924fba23cd828ef4c492597c9c73199f843ffdc5925d50",
+  "referenceSetFingerprint": "50c2b07a2d8cad4d3a6936c32343509e3153ea1d4c269b4ff20c36ec28f128ce",
+  "metricProfileFingerprint": "2a971f96ed4a38f6af332543540aa41d261b76fbfbeefe28cefe4bcb6e5b9a3a",
+  "evaluationFingerprint": "ed0bc00b29bbc33b14a92e3142134d12d8b4f30d7380d16c97a5dbf5aa6ad3eb",
+  "targetAssetId": "s94_head_mesh",
+  "reason": "continue the validated nose-tip depth direction for one final conservative step while both profile residuals still agree",
+  "changes": [
+    {
+      "vertex": 624,
+      "before": [0.0, -0.1188374, 0.9093575],
+      "after": [0.0, -0.1188374, 0.9193575],
+      "confidence": 0.82,
+      "evidenceViews": ["left", "right"]
+    }
+  ],
+  "validation": {
+    "allowBoundary": false,
+    "allowMultipleComponents": false,
+    "maxMoveRelativeToBounds": 0.02,
+    "maxChangedVertices": 16,
+    "maxEdgeLengthRatio": 1.25,
+    "maxLaplacianDeltaRelativeToBounds": 0.04
+  }
+}

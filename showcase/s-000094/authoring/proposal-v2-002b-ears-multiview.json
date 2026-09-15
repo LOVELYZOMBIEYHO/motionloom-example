@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0",
+  "sourceFingerprint": "f9f379d2b493e2499da13de6a7bf3cb66bb32eb63b424e316490a7e47eb526f9",
+  "topologySignature": "73df3bd364f6f2ac9fa24c9cc98939dfac3b20bc7f1470f23a657d2dfe2d9aef",
+  "cameraFingerprint": "83bdbbd37c0f7d55f0924fba23cd828ef4c492597c9c73199f843ffdc5925d50",
+  "referenceSetFingerprint": "50c2b07a2d8cad4d3a6936c32343509e3153ea1d4c269b4ff20c36ec28f128ce",
+  "metricProfileFingerprint": "2a971f96ed4a38f6af332543540aa41d261b76fbfbeefe28cefe4bcb6e5b9a3a",
+  "evaluationFingerprint": "e3e97ac166562296ac477c74604c5d2dc672ac4325e81d258378b8556ba17140",
+  "targetAssetId": "s94_head_mesh",
+  "reason": "move the front/back ear controls down while moving the distinct profile ear controls up, following the measured residual direction in every view",
+  "changes": [
+    {
+      "vertex": 638,
+      "before": [0.5662793, -0.17, -0.14447],
+      "after": [0.5662793, -0.16, -0.14447],
+      "confidence": 0.76,
+      "evidenceViews": ["left"]
+    },
+    {
+      "vertex": 658,
+      "before": [-0.5662793, -0.17, -0.14447],
+      "after": [-0.5662793, -0.16, -0.14447],
+      "confidence": 0.76,
+      "evidenceViews": ["right"]
+    },
+    {
+      "vertex": 684,
+      "before": [0.72062, -0.07, 0.045],
+      "after": [0.72062, -0.08, 0.045],
+      "confidence": 0.8,
+      "evidenceViews": ["front", "back"]
+    },
+    {
+      "vertex": 708,
+      "before": [-0.72062, -0.07, 0.045],
+      "after": [-0.72062, -0.08, 0.045],
+      "confidence": 0.8,
+      "evidenceViews": ["front", "back"]
+    }
+  ],
+  "validation": {
+    "allowBoundary": false,
+    "allowMultipleComponents": false,
+    "maxMoveRelativeToBounds": 0.02,
+    "maxChangedVertices": 16,
+    "maxEdgeLengthRatio": 1.25,
+    "maxLaplacianDeltaRelativeToBounds": 0.04
+  }
+}

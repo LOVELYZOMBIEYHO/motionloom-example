@@ -1,0 +1,1023 @@
+<!--
+=====================================================================
+S91 · HANAMACHI — A JAPANESE CANAL TOWN
+18 s · 1280x720 · 24 fps · procedural town with a Character1 GLB performance
+=====================================================================
+
+COMPOSITION
+  A camera drift over a canal town on a clear day leads into Character1
+  performing with a native procedural sword. The town is built from
+  PrimitiveAsset geometry, CompoundAsset assemblies and VegetationAsset plants.
+
+  Listed subjects
+    torii gate · shinto shrine · machiya wooden houses · tiled roofs ·
+    shopping street · stone steps · sakura trees · mountain scenery ·
+    canal with stone banks · small bridge · paper lanterns · vending
+    machines · utility poles with wires · distant Mount Fuji
+
+  Living details
+    drifting clouds · falling sakura petals · swaying paper lanterns ·
+    breathing water ripples · chimney smoke · wind-animated vegetation
+
+  Light: warm sun key with shadows, cool sky fill, ambient occlusion,
+  contact shadows, exponential haze and ACES grading, finished with a
+  restrained bloom and deterministic grain.
+=====================================================================
+-->
+<Graph fps={24} duration="18s" size={[1280,720]} renderSize={[1280,720]}>
+  <Assets>
+    <!-- ── Character1; its sword is authored below from native primitives ── -->
+    <ModelAsset id="s91_hero_model" src="../../assets/sample_assets/characters/character1/character1.glb" />
+
+    <!-- ── Surface library ─────────────────────────────────────────── -->
+    <MaterialAsset id="s91_water" shading="pbr" baseColor="#3B8AAE"
+                   metallic="0.04" roughness="0.14" specular="1.0" emissive="#1C4256" emissiveStrength="0.12" />
+    <MaterialAsset id="s91_stone" shading="pbr" baseColor="#B9B4A6"
+                   metallic="0" roughness="0.9" specular="0.2" />
+    <MaterialAsset id="s91_stone_dark" shading="pbr" baseColor="#8E897C"
+                   metallic="0" roughness="0.88" specular="0.22" />
+    <MaterialAsset id="s91_stone_light" shading="pbr" baseColor="#C8C2B2"
+                   metallic="0" roughness="0.84" specular="0.26" />
+    <MaterialAsset id="s91_wood" shading="pbr" baseColor="#8A5A34"
+                   metallic="0" roughness="0.85" specular="0.18" />
+    <MaterialAsset id="s91_wood_dark" shading="pbr" baseColor="#4E3520"
+                   metallic="0" roughness="0.86" specular="0.16" />
+    <MaterialAsset id="s91_plaster" shading="pbr" baseColor="#EFE7D5"
+                   metallic="0" roughness="0.92" specular="0.14" />
+    <MaterialAsset id="s91_roof" shading="pbr" baseColor="#42506A"
+                   metallic="0.05" roughness="0.66" specular="0.34" />
+    <MaterialAsset id="s91_ridge" shading="pbr" baseColor="#333E52"
+                   metallic="0.05" roughness="0.62" specular="0.36" />
+    <MaterialAsset id="s91_vermilion" shading="pbr" baseColor="#B8301C"
+                   metallic="0.02" roughness="0.55" specular="0.42"
+                   emissive="#5E1006" emissiveStrength="0.4" />
+    <MaterialAsset id="s91_indigo" shading="pbr" baseColor="#2E3F66"
+                   metallic="0" roughness="0.8" specular="0.2" />
+    <MaterialAsset id="s91_grass" shading="pbr" baseColor="#6E9A4E"
+                   metallic="0" roughness="0.95" specular="0.1" />
+    <MaterialAsset id="s91_grass_dark" shading="pbr" baseColor="#4E7A3E"
+                   metallic="0" roughness="0.95" specular="0.1" />
+    <MaterialAsset id="s91_mountain" shading="pbr" baseColor="#5E7186"
+                   metallic="0" roughness="0.98" specular="0.12" />
+    <MaterialAsset id="s91_mountain_far" shading="pbr" baseColor="#74889E"
+                   metallic="0" roughness="1" specular="0.1" />
+    <MaterialAsset id="s91_snow" shading="pbr" baseColor="#F7FAFF"
+                   metallic="0" roughness="0.7" specular="0.3" />
+    <MaterialAsset id="s91_cloud" shading="pbr" baseColor="#FFFFFF"
+                   metallic="0" roughness="1" specular="0.08" />
+    <MaterialAsset id="s91_smoke" shading="pbr" baseColor="#FFFFFFCC"
+                   metallic="0" roughness="1" alphaMode="blend"
+                   doubleSided="true" emissive="#E9F1F6" emissiveStrength="0.65" />
+    <MaterialAsset id="s91_petal" shading="pbr" baseColor="#FF7FB4"
+                   metallic="0" roughness="0.72" doubleSided="true"
+                   emissive="#B23366" emissiveStrength="0.22" />
+    <MaterialAsset id="s91_lantern" shading="pbr" baseColor="#E23A22"
+                   metallic="0.02" roughness="0.55" emissive="#FF9A54"
+                   emissiveStrength="0.9" />
+    <MaterialAsset id="s91_rope" shading="pbr" baseColor="#3A2E24"
+                   metallic="0" roughness="0.9" />
+    <MaterialAsset id="s91_metal" shading="pbr" baseColor="#6A7078"
+                   metallic="0.82" roughness="0.4" specular="0.8" />
+    <MaterialAsset id="s91_trunk" shading="pbr" baseColor="#5A3A24"
+                   metallic="0" roughness="0.92" specular="0.12" />
+    <MaterialAsset id="s91_foliage" shading="pbr" baseColor="#FF6FA8"
+                   metallic="0" roughness="0.88" doubleSided="true"
+                   emissive="#C93A6E" emissiveStrength="0.3" />
+    <MaterialAsset id="s91_shrine_body" shading="pbr" baseColor="#8C4A2E"
+                   metallic="0.02" roughness="0.68" specular="0.3" />
+    <MaterialAsset id="s91_sign" shading="pbr" baseColor="#F8F4E8"
+                   metallic="0" roughness="0.6" emissive="#FFF6DC"
+                   emissiveStrength="0.35" />
+    <MaterialAsset id="s91_vend_white" shading="pbr" baseColor="#F2F2EE"
+                   metallic="0.05" roughness="0.5" specular="0.5" />
+    <MaterialAsset id="s91_vend_red" shading="pbr" baseColor="#D23B2E"
+                   metallic="0.05" roughness="0.45" emissive="#FF6A50"
+                   emissiveStrength="0.2" />
+    <MaterialAsset id="s91_ripple" shading="pbr" baseColor="#CFE8F4"
+                   metallic="0" roughness="0.3" emissive="#DFF4FF"
+                   emissiveStrength="1.3" />
+    <MaterialAsset id="s91_gravel" shading="pbr" baseColor="#A79E8C"
+                   metallic="0" roughness="0.95" specular="0.12" />
+    <MaterialAsset id="s91_sword_steel" shading="pbr" baseColor="#B8C8D2"
+                   metallic="0.92" roughness="0.2" specular="0.9" />
+    <MaterialAsset id="s91_sword_edge" shading="pbr" baseColor="#E8F5FA"
+                   metallic="1" roughness="0.1" specular="1" />
+    <MaterialAsset id="s91_sword_bronze" shading="pbr" baseColor="#A66B2C"
+                   metallic="0.78" roughness="0.3" specular="0.76" />
+    <MaterialAsset id="s91_sword_grip" shading="pbr" baseColor="#39231C"
+                   metallic="0.05" roughness="0.7" specular="0.28" />
+
+    <!-- ── Machiya kit ─────────────────────────────────────────────── -->
+    <PrimitiveAsset id="s91_h_body" shape="box" size={[3.2,2.0,2.6]}
+                    material="s91_plaster" />
+    <PrimitiveAsset id="s91_h_roof" shape="wedge" size={[3.5,0.75,1.45]}
+                    material="s91_roof" />
+    <PrimitiveAsset id="s91_h_ridge" shape="box" size={[3.5,0.1,0.18]}
+                    material="s91_ridge" />
+    <PrimitiveAsset id="s91_h_door" shape="box" size={[0.95,1.35,0.08]}
+                    material="s91_wood_dark" />
+    <PrimitiveAsset id="s91_h_window" shape="box" size={[0.8,0.7,0.06]}
+                    material="s91_wood_dark" />
+    <PrimitiveAsset id="s91_h_noren" shape="box" size={[1.05,0.5,0.05]}
+                    material="s91_indigo" />
+    <PrimitiveAsset id="s91_h_lattice" shape="box" size={[0.06,1.3,0.06]}
+                    material="s91_wood" />
+    <PrimitiveAsset id="s91_b_body" shape="box" size={[3.4,3.0,2.8]}
+                    material="s91_wood" />
+    <PrimitiveAsset id="s91_b_roof" shape="wedge" size={[3.7,0.8,1.55]}
+                    material="s91_roof" />
+    <PrimitiveAsset id="s91_b_rail" shape="box" size={[3.4,0.09,0.09]}
+                    material="s91_wood_dark" />
+    <PrimitiveAsset id="s91_b_post" shape="box" size={[0.07,0.55,0.07]}
+                    material="s91_wood_dark" />
+    <PrimitiveAsset id="s91_s_body" shape="box" size={[3.0,2.2,2.4]}
+                    material="s91_wood" />
+    <PrimitiveAsset id="s91_s_roof" shape="wedge" size={[3.3,0.7,1.35]}
+                    material="s91_roof" />
+    <PrimitiveAsset id="s91_s_awn" shape="wedge" size={[3.1,0.45,1.0]}
+                    material="s91_indigo" />
+    <PrimitiveAsset id="s91_s_sign" shape="box" size={[2.4,0.6,0.1]}
+                    material="s91_sign" />
+    <PrimitiveAsset id="s91_s_step" shape="box" size={[3.0,0.2,1.2]}
+                    material="s91_gravel" />
+    <PrimitiveAsset id="s91_chimney" shape="box" size={[0.34,1.1,0.34]}
+                    material="s91_stone_dark" />
+
+    <!-- ── Shrine hill kit ─────────────────────────────────────────── -->
+    <PrimitiveAsset id="s91_pillar" shape="cylinder" radius="0.22"
+                    height="3.2" segments="18" material="s91_vermilion" />
+    <PrimitiveAsset id="s91_kasagi" shape="box" size={[3.8,0.3,0.4]}
+                    material="s91_vermilion" />
+    <PrimitiveAsset id="s91_nuki" shape="box" size={[3.2,0.22,0.26]}
+                    material="s91_vermilion" />
+    <PrimitiveAsset id="s91_gaku" shape="box" size={[0.42,0.62,0.16]}
+                    material="s91_vermilion" />
+    <PrimitiveAsset id="s91_step" shape="box" size={[2.2,0.32,0.55]}
+                    material="s91_stone" />
+    <PrimitiveAsset id="s91_hill" shape="frustum" topSize={[7,5]}
+                    bottomSize={[12,9]} height="3.2" material="s91_grass" />
+    <PrimitiveAsset id="s91_sh_base" shape="box" size={[3.8,0.4,3.2]}
+                    material="s91_stone" />
+    <PrimitiveAsset id="s91_sh_body" shape="box" size={[2.8,1.7,2.2]}
+                    material="s91_shrine_body" />
+    <PrimitiveAsset id="s91_sh_roof" shape="frustum" topSize={[1.3,1.0]}
+                    bottomSize={[3.6,3.0]} height="1.0" material="s91_roof" />
+    <PrimitiveAsset id="s91_sh_ridge" shape="box" size={[1.5,0.12,0.24]}
+                    material="s91_ridge" />
+    <PrimitiveAsset id="s91_sh_pillar" shape="cylinder" radius="0.1"
+                    height="1.7" segments="12" material="s91_vermilion" />
+
+    <!-- ── Stone lantern kit ───────────────────────────────────────── -->
+    <PrimitiveAsset id="s91_sl_base" shape="cylinder" radius="0.26"
+                    height="0.18" segments="14" material="s91_stone" />
+    <PrimitiveAsset id="s91_sl_pillar" shape="cylinder" radius="0.09"
+                    height="0.55" segments="12" material="s91_stone" />
+    <PrimitiveAsset id="s91_sl_light" shape="box" size={[0.4,0.34,0.4]}
+                    material="s91_lantern" />
+    <PrimitiveAsset id="s91_sl_roof" shape="frustum" topSize={[0.2,0.2]}
+                    bottomSize={[0.62,0.62]} height="0.3" material="s91_stone" />
+    <PrimitiveAsset id="s91_sl_top" shape="sphere" radius="0.09"
+                    segments="10" rings="8" material="s91_stone" />
+
+    <!-- ── Hanging paper lantern kit ───────────────────────────────── -->
+    <PrimitiveAsset id="s91_l_rope" shape="cylinder" radius="0.016"
+                    height="0.55" segments="6" material="s91_rope" />
+    <PrimitiveAsset id="s91_l_cap" shape="cylinder" radius="0.11"
+                    height="0.07" segments="12" material="s91_wood_dark" />
+    <PrimitiveAsset id="s91_l_body" shape="sphere" radius="0.2"
+                    segments="16" rings="12" material="s91_lantern" />
+    <PrimitiveAsset id="s91_l_cap2" shape="cylinder" radius="0.08"
+                    height="0.05" segments="12" material="s91_wood_dark" />
+
+    <!-- ── Canal kit ───────────────────────────────────────────────── -->
+    <PrimitiveAsset id="s91_waterbox" shape="box" size={[44,0.5,5.0]}
+                    material="s91_water" />
+    <PrimitiveAsset id="s91_bankwall" shape="box" size={[44,0.7,0.3]}
+                    material="s91_stone_dark" />
+    <PrimitiveAsset id="s91_far_ground" shape="box" size={[44,0.5,13.6]}
+                    material="s91_gravel" />
+    <PrimitiveAsset id="s91_near_walk" shape="box" size={[44,0.5,4.1]}
+                    material="s91_stone" />
+    <PrimitiveAsset id="s91_near_ground" shape="box" size={[44,0.5,3.2]}
+                    material="s91_gravel" />
+    <PrimitiveAsset id="s91_street" shape="box" size={[40,0.06,3.4]}
+                    material="s91_stone" />
+    <PrimitiveAsset id="s91_grass_strip" shape="box" size={[44,0.42,0.9]}
+                    material="s91_grass_dark" />
+    <PrimitiveAsset id="s91_rail_rail" shape="box" size={[4,0.1,0.12]}
+                    material="s91_wood_dark" />
+    <PrimitiveAsset id="s91_rail_post" shape="box" size={[0.1,1.0,0.1]}
+                    material="s91_wood_dark" />
+    <PrimitiveAsset id="s91_deck" shape="box" size={[2.2,0.25,2.6]}
+                    material="s91_stone_light" />
+    <PrimitiveAsset id="s91_ramp" shape="wedge" size={[2.2,0.55,1.4]}
+                    material="s91_stone_light" />
+    <PrimitiveAsset id="s91_bridge_rail" shape="box" size={[0.14,0.14,5.4]}
+                    material="s91_wood_dark" />
+    <PrimitiveAsset id="s91_bridge_post" shape="box" size={[0.12,0.9,0.12]}
+                    material="s91_wood_dark" />
+    <PrimitiveAsset id="s91_ring_seg" shape="box" size={[0.34,0.035,0.07]}
+                    material="s91_ripple" />
+
+    <!-- Native PrimitiveAsset sword: broad steel blade, bright edge and bronze fittings. -->
+    <PrimitiveAsset id="s91_sword_blade" shape="box" size={[0.105,0.76,0.035]}
+                    bevelRadius="0.012" bevelSegments="2" material="s91_sword_steel" />
+    <PrimitiveAsset id="s91_sword_edge_strip" shape="box" size={[0.018,0.72,0.042]}
+                    bevelRadius="0.007" bevelSegments="2" material="s91_sword_edge" />
+    <PrimitiveAsset id="s91_sword_tip" shape="cone" radius="0.073" height="0.16"
+                    segments="4" material="s91_sword_edge" />
+    <PrimitiveAsset id="s91_sword_guard" shape="box" size={[0.34,0.055,0.09]}
+                    bevelRadius="0.025" bevelSegments="3" material="s91_sword_bronze" />
+    <PrimitiveAsset id="s91_sword_grip_part" shape="cylinder" radius="0.045" height="0.25"
+                    segments="16" material="s91_sword_grip" />
+    <PrimitiveAsset id="s91_sword_pommel" shape="sphere" radius="0.07" segments="16"
+                    rings="8" material="s91_sword_bronze" />
+
+    <!-- ── Street furniture kit ────────────────────────────────────── -->
+    <PrimitiveAsset id="s91_pole" shape="cylinder" radius="0.1"
+                    height="5.2" segments="12" material="s91_wood_dark" />
+    <PrimitiveAsset id="s91_cross" shape="box" size={[1.5,0.09,0.09]}
+                    material="s91_wood_dark" />
+    <PrimitiveAsset id="s91_wire" shape="cylinder" radius="0.014"
+                    height="6.2" segments="6" material="s91_metal" />
+    <PrimitiveAsset id="s91_v_body" shape="box" size={[0.95,1.85,0.75]}
+                    material="s91_vend_white" />
+    <PrimitiveAsset id="s91_v_panel" shape="box" size={[0.8,1.2,0.07]}
+                    material="s91_vend_red" />
+    <PrimitiveAsset id="s91_v_display" shape="box" size={[0.72,0.28,0.06]}
+                    material="s91_metal" />
+    <PrimitiveAsset id="s91_v_base" shape="box" size={[0.95,0.14,0.75]}
+                    material="s91_metal" />
+
+    <!-- ── Sky and landform kit ────────────────────────────────────── -->
+    <PrimitiveAsset id="s91_cloud_a" shape="ellipsoid" radii={[2.3,0.8,1.3]}
+                    segments="20" rings="14" material="s91_cloud" />
+    <PrimitiveAsset id="s91_cloud_b" shape="ellipsoid" radii={[1.6,0.6,1.0]}
+                    segments="18" rings="12" material="s91_cloud" />
+    <PrimitiveAsset id="s91_cloud_c" shape="ellipsoid" radii={[1.1,0.45,0.8]}
+                    segments="16" rings="10" material="s91_cloud" />
+    <PrimitiveAsset id="s91_mtn_big" shape="cone" radius="18" height="10"
+                    segments="28" material="s91_mountain" />
+    <PrimitiveAsset id="s91_mtn_mid" shape="cone" radius="13" height="7"
+                    segments="24" material="s91_mountain" />
+    <PrimitiveAsset id="s91_mtn_small" shape="cone" radius="9" height="5"
+                    segments="20" material="s91_mountain_far" />
+    <PrimitiveAsset id="s91_fuji" shape="cone" radius="20" height="15"
+                    segments="36" material="s91_mountain_far" />
+    <PrimitiveAsset id="s91_fuji_snow" shape="cone" radius="6.3" height="4.6"
+                    segments="32" material="s91_snow" />
+    <PrimitiveAsset id="s91_petal" shape="plane" size={[0.1,0.08]}
+                    material="s91_petal" />
+    <PrimitiveAsset id="s91_puff" shape="sphere" radius="0.22" segments="12"
+                    rings="8" material="s91_smoke" />
+
+    <!-- ── Three-colour dango (hanami snack) ───────────────────────── -->
+    <MaterialAsset id="s91_dango_stick" shading="pbr" baseColor="#C8A165"
+                   metallic="0" roughness="0.7" specular="0.3" />
+    <MaterialAsset id="s91_dango_pink" shading="pbr" baseColor="#F2A7BC"
+                   metallic="0" roughness="0.62" specular="0.38" />
+    <MaterialAsset id="s91_dango_white" shading="pbr" baseColor="#F5F1E4"
+                   metallic="0" roughness="0.62" specular="0.38" />
+    <MaterialAsset id="s91_dango_green" shading="pbr" baseColor="#9DC182"
+                   metallic="0" roughness="0.62" specular="0.38" />
+    <PrimitiveAsset id="s91_dango_skewer" shape="cylinder" radius="0.011"
+                    height="0.31" segments="10" material="s91_dango_stick" />
+    <PrimitiveAsset id="s91_dango_ball_p" shape="sphere" radius="0.047"
+                    segments="18" rings="14" material="s91_dango_pink" />
+    <PrimitiveAsset id="s91_dango_ball_w" shape="sphere" radius="0.047"
+                    segments="18" rings="14" material="s91_dango_white" />
+    <PrimitiveAsset id="s91_dango_ball_g" shape="sphere" radius="0.047"
+                    segments="18" rings="14" material="s91_dango_green" />
+    <CompoundAsset id="s91_dango" materialSeed="9140">
+      <Instance id="skewer" asset="s91_dango_skewer" position={[0,0,0]} />
+      <Instance id="ball_p" asset="s91_dango_ball_p" position={[0,0.104,0]} />
+      <Instance id="ball_w" asset="s91_dango_ball_w" position={[0,0,0]} />
+      <Instance id="ball_g" asset="s91_dango_ball_g" position={[0,-0.104,0]} />
+    </CompoundAsset>
+
+    <!-- ── Vegetation ──────────────────────────────────────────────── -->
+    <VegetationAsset id="s91_sakura" kind="tree" height="4.0"
+                     trunkMaterial="s91_trunk" foliageMaterial="s91_foliage"
+                     density="14" branchLevels="3" seed="9101"
+                     lod="auto" wind="true" />
+    <VegetationAsset id="s91_sakura_small" kind="tree" height="3.0"
+                     trunkMaterial="s91_trunk" foliageMaterial="s91_foliage"
+                     density="11" branchLevels="2" seed="9102"
+                     lod="auto" wind="true" />
+    <VegetationAsset id="s91_grass_clump" kind="grass" height="0.55"
+                     material="s91_grass" density="14" seed="9103"
+                     lod="auto" wind="true" />
+    <VegetationAsset id="s91_shrub" kind="shrub" height="1.15"
+                     trunkMaterial="s91_trunk" foliageMaterial="s91_grass_dark"
+                     density="10" branchLevels="2" seed="9104"
+                     lod="auto" wind="true" />
+
+    <!-- ── Compound assemblies ─────────────────────────────────────── -->
+    <CompoundAsset id="s91_machiya" materialSeed="9110">
+      <Instance id="body" asset="s91_h_body" position={[0,1.0,0]} />
+      <Instance id="roof_far" asset="s91_h_roof" position={[0,2.375,-0.725]} />
+      <Instance id="roof_near" asset="s91_h_roof" position={[0,2.375,0.725]} rotation={[0,180,0]} />
+      <Instance id="ridge" asset="s91_h_ridge" position={[0,2.75,0]} />
+      <Instance id="door" asset="s91_h_door" position={[0,0.675,1.32]} />
+      <Instance id="noren" asset="s91_h_noren" position={[0,1.55,1.35]} />
+      <Instance id="win_l" asset="s91_h_window" position={[-1.05,1.35,1.32]} />
+      <Instance id="win_r" asset="s91_h_window" position={[1.05,1.35,1.32]} />
+      <Instance id="lat_l" asset="s91_h_lattice" position={[-0.55,0.675,1.33]} />
+      <Instance id="lat_r" asset="s91_h_lattice" position={[0.55,0.675,1.33]} />
+    </CompoundAsset>
+
+    <CompoundAsset id="s91_machiya_2f" materialSeed="9111">
+      <Instance id="body" asset="s91_b_body" position={[0,1.5,0]} />
+      <Instance id="roof_far" asset="s91_b_roof" position={[0,3.4,-0.775]} />
+      <Instance id="roof_near" asset="s91_b_roof" position={[0,3.4,0.775]} rotation={[0,180,0]} />
+      <Instance id="ridge" asset="s91_h_ridge" position={[0,3.82,0]} />
+      <Instance id="balcony" asset="s91_b_rail" position={[0,2.2,1.44]} />
+      <Instance id="bal_post_l" asset="s91_b_post" position={[-1.6,1.95,1.44]} />
+      <Instance id="bal_post_r" asset="s91_b_post" position={[1.6,1.95,1.44]} />
+      <Instance id="door" asset="s91_h_door" position={[0,0.675,1.42]} />
+      <Instance id="win_up_l" asset="s91_h_window" position={[-1.0,2.35,1.42]} />
+      <Instance id="win_up_r" asset="s91_h_window" position={[1.0,2.35,1.42]} />
+      <Instance id="noren" asset="s91_h_noren" position={[0,1.55,1.45]} />
+    </CompoundAsset>
+
+    <CompoundAsset id="s91_shop" materialSeed="9112">
+      <Instance id="body" asset="s91_s_body" position={[0,1.1,0]} />
+      <Instance id="roof_far" asset="s91_s_roof" position={[0,2.55,-0.675]} />
+      <Instance id="roof_near" asset="s91_s_roof" position={[0,2.55,0.675]} rotation={[0,180,0]} />
+      <Instance id="ridge" asset="s91_h_ridge" position={[0,2.88,0]} />
+      <Instance id="awning" asset="s91_s_awn" position={[0,2.1,1.0]} rotation={[0,180,0]} />
+      <Instance id="sign" asset="s91_s_sign" position={[0,2.62,1.15]} />
+      <Instance id="step" asset="s91_s_step" position={[0,0.1,1.5]} />
+      <Instance id="door" asset="s91_h_door" position={[0,0.7,1.22]} />
+      <Instance id="noren" asset="s91_h_noren" position={[0,1.6,1.25]} />
+      <Instance id="win_l" asset="s91_h_window" position={[-1.05,1.35,1.22]} />
+      <Instance id="win_r" asset="s91_h_window" position={[1.05,1.35,1.22]} />
+    </CompoundAsset>
+
+    <CompoundAsset id="s91_torii" materialSeed="9113">
+      <Instance id="pillar_l" asset="s91_pillar" position={[-1.35,1.6,0]} />
+      <Instance id="pillar_r" asset="s91_pillar" position={[1.35,1.6,0]} />
+      <Instance id="kasagi" asset="s91_kasagi" position={[0,3.35,0]} />
+      <Instance id="nuki" asset="s91_nuki" position={[0,2.7,0]} />
+      <Instance id="gaku" asset="s91_gaku" position={[0,2.98,0]} />
+    </CompoundAsset>
+
+    <CompoundAsset id="s91_bridge" materialSeed="9114">
+      <Instance id="deck" asset="s91_deck" position={[0,0.55,0]} />
+      <Instance id="ramp_far" asset="s91_ramp" position={[0,0.275,-1.95]} />
+      <Instance id="ramp_near" asset="s91_ramp" position={[0,0.275,1.95]} rotation={[0,180,0]} />
+      <Instance id="rail_l" asset="s91_bridge_rail" position={[-1.05,1.0,0]} />
+      <Instance id="rail_r" asset="s91_bridge_rail" position={[1.05,1.0,0]} />
+      <Instance id="post_fl" asset="s91_bridge_post" position={[-1.05,0.62,2.5]} />
+      <Instance id="post_fr" asset="s91_bridge_post" position={[1.05,0.62,2.5]} />
+      <Instance id="post_nl" asset="s91_bridge_post" position={[-1.05,0.62,-2.5]} />
+      <Instance id="post_nr" asset="s91_bridge_post" position={[1.05,0.62,-2.5]} />
+    </CompoundAsset>
+
+    <CompoundAsset id="s91_shrine" materialSeed="9115">
+      <Instance id="base" asset="s91_sh_base" position={[0,0.2,0]} />
+      <Instance id="body" asset="s91_sh_body" position={[0,1.25,0]} />
+      <Instance id="roof" asset="s91_sh_roof" position={[0,2.6,0]} />
+      <Instance id="ridge" asset="s91_sh_ridge" position={[0,3.12,0]} />
+      <Instance id="pillar_l" asset="s91_sh_pillar" position={[-1.5,0.85,1.1]} />
+      <Instance id="pillar_r" asset="s91_sh_pillar" position={[1.5,0.85,1.1]} />
+      <Instance id="pillar_bl" asset="s91_sh_pillar" position={[-1.5,0.85,-1.0]} />
+      <Instance id="pillar_br" asset="s91_sh_pillar" position={[1.5,0.85,-1.0]} />
+    </CompoundAsset>
+
+    <CompoundAsset id="s91_stone_lantern" materialSeed="9116">
+      <Instance id="base" asset="s91_sl_base" position={[0,0.09,0]} />
+      <Instance id="pillar" asset="s91_sl_pillar" position={[0,0.455,0]} />
+      <Instance id="light" asset="s91_sl_light" position={[0,0.775,0]} />
+      <Instance id="roof" asset="s91_sl_roof" position={[0,1.075,0]} />
+      <Instance id="top" asset="s91_sl_top" position={[0,1.27,0]} />
+    </CompoundAsset>
+
+    <CompoundAsset id="s91_lantern_hang" materialSeed="9117">
+      <Instance id="rope" asset="s91_l_rope" position={[0,-0.275,0]} />
+      <Instance id="cap_top" asset="s91_l_cap" position={[0,-0.56,0]} />
+      <Instance id="body" asset="s91_l_body" position={[0,-0.77,0]} />
+      <Instance id="cap_bottom" asset="s91_l_cap2" position={[0,-0.98,0]} />
+    </CompoundAsset>
+
+    <CompoundAsset id="s91_utility_pole" materialSeed="9118">
+      <Instance id="pole" asset="s91_pole" position={[0,2.6,0]} />
+      <Instance id="cross_hi" asset="s91_cross" position={[0,4.75,0]} />
+      <Instance id="cross_lo" asset="s91_cross" position={[0,4.25,0]} />
+    </CompoundAsset>
+
+    <CompoundAsset id="s91_vending" materialSeed="9119">
+      <Instance id="body" asset="s91_v_body" position={[0,1.0,0]} />
+      <Instance id="panel" asset="s91_v_panel" position={[0,1.25,0.41]} />
+      <Instance id="display" asset="s91_v_display" position={[0,1.72,0.42]} />
+      <Instance id="base" asset="s91_v_base" position={[0,0.07,0]} />
+    </CompoundAsset>
+
+    <CompoundAsset id="s91_railing" materialSeed="9120">
+      <Instance id="rail" asset="s91_rail_rail" position={[0,0.95,0]} />
+      <Instance id="post_l" asset="s91_rail_post" position={[-1.85,0.5,0]} />
+      <Instance id="post_r" asset="s91_rail_post" position={[1.85,0.5,0]} />
+    </CompoundAsset>
+
+    <CompoundAsset id="s91_cloud" materialSeed="9121">
+      <Instance id="core" asset="s91_cloud_a" position={[0,0,0]} />
+      <Instance id="lobe_l" asset="s91_cloud_b" position={[-1.9,0.25,0.3]} />
+      <Instance id="lobe_r" asset="s91_cloud_b" position={[1.8,0.18,-0.2]} />
+      <Instance id="puff" asset="s91_cloud_c" position={[0.6,0.75,0.4]} />
+      <Instance id="puff2" asset="s91_cloud_c" position={[-0.9,0.7,-0.5]} />
+    </CompoundAsset>
+
+    <CompoundAsset id="s91_ripple" materialSeed="9122">
+      <Instance id="seg00" asset="s91_ring_seg" position={[0.5,0,0]} rotation={[0,-90,0]} />
+      <Instance id="seg01" asset="s91_ring_seg" position={[0.4505,0,0.2169]} rotation={[0,-115.71,0]} />
+      <Instance id="seg02" asset="s91_ring_seg" position={[0.3117,0,0.3909]} rotation={[0,-141.43,0]} />
+      <Instance id="seg03" asset="s91_ring_seg" position={[0.1113,0,0.4875]} rotation={[0,-167.14,0]} />
+      <Instance id="seg04" asset="s91_ring_seg" position={[-0.1113,0,0.4875]} rotation={[0,167.14,0]} />
+      <Instance id="seg05" asset="s91_ring_seg" position={[-0.3117,0,0.3909]} rotation={[0,141.43,0]} />
+      <Instance id="seg06" asset="s91_ring_seg" position={[-0.4505,0,0.2169]} rotation={[0,115.71,0]} />
+      <Instance id="seg07" asset="s91_ring_seg" position={[-0.5,0,0]} rotation={[0,90,0]} />
+      <Instance id="seg08" asset="s91_ring_seg" position={[-0.4505,0,-0.2169]} rotation={[0,64.29,0]} />
+      <Instance id="seg09" asset="s91_ring_seg" position={[-0.3117,0,-0.3909]} rotation={[0,38.57,0]} />
+      <Instance id="seg10" asset="s91_ring_seg" position={[-0.1113,0,-0.4875]} rotation={[0,12.86,0]} />
+      <Instance id="seg11" asset="s91_ring_seg" position={[0.1113,0,-0.4875]} rotation={[0,-12.86,0]} />
+      <Instance id="seg12" asset="s91_ring_seg" position={[0.3117,0,-0.3909]} rotation={[0,-38.57,0]} />
+      <Instance id="seg13" asset="s91_ring_seg" position={[0.4505,0,-0.2169]} rotation={[0,-64.29,0]} />
+    </CompoundAsset>
+
+    <CompoundAsset id="s91_primitive_sword" materialSeed="9123">
+      <Instance id="blade" asset="s91_sword_blade" position={[0,0.52,0]} />
+      <Instance id="edge_l" asset="s91_sword_edge_strip" position={[-0.052,0.52,0]} />
+      <Instance id="edge_r" asset="s91_sword_edge_strip" position={[0.052,0.52,0]} />
+      <Instance id="tip" asset="s91_sword_tip" position={[0,0.98,0]} />
+      <Instance id="guard" asset="s91_sword_guard" position={[0,0.105,0]} />
+      <Instance id="grip" asset="s91_sword_grip_part" position={[0,-0.05,0]} />
+      <Instance id="pommel" asset="s91_sword_pommel" position={[0,-0.215,0]} />
+    </CompoundAsset>
+  </Assets>
+
+
+<ModelProfile id="s91_hero_profile" kind="3d" model="s91_hero_model"
+              preset="humanoid_v1">
+  <Retarget preset="humanoid_v1">
+    <Map from="pelvis" to="hips" />
+    <Map from="spine_01" to="spine" />
+    <Map from="spine_02" to="chest" />
+    <Map from="spine_03" to="upper_chest" />
+    <Map from="neck_01" to="neck" />
+    <Map from="Head" to="head" />
+    <Map from="clavicle_l" to="shoulder_l" />
+    <Map from="upperarm_l" to="upper_arm_l" />
+    <Map from="lowerarm_l" to="forearm_l" />
+    <Map from="hand_l" to="hand_l" />
+    <Map from="clavicle_r" to="shoulder_r" />
+    <Map from="upperarm_r" to="upper_arm_r" />
+    <Map from="lowerarm_r" to="forearm_r" />
+    <Map from="hand_r" to="hand_r" />
+    <Map from="thumb_01_l" to="thumb_1_l" />
+    <Map from="thumb_02_l" to="thumb_2_l" />
+    <Map from="thumb_03_l" to="thumb_3_l" />
+    <Map from="index_01_l" to="index_1_l" />
+    <Map from="index_02_l" to="index_2_l" />
+    <Map from="index_03_l" to="index_3_l" />
+    <Map from="middle_01_l" to="middle_1_l" />
+    <Map from="middle_02_l" to="middle_2_l" />
+    <Map from="middle_03_l" to="middle_3_l" />
+    <Map from="ring_01_l" to="ring_1_l" />
+    <Map from="ring_02_l" to="ring_2_l" />
+    <Map from="ring_03_l" to="ring_3_l" />
+    <Map from="pinky_01_l" to="pinky_1_l" />
+    <Map from="pinky_02_l" to="pinky_2_l" />
+    <Map from="pinky_03_l" to="pinky_3_l" />
+    <Map from="thumb_01_r" to="thumb_1_r" />
+    <Map from="thumb_02_r" to="thumb_2_r" />
+    <Map from="thumb_03_r" to="thumb_3_r" />
+    <Map from="index_01_r" to="index_1_r" />
+    <Map from="index_02_r" to="index_2_r" />
+    <Map from="index_03_r" to="index_3_r" />
+    <Map from="middle_01_r" to="middle_1_r" />
+    <Map from="middle_02_r" to="middle_2_r" />
+    <Map from="middle_03_r" to="middle_3_r" />
+    <Map from="ring_01_r" to="ring_1_r" />
+    <Map from="ring_02_r" to="ring_2_r" />
+    <Map from="ring_03_r" to="ring_3_r" />
+    <Map from="pinky_01_r" to="pinky_1_r" />
+    <Map from="pinky_02_r" to="pinky_2_r" />
+    <Map from="pinky_03_r" to="pinky_3_r" />
+    <Map from="thigh_l" to="upper_leg_l" />
+    <Map from="calf_l" to="lower_leg_l" />
+    <Map from="foot_l" to="foot_l" />
+    <Map from="ball_l" to="toe_l" />
+    <Map from="thigh_r" to="upper_leg_r" />
+    <Map from="calf_r" to="lower_leg_r" />
+    <Map from="foot_r" to="foot_r" />
+    <Map from="ball_r" to="toe_r" />
+  </Retarget>
+  <BoneAxisMap>
+    <Axis bone="hips" turn="rotationY:1" />
+    <Axis bone="spine" bend="rotationX:-1" turn="rotationY:1" />
+    <Axis bone="chest" bend="rotationX:-1" turn="rotationY:1" />
+    <Axis bone="upper_chest" bend="rotationX:-1" turn="rotationY:1" />
+    <Axis bone="neck" bend="rotationX:-1" turn="rotationY:1" />
+    <Axis bone="head" bend="rotationX:-1" turn="rotationY:1" />
+    <Axis bone="upper_arm_l" forward="rotationX:1" side="rotationZ:1"
+          twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
+    <Axis bone="forearm_l" bend="rotationX:1" twist="rotationY:1" />
+    <Axis bone="upper_arm_r" forward="rotationX:1" side="rotationZ:-1"
+          twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
+    <Axis bone="forearm_r" bend="rotationX:1" twist="rotationY:1" />
+    <Axis bone="upper_leg_l" forward="rotationX:-1" side="rotationZ:-1"
+          twist="rotationY:1" />
+    <Axis bone="lower_leg_l" bend="rotationX:1" twist="rotationY:1" />
+    <Axis bone="upper_leg_r" forward="rotationX:-1" side="rotationZ:1"
+          twist="rotationY:1" />
+    <Axis bone="lower_leg_r" bend="rotationX:1" twist="rotationY:1" />
+    <Axis bone="thumb_1_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="thumb_2_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="thumb_3_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="index_1_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="index_2_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="index_3_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="middle_1_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="middle_2_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="middle_3_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="ring_1_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="ring_2_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="ring_3_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="pinky_1_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="pinky_2_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="pinky_3_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="thumb_1_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="thumb_2_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="thumb_3_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="index_1_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="index_2_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="index_3_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="middle_1_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="middle_2_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="middle_3_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="ring_1_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="ring_2_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="ring_3_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="pinky_1_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="pinky_2_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    <Axis bone="pinky_3_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+  </BoneAxisMap>
+</ModelProfile>
+
+  <!-- Great Sword Casting (Mixamo FBX converted offline by motionloom-action-tool). -->
+  <ActionLibrary id="s91_lib_sword"
+                 src="assets/actions/great_sword_casting.motionloom"
+                 actions={["s91_sword_cast"]} />
+  <ApplyAction target="s91_hero_a" action="s91_lib_sword.s91_sword_cast"
+               at="3.5s" duration="14.5s" loop="true" rootMotion="clip"
+               blendIn="0.3s" blendOut="0.3s" mask="full_body"
+               ground="s91_stage_ground" floorSnap="0.25"
+               safeMargin="0.01" sweepStep="0.03" />
+  <Attachment id="s91_hero_sword_right_grip" object="s91_sword_a">
+    <Socket id="main_grip" position={[0,-0.05,0]} rotation={[0,0,0]} />
+    <Socket id="support_grip" position={[0,0.08,0]} rotation={[0,0,0]} />
+    <Attach socket="main_grip" target="s91_hero_a.hand_r"
+            mode="snap" drive="object"
+            positionWeight="1" rotationWeight="1" />
+    <Attach socket="support_grip" target="s91_hero_a.hand_l"
+            mode="ik" drive="target"
+            positionWeight="1" rotationWeight="0.8" maxStretch="1.05" />
+  </Attachment>
+  <Background color="#A6D4EE" />
+
+  <Scene id="S91HanamachiCanalTown">
+    <Defs>
+      <LinearGradient id="s91_sky" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#6FB6E8, 0.55:#A8D6F0, 1:#DCEFF8" />
+      <RadialGradient id="s91_sun_glow" cx="0.5" cy="0.5" r="0.5"
+                      stops="0:#FFF6DE, 0.4:#FFE9C066, 1:#FFE9C000" />
+      <LinearGradient id="s91_haze" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#FFFFFF00, 0.6:#FFFFFF33, 1:#FFFFFF00" />
+      <RadialGradient id="s91_blush" cx="0.5" cy="0.5" r="0.5"
+                      stops="0:#FF8FB4CC, 0.55:#FF8FB477, 1:#FF8FB400" />
+      <RadialGradient id="s91_vignette" cx="0.5" cy="0.5" r="0.74"
+                      stops="0:#00000000, 0.66:#00000014, 1:#00000078" />
+    </Defs>
+
+    <Timeline>
+      <Track id="s91_sky_track" space="screen" compositeOrder="10">
+        <Sequence from="0s" duration="18s" out="hold">
+          <Layer space="screen">
+            <Rect x="0" y="0" width="1280" height="720" fill="url(#s91_sky)" />
+            <Circle x="1050" y="96" radius="240" fill="url(#s91_sun_glow)"
+                    blend="screen" opacity="0.85" />
+            <Rect x="0" y="300" width="1280" height="120" fill="url(#s91_haze)"
+                  opacity="0.7" />
+          </Layer>
+        </Sequence>
+      </Track>
+
+      <Track id="s91_town_track" space="3d" compositeOrder="40">
+        <Sequence from="0s" duration="18s" out="hold">
+          <CompositeGroup id="s91_town" space="3d" depth="true" format="rgba16f">
+            <DirectionalLight id="s91_sun" direction={[-0.55,-1,0.4]}
+                              color="#FFF2D8" intensity="3.1"
+                              castShadow="true" shadowStrength="0.62" />
+            <DirectionalLight id="s91_sky_fill" direction={[0.5,-0.45,-0.5]}
+                              color="#CDE2F2" intensity="0.85" />
+            <AmbientOcclusion id="s91_ao" intensity="0.62" radius="0.5" />
+            <ContactShadow id="s91_contact" intensity="0.82" distance="0.2"
+                           softness="0.4" />
+            <ColorManagement id="s91_grade" toneMapping="aces" exposure="1.02"
+                             whiteBalance="6100" contrast="1.05" />
+            <AtmosphereFog id="s91_haze3d" mode="exp" color="#BBD8EA"
+                           density="0.006" scattering="0.04" affectSky="false" />
+
+            <Camera3D id="s91_camera" position={[0.0,10.5,25.5]}
+                      target={[0,2.0,0]} up={[0,1,0]}
+                      horizonLock="true" fov="50" />
+            <Camera3D id="s91_pair_cam" position={[0,1.9,18.5]}
+                      target={[0,1.25,13.1]} up={[0,1,0]}
+                      horizonLock="true" fov="50" />
+
+            <!-- Ground plane and canal bed -->
+            <Model id="s91_far_ground_m" asset="s91_far_ground" position={[0,-0.25,-4.4]} receiveShadow="true" />
+            <Model id="s91_near_walk_m" asset="s91_near_walk" position={[0,-0.25,9.45]} receiveShadow="true" />
+            <Model id="s91_near_ground_m" asset="s91_near_ground" position={[0,-0.25,13.1]} receiveShadow="true" />
+            <Model id="s91_street_m" asset="s91_street" position={[0,0.03,1.6]} receiveShadow="true" />
+            <!-- Semantic top plane of the street for Action contact correction.
+                 Invisible; coincides with the pavement under the performers. -->
+            <Surface id="s91_stage_ground" kind="ground" collider="box"
+                     center={[0,-0.01,13.1]} size={[5.0,0.02,3.0]} color="#00000000" />
+            <Model id="s91_water_m" asset="s91_waterbox" position={[0,-0.6,4.7]} />
+            <Model id="s91_wall_far_m" asset="s91_bankwall" position={[0,-0.35,2.05]} receiveShadow="true" />
+            <Model id="s91_wall_near_m" asset="s91_bankwall" position={[0,-0.35,7.35]} receiveShadow="true" />
+            <Model id="s91_grass_far_m" asset="s91_grass_strip" position={[0,0.21,1.75]} receiveShadow="true" />
+            <Model id="s91_grass_near_m" asset="s91_grass_strip" position={[0,0.21,7.8]} receiveShadow="true" />
+
+            <!-- Near-bank railing -->
+            <Model id="s91_rail_0" asset="s91_railing" position={[-18,0,10.9]} />
+            <Model id="s91_rail_1" asset="s91_railing" position={[-14,0,10.9]} />
+            <Model id="s91_rail_2" asset="s91_railing" position={[-10,0,10.9]} />
+            <Model id="s91_rail_3" asset="s91_railing" position={[-6,0,10.9]} />
+            <Model id="s91_rail_4" asset="s91_railing" position={[-2,0,10.9]} />
+            <Model id="s91_rail_5" asset="s91_railing" position={[2,0,10.9]} />
+            <Model id="s91_rail_6" asset="s91_railing" position={[6,0,10.9]} />
+            <Model id="s91_rail_7" asset="s91_railing" position={[10,0,10.9]} />
+            <Model id="s91_rail_8" asset="s91_railing" position={[14,0,10.9]} />
+            <Model id="s91_rail_9" asset="s91_railing" position={[18,0,10.9]} />
+
+            <!-- Machiya row facing the canal -->
+            <Model id="s91_house_01" asset="s91_machiya_2f" position={[-13,0,-2.6]} rotation={[0,-3,0]} castShadow="true" receiveShadow="true" />
+            <Model id="s91_house_02" asset="s91_machiya" position={[-9.5,0,-2.6]} rotation={[0,2,0]} castShadow="true" receiveShadow="true" />
+            <Model id="s91_house_03" asset="s91_shop" position={[-6,0,-2.6]} rotation={[0,-2,0]} castShadow="true" receiveShadow="true" />
+            <Model id="s91_house_04" asset="s91_machiya" position={[-2.5,0,-2.6]} castShadow="true" receiveShadow="true" />
+            <Model id="s91_chimney_m" asset="s91_chimney" position={[-2.3,3.1,-3.0]} castShadow="true" />
+            <Model id="s91_house_05" asset="s91_shop" position={[1,0,-2.6]} rotation={[0,1.5,0]} castShadow="true" receiveShadow="true" />
+            <Model id="s91_house_06" asset="s91_machiya" position={[4.5,0,-2.6]} rotation={[0,-2,0]} castShadow="true" receiveShadow="true" />
+            <Model id="s91_house_07" asset="s91_machiya_2f" position={[8,0,-2.6]} rotation={[0,2.5,0]} castShadow="true" receiveShadow="true" />
+            <Model id="s91_house_08" asset="s91_shop" position={[11.5,0,-2.6]} rotation={[0,-1.5,0]} castShadow="true" receiveShadow="true" />
+            <Model id="s91_house_09" asset="s91_machiya" position={[15,0,-2.6]} rotation={[0,3,0]} castShadow="true" receiveShadow="true" />
+
+            <!-- Back row for depth -->
+            <Model id="s91_house_b1" asset="s91_machiya" position={[-15.5,0,-6.6]} rotation={[0,4,0]} scale="1.05" castShadow="true" />
+            <Model id="s91_house_b2" asset="s91_machiya_2f" position={[-7,0,-6.8]} rotation={[0,-3,0]} scale="1.02" castShadow="true" />
+            <Model id="s91_house_b3" asset="s91_machiya" position={[-1.5,0,-6.6]} castShadow="true" />
+            <Model id="s91_house_b4" asset="s91_machiya" position={[4,0,-6.8]} rotation={[0,3,0]} scale="1.06" castShadow="true" />
+            <Model id="s91_house_b5" asset="s91_machiya_2f" position={[10,0,-6.6]} rotation={[0,-4,0]} castShadow="true" />
+
+            <!-- Shrine hill, steps, torii -->
+            <Model id="s91_shrine" asset="s91_shrine" position={[-11.6,3.2,-7.4]} rotation={[0,14,0]} castShadow="true" receiveShadow="true" />
+            <Model id="s91_hill_m" asset="s91_hill" position={[-11.6,1.6,-7.4]} rotation={[0,14,0]} receiveShadow="true" />
+            <Model id="s91_step_0" asset="s91_step" position={[-11.35,0.28,-5.85]} rotation={[0,14,0]} receiveShadow="true" />
+            <Model id="s91_step_1" asset="s91_step" position={[-11.29,0.69,-5.51]} rotation={[0,14,0]} receiveShadow="true" />
+            <Model id="s91_step_2" asset="s91_step" position={[-11.23,1.1,-5.17]} rotation={[0,14,0]} receiveShadow="true" />
+            <Model id="s91_step_3" asset="s91_step" position={[-11.17,1.51,-4.83]} rotation={[0,14,0]} receiveShadow="true" />
+            <Model id="s91_step_4" asset="s91_step" position={[-11.11,1.92,-4.49]} rotation={[0,14,0]} receiveShadow="true" />
+            <Model id="s91_step_5" asset="s91_step" position={[-11.05,2.33,-4.15]} rotation={[0,14,0]} receiveShadow="true" />
+            <Model id="s91_step_6" asset="s91_step" position={[-10.99,2.74,-3.81]} rotation={[0,14,0]} receiveShadow="true" />
+            <Model id="s91_step_7" asset="s91_step" position={[-10.93,3.15,-3.47]} rotation={[0,14,0]} receiveShadow="true" />
+            <Model id="s91_torii_shrine" asset="s91_torii" position={[-10.8,0,-0.2]} rotation={[0,14,0]} castShadow="true" />
+            <Model id="s91_torii_walk" asset="s91_torii" position={[6.5,0,9.4]} rotation={[0,180,0]} castShadow="true" />
+            <Model id="s91_stone_lantern_a" asset="s91_stone_lantern" position={[-9.2,0,0.2]} castShadow="true" />
+            <Model id="s91_stone_lantern_b" asset="s91_stone_lantern" position={[-12.4,3.2,-6.3]} castShadow="true" />
+
+            <!-- Bridge over the canal -->
+            <Model id="s91_bridge_m" asset="s91_bridge" position={[9.5,0,4.7]} castShadow="true" receiveShadow="true" />
+
+            <!-- Utility poles and wires -->
+            <Model id="s91_pole_0" asset="s91_utility_pole" position={[-14,0,2.0]} castShadow="true" />
+            <Model id="s91_pole_1" asset="s91_utility_pole" position={[-8,0,2.0]} castShadow="true" />
+            <Model id="s91_pole_2" asset="s91_utility_pole" position={[-2,0,2.0]} castShadow="true" />
+            <Model id="s91_pole_3" asset="s91_utility_pole" position={[4,0,2.0]} castShadow="true" />
+            <Model id="s91_pole_4" asset="s91_utility_pole" position={[10,0,2.0]} castShadow="true" />
+            <Model id="s91_wire_0a" asset="s91_wire" position={[-11,4.75,2.0]} rotation={[0,0,90]} />
+            <Model id="s91_wire_1a" asset="s91_wire" position={[-5,4.75,2.0]} rotation={[0,0,90]} />
+            <Model id="s91_wire_2a" asset="s91_wire" position={[1,4.75,2.0]} rotation={[0,0,90]} />
+            <Model id="s91_wire_3a" asset="s91_wire" position={[7,4.75,2.0]} rotation={[0,0,90]} />
+            <Model id="s91_wire_0b" asset="s91_wire" position={[-11,4.25,2.0]} rotation={[0,0,90]} />
+            <Model id="s91_wire_1b" asset="s91_wire" position={[-5,4.25,2.0]} rotation={[0,0,90]} />
+            <Model id="s91_wire_2b" asset="s91_wire" position={[1,4.25,2.0]} rotation={[0,0,90]} />
+            <Model id="s91_wire_3b" asset="s91_wire" position={[7,4.25,2.0]} rotation={[0,0,90]} />
+            <Model id="s91_lantern_wire" asset="s91_wire" position={[0,2.5,-1.35]} rotation={[0,0,90]} scale="7.5" />
+
+            <!-- Hanging lanterns -->
+            <Model id="s91_lantern_0" asset="s91_lantern_hang" position={[-7,2.5,-1.35]} />
+            <Model id="s91_lantern_1" asset="s91_lantern_hang" position={[-3.5,2.5,-1.35]} />
+            <Model id="s91_lantern_2" asset="s91_lantern_hang" position={[0,2.5,-1.35]} />
+            <Model id="s91_lantern_3" asset="s91_lantern_hang" position={[3.5,2.5,-1.35]} />
+            <Model id="s91_lantern_4" asset="s91_lantern_hang" position={[7,2.5,-1.35]} />
+
+            <!-- Character1 performs in the clear street centre. -->
+            <Model id="s91_hero_a" asset="s91_hero_model" profile="s91_hero_profile"
+                   position={[0,0.0,13.1]} rotationY="0" collision="kinematic"
+                   scaleMode="normalize_height" scale="2.65"
+                   castShadow="true" receiveShadow="true" exposure="1.2" />
+            <Model id="s91_sword_a" asset="s91_primitive_sword"
+                   position={[0,0.0,13.1]} rotationY="0"
+                   scale="1.45" castShadow="true" receiveShadow="true" exposure="1.1" />
+
+            <!-- Vending machines -->
+            <Model id="s91_vend_0" asset="s91_vending" position={[1.3,0,-0.7]} rotation={[0,-6,0]} castShadow="true" />
+            <Model id="s91_vend_1" asset="s91_vending" position={[2.4,0,-0.7]} rotation={[0,-2,0]} castShadow="true" />
+
+            <!-- Sakura trees and planting -->
+            <Model id="s91_sakura_0" asset="s91_sakura" position={[-19,0,2.4]} scale="1.05" castShadow="true" />
+            <Model id="s91_sakura_1" asset="s91_sakura" position={[-12,0,2.4]} rotation={[0,34,0]} castShadow="true" />
+            <Model id="s91_sakura_2" asset="s91_sakura_small" position={[-5,0,2.4]} rotation={[0,-20,0]} />
+            <Model id="s91_sakura_3" asset="s91_sakura" position={[2,0,2.4]} rotation={[0,58,0]} castShadow="true" />
+            <Model id="s91_sakura_4" asset="s91_sakura" position={[9,0,2.4]} rotation={[0,-40,0]} scale="1.08" castShadow="true" />
+            <Model id="s91_sakura_5" asset="s91_sakura_small" position={[16,0,2.4]} rotation={[0,22,0]} />
+            <Model id="s91_sakura_6" asset="s91_sakura" position={[-6,0,9.6]} rotation={[0,-64,0]} scale="1.1" castShadow="true" />
+            <Model id="s91_sakura_7" asset="s91_sakura" position={[6,0,9.6]} rotation={[0,50,0]} castShadow="true" />
+            <Model id="s91_sakura_8" asset="s91_sakura_small" position={[-9.1,3.2,-6.4]} rotation={[0,10,0]} />
+            <Model id="s91_sakura_9" asset="s91_sakura_small" position={[-14.2,3.2,-7.0]} rotation={[0,-15,0]} />
+            <Model id="s91_shrub_0" asset="s91_shrub" position={[-15,0,2.5]} />
+            <Model id="s91_shrub_1" asset="s91_shrub" position={[12.5,0,2.5]} rotation={[0,40,0]} />
+            <Model id="s91_grass_a" asset="s91_grass_clump" position={[-9,0.4,2.6]} />
+            <Model id="s91_grass_b" asset="s91_grass_clump" position={[-2.5,0.4,2.55]} rotation={[0,30,0]} />
+            <Model id="s91_grass_c" asset="s91_grass_clump" position={[5.5,0.4,2.6]} rotation={[0,-25,0]} />
+            <Model id="s91_grass_d" asset="s91_grass_clump" position={[13,0.4,2.55]} />
+            <Model id="s91_grass_e" asset="s91_grass_clump" position={[-4,0.4,7.75]} />
+            <Model id="s91_grass_f" asset="s91_grass_clump" position={[10,0.4,7.8]} rotation={[0,55,0]} />
+
+            <!-- Distant landform and Fuji -->
+            <Model id="s91_mtn_0" asset="s91_mtn_big" position={[-26,4.4,-40]} />
+            <Model id="s91_mtn_1" asset="s91_mtn_mid" position={[-8,3.2,-46]} />
+            <Model id="s91_mtn_2" asset="s91_mtn_small" position={[8,2.2,-42]} />
+            <Model id="s91_mtn_3" asset="s91_mtn_big" position={[26,4.2,-38]} />
+            <Model id="s91_fuji_m" asset="s91_fuji" position={[-6,6.6,-62]} />
+            <Model id="s91_fuji_snow_m" asset="s91_fuji_snow" position={[-6,12.2,-62]} />
+
+            <!-- Drifting clouds -->
+            <Model id="s91_cloud_a_m" asset="s91_cloud" position={[-24,12.5,-30]} scale="1.2" />
+            <Model id="s91_cloud_b_m" asset="s91_cloud" position={[6,14.2,-38]} scale="0.9" />
+            <Model id="s91_cloud_c_m" asset="s91_cloud" position={[30,11.4,-26]} scale="1.05" />
+
+            <!-- Breathing water ripples -->
+            <Model id="s91_ripple_0" asset="s91_ripple" position={[-4,-0.33,4.6]} />
+            <Model id="s91_ripple_1" asset="s91_ripple" position={[0.5,-0.33,3.6]} />
+            <Model id="s91_ripple_2" asset="s91_ripple" position={[4.5,-0.33,5.6]} />
+            <Model id="s91_ripple_3" asset="s91_ripple" position={[-9,-0.33,4.0]} />
+
+            <!-- Falling petals -->
+            <Repeat id="s91_petals_near" mode="volume" count="54" seed="9131"
+                    boundsMin={[-14,0.2,3.2]} boundsMax={[14,6.4,9.6]}
+                    velocity={[0.55,-0.85,0.12]} lifetime="5.5s"
+                    phase="random" respawn="random" scaleRange={[0.7,1.4]}>
+              <Model asset="s91_petal" rotation={[18,32,12]} castShadow="false" receiveShadow="false" />
+            </Repeat>
+            <Repeat id="s91_petals_far" mode="volume" count="38" seed="9132"
+                    boundsMin={[-16,0.4,-5]} boundsMax={[16,7,3]}
+                    velocity={[0.4,-0.7,0.08]} lifetime="7s"
+                    phase="random" respawn="random" scaleRange={[0.6,1.2]}>
+              <Model asset="s91_petal" rotation={[-14,48,-10]} castShadow="false" receiveShadow="false" />
+            </Repeat>
+
+            <!-- Chimney smoke -->
+            <Repeat id="s91_smoke_column" mode="volume" count="18" seed="9133"
+                    boundsMin={[-2.5,3.5,-3.2]} boundsMax={[-2.1,6.4,-2.8]}
+                    velocity={[0.06,0.4,0.03]} lifetime="6s"
+                    phase="random" respawn="random" scaleRange={[0.5,1.5]}>
+              <Model asset="s91_puff" scale="1.35" castShadow="false" receiveShadow="false" />
+            </Repeat>
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+
+
+      <Track id="s91_overlay_track" space="screen" compositeOrder="70">
+        <Sequence from="0s" duration="18s" out="hold">
+          <Layer space="screen">
+            <Rect x="0" y="0" width="1280" height="720"
+                  fill="url(#s91_vignette)" opacity="0.7" />
+            <Group opacity={curve("0:0:linear, 0.5:1:ease_out, 2.6:1:linear, 3.3:0:ease_in")}>
+              <Rect x="42" y="38" width="440" height="86" radius="14"
+                    color="#0A1A24D8" stroke="#8FD7F066" strokeWidth="2" />
+              <Text x="66" y="74" value="HANAMACHI"
+                    fontFamily="Arial" fontSize="24" fontWeight="800"
+                    tracking="5" color="#F2FAFF" />
+              <Text x="67" y="106" value="A JAPANESE CANAL TOWN · A FEEDING MOMENT"
+                    fontFamily="Arial" fontSize="11" fontWeight="700"
+                    tracking="2.4" color="#7FD3EA" />
+            </Group>
+          </Layer>
+        </Sequence>
+      </Track>
+    </Timeline>
+
+    <Effects>
+      <Effect process="S91Finish" />
+    </Effects>
+  </Scene>
+
+  <!-- Camera drift: slow diagonal push across the canal -->
+  <AnimationTarget node="s91_camera" property="position">
+    <Key time="0s" value="[0.0,10.5,25.5]" />
+    <Key time="18s" value="[0.0,10.4,24.8]" ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="s91_camera" property="target">
+    <Key time="0s" value="[0,2.0,0]" />
+    <Key time="18s" value="[0,2.0,0]" />
+  </AnimationTarget>
+
+  <!-- Paper lanterns swaying under the eave wire -->
+  <AnimationTarget node="s91_lantern_0" property="rotationZ">
+    <Key time="0s" value="5" ease="ease_in_out" />
+    <Key time="1.5s" value="-5" ease="ease_in_out" />
+    <Key time="3s" value="5" ease="ease_in_out" />
+    <Key time="4.5s" value="-5" ease="ease_in_out" />
+    <Key time="6s" value="5" ease="ease_in_out" />
+    <Key time="7.5s" value="-5" ease="ease_in_out" />
+    <Key time="9s" value="5" ease="ease_in_out" />
+    <Key time="10.5s" value="-5" ease="ease_in_out" />
+    <Key time="12s" value="5" ease="ease_in_out" />
+    <Key time="13.5s" value="-5" ease="ease_in_out" />
+    <Key time="15s" value="5" ease="ease_in_out" />
+    <Key time="16.5s" value="-5" ease="ease_in_out" />
+    <Key time="18s" value="5" />
+  </AnimationTarget>
+  <AnimationTarget node="s91_lantern_1" property="rotationZ">
+    <Key time="0s" value="-4.5" ease="ease_in_out" />
+    <Key time="1.5s" value="4.5" ease="ease_in_out" />
+    <Key time="3s" value="-4.5" ease="ease_in_out" />
+    <Key time="4.5s" value="4.5" ease="ease_in_out" />
+    <Key time="6s" value="-4.5" ease="ease_in_out" />
+    <Key time="7.5s" value="4.5" ease="ease_in_out" />
+    <Key time="9s" value="-4.5" ease="ease_in_out" />
+    <Key time="10.5s" value="4.5" ease="ease_in_out" />
+    <Key time="12s" value="-4.5" ease="ease_in_out" />
+    <Key time="13.5s" value="4.5" ease="ease_in_out" />
+    <Key time="15s" value="-4.5" ease="ease_in_out" />
+    <Key time="16.5s" value="4.5" ease="ease_in_out" />
+    <Key time="18s" value="-4.5" />
+  </AnimationTarget>
+  <AnimationTarget node="s91_lantern_2" property="rotationZ">
+    <Key time="0s" value="6" ease="ease_in_out" />
+    <Key time="2.25s" value="-6" ease="ease_in_out" />
+    <Key time="4.5s" value="6" ease="ease_in_out" />
+    <Key time="6.75s" value="-6" ease="ease_in_out" />
+    <Key time="9s" value="6" ease="ease_in_out" />
+    <Key time="11.25s" value="-6" ease="ease_in_out" />
+    <Key time="13.5s" value="6" ease="ease_in_out" />
+    <Key time="15.75s" value="-6" ease="ease_in_out" />
+    <Key time="18s" value="6" />
+  </AnimationTarget>
+  <AnimationTarget node="s91_lantern_3" property="rotationZ">
+    <Key time="0s" value="-5.5" ease="ease_in_out" />
+    <Key time="2.25s" value="5.5" ease="ease_in_out" />
+    <Key time="4.5s" value="-5.5" ease="ease_in_out" />
+    <Key time="6.75s" value="5.5" ease="ease_in_out" />
+    <Key time="9s" value="-5.5" ease="ease_in_out" />
+    <Key time="11.25s" value="5.5" ease="ease_in_out" />
+    <Key time="13.5s" value="-5.5" ease="ease_in_out" />
+    <Key time="15.75s" value="5.5" ease="ease_in_out" />
+    <Key time="18s" value="-5.5" />
+  </AnimationTarget>
+  <AnimationTarget node="s91_lantern_4" property="rotationZ">
+    <Key time="0s" value="4.8" ease="ease_in_out" />
+    <Key time="1.2857s" value="-4.8" ease="ease_in_out" />
+    <Key time="2.5714s" value="4.8" ease="ease_in_out" />
+    <Key time="3.8571s" value="-4.8" ease="ease_in_out" />
+    <Key time="5.1429s" value="4.8" ease="ease_in_out" />
+    <Key time="6.4286s" value="-4.8" ease="ease_in_out" />
+    <Key time="7.7143s" value="4.8" ease="ease_in_out" />
+    <Key time="9s" value="-4.8" ease="ease_in_out" />
+    <Key time="10.2857s" value="4.8" ease="ease_in_out" />
+    <Key time="11.5714s" value="-4.8" ease="ease_in_out" />
+    <Key time="12.8571s" value="4.8" ease="ease_in_out" />
+    <Key time="14.1429s" value="-4.8" ease="ease_in_out" />
+    <Key time="15.4286s" value="4.8" ease="ease_in_out" />
+    <Key time="16.7143s" value="-4.8" ease="ease_in_out" />
+    <Key time="18s" value="4.8" />
+  </AnimationTarget>
+
+  <!-- Clouds drifting east -->
+  <AnimationTarget node="s91_cloud_a_m" property="position">
+    <Key time="0s" value="[-24,12.5,-30]" />
+    <Key time="18s" value="[21,12.9,-30]" ease="linear" />
+  </AnimationTarget>
+  <AnimationTarget node="s91_cloud_b_m" property="position">
+    <Key time="0s" value="[6,14.2,-38]" />
+    <Key time="18s" value="[42,14.6,-38]" ease="linear" />
+  </AnimationTarget>
+  <AnimationTarget node="s91_cloud_c_m" property="position">
+    <Key time="0s" value="[30,11.4,-26]" />
+    <Key time="18s" value="[63,11.8,-26]" ease="linear" />
+  </AnimationTarget>
+
+  <!-- Water ripples: slow grow-and-release breath, phase-shifted -->
+  <AnimationTarget node="s91_ripple_0" property="scale">
+    <Key time="0s" value="0.35" />
+    <Key time="2.2s" value="2.9" ease="ease_out" />
+    <Key time="3s" value="0.35" ease="ease_in" />
+    <Key time="5.2s" value="2.9" ease="ease_out" />
+    <Key time="6s" value="0.35" ease="ease_in" />
+    <Key time="8.2s" value="2.9" ease="ease_out" />
+    <Key time="9s" value="0.35" ease="ease_in" />
+    <Key time="11.2s" value="2.9" ease="ease_out" />
+    <Key time="12s" value="0.35" ease="ease_in" />
+    <Key time="14.2s" value="2.9" ease="ease_out" />
+    <Key time="15s" value="0.35" ease="ease_in" />
+    <Key time="17.2s" value="2.9" ease="ease_out" />
+    <Key time="18s" value="2.9" />
+  </AnimationTarget>
+  <AnimationTarget node="s91_ripple_1" property="scale">
+    <Key time="0s" value="1.6" />
+    <Key time="1.2s" value="3.1" ease="ease_out" />
+    <Key time="2s" value="1.6" ease="ease_in" />
+    <Key time="4.2s" value="3.1" ease="ease_out" />
+    <Key time="5s" value="1.6" ease="ease_in" />
+    <Key time="7.2s" value="3.1" ease="ease_out" />
+    <Key time="8s" value="1.6" ease="ease_in" />
+    <Key time="10.2s" value="3.1" ease="ease_out" />
+    <Key time="11s" value="1.6" ease="ease_in" />
+    <Key time="13.2s" value="3.1" ease="ease_out" />
+    <Key time="14s" value="1.6" ease="ease_in" />
+    <Key time="16.2s" value="3.1" ease="ease_out" />
+    <Key time="17s" value="1.6" ease="ease_in" />
+    <Key time="18s" value="3.1" />
+  </AnimationTarget>
+  <AnimationTarget node="s91_ripple_2" property="scale">
+    <Key time="0s" value="0.9" />
+    <Key time="0.8s" value="2.6" ease="ease_out" />
+    <Key time="1.6s" value="0.9" ease="ease_in" />
+    <Key time="3.8s" value="2.6" ease="ease_out" />
+    <Key time="4.6s" value="0.9" ease="ease_in" />
+    <Key time="6.8s" value="2.6" ease="ease_out" />
+    <Key time="7.6s" value="0.9" ease="ease_in" />
+    <Key time="9.8s" value="2.6" ease="ease_out" />
+    <Key time="10.6s" value="0.9" ease="ease_in" />
+    <Key time="12.8s" value="2.6" ease="ease_out" />
+    <Key time="13.6s" value="0.9" ease="ease_in" />
+    <Key time="15.8s" value="2.6" ease="ease_out" />
+    <Key time="16.6s" value="0.9" ease="ease_in" />
+    <Key time="18s" value="2.6" />
+  </AnimationTarget>
+  <AnimationTarget node="s91_ripple_3" property="scale">
+    <Key time="0s" value="0.5" />
+    <Key time="1.8s" value="3.2" ease="ease_out" />
+    <Key time="2.6s" value="0.5" ease="ease_in" />
+    <Key time="4.8s" value="3.2" ease="ease_out" />
+    <Key time="5.6s" value="0.5" ease="ease_in" />
+    <Key time="7.8s" value="3.2" ease="ease_out" />
+    <Key time="8.6s" value="0.5" ease="ease_in" />
+    <Key time="10.8s" value="3.2" ease="ease_out" />
+    <Key time="11.6s" value="0.5" ease="ease_in" />
+    <Key time="13.8s" value="3.2" ease="ease_out" />
+    <Key time="14.6s" value="0.5" ease="ease_in" />
+    <Key time="16.8s" value="3.2" ease="ease_out" />
+    <Key time="17.6s" value="0.5" ease="ease_in" />
+    <Key time="18s" value="3.2" />
+  </AnimationTarget>
+
+  <AnimationTarget node="S91HanamachiCanalTown" property="activeCamera">
+    <Key time="0s" value="s91_camera" />
+    <Key time="3.5s" value="s91_pair_cam" />
+  </AnimationTarget>
+
+
+
+
+  <AnimationTarget node="s91_bloom" property="params.intensity">
+    <Key time="0s" value="0.16" />
+    <Key time="11.25s" value="0.16" />
+    <Key time="11.55s" value="0.3" ease="ease_out" />
+    <Key time="12.2s" value="0.18" ease="ease_in" />
+    <Key time="12.7s" value="0.3" ease="ease_out" />
+    <Key time="13.4s" value="0.18" ease="ease_in" />
+    <Key time="13.8s" value="0.26" ease="ease_out" />
+    <Key time="16.5s" value="0.18" ease="ease_in" />
+    <Key time="18s" value="0.16" ease="ease_in" />
+  </AnimationTarget>
+
+
+  <Process id="S91Finish">
+    <Tex id="s91_scene_tex" fmt="rgba16f" from="scene" />
+    <Tex id="s91_bloom_tex" fmt="rgba16f" />
+    <Tex id="s91_final_tex" fmt="rgba16f" />
+    <Pass id="s91_bloom" kind="compute" effect="glow_bloom"
+          in={["s91_scene_tex"]} out={["s91_bloom_tex"]}
+          params={{ threshold: "0.62", intensity: "0.16", sigma: "4.0" }} />
+    <Pass id="s91_grain" kind="compute" effect="film_grain"
+          in={["s91_bloom_tex"]} out={["s91_final_tex"]}
+          params={{ kind: "film_grain", amount: "0.005", scale: "1.0", seed: "91" }} />
+  </Process>
+
+  <Present from="S91HanamachiCanalTown" />
+</Graph>
