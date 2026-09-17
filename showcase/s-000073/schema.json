@@ -174,7 +174,7 @@
           "name": "src",
           "occurrences": 1,
           "examples": [
-            "\"https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/c…"
+            "\"../../assets/sample_assets/characters/character1/character1.glb\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -986,8 +986,10 @@
           "name": "src",
           "occurrences": 22,
           "examples": [
-            "\"https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000072/assets/cinemati…",
-            "\"https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/textures…"
+            "\"../s-000072/assets/cinematic_courtyard.hdr\"",
+            "\"./assets/textures/Texture_Stone.jpg\"",
+            "\"./assets/textures/Texture_Wood.jpg\"",
+            "\"./assets/textures/pbr/brushed_metal_base.jpg\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1573,7 +1575,7 @@
           "name": "src",
           "occurrences": 1,
           "examples": [
-            "\"https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/c…"
+            "\"../../assets/sample_assets/characters/character1/character1.glb\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1899,11 +1901,101 @@
             "density"
           ]
         },
+        "ellipsoid": {
+          "required": [
+            "id",
+            "shape",
+            "radii"
+          ],
+          "optional": [
+            "segments",
+            "rings",
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
+        "frustum": {
+          "required": [
+            "id",
+            "shape",
+            "topSize",
+            "bottomSize",
+            "height"
+          ],
+          "optional": [
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
         "plane": {
           "required": [
             "id",
             "shape",
             "size"
+          ],
+          "optional": [
+            "segments",
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
+        "roundedBox": {
+          "required": [
+            "id",
+            "shape",
+            "size",
+            "radius"
           ],
           "optional": [
             "segments",

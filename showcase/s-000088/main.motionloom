@@ -1,9 +1,9 @@
 <!-- S88 / CANYON DUEL / 30-second cinematic blocking reference -->
 <Graph fps={24} duration="30s" size={[1280,720]}>
   <Assets>
-    <ModelAsset id="canyon" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000088/assets/canyon.glb" />
-    <ModelAsset id="red_asset" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000088/assets/red-car.glb" />
-    <ModelAsset id="blue_asset" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000088/assets/blue-car.glb" />
+    <ModelAsset id="canyon" src="./assets/canyon.glb" />
+    <ModelAsset id="red_asset" src="./assets/red-car.glb" />
+    <ModelAsset id="blue_asset" src="./assets/blue-car.glb" />
   </Assets>
   <Background color="#BCD0D5" />
   <Scene id="S88CanyonDuel">

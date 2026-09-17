@@ -215,8 +215,8 @@
           "name": "position",
           "occurrences": 2,
           "examples": [
-            "{[-0.316,-0.149,-0.018]}",
-            "{[0.316,-0.149,-0.018]}"
+            "{[-0.316,-0.149,-0.038]}",
+            "{[0.316,-0.149,-0.038]}"
           ],
           "recognized": true,
           "valueType": "vector3",
@@ -344,13 +344,13 @@
     },
     {
       "tag": "Eyeliner",
-      "occurrences": 4,
+      "occurrences": 6,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
           "name": "edge",
-          "occurrences": 4,
+          "occurrences": 6,
           "examples": [
             "\"lower\"",
             "\"upper\""
@@ -360,66 +360,71 @@
         },
         {
           "name": "extension",
-          "occurrences": 4,
+          "occurrences": 6,
           "examples": [
-            "{[0,0.028]}",
+            "{[0,0.032]}",
+            "{[0,0.038]}",
             "{[0,0]}",
-            "{[0.028,0]}"
+            "{[0.032,0]}"
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "id",
-          "occurrences": 4,
+          "occurrences": 6,
           "examples": [
             "\"liner_a_lower\"",
             "\"liner_a_upper\"",
-            "\"liner_b_lower\"",
-            "\"liner_b_upper\""
+            "\"liner_a_wing\"",
+            "\"liner_b_lower\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "span",
-          "occurrences": 4,
+          "occurrences": 6,
           "examples": [
+            "{[0,0.22]}",
             "{[0,1]}",
-            "{[0.12,0.88]}"
+            "{[0.18,0.82]}",
+            "{[0.78,1]}"
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "taper",
-          "occurrences": 4,
+          "occurrences": 6,
           "examples": [
             "{[0.10,0.50]}",
-            "{[0.20,0.85]}",
             "{[0.50,0.10]}",
-            "{[0.85,0.20]}"
+            "{[0.8,1]}",
+            "{[0.85,1]}"
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "thickness",
-          "occurrences": 4,
+          "occurrences": 6,
           "examples": [
-            "\"0.003\"",
-            "\"0.014\""
+            "\"0.0015\"",
+            "\"0.035\"",
+            "\"0.042\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "tipLift",
-          "occurrences": 4,
+          "occurrences": 6,
           "examples": [
-            "{[0,0.012]}",
-            "{[0,0]}",
-            "{[0.012,0]}"
+            "{[-0.012,0]}",
+            "{[-0.025,0]}",
+            "{[0,-0.012]}",
+            "{[0,-0.025]}"
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -564,7 +569,7 @@
     },
     {
       "tag": "HairAsset",
-      "occurrences": 5,
+      "occurrences": 6,
       "recognized": true,
       "validationCoverage": "strict",
       "requiredAttributes": [
@@ -574,19 +579,19 @@
       "attributes": [
         {
           "name": "id",
-          "occurrences": 5,
+          "occurrences": 6,
           "examples": [
             "\"bob_crown\"",
             "\"bob_flyaways\"",
             "\"bob_fringe\"",
-            "\"bob_temples\""
+            "\"bob_parting\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "material",
-          "occurrences": 5,
+          "occurrences": 6,
           "examples": [
             "\"s86_hair\""
           ],
@@ -595,7 +600,7 @@
         },
         {
           "name": "space",
-          "occurrences": 5,
+          "occurrences": 6,
           "examples": [
             "\"asset_local\""
           ],
@@ -606,7 +611,7 @@
     },
     {
       "tag": "HairCards",
-      "occurrences": 5,
+      "occurrences": 6,
       "recognized": true,
       "validationCoverage": "strict",
       "requiredAttributes": [
@@ -615,7 +620,7 @@
       "attributes": [
         {
           "name": "crossSection",
-          "occurrences": 5,
+          "occurrences": 6,
           "examples": [
             "\"arched\""
           ],
@@ -624,7 +629,7 @@
         },
         {
           "name": "id",
-          "occurrences": 5,
+          "occurrences": 6,
           "examples": [
             "\"cards\""
           ],
@@ -633,7 +638,7 @@
         },
         {
           "name": "lengthSegments",
-          "occurrences": 5,
+          "occurrences": 6,
           "examples": [
             "\"48\""
           ],
@@ -642,7 +647,7 @@
         },
         {
           "name": "thickness",
-          "occurrences": 5,
+          "occurrences": 6,
           "examples": [
             "\"0.022\"",
             "\"0.045\"",
@@ -654,7 +659,7 @@
         },
         {
           "name": "tipShape",
-          "occurrences": 5,
+          "occurrences": 6,
           "examples": [
             "\"point\""
           ],
@@ -663,7 +668,7 @@
         },
         {
           "name": "widthSegments",
-          "occurrences": 5,
+          "occurrences": 6,
           "examples": [
             "\"12\""
           ],
@@ -674,13 +679,13 @@
     },
     {
       "tag": "HairDefaults",
-      "occurrences": 5,
+      "occurrences": 6,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
           "name": "camber",
-          "occurrences": 5,
+          "occurrences": 6,
           "examples": [
             "\"0.2\"",
             "\"0.22\"",
@@ -692,7 +697,7 @@
         },
         {
           "name": "roll",
-          "occurrences": 5,
+          "occurrences": 6,
           "examples": [
             "\"0\""
           ],
@@ -701,7 +706,7 @@
         },
         {
           "name": "width",
-          "occurrences": 5,
+          "occurrences": 6,
           "examples": [
             "\"0.25\""
           ],
@@ -714,14 +719,14 @@
     },
     {
       "tag": "HairGroom",
-      "occurrences": 5,
+      "occurrences": 6,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": []
     },
     {
       "tag": "HairGroup",
-      "occurrences": 5,
+      "occurrences": 6,
       "recognized": true,
       "validationCoverage": "strict",
       "requiredAttributes": [
@@ -730,7 +735,7 @@
       "attributes": [
         {
           "name": "id",
-          "occurrences": 5,
+          "occurrences": 6,
           "examples": [
             "\"locks\""
           ],
@@ -739,7 +744,7 @@
         },
         {
           "name": "role",
-          "occurrences": 5,
+          "occurrences": 6,
           "examples": [
             "\"silhouette\""
           ],
@@ -750,7 +755,7 @@
     },
     {
       "tag": "HairGuide",
-      "occurrences": 46,
+      "occurrences": 50,
       "recognized": true,
       "validationCoverage": "strict",
       "requiredAttributes": [
@@ -759,7 +764,7 @@
       "attributes": [
         {
           "name": "id",
-          "occurrences": 46,
+          "occurrences": 50,
           "examples": [
             "\"crown_0\"",
             "\"crown_1\"",
@@ -771,7 +776,7 @@
         },
         {
           "name": "normal",
-          "occurrences": 46,
+          "occurrences": 50,
           "examples": [
             "{[-0.06493,1,-0.29289]}",
             "{[-0.12679,1,-0.27189]}",
@@ -785,7 +790,7 @@
     },
     {
       "tag": "HairMirror",
-      "occurrences": 3,
+      "occurrences": 7,
       "recognized": true,
       "validationCoverage": "strict",
       "requiredAttributes": [
@@ -796,7 +801,7 @@
       "attributes": [
         {
           "name": "axis",
-          "occurrences": 3,
+          "occurrences": 7,
           "examples": [
             "\"x\""
           ],
@@ -805,22 +810,24 @@
         },
         {
           "name": "id",
-          "occurrences": 3,
+          "occurrences": 7,
           "examples": [
-            "\"temple_right_0\"",
-            "\"temple_right_1\"",
-            "\"temple_right_2\""
+            "\"parting_right_0\"",
+            "\"parting_right_1\"",
+            "\"parting_right_2\"",
+            "\"parting_right_3\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "source",
-          "occurrences": 3,
+          "occurrences": 7,
           "examples": [
-            "\"temple_left_0\"",
-            "\"temple_left_1\"",
-            "\"temple_left_2\""
+            "\"parting_left_0\"",
+            "\"parting_left_1\"",
+            "\"parting_left_2\"",
+            "\"parting_left_3\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -829,7 +836,7 @@
     },
     {
       "tag": "HairPoint",
-      "occurrences": 273,
+      "occurrences": 289,
       "recognized": true,
       "validationCoverage": "strict",
       "requiredAttributes": [
@@ -838,7 +845,7 @@
       "attributes": [
         {
           "name": "position",
-          "occurrences": 273,
+          "occurrences": 289,
           "examples": [
             "{[-0.007,0.57,0.78]}",
             "{[-0.01948,1.075,-0.15787]}",
@@ -852,7 +859,7 @@
         },
         {
           "name": "width",
-          "occurrences": 273,
+          "occurrences": 289,
           "examples": [
             "\"0.004\"",
             "\"0.005\"",
@@ -868,7 +875,7 @@
     },
     {
       "tag": "HairRepresentations",
-      "occurrences": 5,
+      "occurrences": 6,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": []
@@ -1242,13 +1249,13 @@
     },
     {
       "tag": "ImageAsset",
-      "occurrences": 11,
+      "occurrences": 7,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
           "name": "colorSpace",
-          "occurrences": 9,
+          "occurrences": 6,
           "examples": [
             "\"srgb\""
           ],
@@ -1257,24 +1264,24 @@
         },
         {
           "name": "id",
-          "occurrences": 11,
+          "occurrences": 7,
           "examples": [
             "\"s86_brow_left\"",
             "\"s86_brow_right\"",
-            "\"s86_eye_left\"",
-            "\"s86_eye_right\""
+            "\"s86_hair_base\"",
+            "\"s86_iris_soft_reference\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "src",
-          "occurrences": 11,
+          "occurrences": 7,
           "examples": [
             "\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAX…",
-            "\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALgAAAEACAYAAAAA3bxrAACAAElEQVR42qz9d5AlR5ofCP7cQzydmS91ZZauAlBAQQPdALrR…",
-            "\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANwAAAEACAYAAADY0RhhAACAAElEQVR42uz9aZBsSZYehn1+l9gjcl/f/l7t1VW9T8/SmJ4h…",
-            "\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAEACAMAAAAa+/QWAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAX…"
+            "\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAEAYAAAAM4nQlAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAX…",
+            "\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAEACAMAAAAa+/QWAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAX…",
+            "\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAQACAMAAABIw9uxAAAAe1BMVEWbjYuXipCjlpqomqGol5utnqiwoayvoKqomqKekZKj…"
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1301,7 +1308,7 @@
           "name": "position",
           "occurrences": 2,
           "examples": [
-            "{[0,0,0]}"
+            "{[0,0.008,0.028]}"
           ],
           "recognized": true,
           "valueType": "vector3",
@@ -1312,7 +1319,7 @@
           "name": "pupilRadius",
           "occurrences": 2,
           "examples": [
-            "\"0.032\""
+            "\"0\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1321,7 +1328,7 @@
           "name": "radius",
           "occurrences": 2,
           "examples": [
-            "\"0.082\""
+            "\"0.122\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -1332,7 +1339,7 @@
           "name": "scale",
           "occurrences": 2,
           "examples": [
-            "{[0.78,1]}"
+            "{[0.82,1]}"
           ],
           "recognized": true,
           "valueType": "number",
@@ -1504,10 +1511,9 @@
         },
         {
           "name": "baseColorTexture",
-          "occurrences": 3,
+          "occurrences": 1,
           "examples": [
-            "\"s86_hair_base\"",
-            "\"s86_skin_base\""
+            "\"s86_hair_base\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1523,7 +1529,7 @@
         },
         {
           "name": "emissive",
-          "occurrences": 5,
+          "occurrences": 4,
           "examples": [
             "\"#6F7477\"",
             "\"#85898C\"",
@@ -1535,7 +1541,7 @@
         },
         {
           "name": "emissiveStrength",
-          "occurrences": 5,
+          "occurrences": 4,
           "examples": [
             "\"0.005\"",
             "\"0.01\"",
@@ -1559,7 +1565,7 @@
         },
         {
           "name": "mapping",
-          "occurrences": 3,
+          "occurrences": 1,
           "examples": [
             "\"uv\""
           ],
@@ -1610,7 +1616,7 @@
         },
         {
           "name": "textureScale",
-          "occurrences": 3,
+          "occurrences": 1,
           "examples": [
             "{[1,1]}"
           ],
@@ -1623,13 +1629,13 @@
     },
     {
       "tag": "MaterialBinding",
-      "occurrences": 6,
+      "occurrences": 7,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
           "name": "material",
-          "occurrences": 6,
+          "occurrences": 7,
           "examples": [
             "\"*\""
           ],
@@ -1638,7 +1644,7 @@
         },
         {
           "name": "outlineWidth",
-          "occurrences": 6,
+          "occurrences": 7,
           "examples": [
             "\"0\""
           ],
@@ -1649,13 +1655,13 @@
     },
     {
       "tag": "Model",
-      "occurrences": 18,
+      "occurrences": 19,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
           "name": "asset",
-          "occurrences": 18,
+          "occurrences": 19,
           "examples": [
             "\"bob_cap\"",
             "\"bob_crown\"",
@@ -1667,7 +1673,7 @@
         },
         {
           "name": "id",
-          "occurrences": 18,
+          "occurrences": 19,
           "examples": [
             "\"bob_cap_model\"",
             "\"bob_crown_model\"",
@@ -1818,7 +1824,7 @@
           "name": "position",
           "occurrences": 1,
           "examples": [
-            "{[0,-0.363,0]}"
+            "{[0,-0.35,0]}"
           ],
           "recognized": true,
           "valueType": "vector3",
@@ -1829,7 +1835,7 @@
           "name": "projection",
           "occurrences": 1,
           "examples": [
-            "\"0.060\""
+            "\"0.080\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -2866,17 +2872,17 @@
     },
     {
       "tag": "Texture",
-      "occurrences": 8,
+      "occurrences": 10,
       "recognized": true,
       "validationCoverage": "open",
       "attributes": [
         {
           "name": "asset",
-          "occurrences": 8,
+          "occurrences": 10,
           "examples": [
             "\"s86_brow_left\"",
             "\"s86_brow_right\"",
-            "\"s86_iris_v3\"",
+            "\"s86_iris_soft_reference\"",
             "\"s86_liner\""
           ],
           "recognized": true,

@@ -13,9 +13,9 @@ PURPOSE
 <Graph fps={30} duration="8s" size={[1920,1080]} renderSize={[1920,1080]}>
   <Assets>
     <ImageAsset id="s72_courtyard_hdri"
-                src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000072/assets/cinematic_courtyard.hdr" />
+                src="./assets/cinematic_courtyard.hdr" />
     <ModelAsset id="s72_character1"
-                src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/character1/character1.glb" />
+                src="../../assets/sample_assets/characters/character1/character1.glb" />
     <PrimitiveAsset id="s72_floor" shape="box" size={[12,0.3,8]} color="#1A2130" />
     <PrimitiveAsset id="s72_plinth" shape="box" size={[2.8,0.55,2.4]} color="#303C55" />
     <PrimitiveAsset id="s72_warm_card" shape="box" size={[0.25,3.8,3.5]} color="#8A4938" />

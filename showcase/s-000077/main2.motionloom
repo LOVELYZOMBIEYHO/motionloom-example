@@ -1,19 +1,19 @@
 <!-- S77 · INTO THE FOREST · 20.5 s · 615 frames -->
 <Graph fps={30} duration="20.5s" size={[1920,1080]} renderSize={[1920,1080]}>
   <Assets>
-    <ImageAsset id="s77_hdri" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/environment/cinematic-forest.hdr" colorSpace="linear-srgb" />
-    <ImageAsset id="s77_height" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/terrain/forest-height.png" colorSpace="linear-srgb" />
-    <ImageAsset id="s77_splat" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/terrain/forest-splat.png" colorSpace="linear-srgb" />
-    <ImageAsset id="s77_soil_color" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/terrain/soil-base.png" colorSpace="srgb" />
-    <ImageAsset id="s77_moss_color" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/terrain/moss-base.png" colorSpace="srgb" />
-    <ImageAsset id="s77_stone_color" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/terrain/stone-base.png" colorSpace="srgb" />
-    <ImageAsset id="s77_leaves_color" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/terrain/leaves-base.png" colorSpace="srgb" />
-    <ImageAsset id="s77_bark_color" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/vegetation/bark-base.png" colorSpace="srgb" />
-    <ImageAsset id="s77_broadleaf_atlas" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/vegetation/broadleaf-atlas.png" colorSpace="srgb" />
-    <ImageAsset id="s77_grass_atlas" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/vegetation/grass-atlas.png" colorSpace="srgb" />
-    <ImageAsset id="s77_flower_atlas" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/vegetation/flower-atlas.png" colorSpace="srgb" />
-    <ImageAsset id="s77_fern_atlas" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/vegetation/fern-atlas.png" colorSpace="srgb" />
-    <ModelAsset id="s77_character" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/character1/character1.glb" />
+    <ImageAsset id="s77_hdri" src="./assets/environment/cinematic-forest.hdr" colorSpace="linear-srgb" />
+    <ImageAsset id="s77_height" src="./assets/terrain/forest-height.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s77_splat" src="./assets/terrain/forest-splat.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s77_soil_color" src="./assets/terrain/soil-base.png" colorSpace="srgb" />
+    <ImageAsset id="s77_moss_color" src="./assets/terrain/moss-base.png" colorSpace="srgb" />
+    <ImageAsset id="s77_stone_color" src="./assets/terrain/stone-base.png" colorSpace="srgb" />
+    <ImageAsset id="s77_leaves_color" src="./assets/terrain/leaves-base.png" colorSpace="srgb" />
+    <ImageAsset id="s77_bark_color" src="./assets/vegetation/bark-base.png" colorSpace="srgb" />
+    <ImageAsset id="s77_broadleaf_atlas" src="./assets/vegetation/broadleaf-atlas.png" colorSpace="srgb" />
+    <ImageAsset id="s77_grass_atlas" src="./assets/vegetation/grass-atlas.png" colorSpace="srgb" />
+    <ImageAsset id="s77_flower_atlas" src="./assets/vegetation/flower-atlas.png" colorSpace="srgb" />
+    <ImageAsset id="s77_fern_atlas" src="./assets/vegetation/fern-atlas.png" colorSpace="srgb" />
+    <ModelAsset id="s77_character" src="../../assets/sample_assets/characters/character1/character1.glb" />
 
     <MaterialAsset id="s77_soil" shading="pbr" baseColorTexture="s77_soil_color" metallic="0" roughness="0.96" specular="0.12" mapping="uv" textureScale={[7,7]} />
     <MaterialAsset id="s77_moss" shading="pbr" baseColorTexture="s77_moss_color" metallic="0" roughness="0.9" specular="0.16" mapping="uv" textureScale={[8,8]} />
@@ -46,9 +46,9 @@
     <PrimitiveAsset id="s77_bench_arm" shape="box" size={[0.12,0.12,0.9]} material="s77_bench_iron" collision="none" bevelRadius="0.025" bevelSegments="2" />
   </Assets>
 
-  <ActionLibrary id="walk" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/action_libraries/landing_page/standard-walk.motionloom" actions={["standard_walk_loop"]} />
-  <ActionLibrary id="sit" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/action_libraries/landing_page/sit-down.motionloom" actions={["sit_down"]} />
-  <ActionLibrary id="seated" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/action_libraries/landing_page/sit-idle.motionloom" actions={["sit_idle_loop"]} />
+  <ActionLibrary id="walk" src="../../assets/action_libraries/landing_page/standard-walk.motionloom" actions={["standard_walk_loop"]} />
+  <ActionLibrary id="sit" src="../../assets/action_libraries/landing_page/sit-down.motionloom" actions={["sit_down"]} />
+  <ActionLibrary id="seated" src="../../assets/action_libraries/landing_page/sit-idle.motionloom" actions={["sit_idle_loop"]} />
 
   <ModelProfile id="s77_character_profile" kind="3d" model="s77_character" preset="humanoid_v1">
     <Retarget preset="humanoid_v1">

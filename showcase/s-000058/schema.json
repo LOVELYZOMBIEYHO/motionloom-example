@@ -533,7 +533,9 @@
             "\"16x16\""
           ],
           "recognized": true,
-          "supportsAnimationTarget": false
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
         },
         {
           "name": "height",
@@ -858,7 +860,7 @@
       "tag": "Vertex",
       "occurrences": 24,
       "recognized": true,
-      "validationCoverage": "open",
+      "validationCoverage": "strict",
       "attributes": [
         {
           "name": "bone",
@@ -869,7 +871,7 @@
             "\"joint\"",
             "\"upper\""
           ],
-          "recognized": true,
+          "recognized": false,
           "supportsAnimationTarget": false
         },
         {

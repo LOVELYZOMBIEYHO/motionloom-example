@@ -25,10 +25,10 @@
     <MaterialAsset id="building" baseColor="#C0CED0" roughness="0.9" specular="0.05" />
     <MaterialAsset id="window" baseColor="#A5BDC5" roughness="0.9" specular="0.05" />
     <MaterialAsset id="flower" baseColor="#FFF4CD" roughness="0.9" specular="0.05" />
-    <ModelAsset id="character1" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/character1/character1.glb" />
-    <AnimationAsset id="character1_clips" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/character1/character1.glb" />
-    <ModelAsset id="artist_character1" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000087/assets/character1-artist.glb" />
-    <ModelAsset id="reader_character1" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000087/assets/character1-reader.glb" />
+    <ModelAsset id="character1" src="../../assets/sample_assets/characters/character1/character1.glb" />
+    <AnimationAsset id="character1_clips" src="../../assets/sample_assets/characters/character1/character1.glb" />
+    <ModelAsset id="artist_character1" src="./assets/character1-artist.glb" />
+    <ModelAsset id="reader_character1" src="./assets/character1-reader.glb" />
     <PrimitiveAsset id="ground" shape="box" size={[30,0.16,26]} material="grass" bevelRadius="0" />
     <PrimitiveAsset id="path" shape="box" size={[17,0.12,4.3]} material="paving" bevelRadius="0" />
     <PrimitiveAsset id="crosspath" shape="box" size={[3.4,0.11,22]} material="paving" bevelRadius="0" />

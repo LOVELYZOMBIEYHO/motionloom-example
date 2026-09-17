@@ -40,7 +40,9 @@
           "name": "src",
           "occurrences": 3,
           "examples": [
-            "\"https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/action_libraries/landing_p…"
+            "\"../../assets/action_libraries/landing_page/sit-down.motionloom\"",
+            "\"../../assets/action_libraries/landing_page/sit-idle.motionloom\"",
+            "\"../../assets/action_libraries/landing_page/standard-walk.motionloom\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -88,25 +90,25 @@
     },
     {
       "tag": "AnimationTarget",
-      "occurrences": 10,
+      "occurrences": 9,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
           "name": "node",
-          "occurrences": 10,
+          "occurrences": 9,
           "examples": [
             "\"S77TerrainForest\"",
             "\"s77_actor\"",
             "\"s77_establishing\"",
-            "\"s77_front_detail\""
+            "\"s77_portrait\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "property",
-          "occurrences": 10,
+          "occurrences": 9,
           "examples": [
             "\"activeCamera\"",
             "\"position\"",
@@ -150,7 +152,6 @@
           "name": "blendIn",
           "occurrences": 3,
           "examples": [
-            "\"0.12s\"",
             "\"0s\""
           ],
           "recognized": true,
@@ -178,9 +179,9 @@
           "name": "duration",
           "occurrences": 3,
           "examples": [
-            "\"10.033s\"",
             "\"2.267s\"",
-            "\"8.2s\""
+            "\"8.2s\"",
+            "\"9.533s\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -257,7 +258,9 @@
             "\"0.573445081\""
           ],
           "recognized": true,
-          "supportsAnimationTarget": false
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
         },
         {
           "name": "sweepStep",
@@ -402,13 +405,13 @@
     },
     {
       "tag": "Camera3D",
-      "occurrences": 7,
+      "occurrences": 6,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
           "name": "depthOfField",
-          "occurrences": 7,
+          "occurrences": 6,
           "examples": [
             "\"true\""
           ],
@@ -417,12 +420,12 @@
         },
         {
           "name": "fStop",
-          "occurrences": 7,
+          "occurrences": 6,
           "examples": [
             "\"1.8\"",
-            "\"2\"",
             "\"2.4\"",
-            "\"2.8\""
+            "\"2.8\"",
+            "\"3.2\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -431,7 +434,7 @@
         },
         {
           "name": "focalLength",
-          "occurrences": 7,
+          "occurrences": 6,
           "examples": [
             "\"52\"",
             "\"55\"",
@@ -456,7 +459,7 @@
         },
         {
           "name": "focusTarget",
-          "occurrences": 7,
+          "occurrences": 6,
           "examples": [
             "\"@s77_actor\""
           ],
@@ -465,10 +468,9 @@
         },
         {
           "name": "fov",
-          "occurrences": 7,
+          "occurrences": 6,
           "examples": [
             "\"29\"",
-            "\"35\"",
             "\"36\"",
             "\"40\""
           ],
@@ -479,24 +481,24 @@
         },
         {
           "name": "id",
-          "occurrences": 7,
+          "occurrences": 6,
           "examples": [
             "\"s77_establishing\"",
-            "\"s77_front_detail\"",
             "\"s77_portrait\"",
-            "\"s77_sit_low\""
+            "\"s77_sit_low\"",
+            "\"s77_track\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "maxBlur",
-          "occurrences": 7,
+          "occurrences": 6,
           "examples": [
             "\"10\"",
-            "\"12\"",
             "\"14\"",
-            "\"5\""
+            "\"5\"",
+            "\"6\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -505,12 +507,12 @@
         },
         {
           "name": "position",
-          "occurrences": 7,
+          "occurrences": 6,
           "examples": [
             "{[-4.8,1.65,5.1]}",
             "{[-5.4,1.45,3.1]}",
             "{[0,2.3,4.8]}",
-            "{[1.7,2.1,5.3]}"
+            "{[2.8,3.1,6.4]}"
           ],
           "recognized": true,
           "valueType": "vector3",
@@ -519,12 +521,12 @@
         },
         {
           "name": "target",
-          "occurrences": 7,
+          "occurrences": 6,
           "examples": [
             "{[0,1.0,-0.3]}",
             "{[0,1.0,-0.72]}",
             "{[0,1.0,2.0]}",
-            "{[0,1.05,-0.58]}"
+            "{[0,1.05,2.4]}"
           ],
           "recognized": true,
           "valueType": "vector3",
@@ -886,7 +888,7 @@
           "name": "duration",
           "occurrences": 1,
           "examples": [
-            "\"20.5s\""
+            "\"20s\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -952,9 +954,10 @@
           "name": "src",
           "occurrences": 13,
           "examples": [
-            "\"https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/environm…",
-            "\"https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/terrain/…",
-            "\"https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000077/assets/vegetati…"
+            "\"./assets/environment/cinematic-forest.hdr\"",
+            "\"./assets/environment/sunny-forest-sky.png\"",
+            "\"./assets/terrain/forest-height.png\"",
+            "\"./assets/terrain/forest-splat.png\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -963,13 +966,13 @@
     },
     {
       "tag": "Key",
-      "occurrences": 29,
+      "occurrences": 26,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
           "name": "ease",
-          "occurrences": 10,
+          "occurrences": 9,
           "examples": [
             "\"ease_in_out\"",
             "\"linear\""
@@ -979,19 +982,19 @@
         },
         {
           "name": "time",
-          "occurrences": 29,
+          "occurrences": 26,
           "examples": [
             "\"0s\"",
             "\"10.1s\"",
             "\"14.6s\"",
-            "\"20.5s\""
+            "\"20s\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "value",
-          "occurrences": 29,
+          "occurrences": 26,
           "examples": [
             "\"0\"",
             "\"180\"",
@@ -1332,7 +1335,7 @@
           "name": "src",
           "occurrences": 1,
           "examples": [
-            "\"https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/c…"
+            "\"../../assets/sample_assets/characters/character1/character1.glb\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1663,11 +1666,101 @@
             "density"
           ]
         },
+        "ellipsoid": {
+          "required": [
+            "id",
+            "shape",
+            "radii"
+          ],
+          "optional": [
+            "segments",
+            "rings",
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
+        "frustum": {
+          "required": [
+            "id",
+            "shape",
+            "topSize",
+            "bottomSize",
+            "height"
+          ],
+          "optional": [
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
         "plane": {
           "required": [
             "id",
             "shape",
             "size"
+          ],
+          "optional": [
+            "segments",
+            "color",
+            "material",
+            "bevelRadius",
+            "bevelSegments",
+            "materialSeed",
+            "collision",
+            "collider",
+            "colliderSize",
+            "colliderRadius",
+            "colliderHeight",
+            "colliderScale",
+            "colliderOffset",
+            "colliderRotation",
+            "colliderMargin",
+            "collisionGroup",
+            "collisionMask",
+            "friction",
+            "restitution",
+            "density"
+          ]
+        },
+        "roundedBox": {
+          "required": [
+            "id",
+            "shape",
+            "size",
+            "radius"
           ],
           "optional": [
             "segments",
@@ -1999,7 +2092,7 @@
           "name": "duration",
           "occurrences": 1,
           "examples": [
-            "\"20.5s\""
+            "\"20s\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false

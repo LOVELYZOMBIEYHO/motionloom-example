@@ -1014,7 +1014,7 @@
           "name": "src",
           "occurrences": 1,
           "examples": [
-            "\"https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000066/assets/iphone.g…"
+            "\"../s-000066/assets/iphone.glb\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1470,7 +1470,9 @@
             "\"high\""
           ],
           "recognized": true,
-          "supportsAnimationTarget": false
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
         },
         {
           "name": "height",

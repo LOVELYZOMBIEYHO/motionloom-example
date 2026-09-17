@@ -372,68 +372,85 @@
       ]
     },
     {
-      "tag": "FaceLayout",
-      "occurrences": 1,
+      "tag": "Ear",
+      "occurrences": 2,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
-          "name": "eyeHeight",
-          "occurrences": 1,
+          "name": "depth",
+          "occurrences": 2,
           "examples": [
-            "\"0.00\""
+            "\"0.045\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
-          "name": "eyeSocketDepth",
-          "occurrences": 1,
+          "name": "height",
+          "occurrences": 2,
           "examples": [
-            "\"0.13\""
+            "\"0.24\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "id",
+          "occurrences": 2,
+          "examples": [
+            "\"ear_a\"",
+            "\"ear_b\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
-          "name": "eyeSpacing",
-          "occurrences": 1,
+          "name": "position",
+          "occurrences": 2,
           "examples": [
-            "\"0.88\""
+            "{[-0.6508,-0.02,0.38]}",
+            "{[0.6508,-0.02,0.38]}"
+          ],
+          "recognized": true,
+          "valueType": "vector3",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "width",
+          "occurrences": 2,
+          "examples": [
+            "\"0.1\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Eye",
+      "occurrences": 2,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 2,
+          "examples": [
+            "\"eye_a\"",
+            "\"eye_b\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
-          "name": "mouthHeight",
-          "occurrences": 1,
-          "examples": [
-            "\"-0.48\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "mouthWidth",
-          "occurrences": 1,
-          "examples": [
-            "\"0.48\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "noseLength",
-          "occurrences": 1,
-          "examples": [
-            "\"0.40\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "noseProjection",
-          "occurrences": 1,
+          "name": "opening",
+          "occurrences": 2,
           "examples": [
             "\"0.14\""
           ],
@@ -441,15 +458,72 @@
           "supportsAnimationTarget": false
         },
         {
-          "name": "noseWidth",
-          "occurrences": 1,
+          "name": "position",
+          "occurrences": 2,
           "examples": [
-            "\"0.20\""
+            "{[-0.44,0,0]}",
+            "{[0.44,0,0]}"
+          ],
+          "recognized": true,
+          "valueType": "vector3",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "socketDepth",
+          "occurrences": 2,
+          "examples": [
+            "\"0.13\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
+        },
+        {
+          "name": "socketHeight",
+          "occurrences": 2,
+          "examples": [
+            "\"0.28\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "socketWidth",
+          "occurrences": 2,
+          "examples": [
+            "\"0.44\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "tilt",
+          "occurrences": 2,
+          "examples": [
+            "\"0\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "width",
+          "occurrences": 2,
+          "examples": [
+            "\"0.34\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
         }
       ]
+    },
+    {
+      "tag": "FaceLayout",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": []
     },
     {
       "tag": "Graph",
@@ -1053,6 +1127,149 @@
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": []
+    },
+    {
+      "tag": "Mouth",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"mouth\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "lowerLip",
+          "occurrences": 1,
+          "examples": [
+            "\"0.03\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "muzzleLength",
+          "occurrences": 1,
+          "examples": [
+            "\"0\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "muzzleWidth",
+          "occurrences": 1,
+          "examples": [
+            "\"0.3\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "opening",
+          "occurrences": 1,
+          "examples": [
+            "\"0.035\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "position",
+          "occurrences": 1,
+          "examples": [
+            "{[0,-0.48,0]}"
+          ],
+          "recognized": true,
+          "valueType": "vector3",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "upperLip",
+          "occurrences": 1,
+          "examples": [
+            "\"0.025\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "width",
+          "occurrences": 1,
+          "examples": [
+            "\"0.48\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Nose",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"nose\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "length",
+          "occurrences": 1,
+          "examples": [
+            "\"0.40\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "position",
+          "occurrences": 1,
+          "examples": [
+            "{[0,-0.208,0]}"
+          ],
+          "recognized": true,
+          "valueType": "vector3",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "projection",
+          "occurrences": 1,
+          "examples": [
+            "\"0.14\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "width",
+          "occurrences": 1,
+          "examples": [
+            "\"0.20\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
     },
     {
       "tag": "PostStyle",

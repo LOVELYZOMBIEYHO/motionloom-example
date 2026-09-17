@@ -620,7 +620,9 @@
             "\"16x16\""
           ],
           "recognized": true,
-          "supportsAnimationTarget": false
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
         },
         {
           "name": "height",
@@ -830,7 +832,7 @@
       "tag": "Vertex",
       "occurrences": 18,
       "recognized": true,
-      "validationCoverage": "open",
+      "validationCoverage": "strict",
       "attributes": [
         {
           "name": "id",

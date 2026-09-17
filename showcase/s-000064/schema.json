@@ -448,7 +448,9 @@
             "\"20x12\""
           ],
           "recognized": true,
-          "supportsAnimationTarget": false
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
         },
         {
           "name": "height",
@@ -699,7 +701,7 @@
       "tag": "Vertex",
       "occurrences": 39,
       "recognized": true,
-      "validationCoverage": "open",
+      "validationCoverage": "strict",
       "attributes": [
         {
           "name": "bone",
@@ -710,7 +712,7 @@
             "\"hand\"",
             "\"upper\""
           ],
-          "recognized": true,
+          "recognized": false,
           "supportsAnimationTarget": false
         },
         {
@@ -734,7 +736,7 @@
             "\"1008\"",
             "\"1015\""
           ],
-          "recognized": true,
+          "recognized": false,
           "supportsAnimationTarget": false
         },
         {
@@ -746,7 +748,7 @@
             "\"278\"",
             "\"285\""
           ],
-          "recognized": true,
+          "recognized": false,
           "supportsAnimationTarget": false
         },
         {

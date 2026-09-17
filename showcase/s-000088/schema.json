@@ -509,9 +509,9 @@
           "name": "src",
           "occurrences": 3,
           "examples": [
-            "\"assets/blue-car.glb\"",
-            "\"assets/canyon.glb\"",
-            "\"assets/red-car.glb\""
+            "\"./assets/blue-car.glb\"",
+            "\"./assets/canyon.glb\"",
+            "\"./assets/red-car.glb\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -648,84 +648,6 @@
           ],
           "recognized": true,
           "supportsAnimationTarget": false
-        }
-      ]
-    },
-    {
-      "tag": "Text",
-      "occurrences": 2,
-      "recognized": true,
-      "validationCoverage": "strict",
-      "attributes": [
-        {
-          "name": "color",
-          "occurrences": 2,
-          "examples": [
-            "\"#D4B488\"",
-            "\"#ECE8DC\""
-          ],
-          "recognized": true,
-          "valueType": "color",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
-          "name": "fontSize",
-          "occurrences": 2,
-          "examples": [
-            "\"13\"",
-            "\"15\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
-          "name": "tracking",
-          "occurrences": 2,
-          "examples": [
-            "\"2\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
-          "name": "value",
-          "occurrences": 2,
-          "examples": [
-            "\"CANYON DUEL   /   CAMERA BLOCKING\"",
-            "\"PREVIZ — NOT FINAL ANIMATION\""
-          ],
-          "recognized": true,
-          "valueType": "discrete",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
-          "name": "x",
-          "occurrences": 2,
-          "examples": [
-            "\"32\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
-          "name": "y",
-          "occurrences": 2,
-          "examples": [
-            "\"30\"",
-            "\"700\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
         }
       ]
     },

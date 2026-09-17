@@ -227,10 +227,10 @@
       <Instance id="foot_r" asset="s81_guest_frog_foot" position={[0.82,0.15,0.72]} />
     </CompoundAsset>
 
-    <ImageAsset id="s81_reference_ibl" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000072/assets/cinematic_courtyard.hdr" />
-    <ImageAsset id="s81_wall_normal" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/textures/pbr/plaster_normal.png" colorSpace="linear-srgb" />
-    <ImageAsset id="s81_road_normal" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/textures/pbr/weathered_concrete_normal.png" colorSpace="linear-srgb" />
-    <ImageAsset id="s81_metal_normal" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/textures/pbr/brushed_metal_normal.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s81_reference_ibl" src="../s-000072/assets/cinematic_courtyard.hdr" />
+    <ImageAsset id="s81_wall_normal" src="../s-000073/assets/textures/pbr/plaster_normal.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s81_road_normal" src="../s-000073/assets/textures/pbr/weathered_concrete_normal.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s81_metal_normal" src="../s-000073/assets/textures/pbr/brushed_metal_normal.png" colorSpace="linear-srgb" />
     <MaterialAsset id="s81_asphalt" baseColor="#182A35" normalTexture="s81_road_normal" normalScale="0.38" mapping="triplanar" textureScale={[0.55,0.55]} roughness="0.24" metallic="0.2" />
     <MaterialAsset id="s81_concrete" baseColor="#526471" roughness="0.65" />
     <MaterialAsset id="s81_wall" baseColor="#68858A" normalTexture="s81_wall_normal" normalScale="0.32" mapping="triplanar" textureScale={[0.7,0.7]} roughness="0.55" />

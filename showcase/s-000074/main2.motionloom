@@ -1,28 +1,28 @@
 <!-- S74 LEGACY · CHARACTER1 NATIVE WALK CLIP · RAIN-NIGHT METRO ASCENT · 9 s · 270 frames -->
 <Graph fps={30} duration="9s" size={[1920,1080]} renderSize={[1920,1080]}>
   <Assets>
-    <ImageAsset id="s74_wet_base" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/textures/pbr/courtyard_base.jpg" colorSpace="srgb" />
-    <ImageAsset id="s74_wet_normal" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/textures/pbr/courtyard_normal.png" colorSpace="linear-srgb" />
-    <ImageAsset id="s74_wet_mr" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/textures/pbr/courtyard_metallic_roughness.png" colorSpace="linear-srgb" />
-    <ImageAsset id="s74_wet_ao" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/textures/pbr/courtyard_ao.png" colorSpace="linear-srgb" />
-    <ImageAsset id="s74_wall_base" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/textures/pbr/plaster_base.jpg" colorSpace="srgb" />
-    <ImageAsset id="s74_wall_normal" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/textures/pbr/plaster_normal.png" colorSpace="linear-srgb" />
-    <ImageAsset id="s74_wall_mr" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/textures/pbr/plaster_metallic_roughness.png" colorSpace="linear-srgb" />
-    <ImageAsset id="s74_wall_ao" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/textures/pbr/plaster_ao.png" colorSpace="linear-srgb" />
-    <ImageAsset id="s74_metal_base" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/textures/pbr/brushed_metal_base.jpg" colorSpace="srgb" />
-    <ImageAsset id="s74_metal_normal" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/textures/pbr/brushed_metal_normal.png" colorSpace="linear-srgb" />
-    <ImageAsset id="s74_metal_mr" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/textures/pbr/brushed_metal_metallic_roughness.png" colorSpace="linear-srgb" />
-    <ImageAsset id="s74_weathered_base" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/textures/pbr/weathered_concrete_base.jpg" colorSpace="srgb" />
-    <ImageAsset id="s74_weathered_normal" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/textures/pbr/weathered_concrete_normal.png" colorSpace="linear-srgb" />
-    <ImageAsset id="s74_weathered_mr" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000073/assets/textures/pbr/weathered_concrete_metallic_roughness.png" colorSpace="linear-srgb" />
-    <ImageAsset id="s74_hdri" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000072/assets/cinematic_courtyard.hdr" />
-    <ImageAsset id="s74_poster_night_image" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000074/assets/posters/night-city-after-rain.png" colorSpace="srgb" />
-    <ImageAsset id="s74_poster_echo_image" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000074/assets/posters/echo-station.png" colorSpace="srgb" />
-    <ImageAsset id="s74_station_sign_image" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000074/assets/signage/anica-station-sign.png" colorSpace="srgb" />
-    <ImageAsset id="s74_station_logo_emissive_image" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000074/assets/signage/anica-station-logo-emissive.png" colorSpace="srgb" />
-    <ImageAsset id="s74_ripple_image" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000074/assets/weather/rain-ripple.png" colorSpace="srgb" />
-    <ImageAsset id="s74_glass_rivulets_image" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000074/assets/weather/glass-rivulets.png" colorSpace="srgb" />
-    <ImageAsset id="s74_human_traces_image" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/showcase/s-000074/assets/details/human-traces.png" colorSpace="srgb" />
+    <ImageAsset id="s74_wet_base" src="../s-000073/assets/textures/pbr/courtyard_base.jpg" colorSpace="srgb" />
+    <ImageAsset id="s74_wet_normal" src="../s-000073/assets/textures/pbr/courtyard_normal.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s74_wet_mr" src="../s-000073/assets/textures/pbr/courtyard_metallic_roughness.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s74_wet_ao" src="../s-000073/assets/textures/pbr/courtyard_ao.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s74_wall_base" src="../s-000073/assets/textures/pbr/plaster_base.jpg" colorSpace="srgb" />
+    <ImageAsset id="s74_wall_normal" src="../s-000073/assets/textures/pbr/plaster_normal.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s74_wall_mr" src="../s-000073/assets/textures/pbr/plaster_metallic_roughness.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s74_wall_ao" src="../s-000073/assets/textures/pbr/plaster_ao.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s74_metal_base" src="../s-000073/assets/textures/pbr/brushed_metal_base.jpg" colorSpace="srgb" />
+    <ImageAsset id="s74_metal_normal" src="../s-000073/assets/textures/pbr/brushed_metal_normal.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s74_metal_mr" src="../s-000073/assets/textures/pbr/brushed_metal_metallic_roughness.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s74_weathered_base" src="../s-000073/assets/textures/pbr/weathered_concrete_base.jpg" colorSpace="srgb" />
+    <ImageAsset id="s74_weathered_normal" src="../s-000073/assets/textures/pbr/weathered_concrete_normal.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s74_weathered_mr" src="../s-000073/assets/textures/pbr/weathered_concrete_metallic_roughness.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s74_hdri" src="../s-000072/assets/cinematic_courtyard.hdr" />
+    <ImageAsset id="s74_poster_night_image" src="./assets/posters/night-city-after-rain.png" colorSpace="srgb" />
+    <ImageAsset id="s74_poster_echo_image" src="./assets/posters/echo-station.png" colorSpace="srgb" />
+    <ImageAsset id="s74_station_sign_image" src="./assets/signage/anica-station-sign.png" colorSpace="srgb" />
+    <ImageAsset id="s74_station_logo_emissive_image" src="./assets/signage/anica-station-logo-emissive.png" colorSpace="srgb" />
+    <ImageAsset id="s74_ripple_image" src="./assets/weather/rain-ripple.png" colorSpace="srgb" />
+    <ImageAsset id="s74_glass_rivulets_image" src="./assets/weather/glass-rivulets.png" colorSpace="srgb" />
+    <ImageAsset id="s74_human_traces_image" src="./assets/details/human-traces.png" colorSpace="srgb" />
 
     <MaterialAsset id="s74_wet_concrete" shading="pbr"
                    baseColor="#35424B" baseColorTexture="s74_wet_base"
@@ -425,8 +425,8 @@
       <Instance id="frame_b" asset="s74_window_frame_h" position={[0,-0.43,0]} />
     </CompoundAsset>
 
-    <ModelAsset id="s74_character_model" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/character1/character1.glb" />
-    <AnimationAsset id="s74_character_clips" src="https://raw.githubusercontent.com/LOVELYZOMBIEYHO/motionloom-example/refs/heads/main/assets/sample_assets/characters/character1/character1.glb" />
+    <ModelAsset id="s74_character_model" src="../../assets/sample_assets/characters/character1/character1.glb" />
+    <AnimationAsset id="s74_character_clips" src="../../assets/sample_assets/characters/character1/character1.glb" />
   </Assets>
 
   <Action id="s74_walk" source="s74_character_clips" sourceProfile="quaternius_humanoid"
