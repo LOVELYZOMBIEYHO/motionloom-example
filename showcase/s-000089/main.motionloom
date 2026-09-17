@@ -1,5 +1,5 @@
 <!-- S89 / MIST COURTYARD / All current surface presets, two seconds each. -->
-<Graph fps={24} duration="16s" size={[1280,720]}>
+<Graph fps={24} duration="24s" size={[1280,720]}>
   <RenderStyle id="courtyard_filmic_physical">
     <SurfaceStyle shading="filmic_physical_v1" specular="1" roughnessBias="0" />
     <OutlineStyle enabled="false" />
@@ -55,6 +55,12 @@
     <SurfaceStyle shading="clay" specular="0" roughnessBias="1" />
     <ColorStyle saturation="0" />
   </RenderStyle>
+  <!-- Appended unchanged physical-detail study, namespaced for the extended segment. -->
+  <RenderStyle id="detail_physical">
+    <SurfaceStyle shading="physical" specular="1" roughnessBias="0" />
+    <LightingStyle ambientIntensity="0.48" ambientColor="#D9E5F2" shadowStyle="soft" />
+    <PostStyle toneMapping="aces" exposure="1.15" saturation="1.0" contrast="1.05" whiteBalance="5700" bloomThreshold="1.5" bloomIntensity="0.018" />
+  </RenderStyle>
   <Assets>
     <ImageAsset id="sky_asset" src="assets/sky.png" />
     <ModelAsset id="courtyard_asset" src="assets/courtyard-detail.glb" />
@@ -78,6 +84,20 @@
             <Model id="mountains" asset="mountains_asset" scaleMode="none" scale="1" />
           </CompositeGroup>
         </Sequence>
+        <Sequence from="16s" duration="8s" out="hold">
+          <CompositeGroup id="s89_detail_stage" space="3d" depth="true" format="rgba16f">
+            <Camera3D id="s89_detail_camera" position={[-0.3,2.6,3.8]} target={[-3.8,2.75,-1.9]} fov="52" depthOfField="true" focusDistance="6.7" fStop="4" maxBlur="2.2" />
+            <EnvironmentLight id="s89_detail_sky" asset="sky_asset" intensity="0.75" visible="true" backgroundIntensity="0.65" diffuseIntensity="0.9" specularIntensity="0.65" />
+            <DirectionalLight id="s89_detail_sun" direction={[-.9,-.65,-.3]} color="#FFE5C8" intensity="4.5" castShadow="true" shadowStrength="0.78" />
+            <DirectionalLight id="s89_detail_sky_fill" direction={[.35,-.45,-.8]} color="#CBDDEB" intensity="0.35" />
+            <PointLight id="s89_detail_lantern_fill" position={[-2.8,4.2,-1.9]} color="#FFD196" intensity="12" range="4" />
+            <AmbientOcclusion radius="0.45" intensity="0.55" />
+            <ContactShadow distance="0.25" softness="0.5" intensity="0.7" />
+            <AtmosphereFog id="s89_detail_mist" mode="linear" color="#CEDBE0" start="22" end="125" density="0.018" scattering="0.05" affectSky="false" />
+            <Model id="s89_detail_courtyard" asset="courtyard_asset" scaleMode="none" scale="1" castShadow="true" receiveShadow="true" />
+            <Model id="s89_detail_mountains" asset="mountains_asset" scaleMode="none" scale="1" />
+          </CompositeGroup>
+        </Sequence>
       </Track>
     </Timeline>
   </Scene>
@@ -95,6 +115,7 @@
     <Key time="10s" value="courtyard_cel" />
     <Key time="12s" value="courtyard_ink" />
     <Key time="14s" value="courtyard_grey_model" />
+    <Key time="16s" value="detail_physical" />
   </AnimationTarget>
   <Present from="S89MistCourtyard" />
 </Graph>

@@ -15,7 +15,12 @@ The generated baseline is intentionally pinned:
 - Catmull–Clark subdivision level 1
 - zero open and non-manifold edges
 
-The eight `HairAsset` groups remain separate editable geometry. The camera is
+The eight `HairAsset` groups remain separate editable geometry. The
+`bob_parting` asset adds four left-side cards (plus `HairMirror` twins) over the
+crown wedge that frame 132 exposed between the fringe and the crown locks, so
+both sides read as strands rather than a shell; rebuild with
+`.render-output/s86/hair_parting_cards.py`.
+The camera is
 fixed for the first two seconds, orbits at a constant sampled radius until 18
 seconds, and holds again. No GLB is needed at playback.
 

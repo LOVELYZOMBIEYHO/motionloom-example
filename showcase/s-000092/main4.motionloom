@@ -10638,29 +10638,7 @@ COMPOSITION
 
   <Background color="#F4C583" />
 
-  <RenderStyle id="s92_pbr">
-    <SurfaceStyle shading="physical" />
-    <AntiAliasingStyle method="taa" quality="ultra" fallback="smaa" sharpness="0.06" />
-  </RenderStyle>
-  <RenderStyle id="s92_cel">
-    <SurfaceStyle shading="cel" shadingSteps="3" diffuseWrap="0.25" rimLight="0.35"
-                  rimPower="4" specular="0.06" shadowThreshold="0.42"
-                  shadowFeather="0.015" shadowColor="#39406B" />
-    <LightingStyle ambientIntensity="0.35" ambientColor="#BFCBE8" shadowStyle="hard" />
-    <ToneStyle exposure="1.02" contrast="1.1" toneStrength="0.30"
-               shadowColor="#333A5C" highlightColor="#FFE3B8" />
-    <PostStyle toneMapping="aces" exposure="1.0" saturation="1.15"
-               contrast="1.08" whiteBalance="5200" />
-  </RenderStyle>
-  <RenderStyle id="s92_tone2">
-    <SurfaceStyle shading="toon" shadingSteps="2" diffuseWrap="0.45"
-                  rimLight="0.28" rimPower="6" specular="0.08" />
-    <ToneStyle exposure="1.02" contrast="1.12" toneStrength="0.42"
-               shadowColor="#2E3350" highlightColor="#FFD8A0" />
-    <PostStyle toneMapping="aces" exposure="1.0" saturation="1.12"
-               contrast="1.06" whiteBalance="5200" />
-  </RenderStyle>
-  <Scene id="S92TheLastBaton" renderStyle="s92_pbr">
+  <Scene id="S92TheLastBaton">
     <Defs>
       <LinearGradient id="s92_sky" x1="0" y1="0" x2="0" y2="1"
                       stops="0:#4E7FA8, 0.5:#C9A26E, 0.86:#FFD9A0, 1:#FFC47E" />
@@ -10681,12 +10659,10 @@ COMPOSITION
         <Sequence from="0s" duration="12s" out="hold">
           <Layer space="screen">
             <Rect x="0" y="0" width="1280" height="720" fill="url(#s92_sky)" />
-            <Image src="assets/sky.png" opacity="0.78"
-                   x="-230+8.33*$time.sec" y="0" scale="1.0" />
             <Circle x="1086" y="236" radius="170" fill="url(#s92_sun_glow)" blend="screen" />
             <Rect x="0" y="286" width="1280" height="150" fill="url(#s92_haze_band)" opacity="0.55" />
             <Group id="s92_clouds">
-              <Group x={curve("0:0:linear, 6:-78:linear, 12:-156:linear")} y={curve("0:0:linear, 12:-16:linear")} opacity="0.30">
+              <Group x={curve("0:0:linear, 6:-78:linear, 12:-156:linear")} y={curve("0:0:linear, 12:-16:linear")} opacity="0.66">
                 <Circle x="85" y="157" radius="30" fill="url(#s92_cloud_lit)" opacity="0.50" />
                 <Circle x="128" y="146" radius="42" fill="url(#s92_cloud_lit)" opacity="0.62" />
                 <Circle x="174" y="135" radius="48" fill="url(#s92_cloud_lit)" opacity="0.72" />
@@ -10701,7 +10677,37 @@ COMPOSITION
                 <Circle x="118" y="168" radius="34" fill="url(#s92_cloud_shade)" opacity="0.30" />
                 <Circle x="232" y="169" radius="31" fill="url(#s92_cloud_shade)" opacity="0.26" />
               </Group>
-                                          <Group x={curve("0:0:linear, 6:-92:linear, 12:-184:linear")} y={curve("0:0:linear, 12:-22:linear")} opacity="0.26">
+              <Group x={curve("0:-40:linear, 6:-146:linear, 12:-252:linear")} y={curve("0:0:linear, 12:9:linear")} opacity="0.58">
+                <Circle x="475" y="114" radius="24" fill="url(#s92_cloud_lit)" opacity="0.50" />
+                <Circle x="510" y="104" radius="34" fill="url(#s92_cloud_lit)" opacity="0.62" />
+                <Circle x="547" y="96" radius="39" fill="url(#s92_cloud_lit)" opacity="0.72" />
+                <Circle x="586" y="98" radius="36" fill="url(#s92_cloud_lit)" opacity="0.68" />
+                <Circle x="623" y="107" radius="29" fill="url(#s92_cloud_lit)" opacity="0.56" />
+                <Circle x="650" y="115" radius="20" fill="url(#s92_cloud_lit)" opacity="0.40" />
+                <Circle x="526" y="118" radius="27" fill="url(#s92_cloud_lit)" opacity="0.38" />
+                <Circle x="576" y="119" radius="26" fill="url(#s92_cloud_lit)" opacity="0.36" />
+                <Circle x="533" y="88" radius="20" fill="url(#s92_cloud_lit)" opacity="0.60" />
+                <Circle x="579" y="85" radius="18" fill="url(#s92_cloud_lit)" opacity="0.55" />
+                <Circle x="558" y="81" radius="16" fill="url(#s92_cloud_lit)" opacity="0.48" />
+                <Circle x="502" y="122" radius="28" fill="url(#s92_cloud_shade)" opacity="0.30" />
+                <Circle x="594" y="123" radius="25" fill="url(#s92_cloud_shade)" opacity="0.26" />
+              </Group>
+              <Group x={curve("0:20:linear, 6:-40:linear, 12:-100:linear")} opacity="0.6">
+                <Circle x="780" y="157" radius="29" fill="url(#s92_cloud_lit)" opacity="0.50" />
+                <Circle x="821" y="146" radius="40" fill="url(#s92_cloud_lit)" opacity="0.62" />
+                <Circle x="865" y="136" radius="46" fill="url(#s92_cloud_lit)" opacity="0.72" />
+                <Circle x="910" y="139" radius="42" fill="url(#s92_cloud_lit)" opacity="0.68" />
+                <Circle x="954" y="149" radius="34" fill="url(#s92_cloud_lit)" opacity="0.56" />
+                <Circle x="986" y="158" radius="24" fill="url(#s92_cloud_lit)" opacity="0.40" />
+                <Circle x="840" y="161" radius="32" fill="url(#s92_cloud_lit)" opacity="0.38" />
+                <Circle x="899" y="163" radius="30" fill="url(#s92_cloud_lit)" opacity="0.36" />
+                <Circle x="848" y="126" radius="24" fill="url(#s92_cloud_lit)" opacity="0.60" />
+                <Circle x="903" y="123" radius="21" fill="url(#s92_cloud_lit)" opacity="0.55" />
+                <Circle x="878" y="118" radius="18" fill="url(#s92_cloud_lit)" opacity="0.48" />
+                <Circle x="812" y="167" radius="33" fill="url(#s92_cloud_shade)" opacity="0.30" />
+                <Circle x="920" y="168" radius="30" fill="url(#s92_cloud_shade)" opacity="0.26" />
+              </Group>
+              <Group x={curve("0:0:linear, 6:-92:linear, 12:-184:linear")} y={curve("0:0:linear, 12:-22:linear")} opacity="0.52">
                 <Circle x="1100" y="124" radius="23" fill="url(#s92_cloud_lit)" opacity="0.50" />
                 <Circle x="1133" y="115" radius="32" fill="url(#s92_cloud_lit)" opacity="0.62" />
                 <Circle x="1168" y="107" radius="37" fill="url(#s92_cloud_lit)" opacity="0.72" />
@@ -10716,7 +10722,33 @@ COMPOSITION
                 <Circle x="1125" y="131" radius="26" fill="url(#s92_cloud_shade)" opacity="0.30" />
                 <Circle x="1212" y="133" radius="24" fill="url(#s92_cloud_shade)" opacity="0.26" />
               </Group>
-                                        </Group>
+              <Group x={curve("0:-6:linear, 6:-62:linear, 12:-118:linear")} opacity="0.42">
+                <Circle x="200" y="258" radius="34" fill="url(#s92_cloud_lit)" opacity="0.50" />
+                <Circle x="249" y="245" radius="47" fill="url(#s92_cloud_lit)" opacity="0.62" />
+                <Circle x="302" y="233" radius="55" fill="url(#s92_cloud_lit)" opacity="0.72" />
+                <Circle x="356" y="237" radius="51" fill="url(#s92_cloud_lit)" opacity="0.68" />
+                <Circle x="409" y="248" radius="41" fill="url(#s92_cloud_lit)" opacity="0.56" />
+                <Circle x="448" y="260" radius="29" fill="url(#s92_cloud_lit)" opacity="0.40" />
+                <Circle x="272" y="263" radius="39" fill="url(#s92_cloud_lit)" opacity="0.38" />
+                <Circle x="343" y="265" radius="36" fill="url(#s92_cloud_lit)" opacity="0.36" />
+                <Circle x="281" y="221" radius="29" fill="url(#s92_cloud_lit)" opacity="0.60" />
+                <Circle x="347" y="218" radius="25" fill="url(#s92_cloud_lit)" opacity="0.55" />
+                <Circle x="318" y="211" radius="22" fill="url(#s92_cloud_lit)" opacity="0.48" />
+              </Group>
+              <Group x={curve("0:8:linear, 6:-60:linear, 12:-128:linear")} opacity="0.36">
+                <Circle x="875" y="269" radius="30" fill="url(#s92_cloud_lit)" opacity="0.50" />
+                <Circle x="918" y="258" radius="42" fill="url(#s92_cloud_lit)" opacity="0.62" />
+                <Circle x="964" y="247" radius="48" fill="url(#s92_cloud_lit)" opacity="0.72" />
+                <Circle x="1012" y="250" radius="44" fill="url(#s92_cloud_lit)" opacity="0.68" />
+                <Circle x="1058" y="261" radius="36" fill="url(#s92_cloud_lit)" opacity="0.56" />
+                <Circle x="1092" y="271" radius="25" fill="url(#s92_cloud_lit)" opacity="0.40" />
+                <Circle x="938" y="274" radius="34" fill="url(#s92_cloud_lit)" opacity="0.38" />
+                <Circle x="1000" y="275" radius="32" fill="url(#s92_cloud_lit)" opacity="0.36" />
+                <Circle x="946" y="237" radius="25" fill="url(#s92_cloud_lit)" opacity="0.60" />
+                <Circle x="1004" y="234" radius="22" fill="url(#s92_cloud_lit)" opacity="0.55" />
+                <Circle x="978" y="228" radius="19" fill="url(#s92_cloud_lit)" opacity="0.48" />
+              </Group>
+            </Group>
           </Layer>
         </Sequence>
       </Track>

@@ -134,41 +134,15 @@ COMPOSITION
                    metallic="0" roughness="0.92" specular="0.06" doubleSided="true" />
 
     <!-- ── Static stadium primitives ───────────────────────────────── -->
-    <PrimitiveAsset id="s92_track_bed" shape="box" size={[68,0.12,4.4]}
+    <PrimitiveAsset id="s92_track_bed" shape="box" size={[128,0.12,4.4]}
                     material="s92_track" collision="solid" collider="box" />
-    <PrimitiveAsset id="s92_lane_line" shape="box" size={[66,0.006,0.05]}
+    <PrimitiveAsset id="s92_lane_line" shape="box" size={[126,0.006,0.05]}
                     material="s92_line" collision="none" />
     <PrimitiveAsset id="s92_finish_line" shape="box" size={[0.07,0.007,4.4]}
-                   material="s92_line" collision="none" />
-    <MaterialAsset id="s92_prop_white" shading="pbr" baseColor="#EAEDF0"
-                   metallic="0" roughness="0.52" specular="0.28" />
-    <MaterialAsset id="s92_prop_metal" shading="pbr" baseColor="#98A1A8"
-                   metallic="0.6" roughness="0.4" specular="0.5" />
-    <MaterialAsset id="s92_prop_dark" shading="pbr" baseColor="#2B3137"
-                   metallic="0" roughness="0.62" specular="0.2" />
-    <MaterialAsset id="s92_prop_orange" shading="pbr" baseColor="#D9551F"
-                   metallic="0" roughness="0.6" specular="0.22" />
-    <MaterialAsset id="s92_prop_sand" shading="pbr" baseColor="#D9BE8B"
-                   metallic="0" roughness="0.96" specular="0.06" />
-    <MaterialAsset id="s92_prop_blue" shading="pbr" baseColor="#2A6B9E"
-                   metallic="0" roughness="0.5" specular="0.26" />
-    <PrimitiveAsset id="s92_hurdle_post" shape="box" size={[0.07,1.06,0.07]} material="s92_prop_white" />
-    <PrimitiveAsset id="s92_hurdle_bar" shape="box" size={[0.05,0.10,1.24]} material="s92_prop_dark" />
-    <PrimitiveAsset id="s92_hurdle_foot" shape="box" size={[0.64,0.05,0.12]} material="s92_prop_metal" />
-    <PrimitiveAsset id="s92_cone" shape="cone" radius="0.12" height="0.28" material="s92_prop_orange" />
-    <PrimitiveAsset id="s92_cone_base" shape="box" size={[0.28,0.03,0.28]} material="s92_prop_orange" />
-    <PrimitiveAsset id="s92_block_plate" shape="box" size={[0.54,0.03,0.34]} material="s92_prop_metal" />
-    <PrimitiveAsset id="s92_block_wedge" shape="wedge" size={[0.34,0.17,0.24]} material="s92_prop_blue" />
-    <PrimitiveAsset id="s92_pit_sand" shape="box" size={[7.0,0.06,2.8]} material="s92_prop_sand" />
-    <PrimitiveAsset id="s92_pit_board" shape="box" size={[0.34,0.04,2.9]} material="s92_prop_white" />
-    <PrimitiveAsset id="s92_bench_seat" shape="box" size={[1.7,0.08,0.44]} material="s92_prop_white" />
-    <PrimitiveAsset id="s92_bench_leg" shape="box" size={[0.08,0.4,0.36]} material="s92_prop_dark" />
-    <PrimitiveAsset id="s92_tripod_leg" shape="box" size={[0.05,1.2,0.05]} material="s92_prop_dark" />
-    <PrimitiveAsset id="s92_tripod_head" shape="box" size={[0.07,0.16,0.07]} material="s92_prop_metal" />
-    <PrimitiveAsset id="s92_tripod_cam" shape="box" size={[0.2,0.15,0.3]} material="s92_prop_dark" />
-    <PrimitiveAsset id="s92_infield_bed" shape="box" size={[68,0.1,13]}
+                    material="s92_line" collision="none" />
+    <PrimitiveAsset id="s92_infield_bed" shape="box" size={[128,0.1,13]}
                     material="s92_infield" collision="none" />
-    <PrimitiveAsset id="s92_apron" shape="box" size={[68,0.16,9]}
+    <PrimitiveAsset id="s92_apron" shape="box" size={[128,0.16,9]}
                     material="s92_concrete" collision="none" />
     <PrimitiveAsset id="s92_tier" shape="box" size={[18,0.85,3.1]}
                     material="s92_concrete" collision="none" />
@@ -678,13 +652,13 @@ COMPOSITION
                     material="s92_flood" collision="none" />
     <PrimitiveAsset id="s92_screen_box" shape="box" size={[12.4,6.6,0.45]}
                     material="s92_screen" collision="none" />
-    <PrimitiveAsset id="s92_ground" shape="box" size={[150,0.1,90]}
+    <PrimitiveAsset id="s92_ground" shape="box" size={[200,0.1,90]}
                     material="s92_infield" collision="none" />
-    <PrimitiveAsset id="s92_infield_line" shape="box" size={[120,0.006,0.09]}
+    <PrimitiveAsset id="s92_infield_line" shape="box" size={[196,0.006,0.09]}
                     material="s92_line" collision="none" />
     <PrimitiveAsset id="s92_infield_line_b" shape="box" size={[0.09,0.006,70]}
                     material="s92_line" collision="none" />
-    <PrimitiveAsset id="s92_plaza" shape="box" size={[130,0.16,9]}
+    <PrimitiveAsset id="s92_plaza" shape="box" size={[196,0.16,9]}
                     material="s92_concrete" collision="none" />
 
     <MeshAsset id="s92_crowd0" material="s92_crowd_a" subdivision="0" subdivisionScheme="catmullClark">
@@ -10497,19 +10471,19 @@ COMPOSITION
       <Face indices={[998,997,999]} />
       <Face indices={[991,998,999]} />
     </MeshAsset>
-    <PrimitiveAsset id="s92_bx0" shape="box" size={[96,0.5,0.5]} material="s92_stand_dark" collision="none" />
-    <PrimitiveAsset id="s92_bx1" shape="box" size={[96,0.14,0.9]} material="s92_seat_a" collision="none" />
-    <PrimitiveAsset id="s92_bx2" shape="box" size={[96,0.3,0.5]} material="s92_stand_dark" collision="none" />
-    <PrimitiveAsset id="s92_bx3" shape="box" size={[96,0.14,0.9]} material="s92_seat_b" collision="none" />
-    <PrimitiveAsset id="s92_bx4" shape="box" size={[96,0.4,0.5]} material="s92_stand_dark" collision="none" />
-    <PrimitiveAsset id="s92_bx5" shape="box" size={[96,0.5,0.6]} material="s92_stand_dark" collision="none" />
-    <PrimitiveAsset id="s92_bx6" shape="box" size={[96,9.4,0.9]} material="s92_stand_dark" collision="none" />
-    <PrimitiveAsset id="s92_bx7" shape="box" size={[102,0.9,13.5]} material="s92_roof" collision="none" />
-    <PrimitiveAsset id="s92_bx8" shape="box" size={[102,0.7,0.6]} material="s92_roof_edge" collision="none" />
-    <PrimitiveAsset id="s92_bx9" shape="box" size={[102,1.3,0.9]} material="s92_roof" collision="none" />
-    <PrimitiveAsset id="s92_bx10" shape="box" size={[102,1.8,0.9]} material="s92_roof" collision="none" />
+    <PrimitiveAsset id="s92_bx0" shape="box" size={[140,0.5,0.5]} material="s92_stand_dark" collision="none" />
+    <PrimitiveAsset id="s92_bx1" shape="box" size={[140,0.14,0.9]} material="s92_seat_a" collision="none" />
+    <PrimitiveAsset id="s92_bx2" shape="box" size={[140,0.3,0.5]} material="s92_stand_dark" collision="none" />
+    <PrimitiveAsset id="s92_bx3" shape="box" size={[140,0.14,0.9]} material="s92_seat_b" collision="none" />
+    <PrimitiveAsset id="s92_bx4" shape="box" size={[140,0.4,0.5]} material="s92_stand_dark" collision="none" />
+    <PrimitiveAsset id="s92_bx5" shape="box" size={[140,0.5,0.6]} material="s92_stand_dark" collision="none" />
+    <PrimitiveAsset id="s92_bx6" shape="box" size={[140,9.4,0.9]} material="s92_stand_dark" collision="none" />
+    <PrimitiveAsset id="s92_bx7" shape="box" size={[146,0.9,13.5]} material="s92_roof" collision="none" />
+    <PrimitiveAsset id="s92_bx8" shape="box" size={[146,0.7,0.6]} material="s92_roof_edge" collision="none" />
+    <PrimitiveAsset id="s92_bx9" shape="box" size={[146,1.3,0.9]} material="s92_roof" collision="none" />
+    <PrimitiveAsset id="s92_bx10" shape="box" size={[146,1.8,0.9]} material="s92_roof" collision="none" />
     <PrimitiveAsset id="s92_bx11" shape="box" size={[0.3,1.5,12.5]} material="s92_roof" collision="none" />
-    <PrimitiveAsset id="s92_bx12" shape="box" size={[96,1.5,0.35]} material="s92_board" collision="none" />
+    <PrimitiveAsset id="s92_bx12" shape="box" size={[140,1.5,0.35]} material="s92_board" collision="none" />
     <PrimitiveAsset id="s92_bx13" shape="box" size={[0.9,8.5,15]} material="s92_stand_dark" collision="none" />
     <PrimitiveAsset id="s92_bx14" shape="box" size={[0.5,0.5,58]} material="s92_stand_dark" collision="none" />
     <PrimitiveAsset id="s92_bx15" shape="box" size={[0.8,0.14,58]} material="s92_seat_a" collision="none" />
@@ -10519,17 +10493,17 @@ COMPOSITION
     <PrimitiveAsset id="s92_bx19" shape="box" size={[12,0.9,64]} material="s92_roof" collision="none" />
     <PrimitiveAsset id="s92_bx20" shape="box" size={[0.6,0.9,64]} material="s92_roof_edge" collision="none" />
     <PrimitiveAsset id="s92_bx21" shape="box" size={[0.85,3.1,0.7]} material="s92_stand_dark" collision="none" />
-    <PrimitiveAsset id="s92_bx22" shape="box" size={[96,0.34,1]} material="s92_stand_dark" collision="none" />
+    <PrimitiveAsset id="s92_bx22" shape="box" size={[140,0.34,1]} material="s92_stand_dark" collision="none" />
     <PrimitiveAsset id="s92_bx23" shape="box" size={[13.2,7.2,0.5]} material="s92_roof" collision="none" />
-    <PrimitiveAsset id="s92_bx24" shape="box" size={[96,0.34,0.36]} material="s92_seat_a" collision="none" />
-    <PrimitiveAsset id="s92_bx25" shape="box" size={[96,0.12,0.5]} material="s92_stand_dark" collision="none" />
-    <PrimitiveAsset id="s92_bx26" shape="box" size={[96,0.34,0.36]} material="s92_seat_b" collision="none" />
+    <PrimitiveAsset id="s92_bx24" shape="box" size={[140,0.34,0.36]} material="s92_seat_a" collision="none" />
+    <PrimitiveAsset id="s92_bx25" shape="box" size={[140,0.12,0.5]} material="s92_stand_dark" collision="none" />
+    <PrimitiveAsset id="s92_bx26" shape="box" size={[140,0.34,0.36]} material="s92_seat_b" collision="none" />
     <PrimitiveAsset id="s92_bx27" shape="box" size={[0.44,0.3,58]} material="s92_seat_a" collision="none" />
     <PrimitiveAsset id="s92_bx28" shape="box" size={[0.5,0.1,58]} material="s92_stand_dark" collision="none" />
     <PrimitiveAsset id="s92_bx29" shape="box" size={[0.44,0.3,58]} material="s92_seat_b" collision="none" />
-    <PrimitiveAsset id="s92_wg0" shape="wedge" size={[96,2.2,4.6]} material="s92_stand" collision="none" />
-    <PrimitiveAsset id="s92_wg1" shape="wedge" size={[96,2.1,4.6]} material="s92_stand_warm" collision="none" />
-    <PrimitiveAsset id="s92_wg2" shape="wedge" size={[96,2.6,5]} material="s92_stand" collision="none" />
+    <PrimitiveAsset id="s92_wg0" shape="wedge" size={[140,2.2,4.6]} material="s92_stand" collision="none" />
+    <PrimitiveAsset id="s92_wg1" shape="wedge" size={[140,2.1,4.6]} material="s92_stand_warm" collision="none" />
+    <PrimitiveAsset id="s92_wg2" shape="wedge" size={[140,2.6,5]} material="s92_stand" collision="none" />
     <PrimitiveAsset id="s92_wg3" shape="wedge" size={[58,2.2,4.6]} material="s92_stand" collision="none" />
     <PrimitiveAsset id="s92_wg4" shape="wedge" size={[58,2.6,5]} material="s92_stand_warm" collision="none" />
   </Assets>
@@ -10588,9 +10562,6 @@ COMPOSITION
   <ActionLibrary id="s92_slow"
                  src="../../assets/action_libraries/landing_page/slow-run-standard.motionloom"
                  actions={["slow_run_standard_loop"]} />
-  <ActionLibrary id="s92_handoff"
-                 src="../../assets/action_libraries/landing_page/sprint-to-slow-run.motionloom"
-                 actions={["sprint_to_slow_run_handoff"]} />
   <ActionLibrary id="s92_walk_stop"
                  src="../../assets/action_libraries/landing_page/standard-walk.motionloom"
                  actions={["standard_walk_stop"]} />
@@ -10601,21 +10572,20 @@ COMPOSITION
                  src="../../assets/action_libraries/landing_page/listening-idle.motionloom"
                  actions={["listening_idle_loop"]} />
 
-  <!-- Hero: sprint the straight, hold race pace for one beat past the tape,
-       then crossfade through an authored handoff into the slow run. -->
+  <!-- Hero: sprint the straight at 37.6 km/h, ride the stop into the finish. -->
   <ApplyAction target="s92_hero_a" action="s92_sprint.sprint_standard_loop"
-               at="0s" duration="10.353s" loop="true" speed="1.0"
-               rootMotion="in_place" blendIn="0s" blendOut="0s"
+               at="0s" duration="9.5s" loop="true" speed="1.0"
+               rootMotion="in_place" blendIn="0.12s" blendOut="0s"
                mask="full_body" ground="s92_track_top"
                floorSnap="0.08" safeMargin="0.01" sweepStep="0.03" />
-  <ApplyAction target="s92_hero_a" action="s92_handoff.sprint_to_slow_run_handoff"
-               at="10.353s" duration="0.200s" loop="false"
-               rootMotion="in_place" blendIn="0s" blendOut="0s"
+  <ApplyAction target="s92_hero_a" action="s92_walk_stop.standard_walk_stop"
+               at="9.5s" duration="1.3s" loop="false"
+               rootMotion="in_place" blendIn="0.22s" blendOut="0s"
                mask="full_body" ground="s92_track_top"
                floorSnap="0.08" safeMargin="0.01" sweepStep="0.03" />
-  <ApplyAction target="s92_hero_a" action="s92_slow.slow_run_standard_loop"
-               at="10.553s" duration="1.447s" loop="true" speed="1.0"
-               rootMotion="in_place" blendIn="0s" blendOut="0s"
+  <ApplyAction target="s92_hero_a" action="s92_idle.listening_idle_loop"
+               at="10.8s" duration="1.2s" loop="true"
+               rootMotion="in_place" blendIn="0.3s" blendOut="0s"
                mask="full_body" ground="s92_track_top"
                floorSnap="0.08" safeMargin="0.01" sweepStep="0.03" />
 
@@ -10638,40 +10608,12 @@ COMPOSITION
 
   <Background color="#F4C583" />
 
-  <RenderStyle id="s92_pbr">
-    <SurfaceStyle shading="physical" />
-    <AntiAliasingStyle method="taa" quality="ultra" fallback="smaa" sharpness="0.06" />
-  </RenderStyle>
-  <RenderStyle id="s92_cel">
-    <SurfaceStyle shading="cel" shadingSteps="3" diffuseWrap="0.25" rimLight="0.35"
-                  rimPower="4" specular="0.06" shadowThreshold="0.42"
-                  shadowFeather="0.015" shadowColor="#39406B" />
-    <LightingStyle ambientIntensity="0.35" ambientColor="#BFCBE8" shadowStyle="hard" />
-    <ToneStyle exposure="1.02" contrast="1.1" toneStrength="0.30"
-               shadowColor="#333A5C" highlightColor="#FFE3B8" />
-    <PostStyle toneMapping="aces" exposure="1.0" saturation="1.15"
-               contrast="1.08" whiteBalance="5200" />
-  </RenderStyle>
-  <RenderStyle id="s92_tone2">
-    <SurfaceStyle shading="toon" shadingSteps="2" diffuseWrap="0.45"
-                  rimLight="0.28" rimPower="6" specular="0.08" />
-    <ToneStyle exposure="1.02" contrast="1.12" toneStrength="0.42"
-               shadowColor="#2E3350" highlightColor="#FFD8A0" />
-    <PostStyle toneMapping="aces" exposure="1.0" saturation="1.12"
-               contrast="1.06" whiteBalance="5200" />
-  </RenderStyle>
-  <Scene id="S92TheLastBaton" renderStyle="s92_pbr">
+  <Scene id="S92TheLastBaton">
     <Defs>
       <LinearGradient id="s92_sky" x1="0" y1="0" x2="0" y2="1"
                       stops="0:#4E7FA8, 0.5:#C9A26E, 0.86:#FFD9A0, 1:#FFC47E" />
       <RadialGradient id="s92_sun_glow" cx="0.5" cy="0.5" r="0.5"
-                    stops="0:#FFF6DE, 0.3:#FFDFA688, 1:#FFDFA600" />
-    <RadialGradient id="s92_cloud_lit" cx="0.52" cy="0.34" r="0.68"
-                    stops="0:#FFF9F2F4, 0.55:#FFE8D2DC, 0.82:#FFD9B39A, 1:#FFCC9A00" />
-    <RadialGradient id="s92_cloud_shade" cx="0.5" cy="0.62" r="0.62"
-                    stops="0:#D9A9B4B4, 0.6:#B98CA08C, 1:#A87C9A00" />
-    <LinearGradient id="s92_haze_band" x1="0" y1="0" x2="0" y2="1"
-                    stops="0:#FFE2B800, 0.45:#FFD8A44D, 0.72:#FFCE9459, 1:#FFC98F00" />
+                      stops="0:#FFF6DE, 0.3:#FFDFA688, 1:#FFDFA600" />
       <RadialGradient id="s92_vignette" cx="0.5" cy="0.5" r="0.74"
                       stops="0:#00000000, 0.66:#00000014, 1:#00000078" />
     </Defs>
@@ -10681,42 +10623,7 @@ COMPOSITION
         <Sequence from="0s" duration="12s" out="hold">
           <Layer space="screen">
             <Rect x="0" y="0" width="1280" height="720" fill="url(#s92_sky)" />
-            <Image src="assets/sky.png" opacity="0.78"
-                   x="-230+8.33*$time.sec" y="0" scale="1.0" />
             <Circle x="1086" y="236" radius="170" fill="url(#s92_sun_glow)" blend="screen" />
-            <Rect x="0" y="286" width="1280" height="150" fill="url(#s92_haze_band)" opacity="0.55" />
-            <Group id="s92_clouds">
-              <Group x={curve("0:0:linear, 6:-78:linear, 12:-156:linear")} y={curve("0:0:linear, 12:-16:linear")} opacity="0.30">
-                <Circle x="85" y="157" radius="30" fill="url(#s92_cloud_lit)" opacity="0.50" />
-                <Circle x="128" y="146" radius="42" fill="url(#s92_cloud_lit)" opacity="0.62" />
-                <Circle x="174" y="135" radius="48" fill="url(#s92_cloud_lit)" opacity="0.72" />
-                <Circle x="222" y="138" radius="44" fill="url(#s92_cloud_lit)" opacity="0.68" />
-                <Circle x="268" y="149" radius="36" fill="url(#s92_cloud_lit)" opacity="0.56" />
-                <Circle x="302" y="159" radius="25" fill="url(#s92_cloud_lit)" opacity="0.40" />
-                <Circle x="148" y="162" radius="34" fill="url(#s92_cloud_lit)" opacity="0.38" />
-                <Circle x="210" y="163" radius="32" fill="url(#s92_cloud_lit)" opacity="0.36" />
-                <Circle x="156" y="125" radius="25" fill="url(#s92_cloud_lit)" opacity="0.60" />
-                <Circle x="214" y="122" radius="22" fill="url(#s92_cloud_lit)" opacity="0.55" />
-                <Circle x="188" y="116" radius="19" fill="url(#s92_cloud_lit)" opacity="0.48" />
-                <Circle x="118" y="168" radius="34" fill="url(#s92_cloud_shade)" opacity="0.30" />
-                <Circle x="232" y="169" radius="31" fill="url(#s92_cloud_shade)" opacity="0.26" />
-              </Group>
-                                          <Group x={curve("0:0:linear, 6:-92:linear, 12:-184:linear")} y={curve("0:0:linear, 12:-22:linear")} opacity="0.26">
-                <Circle x="1100" y="124" radius="23" fill="url(#s92_cloud_lit)" opacity="0.50" />
-                <Circle x="1133" y="115" radius="32" fill="url(#s92_cloud_lit)" opacity="0.62" />
-                <Circle x="1168" y="107" radius="37" fill="url(#s92_cloud_lit)" opacity="0.72" />
-                <Circle x="1204" y="109" radius="34" fill="url(#s92_cloud_lit)" opacity="0.68" />
-                <Circle x="1239" y="117" radius="27" fill="url(#s92_cloud_lit)" opacity="0.56" />
-                <Circle x="1265" y="125" radius="19" fill="url(#s92_cloud_lit)" opacity="0.40" />
-                <Circle x="1148" y="127" radius="26" fill="url(#s92_cloud_lit)" opacity="0.38" />
-                <Circle x="1195" y="128" radius="24" fill="url(#s92_cloud_lit)" opacity="0.36" />
-                <Circle x="1154" y="99" radius="19" fill="url(#s92_cloud_lit)" opacity="0.60" />
-                <Circle x="1198" y="97" radius="17" fill="url(#s92_cloud_lit)" opacity="0.55" />
-                <Circle x="1178" y="92" radius="15" fill="url(#s92_cloud_lit)" opacity="0.48" />
-                <Circle x="1125" y="131" radius="26" fill="url(#s92_cloud_shade)" opacity="0.30" />
-                <Circle x="1212" y="133" radius="24" fill="url(#s92_cloud_shade)" opacity="0.26" />
-              </Group>
-                                        </Group>
           </Layer>
         </Sequence>
       </Track>
@@ -10729,7 +10636,7 @@ COMPOSITION
                               castShadow="true" shadowStrength="0.66" />
             <DirectionalLight id="s92_sky_fill" direction={[-0.5,-0.5,-0.5]}
                               color="#9DB8D8" intensity="0.8" />
-            <PointLight id="s92_finish_lamp" position={[4.0,3.4,1.6]}
+            <PointLight id="s92_finish_lamp" position={[95.9,3.4,1.6]}
                         color="#FFD9A6" intensity="9" range="9" />
             <AmbientOcclusion id="s92_ao" intensity="0.7" radius="0.55" />
             <ContactShadow id="s92_contact" intensity="0.85" distance="0.18"
@@ -10740,109 +10647,61 @@ COMPOSITION
                            density="0.0028" scattering="0.035" affectSky="false" />
 
             <Camera3D id="s92_cam_pov"
-                      position={["-45.37+5.084*$time.sec",
+                      position={["-3.62+10.444*$time.sec",
                                  "1.60+0.032*sin($time.sec*22.4)+0.012*sin($time.sec*44.8)",
                                  "0.02*sin($time.sec*11.2)"]}
-                      target={["-45.37+5.084*$time.sec+7.0",
+                      target={["-3.62+10.444*$time.sec+7.0",
                                "1.36+0.02*sin($time.sec*22.4)",
                                "0"]}
                       up={[0,1,0]} roll="1.7*sin($time.sec*22.4)"
                       hiddenBones={["s92_hero_a:head", "s92_hero_a:upper_chest"]}
                       horizonLock="false" fov="58" />
-            <Camera3D id="s92_cam_photo" position={[-23,1.35,5.8]}
-                      target={[-29.9,1.30,0]} up={[0,1,0]}
+            <Camera3D id="s92_cam_photo" position={[40,1.35,6.5]}
+                      target={[27.8,1.30,0]} up={[0,1,0]}
                       horizonLock="true" fov="34" />
-            <Camera3D id="s92_cam_front" position={[10,1.85,3.4]}
-                      target={[3.5,1.35,0.3]} up={[0,1,0]}
+            <Camera3D id="s92_cam_front" position={[108.5,1.85,3.4]}
+                      target={[104,1.35,0.3]} up={[0,1,0]}
                       horizonLock="true" fov="34" />
 
             <!-- Invisible grounding surface across the straight. -->
             <Surface id="s92_track_top" kind="ground" collider="box"
-                     center={[-19,0.0,0]} size={[68,0.012,4.4]} color="#00000000" />
+                     center={[48,0.0,0]} size={[128,0.012,4.4]} color="#00000000" />
 
             <!-- Ground plates -->
-            <Model id="s92_track_m" asset="s92_track_bed" position={[-19,-0.06,0]}
+            <Model id="s92_track_m" asset="s92_track_bed" position={[48,-0.06,0]}
                    receiveShadow="true" />
-            <Model id="s92_infield_m" asset="s92_infield_bed" position={[-19,-0.05,-8.6]}
+            <Model id="s92_infield_m" asset="s92_infield_bed" position={[48,-0.05,-8.6]}
                    receiveShadow="true" />
-            <Model id="s92_apron_m" asset="s92_apron" position={[-19,-0.08,-14.4]}
+            <Model id="s92_apron_m" asset="s92_apron" position={[48,-0.08,-14.4]}
                    receiveShadow="true" />
-            <Model id="s92_line_a" asset="s92_lane_line" position={[-19,0.004,-2.0]} />
-            <Model id="s92_line_b" asset="s92_lane_line" position={[-19,0.004,-0.66]} />
-            <Model id="s92_line_c" asset="s92_lane_line" position={[-19,0.004,0.66]} />
-            <Model id="s92_line_d" asset="s92_lane_line" position={[-19,0.004,2.0]} />
-            <Model id="s92_finish" asset="s92_finish_line" position={[2.0,0.005,0]} />
+            <Model id="s92_line_a" asset="s92_lane_line" position={[48,0.004,-2.0]} />
+            <Model id="s92_line_b" asset="s92_lane_line" position={[48,0.004,-0.66]} />
+            <Model id="s92_line_c" asset="s92_lane_line" position={[48,0.004,0.66]} />
+            <Model id="s92_line_d" asset="s92_lane_line" position={[48,0.004,2.0]} />
+            <Model id="s92_finish" asset="s92_finish_line" position={[93.9,0.005,0]} />
 
             <!-- ── Olympic bowl: three far decks, end stands, roof, masts ── -->
-            <Model id="s92_ground_m" asset="s92_ground" position={[2,-0.06,-18]} receiveShadow="true" />
-            <Model id="s92_plaza_m" asset="s92_plaza" position={[2,-0.05,-9.6]} receiveShadow="true" />
-            <Model asset="s92_hurdle_post" position={[-31.0,0.53,-4.38]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_hurdle_post" position={[-31.0,0.53,-5.62]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_hurdle_bar" position={[-31.0,0.98,-5.0]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_hurdle_foot" position={[-31.0,0.03,-4.36]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_hurdle_foot" position={[-31.0,0.03,-5.64]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_hurdle_post" position={[-23.0,0.53,-4.38]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_hurdle_post" position={[-23.0,0.53,-5.62]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_hurdle_bar" position={[-23.0,0.98,-5.0]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_hurdle_foot" position={[-23.0,0.03,-4.36]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_hurdle_foot" position={[-23.0,0.03,-5.64]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_hurdle_post" position={[-15.0,0.53,-4.38]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_hurdle_post" position={[-15.0,0.53,-5.62]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_hurdle_bar" position={[-15.0,0.98,-5.0]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_hurdle_foot" position={[-15.0,0.03,-4.36]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_hurdle_foot" position={[-15.0,0.03,-5.64]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_pit_sand" position={[-7.0,0.02,-9.6]} receiveShadow="true" />
-            <Model asset="s92_pit_board" position={[-3.35,0.03,-9.6]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_block_plate" position={[-46.8,0.03,-0.42]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_block_wedge" position={[-46.95,0.09,-0.42]} rotation={[0,0,-16]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_block_plate" position={[-46.8,0.03,0.42]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_block_wedge" position={[-46.95,0.09,0.42]} rotation={[0,0,-16]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_cone_base" position={[-41.0,0.015,-2.55]} receiveShadow="true" />
-            <Model asset="s92_cone" position={[-41.0,0.15,-2.55]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_cone_base" position={[-37.0,0.015,-2.55]} receiveShadow="true" />
-            <Model asset="s92_cone" position={[-37.0,0.15,-2.55]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_cone_base" position={[-33.0,0.015,-2.55]} receiveShadow="true" />
-            <Model asset="s92_cone" position={[-33.0,0.15,-2.55]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_cone_base" position={[-29.0,0.015,-2.55]} receiveShadow="true" />
-            <Model asset="s92_cone" position={[-29.0,0.15,-2.55]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_cone_base" position={[-25.0,0.015,-2.55]} receiveShadow="true" />
-            <Model asset="s92_cone" position={[-25.0,0.15,-2.55]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_cone_base" position={[-21.0,0.015,-2.55]} receiveShadow="true" />
-            <Model asset="s92_cone" position={[-21.0,0.15,-2.55]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_cone_base" position={[-17.0,0.015,-2.55]} receiveShadow="true" />
-            <Model asset="s92_cone" position={[-17.0,0.15,-2.55]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_cone_base" position={[-13.0,0.015,-2.55]} receiveShadow="true" />
-            <Model asset="s92_cone" position={[-13.0,0.15,-2.55]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_bench_seat" position={[-3.4,0.45,-12.3]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_bench_leg" position={[-4.1,0.2,-12.3]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_bench_leg" position={[-2.7,0.2,-12.3]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_bench_seat" position={[-0.6,0.45,-12.3]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_bench_leg" position={[-1.2999999999999998,0.2,-12.3]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_bench_leg" position={[0.09999999999999998,0.2,-12.3]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_tripod_leg" position={[-28.0,0.6,4.42]} rotation={[0,0,12]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_tripod_leg" position={[-28.22,0.6,4.28]} rotation={[9,0,-9]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_tripod_leg" position={[-27.8,0.6,4.3]} rotation={[-9,0,-9]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_tripod_head" position={[-28.0,1.24,4.34]} castShadow="true" receiveShadow="true" />
-            <Model asset="s92_tripod_cam" position={[-28.0,1.42,4.34]} castShadow="true" receiveShadow="true" />
-            <Model id="s92_infield_line_m" asset="s92_infield_line" position={[2,0.004,-2.35]} />
+            <Model id="s92_ground_m" asset="s92_ground" position={[32,-0.06,-18]} receiveShadow="true" />
+            <Model id="s92_plaza_m" asset="s92_plaza" position={[32,-0.05,-9.6]} receiveShadow="true" />
+            <Model id="s92_infield_line_m" asset="s92_infield_line" position={[32,0.004,-2.35]} />
             <Model id="s92_infield_line_mb" asset="s92_infield_line_b" position={[-46,0.004,-9]} />
-            <Model id="s92_infield_line_mc" asset="s92_infield_line_b" position={[50,0.004,-9]} />
+            <Model id="s92_infield_line_mc" asset="s92_infield_line_b" position={[128,0.004,-9]} />
 
-            <Model asset="s92_wg0" position={[2,1.6,-17.3]} rotation={[0,180,0]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx0" position={[2,0.25,-14.75]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx1" position={[2,0.57,-14.9]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_wg1" position={[2,4.05,-22.5]} rotation={[0,180,0]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx2" position={[2,2.85,-19.95]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx3" position={[2,3.07,-20.1]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_wg2" position={[2,6.8,-27.9]} rotation={[0,180,0]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx4" position={[2,5.3,-25.15]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx1" position={[2,5.57,-25.3]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx5" position={[2,0.25,-14.9]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx6" position={[2,4.7,-30.9]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx7" position={[2,9.6,-28]} rotation={[6,0,0]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx8" position={[2,9.5,-21.2]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx9" position={[2,8.8,-21.7]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx10" position={[2,9.8,-34.75]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_wg0" position={[24,1.6,-17.3]} rotation={[0,180,0]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx0" position={[24,0.25,-14.75]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx1" position={[24,0.57,-14.9]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_wg1" position={[24,4.05,-22.5]} rotation={[0,180,0]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx2" position={[24,2.85,-19.95]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx3" position={[24,3.07,-20.1]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_wg2" position={[24,6.8,-27.9]} rotation={[0,180,0]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx4" position={[24,5.3,-25.15]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx1" position={[24,5.57,-25.3]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx5" position={[24,0.25,-14.9]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx6" position={[24,4.7,-30.9]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx7" position={[24,9.6,-28]} rotation={[6,0,0]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx8" position={[24,9.5,-21.2]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx9" position={[24,8.8,-21.7]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx10" position={[24,9.8,-34.75]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_bx11" position={[-40,8.5,-28]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_bx11" position={[-28,8.5,-28]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_bx11" position={[-16,8.5,-28]} castShadow="false" receiveShadow="true" />
@@ -10851,15 +10710,25 @@ COMPOSITION
             <Model asset="s92_bx11" position={[20,8.5,-28]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_bx11" position={[32,8.5,-28]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_bx11" position={[44,8.5,-28]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx12" position={[2,8.5,-21.1]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx12" position={[24,8.5,-21.1]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_bx13" position={[-46,4.25,-25]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx13" position={[50,4.25,-25]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx13" position={[94,4.25,-25]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_wg3" position={[-32.3,1.6,-11]} rotation={[0,-90,0]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx14" position={[-30.25,0.25,-11]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx15" position={[-30.1,0.57,-11]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_wg4" position={[-37.7,4.3,-11]} rotation={[0,-90,0]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_bx16" position={[-35.45,2.9,-11]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_bx17" position={[-35.3,3.07,-11]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx18" position={[-40.7,4.7,-11]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_bx19" position={[-45.7,9.6,-11]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_bx20" position={[-30.3,9.5,-11]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_wg3" position={[-32.3,1.6,-11]} rotation={[0,90,0]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx14" position={[-29.75,0.25,-11]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx15" position={[-29.9,0.57,-11]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_wg4" position={[-37.7,4.3,-11]} rotation={[0,90,0]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_bx16" position={[-34.95,2.9,-11]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_bx17" position={[-35.1,3.07,-11]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx18" position={[-39.7,4.7,-11]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_bx19" position={[-34.7,9.6,-11]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_bx20" position={[-29.7,9.5,-11]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_bx21" position={[-46,1.55,-15.45]} castShadow="false" receiveShadow="true" />
@@ -10879,7 +10748,7 @@ COMPOSITION
             <Model asset="s92_bx21" position={[38,1.55,-15.45]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_bx21" position={[44,1.55,-15.45]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_bx21" position={[50,1.55,-15.45]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx22" position={[2,3.15,-15.3]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx22" position={[24,3.15,-15.3]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_flood_bank" position={[-41.5,10.22,-22.9]} rotation={[-20,0,0]} castShadow="false" receiveShadow="false" />
             <Model asset="s92_flood_bank" position={[-32.8,10.22,-22.9]} rotation={[-20,0,0]} castShadow="false" receiveShadow="false" />
             <Model asset="s92_flood_bank" position={[-24.1,10.22,-22.9]} rotation={[-20,0,0]} castShadow="false" receiveShadow="false" />
@@ -10891,8 +10760,8 @@ COMPOSITION
             <Model asset="s92_flood_bank" position={[28.1,10.22,-22.9]} rotation={[-20,0,0]} castShadow="false" receiveShadow="false" />
             <Model asset="s92_flood_bank" position={[36.8,10.22,-22.9]} rotation={[-20,0,0]} castShadow="false" receiveShadow="false" />
             <Model asset="s92_flood_bank" position={[45.5,10.22,-22.9]} rotation={[-20,0,0]} castShadow="false" receiveShadow="false" />
-            <Model asset="s92_screen_box" position={[2,7.4,-30.2]} castShadow="false" receiveShadow="false" />
-            <Model asset="s92_bx23" position={[2,7.4,-29.9]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_screen_box" position={[24,7.4,-30.2]} castShadow="false" receiveShadow="false" />
+            <Model asset="s92_bx23" position={[24,7.4,-29.9]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_crowd0" position={[-38.25,0.96,-15.92]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
             <Model asset="s92_crowd1" position={[-26.75,0.96,-15.92]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
             <Model asset="s92_crowd2" position={[-15.25,0.96,-15.92]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
@@ -10901,8 +10770,8 @@ COMPOSITION
             <Model asset="s92_crowd0" position={[19.25,0.96,-15.92]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
             <Model asset="s92_crowd1" position={[30.75,0.96,-15.92]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
             <Model asset="s92_crowd2" position={[42.25,0.96,-15.92]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
-            <Model asset="s92_bx24" position={[2,1.11,-15.66]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx25" position={[2,1,-15.36]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx24" position={[24,1.11,-15.66]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx25" position={[24,1,-15.36]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_crowd1" position={[-38.25,1.62,-17.3]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
             <Model asset="s92_crowd2" position={[-26.75,1.62,-17.3]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
             <Model asset="s92_crowd3" position={[-15.25,1.62,-17.3]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
@@ -10911,8 +10780,8 @@ COMPOSITION
             <Model asset="s92_crowd1" position={[19.25,1.62,-17.3]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
             <Model asset="s92_crowd2" position={[30.75,1.62,-17.3]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
             <Model asset="s92_crowd3" position={[42.25,1.62,-17.3]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
-            <Model asset="s92_bx26" position={[2,1.77,-17.04]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx25" position={[2,1.66,-16.74]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx26" position={[24,1.77,-17.04]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx25" position={[24,1.66,-16.74]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_crowd2" position={[-38.25,2.28,-18.68]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
             <Model asset="s92_crowd3" position={[-26.75,2.28,-18.68]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
             <Model asset="s92_crowd4" position={[-15.25,2.28,-18.68]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
@@ -10921,8 +10790,8 @@ COMPOSITION
             <Model asset="s92_crowd2" position={[19.25,2.28,-18.68]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
             <Model asset="s92_crowd3" position={[30.75,2.28,-18.68]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
             <Model asset="s92_crowd4" position={[42.25,2.28,-18.68]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
-            <Model asset="s92_bx24" position={[2,2.43,-18.42]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx25" position={[2,2.32,-18.12]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx24" position={[24,2.43,-18.42]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx25" position={[24,2.32,-18.12]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_crowd3" position={[-38.25,3.44,-21.12]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
             <Model asset="s92_crowd4" position={[-26.75,3.44,-21.12]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
             <Model asset="s92_crowd0" position={[-15.25,3.44,-21.12]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
@@ -10931,8 +10800,8 @@ COMPOSITION
             <Model asset="s92_crowd3" position={[19.25,3.44,-21.12]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
             <Model asset="s92_crowd4" position={[30.75,3.44,-21.12]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
             <Model asset="s92_crowd0" position={[42.25,3.44,-21.12]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
-            <Model asset="s92_bx26" position={[2,3.59,-20.86]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx25" position={[2,3.48,-20.56]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx26" position={[24,3.59,-20.86]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx25" position={[24,3.48,-20.56]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_crowd4" position={[-38.25,4.07,-22.5]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
             <Model asset="s92_crowd0" position={[-26.75,4.07,-22.5]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
             <Model asset="s92_crowd1" position={[-15.25,4.07,-22.5]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
@@ -10941,8 +10810,8 @@ COMPOSITION
             <Model asset="s92_crowd4" position={[19.25,4.07,-22.5]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
             <Model asset="s92_crowd0" position={[30.75,4.07,-22.5]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
             <Model asset="s92_crowd1" position={[42.25,4.07,-22.5]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
-            <Model asset="s92_bx24" position={[2,4.22,-22.24]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx25" position={[2,4.11,-21.94]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx24" position={[24,4.22,-22.24]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx25" position={[24,4.11,-21.94]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_crowd0" position={[-38.25,4.7,-23.88]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
             <Model asset="s92_crowd1" position={[-26.75,4.7,-23.88]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
             <Model asset="s92_crowd2" position={[-15.25,4.7,-23.88]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
@@ -10951,45 +10820,152 @@ COMPOSITION
             <Model asset="s92_crowd0" position={[19.25,4.7,-23.88]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
             <Model asset="s92_crowd1" position={[30.75,4.7,-23.88]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
             <Model asset="s92_crowd2" position={[42.25,4.7,-23.88]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
-            <Model asset="s92_bx26" position={[2,4.85,-23.62]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx25" position={[2,4.74,-23.32]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx24" position={[2,6.19,-26.14]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx25" position={[2,6.08,-25.84]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx26" position={[2,6.97,-27.64]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx25" position={[2,6.86,-27.34]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx24" position={[2,7.75,-29.14]} castShadow="false" receiveShadow="true" />
-            <Model asset="s92_bx25" position={[2,7.64,-28.84]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx26" position={[24,4.85,-23.62]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx25" position={[24,4.74,-23.32]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_crowd1" position={[-38.25,6.04,-26.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd2" position={[-26.75,6.04,-26.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd3" position={[-15.25,6.04,-26.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd4" position={[-3.75,6.04,-26.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd0" position={[7.75,6.04,-26.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd1" position={[19.25,6.04,-26.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd2" position={[30.75,6.04,-26.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd3" position={[42.25,6.04,-26.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_bx24" position={[24,6.19,-26.14]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx25" position={[24,6.08,-25.84]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_crowd2" position={[-38.25,6.82,-27.9]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd3" position={[-26.75,6.82,-27.9]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd4" position={[-15.25,6.82,-27.9]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd0" position={[-3.75,6.82,-27.9]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd1" position={[7.75,6.82,-27.9]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd2" position={[19.25,6.82,-27.9]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd3" position={[30.75,6.82,-27.9]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd4" position={[42.25,6.82,-27.9]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_bx26" position={[24,6.97,-27.64]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx25" position={[24,6.86,-27.34]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_crowd3" position={[-38.25,7.6,-29.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd4" position={[-26.75,7.6,-29.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd0" position={[-15.25,7.6,-29.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd1" position={[-3.75,7.6,-29.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd2" position={[7.75,7.6,-29.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd3" position={[19.25,7.6,-29.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd4" position={[30.75,7.6,-29.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd0" position={[42.25,7.6,-29.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_bx24" position={[24,7.75,-29.14]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx25" position={[24,7.64,-28.84]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_crowd0" position={[-31.61,1.29,-31.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.34" />
             <Model asset="s92_crowd1" position={[-31.61,1.29,-17.75]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd2" position={[-31.61,1.29,-4.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd3" position={[-31.61,1.29,9.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_bx27" position={[-31.31,1.42,-11]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx28" position={[-30.99,1.32,-11]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_crowd1" position={[-33.45,2.17,-31.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.42" />
             <Model asset="s92_crowd2" position={[-33.45,2.17,-17.75]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd3" position={[-33.45,2.17,-4.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd4" position={[-33.45,2.17,9.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_bx29" position={[-33.15,2.3,-11]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx28" position={[-32.83,2.2,-11]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_crowd2" position={[-36.95,3.93,-31.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.5" />
             <Model asset="s92_crowd3" position={[-36.95,3.93,-17.75]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd4" position={[-36.95,3.93,-4.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd0" position={[-36.95,3.93,9.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_bx29" position={[-36.65,4.06,-11]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx28" position={[-36.33,3.96,-11]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_crowd3" position={[-38.95,4.97,-31.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.34" />
             <Model asset="s92_crowd4" position={[-38.95,4.97,-17.75]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd0" position={[-38.95,4.97,-4.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd1" position={[-38.95,4.97,9.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_bx27" position={[-38.65,5.1,-11]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx28" position={[-38.33,5,-11]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_crowd1" position={[-31.61,1.29,-31.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.42" />
             <Model asset="s92_crowd2" position={[-31.61,1.29,-17.75]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd3" position={[-31.61,1.29,-4.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd4" position={[-31.61,1.29,9.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_bx27" position={[-31.91,1.42,-11]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx28" position={[-32.23,1.32,-11]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_crowd2" position={[-33.45,2.17,-31.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.5" />
             <Model asset="s92_crowd3" position={[-33.45,2.17,-17.75]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd4" position={[-33.45,2.17,-4.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd0" position={[-33.45,2.17,9.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_bx29" position={[-33.75,2.3,-11]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx28" position={[-34.07,2.2,-11]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_crowd3" position={[-36.95,3.93,-31.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.34" />
             <Model asset="s92_crowd4" position={[-36.95,3.93,-17.75]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd0" position={[-36.95,3.93,-4.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd1" position={[-36.95,3.93,9.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_bx29" position={[-37.25,4.06,-11]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx28" position={[-37.57,3.96,-11]} castShadow="false" receiveShadow="true" />
             <Model asset="s92_crowd4" position={[-38.95,4.97,-31.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.42" />
             <Model asset="s92_crowd0" position={[-38.95,4.97,-17.75]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd1" position={[-38.95,4.97,-4.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd2" position={[-38.95,4.97,9.25]} rotationY="90" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_bx27" position={[-39.25,5.1,-11]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx28" position={[-39.57,5,-11]} castShadow="false" receiveShadow="true" />
 
+
+            <Model asset="s92_bx11" position={[56,8.5,-28.0]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx11" position={[68,8.5,-28.0]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx11" position={[80,8.5,-28.0]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_flood_bank" position={[54.2,10.22,-22.9]} rotation={[-20,0,0]} castShadow="false" receiveShadow="false" />
+            <Model asset="s92_flood_bank" position={[62.9,10.22,-22.9]} rotation={[-20,0,0]} castShadow="false" receiveShadow="false" />
+            <Model asset="s92_flood_bank" position={[71.6,10.22,-22.9]} rotation={[-20,0,0]} castShadow="false" receiveShadow="false" />
+            <Model asset="s92_flood_bank" position={[80.3,10.22,-22.9]} rotation={[-20,0,0]} castShadow="false" receiveShadow="false" />
+            <Model asset="s92_flood_bank" position={[89.0,10.22,-22.9]} rotation={[-20,0,0]} castShadow="false" receiveShadow="false" />
+            <Model asset="s92_bx21" position={[56,1.55,-15.45]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx21" position={[62,1.55,-15.45]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx21" position={[68,1.55,-15.45]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx21" position={[74,1.55,-15.45]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx21" position={[80,1.55,-15.45]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_bx21" position={[86,1.55,-15.45]} castShadow="false" receiveShadow="true" />
+            <Model asset="s92_crowd0" position={[53.75,0.96,-15.92]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd1" position={[65.25,0.96,-15.92]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd2" position={[76.75,0.96,-15.92]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd3" position={[88.25,0.96,-15.92]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd1" position={[53.75,1.62,-17.3]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd2" position={[65.25,1.62,-17.3]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd3" position={[76.75,1.62,-17.3]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd4" position={[88.25,1.62,-17.3]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd2" position={[53.75,2.28,-18.68]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd3" position={[65.25,2.28,-18.68]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd4" position={[76.75,2.28,-18.68]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd0" position={[88.25,2.28,-18.68]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd3" position={[53.75,3.44,-21.12]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd4" position={[65.25,3.44,-21.12]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd0" position={[76.75,3.44,-21.12]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd1" position={[88.25,3.44,-21.12]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd4" position={[53.75,4.07,-22.5]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd0" position={[65.25,4.07,-22.5]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd1" position={[76.75,4.07,-22.5]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd2" position={[88.25,4.07,-22.5]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd0" position={[53.75,4.7,-23.88]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd1" position={[65.25,4.7,-23.88]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd2" position={[76.75,4.7,-23.88]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd3" position={[88.25,4.7,-23.88]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd1" position={[53.75,6.04,-26.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd2" position={[65.25,6.04,-26.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd3" position={[76.75,6.04,-26.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd4" position={[88.25,6.04,-26.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd2" position={[53.75,6.82,-27.9]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd3" position={[65.25,6.82,-27.9]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd4" position={[76.75,6.82,-27.9]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd0" position={[88.25,6.82,-27.9]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd3" position={[53.75,7.6,-29.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
+            <Model asset="s92_crowd4" position={[65.25,7.6,-29.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.34" />
+            <Model asset="s92_crowd0" position={[76.75,7.6,-29.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.42" />
+            <Model asset="s92_crowd1" position={[88.25,7.6,-29.4]} rotationY="0" castShadow="false" receiveShadow="false" exposure="0.5" />
 
             <!-- ── MESHASSET arch: two caged posts, a sagging crown, a banner ── -->
-            <Model id="s92_post_near" asset="s92_arch_post" position={[2.0,0,-1.95]}
+            <Model id="s92_post_near" asset="s92_arch_post" position={[93.9,0,-1.95]}
                    rotationY="90" castShadow="true" receiveShadow="true" />
-            <Model id="s92_post_far" asset="s92_arch_post" position={[2.0,0,1.95]}
+            <Model id="s92_post_far" asset="s92_arch_post" position={[93.9,0,1.95]}
                    rotationY="-90" castShadow="true" receiveShadow="true" />
-            <Model id="s92_crown_m" asset="s92_arch_crown" position={[2.0,0,0]}
+            <Model id="s92_crown_m" asset="s92_arch_crown" position={[93.9,0,0]}
                    rotationY="90" castShadow="true" />
-            <Model id="s92_banner_m" asset="s92_banner_bar" position={[2.0,2.78,0]} />
-            <Model id="s92_banner_t_m" asset="s92_banner_trim" position={[2.0,2.6,0]} />
+            <Model id="s92_banner_m" asset="s92_banner_bar" position={[93.9,2.78,0]} />
+            <Model id="s92_banner_t_m" asset="s92_banner_trim" position={[93.9,2.6,0]} />
 
             <!-- Confetti over the finish area: seeded volume repeats -->
             <Repeat id="s92_confetti_a" mode="volume" count="46" seed="9231"
-                    boundsMin={[3.0,0.6,-2.6]} boundsMax={[6.6,4.8,2.6]}
+                    boundsMin={[94.9,0.6,-2.6]} boundsMax={[98.5,4.8,2.6]}
                     velocity={[0.12,-1.05,0.06]} lifetime="3.4s"
                     phase="random" respawn="random" scaleRange={[0.7,1.5]}>
               <Model asset="s92_petal" rotation={[18,32,12]}
@@ -11049,31 +11025,30 @@ COMPOSITION
 
   <!-- ── World travel: in-place runs, deterministic position tracks ── -->
   <AnimationTarget node="s92_hero_a" property="position">
-    <Key time="0s" value="[-45.55,0,0]" />
-    <Key time="9.353s" value="[2.0,0,0]" ease="linear" />
-    <Key time="10.353s" value="[7.08,0,0]" ease="linear" />
-    <Key time="10.553s" value="[7.86,0,0]" ease="ease_out" />
-    <Key time="12s" value="[11.68,0,0]" ease="linear" />
+    <Key time="0s" value="[-3.8,0,0]" />
+    <Key time="9.355s" value="[93.9,0,0]" ease="linear" />
+    <Key time="10.55s" value="[101.8,0,0]" ease="ease_out" />
+    <Key time="12s" value="[105.6,0,0]" ease="ease_in_out" />
   </AnimationTarget>
 
-  <!-- Infield photographer: low dolly plus a sprint pan, he passes mid-shot. -->
+  <!-- Infield photographer: low dolly plus a sprint pan. -->
   <AnimationTarget node="s92_cam_photo" property="position">
-    <Key time="3s" value="[-23,1.35,5.8]" />
-    <Key time="6s" value="[-15,1.55,6.4]" ease="linear" />
+    <Key time="3s" value="[40,1.35,6.5]" />
+    <Key time="6s" value="[47,1.55,7.0]" ease="linear" />
   </AnimationTarget>
   <AnimationTarget node="s92_cam_photo" property="target">
-    <Key time="3s" value="[-29.9,1.30,0]" />
-    <Key time="6s" value="[-14.6,1.30,0]" ease="linear" />
+    <Key time="3s" value="[27.8,1.30,0]" />
+    <Key time="6s" value="[59.2,1.30,0]" ease="linear" />
   </AnimationTarget>
 
-  <!-- Finish camera: meets the sprinter through the arch and gives him room. -->
+  <!-- Finish camera: meets the sprinter through the arch and eases in. -->
   <AnimationTarget node="s92_cam_front" property="position">
-    <Key time="9s" value="[10,1.85,3.4]" />
-    <Key time="12s" value="[17.2,1.72,3.0]" ease="ease_in_out" />
+    <Key time="9s" value="[108.5,1.85,3.4]" />
+    <Key time="12s" value="[112.0,1.70,2.9]" ease="ease_in_out" />
   </AnimationTarget>
   <AnimationTarget node="s92_cam_front" property="target">
-    <Key time="9s" value="[3.5,1.35,0.3]" />
-    <Key time="12s" value="[11.7,1.28,0.2]" ease="ease_in_out" />
+    <Key time="9s" value="[102,1.35,0.3]" />
+    <Key time="12s" value="[106.2,1.22,0.15]" ease="ease_in_out" />
   </AnimationTarget>
 
 
@@ -11089,7 +11064,7 @@ COMPOSITION
   <AnimationTarget node="s92_bloom" property="params.intensity">
     <Key time="0s" value="0.16" />
     <Key time="9.0s" value="0.18" />
-    <Key time="9.353s" value="0.34" ease="ease_out" />
+    <Key time="9.36s" value="0.34" ease="ease_out" />
     <Key time="10.4s" value="0.20" ease="ease_in" />
     <Key time="11.4s" value="0.28" ease="ease_out" />
     <Key time="12s" value="0.20" />

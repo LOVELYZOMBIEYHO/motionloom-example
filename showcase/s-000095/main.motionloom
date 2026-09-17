@@ -18,12 +18,12 @@
 <ImageAsset id="shark_normal" src="texture/shark-normal.png" colorSpace="linear-srgb" />
 <ImageAsset id="shark_reference" src="texture/source-composite.png" colorSpace="srgb" />
 <MaterialAsset id="skin" shading="pbr" baseColor="#F0F1F2" baseColorTexture="shark_reference" normalTexture="shark_normal" normalScale="0.025" roughness="0.52" specular="0.26" metallic="0" />
-<MaterialAsset id="eye" shading="pbr" baseColor="#050708" roughness="0.16" specular="0.50" />
+<MaterialAsset id="eye" shading="pbr" baseColor="#050708" roughness="0.16" specular="0.50" receiveCaustics="false" />
 <MaterialAsset id="rim" shading="pbr" baseColor="#313A40" roughness="0.50" />
-<MaterialAsset id="oral" shading="pbr" baseColor="#E5BDB3" baseColorTexture="mouth_reference" roughness="0.46" specular="0.35" doubleSided="true" emissive="#FFFFFF" emissiveTexture="mouth_reference" emissiveStrength="0.25" />
+<MaterialAsset id="oral" shading="pbr" baseColor="#E5BDB3" baseColorTexture="mouth_reference" roughness="0.46" specular="0.35" doubleSided="true" emissive="#FFFFFF" emissiveTexture="mouth_reference" emissiveStrength="0.25" receiveCaustics="false" />
 <MaterialAsset id="gill" shading="pbr" baseColor="#252A29" roughness="0.75" />
-<MaterialAsset id="gum" shading="pbr" baseColor="#845F57" roughness="0.63" />
-<MaterialAsset id="enamel" shading="pbr" baseColor="#E2DDC9" roughness="0.38" />
+<MaterialAsset id="gum" shading="pbr" baseColor="#845F57" roughness="0.63" receiveCaustics="false" />
+<MaterialAsset id="enamel" shading="pbr" baseColor="#E2DDC9" roughness="0.38" receiveCaustics="false" />
 <MeshAsset id="shark_head" material="skin" subdivision="1">
   <Vertex position={[-3.68,0.0439326,0.0009802]} uv={[0.7864939,0.22373]} pinned="false" />
   <Vertex position={[-3.667014,0.0551815,0.0024391]} uv={[0.7863327,0.2220727]} pinned="false" />
@@ -23526,10 +23526,6 @@
   <Defs>
     <RadialGradient id="s95_vignette" cx="0.5" cy="0.46" r="0.78"
                     stops="0:#00000000, 0.58:#00000000, 1:#000000D9" />
-    <LinearGradient id="s95_shafts" x1="0" y1="0" x2="0" y2="1"
-                    stops="0:#7EC4E077, 0.28:#2E6E8A3D, 0.62:#0B2C3A14, 1:#00000000" />
-    <RadialGradient id="s95_beam" cx="0.5" cy="0.22" r="0.62"
-                    stops="0:#D2F2FFB0, 0.35:#7CC0DA66, 0.7:#2A6C8722, 1:#0A253100" />
     <RadialGradient id="s95_surface" cx="0.5" cy="0.5" r="0.62"
                     stops="0:#C6F0FB99, 0.42:#4E93AC38, 1:#0A253100" />
     <RadialGradient id="s95_fishbody" cx="0.42" cy="0.30" r="0.78"
@@ -23546,18 +23542,29 @@
                     focusTarget="@shark_head_model" focalLength="46" fStop="5.6"
                     maxBlur="0.0032" maxBlurUnit="percentHeight" />
           <EnvironmentLight id="s95_ibl" asset="s95_env" mapping="equirectangular"
-                            intensity="1.0" visible="false" backgroundIntensity="0"
+                            intensity={curve("0:1.0:linear, 3.6:1.0:linear, 4.4:0.10:linear, 7.3:0.10:linear, 8.0:0.20:linear, 12.3:0.20:linear, 13.0:0.10:linear, 16.8:0.10:linear, 20.45:1.0:ease_in, 25:1.0:linear")} visible="false" backgroundIntensity="0"
                             backgroundBlur="0.35" diffuseIntensity="0.48" specularIntensity="0.85" />
           <SpotLight id="s95_sun" position={[-3,8,2]} direction={[0.12,-1,0.15]}
-                     color="#C4ECFF" intensity="42" range="38"
+                     color="#C4ECFF" intensity={curve("0:42:linear, 3.6:42:linear, 4.4:4.2:linear, 7.3:4.2:linear, 8.0:8.4:linear, 12.3:8.4:linear, 13.0:4.2:linear, 16.8:4.2:linear, 20.45:42:ease_in, 25:42:linear")} range="38"
                      innerCone="20" outerCone="44"
                      castShadow="true" />
           <DirectionalLight id="s95_key" direction={[-0.15,-1,-0.35]} color="#CFE9F5"
-                            intensity="1.15" castShadow="false" />
+                            intensity={curve("0:1.15:linear, 3.6:1.15:linear, 4.4:0.115:linear, 7.3:0.115:linear, 8.0:0.23:linear, 12.3:0.23:linear, 13.0:0.115:linear, 16.8:0.115:linear, 20.45:1.15:ease_in, 25:1.15:linear")} castShadow="false" />
           <DirectionalLight id="s95_rim" direction={[0.3,0.05,0.9]} color="#5FA8C8"
-                            intensity="0.55" castShadow="false" />
+                            intensity={curve("0:0.55:linear, 3.6:0.55:linear, 4.4:0.055:linear, 7.3:0.055:linear, 8.0:0.11:linear, 12.3:0.11:linear, 13.0:0.055:linear, 16.8:0.055:linear, 20.45:0.55:ease_in, 25:0.55:linear")} castShadow="false" />
           <AtmosphereFog id="s95_sea" mode="linear" color="#061C2A" start="2.0" end="24"
-                         density="0.01" scattering="0.16" affectSky="true" />
+                         density="0.018" scattering="0.16" affectSky="true"
+                         absorption={[0.075,0.032,0.012]}
+                         scatteringColor={[0.018,0.060,0.095]}
+                         boundsMin={[-42,-18,-46]} boundsMax={[42,18,6]}
+                         edgeFeather="2.0">
+            <VolumetricScattering id="s95_volume" lightRef="s95_sun"
+                                  intensity={curve("0:1.15:linear, 3.6:1.15:linear, 4.4:0.115:linear, 7.3:0.115:linear, 8.0:0.23:linear, 12.3:0.23:linear, 13.0:0.115:linear, 16.8:0.115:linear, 20.45:1.15:ease_in, 25:1.15:linear")} anisotropy="0.68"
+                                  maxDistance="34" shadowed="true" />
+            <WaterCaustics id="s95_caustics" intensity={curve("0:0.26:linear, 3.6:0.26:linear, 4.4:0.026:linear, 7.3:0.026:linear, 8.0:0.052:linear, 12.3:0.052:linear, 13.0:0.026:linear, 16.8:0.026:linear, 20.45:0.26:ease_in, 25:0.26:linear")} scale="0.55"
+                           speed="0.22" depthFalloff="0.11" color="#BFE9FF"
+                           volumeTerm="true" surfaceTerm="true" />
+          </AtmosphereFog>
           <AmbientOcclusion id="s95_ao" radius="0.24" intensity="0.42" />
 
     <Model id="shark_head_model" asset="shark_head" castShadow="true" positionX={curve("0:28.000000:linear, 3.8:28.000000:linear, 4.5:13.000000:linear, 6:0.000000:linear, 7.2:-15.000000:linear, 7.5:-28.000000:linear, 7.9:-28.000000:linear, 8.4:-14.000000:linear, 9.2:-7.000000:linear, 10.2:0.000000:linear, 11.2:7.000000:linear, 12.2:16.000000:linear, 13:30.000000:linear, 15.8:30.000000:linear, 16.2:0.000000:linear, 16.7:0.000000:linear, 17.3:0.000000:linear, 18:0.000000:linear, 19:0.000000:linear, 19.6:0.000000:linear, 20:0.000000:linear, 20.3:0.000000:linear, 20.5:0.000000:linear, 20.68:0.000000:linear, 25:0.000000:linear")} positionY={curve("0:0.000000:linear, 3.8:0.000000:linear, 4.5:0.000000:linear, 6:0.000000:linear, 7.2:0.000000:linear, 7.5:0.000000:linear, 7.9:0.000000:linear, 8.4:0.000000:linear, 9.2:0.000000:linear, 10.2:0.000000:linear, 11.2:0.000000:linear, 12.2:0.000000:linear, 13:0.000000:linear, 15.8:0.000000:linear, 16.2:0.000000:linear, 16.7:0.000000:linear, 17.3:0.000000:linear, 18:0.000000:linear, 19:0.000000:linear, 19.6:0.000000:linear, 20:0.000000:linear, 20.3:0.000000:linear, 20.5:0.000000:linear, 20.68:0.000000:linear, 25:0.000000:linear")} positionZ={curve("0:-35.000000:linear, 3.8:-35.000000:linear, 4.5:-21.000000:linear, 6:-19.000000:linear, 7.2:-23.000000:linear, 7.5:-30.000000:linear, 7.9:-30.000000:linear, 8.4:-6.000000:linear, 9.2:-4.000000:linear, 10.2:-3.600000:linear, 11.2:-4.000000:linear, 12.2:-8.000000:linear, 13:-30.000000:linear, 15.8:-40.000000:linear, 16.2:-35.000000:linear, 16.7:-30.000000:linear, 17.3:-22.000000:linear, 18:-16.000000:linear, 19:-11.000000:linear, 19.6:-7.000000:linear, 20:-3.600000:linear, 20.3:-1.300000:linear, 20.5:0.500000:linear, 20.68:2.100000:linear, 25:2.100000:linear")} rotationY={curve("0:0.000000:linear, 3.8:0.000000:linear, 4.5:0.000000:linear, 6:0.000000:linear, 7.2:0.000000:linear, 7.5:0.000000:linear, 7.9:180.000000:linear, 8.4:180.000000:linear, 9.2:180.000000:linear, 10.2:180.000000:linear, 11.2:180.000000:linear, 12.2:180.000000:linear, 13:180.000000:linear, 15.8:180.000000:linear, 16.2:90.000000:linear, 16.7:90.000000:linear, 17.3:90.000000:linear, 18:90.000000:linear, 19:90.000000:linear, 19.6:90.000000:linear, 20:90.000000:linear, 20.3:90.000000:linear, 20.5:90.000000:linear, 20.68:90.000000:linear, 25:90.000000:linear")} rotationX={curve("0:0.000000:linear, 3.8:0.000000:linear, 4.5:0.000000:linear, 6:0.000000:linear, 7.2:0.000000:linear, 7.5:0.000000:linear, 7.9:0.000000:linear, 8.4:0.000000:linear, 9.2:0.000000:linear, 10.2:0.000000:linear, 11.2:0.000000:linear, 12.2:0.000000:linear, 13:0.000000:linear, 15.8:0.000000:linear, 16.2:0.000000:linear, 16.7:0.000000:linear, 17.3:0.000000:linear, 18:0.000000:linear, 19:0.000000:linear, 19.6:0.000000:linear, 20:0.000000:linear, 20.3:0.000000:linear, 20.5:0.000000:linear, 20.68:0.000000:linear, 25:0.000000:linear")} />

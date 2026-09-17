@@ -1,12 +1,14 @@
 # Landing Action Library provenance
 
-The five actions below mirror the official Landing Action Library conversions from
+The seven actions below mirror the official Landing Action Library conversions from
 Character1 clips supplied by Quaternius' Universal Animation Library 1 (CC0 1.0):
 
 | MotionLoom action | Character1 source clip |
 | --- | --- |
 | `standard_walk_loop` | `Walk_Loop` |
 | `run_standard_loop` | `Jog_Fwd_Loop` |
+| `sprint_standard_loop` | `Sprint_Fwd_Loop` |
+| `slow_run_standard_loop` | Mixamo `Slow Run` (converted for Character1) |
 | `listening_idle_loop` | `Idle_Loop` |
 | `sit_down` | `Sitting_Enter` |
 | `sit_idle_loop` | `Sitting_Idle_Loop` |

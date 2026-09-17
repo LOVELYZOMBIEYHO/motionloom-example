@@ -1,13 +1,59 @@
-<!-- S89 / MIST COURTYARD / 4K close material study, no characters. -->
-<Graph fps={30} duration="8s" size={[3840,2160]}>
-  <RenderStyle id="courtyard_cinematic">
-    <SurfaceStyle shading="physical" specular="0.65" roughnessBias="0.12" />
+<!-- S89 / MIST COURTYARD / All current surface presets, two seconds each. -->
+<Graph fps={24} duration="16s" size={[1280,720]}>
+  <RenderStyle id="courtyard_filmic_physical">
+    <SurfaceStyle shading="filmic_physical_v1" specular="1" roughnessBias="0" />
     <OutlineStyle enabled="false" />
-    <DepthOfFieldStyle preset="cinematic_bokeh_v1" quality="high" />
-    <LightingStyle ambientIntensity="0.38" ambientColor="#D9E2E6" shadowStyle="soft" />
-    <PostStyle toneMapping="aces" exposure="1.08" saturation="1" contrast="1" whiteBalance="5700" bloomThreshold="1.5" bloomIntensity="0.025" />
-    <ColorStyle tint="#EFE2CA" tintStrength="0.035" saturation="0.92" />
-    <ToneStyle exposure="1" contrast="1.03" shadowColor="#333F40" highlightColor="#F4E4C7" toneStrength="0.06" />
+    <DepthOfFieldStyle preset="filmic_bokeh_v1" aperture="0.00032" maxBlur="0.0025" />
+    <LightingStyle ambientIntensity="0" ambientColor="#FFFFFF" shadowStyle="soft" />
+    <PostStyle toneMapping="filmic_aces_v1" exposure="0.97" saturation="1" contrast="1" whiteBalance="6500" bloomIntensity="0" />
+  </RenderStyle>
+  <RenderStyle id="courtyard_physical">
+    <SurfaceStyle shading="physical" specular="1" roughnessBias="0" />
+    <OutlineStyle enabled="false" />
+    <DepthOfFieldStyle preset="filmic_bokeh_v1" aperture="0.00032" maxBlur="0.0025" />
+    <LightingStyle ambientIntensity="0" ambientColor="#FFFFFF" shadowStyle="soft" />
+    <PostStyle toneMapping="aces" exposure="0.97" saturation="1" contrast="1" whiteBalance="6500" bloomIntensity="0" />
+  </RenderStyle>
+  <RenderStyle id="courtyard_stylized">
+    <SurfaceStyle shading="stylized" diffuseWrap="0.35" specular="0.12" />
+    <OutlineStyle enabled="false" />
+    <DepthOfFieldStyle preset="filmic_bokeh_v1" aperture="0.00032" maxBlur="0.0025" />
+    <LightingStyle ambientIntensity="0" ambientColor="#FFFFFF" shadowStyle="soft" />
+    <PostStyle toneMapping="aces" exposure="0.97" saturation="1" contrast="1" whiteBalance="6500" bloomIntensity="0" />
+  </RenderStyle>
+  <RenderStyle id="courtyard_toon">
+    <SurfaceStyle shading="toon" shadingSteps="3" diffuseWrap="0.2" rimLight="0.12" specular="0.05" />
+    <OutlineStyle enabled="false" />
+    <DepthOfFieldStyle preset="filmic_bokeh_v1" aperture="0.00032" maxBlur="0.0025" />
+    <LightingStyle ambientIntensity="0" ambientColor="#FFFFFF" shadowStyle="soft" />
+    <PostStyle toneMapping="aces" exposure="0.97" saturation="1" contrast="1" whiteBalance="6500" bloomIntensity="0" />
+  </RenderStyle>
+  <RenderStyle id="courtyard_clay">
+    <SurfaceStyle shading="clay" specular="0.08" roughnessBias="0.18" />
+    <OutlineStyle enabled="false" />
+    <DepthOfFieldStyle preset="filmic_bokeh_v1" aperture="0.00032" maxBlur="0.0025" />
+    <LightingStyle ambientIntensity="0" ambientColor="#FFFFFF" shadowStyle="soft" />
+    <PostStyle toneMapping="aces" exposure="0.97" saturation="1" contrast="1" whiteBalance="6500" bloomIntensity="0" />
+  </RenderStyle>
+  <RenderStyle id="courtyard_cel">
+    <SurfaceStyle shading="cel" shadingSteps="2" diffuseWrap="0" rimLight="4" rimPower="0.1" specular="0" saturation="3" shadowThreshold="0.5" shadowFeather="0.001" shadowColor="#000000" />
+    <OutlineStyle enabled="true" color="#000000" width="12" method="geometry" distanceMode="screen" />
+    <LightingStyle ambientIntensity="0" ambientColor="#FFFFFF" shadowStyle="hard" />
+    <PostStyle toneMapping="aces" exposure="1" saturation="1.4" contrast="1.2" whiteBalance="6500" bloomIntensity="0" />
+  </RenderStyle>
+  <RenderStyle id="courtyard_ink">
+    <SurfaceStyle shading="ink_wash_soft_v1" specular="1" roughnessBias="0" />
+    <OutlineStyle enabled="false" />
+    <DepthOfFieldStyle preset="filmic_bokeh_v1" aperture="0.00032" maxBlur="0.0025" />
+    <LightingStyle ambientIntensity="0" ambientColor="#FFFFFF" shadowStyle="soft" />
+    <PostStyle toneMapping="aces" exposure="0.97" saturation="1" contrast="1" whiteBalance="6500" bloomIntensity="0" />
+    <ColorStyle tint="#FFF7EC" tintStrength="0.02" saturation="1.02" />
+    <ToneStyle exposure="1" contrast="1" shadowColor="#3A424B" highlightColor="#FFF3DF" toneStrength="0.08" />
+  </RenderStyle>
+  <!-- Diagnostic grey model: only the minimum material override, without grading or lens presets. -->
+  <RenderStyle id="courtyard_grey_model">
+    <SurfaceStyle shading="clay" specular="0" roughnessBias="1" />
+    <ColorStyle saturation="0" />
   </RenderStyle>
   <Assets>
     <ImageAsset id="sky_asset" src="assets/sky.png" />
@@ -15,18 +61,18 @@
     <ModelAsset id="mountains_asset" src="assets/mountains-detail.glb" />
   </Assets>
   <Background color="#CBDCE4" />
-  <Scene id="S89MistCourtyard" renderStyle="courtyard_cinematic">
+  <Scene id="S89MistCourtyard" renderStyle="courtyard_filmic_physical">
     <Timeline>
       <Track id="world" space="3d">
-        <Sequence from="0s" duration="8s" out="hold">
+        <Sequence from="0s" duration="16s" out="hold">
           <CompositeGroup id="s89_stage" space="3d" depth="true" format="rgba16f">
-            <Camera3D id="s89_camera" position={[-0.3,2.6,3.8]} target={[-3.8,2.75,-1.9]} fov="52" depthOfField="true" focusDistance="6.7" focalLength="85" fStop="1.4" maxBlur="2" maxBlurUnit="percentHeight" />
-            <EnvironmentLight id="sky" asset="sky_asset" intensity="0.7" visible="true" backgroundIntensity="0.65" diffuseIntensity="0.9" specularIntensity="0.5" />
-            <DirectionalLight id="sun" direction={[-.9,-.65,-.3]} color="#FFE3BC" intensity="3.6" castShadow="true" shadowStrength="0.56" />
+            <Camera3D id="s89_camera" position={[1.25,2.35,9]} target={[0,2.9,-13]} fov="57" depthOfField="true" focusDistance="16.2" maxBlur="0" />
+            <EnvironmentLight id="sky" asset="sky_asset" intensity="0.1" visible="true" backgroundIntensity="0.65" diffuseIntensity="1" specularIntensity="1" />
+            <DirectionalLight id="sun" direction={[-.9,-.65,-.3]} color="#FFE3BC" intensity="3.75" castShadow="true" shadowStrength="1" />
             <DirectionalLight id="sky_fill" direction={[.35,-.45,-.8]} color="#CBDDEB" intensity="0.45" />
             <PointLight id="lantern_fill" position={[-2.8,4.2,-1.9]} color="#FFD196" intensity="12" range="4" />
-            <AmbientOcclusion radius="0.35" intensity="0.28" />
-            <ContactShadow distance="0.2" softness="0.85" intensity="0.32" />
+            <AmbientOcclusion radius="0.35" intensity="0" />
+            <ContactShadow distance="0.2" softness="0.85" intensity="0" />
             <AtmosphereFog id="courtyard_mist" mode="linear" color="#C6D1D2" start="16" end="95" density="0.018" scattering="0.05" affectSky="false" />
             <Model id="courtyard" asset="courtyard_asset" scaleMode="none" scale="1" castShadow="true" receiveShadow="true" />
             <Model id="mountains" asset="mountains_asset" scaleMode="none" scale="1" />
@@ -35,9 +81,20 @@
       </Track>
     </Timeline>
   </Scene>
+  <!-- The original push ends at 8s; discrete style cuts continue on its held frame. -->
   <AnimationTarget node="s89_camera" property="position">
-    <Key time="0s" value={[-0.3,2.6,3.8]} />
-    <Key time="8s" value={[-0.55,2.6,3.5]} ease="ease_in_out" />
+    <Key time="0s" value={[1.25,2.35,9]} />
+    <Key time="8s" value={[.9,2.42,8]} ease="ease_in_out" />
+  </AnimationTarget>
+  <AnimationTarget node="S89MistCourtyard" property="renderStyle">
+    <Key time="0s" value="courtyard_filmic_physical" />
+    <Key time="2s" value="courtyard_physical" />
+    <Key time="4s" value="courtyard_stylized" />
+    <Key time="6s" value="courtyard_toon" />
+    <Key time="8s" value="courtyard_clay" />
+    <Key time="10s" value="courtyard_cel" />
+    <Key time="12s" value="courtyard_ink" />
+    <Key time="14s" value="courtyard_grey_model" />
   </AnimationTarget>
   <Present from="S89MistCourtyard" />
 </Graph>

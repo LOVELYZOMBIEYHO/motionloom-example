@@ -10638,29 +10638,7 @@ COMPOSITION
 
   <Background color="#F4C583" />
 
-  <RenderStyle id="s92_pbr">
-    <SurfaceStyle shading="physical" />
-    <AntiAliasingStyle method="taa" quality="ultra" fallback="smaa" sharpness="0.06" />
-  </RenderStyle>
-  <RenderStyle id="s92_cel">
-    <SurfaceStyle shading="cel" shadingSteps="3" diffuseWrap="0.25" rimLight="0.35"
-                  rimPower="4" specular="0.06" shadowThreshold="0.42"
-                  shadowFeather="0.015" shadowColor="#39406B" />
-    <LightingStyle ambientIntensity="0.35" ambientColor="#BFCBE8" shadowStyle="hard" />
-    <ToneStyle exposure="1.02" contrast="1.1" toneStrength="0.30"
-               shadowColor="#333A5C" highlightColor="#FFE3B8" />
-    <PostStyle toneMapping="aces" exposure="1.0" saturation="1.15"
-               contrast="1.08" whiteBalance="5200" />
-  </RenderStyle>
-  <RenderStyle id="s92_tone2">
-    <SurfaceStyle shading="toon" shadingSteps="2" diffuseWrap="0.45"
-                  rimLight="0.28" rimPower="6" specular="0.08" />
-    <ToneStyle exposure="1.02" contrast="1.12" toneStrength="0.42"
-               shadowColor="#2E3350" highlightColor="#FFD8A0" />
-    <PostStyle toneMapping="aces" exposure="1.0" saturation="1.12"
-               contrast="1.06" whiteBalance="5200" />
-  </RenderStyle>
-  <Scene id="S92TheLastBaton" renderStyle="s92_pbr">
+  <Scene id="S92TheLastBaton">
     <Defs>
       <LinearGradient id="s92_sky" x1="0" y1="0" x2="0" y2="1"
                       stops="0:#4E7FA8, 0.5:#C9A26E, 0.86:#FFD9A0, 1:#FFC47E" />
