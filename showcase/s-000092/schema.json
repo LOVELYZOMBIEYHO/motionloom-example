@@ -330,24 +330,13 @@
       "validationCoverage": "strict",
       "attributes": [
         {
-          "name": "affectSky",
+          "name": "affectEnvironment",
           "occurrences": 1,
           "examples": [
             "\"false\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
-        },
-        {
-          "name": "color",
-          "occurrences": 1,
-          "examples": [
-            "\"#F0C088\""
-          ],
-          "recognized": true,
-          "valueType": "color",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
         },
         {
           "name": "density",
@@ -370,24 +359,13 @@
           "supportsAnimationTarget": false
         },
         {
-          "name": "mode",
+          "name": "scatteringColor",
           "occurrences": 1,
           "examples": [
-            "\"exp\""
+            "\"#F0C088\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
-        },
-        {
-          "name": "scattering",
-          "occurrences": 1,
-          "examples": [
-            "\"0.035\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
         }
       ]
     },
@@ -1193,8 +1171,20 @@
       "tag": "Image",
       "occurrences": 1,
       "recognized": true,
-      "validationCoverage": "open",
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "asset"
+      ],
       "attributes": [
+        {
+          "name": "asset",
+          "occurrences": 1,
+          "examples": [
+            "\"s92_sky\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
         {
           "name": "opacity",
           "occurrences": 1,
@@ -1218,15 +1208,6 @@
           "supportsAnimationTarget": true
         },
         {
-          "name": "src",
-          "occurrences": 1,
-          "examples": [
-            "\"assets/sky.png\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
           "name": "x",
           "occurrences": 1,
           "examples": [
@@ -1247,6 +1228,32 @@
           "valueType": "number",
           "supportsInlineExpression": true,
           "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "ImageAsset",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"s92_sky\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "src",
+          "occurrences": 1,
+          "examples": [
+            "\"assets/sky.png\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
         }
       ]
     },
@@ -3480,6 +3487,7 @@
   ],
   "assetKinds": [
     "compound",
+    "image",
     "material",
     "model",
     "primitive"

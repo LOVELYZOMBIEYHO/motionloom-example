@@ -38,6 +38,7 @@ COMPOSITION
 -->
 <Graph fps={24} duration="12s" size={[1280,720]} renderSize={[1280,720]}>
   <Assets>
+    <ImageAsset id="s92_sky" src="assets/sky.png" />
     <!-- ── The two runners share one canonical humanoid asset ──────── -->
     <ModelAsset id="s92_hero_model" src="../../assets/sample_assets/characters/character1/character1.glb" />
 
@@ -10659,7 +10660,7 @@ COMPOSITION
         <Sequence from="0s" duration="12s" out="hold">
           <Layer space="screen">
             <Rect x="0" y="0" width="1280" height="720" fill="url(#s92_sky)" />
-            <Image src="assets/sky.png" opacity="0.78"
+            <Image asset="s92_sky" opacity="0.78"
                    x="-230+8.33*$time.sec" y="0" scale="1.0" />
             <Circle x="1086" y="236" radius="170" fill="url(#s92_sun_glow)" blend="screen" />
             <Rect x="0" y="286" width="1280" height="150" fill="url(#s92_haze_band)" opacity="0.55" />
@@ -10714,8 +10715,8 @@ COMPOSITION
                            softness="0.36" />
             <ColorManagement id="s92_grade" toneMapping="aces" exposure="1.05"
                              whiteBalance="5200" contrast="1.04" />
-            <AtmosphereFog id="s92_haze" mode="exp" color="#F0C088"
-                           density="0.0028" scattering="0.035" affectSky="false" />
+            <AtmosphereFog id="s92_haze" scatteringColor="#F0C088"
+                           density="0.0028" affectEnvironment="false" />
 
             <Camera3D id="s92_cam_pov"
                       position={["-45.37+5.084*$time.sec",

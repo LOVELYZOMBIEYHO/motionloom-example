@@ -1,6 +1,3 @@
-<!-- ========================================= -->
-<!-- ========================================= -->
-<!-- showcase/s-000095/main.motionloom -->
 <Graph fps={24} duration="25s" size={[1200,800]} renderSize={[1200,800]}>
 <RenderStyle id="native_studio">
   <SurfaceStyle shading="filmic_physical_v1" specular="0.30" />
@@ -10,6 +7,11 @@
   <DepthOfFieldStyle preset="filmic_bokeh_v1" aperture="0.00042" maxBlur="0.0032" />
   <ColorStyle tint="#A8D8E8" tintStrength="0.06" saturation="0.95" />
   <AntiAliasingStyle method="taa" quality="high" fallback="smaa" sharpness="0.12" />
+</RenderStyle>
+<RenderStyle id="s95_weaver">
+  <SurfaceStyle shading="physical" />
+  <LightingStyle ambientIntensity="0.12" ambientColor="#24485A" shadowStyle="soft" />
+  <PostStyle toneMapping="filmic_aces_v1" exposure="1.0" saturation="0.92" contrast="1.08" />
 </RenderStyle>
 <Assets>
 <ImageAsset id="mouth_reference" src="texture/mouth-reference.png" colorSpace="srgb" />
@@ -23544,25 +23546,22 @@
           <EnvironmentLight id="s95_ibl" asset="s95_env" mapping="equirectangular"
                             intensity={curve("0:1.0:linear, 3.6:1.0:linear, 4.4:0.10:linear, 7.3:0.10:linear, 8.0:0.20:linear, 12.3:0.20:linear, 13.0:0.10:linear, 16.8:0.10:linear, 20.45:1.0:ease_in, 25:1.0:linear")} visible="false" backgroundIntensity="0"
                             backgroundBlur="0.35" diffuseIntensity="0.48" specularIntensity="0.85" />
-          <SpotLight id="s95_sun" position={[-3,8,2]} direction={[0.12,-1,0.15]}
-                     color="#C4ECFF" intensity={curve("0:42:linear, 3.6:42:linear, 4.4:4.2:linear, 7.3:4.2:linear, 8.0:8.4:linear, 12.3:8.4:linear, 13.0:4.2:linear, 16.8:4.2:linear, 20.45:42:ease_in, 25:42:linear")} range="38"
-                     innerCone="20" outerCone="44"
-                     castShadow="true" />
+          <DirectionalLight id="s95_sun" direction={[0.12,-1,0.15]} color="#C4ECFF"
+                            intensity={curve("0:42:linear, 3.6:42:linear, 4.4:4.2:linear, 7.3:4.2:linear, 8.0:8.4:linear, 12.3:8.4:linear, 13.0:4.2:linear, 16.8:4.2:linear, 20.45:42:ease_in, 25:42:linear")} castShadow="true" />
           <DirectionalLight id="s95_key" direction={[-0.15,-1,-0.35]} color="#CFE9F5"
                             intensity={curve("0:1.15:linear, 3.6:1.15:linear, 4.4:0.115:linear, 7.3:0.115:linear, 8.0:0.23:linear, 12.3:0.23:linear, 13.0:0.115:linear, 16.8:0.115:linear, 20.45:1.15:ease_in, 25:1.15:linear")} castShadow="false" />
           <DirectionalLight id="s95_rim" direction={[0.3,0.05,0.9]} color="#5FA8C8"
                             intensity={curve("0:0.55:linear, 3.6:0.55:linear, 4.4:0.055:linear, 7.3:0.055:linear, 8.0:0.11:linear, 12.3:0.11:linear, 13.0:0.055:linear, 16.8:0.055:linear, 20.45:0.55:ease_in, 25:0.55:linear")} castShadow="false" />
-          <AtmosphereFog id="s95_sea" mode="linear" color="#061C2A" start="2.0" end="24"
-                         density="0.018" scattering="0.16" affectSky="true"
-                         absorption={[0.075,0.032,0.012]}
+          <AtmosphereFog id="s95_sea"
+                         density="0.018" anisotropy="0.68" affectEnvironment="true"
                          scatteringColor={[0.018,0.060,0.095]}
                          boundsMin={[-42,-18,-46]} boundsMax={[42,18,6]}
                          edgeFeather="2.0">
             <VolumetricScattering id="s95_volume" lightRef="s95_sun"
-                                  intensity={curve("0:1.15:linear, 3.6:1.15:linear, 4.4:0.115:linear, 7.3:0.115:linear, 8.0:0.23:linear, 12.3:0.23:linear, 13.0:0.115:linear, 16.8:0.115:linear, 20.45:1.15:ease_in, 25:1.15:linear")} anisotropy="0.68"
+                                  shaftStrength={curve("0:1.15:linear, 3.6:1.15:linear, 4.4:0.115:linear, 7.3:0.115:linear, 8.0:0.23:linear, 12.3:0.23:linear, 13.0:0.115:linear, 16.8:0.115:linear, 20.45:1.15:ease_in, 25:1.15:linear")}
                                   maxDistance="34" shadowed="true" />
             <WaterCaustics id="s95_caustics" intensity={curve("0:0.26:linear, 3.6:0.26:linear, 4.4:0.026:linear, 7.3:0.026:linear, 8.0:0.052:linear, 12.3:0.052:linear, 13.0:0.026:linear, 16.8:0.026:linear, 20.45:0.26:ease_in, 25:0.26:linear")} scale="0.55"
-                           speed="0.22" depthFalloff="0.11" color="#BFE9FF"
+                           speed="0.22" attenuation="0.11" color="#BFE9FF"
                            volumeTerm="true" surfaceTerm="true" />
           </AtmosphereFog>
           <AmbientOcclusion id="s95_ao" radius="0.24" intensity="0.42" />
@@ -23648,71 +23647,6 @@
       </Sequence>
     </Track>
 
-    <Track id="s95_film" space="screen" compositeOrder="70">
-      <Sequence from="0s" duration="25s" out="hold">
-        <Layer space="screen">
-          <Rect id="s95_depth_occlusion" x="0" y="0" width="1200" height="800" color="#04121C" opacity={curve("0:1.000000:linear, 3.8:1.000000:linear, 4.6:0.300000:linear, 5.6:0.000000:linear, 6.6:0.150000:linear, 7.2:1.000000:linear, 8:1.000000:linear, 8.6:0.100000:linear, 9:0.000000:linear, 11.4:0.000000:linear, 12.3:1.000000:linear, 16.8:1.000000:linear, 17.5:0.650000:linear, 18.4:0.000000:linear, 25:0.000000:linear")} />
-          <Group id="s95_motes" opacity="0.5"
-                 x={curve("0:0:linear, 25:-65:ease_in_out")}
-                 y={curve("0:0:linear, 25:-95:ease_in_out")}>
-            <Repeat id="s95_mote_a" count="16" x="120" y="180" xStep="57" yStep="31"
-                    opacity="0.20" opacityStep="-0.006" rotationStep="29">
-              <Circle x="0" y="0" radius="1.5" color="#9FD4E8" />
-            </Repeat>
-            <Repeat id="s95_mote_b" count="12" x="640" y="520" xStep="-43" yStep="23"
-                    opacity="0.14" opacityStep="-0.005" rotationStep="-17">
-              <Circle x="0" y="0" radius="2.2" color="#6FA8BF" />
-            </Repeat>
-          </Group>
-
-          <Rect id="s95_vignette" x="0" y="0" width="1200" height="800"
-                fill="url(#s95_vignette)" opacity="0.9" />
-
-<Text id="s95_open_glow" value="MOTIONLOOM" x="center" y="360"
-                fontFamily="Avenir Next" fontWeight="thin" fontSize="72" tracking="30"
-                color="#63B4D4" blur="18"
-                opacity={curve("0:0:linear, 1.4:0.30:ease_out, 2.45:0.30:linear, 3.15:0:ease_in")} />
-          <Text id="s95_open_title" value="MOTIONLOOM" x="center" y="360"
-                fontFamily="Avenir Next" fontWeight="thin" fontSize="72" tracking="30"
-                color="#F2F8FB"
-                scale={curve("0:1.06:linear, 3.2:1.0:linear")}
-                opacity={curve("0:0:linear, 0.45:0:linear, 1.30:1:ease_out, 2.45:1:linear, 3.15:0:ease_in")} />
-          <Rect id="s95_open_rule" x="420" y="458"
-                width={curve("1.15:0:linear, 2.05:360:ease_out, 2.55:360:linear")}
-                height="1" color="#7FC4DC"
-                opacity={curve("1.30:0:linear, 2.05:0.60:ease_out, 2.55:0.60:linear, 3.10:0:ease_in")} />
-          <Text id="s95_open_tag" value="BELOW THE SURFACE" x="center" y="486"
-                fontFamily="Avenir Next" fontWeight="thin" fontSize="15" tracking="9"
-                color="#7FA9BE"
-                opacity={curve("1.55:0:linear, 2.20:0.85:ease_out, 2.55:0.85:linear, 3.10:0:ease_in")} />
-
-          <Rect id="s95_bar_top" x="0" y="0" width="1200" height="100" color="#000000" />
-          <Rect id="s95_bar_bottom" x="0" y="700" width="1200" height="100" color="#000000" />
-
-          <Rect id="s95_black" x="0" y="0" width="1200" height="800" color="#000000"
-                opacity={curve("0:1.000000:linear, 1.2:0.000000:linear, 20.58:0.000000:linear, 20.66:1.000000:linear, 25:1.000000:linear")} />
-
-          <Text id="s95_end_credit" value="A MOTIONLOOM PICTURE" x="center" y="298"
-                fontFamily="Avenir Next" fontWeight="thin" fontSize="15" tracking="12"
-                color="#93BFD2"
-                opacity={curve("0:0:linear, 21.5:0:linear, 22.5:1:ease_out, 24.0:1:linear, 24.85:0:ease_in")} />
-          <Text id="s95_end_glow" value="BELOW THE SURFACE" x="center" y="336"
-                fontFamily="Avenir Next" fontWeight="thin" fontSize="48" tracking="12"
-                color="#63B4D4" blur="16"
-                opacity={curve("0:0:linear, 21.5:0:linear, 22.5:0.25:ease_out, 24.0:0.25:linear, 24.85:0:ease_in")} />
-          <Text id="s95_end_title" value="BELOW THE SURFACE" x="center" y="336"
-                fontFamily="Avenir Next" fontWeight="thin" fontSize="48" tracking="12"
-                color="#F2F8FB"
-                opacity={curve("0:0:linear, 21.5:0:linear, 22.5:1:ease_out, 24.0:1:linear, 24.85:0:ease_in")} />
-          <Rect id="s95_end_rule" x="490" y="434" width="220" height="1" color="#7FC4DC"
-                opacity={curve("0:0:linear, 21.5:0:linear, 22.5:1:ease_out, 24.0:1:linear, 24.85:0:ease_in")} />
-          <Text id="s95_end_tag" value="YOU WERE NEVER ALONE." x="center" y="464"
-                fontFamily="Avenir Next" fontWeight="thin" fontSize="15" tracking="5"
-                color="#7FA9BE"
-                opacity={curve("0:0:linear, 21.5:0:linear, 22.5:1:ease_out, 24.0:1:linear, 24.85:0:ease_in")} />
-        </Layer>
-      </Sequence>
-    </Track>
   </Timeline>
 
 </Scene>

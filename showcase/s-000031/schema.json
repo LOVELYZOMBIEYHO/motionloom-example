@@ -4,6 +4,13 @@
   "rootTag": "Graph",
   "tags": [
     {
+      "tag": "Assets",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": []
+    },
+    {
       "tag": "Background",
       "occurrences": 1,
       "recognized": true,
@@ -251,8 +258,20 @@
       "tag": "Image",
       "occurrences": 1,
       "recognized": true,
-      "validationCoverage": "open",
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "asset"
+      ],
       "attributes": [
+        {
+          "name": "asset",
+          "occurrences": 1,
+          "examples": [
+            "\"s31_book_anica_logo\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
         {
           "name": "id",
           "occurrences": 1,
@@ -285,15 +304,6 @@
           "supportsAnimationTarget": true
         },
         {
-          "name": "src",
-          "occurrences": 1,
-          "examples": [
-            "\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAHCCAYAAAAXY63IAABlyUlEQVR4Ae3AA6AkWZbG8f937o3IzKdyS2Oubdu2bdu2bdu2…"
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
           "name": "x",
           "occurrences": 1,
           "examples": [
@@ -314,6 +324,32 @@
           "valueType": "number",
           "supportsInlineExpression": true,
           "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "ImageAsset",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"s31_book_anica_logo\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "src",
+          "occurrences": 1,
+          "examples": [
+            "\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAHCCAYAAAAXY63IAABlyUlEQVR4Ae3AA6AkWZbG8f937o3IzKdyS2Oubdu2bdu2bdu2…"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
         }
       ]
     },
@@ -1292,5 +1328,7 @@
     }
   ],
   "animationProperties": [],
-  "assetKinds": []
+  "assetKinds": [
+    "image"
+  ]
 }

@@ -384,7 +384,7 @@ script='''<!-- MAIN2: original procedural characters, native MotionLoom CEL; MAI
 '''+ '\n'.join(cam)+'''
 <DirectionalLight direction={[.55,-1,.3]} color="#FFF0BC" intensity="2.7" castShadow="true" shadowStrength="0.45" />
 <DirectionalLight direction={[-.4,-.15,-1]} color="#E1F0E8" intensity="0.65" />
-<AtmosphereFog id="morning_air" mode="exp" color="#DAE5DE" density="0.022" start="14" end="65" scattering="0.06" affectSky="false" />
+<AtmosphereFog id="morning_air" scatteringColor="#DAE5DE" density="0.022" affectEnvironment="false" />
 <Model id="park" asset="park_asset" castShadow="true" receiveShadow="true" />
 <Model id="actors" asset="actors_asset" castShadow="true" receiveShadow="true">
 <Play clip="film" loop="false" speed="1" />

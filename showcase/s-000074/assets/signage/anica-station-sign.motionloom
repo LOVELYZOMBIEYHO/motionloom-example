@@ -1,12 +1,16 @@
 <!-- S74 station sign composites sharp type after the official logo-only bloom pass. -->
 <Graph fps={30} duration="1s" size={[1600,240]} renderSize={[1600,240]}>
+
+  <Assets>
+    <ImageAsset id="s74_signage_anica_station_logo_bloom" src="anica-station-logo-bloom.png" />
+  </Assets>
   <Background color="#063A5B" />
   <Scene id="S74AnicaStationSign">
     <Timeline>
       <Track id="sign_art" space="screen" z="0">
         <Sequence from="0s" duration="1s" out="hold">
           <Layer space="screen">
-            <Image src="anica-station-logo-bloom.png" x="0" y="0" width="1600" height="240" />
+            <Image asset="s74_signage_anica_station_logo_bloom" x="0" y="0" />
             <Text value="Welcome to Anica Station !"
                   x="490" y="75" fontFamily="Arial" fontSize="66"
                   fontWeight="700" tracking="0.4" color="#DCEAF0" />

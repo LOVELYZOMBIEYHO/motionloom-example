@@ -307,7 +307,7 @@
       "validationCoverage": "strict",
       "attributes": [
         {
-          "name": "affectSky",
+          "name": "affectEnvironment",
           "occurrences": 1,
           "examples": [
             "\"true\""
@@ -334,17 +334,6 @@
           "supportsAnimationTarget": false
         },
         {
-          "name": "color",
-          "occurrences": 1,
-          "examples": [
-            "\"#668FA8\""
-          ],
-          "recognized": true,
-          "valueType": "color",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
           "name": "density",
           "occurrences": 1,
           "examples": [
@@ -367,17 +356,6 @@
           "supportsAnimationTarget": true
         },
         {
-          "name": "end",
-          "occurrences": 1,
-          "examples": [
-            "\"36\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
           "name": "id",
           "occurrences": 1,
           "examples": [
@@ -387,35 +365,13 @@
           "supportsAnimationTarget": false
         },
         {
-          "name": "mode",
+          "name": "scatteringColor",
           "occurrences": 1,
           "examples": [
-            "\"exp\""
+            "\"#668FA8\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
-        },
-        {
-          "name": "scattering",
-          "occurrences": 1,
-          "examples": [
-            "\"0.08\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
-          "name": "start",
-          "occurrences": 1,
-          "examples": [
-            "\"0\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
         }
       ]
     },

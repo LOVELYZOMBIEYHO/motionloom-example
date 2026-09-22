@@ -4,6 +4,13 @@
   "rootTag": "Graph",
   "tags": [
     {
+      "tag": "Assets",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": []
+    },
+    {
       "tag": "Background",
       "occurrences": 1,
       "recognized": true,
@@ -178,8 +185,21 @@
       "tag": "Image",
       "occurrences": 2,
       "recognized": true,
-      "validationCoverage": "open",
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "asset"
+      ],
       "attributes": [
+        {
+          "name": "asset",
+          "occurrences": 2,
+          "examples": [
+            "\"s38_image_01\"",
+            "\"s38_image_02\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
         {
           "name": "opacity",
           "occurrences": 2,
@@ -203,16 +223,6 @@
           "supportsAnimationTarget": true
         },
         {
-          "name": "src",
-          "occurrences": 2,
-          "examples": [
-            "\"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKA…",
-            "\"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAkACQAAD/4QCSRXhpZgAATU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAA…"
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
           "name": "x",
           "occurrences": 2,
           "examples": [
@@ -233,6 +243,34 @@
           "valueType": "number",
           "supportsInlineExpression": true,
           "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "ImageAsset",
+      "occurrences": 2,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 2,
+          "examples": [
+            "\"s38_image_01\"",
+            "\"s38_image_02\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "src",
+          "occurrences": 2,
+          "examples": [
+            "\"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKA…",
+            "\"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAkACQAAD/4QCSRXhpZgAATU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAA…"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
         }
       ]
     },
@@ -756,5 +794,7 @@
     }
   ],
   "animationProperties": [],
-  "assetKinds": []
+  "assetKinds": [
+    "image"
+  ]
 }

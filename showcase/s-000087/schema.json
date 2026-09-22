@@ -857,17 +857,7 @@
       "validationCoverage": "strict",
       "attributes": [
         {
-          "name": "definition",
-          "occurrences": 2,
-          "examples": [
-            "\"cream\"",
-            "\"reader_mat\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "material",
+          "name": "modelSourceMaterial",
           "occurrences": 2,
           "examples": [
             "\"M_Main\""
@@ -883,18 +873,28 @@
           ],
           "recognized": true,
           "supportsAnimationTarget": false
+        },
+        {
+          "name": "tint",
+          "occurrences": 2,
+          "examples": [
+            "\"#79ABA4\"",
+            "\"#EEE0C6\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
         }
       ]
     },
     {
       "tag": "Model",
-      "occurrences": 355,
+      "occurrences": 354,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
           "name": "asset",
-          "occurrences": 355,
+          "occurrences": 354,
           "examples": [
             "\"artist_character1\"",
             "\"bench\"",
@@ -906,7 +906,7 @@
         },
         {
           "name": "castShadow",
-          "occurrences": 353,
+          "occurrences": 352,
           "examples": [
             "\"true\""
           ],
@@ -915,7 +915,7 @@
         },
         {
           "name": "id",
-          "occurrences": 355,
+          "occurrences": 354,
           "examples": [
             "\"artist\"",
             "\"bench0\"",
@@ -927,7 +927,7 @@
         },
         {
           "name": "position",
-          "occurrences": 355,
+          "occurrences": 354,
           "examples": [
             "{[-0.0,3.62046,-9.79927]}",
             "{[-0.14572,0.62948,1.47954]}",
@@ -952,7 +952,7 @@
         },
         {
           "name": "receiveShadow",
-          "occurrences": 353,
+          "occurrences": 352,
           "examples": [
             "\"true\""
           ],
@@ -961,7 +961,7 @@
         },
         {
           "name": "rotation",
-          "occurrences": 351,
+          "occurrences": 350,
           "examples": [
             "{[-18,0,0]}",
             "{[-4.47409,0,-7.54945]}",
@@ -986,7 +986,7 @@
         },
         {
           "name": "scale",
-          "occurrences": 355,
+          "occurrences": 354,
           "examples": [
             "\"0.6682566940192062\"",
             "\"0.6717881345260742\"",

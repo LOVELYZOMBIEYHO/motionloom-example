@@ -13,10 +13,10 @@
 | [alpha](features/alpha.md) | 2 |
 | [alpha-mesh](features/alpha-mesh.md) | 4 |
 | [ambient-occlusion](features/ambient-occlusion.md) | 12 |
-| [animation-target](features/animation-target.md) | 25 |
+| [animation-target](features/animation-target.md) | 26 |
 | [anime](features/anime.md) | 9 |
 | [antialias](features/antialias.md) | 1 |
-| [assets](features/assets.md) | 22 |
+| [assets](features/assets.md) | 23 |
 | [attraction](features/attraction.md) | 1 |
 | [audio](features/audio.md) | 1 |
 | [audio-editing](features/audio-editing.md) | 1 |
@@ -37,7 +37,7 @@
 | [brightness](features/brightness.md) | 1 |
 | [cache-bake](features/cache-bake.md) | 1 |
 | [camera](features/camera.md) | 6 |
-| [camera-3d](features/camera-3d.md) | 21 |
+| [camera-3d](features/camera-3d.md) | 22 |
 | [camera-cut](features/camera-cut.md) | 2 |
 | [canvas-texture](features/canvas-texture.md) | 1 |
 | [capsule-collision](features/capsule-collision.md) | 2 |
@@ -84,7 +84,7 @@
 | [effect-scope](features/effect-scope.md) | 1 |
 | [embedded-animation-clips](features/embedded-animation-clips.md) | 1 |
 | [enum-param](features/enum-param.md) | 1 |
-| [environment](features/environment.md) | 6 |
+| [environment](features/environment.md) | 7 |
 | [environment-surface](features/environment-surface.md) | 1 |
 | [external-action](features/external-action.md) | 4 |
 | [external-texture](features/external-texture.md) | 3 |
@@ -176,8 +176,8 @@
 | [path-offset](features/path-offset.md) | 1 |
 | [path-taper](features/path-taper.md) | 1 |
 | [path-trim](features/path-trim.md) | 1 |
-| [pbr](features/pbr.md) | 6 |
-| [pbr-lighting](features/pbr-lighting.md) | 12 |
+| [pbr](features/pbr.md) | 7 |
+| [pbr-lighting](features/pbr-lighting.md) | 13 |
 | [pin](features/pin.md) | 3 |
 | [polar-noise](features/polar-noise.md) | 2 |
 | [polyline](features/polyline.md) | 3 |
@@ -218,14 +218,14 @@
 | [scan-mask](features/scan-mask.md) | 1 |
 | [scanlines](features/scanlines.md) | 3 |
 | [scatter](features/scatter.md) | 2 |
-| [scene](features/scene.md) | 111 |
+| [scene](features/scene.md) | 112 |
 | [scene-gravity](features/scene-gravity.md) | 2 |
 | [scene-physics](features/scene-physics.md) | 2 |
 | [screen-blend](features/screen-blend.md) | 1 |
 | [seeded-random](features/seeded-random.md) | 1 |
 | [semantic-bind](features/semantic-bind.md) | 2 |
 | [sequence](features/sequence.md) | 1 |
-| [shadow-map](features/shadow-map.md) | 13 |
+| [shadow-map](features/shadow-map.md) | 14 |
 | [shape](features/shape.md) | 31 |
 | [sin](features/sin.md) | 2 |
 | [skeleton](features/skeleton.md) | 2 |
@@ -237,7 +237,7 @@
 | [spring-chain](features/spring-chain.md) | 4 |
 | [squint-animation](features/squint-animation.md) | 1 |
 | [starburst](features/starburst.md) | 1 |
-| [static-composition](features/static-composition.md) | 4 |
+| [static-composition](features/static-composition.md) | 5 |
 | [steam](features/steam.md) | 1 |
 | [storytelling](features/storytelling.md) | 5 |
 | [stress-test](features/stress-test.md) | 1 |
@@ -257,7 +257,7 @@
 | [transition](features/transition.md) | 6 |
 | [transparent-background](features/transparent-background.md) | 1 |
 | [triangle](features/triangle.md) | 1 |
-| [true-3d](features/true-3d.md) | 23 |
+| [true-3d](features/true-3d.md) | 24 |
 | [turbulence](features/turbulence.md) | 2 |
 | [two-bone-ik](features/two-bone-ik.md) | 3 |
 | [typing-effect](features/typing-effect.md) | 1 |

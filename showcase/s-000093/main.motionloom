@@ -87,9 +87,10 @@
   </RenderStyle>
 
   <Assets>
-    <ImageAsset id="s93_sky" src="../s-000089/assets/sky.png" />
+    <ImageAsset id="s93_sky" src="../s-000090/assets/meadow_daylight.exr" />
     <ModelAsset id="s93_courtyard" src="../s-000089/assets/courtyard-detail.glb" />
     <ModelAsset id="s93_mountains" src="../s-000089/assets/mountains-detail.glb" />
+    <MaterialAsset id="s93_petal_pink" baseColor="#D96F94" roughness="0.78" metallic="0" />
   </Assets>
 
   <Background color="#CBDCE4" />
@@ -99,12 +100,24 @@
         <Sequence from="0s" duration="40s" out="hold">
           <CompositeGroup id="s93_stage" space="3d" depth="true" format="rgba16f">
             <Camera3D id="s93_camera" position={[1.25,2.35,9]} target={[0,2.9,-13]} fov="57" depthOfField="false" />
-            <EnvironmentLight id="s93_sky_light" asset="s93_sky" intensity="0.1" visible="true" backgroundIntensity="0.65" diffuseIntensity="1" specularIntensity="1" />
+            <EnvironmentLight id="s93_sky_light" asset="s93_sky" mapping="equirectangular" intensity="0.9" visible="true" backgroundIntensity="0.65" diffuseIntensity="1" specularIntensity="1" />
             <DirectionalLight id="s93_sun" direction={[-.9,-.65,-.3]} color="#FFE3BC" intensity="3.75" castShadow="true" shadowStrength="1" />
             <DirectionalLight id="s93_sky_fill" direction={[.35,-.45,-.8]} color="#CBDDEB" intensity="0.45" />
             <PointLight id="s93_lantern_fill" position={[-2.8,4.2,-1.9]} color="#FFD196" intensity="12" range="4" />
-            <AtmosphereFog id="s93_mist" mode="linear" color="#C6D1D2" start="16" end="95" density="0.018" scattering="0.05" affectSky="false" />
-            <Model id="s93_courtyard_model" asset="s93_courtyard" scaleMode="none" scale="1" castShadow="true" receiveShadow="true" />
+            <AtmosphereFog id="s93_mist" scatteringColor="#C6D1D2" density="0.018" affectEnvironment="false" />
+            <Model id="s93_courtyard_model" asset="s93_courtyard" scaleMode="none" scale="1" castShadow="true" receiveShadow="true">
+              <MaterialBinding modelSourceMaterial="porcelain pink petals" definition="s93_petal_pink" />
+              <MaterialBinding modelSourceMaterial="limestone 0" roughness="0.2" />
+              <MaterialBinding modelSourceMaterial="limestone 1" roughness="0.2" />
+              <MaterialBinding modelSourceMaterial="limestone 2" roughness="0.2" />
+              <MaterialBinding modelSourceMaterial="limestone 3" roughness="0.2" />
+              <MaterialBinding modelSourceMaterial="weathered rosewood" roughness="0.2" />
+              <MaterialBinding modelSourceMaterial="ink stained timber" roughness="0.3" />
+              <MaterialBinding modelSourceMaterial="celadon porcelain" roughness="0.25" />
+              <MaterialBinding modelSourceMaterial="mist rock 0" roughness="0.9" />
+              <MaterialBinding modelSourceMaterial="mist rock 1" roughness="0.9" />
+              <MaterialBinding modelSourceMaterial="mist rock 2" roughness="0.9" />
+            </Model>
             <Model id="s93_mountains_model" asset="s93_mountains" scaleMode="none" scale="1" />
           </CompositeGroup>
         </Sequence>

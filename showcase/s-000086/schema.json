@@ -1003,9 +1003,7 @@
             "\"0.200\""
           ],
           "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
+          "supportsAnimationTarget": false
         },
         {
           "name": "top",
@@ -1634,7 +1632,7 @@
       "validationCoverage": "strict",
       "attributes": [
         {
-          "name": "material",
+          "name": "modelSourceMaterial",
           "occurrences": 7,
           "examples": [
             "\"*\""

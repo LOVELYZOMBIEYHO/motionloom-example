@@ -605,22 +605,22 @@
             <Model id="clay_antihelix_r_model" asset="clay_antihelix_r" position={[0,0,0]} rotation={[0,0,0]} />
             <Model id="clay_connected_face_model" asset="s86_head" position={[0,0,0]} rotation={[0,0,0]} />
             <Model id="bob_cap_model" asset="bob_cap">
-              <MaterialBinding material="*" outlineWidth="0" />
+              <MaterialBinding modelSourceMaterial="*" outlineWidth="0" />
             </Model>
             <Model id="bob_crown_model" asset="bob_crown">
-              <MaterialBinding material="*" outlineWidth="0" />
+              <MaterialBinding modelSourceMaterial="*" outlineWidth="0" />
             </Model>
             <Model id="bob_fringe_model" asset="bob_fringe">
-              <MaterialBinding material="*" outlineWidth="0" />
+              <MaterialBinding modelSourceMaterial="*" outlineWidth="0" />
             </Model>
             <Model id="bob_temples_model" asset="bob_temples">
-              <MaterialBinding material="*" outlineWidth="0" />
+              <MaterialBinding modelSourceMaterial="*" outlineWidth="0" />
             </Model>
             <Model id="bob_underlayer_model" asset="bob_underlayer">
-              <MaterialBinding material="*" outlineWidth="0" />
+              <MaterialBinding modelSourceMaterial="*" outlineWidth="0" />
             </Model>
             <Model id="bob_flyaways_model" asset="bob_flyaways">
-              <MaterialBinding material="*" outlineWidth="0" />
+              <MaterialBinding modelSourceMaterial="*" outlineWidth="0" />
             </Model>
           </CompositeGroup>
         </Sequence>

@@ -529,9 +529,9 @@
             <ColorManagement id="s74_grade" toneMapping="aces" exposure="1.02"
                              whiteBalance="6400" contrast="1.06" />
             <!-- Local volume keeps the station interior clear while exterior rays carry rain mist. -->
-            <AtmosphereFog id="s74_street_fog" mode="exp" color="#668FA8"
-                           density="0.045" start="0" end="36" scattering="0.08"
-                           affectSky="true" boundsMin={[-20,-2,-30]}
+            <AtmosphereFog id="s74_street_fog" scatteringColor="#668FA8"
+                           density="0.045"
+                           affectEnvironment="true" boundsMin={[-20,-2,-30]}
                            boundsMax={[20,20,-3.2]} edgeFeather="1.2" />
 
             <Camera3D id="s74_fp_safe"

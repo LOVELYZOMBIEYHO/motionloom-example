@@ -1,0 +1,382 @@
+<!-- S97 - winding mountain road - textured PBR checkpoint rebuilt from reference/reference.png -->
+<Graph fps={24} duration="12s" size={[1920,1080]} renderSize={[1920,1080]}>
+  <RenderStyle id="s97_forest_pbr">
+    <SurfaceStyle shading="physical" specular="0.22" />
+    <LightingStyle ambientIntensity="0.42" ambientColor="#E4EDF6" shadowStyle="soft" />
+    <PostStyle toneMapping="aces" exposure="1.12" contrast="1.03" saturation="1.04" whiteBalance="6100" />
+    <AntiAliasingStyle method="taa" quality="ultra" fallback="smaa" sharpness="0.04" />
+  </RenderStyle>
+  <Assets>
+    <ImageAsset id="s97_height" src="assets/terrain/s97-height.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s97_forest_exclusion" src="assets/terrain/s97-forest-exclusion.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s97_rock_density" src="assets/terrain/s97-rock-density.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s97_ground_color" src="assets/materials/forest-ground-basecolor.png" colorSpace="srgb" />
+    <ImageAsset id="s97_asphalt_color" src="assets/materials/asphalt-basecolor.png" colorSpace="srgb" />
+    <ImageAsset id="s97_asphalt_roughness" src="assets/materials/asphalt-roughness.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s97_bark_color" src="assets/materials/bark-basecolor.png" colorSpace="srgb" />
+    <ImageAsset id="s97_foliage_color" src="assets/materials/foliage-basecolor.png" colorSpace="srgb" />
+
+    <MaterialAsset id="s97_ground_mat" shading="pbr" baseColor="#B8B3A6"
+                   baseColorTexture="s97_ground_color" metallic="0" roughness="0.92" specular="0.14"
+                   mapping="triplanar" textureScale={[0.55,0.55]} variationAmount={[0.08,0.05]} />
+    <MaterialAsset id="s97_asphalt_mat" shading="pbr" baseColor="#D6D8D9"
+                   baseColorTexture="s97_asphalt_color" metallicRoughnessTexture="s97_asphalt_roughness"
+                   metallic="0" roughness="1" roughnessChannel="luminance" specular="0.2"
+                   mapping="uv" textureScale={[2.2,0.24]} variationAmount={[0.04,0.03]} />
+    <MaterialAsset id="s97_paint_mat" shading="pbr" baseColor="#F2F3F4" metallic="0" roughness="0.6" specular="0.25" />
+    <MaterialAsset id="s97_guardrail_mat" shading="pbr" baseColor="#C7CBCC" metallic="0.68" roughness="0.34" specular="0.8" />
+    <MaterialAsset id="s97_rock_mat" shading="pbr" baseColor="#A69D8F" metallic="0" roughness="0.94" specular="0.12" />
+    <MaterialAsset id="s97_trunk_mat" shading="pbr" baseColor="#D7C9B6"
+                   baseColorTexture="s97_bark_color" metallic="0" roughness="0.9" specular="0.16"
+                   mapping="uv" textureScale={[1.2,2.8]} variationAmount={[0.06,0.04]} />
+    <MaterialAsset id="s97_leaf_a" shading="pbr" baseColor="#E2EAD8" baseColorTexture="s97_foliage_color"
+                   metallic="0" roughness="0.9" specular="0.09" mapping="triplanar" textureScale={[1.6,1.6]} />
+    <MaterialAsset id="s97_leaf_b" shading="pbr" baseColor="#EEF0D8" baseColorTexture="s97_foliage_color"
+                   metallic="0" roughness="0.91" specular="0.08" mapping="triplanar" textureScale={[1.45,1.45]} />
+    <MaterialAsset id="s97_leaf_c" shading="pbr" baseColor="#E4EDC8" baseColorTexture="s97_foliage_color"
+                   metallic="0" roughness="0.92" specular="0.08" mapping="triplanar" textureScale={[1.3,1.3]} />
+    <MaterialAsset id="s97_leaf_d" shading="pbr" baseColor="#F0F2D6" baseColorTexture="s97_foliage_color"
+                   metallic="0" roughness="0.92" specular="0.07" mapping="triplanar" textureScale={[1.2,1.2]} />
+
+    <TerrainAsset id="s97_terrain" heightMap="s97_height" size={[15.9000,8.9500]}
+                  heightScale="5.85390" heightOffset="-2.95000"
+                  material="s97_ground_mat" chunks={[8,5]} lod="full" collision="none" />
+
+    <PrimitiveAsset id="s97_rock_a" shape="ellipsoid" radii={[0.05750,0.03100,0.04100]}
+                    segments="10" rings="6" material="s97_rock_mat" collision="none" />
+    <PrimitiveAsset id="s97_rock_b" shape="ellipsoid" radii={[0.03900,0.02400,0.06400]}
+                    segments="10" rings="6" material="s97_rock_mat" collision="none" />
+    <PrimitiveAsset id="s97_rock_c" shape="wedge" size={[0.07500,0.04000,0.05000]}
+                    material="s97_rock_mat" collision="none" />
+
+    <PrimitiveAsset id="s97_trunk_a" shape="cylinder" radius="0.015000" height="0.150000" segments="8" material="s97_trunk_mat" collision="none" />
+    <PrimitiveAsset id="s97_cone1_a" shape="cone" radius="0.120000" height="0.320000" segments="12" material="s97_leaf_a" collision="none" />
+    <PrimitiveAsset id="s97_cone2_a" shape="cone" radius="0.085000" height="0.300000" segments="12" material="s97_leaf_a" collision="none" />
+    <CompoundAsset id="s97_tree_a">
+      <Instance id="trunk" asset="s97_trunk_a" position={[0.00000,0.07500,0.00000]} />
+      <Instance id="cone1" asset="s97_cone1_a" position={[0.00000,0.23000,0.00000]} />
+      <Instance id="cone2" asset="s97_cone2_a" position={[0.00000,0.45000,0.00000]} />
+    </CompoundAsset>
+    <PrimitiveAsset id="s97_trunk_b" shape="cylinder" radius="0.013000" height="0.120000" segments="8" material="s97_trunk_mat" collision="none" />
+    <PrimitiveAsset id="s97_cone1_b" shape="cone" radius="0.145000" height="0.260000" segments="12" material="s97_leaf_a" collision="none" />
+    <PrimitiveAsset id="s97_cone2_b" shape="cone" radius="0.110000" height="0.220000" segments="12" material="s97_leaf_a" collision="none" />
+    <PrimitiveAsset id="s97_cone3_b" shape="cone" radius="0.075000" height="0.140000" segments="12" material="s97_leaf_a" collision="none" />
+    <CompoundAsset id="s97_tree_b">
+      <Instance id="trunk" asset="s97_trunk_b" position={[0.00000,0.06000,0.00000]} />
+      <Instance id="cone1" asset="s97_cone1_b" position={[0.00000,0.20500,0.00000]} />
+      <Instance id="cone2" asset="s97_cone2_b" position={[0.00000,0.37000,0.00000]} />
+      <Instance id="cone3" asset="s97_cone3_b" position={[0.00000,0.49500,0.00000]} />
+    </CompoundAsset>
+    <PrimitiveAsset id="s97_trunk_c" shape="cylinder" radius="0.015000" height="0.140000" segments="8" material="s97_trunk_mat" collision="none" />
+    <PrimitiveAsset id="s97_cone1_c" shape="cone" radius="0.160000" height="0.250000" segments="12" material="s97_leaf_b" collision="none" />
+    <PrimitiveAsset id="s97_cone2_c" shape="cone" radius="0.120000" height="0.230000" segments="12" material="s97_leaf_b" collision="none" />
+    <PrimitiveAsset id="s97_cone3_c" shape="cone" radius="0.075000" height="0.160000" segments="12" material="s97_leaf_b" collision="none" />
+    <CompoundAsset id="s97_tree_c">
+      <Instance id="trunk" asset="s97_trunk_c" position={[0.00000,0.07000,0.00000]} />
+      <Instance id="cone1" asset="s97_cone1_c" position={[0.00000,0.20000,0.00000]} />
+      <Instance id="cone2" asset="s97_cone2_c" position={[0.00000,0.38000,0.00000]} />
+      <Instance id="cone3" asset="s97_cone3_c" position={[0.00000,0.52000,0.00000]} />
+    </CompoundAsset>
+    <PrimitiveAsset id="s97_trunk_d" shape="cylinder" radius="0.021000" height="0.200000" segments="8" material="s97_trunk_mat" collision="none" />
+    <PrimitiveAsset id="s97_blob1_d" shape="sphere" radius="0.145000" segments="14" rings="9" material="s97_leaf_c" collision="none" />
+    <PrimitiveAsset id="s97_blob2_d" shape="sphere" radius="0.105000" segments="12" rings="8" material="s97_leaf_c" collision="none" />
+    <CompoundAsset id="s97_tree_d">
+      <Instance id="trunk" asset="s97_trunk_d" position={[0.00000,0.10000,0.00000]} />
+      <Instance id="blob1" asset="s97_blob1_d" position={[0.00000,0.28000,0.00000]} />
+      <Instance id="blob2" asset="s97_blob2_d" position={[0.09000,0.35000,0.04500]} />
+    </CompoundAsset>
+    <PrimitiveAsset id="s97_trunk_e" shape="cylinder" radius="0.023000" height="0.220000" segments="8" material="s97_trunk_mat" collision="none" />
+    <PrimitiveAsset id="s97_blob1_e" shape="sphere" radius="0.160000" segments="14" rings="9" material="s97_leaf_d" collision="none" />
+    <PrimitiveAsset id="s97_blob2_e" shape="sphere" radius="0.130000" segments="12" rings="8" material="s97_leaf_d" collision="none" />
+    <PrimitiveAsset id="s97_blob3_e" shape="sphere" radius="0.110000" segments="12" rings="8" material="s97_leaf_d" collision="none" />
+    <CompoundAsset id="s97_tree_e">
+      <Instance id="trunk" asset="s97_trunk_e" position={[0.00000,0.11000,0.00000]} />
+      <Instance id="blob1" asset="s97_blob1_e" position={[0.00000,0.31000,0.00000]} />
+      <Instance id="blob2" asset="s97_blob2_e" position={[-0.10000,0.40000,0.05500]} />
+      <Instance id="blob3" asset="s97_blob3_e" position={[0.09500,0.39000,-0.06500]} />
+    </CompoundAsset>
+    <PrimitiveAsset id="s97_trunk_f" shape="cylinder" radius="0.026000" height="0.300000" segments="8" material="s97_trunk_mat" collision="none" />
+    <PrimitiveAsset id="s97_blob1_f" shape="sphere" radius="0.135000" segments="14" rings="9" material="s97_leaf_d" collision="none" />
+    <PrimitiveAsset id="s97_blob2_f" shape="sphere" radius="0.115000" segments="12" rings="8" material="s97_leaf_d" collision="none" />
+    <CompoundAsset id="s97_tree_f">
+      <Instance id="trunk" asset="s97_trunk_f" position={[0.00000,0.15000,0.00000]} />
+      <Instance id="blob1" asset="s97_blob1_f" position={[0.00000,0.40000,0.00000]} />
+      <Instance id="blob2" asset="s97_blob2_f" position={[0.06000,0.56000,-0.04000]} />
+    </CompoundAsset>
+
+    <CurveAsset id="s97_road_curve" interpolation="linear" maxSegmentLength="0.02500">
+      <CurvePoint position={[-6.18481,2.12839,-3.65175]} />
+      <CurvePoint position={[-6.04719,2.10633,-3.46489]} />
+      <CurvePoint position={[-5.93746,2.07138,-3.33375]} />
+      <CurvePoint position={[-5.80225,2.01269,-3.20346]} />
+      <CurvePoint position={[-5.66937,1.94261,-3.07725]} />
+      <CurvePoint position={[-5.60149,1.90040,-3.00608]} />
+      <CurvePoint position={[-5.55662,1.86855,-2.93887]} />
+      <CurvePoint position={[-5.52136,1.83694,-2.86367]} />
+      <CurvePoint position={[-5.48272,1.79567,-2.76389]} />
+      <CurvePoint position={[-5.44025,1.73681,-2.61648]} />
+      <CurvePoint position={[-5.38538,1.70030,-2.53275]} />
+      <CurvePoint position={[-5.33074,1.67463,-2.47775]} />
+      <CurvePoint position={[-5.26636,1.65054,-2.43296]} />
+      <CurvePoint position={[-5.19388,1.62805,-2.39944]} />
+      <CurvePoint position={[-5.06191,1.59404,-2.35560]} />
+      <CurvePoint position={[-4.82233,1.54179,-2.30628]} />
+      <CurvePoint position={[-4.35886,1.45792,-2.24142]} />
+      <CurvePoint position={[-3.95437,1.38259,-2.15951]} />
+      <CurvePoint position={[-3.82848,1.35950,-2.14550]} />
+      <CurvePoint position={[-3.72899,1.34151,-2.14242]} />
+      <CurvePoint position={[-3.62187,1.32431,-2.15066]} />
+      <CurvePoint position={[-3.40423,1.29406,-2.18362]} />
+      <CurvePoint position={[-3.07997,1.26438,-2.23076]} />
+      <CurvePoint position={[-2.64286,1.24641,-2.34189]} />
+      <CurvePoint position={[-2.41968,1.23231,-2.38477]} />
+      <CurvePoint position={[-2.19786,1.20579,-2.44910]} />
+      <CurvePoint position={[-2.02374,1.17591,-2.48624]} />
+      <CurvePoint position={[-1.94996,1.16119,-2.48743]} />
+      <CurvePoint position={[-1.85144,1.14053,-2.46192]} />
+      <CurvePoint position={[-1.73580,1.11446,-2.40608]} />
+      <CurvePoint position={[-1.66647,1.09949,-2.35787]} />
+      <CurvePoint position={[-1.57119,1.07705,-2.27293]} />
+      <CurvePoint position={[-1.50639,1.06561,-2.20495]} />
+      <CurvePoint position={[-1.49705,1.06218,-2.18700]} />
+      <CurvePoint position={[-1.49870,1.05895,-2.16053]} />
+      <CurvePoint position={[-1.53922,1.05307,-2.12263]} />
+      <CurvePoint position={[-1.74330,1.03512,-1.99648]} />
+      <CurvePoint position={[-1.89056,1.02764,-1.92852]} />
+      <CurvePoint position={[-2.09543,1.01640,-1.86106]} />
+      <CurvePoint position={[-2.30543,0.99771,-1.81424]} />
+      <CurvePoint position={[-2.47864,0.97265,-1.75163]} />
+      <CurvePoint position={[-2.54329,0.95933,-1.71186]} />
+      <CurvePoint position={[-2.60102,0.94456,-1.65975]} />
+      <CurvePoint position={[-2.65144,0.92847,-1.59735]} />
+      <CurvePoint position={[-2.67931,0.91708,-1.54986]} />
+      <CurvePoint position={[-2.72401,0.88675,-1.42828]} />
+      <CurvePoint position={[-2.74326,0.86113,-1.32073]} />
+      <CurvePoint position={[-2.73940,0.83492,-1.21677]} />
+      <CurvePoint position={[-2.71540,0.80870,-1.11493]} />
+      <CurvePoint position={[-2.67240,0.78299,-1.01754]} />
+      <CurvePoint position={[-2.62672,0.76435,-0.95796]} />
+      <CurvePoint position={[-2.56617,0.74646,-0.91169]} />
+      <CurvePoint position={[-2.46556,0.72406,-0.86519]} />
+      <CurvePoint position={[-2.35605,0.70362,-0.83735]} />
+      <CurvePoint position={[-2.25037,0.68540,-0.83174]} />
+      <CurvePoint position={[-2.08358,0.66250,-0.85726]} />
+      <CurvePoint position={[-1.89695,0.64221,-0.90644]} />
+      <CurvePoint position={[-1.72842,0.62714,-0.98191]} />
+      <CurvePoint position={[-1.58296,0.61442,-1.08470]} />
+      <CurvePoint position={[-1.43879,0.60339,-1.15764]} />
+      <CurvePoint position={[-0.94791,0.56267,-1.37727]} />
+      <CurvePoint position={[-0.47523,0.53487,-1.59027]} />
+      <CurvePoint position={[-0.24792,0.51561,-1.68268]} />
+      <CurvePoint position={[-0.10104,0.49478,-1.71865]} />
+      <CurvePoint position={[0.00415,0.47625,-1.72118]} />
+      <CurvePoint position={[0.12666,0.44749,-1.69576]} />
+      <CurvePoint position={[0.25752,0.41268,-1.64120]} />
+      <CurvePoint position={[0.38530,0.36396,-1.55350]} />
+      <CurvePoint position={[0.50833,0.30947,-1.44322]} />
+      <CurvePoint position={[0.59575,0.26125,-1.34345]} />
+      <CurvePoint position={[0.68439,0.20201,-1.20866]} />
+      <CurvePoint position={[0.75072,0.14358,-1.07101]} />
+      <CurvePoint position={[0.76547,0.12472,-1.02903]} />
+      <CurvePoint position={[0.77965,0.10633,-0.96933]} />
+      <CurvePoint position={[0.78457,0.07133,-0.85695]} />
+      <CurvePoint position={[0.76817,0.03927,-0.75843]} />
+      <CurvePoint position={[0.73421,0.01748,-0.68292]} />
+      <CurvePoint position={[0.65012,-0.01410,-0.57999]} />
+      <CurvePoint position={[0.57770,-0.03500,-0.50819]} />
+      <CurvePoint position={[0.47853,-0.05597,-0.42763]} />
+      <CurvePoint position={[0.30554,-0.07987,-0.30815]} />
+      <CurvePoint position={[0.04168,-0.10165,-0.15384]} />
+      <CurvePoint position={[-0.15782,-0.11754,-0.02569]} />
+      <CurvePoint position={[-0.32971,-0.13404,0.10111]} />
+      <CurvePoint position={[-0.40693,-0.14367,0.17503]} />
+      <CurvePoint position={[-0.45333,-0.15156,0.24551]} />
+      <CurvePoint position={[-0.47490,-0.15713,0.29495]} />
+      <CurvePoint position={[-0.48679,-0.16295,0.34459]} />
+      <CurvePoint position={[-0.48677,-0.16901,0.39568]} />
+      <CurvePoint position={[-0.46917,-0.17853,0.47318]} />
+      <CurvePoint position={[-0.44021,-0.18856,0.54449]} />
+      <CurvePoint position={[-0.41110,-0.19553,0.59028]} />
+      <CurvePoint position={[-0.36226,-0.20641,0.64582]} />
+      <CurvePoint position={[-0.31751,-0.21396,0.67903]} />
+      <CurvePoint position={[-0.24037,-0.22577,0.70909]} />
+      <CurvePoint position={[-0.09317,-0.24683,0.74392]} />
+      <CurvePoint position={[0.23383,-0.31021,0.82769]} />
+      <CurvePoint position={[0.48251,-0.36559,0.88203]} />
+      <CurvePoint position={[0.65642,-0.40515,0.91264]} />
+      <CurvePoint position={[0.79264,-0.43225,0.92768]} />
+      <CurvePoint position={[0.96662,-0.46609,0.93564]} />
+      <CurvePoint position={[1.07266,-0.48214,0.93214]} />
+      <CurvePoint position={[1.17869,-0.49514,0.91681]} />
+      <CurvePoint position={[1.30325,-0.50637,0.88780]} />
+      <CurvePoint position={[1.39858,-0.50817,0.85567]} />
+      <CurvePoint position={[1.54085,-0.50817,0.79600]} />
+      <CurvePoint position={[1.72432,-0.50817,0.69528]} />
+      <CurvePoint position={[2.01297,-0.51077,0.49250]} />
+      <CurvePoint position={[2.07697,-0.51476,0.45160]} />
+      <CurvePoint position={[2.14522,-0.52085,0.41852]} />
+      <CurvePoint position={[2.22242,-0.52904,0.39403]} />
+      <CurvePoint position={[2.27136,-0.53559,0.38552]} />
+      <CurvePoint position={[2.35390,-0.54681,0.38680]} />
+      <CurvePoint position={[2.40088,-0.55503,0.39939]} />
+      <CurvePoint position={[2.44658,-0.56368,0.42873]} />
+      <CurvePoint position={[2.46431,-0.56812,0.44888]} />
+      <CurvePoint position={[2.48634,-0.57712,0.49432]} />
+      <CurvePoint position={[2.49644,-0.59067,0.57328]} />
+      <CurvePoint position={[2.48936,-0.59955,0.62679]} />
+      <CurvePoint position={[2.47402,-0.60818,0.67998]} />
+      <CurvePoint position={[2.43617,-0.62056,0.76068]} />
+      <CurvePoint position={[2.38702,-0.63224,0.82703]} />
+      <CurvePoint position={[2.28857,-0.65055,0.93063]} />
+      <CurvePoint position={[2.18528,-0.66883,1.01980]} />
+      <CurvePoint position={[2.10432,-0.68900,1.11812]} />
+      <CurvePoint position={[2.07685,-0.69797,1.16611]} />
+      <CurvePoint position={[2.04742,-0.71257,1.23772]} />
+      <CurvePoint position={[1.98975,-0.75818,1.44830]} />
+      <CurvePoint position={[1.92382,-0.83632,1.75662]} />
+      <CurvePoint position={[1.91133,-0.86182,1.85218]} />
+      <CurvePoint position={[1.90436,-0.88597,1.96864]} />
+      <CurvePoint position={[1.90680,-0.90293,2.04797]} />
+      <CurvePoint position={[1.92044,-0.91869,2.11512]} />
+      <CurvePoint position={[1.94185,-0.92846,2.15673]} />
+      <CurvePoint position={[1.97832,-0.93757,2.19273]} />
+      <CurvePoint position={[2.02400,-0.94597,2.21855]} />
+      <CurvePoint position={[2.07527,-0.95362,2.23728]} />
+      <CurvePoint position={[2.12421,-0.96046,2.25005]} />
+      <CurvePoint position={[2.19958,-0.96914,2.25762]} />
+      <CurvePoint position={[2.27999,-0.97584,2.25655]} />
+      <CurvePoint position={[2.38472,-0.97962,2.24716]} />
+      <CurvePoint position={[2.52109,-0.97967,2.21607]} />
+      <CurvePoint position={[2.59422,-0.97967,2.18528]} />
+      <CurvePoint position={[2.66003,-0.97967,2.14114]} />
+      <CurvePoint position={[2.73882,-0.97967,2.07249]} />
+      <CurvePoint position={[2.86103,-0.97967,1.94227]} />
+      <CurvePoint position={[2.99716,-0.98080,1.82933]} />
+      <CurvePoint position={[3.06704,-0.98282,1.79351]} />
+      <CurvePoint position={[3.14085,-0.98603,1.76663]} />
+      <CurvePoint position={[3.27928,-0.99432,1.73938]} />
+      <CurvePoint position={[3.35676,-1.00117,1.73780]} />
+      <CurvePoint position={[3.43327,-1.00948,1.74422]} />
+      <CurvePoint position={[3.61842,-1.03430,1.77647]} />
+      <CurvePoint position={[3.74736,-1.05599,1.80933]} />
+      <CurvePoint position={[3.94487,-1.09499,1.87223]} />
+      <CurvePoint position={[4.07744,-1.12061,1.90543]} />
+      <CurvePoint position={[4.16923,-1.14142,1.92154]} />
+      <CurvePoint position={[4.24823,-1.15727,1.91946]} />
+      <CurvePoint position={[4.40375,-1.19034,1.87300]} />
+      <CurvePoint position={[4.53723,-1.22055,1.85925]} />
+      <CurvePoint position={[4.62847,-1.24043,1.86153]} />
+      <CurvePoint position={[4.69719,-1.26196,1.86702]} />
+      <CurvePoint position={[4.90589,-1.32869,1.89691]} />
+      <CurvePoint position={[5.13536,-1.42031,1.95476]} />
+      <CurvePoint position={[5.31176,-1.50116,2.02259]} />
+      <CurvePoint position={[5.47471,-1.58634,2.11280]} />
+      <CurvePoint position={[5.54377,-1.62311,2.16558]} />
+      <CurvePoint position={[5.62169,-1.67158,2.24087]} />
+      <CurvePoint position={[5.77761,-1.78630,2.45959]} />
+      <CurvePoint position={[5.89649,-1.86706,2.64111]} />
+      <CurvePoint position={[5.98272,-1.91758,2.77756]} />
+      <CurvePoint position={[6.05295,-1.95009,2.90047]} />
+      <CurvePoint position={[6.10184,-1.96786,2.99466]} />
+      <CurvePoint position={[6.13825,-1.97560,3.07927]} />
+      <CurvePoint position={[6.18084,-1.98510,3.20406]} />
+    </CurveAsset>
+    <SweepAsset id="s97_asphalt" curve="s97_road_curve" material="s97_asphalt_mat" frame="worldUp" uvMode="distance" uvScale={[1,2]} capStart="true" capEnd="true" collision="none" smoothProfile="true">
+      <Profile closed="false">
+        <ProfilePoint position={[-0.137500,0.002500]} />
+        <ProfilePoint position={[-0.070000,0.006204]} />
+        <ProfilePoint position={[0.000000,0.007500]} />
+        <ProfilePoint position={[0.070000,0.006204]} />
+        <ProfilePoint position={[0.137500,0.002500]} />
+      </Profile>
+    </SweepAsset>
+    <SweepAsset id="s97_line_left" curve="s97_road_curve" material="s97_paint_mat" frame="worldUp" uvMode="distance" uvScale={[1,2]} capStart="true" capEnd="true" collision="none" smoothProfile="true">
+      <Profile closed="false">
+        <ProfilePoint position={[-0.126000,0.012801]} />
+        <ProfilePoint position={[-0.115000,0.013502]} />
+      </Profile>
+    </SweepAsset>
+    <SweepAsset id="s97_line_right" curve="s97_road_curve" material="s97_paint_mat" frame="worldUp" uvMode="distance" uvScale={[1,2]} capStart="true" capEnd="true" collision="none" smoothProfile="true">
+      <Profile closed="false">
+        <ProfilePoint position={[0.115000,0.013502]} />
+        <ProfilePoint position={[0.126000,0.012801]} />
+      </Profile>
+    </SweepAsset>
+    <SweepAsset id="s97_line_center" curve="s97_road_curve" material="s97_paint_mat" frame="worldUp" uvMode="distance" uvScale={[1,2]} capStart="true" capEnd="true" collision="none" smoothProfile="true" dash={[0.11000,0.14000]}>
+      <Profile closed="false">
+        <ProfilePoint position={[-0.004000,0.017496]} />
+        <ProfilePoint position={[0.004000,0.017496]} />
+      </Profile>
+    </SweepAsset>
+    <SweepAsset id="s97_guardrail_left" curve="s97_road_curve" material="s97_guardrail_mat" frame="worldUp" uvMode="distance" uvScale={[1,2]} capStart="true" capEnd="true" collision="none">
+      <Profile closed="true">
+        <ProfilePoint position={[-0.153000,0.021000]} />
+        <ProfilePoint position={[-0.147000,0.021000]} />
+        <ProfilePoint position={[-0.147000,0.046000]} />
+        <ProfilePoint position={[-0.153000,0.046000]} />
+      </Profile>
+    </SweepAsset>
+    <SweepAsset id="s97_guardrail_right" curve="s97_road_curve" material="s97_guardrail_mat" frame="worldUp" uvMode="distance" uvScale={[1,2]} capStart="true" capEnd="true" collision="none">
+      <Profile closed="true">
+        <ProfilePoint position={[0.147000,0.021000]} />
+        <ProfilePoint position={[0.153000,0.021000]} />
+        <ProfilePoint position={[0.153000,0.046000]} />
+        <ProfilePoint position={[0.147000,0.046000]} />
+      </Profile>
+    </SweepAsset>
+  </Assets>
+
+  <Background color="#C7D6E2" />
+
+  <Scene id="S97WindingRoad" renderStyle="s97_forest_pbr">
+    <Timeline>
+      <Track id="s97_world" space="3d" compositeOrder="30">
+        <Sequence from="0s" duration="12s" out="hold">
+          <CompositeGroup id="s97_island" space="3d" depth="true" format="rgba16f">
+            <DirectionalLight id="s97_sun" direction={[-0.5,-0.74,0.45]}
+                              color="#FFF4E2" intensity="4.4" castShadow="true" shadowStrength="0.78" />
+            <DirectionalLight id="s97_fill" direction={[0.55,-0.62,-0.55]}
+                              color="#C9DCEA" intensity="0.72" castShadow="false" />
+            <AmbientOcclusion id="s97_ao" intensity="0.38" radius="0.08000" />
+            <AtmosphereFog id="s97_aerial_haze" scatteringColor="#C8D2D3" density="0.003" affectEnvironment="false" />
+            <Camera3D id="s97_aerial" position={[curve("0.0:0.00000:linear, 1.5:0.00067:linear, 3.0:0.00256:linear, 4.5:0.00540:linear, 6.0:0.00875:linear, 7.5:0.01210:linear, 9.0:0.01494:linear, 10.5:0.01683:linear, 12.0:0.01750:linear"),curve("0.0:40.21140:linear, 1.5:40.17773:linear, 3.0:40.08184:linear, 4.5:39.93834:linear, 6.0:39.76907:linear, 7.5:39.59980:linear, 9.0:39.45630:linear, 10.5:39.36042:linear, 12.0:39.32675:linear"),curve("0.0:3.51804:linear, 1.5:3.51510:linear, 3.0:3.50671:linear, 4.5:3.49415:linear, 6.0:3.47934:linear, 7.5:3.46453:linear, 9.0:3.45198:linear, 10.5:3.44359:linear, 12.0:3.44064:linear")]} target={[curve("0.0:0.00000:linear, 1.5:0.00057:linear, 3.0:0.00220:linear, 4.5:0.00463:linear, 6.0:0.00750:linear, 7.5:0.01037:linear, 9.0:0.01280:linear, 10.5:0.01443:linear, 12.0:0.01500:linear"),curve("0.0:0.00000:linear, 1.5:0.00000:linear, 3.0:0.00000:linear, 4.5:0.00000:linear, 6.0:0.00000:linear, 7.5:0.00000:linear, 9.0:0.00000:linear, 10.5:0.00000:linear, 12.0:0.00000:linear"),curve("0.0:0.00000:linear, 1.5:-0.00019:linear, 3.0:-0.00073:linear, 4.5:-0.00154:linear, 6.0:-0.00250:linear, 7.5:-0.00346:linear, 9.0:-0.00427:linear, 10.5:-0.00481:linear, 12.0:-0.00500:linear")]} fov="10.0" />
+
+            <Model id="s97_terrain_model" asset="s97_terrain" position={[0,0,0]}
+                   castShadow="true" receiveShadow="true" />
+            <Model id="s97_asphalt_model" asset="s97_asphalt" castShadow="true" receiveShadow="true" />
+            <Model id="s97_line_left_model" asset="s97_line_left" receiveShadow="true" />
+            <Model id="s97_line_right_model" asset="s97_line_right" receiveShadow="true" />
+            <Model id="s97_line_center_model" asset="s97_line_center" receiveShadow="true" />
+            <Model id="s97_guardrail_left_model" asset="s97_guardrail_left" castShadow="true" receiveShadow="true" />
+            <Model id="s97_guardrail_right_model" asset="s97_guardrail_right" castShadow="true" receiveShadow="true" />
+            <Scatter id="s97_forest" surface="s97_terrain_model"
+                     count="10760" seed="97"
+                     exclusionMap="s97_forest_exclusion"
+                     slopeRange={[0,90]} scaleRange={[0.42,0.86]}
+                     rotationYRange={[0,360]} surfaceOffset="-0.01250"
+                     castShadow="true" receiveShadow="true">
+              <Variant asset="s97_tree_a" weight="24" />
+              <Variant asset="s97_tree_b" weight="24" />
+              <Variant asset="s97_tree_c" weight="20" />
+              <Variant asset="s97_tree_d" weight="14" />
+              <Variant asset="s97_tree_e" weight="12" />
+              <Variant asset="s97_tree_f" weight="6" />
+            </Scatter>
+            <Scatter id="s97_cut_rocks" surface="s97_terrain_model"
+                     count="720" seed="197" densityMap="s97_rock_density"
+                     exclusionMap="s97_forest_exclusion"
+                     slopeRange={[0,90]} scaleRange={[0.55,1.45]}
+                     rotationYRange={[0,360]} surfaceOffset="-0.00600"
+                     castShadow="true" receiveShadow="true">
+              <Variant asset="s97_rock_a" weight="42" />
+              <Variant asset="s97_rock_b" weight="36" />
+              <Variant asset="s97_rock_c" weight="22" />
+            </Scatter>
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+
+  <Present from="S97WindingRoad" />
+</Graph>

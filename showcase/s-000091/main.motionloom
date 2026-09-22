@@ -664,8 +664,8 @@ COMPOSITION
                            softness="0.4" />
             <ColorManagement id="s91_grade" toneMapping="aces" exposure="1.02"
                              whiteBalance="6100" contrast="1.05" />
-            <AtmosphereFog id="s91_haze3d" mode="exp" color="#BBD8EA"
-                           density="0.006" scattering="0.04" affectSky="false" />
+            <AtmosphereFog id="s91_haze3d" scatteringColor="#BBD8EA"
+                           density="0.006" affectEnvironment="false" />
 
             <Camera3D id="s91_camera" position={[0.0,10.5,25.5]}
                       target={[0,2.0,0]} up={[0,1,0]}

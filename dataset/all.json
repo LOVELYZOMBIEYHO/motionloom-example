@@ -1,9 +1,9 @@
 {
-  "example_count": 197,
+  "example_count": 198,
   "core_count": 107,
-  "showcase_count": 90,
+  "showcase_count": 91,
   "domain_counts": {
-    "scene": 146,
+    "scene": 147,
     "world": 6,
     "process": 13,
     "process_with_time": 3,
@@ -214,7 +214,14 @@
         "image"
       ],
       "dsl": [
-        "image"
+        "Graph",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Image",
+        "ImageAsset"
       ],
       "teaches": [
         "Use the basic <Image> pattern in MotionLoom."
@@ -4012,7 +4019,8 @@
         "Tex",
         "Pass",
         "Present",
-        "Image"
+        "Image",
+        "ImageAsset"
       ],
       "teaches": [
         "Adapt the neon promo language to a vertical 1080x1920 layout.",
@@ -4068,7 +4076,8 @@
         "Tex",
         "Pass",
         "Present",
-        "Image"
+        "Image",
+        "ImageAsset"
       ],
       "teaches": [
         "Create a cyber-noir illustrated book cover using only scene primitives.",
@@ -4346,6 +4355,7 @@
         "Circle",
         "Group",
         "Image",
+        "ImageAsset",
         "Component",
         "Use",
         "RadialGradient",
@@ -7690,7 +7700,7 @@
     {
       "id": "s-000092",
       "type": "showcase",
-      "title": "The Last Baton: A Golden-Hour Relay Finish with MeshAsset Props",
+      "title": "The Last Baton: A Golden-Hour 100m Sprint with MeshAsset Props",
       "domain": "scene",
       "features": [
         "scene",
@@ -7733,6 +7743,8 @@
       "dsl": [
         "Graph",
         "Assets",
+        "ImageAsset",
+        "Image",
         "ModelAsset",
         "MaterialAsset",
         "PrimitiveAsset",
@@ -7780,11 +7792,11 @@
         "Present"
       ],
       "teaches": [
-        "Model hero props (baton, runner caps, finish arch) purely from MeshAsset catmull-clark cages: swept 8-vertex rings, ngon end caps and pinned vertices that keep tips, brims and column joints crisp under subdivision.",
-        "Bind a prop to a running skeleton with Attachment/Socket: the baton snaps to hand_r and the caps snap to the head bone, so they inherit every stride without a second ApplyAction.",
-        "Sequence four external landing-page ActionLibrary files on one humanoid (run, walk stop, victory wave, catch-breath idle) as timed ApplyAction beats.",
+        "Model hero props (baton, finish arch, banner) purely from MeshAsset catmull-clark cages: swept 8-vertex rings, ngon end caps and pinned vertices that keep tips and column joints crisp under subdivision.",
+        "Bind a prop to a running skeleton with Attachment/Socket: the baton snaps to hand_r and inherits every stride without a second ApplyAction.",
+        "Swap locomotion books by ActionLibrary reference, including a converted Mixamo slow-run clip: the sprint owns the race and the last second past the tape, then a 0.4s blend lands on the jog for the coast-down. Both clips run at their authored root speeds (18.3 and 9.5 km/h) so the feet plant without sliding.",
         "Keep foot IK and grounding exact while driving world travel with deterministic in-place locomotion plus position keyframes.",
-        "Cut a three-camera finish (side truck, arch wide, victory push-in) with discrete activeCamera keys and animate bloom through the tape break.",
+        "Cut four cameras (POV, infield photographer pan, POV, finish front) with discrete activeCamera keys, and hide the runner's own head/upper chest with camera-local hiddenBones for a clean first-person sprint.",
         "Grade a golden-hour stadium with ACES at 5200K, warm exponential haze, emissive floodlight panels and seeded confetti volume repeats."
       ],
       "source_path": "showcase/s-000092",
@@ -7816,6 +7828,69 @@
         "Present"
       ],
       "path": "showcase/s-000092/"
+    },
+    {
+      "id": "s-000093",
+      "type": "showcase",
+      "title": "PBR Anti-Aliasing Matrix: Five Methods at Four Quality Levels",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "assets",
+        "true-3d",
+        "pbr",
+        "pbr-lighting",
+        "shadow-map",
+        "camera-3d",
+        "environment",
+        "animation-target",
+        "static-composition"
+      ],
+      "dsl": [
+        "Graph",
+        "RenderStyle",
+        "SurfaceStyle",
+        "AntiAliasingStyle",
+        "Assets",
+        "ImageAsset",
+        "ModelAsset",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "CompositeGroup",
+        "Camera3D",
+        "EnvironmentLight",
+        "DirectionalLight",
+        "PointLight",
+        "AtmosphereFog",
+        "Model",
+        "AnimationTarget",
+        "Key",
+        "Present"
+      ],
+      "teaches": [
+        "Compare FXAA, SMAA, MSAA, TAA and SSAA intent across Low, Medium, High and Ultra quality using discrete two-second Scene.renderStyle cuts.",
+        "Keep physical shading, camera, geometry and lighting fixed so anti-aliasing policy is the only RenderStyle variable.",
+        "Observe requested-versus-effective fallback behaviour for methods not implemented by the active immediate-preview backend."
+      ],
+      "source_path": "showcase/s-000093",
+      "demo_url": "",
+      "related": [
+        "s-000089",
+        "s-000090"
+      ],
+      "requires": [
+        "Graph",
+        "RenderStyle",
+        "AntiAliasingStyle",
+        "ModelAsset",
+        "Scene",
+        "Camera3D",
+        "Present"
+      ],
+      "path": "showcase/s-000093/"
     },
     {
       "id": "cw-000001",

@@ -1475,6 +1475,8 @@
     <Defs>
       <LinearGradient id="s74_mist_gradient" x1="0" y1="0" x2="0" y2="1"
                       stops="0:#A9D8E900, 0.45:#7BA9BA12, 1:#B6DCE72C" />
+      <LinearGradient id="s74_ground_mist_gradient" x1="0" y1="0" x2="0" y2="1"
+                      stops="0:#9CC5D300, 0.36:#9CC5D304, 0.72:#9CC5D30B, 1:#9CC5D312" />
     </Defs>
     <Timeline>
       <Track id="s74_world" space="3d" compositeOrder="30">
@@ -1532,9 +1534,9 @@
             <ColorManagement id="s74_grade" toneMapping="aces" exposure="1.02"
                              whiteBalance="6400" contrast="1.06" />
             <!-- Local volume keeps the station interior clear while exterior rays carry rain mist. -->
-            <AtmosphereFog id="s74_street_fog" mode="exp" color="#668FA8"
-                           density="0.045" start="0" end="36" scattering="0.08"
-                           affectSky="true" boundsMin={[-20,-2,-30]}
+            <AtmosphereFog id="s74_street_fog" scatteringColor="#668FA8"
+                           density="0.045"
+                           affectEnvironment="true" boundsMin={[-20,-2,-30]}
                            boundsMax={[20,20,-3.2]} edgeFeather="1.2" />
 
             <Camera3D id="s74_fp_safe"
@@ -1836,7 +1838,7 @@
                     xStep="278" yStep="113" opacity="0.09">
               <Line x1="0" y1="0" x2="-7" y2="36" stroke="#D7EEFA" strokeWidth="1.0" />
             </Repeat>
-            <Rect x="0" y="720" width="1920" height="360" color="#9CC5D315" />
+            <Rect x="0" y="600" width="1920" height="480" fill="url(#s74_ground_mist_gradient)" />
           </Layer>
         </Sequence>
       </Track>

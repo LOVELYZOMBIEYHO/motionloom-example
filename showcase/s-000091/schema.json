@@ -255,24 +255,13 @@
       "validationCoverage": "strict",
       "attributes": [
         {
-          "name": "affectSky",
+          "name": "affectEnvironment",
           "occurrences": 1,
           "examples": [
             "\"false\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
-        },
-        {
-          "name": "color",
-          "occurrences": 1,
-          "examples": [
-            "\"#BBD8EA\""
-          ],
-          "recognized": true,
-          "valueType": "color",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
         },
         {
           "name": "density",
@@ -295,24 +284,13 @@
           "supportsAnimationTarget": false
         },
         {
-          "name": "mode",
+          "name": "scatteringColor",
           "occurrences": 1,
           "examples": [
-            "\"exp\""
+            "\"#BBD8EA\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
-        },
-        {
-          "name": "scattering",
-          "occurrences": 1,
-          "examples": [
-            "\"0.04\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
         }
       ]
     },

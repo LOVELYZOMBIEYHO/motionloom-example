@@ -56,9 +56,10 @@
     <ColorStyle saturation="0" />
   </RenderStyle>
   <Assets>
-    <ImageAsset id="sky_asset" src="assets/sky.png" />
+    <ImageAsset id="sky_asset" src="../s-000090/assets/meadow_daylight.exr" />
     <ModelAsset id="courtyard_asset" src="assets/courtyard-detail.glb" />
     <ModelAsset id="mountains_asset" src="assets/mountains-detail.glb" />
+    <MaterialAsset id="s89_petal_pink" baseColor="#D96F94" roughness="0.78" metallic="0" />
   </Assets>
   <Background color="#CBDCE4" />
   <Scene id="S89MistCourtyard" renderStyle="courtyard_filmic_physical">
@@ -67,14 +68,26 @@
         <Sequence from="0s" duration="16s" out="hold">
           <CompositeGroup id="s89_stage" space="3d" depth="true" format="rgba16f">
             <Camera3D id="s89_camera" position={[1.25,2.35,9]} target={[0,2.9,-13]} fov="57" depthOfField="true" focusDistance="16.2" maxBlur="0" />
-            <EnvironmentLight id="sky" asset="sky_asset" intensity="0.1" visible="true" backgroundIntensity="0.65" diffuseIntensity="1" specularIntensity="1" />
+            <EnvironmentLight id="sky" asset="sky_asset" mapping="equirectangular" intensity="0.9" visible="true" backgroundIntensity="0.65" diffuseIntensity="1" specularIntensity="1" />
             <DirectionalLight id="sun" direction={[-.9,-.65,-.3]} color="#FFE3BC" intensity="3.75" castShadow="true" shadowStrength="1" />
             <DirectionalLight id="sky_fill" direction={[.35,-.45,-.8]} color="#CBDDEB" intensity="0.45" />
             <PointLight id="lantern_fill" position={[-2.8,4.2,-1.9]} color="#FFD196" intensity="12" range="4" />
             <AmbientOcclusion radius="0.35" intensity="0" />
             <ContactShadow distance="0.2" softness="0.85" intensity="0" />
-            <AtmosphereFog id="courtyard_mist" mode="linear" color="#C6D1D2" start="16" end="95" density="0.018" scattering="0.05" affectSky="false" />
-            <Model id="courtyard" asset="courtyard_asset" scaleMode="none" scale="1" castShadow="true" receiveShadow="true" />
+            <AtmosphereFog id="courtyard_mist" scatteringColor="#C6D1D2" density="0.018" affectEnvironment="false" />
+            <Model id="courtyard" asset="courtyard_asset" scaleMode="none" scale="1" castShadow="true" receiveShadow="true">
+              <MaterialBinding modelSourceMaterial="porcelain pink petals" definition="s89_petal_pink" />
+              <MaterialBinding modelSourceMaterial="limestone 0" roughness="0.2" />
+              <MaterialBinding modelSourceMaterial="limestone 1" roughness="0.2" />
+              <MaterialBinding modelSourceMaterial="limestone 2" roughness="0.2" />
+              <MaterialBinding modelSourceMaterial="limestone 3" roughness="0.2" />
+              <MaterialBinding modelSourceMaterial="weathered rosewood" roughness="0.2" />
+              <MaterialBinding modelSourceMaterial="ink stained timber" roughness="0.3" />
+              <MaterialBinding modelSourceMaterial="celadon porcelain" roughness="0.25" />
+              <MaterialBinding modelSourceMaterial="mist rock 0" roughness="0.9" />
+              <MaterialBinding modelSourceMaterial="mist rock 1" roughness="0.9" />
+              <MaterialBinding modelSourceMaterial="mist rock 2" roughness="0.9" />
+            </Model>
             <Model id="mountains" asset="mountains_asset" scaleMode="none" scale="1" />
           </CompositeGroup>
         </Sequence>

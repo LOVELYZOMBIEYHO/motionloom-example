@@ -1,0 +1,112 @@
+<!-- ========================================= -->
+<!-- showcase/s-000096/main.motionloom -->
+<!-- Imported landscape_forest__mountains.glb: camera-only appreciation. -->
+<!-- A morning -> dusk -> night montage: the same short ground-level flight is -->
+<!-- played three times at three times of day, hard-cutting between segments. -->
+<!-- Style: physical shading, TAA ultra, low card specular; the engine's -->
+<!-- default tone mapping stays untouched so the colours read like the raw -->
+<!-- playback (see README "Baseline"). Only the night segment swaps the sky -->
+<!-- dome's texture for a moonlit derivative of the asset's own painting. -->
+<Graph fps={24} duration="15s" size={[3840,2160]} >
+<RenderStyle id="s96_rawplus_morning">
+  <SurfaceStyle shading="physical" specular="0.20" />
+  <LightingStyle ambientIntensity="1.0" ambientColor="#FFF6E8" shadowStyle="soft" />
+  <AntiAliasingStyle method="taa" quality="ultra" fallback="smaa" sharpness="0.06" />
+</RenderStyle>
+<RenderStyle id="s96_rawplus_dusk">
+  <SurfaceStyle shading="physical" specular="0.20" />
+  <LightingStyle ambientIntensity="1.05" ambientColor="#E0A070" shadowStyle="soft" />
+  <PostStyle exposure="0.95" saturation="1.12" contrast="1.04"
+             bloomThreshold="0.90" bloomIntensity="0.14" />
+  <ColorStyle tint="#FFD8A8" tintStrength="0.16" saturation="1.02" />
+  <AntiAliasingStyle method="taa" quality="ultra" fallback="smaa" sharpness="0.06" />
+</RenderStyle>
+<RenderStyle id="s96_rawplus_night">
+  <SurfaceStyle shading="physical" specular="0.20" />
+  <LightingStyle ambientIntensity="0.50" ambientColor="#2A3550" shadowStyle="soft" />
+  <PostStyle exposure="0.87" saturation="0.95" contrast="1.02"
+             bloomThreshold="0.95" bloomIntensity="0.0" />
+  <ColorStyle tint="#9FB4D8" tintStrength="0.22" saturation="0.98" />
+  <AntiAliasingStyle method="taa" quality="ultra" fallback="smaa" sharpness="0.06" />
+</RenderStyle>
+<!-- Neutral physical style for the opt-in Weaver offline path tracer, which
+     rejects the preview-only specular="0.20" override. Kept out of the
+     immediate preview by leaving every Scene's renderStyle untouched. -->
+<RenderStyle id="s96_weaver">
+  <SurfaceStyle shading="physical" />
+  <LightingStyle ambientIntensity="1.0" ambientColor="#FFF6E8" shadowStyle="soft" />
+</RenderStyle>
+<Assets>
+<ImageAsset id="s96_night_sky" src="texture/s96-night-sky.jpg" />
+<ModelAsset id="s96_landscape" src="assets/landscape_forest__mountains.glb" />
+</Assets>
+<Scene id="S96Landscape" renderStyle="s96_rawplus_morning">
+  <Timeline>
+    <Track id="s96_world" space="3d" compositeOrder="30">
+      <Sequence from="0s" duration="5s" out="hide">
+          <CompositeGroup id="s96_stage_morning" space="3d" depth="true" format="rgba16f">
+            <Camera3D id="s96_camera_morning"
+                    position={[curve("0.0:2.50000:linear, 0.5:2.49873:linear, 1.0:2.49058:linear, 1.5:2.47073:linear, 2.0:2.43629:linear, 2.5:2.38613:linear, 3.0:2.32061:linear, 3.5:2.24131:linear, 4.0:2.15082:linear, 4.5:2.05244:linear, 5.0:1.95000:linear"), curve("0.0:0.85000:linear, 0.5:0.85000:linear, 1.0:0.85000:linear, 1.5:0.85000:linear, 2.0:0.85000:linear, 2.5:0.85000:linear, 3.0:0.85000:linear, 3.5:0.85000:linear, 4.0:0.85000:linear, 4.5:0.85000:linear, 5.0:0.85000:linear"), curve("0.0:7.50000:linear, 0.5:7.49942:linear, 1.0:7.49572:linear, 1.5:7.48669:linear, 2.0:7.47104:linear, 2.5:7.44824:linear, 3.0:7.41846:linear, 3.5:7.38242:linear, 4.0:7.34128:linear, 4.5:7.29656:linear, 5.0:7.25000:linear")]}
+                    target={[curve("0.0:6.00000:linear, 0.5:5.99792:linear, 1.0:5.98459:linear, 1.5:5.95210:linear, 2.0:5.89574:linear, 2.5:5.81367:linear, 3.0:5.70646:linear, 3.5:5.57670:linear, 4.0:5.42861:linear, 4.5:5.26763:linear, 5.0:5.10000:linear"), curve("0.0:3.00000:linear, 0.5:3.00012:linear, 1.0:3.00086:linear, 1.5:3.00266:linear, 2.0:3.00579:linear, 2.5:3.01035:linear, 3.0:3.01631:linear, 3.5:3.02352:linear, 4.0:3.03174:linear, 4.5:3.04069:linear, 5.0:3.05000:linear"), curve("0.0:-23.50000:linear, 0.5:-23.50058:linear, 1.0:-23.50428:linear, 1.5:-23.51331:linear, 2.0:-23.52896:linear, 2.5:-23.55176:linear, 3.0:-23.58154:linear, 3.5:-23.61758:linear, 4.0:-23.65872:linear, 4.5:-23.70344:linear, 5.0:-23.75000:linear")]}
+                    up={[0,1,0]} depthOfField="true" focusDistance="20" focalLength="25.06" fStop="4" maxBlur="10" fov={curve("0.0:44.00000:linear, 0.5:43.99942:linear, 1.0:43.99572:linear, 1.5:43.98669:linear, 2.0:43.97104:linear, 2.5:43.94824:linear, 3.0:43.91846:linear, 3.5:43.88242:linear, 4.0:43.84128:linear, 4.5:43.79656:linear, 5.0:43.75000:linear")} />
+            <DirectionalLight id="s96_morning_key" direction={[-0.42, 0.78, 0.47]} color="#FFF6E8"
+                            intensity="4.1" castShadow="false" />
+          <DirectionalLight id="s96_morning_fill" direction={[0.68, 0.28, 0.51]} color="#E8E4DA"
+                            intensity="1.5" castShadow="false" />
+          <DirectionalLight id="s96_morning_rim" direction={[0.24, -0.26, 0.93]} color="#FFD9A8"
+                            intensity="1.1" castShadow="false" />
+          <Model id="s96_landscape_morning" asset="s96_landscape" castShadow="true" />
+          </CompositeGroup>
+        </Sequence>
+        <Sequence from="5s" duration="5s" out="hide">
+          <CompositeGroup id="s96_stage_dusk" space="3d" depth="true" format="rgba16f">
+            <Camera3D id="s96_camera_dusk"
+                    position={[curve("0.0:2.50000:linear, 0.5:2.49873:linear, 1.0:2.49058:linear, 1.5:2.47073:linear, 2.0:2.43629:linear, 2.5:2.38613:linear, 3.0:2.32061:linear, 3.5:2.24131:linear, 4.0:2.15082:linear, 4.5:2.05244:linear, 5.0:1.95000:linear"), curve("0.0:0.85000:linear, 0.5:0.85000:linear, 1.0:0.85000:linear, 1.5:0.85000:linear, 2.0:0.85000:linear, 2.5:0.85000:linear, 3.0:0.85000:linear, 3.5:0.85000:linear, 4.0:0.85000:linear, 4.5:0.85000:linear, 5.0:0.85000:linear"), curve("0.0:7.50000:linear, 0.5:7.49942:linear, 1.0:7.49572:linear, 1.5:7.48669:linear, 2.0:7.47104:linear, 2.5:7.44824:linear, 3.0:7.41846:linear, 3.5:7.38242:linear, 4.0:7.34128:linear, 4.5:7.29656:linear, 5.0:7.25000:linear")]}
+                    target={[curve("0.0:6.00000:linear, 0.5:5.99792:linear, 1.0:5.98459:linear, 1.5:5.95210:linear, 2.0:5.89574:linear, 2.5:5.81367:linear, 3.0:5.70646:linear, 3.5:5.57670:linear, 4.0:5.42861:linear, 4.5:5.26763:linear, 5.0:5.10000:linear"), curve("0.0:3.00000:linear, 0.5:3.00012:linear, 1.0:3.00086:linear, 1.5:3.00266:linear, 2.0:3.00579:linear, 2.5:3.01035:linear, 3.0:3.01631:linear, 3.5:3.02352:linear, 4.0:3.03174:linear, 4.5:3.04069:linear, 5.0:3.05000:linear"), curve("0.0:-23.50000:linear, 0.5:-23.50058:linear, 1.0:-23.50428:linear, 1.5:-23.51331:linear, 2.0:-23.52896:linear, 2.5:-23.55176:linear, 3.0:-23.58154:linear, 3.5:-23.61758:linear, 4.0:-23.65872:linear, 4.5:-23.70344:linear, 5.0:-23.75000:linear")]}
+                    up={[0,1,0]} depthOfField="true" focusDistance="20" focalLength="25.06" fStop="4" maxBlur="10" fov={curve("0.0:44.00000:linear, 0.5:43.99942:linear, 1.0:43.99572:linear, 1.5:43.98669:linear, 2.0:43.97104:linear, 2.5:43.94824:linear, 3.0:43.91846:linear, 3.5:43.88242:linear, 4.0:43.84128:linear, 4.5:43.79656:linear, 5.0:43.75000:linear")} />
+            <DirectionalLight id="s96_dusk_key" direction={[-0.5, 0.5, 0.6]} color="#D8B090"
+                            intensity="1.8" castShadow="false" />
+          <DirectionalLight id="s96_dusk_fill" direction={[0.68, 0.28, 0.51]} color="#A89888"
+                            intensity="0.7" castShadow="false" />
+          <DirectionalLight id="s96_dusk_rim" direction={[0.24, -0.26, 0.93]} color="#FF9848"
+                            intensity="3.4" castShadow="false" />
+          <Model id="s96_landscape_dusk" asset="s96_landscape" castShadow="true" />
+          </CompositeGroup>
+        </Sequence>
+        <Sequence from="10s" duration="5s" out="hide">
+          <CompositeGroup id="s96_stage_night" space="3d" depth="true" format="rgba16f">
+            <Camera3D id="s96_camera_night"
+                    position={[curve("0.0:2.50000:linear, 0.5:2.49873:linear, 1.0:2.49058:linear, 1.5:2.47073:linear, 2.0:2.43629:linear, 2.5:2.38613:linear, 3.0:2.32061:linear, 3.5:2.24131:linear, 4.0:2.15082:linear, 4.5:2.05244:linear, 5.0:1.95000:linear"), curve("0.0:0.85000:linear, 0.5:0.85000:linear, 1.0:0.85000:linear, 1.5:0.85000:linear, 2.0:0.85000:linear, 2.5:0.85000:linear, 3.0:0.85000:linear, 3.5:0.85000:linear, 4.0:0.85000:linear, 4.5:0.85000:linear, 5.0:0.85000:linear"), curve("0.0:7.50000:linear, 0.5:7.49942:linear, 1.0:7.49572:linear, 1.5:7.48669:linear, 2.0:7.47104:linear, 2.5:7.44824:linear, 3.0:7.41846:linear, 3.5:7.38242:linear, 4.0:7.34128:linear, 4.5:7.29656:linear, 5.0:7.25000:linear")]}
+                    target={[curve("0.0:6.00000:linear, 0.5:5.99792:linear, 1.0:5.98459:linear, 1.5:5.95210:linear, 2.0:5.89574:linear, 2.5:5.81367:linear, 3.0:5.70646:linear, 3.5:5.57670:linear, 4.0:5.42861:linear, 4.5:5.26763:linear, 5.0:5.10000:linear"), curve("0.0:3.00000:linear, 0.5:3.00012:linear, 1.0:3.00086:linear, 1.5:3.00266:linear, 2.0:3.00579:linear, 2.5:3.01035:linear, 3.0:3.01631:linear, 3.5:3.02352:linear, 4.0:3.03174:linear, 4.5:3.04069:linear, 5.0:3.05000:linear"), curve("0.0:-23.50000:linear, 0.5:-23.50058:linear, 1.0:-23.50428:linear, 1.5:-23.51331:linear, 2.0:-23.52896:linear, 2.5:-23.55176:linear, 3.0:-23.58154:linear, 3.5:-23.61758:linear, 4.0:-23.65872:linear, 4.5:-23.70344:linear, 5.0:-23.75000:linear")]}
+                    up={[0,1,0]} depthOfField="true" focusDistance="20" focalLength="25.06" fStop="4" maxBlur="10" fov={curve("0.0:44.00000:linear, 0.5:43.99942:linear, 1.0:43.99572:linear, 1.5:43.98669:linear, 2.0:43.97104:linear, 2.5:43.94824:linear, 3.0:43.91846:linear, 3.5:43.88242:linear, 4.0:43.84128:linear, 4.5:43.79656:linear, 5.0:43.75000:linear")} />
+            <DirectionalLight id="s96_night_key" direction={[-0.35, 0.75, 0.55]} color="#8FB0E0"
+                            intensity="1.7" castShadow="false" />
+          <DirectionalLight id="s96_night_fill" direction={[0.68, 0.28, 0.51]} color="#405580"
+                            intensity="0.5" castShadow="false" />
+          <DirectionalLight id="s96_night_rim" direction={[0.24, -0.26, 0.93]} color="#C87848"
+                            intensity="0.35" castShadow="false" />
+          <Model id="s96_landscape_night" asset="s96_landscape" castShadow="true">
+            <MaterialBinding modelSourceMaterial="Material.011" texture="@scene:s96_time_sky_tex" />
+          </Model>
+          </CompositeGroup>
+        </Sequence>
+
+    </Track>
+  </Timeline>
+</Scene>
+<Scene id="s96_time_sky_tex" size={[1024,512]}>
+  <Timeline>
+    <Track id="s96_time_sky_track" compositeOrder="0">
+      <Sequence from="0s" duration="15s" out="hold">
+        <Image asset="s96_night_sky" x="0" y="0" scale="1.0" opacity="1.0" />
+      </Sequence>
+    </Track>
+  </Timeline>
+</Scene>
+<AnimationTarget node="S96Landscape" property="renderStyle">
+  <Key time="0s" value="s96_rawplus_morning" />
+  <Key time="5s" value="s96_rawplus_dusk" />
+  <Key time="10s" value="s96_rawplus_night" />
+</AnimationTarget>
+<Present from="S96Landscape" />
+</Graph>

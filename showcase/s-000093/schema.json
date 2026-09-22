@@ -99,7 +99,7 @@
       "validationCoverage": "strict",
       "attributes": [
         {
-          "name": "affectSky",
+          "name": "affectEnvironment",
           "occurrences": 1,
           "examples": [
             "\"false\""
@@ -108,32 +108,10 @@
           "supportsAnimationTarget": false
         },
         {
-          "name": "color",
-          "occurrences": 1,
-          "examples": [
-            "\"#C6D1D2\""
-          ],
-          "recognized": true,
-          "valueType": "color",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
           "name": "density",
           "occurrences": 1,
           "examples": [
             "\"0.018\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
-          "name": "end",
-          "occurrences": 1,
-          "examples": [
-            "\"95\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -150,35 +128,13 @@
           "supportsAnimationTarget": false
         },
         {
-          "name": "mode",
+          "name": "scatteringColor",
           "occurrences": 1,
           "examples": [
-            "\"linear\""
+            "\"#C6D1D2\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
-        },
-        {
-          "name": "scattering",
-          "occurrences": 1,
-          "examples": [
-            "\"0.05\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
-          "name": "start",
-          "occurrences": 1,
-          "examples": [
-            "\"16\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
         }
       ]
     },
@@ -424,12 +380,21 @@
           "name": "intensity",
           "occurrences": 1,
           "examples": [
-            "\"0.1\""
+            "\"0.9\""
           ],
           "recognized": true,
           "valueType": "number",
           "supportsInlineExpression": true,
           "supportsAnimationTarget": true
+        },
+        {
+          "name": "mapping",
+          "occurrences": 1,
+          "examples": [
+            "\"equirectangular\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
         },
         {
           "name": "specularIntensity",
@@ -521,7 +486,7 @@
           "name": "src",
           "occurrences": 1,
           "examples": [
-            "\"../s-000089/assets/sky.png\""
+            "\"../s-000090/assets/meadow_daylight.exr\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -559,6 +524,94 @@
           "valueType": "discrete",
           "supportsInlineExpression": true,
           "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "MaterialAsset",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "id"
+      ],
+      "attributes": [
+        {
+          "name": "baseColor",
+          "occurrences": 1,
+          "examples": [
+            "\"#D96F94\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"s93_petal_pink\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "metallic",
+          "occurrences": 1,
+          "examples": [
+            "\"0\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "roughness",
+          "occurrences": 1,
+          "examples": [
+            "\"0.78\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "MaterialBinding",
+      "occurrences": 11,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "definition",
+          "occurrences": 1,
+          "examples": [
+            "\"s93_petal_pink\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "modelSourceMaterial",
+          "occurrences": 11,
+          "examples": [
+            "\"celadon porcelain\"",
+            "\"ink stained timber\"",
+            "\"limestone 0\"",
+            "\"limestone 1\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "roughness",
+          "occurrences": 10,
+          "examples": [
+            "\"0.2\"",
+            "\"0.25\"",
+            "\"0.3\"",
+            "\"0.9\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
         }
       ]
     },
@@ -878,6 +931,7 @@
   ],
   "assetKinds": [
     "image",
+    "material",
     "model"
   ]
 }

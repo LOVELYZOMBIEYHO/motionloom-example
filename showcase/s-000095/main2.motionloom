@@ -23552,17 +23552,16 @@
                             intensity="1.15" castShadow="false" />
           <DirectionalLight id="s95_rim" direction={[0.3,0.05,0.9]} color="#5FA8C8"
                             intensity="0.55" castShadow="false" />
-          <AtmosphereFog id="s95_sea" mode="linear" color="#061C2A" start="2.0" end="24"
-                         density="0.018" scattering="0.16" affectSky="true"
-                         absorption={[0.075,0.032,0.012]}
+          <AtmosphereFog id="s95_sea"
+                         density="0.018" anisotropy="0.68" affectEnvironment="true"
                          scatteringColor={[0.018,0.060,0.095]}
                          boundsMin={[-42,-18,-46]} boundsMax={[42,18,6]}
                          edgeFeather="2.0">
             <VolumetricScattering id="s95_volume" lightRef="s95_sun"
-                                  intensity="1.15" anisotropy="0.68"
+                                  shaftStrength="1.15"
                                   maxDistance="34" shadowed="true" />
             <WaterCaustics id="s95_caustics" intensity="0.26" scale="0.55"
-                           speed="0.22" depthFalloff="0.11" color="#BFE9FF"
+                           speed="0.22" attenuation="0.11" color="#BFE9FF"
                            volumeTerm="true" surfaceTerm="true" />
           </AtmosphereFog>
           <AmbientOcclusion id="s95_ao" radius="0.24" intensity="0.42" />

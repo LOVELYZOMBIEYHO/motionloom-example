@@ -82,14 +82,14 @@
             <Model id="base" asset="plinth" position={[0,-0.12,0]} />
             <Model id="sphere" asset="ball" position={[-1.7,0.7,0]} />
             <Model id="s84_actor" asset="s84_character" profile="s84_profile" position={[0,0,0]} scaleMode="normalize_height" scale="2">
-              <MaterialBinding material="*" outlineWidth="2" celShadowColor="#766A93" />
+              <MaterialBinding modelSourceMaterial="*" outlineWidth="2" celShadowColor="#766A93" />
             </Model>
             <Model id="torso" asset="body" position={[1.7,0.6,0]} />
             <Model id="face" asset="head" position={[1.7,1.65,0]}>
-              <MaterialBinding material="*" celRole="face" outlineWidth="1.5" celShadowColor="#B87E87" celControlMap="s84_cel_control" />
+              <MaterialBinding modelSourceMaterial="*" celRole="face" outlineWidth="1.5" celShadowColor="#B87E87" celControlMap="s84_cel_control" />
             </Model>
             <Model id="hair_model" asset="hair" position={[1.7,2.03,-0.10]}>
-              <MaterialBinding material="*" celRole="hair" outlineWidth="2" hairHighlight="0.5" celControlMap="s84_cel_control" />
+              <MaterialBinding modelSourceMaterial="*" celRole="hair" outlineWidth="2" hairHighlight="0.5" celControlMap="s84_cel_control" />
             </Model>
             <Model id="occluder" asset="ball" position={[4,0.7,1]} />
           </CompositeGroup>
