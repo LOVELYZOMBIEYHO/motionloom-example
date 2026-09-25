@@ -2,7 +2,7 @@
 
 The current `main.motionloom` is a 25-second, 1200×800, 24 fps underwater film. The shark uses explicit MeshAsset cages and PrimitiveAsset details; the main document contains no ModelAsset or imported GLB. `main2.motionloom` is an alternative and does not supply schema.json.
 
-Head, jaw, body, fins, gills, gum and teeth are separately authored meshes, with Catmull–Clark subdivision on selected cages. Materials reference images under `texture/`, including reference imagery and a normal map. Model transform curves animate the assembly rather than a skeletal swim clip. Separate parts do not imply a single welded manifold mesh.
+Head, jaw, body, fins, gills, gum and teeth are separately authored meshes, with Catmull–Clark subdivision on selected cages. Materials reference images under `texture/`, including a neutral shark albedo atlas and a normal map. The original studio-lit composite remains a source reference, but is not used as PBR base color because its baked highlights would be lit a second time by MotionLoom. Model transform curves animate the assembly rather than a skeletal swim clip. Separate parts do not imply a single welded manifold mesh.
 
 Opening titles and underwater sea-life graphics lead into the shark motion and jaw beat, a black cut around 20.66 seconds, then an end card. The camera animates its target and roll, with depth of field focused on `@shark_head_model`. Environment, spot and directional lights, atmosphere fog, filmic shading, TAA and overlays establish the look. An AudioClip schedules `audio/below-the-surface.wav` for 25 seconds.
 

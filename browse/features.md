@@ -16,7 +16,7 @@
 | [animation-target](features/animation-target.md) | 26 |
 | [anime](features/anime.md) | 9 |
 | [antialias](features/antialias.md) | 1 |
-| [assets](features/assets.md) | 23 |
+| [assets](features/assets.md) | 24 |
 | [attraction](features/attraction.md) | 1 |
 | [audio](features/audio.md) | 1 |
 | [audio-editing](features/audio-editing.md) | 1 |
@@ -37,7 +37,7 @@
 | [brightness](features/brightness.md) | 1 |
 | [cache-bake](features/cache-bake.md) | 1 |
 | [camera](features/camera.md) | 6 |
-| [camera-3d](features/camera-3d.md) | 22 |
+| [camera-3d](features/camera-3d.md) | 23 |
 | [camera-cut](features/camera-cut.md) | 2 |
 | [canvas-texture](features/canvas-texture.md) | 1 |
 | [capsule-collision](features/capsule-collision.md) | 2 |
@@ -130,7 +130,7 @@
 | [ik](features/ik.md) | 2 |
 | [ik-controls](features/ik-controls.md) | 3 |
 | [image](features/image.md) | 1 |
-| [image-asset](features/image-asset.md) | 3 |
+| [image-asset](features/image-asset.md) | 4 |
 | [image-based-lighting](features/image-based-lighting.md) | 3 |
 | [iris-detail](features/iris-detail.md) | 3 |
 | [justification](features/justification.md) | 1 |
@@ -154,10 +154,10 @@
 | [luma-matte](features/luma-matte.md) | 1 |
 | [mask](features/mask.md) | 3 |
 | [masking](features/masking.md) | 7 |
-| [material](features/material.md) | 12 |
+| [material](features/material.md) | 13 |
 | [material-binding](features/material-binding.md) | 3 |
 | [matte](features/matte.md) | 2 |
-| [mesh-topology](features/mesh-topology.md) | 10 |
+| [mesh-topology](features/mesh-topology.md) | 11 |
 | [metallic-roughness](features/metallic-roughness.md) | 3 |
 | [mirrored-character](features/mirrored-character.md) | 1 |
 | [neon](features/neon.md) | 3 |
@@ -176,8 +176,8 @@
 | [path-offset](features/path-offset.md) | 1 |
 | [path-taper](features/path-taper.md) | 1 |
 | [path-trim](features/path-trim.md) | 1 |
-| [pbr](features/pbr.md) | 7 |
-| [pbr-lighting](features/pbr-lighting.md) | 13 |
+| [pbr](features/pbr.md) | 8 |
+| [pbr-lighting](features/pbr-lighting.md) | 14 |
 | [pin](features/pin.md) | 3 |
 | [polar-noise](features/polar-noise.md) | 2 |
 | [polyline](features/polyline.md) | 3 |
@@ -192,7 +192,7 @@
 | [procedural-texture](features/procedural-texture.md) | 6 |
 | [process](features/process.md) | 38 |
 | [process-effect](features/process-effect.md) | 19 |
-| [product-promotion](features/product-promotion.md) | 1 |
+| [product-promotion](features/product-promotion.md) | 2 |
 | [promo](features/promo.md) | 2 |
 | [prompt-ui](features/prompt-ui.md) | 1 |
 | [proportion-profile](features/proportion-profile.md) | 1 |
@@ -218,7 +218,7 @@
 | [scan-mask](features/scan-mask.md) | 1 |
 | [scanlines](features/scanlines.md) | 3 |
 | [scatter](features/scatter.md) | 2 |
-| [scene](features/scene.md) | 112 |
+| [scene](features/scene.md) | 113 |
 | [scene-gravity](features/scene-gravity.md) | 2 |
 | [scene-physics](features/scene-physics.md) | 2 |
 | [screen-blend](features/screen-blend.md) | 1 |
@@ -257,7 +257,7 @@
 | [transition](features/transition.md) | 6 |
 | [transparent-background](features/transparent-background.md) | 1 |
 | [triangle](features/triangle.md) | 1 |
-| [true-3d](features/true-3d.md) | 24 |
+| [true-3d](features/true-3d.md) | 25 |
 | [turbulence](features/turbulence.md) | 2 |
 | [two-bone-ik](features/two-bone-ik.md) | 3 |
 | [typing-effect](features/typing-effect.md) | 1 |

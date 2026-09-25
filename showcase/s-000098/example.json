@@ -1,0 +1,60 @@
+{
+  "id": "s-000098",
+  "type": "showcase",
+  "title": "Realistic 3D Red Apple",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "true-3d",
+    "assets",
+    "mesh-topology",
+    "image-asset",
+    "pbr",
+    "material",
+    "pbr-lighting",
+    "camera-3d",
+    "product-promotion"
+  ],
+  "dsl": [
+    "Graph",
+    "RenderStyle",
+    "SurfaceStyle",
+    "LightingStyle",
+    "PostStyle",
+    "AntiAliasingStyle",
+    "Assets",
+    "ImageAsset",
+    "MaterialAsset",
+    "PrimitiveAsset",
+    "MeshAsset",
+    "Vertex",
+    "Face",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "CompositeGroup",
+    "Camera3D",
+    "EnvironmentLight",
+    "DirectionalLight",
+    "RectAreaLight",
+    "Model",
+    "Present"
+  ],
+  "teaches": [
+    "Show one 3D apple mesh in textured, gray wireframe and white clay stages.",
+    "Build depth-tested wire geometry from a UV-mapped MeshAsset control cage.",
+    "Animate a breakaway shell, airborne flip, impact beads, camera move and 3D hero return."
+  ],
+  "source_path": "showcase/s-000098",
+  "demo_url": "",
+  "related": [],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Assets",
+    "MeshAsset",
+    "Present"
+  ]
+}
