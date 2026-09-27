@@ -30,292 +30,576 @@ COMPOSITION
     <ModelAsset id="s91_hero_model" src="../../assets/sample_assets/characters/character1/character1.glb" />
 
     <!-- ── Surface library ─────────────────────────────────────────── -->
-    <MaterialAsset id="s91_water" shading="pbr" baseColor="#3B8AAE"
-                   metallic="0.04" roughness="0.14" specular="1.0" emissive="#1C4256" emissiveStrength="0.12" />
-    <MaterialAsset id="s91_stone" shading="pbr" baseColor="#B9B4A6"
-                   metallic="0" roughness="0.9" specular="0.2" />
-    <MaterialAsset id="s91_stone_dark" shading="pbr" baseColor="#8E897C"
-                   metallic="0" roughness="0.88" specular="0.22" />
-    <MaterialAsset id="s91_stone_light" shading="pbr" baseColor="#C8C2B2"
-                   metallic="0" roughness="0.84" specular="0.26" />
-    <MaterialAsset id="s91_wood" shading="pbr" baseColor="#8A5A34"
-                   metallic="0" roughness="0.85" specular="0.18" />
-    <MaterialAsset id="s91_wood_dark" shading="pbr" baseColor="#4E3520"
-                   metallic="0" roughness="0.86" specular="0.16" />
-    <MaterialAsset id="s91_plaster" shading="pbr" baseColor="#EFE7D5"
-                   metallic="0" roughness="0.92" specular="0.14" />
-    <MaterialAsset id="s91_roof" shading="pbr" baseColor="#42506A"
-                   metallic="0.05" roughness="0.66" specular="0.34" />
-    <MaterialAsset id="s91_ridge" shading="pbr" baseColor="#333E52"
-                   metallic="0.05" roughness="0.62" specular="0.36" />
-    <MaterialAsset id="s91_vermilion" shading="pbr" baseColor="#B8301C"
-                   metallic="0.02" roughness="0.55" specular="0.42"
-                   emissive="#5E1006" emissiveStrength="0.4" />
-    <MaterialAsset id="s91_indigo" shading="pbr" baseColor="#2E3F66"
-                   metallic="0" roughness="0.8" specular="0.2" />
-    <MaterialAsset id="s91_grass" shading="pbr" baseColor="#6E9A4E"
-                   metallic="0" roughness="0.95" specular="0.1" />
-    <MaterialAsset id="s91_grass_dark" shading="pbr" baseColor="#4E7A3E"
-                   metallic="0" roughness="0.95" specular="0.1" />
-    <MaterialAsset id="s91_mountain" shading="pbr" baseColor="#5E7186"
-                   metallic="0" roughness="0.98" specular="0.12" />
-    <MaterialAsset id="s91_mountain_far" shading="pbr" baseColor="#74889E"
-                   metallic="0" roughness="1" specular="0.1" />
-    <MaterialAsset id="s91_snow" shading="pbr" baseColor="#F7FAFF"
-                   metallic="0" roughness="0.7" specular="0.3" />
-    <MaterialAsset id="s91_cloud" shading="pbr" baseColor="#FFFFFF"
-                   metallic="0" roughness="1" specular="0.08" />
-    <MaterialAsset id="s91_smoke" shading="pbr" baseColor="#FFFFFFCC"
-                   metallic="0" roughness="1" alphaMode="blend"
-                   doubleSided="true" emissive="#E9F1F6" emissiveStrength="0.65" />
-    <MaterialAsset id="s91_petal" shading="pbr" baseColor="#FF7FB4"
-                   metallic="0" roughness="0.72" doubleSided="true"
-                   emissive="#B23366" emissiveStrength="0.22" />
-    <MaterialAsset id="s91_lantern" shading="pbr" baseColor="#E23A22"
-                   metallic="0.02" roughness="0.55" emissive="#FF9A54"
-                   emissiveStrength="0.9" />
-    <MaterialAsset id="s91_rope" shading="pbr" baseColor="#3A2E24"
-                   metallic="0" roughness="0.9" />
-    <MaterialAsset id="s91_metal" shading="pbr" baseColor="#6A7078"
-                   metallic="0.82" roughness="0.4" specular="0.8" />
-    <MaterialAsset id="s91_trunk" shading="pbr" baseColor="#5A3A24"
-                   metallic="0" roughness="0.92" specular="0.12" />
-    <MaterialAsset id="s91_foliage" shading="pbr" baseColor="#FF6FA8"
-                   metallic="0" roughness="0.88" doubleSided="true"
-                   emissive="#C93A6E" emissiveStrength="0.3" />
-    <MaterialAsset id="s91_shrine_body" shading="pbr" baseColor="#8C4A2E"
-                   metallic="0.02" roughness="0.68" specular="0.3" />
-    <MaterialAsset id="s91_sign" shading="pbr" baseColor="#F8F4E8"
-                   metallic="0" roughness="0.6" emissive="#FFF6DC"
-                   emissiveStrength="0.35" />
-    <MaterialAsset id="s91_vend_white" shading="pbr" baseColor="#F2F2EE"
-                   metallic="0.05" roughness="0.5" specular="0.5" />
-    <MaterialAsset id="s91_vend_red" shading="pbr" baseColor="#D23B2E"
-                   metallic="0.05" roughness="0.45" emissive="#FF6A50"
-                   emissiveStrength="0.2" />
-    <MaterialAsset id="s91_ripple" shading="pbr" baseColor="#CFE8F4"
-                   metallic="0" roughness="0.3" emissive="#DFF4FF"
-                   emissiveStrength="1.3" />
-    <MaterialAsset id="s91_gravel" shading="pbr" baseColor="#A79E8C"
-                   metallic="0" roughness="0.95" specular="0.12" />
-    <MaterialAsset id="s91_sword_steel" shading="pbr" baseColor="#B8C8D2"
-                   metallic="0.92" roughness="0.2" specular="0.9" />
-    <MaterialAsset id="s91_sword_edge" shading="pbr" baseColor="#E8F5FA"
-                   metallic="1" roughness="0.1" specular="1" />
-    <MaterialAsset id="s91_sword_bronze" shading="pbr" baseColor="#A66B2C"
-                   metallic="0.78" roughness="0.3" specular="0.76" />
-    <MaterialAsset id="s91_sword_grip" shading="pbr" baseColor="#39231C"
-                   metallic="0.05" roughness="0.7" specular="0.28" />
-    <MaterialAsset id="s91_boulder" shading="pbr" baseColor="#73766F"
-                   metallic="0" roughness="0.96" specular="0.12" />
-    <MaterialAsset id="s91_boulder_dark" shading="pbr" baseColor="#555C57"
-                   metallic="0" roughness="0.98" specular="0.09" />
-    <MaterialAsset id="s91_boulder_moss" shading="pbr" baseColor="#697958"
-                   metallic="0" roughness="1" specular="0.06" />
+    <MaterialAsset
+      id="s91_water"
+      shading="pbr"
+      baseColor="#3B8AAE"
+      metallic="0.04"
+      roughness="0.14"
+      specular="1.0"
+      emissive="#1C4256"
+      emissiveStrength="0.12"
+    />
+    <MaterialAsset id="s91_stone" shading="pbr" baseColor="#B9B4A6" metallic="0" roughness="0.9" specular="0.2" />
+    <MaterialAsset
+      id="s91_stone_dark"
+      shading="pbr"
+      baseColor="#8E897C"
+      metallic="0"
+      roughness="0.88"
+      specular="0.22"
+    />
+    <MaterialAsset
+      id="s91_stone_light"
+      shading="pbr"
+      baseColor="#C8C2B2"
+      metallic="0"
+      roughness="0.84"
+      specular="0.26"
+    />
+    <MaterialAsset id="s91_wood" shading="pbr" baseColor="#8A5A34" metallic="0" roughness="0.85" specular="0.18" />
+    <MaterialAsset id="s91_wood_dark" shading="pbr" baseColor="#4E3520" metallic="0" roughness="0.86" specular="0.16" />
+    <MaterialAsset id="s91_plaster" shading="pbr" baseColor="#EFE7D5" metallic="0" roughness="0.92" specular="0.14" />
+    <MaterialAsset id="s91_roof" shading="pbr" baseColor="#42506A" metallic="0.05" roughness="0.66" specular="0.34" />
+    <MaterialAsset id="s91_ridge" shading="pbr" baseColor="#333E52" metallic="0.05" roughness="0.62" specular="0.36" />
+    <MaterialAsset
+      id="s91_vermilion"
+      shading="pbr"
+      baseColor="#B8301C"
+      metallic="0.02"
+      roughness="0.55"
+      specular="0.42"
+      emissive="#5E1006"
+      emissiveStrength="0.4"
+    />
+    <MaterialAsset id="s91_indigo" shading="pbr" baseColor="#2E3F66" metallic="0" roughness="0.8" specular="0.2" />
+    <MaterialAsset id="s91_grass" shading="pbr" baseColor="#6E9A4E" metallic="0" roughness="0.95" specular="0.1" />
+    <MaterialAsset id="s91_grass_dark" shading="pbr" baseColor="#4E7A3E" metallic="0" roughness="0.95" specular="0.1" />
+    <MaterialAsset id="s91_mountain" shading="pbr" baseColor="#5E7186" metallic="0" roughness="0.98" specular="0.12" />
+    <MaterialAsset id="s91_mountain_far" shading="pbr" baseColor="#74889E" metallic="0" roughness="1" specular="0.1" />
+    <MaterialAsset id="s91_snow" shading="pbr" baseColor="#F7FAFF" metallic="0" roughness="0.7" specular="0.3" />
+    <MaterialAsset id="s91_cloud" shading="pbr" baseColor="#FFFFFF" metallic="0" roughness="1" specular="0.08" />
+    <MaterialAsset
+      id="s91_smoke"
+      shading="pbr"
+      baseColor="#FFFFFFCC"
+      metallic="0"
+      roughness="1"
+      alphaMode="blend"
+      doubleSided="true"
+      emissive="#E9F1F6"
+      emissiveStrength="0.65"
+    />
+    <MaterialAsset
+      id="s91_petal"
+      shading="pbr"
+      baseColor="#FF7FB4"
+      metallic="0"
+      roughness="0.72"
+      doubleSided="true"
+      emissive="#B23366"
+      emissiveStrength="0.22"
+    />
+    <MaterialAsset
+      id="s91_lantern"
+      shading="pbr"
+      baseColor="#E23A22"
+      metallic="0.02"
+      roughness="0.55"
+      emissive="#FF9A54"
+      emissiveStrength="0.9"
+    />
+    <MaterialAsset id="s91_rope" shading="pbr" baseColor="#3A2E24" metallic="0" roughness="0.9" />
+    <MaterialAsset id="s91_metal" shading="pbr" baseColor="#6A7078" metallic="0.82" roughness="0.4" specular="0.8" />
+    <MaterialAsset id="s91_trunk" shading="pbr" baseColor="#5A3A24" metallic="0" roughness="0.92" specular="0.12" />
+    <MaterialAsset
+      id="s91_foliage"
+      shading="pbr"
+      baseColor="#FF6FA8"
+      metallic="0"
+      roughness="0.88"
+      doubleSided="true"
+      emissive="#C93A6E"
+      emissiveStrength="0.3"
+    />
+    <MaterialAsset
+      id="s91_shrine_body"
+      shading="pbr"
+      baseColor="#8C4A2E"
+      metallic="0.02"
+      roughness="0.68"
+      specular="0.3"
+    />
+    <MaterialAsset
+      id="s91_sign"
+      shading="pbr"
+      baseColor="#F8F4E8"
+      metallic="0"
+      roughness="0.6"
+      emissive="#FFF6DC"
+      emissiveStrength="0.35"
+    />
+    <MaterialAsset
+      id="s91_vend_white"
+      shading="pbr"
+      baseColor="#F2F2EE"
+      metallic="0.05"
+      roughness="0.5"
+      specular="0.5"
+    />
+    <MaterialAsset
+      id="s91_vend_red"
+      shading="pbr"
+      baseColor="#D23B2E"
+      metallic="0.05"
+      roughness="0.45"
+      emissive="#FF6A50"
+      emissiveStrength="0.2"
+    />
+    <MaterialAsset
+      id="s91_ripple"
+      shading="pbr"
+      baseColor="#CFE8F4"
+      metallic="0"
+      roughness="0.3"
+      emissive="#DFF4FF"
+      emissiveStrength="1.3"
+    />
+    <MaterialAsset id="s91_gravel" shading="pbr" baseColor="#A79E8C" metallic="0" roughness="0.95" specular="0.12" />
+    <MaterialAsset
+      id="s91_sword_steel"
+      shading="pbr"
+      baseColor="#B8C8D2"
+      metallic="0.92"
+      roughness="0.2"
+      specular="0.9"
+    />
+    <MaterialAsset id="s91_sword_edge" shading="pbr" baseColor="#E8F5FA" metallic="1" roughness="0.1" specular="1" />
+    <MaterialAsset
+      id="s91_sword_bronze"
+      shading="pbr"
+      baseColor="#A66B2C"
+      metallic="0.78"
+      roughness="0.3"
+      specular="0.76"
+    />
+    <MaterialAsset
+      id="s91_sword_grip"
+      shading="pbr"
+      baseColor="#39231C"
+      metallic="0.05"
+      roughness="0.7"
+      specular="0.28"
+    />
+    <MaterialAsset id="s91_boulder" shading="pbr" baseColor="#73766F" metallic="0" roughness="0.96" specular="0.12" />
+    <MaterialAsset
+      id="s91_boulder_dark"
+      shading="pbr"
+      baseColor="#555C57"
+      metallic="0"
+      roughness="0.98"
+      specular="0.09"
+    />
+    <MaterialAsset id="s91_boulder_moss" shading="pbr" baseColor="#697958" metallic="0" roughness="1" specular="0.06" />
 
     <!-- ── Machiya kit ─────────────────────────────────────────────── -->
-    <PrimitiveAsset id="s91_h_body" shape="box" size={[3.2,2.0,2.6]}
-                    material="s91_plaster" />
-    <PrimitiveAsset id="s91_h_roof" shape="wedge" size={[3.5,0.75,1.45]}
-                    material="s91_roof" />
-    <PrimitiveAsset id="s91_h_ridge" shape="box" size={[3.5,0.1,0.18]}
-                    material="s91_ridge" />
-    <PrimitiveAsset id="s91_h_door" shape="box" size={[0.95,1.35,0.08]}
-                    material="s91_wood_dark" />
-    <PrimitiveAsset id="s91_h_window" shape="box" size={[0.8,0.7,0.06]}
-                    material="s91_wood_dark" />
-    <PrimitiveAsset id="s91_h_noren" shape="box" size={[1.05,0.5,0.05]}
-                    material="s91_indigo" />
-    <PrimitiveAsset id="s91_h_lattice" shape="box" size={[0.06,1.3,0.06]}
-                    material="s91_wood" />
-    <PrimitiveAsset id="s91_b_body" shape="box" size={[3.4,3.0,2.8]}
-                    material="s91_wood" />
-    <PrimitiveAsset id="s91_b_roof" shape="wedge" size={[3.7,0.8,1.55]}
-                    material="s91_roof" />
-    <PrimitiveAsset id="s91_b_rail" shape="box" size={[3.4,0.09,0.09]}
-                    material="s91_wood_dark" />
-    <PrimitiveAsset id="s91_b_post" shape="box" size={[0.07,0.55,0.07]}
-                    material="s91_wood_dark" />
-    <PrimitiveAsset id="s91_s_body" shape="box" size={[3.0,2.2,2.4]}
-                    material="s91_wood" />
-    <PrimitiveAsset id="s91_s_roof" shape="wedge" size={[3.3,0.7,1.35]}
-                    material="s91_roof" />
-    <PrimitiveAsset id="s91_s_awn" shape="wedge" size={[3.1,0.45,1.0]}
-                    material="s91_indigo" />
-    <PrimitiveAsset id="s91_s_sign" shape="box" size={[2.4,0.6,0.1]}
-                    material="s91_sign" />
-    <PrimitiveAsset id="s91_s_step" shape="box" size={[3.0,0.2,1.2]}
-                    material="s91_gravel" />
-    <PrimitiveAsset id="s91_chimney" shape="box" size={[0.34,1.1,0.34]}
-                    material="s91_stone_dark" />
+    <GeometryAsset id="s91_h_body_geometry">
+      <Primitive shape="box" size={[3.2,2.0,2.6]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_h_body" material="s91_plaster" geometry="s91_h_body_geometry" />
+    <GeometryAsset id="s91_h_roof_geometry">
+      <Primitive shape="wedge" size={[3.5,0.75,1.45]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_h_roof" material="s91_roof" geometry="s91_h_roof_geometry" />
+    <GeometryAsset id="s91_h_ridge_geometry">
+      <Primitive shape="box" size={[3.5,0.1,0.18]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_h_ridge" material="s91_ridge" geometry="s91_h_ridge_geometry" />
+    <GeometryAsset id="s91_h_door_geometry">
+      <Primitive shape="box" size={[0.95,1.35,0.08]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_h_door" material="s91_wood_dark" geometry="s91_h_door_geometry" />
+    <GeometryAsset id="s91_h_window_geometry">
+      <Primitive shape="box" size={[0.8,0.7,0.06]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_h_window" material="s91_wood_dark" geometry="s91_h_window_geometry" />
+    <GeometryAsset id="s91_h_noren_geometry">
+      <Primitive shape="box" size={[1.05,0.5,0.05]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_h_noren" material="s91_indigo" geometry="s91_h_noren_geometry" />
+    <GeometryAsset id="s91_h_lattice_geometry">
+      <Primitive shape="box" size={[0.06,1.3,0.06]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_h_lattice" material="s91_wood" geometry="s91_h_lattice_geometry" />
+    <GeometryAsset id="s91_b_body_geometry">
+      <Primitive shape="box" size={[3.4,3.0,2.8]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_b_body" material="s91_wood" geometry="s91_b_body_geometry" />
+    <GeometryAsset id="s91_b_roof_geometry">
+      <Primitive shape="wedge" size={[3.7,0.8,1.55]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_b_roof" material="s91_roof" geometry="s91_b_roof_geometry" />
+    <GeometryAsset id="s91_b_rail_geometry">
+      <Primitive shape="box" size={[3.4,0.09,0.09]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_b_rail" material="s91_wood_dark" geometry="s91_b_rail_geometry" />
+    <GeometryAsset id="s91_b_post_geometry">
+      <Primitive shape="box" size={[0.07,0.55,0.07]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_b_post" material="s91_wood_dark" geometry="s91_b_post_geometry" />
+    <GeometryAsset id="s91_s_body_geometry">
+      <Primitive shape="box" size={[3.0,2.2,2.4]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_s_body" material="s91_wood" geometry="s91_s_body_geometry" />
+    <GeometryAsset id="s91_s_roof_geometry">
+      <Primitive shape="wedge" size={[3.3,0.7,1.35]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_s_roof" material="s91_roof" geometry="s91_s_roof_geometry" />
+    <GeometryAsset id="s91_s_awn_geometry">
+      <Primitive shape="wedge" size={[3.1,0.45,1.0]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_s_awn" material="s91_indigo" geometry="s91_s_awn_geometry" />
+    <GeometryAsset id="s91_s_sign_geometry">
+      <Primitive shape="box" size={[2.4,0.6,0.1]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_s_sign" material="s91_sign" geometry="s91_s_sign_geometry" />
+    <GeometryAsset id="s91_s_step_geometry">
+      <Primitive shape="box" size={[3.0,0.2,1.2]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_s_step" material="s91_gravel" geometry="s91_s_step_geometry" />
+    <GeometryAsset id="s91_chimney_geometry">
+      <Primitive shape="box" size={[0.34,1.1,0.34]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_chimney" material="s91_stone_dark" geometry="s91_chimney_geometry" />
 
     <!-- ── Shrine hill kit ─────────────────────────────────────────── -->
-    <PrimitiveAsset id="s91_pillar" shape="cylinder" radius="0.22"
-                    height="3.2" segments="18" material="s91_vermilion" />
-    <PrimitiveAsset id="s91_kasagi" shape="box" size={[3.8,0.3,0.4]}
-                    material="s91_vermilion" />
-    <PrimitiveAsset id="s91_nuki" shape="box" size={[3.2,0.22,0.26]}
-                    material="s91_vermilion" />
-    <PrimitiveAsset id="s91_gaku" shape="box" size={[0.42,0.62,0.16]}
-                    material="s91_vermilion" />
-    <PrimitiveAsset id="s91_step" shape="box" size={[2.2,0.32,0.55]}
-                    material="s91_stone" />
-    <PrimitiveAsset id="s91_hill" shape="frustum" topSize={[7,5]}
-                    bottomSize={[12,9]} height="3.2" material="s91_grass" />
-    <PrimitiveAsset id="s91_sh_base" shape="box" size={[3.8,0.4,3.2]}
-                    material="s91_stone" />
-    <PrimitiveAsset id="s91_sh_body" shape="box" size={[2.8,1.7,2.2]}
-                    material="s91_shrine_body" />
-    <PrimitiveAsset id="s91_sh_roof" shape="frustum" topSize={[1.3,1.0]}
-                    bottomSize={[3.6,3.0]} height="1.0" material="s91_roof" />
-    <PrimitiveAsset id="s91_sh_ridge" shape="box" size={[1.5,0.12,0.24]}
-                    material="s91_ridge" />
-    <PrimitiveAsset id="s91_sh_pillar" shape="cylinder" radius="0.1"
-                    height="1.7" segments="12" material="s91_vermilion" />
+    <GeometryAsset id="s91_pillar_geometry">
+      <Primitive shape="cylinder" radius="0.22" height="3.2" segments="18" />
+    </GeometryAsset>
+    <MeshAsset id="s91_pillar" material="s91_vermilion" geometry="s91_pillar_geometry" />
+    <GeometryAsset id="s91_kasagi_geometry">
+      <Primitive shape="box" size={[3.8,0.3,0.4]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_kasagi" material="s91_vermilion" geometry="s91_kasagi_geometry" />
+    <GeometryAsset id="s91_nuki_geometry">
+      <Primitive shape="box" size={[3.2,0.22,0.26]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_nuki" material="s91_vermilion" geometry="s91_nuki_geometry" />
+    <GeometryAsset id="s91_gaku_geometry">
+      <Primitive shape="box" size={[0.42,0.62,0.16]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_gaku" material="s91_vermilion" geometry="s91_gaku_geometry" />
+    <GeometryAsset id="s91_step_geometry">
+      <Primitive shape="box" size={[2.2,0.32,0.55]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_step" material="s91_stone" geometry="s91_step_geometry" />
+    <GeometryAsset id="s91_hill_geometry">
+      <Primitive shape="frustum" topSize={[7,5]} bottomSize={[12,9]} height="3.2" />
+    </GeometryAsset>
+    <MeshAsset id="s91_hill" material="s91_grass" geometry="s91_hill_geometry" />
+    <GeometryAsset id="s91_sh_base_geometry">
+      <Primitive shape="box" size={[3.8,0.4,3.2]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_sh_base" material="s91_stone" geometry="s91_sh_base_geometry" />
+    <GeometryAsset id="s91_sh_body_geometry">
+      <Primitive shape="box" size={[2.8,1.7,2.2]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_sh_body" material="s91_shrine_body" geometry="s91_sh_body_geometry" />
+    <GeometryAsset id="s91_sh_roof_geometry">
+      <Primitive shape="frustum" topSize={[1.3,1.0]} bottomSize={[3.6,3.0]} height="1.0" />
+    </GeometryAsset>
+    <MeshAsset id="s91_sh_roof" material="s91_roof" geometry="s91_sh_roof_geometry" />
+    <GeometryAsset id="s91_sh_ridge_geometry">
+      <Primitive shape="box" size={[1.5,0.12,0.24]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_sh_ridge" material="s91_ridge" geometry="s91_sh_ridge_geometry" />
+    <GeometryAsset id="s91_sh_pillar_geometry">
+      <Primitive shape="cylinder" radius="0.1" height="1.7" segments="12" />
+    </GeometryAsset>
+    <MeshAsset id="s91_sh_pillar" material="s91_vermilion" geometry="s91_sh_pillar_geometry" />
 
     <!-- ── Stone lantern kit ───────────────────────────────────────── -->
-    <PrimitiveAsset id="s91_sl_base" shape="cylinder" radius="0.26"
-                    height="0.18" segments="14" material="s91_stone" />
-    <PrimitiveAsset id="s91_sl_pillar" shape="cylinder" radius="0.09"
-                    height="0.55" segments="12" material="s91_stone" />
-    <PrimitiveAsset id="s91_sl_light" shape="box" size={[0.4,0.34,0.4]}
-                    material="s91_lantern" />
-    <PrimitiveAsset id="s91_sl_roof" shape="frustum" topSize={[0.2,0.2]}
-                    bottomSize={[0.62,0.62]} height="0.3" material="s91_stone" />
-    <PrimitiveAsset id="s91_sl_top" shape="sphere" radius="0.09"
-                    segments="10" rings="8" material="s91_stone" />
+    <GeometryAsset id="s91_sl_base_geometry">
+      <Primitive shape="cylinder" radius="0.26" height="0.18" segments="14" />
+    </GeometryAsset>
+    <MeshAsset id="s91_sl_base" material="s91_stone" geometry="s91_sl_base_geometry" />
+    <GeometryAsset id="s91_sl_pillar_geometry">
+      <Primitive shape="cylinder" radius="0.09" height="0.55" segments="12" />
+    </GeometryAsset>
+    <MeshAsset id="s91_sl_pillar" material="s91_stone" geometry="s91_sl_pillar_geometry" />
+    <GeometryAsset id="s91_sl_light_geometry">
+      <Primitive shape="box" size={[0.4,0.34,0.4]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_sl_light" material="s91_lantern" geometry="s91_sl_light_geometry" />
+    <GeometryAsset id="s91_sl_roof_geometry">
+      <Primitive shape="frustum" topSize={[0.2,0.2]} bottomSize={[0.62,0.62]} height="0.3" />
+    </GeometryAsset>
+    <MeshAsset id="s91_sl_roof" material="s91_stone" geometry="s91_sl_roof_geometry" />
+    <GeometryAsset id="s91_sl_top_geometry">
+      <Primitive shape="sphere" radius="0.09" segments="10" rings="8" />
+    </GeometryAsset>
+    <MeshAsset id="s91_sl_top" material="s91_stone" geometry="s91_sl_top_geometry" />
 
     <!-- ── Hanging paper lantern kit ───────────────────────────────── -->
-    <PrimitiveAsset id="s91_l_rope" shape="cylinder" radius="0.016"
-                    height="0.55" segments="6" material="s91_rope" />
-    <PrimitiveAsset id="s91_l_cap" shape="cylinder" radius="0.11"
-                    height="0.07" segments="12" material="s91_wood_dark" />
-    <PrimitiveAsset id="s91_l_body" shape="sphere" radius="0.2"
-                    segments="16" rings="12" material="s91_lantern" />
-    <PrimitiveAsset id="s91_l_cap2" shape="cylinder" radius="0.08"
-                    height="0.05" segments="12" material="s91_wood_dark" />
+    <GeometryAsset id="s91_l_rope_geometry">
+      <Primitive shape="cylinder" radius="0.016" height="0.55" segments="6" />
+    </GeometryAsset>
+    <MeshAsset id="s91_l_rope" material="s91_rope" geometry="s91_l_rope_geometry" />
+    <GeometryAsset id="s91_l_cap_geometry">
+      <Primitive shape="cylinder" radius="0.11" height="0.07" segments="12" />
+    </GeometryAsset>
+    <MeshAsset id="s91_l_cap" material="s91_wood_dark" geometry="s91_l_cap_geometry" />
+    <GeometryAsset id="s91_l_body_geometry">
+      <Primitive shape="sphere" radius="0.2" segments="16" rings="12" />
+    </GeometryAsset>
+    <MeshAsset id="s91_l_body" material="s91_lantern" geometry="s91_l_body_geometry" />
+    <GeometryAsset id="s91_l_cap2_geometry">
+      <Primitive shape="cylinder" radius="0.08" height="0.05" segments="12" />
+    </GeometryAsset>
+    <MeshAsset id="s91_l_cap2" material="s91_wood_dark" geometry="s91_l_cap2_geometry" />
 
     <!-- ── Canal kit ───────────────────────────────────────────────── -->
-    <PrimitiveAsset id="s91_waterbox" shape="box" size={[44,0.5,5.0]}
-                    material="s91_water" />
-    <PrimitiveAsset id="s91_bankwall" shape="box" size={[44,0.7,0.3]}
-                    material="s91_stone_dark" />
-    <PrimitiveAsset id="s91_far_ground" shape="box" size={[44,0.5,13.6]}
-                    material="s91_gravel" />
-    <PrimitiveAsset id="s91_near_walk" shape="box" size={[44,0.5,4.1]}
-                    material="s91_stone" />
-    <PrimitiveAsset id="s91_near_ground" shape="box" size={[44,0.5,3.2]}
-                    material="s91_gravel" />
-    <PrimitiveAsset id="s91_street" shape="box" size={[40,0.06,3.4]}
-                    material="s91_stone" />
-    <PrimitiveAsset id="s91_grass_strip" shape="box" size={[44,0.42,0.9]}
-                    material="s91_grass_dark" />
-    <PrimitiveAsset id="s91_rail_rail" shape="box" size={[4,0.1,0.12]}
-                    material="s91_wood_dark" />
-    <PrimitiveAsset id="s91_rail_post" shape="box" size={[0.1,1.0,0.1]}
-                    material="s91_wood_dark" />
-    <PrimitiveAsset id="s91_deck" shape="box" size={[2.2,0.25,2.6]}
-                    material="s91_stone_light" />
-    <PrimitiveAsset id="s91_ramp" shape="wedge" size={[2.2,0.55,1.4]}
-                    material="s91_stone_light" />
-    <PrimitiveAsset id="s91_bridge_rail" shape="box" size={[0.14,0.14,5.4]}
-                    material="s91_wood_dark" />
-    <PrimitiveAsset id="s91_bridge_post" shape="box" size={[0.12,0.9,0.12]}
-                    material="s91_wood_dark" />
-    <PrimitiveAsset id="s91_ring_seg" shape="box" size={[0.34,0.035,0.07]}
-                    material="s91_ripple" />
+    <GeometryAsset id="s91_waterbox_geometry">
+      <Primitive shape="box" size={[44,0.5,5.0]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_waterbox" material="s91_water" geometry="s91_waterbox_geometry" />
+    <GeometryAsset id="s91_bankwall_geometry">
+      <Primitive shape="box" size={[44,0.7,0.3]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_bankwall" material="s91_stone_dark" geometry="s91_bankwall_geometry" />
+    <GeometryAsset id="s91_far_ground_geometry">
+      <Primitive shape="box" size={[44,0.5,13.6]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_far_ground" material="s91_gravel" geometry="s91_far_ground_geometry" />
+    <GeometryAsset id="s91_near_walk_geometry">
+      <Primitive shape="box" size={[44,0.5,4.1]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_near_walk" material="s91_stone" geometry="s91_near_walk_geometry" />
+    <GeometryAsset id="s91_near_ground_geometry">
+      <Primitive shape="box" size={[44,0.5,3.2]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_near_ground" material="s91_gravel" geometry="s91_near_ground_geometry" />
+    <GeometryAsset id="s91_street_geometry">
+      <Primitive shape="box" size={[40,0.06,3.4]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_street" material="s91_stone" geometry="s91_street_geometry" />
+    <GeometryAsset id="s91_grass_strip_geometry">
+      <Primitive shape="box" size={[44,0.42,0.9]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_grass_strip" material="s91_grass_dark" geometry="s91_grass_strip_geometry" />
+    <GeometryAsset id="s91_rail_rail_geometry">
+      <Primitive shape="box" size={[4,0.1,0.12]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_rail_rail" material="s91_wood_dark" geometry="s91_rail_rail_geometry" />
+    <GeometryAsset id="s91_rail_post_geometry">
+      <Primitive shape="box" size={[0.1,1.0,0.1]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_rail_post" material="s91_wood_dark" geometry="s91_rail_post_geometry" />
+    <GeometryAsset id="s91_deck_geometry">
+      <Primitive shape="box" size={[2.2,0.25,2.6]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_deck" material="s91_stone_light" geometry="s91_deck_geometry" />
+    <GeometryAsset id="s91_ramp_geometry">
+      <Primitive shape="wedge" size={[2.2,0.55,1.4]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_ramp" material="s91_stone_light" geometry="s91_ramp_geometry" />
+    <GeometryAsset id="s91_bridge_rail_geometry">
+      <Primitive shape="box" size={[0.14,0.14,5.4]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_bridge_rail" material="s91_wood_dark" geometry="s91_bridge_rail_geometry" />
+    <GeometryAsset id="s91_bridge_post_geometry">
+      <Primitive shape="box" size={[0.12,0.9,0.12]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_bridge_post" material="s91_wood_dark" geometry="s91_bridge_post_geometry" />
+    <GeometryAsset id="s91_ring_seg_geometry">
+      <Primitive shape="box" size={[0.34,0.035,0.07]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_ring_seg" material="s91_ripple" geometry="s91_ring_seg_geometry" />
 
     <!-- Native PrimitiveAsset sword: broad steel blade, bright edge and bronze fittings. -->
-    <PrimitiveAsset id="s91_sword_blade" shape="box" size={[0.105,0.76,0.035]}
-                    bevelRadius="0.012" bevelSegments="2" material="s91_sword_steel" />
-    <PrimitiveAsset id="s91_sword_edge_strip" shape="box" size={[0.018,0.72,0.042]}
-                    bevelRadius="0.007" bevelSegments="2" material="s91_sword_edge" />
-    <PrimitiveAsset id="s91_sword_tip" shape="cone" radius="0.073" height="0.16"
-                    segments="4" material="s91_sword_edge" />
-    <PrimitiveAsset id="s91_sword_guard" shape="box" size={[0.34,0.055,0.09]}
-                    bevelRadius="0.025" bevelSegments="3" material="s91_sword_bronze" />
-    <PrimitiveAsset id="s91_sword_grip_part" shape="cylinder" radius="0.045" height="0.25"
-                    segments="16" material="s91_sword_grip" />
-    <PrimitiveAsset id="s91_sword_pommel" shape="sphere" radius="0.07" segments="16"
-                    rings="8" material="s91_sword_bronze" />
+    <GeometryAsset id="s91_sword_blade_geometry">
+      <Primitive shape="box" size={[0.105,0.76,0.035]} bevelRadius="0.012" bevelSegments="2" />
+    </GeometryAsset>
+    <MeshAsset id="s91_sword_blade" material="s91_sword_steel" geometry="s91_sword_blade_geometry" />
+    <GeometryAsset id="s91_sword_edge_strip_geometry">
+      <Primitive shape="box" size={[0.018,0.72,0.042]} bevelRadius="0.007" bevelSegments="2" />
+    </GeometryAsset>
+    <MeshAsset id="s91_sword_edge_strip" material="s91_sword_edge" geometry="s91_sword_edge_strip_geometry" />
+    <GeometryAsset id="s91_sword_tip_geometry">
+      <Primitive shape="cone" radius="0.073" height="0.16" segments="4" />
+    </GeometryAsset>
+    <MeshAsset id="s91_sword_tip" material="s91_sword_edge" geometry="s91_sword_tip_geometry" />
+    <GeometryAsset id="s91_sword_guard_geometry">
+      <Primitive shape="box" size={[0.34,0.055,0.09]} bevelRadius="0.025" bevelSegments="3" />
+    </GeometryAsset>
+    <MeshAsset id="s91_sword_guard" material="s91_sword_bronze" geometry="s91_sword_guard_geometry" />
+    <GeometryAsset id="s91_sword_grip_part_geometry">
+      <Primitive shape="cylinder" radius="0.045" height="0.25" segments="16" />
+    </GeometryAsset>
+    <MeshAsset id="s91_sword_grip_part" material="s91_sword_grip" geometry="s91_sword_grip_part_geometry" />
+    <GeometryAsset id="s91_sword_pommel_geometry">
+      <Primitive shape="sphere" radius="0.07" segments="16" rings="8" />
+    </GeometryAsset>
+    <MeshAsset id="s91_sword_pommel" material="s91_sword_bronze" geometry="s91_sword_pommel_geometry" />
 
     <!-- Faceted boulder pieces carry solid convex collision and a broad, stable central cap. -->
-    <PrimitiveAsset id="s91_boulder_core" shape="loft" material="s91_boulder"
-                    collision="solid" collider="convex" colliderMargin="0.015"
-                    friction="0.95" restitution="0.02">
+    <GeometryAsset id="s91_boulder_core_geometry">
       <Loft segments="11" closed="true" capStart="true" capEnd="true">
         <Section at="-0.08" width="3.15" depth="2.45" profile="ellipse" offset={[-0.10,0.04]} />
         <Section at="0.28" width="3.02" depth="2.30" profile="ellipse" offset={[0.08,-0.06]} />
         <Section at="0.66" width="2.62" depth="2.02" profile="ellipse" offset={[-0.04,0.06]} />
         <Section at="0.92" width="2.34" depth="1.72" profile="ellipse" offset={[0.06,-0.02]} />
       </Loft>
-    </PrimitiveAsset>
-    <PrimitiveAsset id="s91_boulder_lobe_a" shape="ellipsoid" radii={[1.05,0.56,0.86]}
-                    segments="11" rings="7" material="s91_boulder_dark"
-                    collision="solid" collider="convex" colliderMargin="0.015"
-                    friction="0.95" restitution="0.02" />
-    <PrimitiveAsset id="s91_boulder_lobe_b" shape="ellipsoid" radii={[0.78,0.43,0.66]}
-                    segments="9" rings="6" material="s91_boulder"
-                    collision="solid" collider="convex" colliderMargin="0.015"
-                    friction="0.95" restitution="0.02" />
-    <PrimitiveAsset id="s91_boulder_moss_cap" shape="ellipsoid" radii={[0.72,0.12,0.48]}
-                    segments="10" rings="6" material="s91_boulder_moss" />
+    </GeometryAsset>
+    <MeshAsset
+      id="s91_boulder_core"
+      material="s91_boulder"
+      collision="solid"
+      collider="convex"
+      colliderMargin="0.015"
+      friction="0.95"
+      restitution="0.02"
+      geometry="s91_boulder_core_geometry"
+    />
+    <GeometryAsset id="s91_boulder_lobe_a_geometry">
+      <Primitive shape="ellipsoid" radii={[1.05,0.56,0.86]} segments="11" rings="7" />
+    </GeometryAsset>
+    <MeshAsset
+      id="s91_boulder_lobe_a"
+      material="s91_boulder_dark"
+      collision="solid"
+      collider="convex"
+      colliderMargin="0.015"
+      friction="0.95"
+      restitution="0.02"
+      geometry="s91_boulder_lobe_a_geometry"
+    />
+    <GeometryAsset id="s91_boulder_lobe_b_geometry">
+      <Primitive shape="ellipsoid" radii={[0.78,0.43,0.66]} segments="9" rings="6" />
+    </GeometryAsset>
+    <MeshAsset
+      id="s91_boulder_lobe_b"
+      material="s91_boulder"
+      collision="solid"
+      collider="convex"
+      colliderMargin="0.015"
+      friction="0.95"
+      restitution="0.02"
+      geometry="s91_boulder_lobe_b_geometry"
+    />
+    <GeometryAsset id="s91_boulder_moss_cap_geometry">
+      <Primitive shape="ellipsoid" radii={[0.72,0.12,0.48]} segments="10" rings="6" />
+    </GeometryAsset>
+    <MeshAsset id="s91_boulder_moss_cap" material="s91_boulder_moss" geometry="s91_boulder_moss_cap_geometry" />
 
     <!-- ── Street furniture kit ────────────────────────────────────── -->
-    <PrimitiveAsset id="s91_pole" shape="cylinder" radius="0.1"
-                    height="5.2" segments="12" material="s91_wood_dark" />
-    <PrimitiveAsset id="s91_cross" shape="box" size={[1.5,0.09,0.09]}
-                    material="s91_wood_dark" />
-    <PrimitiveAsset id="s91_wire" shape="cylinder" radius="0.014"
-                    height="6.2" segments="6" material="s91_metal" />
-    <PrimitiveAsset id="s91_v_body" shape="box" size={[0.95,1.85,0.75]}
-                    material="s91_vend_white" />
-    <PrimitiveAsset id="s91_v_panel" shape="box" size={[0.8,1.2,0.07]}
-                    material="s91_vend_red" />
-    <PrimitiveAsset id="s91_v_display" shape="box" size={[0.72,0.28,0.06]}
-                    material="s91_metal" />
-    <PrimitiveAsset id="s91_v_base" shape="box" size={[0.95,0.14,0.75]}
-                    material="s91_metal" />
+    <GeometryAsset id="s91_pole_geometry">
+      <Primitive shape="cylinder" radius="0.1" height="5.2" segments="12" />
+    </GeometryAsset>
+    <MeshAsset id="s91_pole" material="s91_wood_dark" geometry="s91_pole_geometry" />
+    <GeometryAsset id="s91_cross_geometry">
+      <Primitive shape="box" size={[1.5,0.09,0.09]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_cross" material="s91_wood_dark" geometry="s91_cross_geometry" />
+    <GeometryAsset id="s91_wire_geometry">
+      <Primitive shape="cylinder" radius="0.014" height="6.2" segments="6" />
+    </GeometryAsset>
+    <MeshAsset id="s91_wire" material="s91_metal" geometry="s91_wire_geometry" />
+    <GeometryAsset id="s91_v_body_geometry">
+      <Primitive shape="box" size={[0.95,1.85,0.75]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_v_body" material="s91_vend_white" geometry="s91_v_body_geometry" />
+    <GeometryAsset id="s91_v_panel_geometry">
+      <Primitive shape="box" size={[0.8,1.2,0.07]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_v_panel" material="s91_vend_red" geometry="s91_v_panel_geometry" />
+    <GeometryAsset id="s91_v_display_geometry">
+      <Primitive shape="box" size={[0.72,0.28,0.06]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_v_display" material="s91_metal" geometry="s91_v_display_geometry" />
+    <GeometryAsset id="s91_v_base_geometry">
+      <Primitive shape="box" size={[0.95,0.14,0.75]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_v_base" material="s91_metal" geometry="s91_v_base_geometry" />
 
     <!-- ── Sky and landform kit ────────────────────────────────────── -->
-    <PrimitiveAsset id="s91_cloud_a" shape="ellipsoid" radii={[2.3,0.8,1.3]}
-                    segments="20" rings="14" material="s91_cloud" />
-    <PrimitiveAsset id="s91_cloud_b" shape="ellipsoid" radii={[1.6,0.6,1.0]}
-                    segments="18" rings="12" material="s91_cloud" />
-    <PrimitiveAsset id="s91_cloud_c" shape="ellipsoid" radii={[1.1,0.45,0.8]}
-                    segments="16" rings="10" material="s91_cloud" />
-    <PrimitiveAsset id="s91_mtn_big" shape="cone" radius="18" height="10"
-                    segments="28" material="s91_mountain" />
-    <PrimitiveAsset id="s91_mtn_mid" shape="cone" radius="13" height="7"
-                    segments="24" material="s91_mountain" />
-    <PrimitiveAsset id="s91_mtn_small" shape="cone" radius="9" height="5"
-                    segments="20" material="s91_mountain_far" />
-    <PrimitiveAsset id="s91_fuji" shape="cone" radius="20" height="15"
-                    segments="36" material="s91_mountain_far" />
-    <PrimitiveAsset id="s91_fuji_snow" shape="cone" radius="6.3" height="4.6"
-                    segments="32" material="s91_snow" />
-    <PrimitiveAsset id="s91_petal" shape="plane" size={[0.1,0.08]}
-                    material="s91_petal" />
-    <PrimitiveAsset id="s91_puff" shape="sphere" radius="0.22" segments="12"
-                    rings="8" material="s91_smoke" />
+    <GeometryAsset id="s91_cloud_a_geometry">
+      <Primitive shape="ellipsoid" radii={[2.3,0.8,1.3]} segments="20" rings="14" />
+    </GeometryAsset>
+    <MeshAsset id="s91_cloud_a" material="s91_cloud" geometry="s91_cloud_a_geometry" />
+    <GeometryAsset id="s91_cloud_b_geometry">
+      <Primitive shape="ellipsoid" radii={[1.6,0.6,1.0]} segments="18" rings="12" />
+    </GeometryAsset>
+    <MeshAsset id="s91_cloud_b" material="s91_cloud" geometry="s91_cloud_b_geometry" />
+    <GeometryAsset id="s91_cloud_c_geometry">
+      <Primitive shape="ellipsoid" radii={[1.1,0.45,0.8]} segments="16" rings="10" />
+    </GeometryAsset>
+    <MeshAsset id="s91_cloud_c" material="s91_cloud" geometry="s91_cloud_c_geometry" />
+    <GeometryAsset id="s91_mtn_big_geometry">
+      <Primitive shape="cone" radius="18" height="10" segments="28" />
+    </GeometryAsset>
+    <MeshAsset id="s91_mtn_big" material="s91_mountain" geometry="s91_mtn_big_geometry" />
+    <GeometryAsset id="s91_mtn_mid_geometry">
+      <Primitive shape="cone" radius="13" height="7" segments="24" />
+    </GeometryAsset>
+    <MeshAsset id="s91_mtn_mid" material="s91_mountain" geometry="s91_mtn_mid_geometry" />
+    <GeometryAsset id="s91_mtn_small_geometry">
+      <Primitive shape="cone" radius="9" height="5" segments="20" />
+    </GeometryAsset>
+    <MeshAsset id="s91_mtn_small" material="s91_mountain_far" geometry="s91_mtn_small_geometry" />
+    <GeometryAsset id="s91_fuji_geometry">
+      <Primitive shape="cone" radius="20" height="15" segments="36" />
+    </GeometryAsset>
+    <MeshAsset id="s91_fuji" material="s91_mountain_far" geometry="s91_fuji_geometry" />
+    <GeometryAsset id="s91_fuji_snow_geometry">
+      <Primitive shape="cone" radius="6.3" height="4.6" segments="32" />
+    </GeometryAsset>
+    <MeshAsset id="s91_fuji_snow" material="s91_snow" geometry="s91_fuji_snow_geometry" />
+    <GeometryAsset id="s91_petal_geometry">
+      <Primitive shape="plane" size={[0.1,0.08]} />
+    </GeometryAsset>
+    <MeshAsset id="s91_petal" material="s91_petal" geometry="s91_petal_geometry" />
+    <GeometryAsset id="s91_puff_geometry">
+      <Primitive shape="sphere" radius="0.22" segments="12" rings="8" />
+    </GeometryAsset>
+    <MeshAsset id="s91_puff" material="s91_smoke" geometry="s91_puff_geometry" />
 
     <!-- ── Three-colour dango (hanami snack) ───────────────────────── -->
-    <MaterialAsset id="s91_dango_stick" shading="pbr" baseColor="#C8A165"
-                   metallic="0" roughness="0.7" specular="0.3" />
-    <MaterialAsset id="s91_dango_pink" shading="pbr" baseColor="#F2A7BC"
-                   metallic="0" roughness="0.62" specular="0.38" />
-    <MaterialAsset id="s91_dango_white" shading="pbr" baseColor="#F5F1E4"
-                   metallic="0" roughness="0.62" specular="0.38" />
-    <MaterialAsset id="s91_dango_green" shading="pbr" baseColor="#9DC182"
-                   metallic="0" roughness="0.62" specular="0.38" />
-    <PrimitiveAsset id="s91_dango_skewer" shape="cylinder" radius="0.011"
-                    height="0.31" segments="10" material="s91_dango_stick" />
-    <PrimitiveAsset id="s91_dango_ball_p" shape="sphere" radius="0.047"
-                    segments="18" rings="14" material="s91_dango_pink" />
-    <PrimitiveAsset id="s91_dango_ball_w" shape="sphere" radius="0.047"
-                    segments="18" rings="14" material="s91_dango_white" />
-    <PrimitiveAsset id="s91_dango_ball_g" shape="sphere" radius="0.047"
-                    segments="18" rings="14" material="s91_dango_green" />
+    <MaterialAsset id="s91_dango_stick" shading="pbr" baseColor="#C8A165" metallic="0" roughness="0.7" specular="0.3" />
+    <MaterialAsset
+      id="s91_dango_pink"
+      shading="pbr"
+      baseColor="#F2A7BC"
+      metallic="0"
+      roughness="0.62"
+      specular="0.38"
+    />
+    <MaterialAsset
+      id="s91_dango_white"
+      shading="pbr"
+      baseColor="#F5F1E4"
+      metallic="0"
+      roughness="0.62"
+      specular="0.38"
+    />
+    <MaterialAsset
+      id="s91_dango_green"
+      shading="pbr"
+      baseColor="#9DC182"
+      metallic="0"
+      roughness="0.62"
+      specular="0.38"
+    />
+    <GeometryAsset id="s91_dango_skewer_geometry">
+      <Primitive shape="cylinder" radius="0.011" height="0.31" segments="10" />
+    </GeometryAsset>
+    <MeshAsset id="s91_dango_skewer" material="s91_dango_stick" geometry="s91_dango_skewer_geometry" />
+    <GeometryAsset id="s91_dango_ball_p_geometry">
+      <Primitive shape="sphere" radius="0.047" segments="18" rings="14" />
+    </GeometryAsset>
+    <MeshAsset id="s91_dango_ball_p" material="s91_dango_pink" geometry="s91_dango_ball_p_geometry" />
+    <MeshAsset id="s91_dango_ball_w" material="s91_dango_white" geometry="s91_dango_ball_p_geometry" />
+    <MeshAsset id="s91_dango_ball_g" material="s91_dango_green" geometry="s91_dango_ball_p_geometry" />
     <CompoundAsset id="s91_dango" materialSeed="9140">
       <Instance id="skewer" asset="s91_dango_skewer" position={[0,0,0]} />
       <Instance id="ball_p" asset="s91_dango_ball_p" position={[0,0.104,0]} />
@@ -324,21 +608,52 @@ COMPOSITION
     </CompoundAsset>
 
     <!-- ── Vegetation ──────────────────────────────────────────────── -->
-    <VegetationAsset id="s91_sakura" kind="tree" height="4.0"
-                     trunkMaterial="s91_trunk" foliageMaterial="s91_foliage"
-                     density="14" branchLevels="3" seed="9101"
-                     lod="auto" wind="true" />
-    <VegetationAsset id="s91_sakura_small" kind="tree" height="3.0"
-                     trunkMaterial="s91_trunk" foliageMaterial="s91_foliage"
-                     density="11" branchLevels="2" seed="9102"
-                     lod="auto" wind="true" />
-    <VegetationAsset id="s91_grass_clump" kind="grass" height="0.55"
-                     material="s91_grass" density="14" seed="9103"
-                     lod="auto" wind="true" />
-    <VegetationAsset id="s91_shrub" kind="shrub" height="1.15"
-                     trunkMaterial="s91_trunk" foliageMaterial="s91_grass_dark"
-                     density="10" branchLevels="2" seed="9104"
-                     lod="auto" wind="true" />
+    <VegetationAsset
+      id="s91_sakura"
+      kind="tree"
+      height="4.0"
+      trunkMaterial="s91_trunk"
+      foliageMaterial="s91_foliage"
+      density="14"
+      branchLevels="3"
+      seed="9101"
+      lod="auto"
+      wind="true"
+    />
+    <VegetationAsset
+      id="s91_sakura_small"
+      kind="tree"
+      height="3.0"
+      trunkMaterial="s91_trunk"
+      foliageMaterial="s91_foliage"
+      density="11"
+      branchLevels="2"
+      seed="9102"
+      lod="auto"
+      wind="true"
+    />
+    <VegetationAsset
+      id="s91_grass_clump"
+      kind="grass"
+      height="0.55"
+      material="s91_grass"
+      density="14"
+      seed="9103"
+      lod="auto"
+      wind="true"
+    />
+    <VegetationAsset
+      id="s91_shrub"
+      kind="shrub"
+      height="1.15"
+      trunkMaterial="s91_trunk"
+      foliageMaterial="s91_grass_dark"
+      density="10"
+      branchLevels="2"
+      seed="9104"
+      lod="auto"
+      wind="true"
+    />
 
     <!-- ── Compound assemblies ─────────────────────────────────────── -->
     <CompoundAsset id="s91_machiya" materialSeed="9110">
@@ -483,159 +798,177 @@ COMPOSITION
     </CompoundAsset>
 
     <CompoundAsset id="s91_duel_boulder" materialSeed="9124">
-      <Instance id="core" asset="s91_boulder_core" position={[0,0.08,0]}
-                rotation={[0,8,0]} />
-      <Instance id="lobe_left" asset="s91_boulder_lobe_a" position={[-1.2,0.34,0.28]}
-                rotation={[8,-24,7]} />
-      <Instance id="lobe_right" asset="s91_boulder_lobe_b" position={[1.28,0.27,-0.4]}
-                rotation={[-6,31,-9]} />
-      <Instance id="moss_cap" asset="s91_boulder_moss_cap" position={[-0.76,0.78,-0.52]}
-                rotation={[0,-18,4]} />
+      <Instance id="core" asset="s91_boulder_core" position={[0,0.08,0]} rotation={[0,8,0]} />
+      <Instance id="lobe_left" asset="s91_boulder_lobe_a" position={[-1.2,0.34,0.28]} rotation={[8,-24,7]} />
+      <Instance id="lobe_right" asset="s91_boulder_lobe_b" position={[1.28,0.27,-0.4]} rotation={[-6,31,-9]} />
+      <Instance id="moss_cap" asset="s91_boulder_moss_cap" position={[-0.76,0.78,-0.52]} rotation={[0,-18,4]} />
     </CompoundAsset>
   </Assets>
 
-
-<ModelProfile id="s91_hero_profile" kind="3d" model="s91_hero_model"
-              preset="humanoid_v1">
-  <Retarget preset="humanoid_v1">
-    <Map from="pelvis" to="hips" />
-    <Map from="spine_01" to="spine" />
-    <Map from="spine_02" to="chest" />
-    <Map from="spine_03" to="upper_chest" />
-    <Map from="neck_01" to="neck" />
-    <Map from="Head" to="head" />
-    <Map from="clavicle_l" to="shoulder_l" />
-    <Map from="upperarm_l" to="upper_arm_l" />
-    <Map from="lowerarm_l" to="forearm_l" />
-    <Map from="hand_l" to="hand_l" />
-    <Map from="clavicle_r" to="shoulder_r" />
-    <Map from="upperarm_r" to="upper_arm_r" />
-    <Map from="lowerarm_r" to="forearm_r" />
-    <Map from="hand_r" to="hand_r" />
-    <Map from="thumb_01_l" to="thumb_1_l" />
-    <Map from="thumb_02_l" to="thumb_2_l" />
-    <Map from="thumb_03_l" to="thumb_3_l" />
-    <Map from="index_01_l" to="index_1_l" />
-    <Map from="index_02_l" to="index_2_l" />
-    <Map from="index_03_l" to="index_3_l" />
-    <Map from="middle_01_l" to="middle_1_l" />
-    <Map from="middle_02_l" to="middle_2_l" />
-    <Map from="middle_03_l" to="middle_3_l" />
-    <Map from="ring_01_l" to="ring_1_l" />
-    <Map from="ring_02_l" to="ring_2_l" />
-    <Map from="ring_03_l" to="ring_3_l" />
-    <Map from="pinky_01_l" to="pinky_1_l" />
-    <Map from="pinky_02_l" to="pinky_2_l" />
-    <Map from="pinky_03_l" to="pinky_3_l" />
-    <Map from="thumb_01_r" to="thumb_1_r" />
-    <Map from="thumb_02_r" to="thumb_2_r" />
-    <Map from="thumb_03_r" to="thumb_3_r" />
-    <Map from="index_01_r" to="index_1_r" />
-    <Map from="index_02_r" to="index_2_r" />
-    <Map from="index_03_r" to="index_3_r" />
-    <Map from="middle_01_r" to="middle_1_r" />
-    <Map from="middle_02_r" to="middle_2_r" />
-    <Map from="middle_03_r" to="middle_3_r" />
-    <Map from="ring_01_r" to="ring_1_r" />
-    <Map from="ring_02_r" to="ring_2_r" />
-    <Map from="ring_03_r" to="ring_3_r" />
-    <Map from="pinky_01_r" to="pinky_1_r" />
-    <Map from="pinky_02_r" to="pinky_2_r" />
-    <Map from="pinky_03_r" to="pinky_3_r" />
-    <Map from="thigh_l" to="upper_leg_l" />
-    <Map from="calf_l" to="lower_leg_l" />
-    <Map from="foot_l" to="foot_l" />
-    <Map from="ball_l" to="toe_l" />
-    <Map from="thigh_r" to="upper_leg_r" />
-    <Map from="calf_r" to="lower_leg_r" />
-    <Map from="foot_r" to="foot_r" />
-    <Map from="ball_r" to="toe_r" />
-  </Retarget>
-  <BoneAxisMap>
-    <Axis bone="hips" turn="rotationY:1" />
-    <Axis bone="spine" bend="rotationX:-1" turn="rotationY:1" />
-    <Axis bone="chest" bend="rotationX:-1" turn="rotationY:1" />
-    <Axis bone="upper_chest" bend="rotationX:-1" turn="rotationY:1" />
-    <Axis bone="neck" bend="rotationX:-1" turn="rotationY:1" />
-    <Axis bone="head" bend="rotationX:-1" turn="rotationY:1" />
-    <Axis bone="upper_arm_l" forward="rotationX:1" side="rotationZ:1"
-          twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
-    <Axis bone="forearm_l" bend="rotationX:1" twist="rotationY:1" />
-    <Axis bone="upper_arm_r" forward="rotationX:1" side="rotationZ:-1"
-          twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
-    <Axis bone="forearm_r" bend="rotationX:1" twist="rotationY:1" />
-    <Axis bone="upper_leg_l" forward="rotationX:-1" side="rotationZ:-1"
-          twist="rotationY:1" />
-    <Axis bone="lower_leg_l" bend="rotationX:1" twist="rotationY:1" />
-    <Axis bone="upper_leg_r" forward="rotationX:-1" side="rotationZ:1"
-          twist="rotationY:1" />
-    <Axis bone="lower_leg_r" bend="rotationX:1" twist="rotationY:1" />
-    <Axis bone="thumb_1_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="thumb_2_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="thumb_3_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="index_1_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="index_2_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="index_3_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="middle_1_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="middle_2_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="middle_3_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="ring_1_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="ring_2_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="ring_3_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="pinky_1_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="pinky_2_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="pinky_3_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="thumb_1_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="thumb_2_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="thumb_3_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="index_1_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="index_2_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="index_3_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="middle_1_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="middle_2_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="middle_3_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="ring_1_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="ring_2_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="ring_3_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="pinky_1_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="pinky_2_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-    <Axis bone="pinky_3_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
-  </BoneAxisMap>
-</ModelProfile>
+  <ModelProfile id="s91_hero_profile" kind="3d" model="s91_hero_model" preset="humanoid_v1">
+    <Retarget preset="humanoid_v1">
+      <Map from="pelvis" to="hips" />
+      <Map from="spine_01" to="spine" />
+      <Map from="spine_02" to="chest" />
+      <Map from="spine_03" to="upper_chest" />
+      <Map from="neck_01" to="neck" />
+      <Map from="Head" to="head" />
+      <Map from="clavicle_l" to="shoulder_l" />
+      <Map from="upperarm_l" to="upper_arm_l" />
+      <Map from="lowerarm_l" to="forearm_l" />
+      <Map from="hand_l" to="hand_l" />
+      <Map from="clavicle_r" to="shoulder_r" />
+      <Map from="upperarm_r" to="upper_arm_r" />
+      <Map from="lowerarm_r" to="forearm_r" />
+      <Map from="hand_r" to="hand_r" />
+      <Map from="thumb_01_l" to="thumb_1_l" />
+      <Map from="thumb_02_l" to="thumb_2_l" />
+      <Map from="thumb_03_l" to="thumb_3_l" />
+      <Map from="index_01_l" to="index_1_l" />
+      <Map from="index_02_l" to="index_2_l" />
+      <Map from="index_03_l" to="index_3_l" />
+      <Map from="middle_01_l" to="middle_1_l" />
+      <Map from="middle_02_l" to="middle_2_l" />
+      <Map from="middle_03_l" to="middle_3_l" />
+      <Map from="ring_01_l" to="ring_1_l" />
+      <Map from="ring_02_l" to="ring_2_l" />
+      <Map from="ring_03_l" to="ring_3_l" />
+      <Map from="pinky_01_l" to="pinky_1_l" />
+      <Map from="pinky_02_l" to="pinky_2_l" />
+      <Map from="pinky_03_l" to="pinky_3_l" />
+      <Map from="thumb_01_r" to="thumb_1_r" />
+      <Map from="thumb_02_r" to="thumb_2_r" />
+      <Map from="thumb_03_r" to="thumb_3_r" />
+      <Map from="index_01_r" to="index_1_r" />
+      <Map from="index_02_r" to="index_2_r" />
+      <Map from="index_03_r" to="index_3_r" />
+      <Map from="middle_01_r" to="middle_1_r" />
+      <Map from="middle_02_r" to="middle_2_r" />
+      <Map from="middle_03_r" to="middle_3_r" />
+      <Map from="ring_01_r" to="ring_1_r" />
+      <Map from="ring_02_r" to="ring_2_r" />
+      <Map from="ring_03_r" to="ring_3_r" />
+      <Map from="pinky_01_r" to="pinky_1_r" />
+      <Map from="pinky_02_r" to="pinky_2_r" />
+      <Map from="pinky_03_r" to="pinky_3_r" />
+      <Map from="thigh_l" to="upper_leg_l" />
+      <Map from="calf_l" to="lower_leg_l" />
+      <Map from="foot_l" to="foot_l" />
+      <Map from="ball_l" to="toe_l" />
+      <Map from="thigh_r" to="upper_leg_r" />
+      <Map from="calf_r" to="lower_leg_r" />
+      <Map from="foot_r" to="foot_r" />
+      <Map from="ball_r" to="toe_r" />
+    </Retarget>
+    <BoneAxisMap>
+      <Axis bone="hips" turn="rotationY:1" />
+      <Axis bone="spine" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="chest" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="upper_chest" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="neck" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis bone="head" bend="rotationX:-1" turn="rotationY:1" />
+      <Axis
+        bone="upper_arm_l"
+        forward="rotationX:1"
+        side="rotationZ:1"
+        twist="rotationY:1"
+        restForward="-4.8"
+        restSide="-89.8"
+      />
+      <Axis bone="forearm_l" bend="rotationX:1" twist="rotationY:1" />
+      <Axis
+        bone="upper_arm_r"
+        forward="rotationX:1"
+        side="rotationZ:-1"
+        twist="rotationY:1"
+        restForward="-4.8"
+        restSide="-89.8"
+      />
+      <Axis bone="forearm_r" bend="rotationX:1" twist="rotationY:1" />
+      <Axis bone="upper_leg_l" forward="rotationX:-1" side="rotationZ:-1" twist="rotationY:1" />
+      <Axis bone="lower_leg_l" bend="rotationX:1" twist="rotationY:1" />
+      <Axis bone="upper_leg_r" forward="rotationX:-1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="lower_leg_r" bend="rotationX:1" twist="rotationY:1" />
+      <Axis bone="thumb_1_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="thumb_2_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="thumb_3_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="index_1_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="index_2_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="index_3_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="middle_1_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="middle_2_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="middle_3_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="ring_1_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="ring_2_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="ring_3_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="pinky_1_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="pinky_2_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="pinky_3_l" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="thumb_1_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="thumb_2_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="thumb_3_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="index_1_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="index_2_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="index_3_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="middle_1_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="middle_2_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="middle_3_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="ring_1_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="ring_2_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="ring_3_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="pinky_1_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="pinky_2_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+      <Axis bone="pinky_3_r" bend="rotationX:1" side="rotationZ:1" twist="rotationY:1" />
+    </BoneAxisMap>
+  </ModelProfile>
 
   <!-- Great Sword Casting (Mixamo FBX converted offline by motionloom-action-tool). -->
-  <ActionLibrary id="s91_lib_sword"
-                 src="assets/actions/great_sword_casting.motionloom"
-                 actions={["s91_sword_cast"]} />
-  <ApplyAction target="s91_hero_a" action="s91_lib_sword.s91_sword_cast"
-               at="3.5s" duration="14.5s" loop="true" rootMotion="clip"
-               blendIn="0.3s" blendOut="0.3s" mask="full_body"
-               ground="s91_boulder_top" floorSnap="0.25"
-               safeMargin="0.01" sweepStep="0.03" />
+  <ActionLibrary id="s91_lib_sword" src="assets/actions/great_sword_casting.motionloom" actions={["s91_sword_cast"]} />
+  <ApplyAction
+    target="s91_hero_a"
+    action="s91_lib_sword.s91_sword_cast"
+    at="3.5s"
+    duration="14.5s"
+    loop="true"
+    rootMotion="clip"
+    blendIn="0.3s"
+    blendOut="0.3s"
+    mask="full_body"
+    ground="s91_boulder_top"
+    floorSnap="0.25"
+    safeMargin="0.01"
+    sweepStep="0.03"
+  />
   <Attachment id="s91_hero_sword_right_grip" object="s91_sword_a">
     <Socket id="main_grip" position={[0,-0.05,0]} rotation={[0,0,0]} />
     <Socket id="support_grip" position={[0,0.08,0]} rotation={[0,0,0]} />
-    <Attach socket="main_grip" target="s91_hero_a.hand_r"
-            mode="snap" drive="object"
-            positionWeight="1" rotationWeight="1" />
-    <Attach socket="support_grip" target="s91_hero_a.hand_l"
-            mode="ik" drive="target"
-            positionWeight="1" rotationWeight="0.8" maxStretch="1.05" />
+    <Attach
+      socket="main_grip"
+      target="s91_hero_a.hand_r"
+      mode="snap"
+      drive="object"
+      positionWeight="1"
+      rotationWeight="1"
+    />
+    <Attach
+      socket="support_grip"
+      target="s91_hero_a.hand_l"
+      mode="ik"
+      drive="target"
+      positionWeight="1"
+      rotationWeight="0.8"
+      maxStretch="1.05"
+    />
   </Attachment>
   <Background color="#A6D4EE" />
 
   <Scene id="S91HanamachiCanalTown">
     <Defs>
-      <LinearGradient id="s91_sky" x1="0" y1="0" x2="0" y2="1"
-                      stops="0:#6FB6E8, 0.55:#A8D6F0, 1:#DCEFF8" />
-      <RadialGradient id="s91_sun_glow" cx="0.5" cy="0.5" r="0.5"
-                      stops="0:#FFF6DE, 0.4:#FFE9C066, 1:#FFE9C000" />
-      <LinearGradient id="s91_haze" x1="0" y1="0" x2="0" y2="1"
-                      stops="0:#FFFFFF00, 0.6:#FFFFFF33, 1:#FFFFFF00" />
-      <RadialGradient id="s91_blush" cx="0.5" cy="0.5" r="0.5"
-                      stops="0:#FF8FB4CC, 0.55:#FF8FB477, 1:#FF8FB400" />
-      <RadialGradient id="s91_vignette" cx="0.5" cy="0.5" r="0.74"
-                      stops="0:#00000000, 0.66:#00000014, 1:#00000078" />
+      <LinearGradient id="s91_sky" x1="0" y1="0" x2="0" y2="1" stops="0:#6FB6E8, 0.55:#A8D6F0, 1:#DCEFF8" />
+      <RadialGradient id="s91_sun_glow" cx="0.5" cy="0.5" r="0.5" stops="0:#FFF6DE, 0.4:#FFE9C066, 1:#FFE9C000" />
+      <LinearGradient id="s91_haze" x1="0" y1="0" x2="0" y2="1" stops="0:#FFFFFF00, 0.6:#FFFFFF33, 1:#FFFFFF00" />
+      <RadialGradient id="s91_blush" cx="0.5" cy="0.5" r="0.5" stops="0:#FF8FB4CC, 0.55:#FF8FB477, 1:#FF8FB400" />
+      <RadialGradient id="s91_vignette" cx="0.5" cy="0.5" r="0.74" stops="0:#00000000, 0.66:#00000014, 1:#00000078" />
     </Defs>
 
     <Timeline>
@@ -643,10 +976,8 @@ COMPOSITION
         <Sequence from="0s" duration="18s" out="hold">
           <Layer space="screen">
             <Rect x="0" y="0" width="1280" height="720" fill="url(#s91_sky)" />
-            <Circle x="1050" y="96" radius="240" fill="url(#s91_sun_glow)"
-                    blend="screen" opacity="0.85" />
-            <Rect x="0" y="300" width="1280" height="120" fill="url(#s91_haze)"
-                  opacity="0.7" />
+            <Circle x="1050" y="96" radius="240" fill="url(#s91_sun_glow)" blend="screen" opacity="0.85" />
+            <Rect x="0" y="300" width="1280" height="120" fill="url(#s91_haze)" opacity="0.7" />
           </Layer>
         </Sequence>
       </Track>
@@ -654,25 +985,36 @@ COMPOSITION
       <Track id="s91_town_track" space="3d" compositeOrder="40">
         <Sequence from="0s" duration="18s" out="hold">
           <CompositeGroup id="s91_town" space="3d" depth="true" format="rgba16f">
-            <DirectionalLight id="s91_sun" direction={[-0.55,-1,0.4]}
-                              color="#FFF2D8" intensity="3.1"
-                              castShadow="true" shadowStrength="0.62" />
-            <DirectionalLight id="s91_sky_fill" direction={[0.5,-0.45,-0.5]}
-                              color="#CDE2F2" intensity="0.85" />
+            <DirectionalLight
+              id="s91_sun"
+              direction={[-0.55,-1,0.4]}
+              color="#FFF2D8"
+              intensity="3.1"
+              castShadow="true"
+              shadowStrength="0.62"
+            />
+            <DirectionalLight id="s91_sky_fill" direction={[0.5,-0.45,-0.5]} color="#CDE2F2" intensity="0.85" />
             <AmbientOcclusion id="s91_ao" intensity="0.62" radius="0.5" />
-            <ContactShadow id="s91_contact" intensity="0.82" distance="0.2"
-                           softness="0.4" />
-            <ColorManagement id="s91_grade" toneMapping="aces" exposure="1.02"
-                             whiteBalance="6100" contrast="1.05" />
-            <AtmosphereFog id="s91_haze3d" scatteringColor="#BBD8EA"
-                           density="0.006" affectEnvironment="false" />
+            <ContactShadow id="s91_contact" intensity="0.82" distance="0.2" softness="0.4" />
+            <ColorManagement id="s91_grade" toneMapping="aces" exposure="1.02" whiteBalance="6100" contrast="1.05" />
+            <AtmosphereFog id="s91_haze3d" scatteringColor="#BBD8EA" density="0.006" affectEnvironment="false" />
 
-            <Camera3D id="s91_camera" position={[0.0,10.5,25.5]}
-                      target={[0,2.0,0]} up={[0,1,0]}
-                      horizonLock="true" fov="50" />
-            <Camera3D id="s91_pair_cam" position={[0,2.9,18.5]}
-                      target={[0,2.25,13.1]} up={[0,1,0]}
-                      horizonLock="true" fov="50" />
+            <Camera3D
+              id="s91_camera"
+              position={[0.0,10.5,25.5]}
+              target={[0,2.0,0]}
+              up={[0,1,0]}
+              horizonLock="true"
+              fov="50"
+            />
+            <Camera3D
+              id="s91_pair_cam"
+              position={[0,2.9,18.5]}
+              target={[0,2.25,13.1]}
+              up={[0,1,0]}
+              horizonLock="true"
+              fov="50"
+            />
 
             <!-- Ground plane and canal bed -->
             <Model id="s91_far_ground_m" asset="s91_far_ground" position={[0,-0.25,-4.4]} receiveShadow="true" />
@@ -681,8 +1023,14 @@ COMPOSITION
             <Model id="s91_street_m" asset="s91_street" position={[0,0.03,1.6]} receiveShadow="true" />
             <!-- The invisible top collider and named ground keep Action contact
                  correction aligned with the visible solid boulder geometry. -->
-            <Surface id="s91_boulder_top" kind="ground" collider="box"
-                     center={[0,0.92,13.1]} size={[2.3,0.16,1.65]} color="#00000000" />
+            <Surface
+              id="s91_boulder_top"
+              kind="ground"
+              collider="box"
+              center={[0,0.92,13.1]}
+              size={[2.3,0.16,1.65]}
+              color="#00000000"
+            />
             <Model id="s91_water_m" asset="s91_waterbox" position={[0,-0.6,4.7]} />
             <Model id="s91_wall_far_m" asset="s91_bankwall" position={[0,-0.35,2.05]} receiveShadow="true" />
             <Model id="s91_wall_near_m" asset="s91_bankwall" position={[0,-0.35,7.35]} receiveShadow="true" />
@@ -702,37 +1050,199 @@ COMPOSITION
             <Model id="s91_rail_9" asset="s91_railing" position={[18,0,10.9]} />
 
             <!-- Machiya row facing the canal -->
-            <Model id="s91_house_01" asset="s91_machiya_2f" position={[-13,0,-2.6]} rotation={[0,-3,0]} castShadow="true" receiveShadow="true" />
-            <Model id="s91_house_02" asset="s91_machiya" position={[-9.5,0,-2.6]} rotation={[0,2,0]} castShadow="true" receiveShadow="true" />
-            <Model id="s91_house_03" asset="s91_shop" position={[-6,0,-2.6]} rotation={[0,-2,0]} castShadow="true" receiveShadow="true" />
-            <Model id="s91_house_04" asset="s91_machiya" position={[-2.5,0,-2.6]} castShadow="true" receiveShadow="true" />
+            <Model
+              id="s91_house_01"
+              asset="s91_machiya_2f"
+              position={[-13,0,-2.6]}
+              rotation={[0,-3,0]}
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="s91_house_02"
+              asset="s91_machiya"
+              position={[-9.5,0,-2.6]}
+              rotation={[0,2,0]}
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="s91_house_03"
+              asset="s91_shop"
+              position={[-6,0,-2.6]}
+              rotation={[0,-2,0]}
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="s91_house_04"
+              asset="s91_machiya"
+              position={[-2.5,0,-2.6]}
+              castShadow="true"
+              receiveShadow="true"
+            />
             <Model id="s91_chimney_m" asset="s91_chimney" position={[-2.3,3.1,-3.0]} castShadow="true" />
-            <Model id="s91_house_05" asset="s91_shop" position={[1,0,-2.6]} rotation={[0,1.5,0]} castShadow="true" receiveShadow="true" />
-            <Model id="s91_house_06" asset="s91_machiya" position={[4.5,0,-2.6]} rotation={[0,-2,0]} castShadow="true" receiveShadow="true" />
-            <Model id="s91_house_07" asset="s91_machiya_2f" position={[8,0,-2.6]} rotation={[0,2.5,0]} castShadow="true" receiveShadow="true" />
-            <Model id="s91_house_08" asset="s91_shop" position={[11.5,0,-2.6]} rotation={[0,-1.5,0]} castShadow="true" receiveShadow="true" />
-            <Model id="s91_house_09" asset="s91_machiya" position={[15,0,-2.6]} rotation={[0,3,0]} castShadow="true" receiveShadow="true" />
+            <Model
+              id="s91_house_05"
+              asset="s91_shop"
+              position={[1,0,-2.6]}
+              rotation={[0,1.5,0]}
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="s91_house_06"
+              asset="s91_machiya"
+              position={[4.5,0,-2.6]}
+              rotation={[0,-2,0]}
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="s91_house_07"
+              asset="s91_machiya_2f"
+              position={[8,0,-2.6]}
+              rotation={[0,2.5,0]}
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="s91_house_08"
+              asset="s91_shop"
+              position={[11.5,0,-2.6]}
+              rotation={[0,-1.5,0]}
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="s91_house_09"
+              asset="s91_machiya"
+              position={[15,0,-2.6]}
+              rotation={[0,3,0]}
+              castShadow="true"
+              receiveShadow="true"
+            />
 
             <!-- Back row for depth -->
-            <Model id="s91_house_b1" asset="s91_machiya" position={[-15.5,0,-6.6]} rotation={[0,4,0]} scale="1.05" castShadow="true" />
-            <Model id="s91_house_b2" asset="s91_machiya_2f" position={[-7,0,-6.8]} rotation={[0,-3,0]} scale="1.02" castShadow="true" />
+            <Model
+              id="s91_house_b1"
+              asset="s91_machiya"
+              position={[-15.5,0,-6.6]}
+              rotation={[0,4,0]}
+              scale="1.05"
+              castShadow="true"
+            />
+            <Model
+              id="s91_house_b2"
+              asset="s91_machiya_2f"
+              position={[-7,0,-6.8]}
+              rotation={[0,-3,0]}
+              scale="1.02"
+              castShadow="true"
+            />
             <Model id="s91_house_b3" asset="s91_machiya" position={[-1.5,0,-6.6]} castShadow="true" />
-            <Model id="s91_house_b4" asset="s91_machiya" position={[4,0,-6.8]} rotation={[0,3,0]} scale="1.06" castShadow="true" />
-            <Model id="s91_house_b5" asset="s91_machiya_2f" position={[10,0,-6.6]} rotation={[0,-4,0]} castShadow="true" />
+            <Model
+              id="s91_house_b4"
+              asset="s91_machiya"
+              position={[4,0,-6.8]}
+              rotation={[0,3,0]}
+              scale="1.06"
+              castShadow="true"
+            />
+            <Model
+              id="s91_house_b5"
+              asset="s91_machiya_2f"
+              position={[10,0,-6.6]}
+              rotation={[0,-4,0]}
+              castShadow="true"
+            />
 
             <!-- Shrine hill, steps, torii -->
-            <Model id="s91_shrine" asset="s91_shrine" position={[-11.6,3.2,-7.4]} rotation={[0,14,0]} castShadow="true" receiveShadow="true" />
-            <Model id="s91_hill_m" asset="s91_hill" position={[-11.6,1.6,-7.4]} rotation={[0,14,0]} receiveShadow="true" />
-            <Model id="s91_step_0" asset="s91_step" position={[-11.35,0.28,-5.85]} rotation={[0,14,0]} receiveShadow="true" />
-            <Model id="s91_step_1" asset="s91_step" position={[-11.29,0.69,-5.51]} rotation={[0,14,0]} receiveShadow="true" />
-            <Model id="s91_step_2" asset="s91_step" position={[-11.23,1.1,-5.17]} rotation={[0,14,0]} receiveShadow="true" />
-            <Model id="s91_step_3" asset="s91_step" position={[-11.17,1.51,-4.83]} rotation={[0,14,0]} receiveShadow="true" />
-            <Model id="s91_step_4" asset="s91_step" position={[-11.11,1.92,-4.49]} rotation={[0,14,0]} receiveShadow="true" />
-            <Model id="s91_step_5" asset="s91_step" position={[-11.05,2.33,-4.15]} rotation={[0,14,0]} receiveShadow="true" />
-            <Model id="s91_step_6" asset="s91_step" position={[-10.99,2.74,-3.81]} rotation={[0,14,0]} receiveShadow="true" />
-            <Model id="s91_step_7" asset="s91_step" position={[-10.93,3.15,-3.47]} rotation={[0,14,0]} receiveShadow="true" />
-            <Model id="s91_torii_shrine" asset="s91_torii" position={[-10.8,0,-0.2]} rotation={[0,14,0]} castShadow="true" />
-            <Model id="s91_torii_walk" asset="s91_torii" position={[6.5,0,9.4]} rotation={[0,180,0]} castShadow="true" />
+            <Model
+              id="s91_shrine"
+              asset="s91_shrine"
+              position={[-11.6,3.2,-7.4]}
+              rotation={[0,14,0]}
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="s91_hill_m"
+              asset="s91_hill"
+              position={[-11.6,1.6,-7.4]}
+              rotation={[0,14,0]}
+              receiveShadow="true"
+            />
+            <Model
+              id="s91_step_0"
+              asset="s91_step"
+              position={[-11.35,0.28,-5.85]}
+              rotation={[0,14,0]}
+              receiveShadow="true"
+            />
+            <Model
+              id="s91_step_1"
+              asset="s91_step"
+              position={[-11.29,0.69,-5.51]}
+              rotation={[0,14,0]}
+              receiveShadow="true"
+            />
+            <Model
+              id="s91_step_2"
+              asset="s91_step"
+              position={[-11.23,1.1,-5.17]}
+              rotation={[0,14,0]}
+              receiveShadow="true"
+            />
+            <Model
+              id="s91_step_3"
+              asset="s91_step"
+              position={[-11.17,1.51,-4.83]}
+              rotation={[0,14,0]}
+              receiveShadow="true"
+            />
+            <Model
+              id="s91_step_4"
+              asset="s91_step"
+              position={[-11.11,1.92,-4.49]}
+              rotation={[0,14,0]}
+              receiveShadow="true"
+            />
+            <Model
+              id="s91_step_5"
+              asset="s91_step"
+              position={[-11.05,2.33,-4.15]}
+              rotation={[0,14,0]}
+              receiveShadow="true"
+            />
+            <Model
+              id="s91_step_6"
+              asset="s91_step"
+              position={[-10.99,2.74,-3.81]}
+              rotation={[0,14,0]}
+              receiveShadow="true"
+            />
+            <Model
+              id="s91_step_7"
+              asset="s91_step"
+              position={[-10.93,3.15,-3.47]}
+              rotation={[0,14,0]}
+              receiveShadow="true"
+            />
+            <Model
+              id="s91_torii_shrine"
+              asset="s91_torii"
+              position={[-10.8,0,-0.2]}
+              rotation={[0,14,0]}
+              castShadow="true"
+            />
+            <Model
+              id="s91_torii_walk"
+              asset="s91_torii"
+              position={[6.5,0,9.4]}
+              rotation={[0,180,0]}
+              castShadow="true"
+            />
             <Model id="s91_stone_lantern_a" asset="s91_stone_lantern" position={[-9.2,0,0.2]} castShadow="true" />
             <Model id="s91_stone_lantern_b" asset="s91_stone_lantern" position={[-12.4,3.2,-6.3]} castShadow="true" />
 
@@ -763,15 +1273,36 @@ COMPOSITION
             <Model id="s91_lantern_4" asset="s91_lantern_hang" position={[7,2.5,-1.35]} />
 
             <!-- Character1 performs one metre above the street on a collidable boulder. -->
-            <Model id="s91_duel_boulder_m" asset="s91_duel_boulder"
-                   position={[0,0,13.1]} castShadow="true" receiveShadow="true" />
-            <Model id="s91_hero_a" asset="s91_hero_model" profile="s91_hero_profile"
-                   position={[0,1.0,13.1]} rotationY="0" collision="kinematic"
-                   scaleMode="normalize_height" scale="2.65"
-                   castShadow="true" receiveShadow="true" exposure="1.2" />
-            <Model id="s91_sword_a" asset="s91_primitive_sword"
-                   position={[0,1.0,13.1]} rotationY="0"
-                   scale="1.45" castShadow="true" receiveShadow="true" exposure="1.1" />
+            <Model
+              id="s91_duel_boulder_m"
+              asset="s91_duel_boulder"
+              position={[0,0,13.1]}
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="s91_hero_a"
+              asset="s91_hero_model"
+              profile="s91_hero_profile"
+              position={[0,1.0,13.1]}
+              rotationY="0"
+              collision="kinematic"
+              scaleMode="normalize_height"
+              scale="2.65"
+              castShadow="true"
+              receiveShadow="true"
+              exposure="1.2"
+            />
+            <Model
+              id="s91_sword_a"
+              asset="s91_primitive_sword"
+              position={[0,1.0,13.1]}
+              rotationY="0"
+              scale="1.45"
+              castShadow="true"
+              receiveShadow="true"
+              exposure="1.1"
+            />
 
             <!-- Vending machines -->
             <Model id="s91_vend_0" asset="s91_vending" position={[1.3,0,-0.7]} rotation={[0,-6,0]} castShadow="true" />
@@ -782,9 +1313,23 @@ COMPOSITION
             <Model id="s91_sakura_1" asset="s91_sakura" position={[-12,0,2.4]} rotation={[0,34,0]} castShadow="true" />
             <Model id="s91_sakura_2" asset="s91_sakura_small" position={[-5,0,2.4]} rotation={[0,-20,0]} />
             <Model id="s91_sakura_3" asset="s91_sakura" position={[2,0,2.4]} rotation={[0,58,0]} castShadow="true" />
-            <Model id="s91_sakura_4" asset="s91_sakura" position={[9,0,2.4]} rotation={[0,-40,0]} scale="1.08" castShadow="true" />
+            <Model
+              id="s91_sakura_4"
+              asset="s91_sakura"
+              position={[9,0,2.4]}
+              rotation={[0,-40,0]}
+              scale="1.08"
+              castShadow="true"
+            />
             <Model id="s91_sakura_5" asset="s91_sakura_small" position={[16,0,2.4]} rotation={[0,22,0]} />
-            <Model id="s91_sakura_6" asset="s91_sakura" position={[-6,0,9.6]} rotation={[0,-64,0]} scale="1.1" castShadow="true" />
+            <Model
+              id="s91_sakura_6"
+              asset="s91_sakura"
+              position={[-6,0,9.6]}
+              rotation={[0,-64,0]}
+              scale="1.1"
+              castShadow="true"
+            />
             <Model id="s91_sakura_7" asset="s91_sakura" position={[6,0,9.6]} rotation={[0,50,0]} castShadow="true" />
             <Model id="s91_sakura_8" asset="s91_sakura_small" position={[-9.1,3.2,-6.4]} rotation={[0,10,0]} />
             <Model id="s91_sakura_9" asset="s91_sakura_small" position={[-14.2,3.2,-7.0]} rotation={[0,-15,0]} />
@@ -817,45 +1362,92 @@ COMPOSITION
             <Model id="s91_ripple_3" asset="s91_ripple" position={[-9,-0.33,4.0]} />
 
             <!-- Falling petals -->
-            <Repeat id="s91_petals_near" mode="volume" count="54" seed="9131"
-                    boundsMin={[-14,0.2,3.2]} boundsMax={[14,6.4,9.6]}
-                    velocity={[0.55,-0.85,0.12]} lifetime="5.5s"
-                    phase="random" respawn="random" scaleRange={[0.7,1.4]}>
+            <Repeat
+              id="s91_petals_near"
+              mode="volume"
+              count="54"
+              seed="9131"
+              boundsMin={[-14,0.2,3.2]}
+              boundsMax={[14,6.4,9.6]}
+              velocity={[0.55,-0.85,0.12]}
+              lifetime="5.5s"
+              phase="random"
+              respawn="random"
+              scaleRange={[0.7,1.4]}
+            >
               <Model asset="s91_petal" rotation={[18,32,12]} castShadow="false" receiveShadow="false" />
             </Repeat>
-            <Repeat id="s91_petals_far" mode="volume" count="38" seed="9132"
-                    boundsMin={[-16,0.4,-5]} boundsMax={[16,7,3]}
-                    velocity={[0.4,-0.7,0.08]} lifetime="7s"
-                    phase="random" respawn="random" scaleRange={[0.6,1.2]}>
+            <Repeat
+              id="s91_petals_far"
+              mode="volume"
+              count="38"
+              seed="9132"
+              boundsMin={[-16,0.4,-5]}
+              boundsMax={[16,7,3]}
+              velocity={[0.4,-0.7,0.08]}
+              lifetime="7s"
+              phase="random"
+              respawn="random"
+              scaleRange={[0.6,1.2]}
+            >
               <Model asset="s91_petal" rotation={[-14,48,-10]} castShadow="false" receiveShadow="false" />
             </Repeat>
 
             <!-- Chimney smoke -->
-            <Repeat id="s91_smoke_column" mode="volume" count="18" seed="9133"
-                    boundsMin={[-2.5,3.5,-3.2]} boundsMax={[-2.1,6.4,-2.8]}
-                    velocity={[0.06,0.4,0.03]} lifetime="6s"
-                    phase="random" respawn="random" scaleRange={[0.5,1.5]}>
+            <Repeat
+              id="s91_smoke_column"
+              mode="volume"
+              count="18"
+              seed="9133"
+              boundsMin={[-2.5,3.5,-3.2]}
+              boundsMax={[-2.1,6.4,-2.8]}
+              velocity={[0.06,0.4,0.03]}
+              lifetime="6s"
+              phase="random"
+              respawn="random"
+              scaleRange={[0.5,1.5]}
+            >
               <Model asset="s91_puff" scale="1.35" castShadow="false" receiveShadow="false" />
             </Repeat>
           </CompositeGroup>
         </Sequence>
       </Track>
 
-
       <Track id="s91_overlay_track" space="screen" compositeOrder="70">
         <Sequence from="0s" duration="18s" out="hold">
           <Layer space="screen">
-            <Rect x="0" y="0" width="1280" height="720"
-                  fill="url(#s91_vignette)" opacity="0.7" />
+            <Rect x="0" y="0" width="1280" height="720" fill="url(#s91_vignette)" opacity="0.7" />
             <Group opacity={curve("0:0:linear, 0.5:1:ease_out, 2.6:1:linear, 3.3:0:ease_in")}>
-              <Rect x="42" y="38" width="440" height="86" radius="14"
-                    color="#0A1A24D8" stroke="#8FD7F066" strokeWidth="2" />
-              <Text x="66" y="74" value="HANAMACHI"
-                    fontFamily="Arial" fontSize="24" fontWeight="800"
-                    tracking="5" color="#F2FAFF" />
-              <Text x="67" y="106" value="A JAPANESE CANAL TOWN · A FEEDING MOMENT"
-                    fontFamily="Arial" fontSize="11" fontWeight="700"
-                    tracking="2.4" color="#7FD3EA" />
+              <Rect
+                x="42"
+                y="38"
+                width="440"
+                height="86"
+                radius="14"
+                color="#0A1A24D8"
+                stroke="#8FD7F066"
+                strokeWidth="2"
+              />
+              <Text
+                x="66"
+                y="74"
+                value="HANAMACHI"
+                fontFamily="Arial"
+                fontSize="24"
+                fontWeight="800"
+                tracking="5"
+                color="#F2FAFF"
+              />
+              <Text
+                x="67"
+                y="106"
+                value="A JAPANESE CANAL TOWN · A FEEDING MOMENT"
+                fontFamily="Arial"
+                fontSize="11"
+                fontWeight="700"
+                tracking="2.4"
+                color="#7FD3EA"
+              />
             </Group>
           </Layer>
         </Sequence>
@@ -1032,9 +1624,6 @@ COMPOSITION
     <Key time="3.5s" value="s91_pair_cam" />
   </AnimationTarget>
 
-
-
-
   <AnimationTarget node="s91_bloom" property="params.intensity">
     <Key time="0s" value="0.16" />
     <Key time="11.25s" value="0.16" />
@@ -1047,17 +1636,26 @@ COMPOSITION
     <Key time="18s" value="0.16" ease="ease_in" />
   </AnimationTarget>
 
-
   <Process id="S91Finish">
     <Tex id="s91_scene_tex" fmt="rgba16f" from="scene" />
     <Tex id="s91_bloom_tex" fmt="rgba16f" />
     <Tex id="s91_final_tex" fmt="rgba16f" />
-    <Pass id="s91_bloom" kind="compute" effect="glow_bloom"
-          in={["s91_scene_tex"]} out={["s91_bloom_tex"]}
-          params={{ threshold: "0.62", intensity: "0.16", sigma: "4.0" }} />
-    <Pass id="s91_grain" kind="compute" effect="film_grain"
-          in={["s91_bloom_tex"]} out={["s91_final_tex"]}
-          params={{ kind: "film_grain", amount: "0.005", scale: "1.0", seed: "91" }} />
+    <Pass
+      id="s91_bloom"
+      kind="compute"
+      effect="glow_bloom"
+      in={["s91_scene_tex"]}
+      out={["s91_bloom_tex"]}
+      params={{ threshold: "0.62", intensity: "0.16", sigma: "4.0" }}
+    />
+    <Pass
+      id="s91_grain"
+      kind="compute"
+      effect="film_grain"
+      in={["s91_bloom_tex"]}
+      out={["s91_final_tex"]}
+      params={{ kind: "film_grain", amount: "0.005", scale: "1.0", seed: "91" }}
+    />
   </Process>
 
   <Present from="S91HanamachiCanalTown" />

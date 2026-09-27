@@ -63,7 +63,7 @@
 | [constraints](features/constraints.md) | 1 |
 | [contact-correction](features/contact-correction.md) | 1 |
 | [curve](features/curve.md) | 9 |
-| [curve-animation](features/curve-animation.md) | 58 |
+| [curve-animation](features/curve-animation.md) | 59 |
 | [data-driven-shape](features/data-driven-shape.md) | 1 |
 | [declarative-layout](features/declarative-layout.md) | 1 |
 | [deform-grid](features/deform-grid.md) | 1 |

@@ -23,8 +23,17 @@
               </Group>
             </Repeat>
             <Rect x="0" y="0" width="1920" height="1080" fill="url(#s83_vignette)" />
-            <Rect x="0" y="0" width="1920" height="1080" fill="#10070A" opacity={curve("0:1:ease_in_out, 1.4:0:linear, 18.6:0:ease_in_out, 20:1:linear")} />
-            <Group opacity={curve("0:0:ease_in_out, 3:1:ease_in_out, 4.5:0:ease_in_out, 17:0:ease_in_out, 18.5:1:ease_in_out, 20:0:ease_in_out")}>
+            <Rect
+              x="0"
+              y="0"
+              width="1920"
+              height="1080"
+              fill="#10070A"
+              opacity={curve("0:1:ease_in_out, 1.4:0:linear, 18.6:0:ease_in_out, 20:1:linear")}
+            />
+            <Group
+              opacity={curve("0:0:ease_in_out, 3:1:ease_in_out, 4.5:0:ease_in_out, 17:0:ease_in_out, 18.5:1:ease_in_out, 20:0:ease_in_out")}
+            >
               <Text x="650" y="465" value="MOTIONLOOM" fontFamily="Georgia" fontSize="76" textGap="8" color="#F5E8D9" />
               <Path d="M850 574 L1070 574" stroke="#C39582" strokeWidth="0.7" fill="none" />
               <Text x="803" y="608" value="ROSE COPPER / LIGHT IN MOTION" fontSize="14" textGap="3" color="#D9BBB0" />
@@ -42,9 +51,30 @@
     <Tex id="surface" fmt="rgba16f" />
     <Tex id="focused" fmt="rgba16f" />
     <Tex id="out" fmt="rgba16f" />
-    <Pass id="s83_liquid" kind="compute" effect="procedural_surface" in={["src"]} out={["surface"]} params={{ seed: "83", flowStrength: "1", scale: "3.8", evolution: "$time.sec*0.20", warpStrength: "1.2", detailStrength: "1.1", baseColor: "#351820", veinColor: "#BD8C79", veinWidth: "0.006", poolAmount: "0", relief: "0.30", roughness: "0.48", lightAzimuth: "125", lightElevation: "40", viewX: "0.12*sin($time.sec*0.22)", viewY: "0.08*sin($time.sec*0.17)", viewZoom: "1", viewRotation: "2*sin($time.sec*0.15)", amount: "0.68" }} />
-    <Pass id="s83_focus" kind="compute" effect="gaussian_blur" in={["surface"]} out={["focused"]} params={{ sigma: "1.2" }} />
-    <Pass id="s83_bloom" kind="compute" effect="bloom" in={["focused"]} out={["out"]} params={{ threshold: "0.7", intensity: "0.08", sigma: "7" }} />
+    <Pass
+      id="s83_liquid"
+      kind="compute"
+      effect="procedural_surface"
+      in={["src"]}
+      out={["surface"]}
+      params={{ seed: "83", flowStrength: "1", scale: "3.8", evolution: "$time.sec*0.20", warpStrength: "1.2", detailStrength: "1.1", baseColor: "#351820", veinColor: "#BD8C79", veinWidth: "0.006", poolAmount: "0", relief: "0.30", roughness: "0.48", lightAzimuth: "125", lightElevation: "40", viewX: "0.12*sin($time.sec*0.22)", viewY: "0.08*sin($time.sec*0.17)", viewZoom: "1", viewRotation: "2*sin($time.sec*0.15)", amount: "0.68" }}
+    />
+    <Pass
+      id="s83_focus"
+      kind="compute"
+      effect="gaussian_blur"
+      in={["surface"]}
+      out={["focused"]}
+      params={{ sigma: "1.2" }}
+    />
+    <Pass
+      id="s83_bloom"
+      kind="compute"
+      effect="bloom"
+      in={["focused"]}
+      out={["out"]}
+      params={{ threshold: "0.7", intensity: "0.08", sigma: "7" }}
+    />
   </Process>
   <AnimationTarget node="s83_liquid" property="params.viewZoom">
     <Key time="0s" value="1" />

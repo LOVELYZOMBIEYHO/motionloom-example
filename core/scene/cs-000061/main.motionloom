@@ -1,6 +1,7 @@
 <!-- CS61 · VEGETATION ASSET V1 · six procedural kinds -->
 <Graph fps={30} duration="6s" size={[1280,720]}>
   <Assets>
+<MaterialAsset id="geometry_default" shading="pbr" roughness="0.82" specular="1" emissiveStrength="1" />
     <MaterialAsset id="bark" shading="pbr" baseColor="#4B3426" roughness="0.96" />
     <MaterialAsset id="leaf" shading="pbr" baseColor="#3F7B3B" roughness="0.88" doubleSided="true" />
     <MaterialAsset id="grass_mat" shading="pbr" baseColor="#4F853B" roughness="0.92" doubleSided="true" />
@@ -24,7 +25,10 @@
     <VegetationAsset id="deadwood" kind="deadwood" height="2.8"
                      trunkMaterial="bark" branchLevels="2" seed="66"
                      collision="solid" />
-    <PrimitiveAsset id="ground" shape="plane" size={[22,12]} color="#273522" />
+    <GeometryAsset id="ground_geometry">
+    <Primitive shape="plane" size={[22,12]} />
+    </GeometryAsset>
+    <MeshAsset id="ground" color="#273522" material="geometry_default" geometry="ground_geometry" />
   </Assets>
 
   <Background color="#A7C1C7" />

@@ -2,7 +2,7 @@
 
 `main.motionloom` is the authoritative 20-second clay head and Hair Card orbit.
 The accepted head silhouette is expressed as a compact
-`HeadAsset topology="facialCage"`. `HeadProfile`, `HeadDome`, and `FaceLayout`
+`Head topology="facialCage"`. `HeadProfile`, `HeadDome`, and `FaceLayout`
 hold the editable design; `FacialCage generatorVersion="1"` expands them in the
 MotionLoom Rust runtime into one welded head, orbital, eyelid, mouth, and nose
 control cage.
@@ -53,13 +53,16 @@ The compact head is preferred while its semantic parameters can represent the
 design. For geometry that cannot be described semantically, use either:
 
 ```xml
-<HeadAsset id="custom_head" material="skin" archetype="humanoid" topology="explicit">
+<GeometryAsset id="custom_head_geometry">
+<Head archetype="humanoid" topology="explicit">
   <HeadShape size={[1,1,1]} />
   <HeadCage subdivision="1">
     <Vertex position={[0,0,0]} uv={[0.5,0.5]} pinned="true" />
     <Face indices={[0,1,2,3]} />
   </HeadCage>
-</HeadAsset>
+</Head>
+</GeometryAsset>
+<MeshAsset id="custom_head" material="skin" geometry="custom_head_geometry" />
 ```
 
 or the generic `MeshAsset` with the same `Vertex` and `Face` children. Both

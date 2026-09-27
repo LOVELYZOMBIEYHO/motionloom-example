@@ -212,6 +212,29 @@
       ]
     },
     {
+      "tag": "GeometryAsset",
+      "occurrences": 12,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "id"
+      ],
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 12,
+          "examples": [
+            "\"s71_amber_tower_asset_geometry\"",
+            "\"s71_blue_die_asset_geometry\"",
+            "\"s71_coral_cube_asset_geometry\"",
+            "\"s71_cyan_cube_asset_geometry\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
       "tag": "Graph",
       "occurrences": 1,
       "recognized": true,
@@ -297,6 +320,122 @@
           "occurrences": 1,
           "examples": [
             "\"screen\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "MaterialAsset",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "id"
+      ],
+      "attributes": [
+        {
+          "name": "emissiveStrength",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"geometry_default\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "roughness",
+          "occurrences": 1,
+          "examples": [
+            "\"0.82\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "shading",
+          "occurrences": 1,
+          "examples": [
+            "\"pbr\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "specular",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "MeshAsset",
+      "occurrences": 12,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "id",
+        "geometry",
+        "material"
+      ],
+      "attributes": [
+        {
+          "name": "color",
+          "occurrences": 12,
+          "examples": [
+            "\"#131B2E\"",
+            "\"#263A5B\"",
+            "\"#334968\"",
+            "\"#50E3E6\""
+          ],
+          "recognized": true,
+          "valueType": "color",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "geometry",
+          "occurrences": 12,
+          "examples": [
+            "\"s71_amber_tower_asset_geometry\"",
+            "\"s71_blue_die_asset_geometry\"",
+            "\"s71_coral_cube_asset_geometry\"",
+            "\"s71_cyan_cube_asset_geometry\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 12,
+          "examples": [
+            "\"s71_amber_tower_asset\"",
+            "\"s71_blue_die_asset\"",
+            "\"s71_coral_cube_asset\"",
+            "\"s71_cyan_cube_asset\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "material",
+          "occurrences": 12,
+          "examples": [
+            "\"geometry_default\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -541,47 +680,27 @@
       ]
     },
     {
-      "tag": "PrimitiveAsset",
+      "tag": "Primitive",
       "occurrences": 12,
       "recognized": true,
       "validationCoverage": "strict",
       "requiredAttributes": [
-        "id",
         "shape"
       ],
       "discriminator": "shape",
       "variants": {
         "box": {
           "required": [
-            "id",
             "shape",
             "size"
           ],
           "optional": [
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "capsule": {
           "required": [
-            "id",
             "shape",
             "radius",
             "height"
@@ -589,280 +708,105 @@
           "optional": [
             "segments",
             "rings",
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "cone": {
           "required": [
-            "id",
             "shape",
             "radius",
             "height"
           ],
           "optional": [
             "segments",
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "cylinder": {
           "required": [
-            "id",
             "shape",
             "radius",
             "height"
           ],
           "optional": [
             "segments",
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "ellipsoid": {
           "required": [
-            "id",
             "shape",
             "radii"
           ],
           "optional": [
             "segments",
             "rings",
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "frustum": {
           "required": [
-            "id",
             "shape",
             "topSize",
             "bottomSize",
             "height"
           ],
           "optional": [
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "plane": {
           "required": [
-            "id",
             "shape",
             "size"
           ],
           "optional": [
             "segments",
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "roundedBox": {
           "required": [
-            "id",
             "shape",
             "size",
             "radius"
           ],
           "optional": [
             "segments",
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "sphere": {
           "required": [
-            "id",
             "shape",
             "radius"
           ],
           "optional": [
             "segments",
             "rings",
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "wedge": {
           "required": [
-            "id",
             "shape",
             "size"
           ],
           "optional": [
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         }
       },
       "attributes": [
-        {
-          "name": "color",
-          "occurrences": 12,
-          "examples": [
-            "\"#131B2E\"",
-            "\"#263A5B\"",
-            "\"#334968\"",
-            "\"#50E3E6\""
-          ],
-          "recognized": true,
-          "valueType": "color",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
         {
           "name": "height",
           "occurrences": 2,
@@ -873,18 +817,6 @@
           "valueType": "number",
           "supportsInlineExpression": true,
           "supportsAnimationTarget": true
-        },
-        {
-          "name": "id",
-          "occurrences": 12,
-          "examples": [
-            "\"s71_amber_tower_asset\"",
-            "\"s71_blue_die_asset\"",
-            "\"s71_coral_cube_asset\"",
-            "\"s71_cyan_cube_asset\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
         },
         {
           "name": "radius",
@@ -1554,6 +1486,7 @@
   "animationProperties": [],
   "assetKinds": [
     "image",
+    "material",
     "primitive"
   ]
 }

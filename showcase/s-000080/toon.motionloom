@@ -31,20 +31,62 @@
     <MaterialAsset id="s80_gold" baseColor="#EBA642" metallic="0.6" roughness="0.22" />
     <MaterialAsset id="s80_white" baseColor="#F4ECD9" roughness="0.35" />
     <MaterialAsset id="s80_eyes" baseColor="#121B25" roughness="0.2" />
-    <PrimitiveAsset id="s80_land" shape="cylinder" radius="4.8" height="0.4" material="s80_grass" />
-    <PrimitiveAsset id="s80_walkway" shape="box" size={[2.1,0.06,7.0]} material="s80_path" bevelRadius="0.025" bevelSegments="2" />
-    <PrimitiveAsset id="s80_trunk" shape="cylinder" radius="0.16" height="2.4" material="s80_bark" />
-    <PrimitiveAsset id="s80_crown" shape="ellipsoid" radii={[1.0,1.2,0.85]} material="s80_leaves" />
-    <PrimitiveAsset id="s80_rock" shape="ellipsoid" radii={[0.8,0.5,0.6]} material="s80_stone" />
-    <PrimitiveAsset id="s80_body" shape="ellipsoid" radii={[0.62,0.85,0.5]} material="s80_blue" />
-    <PrimitiveAsset id="s80_head" shape="sphere" radius="0.58" material="s80_blue" />
-    <PrimitiveAsset id="s80_eye" shape="sphere" radius="0.21" material="s80_white" />
-    <PrimitiveAsset id="s80_pupil" shape="sphere" radius="0.095" material="s80_eyes" />
-    <PrimitiveAsset id="s80_beak" shape="cone" radius="0.14" height="0.3" material="s80_gold" />
-    <PrimitiveAsset id="s80_wing" shape="ellipsoid" radii={[0.2,0.58,0.35]} material="s80_gold" />
-    <PrimitiveAsset id="s80_foot" shape="ellipsoid" radii={[0.22,0.12,0.33]} material="s80_gold" />
-    <PrimitiveAsset id="s80_bench" shape="box" size={[2.0,0.14,0.65]} material="s80_bark" bevelRadius="0.04" bevelSegments="3" />
-    <PrimitiveAsset id="s80_leg" shape="box" size={[0.15,0.65,0.5]} material="s80_stone" />
+    <GeometryAsset id="s80_land_geometry">
+      <Primitive shape="cylinder" radius="4.8" height="0.4" />
+    </GeometryAsset>
+    <MeshAsset id="s80_land" material="s80_grass" geometry="s80_land_geometry" />
+    <GeometryAsset id="s80_walkway_geometry">
+      <Primitive shape="box" size={[2.1,0.06,7.0]} bevelRadius="0.025" bevelSegments="2" />
+    </GeometryAsset>
+    <MeshAsset id="s80_walkway" material="s80_path" geometry="s80_walkway_geometry" />
+    <GeometryAsset id="s80_trunk_geometry">
+      <Primitive shape="cylinder" radius="0.16" height="2.4" />
+    </GeometryAsset>
+    <MeshAsset id="s80_trunk" material="s80_bark" geometry="s80_trunk_geometry" />
+    <GeometryAsset id="s80_crown_geometry">
+      <Primitive shape="ellipsoid" radii={[1.0,1.2,0.85]} />
+    </GeometryAsset>
+    <MeshAsset id="s80_crown" material="s80_leaves" geometry="s80_crown_geometry" />
+    <GeometryAsset id="s80_rock_geometry">
+      <Primitive shape="ellipsoid" radii={[0.8,0.5,0.6]} />
+    </GeometryAsset>
+    <MeshAsset id="s80_rock" material="s80_stone" geometry="s80_rock_geometry" />
+    <GeometryAsset id="s80_body_geometry">
+      <Primitive shape="ellipsoid" radii={[0.62,0.85,0.5]} />
+    </GeometryAsset>
+    <MeshAsset id="s80_body" material="s80_blue" geometry="s80_body_geometry" />
+    <GeometryAsset id="s80_head_geometry">
+      <Primitive shape="sphere" radius="0.58" />
+    </GeometryAsset>
+    <MeshAsset id="s80_head" material="s80_blue" geometry="s80_head_geometry" />
+    <GeometryAsset id="s80_eye_geometry">
+      <Primitive shape="sphere" radius="0.21" />
+    </GeometryAsset>
+    <MeshAsset id="s80_eye" material="s80_white" geometry="s80_eye_geometry" />
+    <GeometryAsset id="s80_pupil_geometry">
+      <Primitive shape="sphere" radius="0.095" />
+    </GeometryAsset>
+    <MeshAsset id="s80_pupil" material="s80_eyes" geometry="s80_pupil_geometry" />
+    <GeometryAsset id="s80_beak_geometry">
+      <Primitive shape="cone" radius="0.14" height="0.3" />
+    </GeometryAsset>
+    <MeshAsset id="s80_beak" material="s80_gold" geometry="s80_beak_geometry" />
+    <GeometryAsset id="s80_wing_geometry">
+      <Primitive shape="ellipsoid" radii={[0.2,0.58,0.35]} />
+    </GeometryAsset>
+    <MeshAsset id="s80_wing" material="s80_gold" geometry="s80_wing_geometry" />
+    <GeometryAsset id="s80_foot_geometry">
+      <Primitive shape="ellipsoid" radii={[0.22,0.12,0.33]} />
+    </GeometryAsset>
+    <MeshAsset id="s80_foot" material="s80_gold" geometry="s80_foot_geometry" />
+    <GeometryAsset id="s80_bench_geometry">
+      <Primitive shape="box" size={[2.0,0.14,0.65]} bevelRadius="0.04" bevelSegments="3" />
+    </GeometryAsset>
+    <MeshAsset id="s80_bench" material="s80_bark" geometry="s80_bench_geometry" />
+    <GeometryAsset id="s80_leg_geometry">
+      <Primitive shape="box" size={[0.15,0.65,0.5]} />
+    </GeometryAsset>
+    <MeshAsset id="s80_leg" material="s80_stone" geometry="s80_leg_geometry" />
     <CompoundAsset id="s80_owl">
       <Instance asset="s80_body" position={[0,1.05,0]} />
       <Instance asset="s80_head" position={[0,1.96,0]} />
@@ -72,7 +114,13 @@
         <Sequence from="0s" duration="20s" out="hide">
           <CompositeGroup id="s80_toon_island" space="3d" depth="true" format="rgba16f">
             <Camera3D id="s80_toon_camera" position={[8.6,6.7,11.6]} target={[0,1.1,0]} fov="42" />
-            <DirectionalLight direction={[-0.45,-1,-0.5]} color="#FFF0D8" intensity="3.2" castShadow="true" shadowStrength="0.75" />
+            <DirectionalLight
+              direction={[-0.45,-1,-0.5]}
+              color="#FFF0D8"
+              intensity="3.2"
+              castShadow="true"
+              shadowStrength="0.75"
+            />
             <ContactShadow intensity="0.55" distance="0.28" softness="0.6" />
             <Model asset="s80_land" position={[0,-0.25,0]} />
             <Model asset="s80_walkway" position={[0,-0.02,0]} />

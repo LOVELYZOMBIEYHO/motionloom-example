@@ -25,9 +25,9 @@
     "RenderStyle",
     "Assets",
     "MaterialAsset",
-    "PrimitiveAsset",
-    "HairAsset",
-    "HeadAsset",
+    "Primitive",
+    "Hair",
+    "Head",
     "FacialCage",
     "HeadProfile",
     "HeadSection",
@@ -44,7 +44,9 @@
     "Model",
     "AnimationTarget",
     "Key",
-    "Present"
+    "Present",
+    "GeometryAsset",
+    "MeshAsset"
   ],
   "teaches": [
     "Author a compact, versioned facial control cage in Rust from HeadProfile, HeadDome, and FaceLayout.",
@@ -59,9 +61,9 @@
   ],
   "requires": [
     "Graph",
-    "HeadAsset",
+    "Head",
     "FacialCage",
-    "HairAsset",
+    "Hair",
     "Scene",
     "Camera3D",
     "Present"

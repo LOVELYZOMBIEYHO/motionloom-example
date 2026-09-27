@@ -13,20 +13,57 @@
           <CompositeGroup id="stage" space="3d" depth="true">
             <Camera3D id="entry" position={[1.2754,8.0000,-6.0228]} target={[12.9381,0.8000,-23.0000]} fov="54" />
             <Camera3D id="front" position={[11.2651,2.1000,-113.0000]} target={[15.8798,0.6500,-98.0000]} fov="60" />
-            <Camera3D id="left_side" position={[-7.6148,3.2000,-173.2444]} target={[3.4055,0.7000,-174.0000]} fov="76" />
+            <Camera3D
+              id="left_side"
+              position={[-7.6148,3.2000,-173.2444]}
+              target={[3.4055,0.7000,-174.0000]}
+              fov="76"
+            />
             <Camera3D id="quarter" position={[0.7097,1.6000,-220.1822]} target={[-1.2644,0.8500,-232.0000]} fov="64" />
-            <Camera3D id="overhead" position={[-21.4079,23.0000,-285.0000]} target={[-22.6094,0.0000,-289.0000]} fov="57" />
-            <Camera3D id="right_side" position={[2.7570,5.0000,-359.4944]} target={[-7.3434,0.7000,-364.0000]} fov="76" />
+            <Camera3D
+              id="overhead"
+              position={[-21.4079,23.0000,-285.0000]}
+              target={[-22.6094,0.0000,-289.0000]}
+              fov="57"
+            />
+            <Camera3D
+              id="right_side"
+              position={[2.7570,5.0000,-359.4944]}
+              target={[-7.3434,0.7000,-364.0000]}
+              fov="76"
+            />
             <Camera3D id="bumper" position={[18.6122,1.7000,-428.6711]} target={[17.6026,0.8000,-441.0000]} fov="62" />
             <Camera3D id="runout" position={[0.9695,6.0000,-530.5973]} target={[8.2241,0.7000,-516.0000]} fov="58" />
-            <DirectionalLight direction={[-.55,-1,.35]} color="#FFE1B5" intensity="2.2" castShadow="true" shadowStrength="0.62" />
+            <DirectionalLight
+              direction={[-.55,-1,.35]}
+              color="#FFE1B5"
+              intensity="2.2"
+              castShadow="true"
+              shadowStrength="0.62"
+            />
             <DirectionalLight direction={[.4,-.35,-.7]} color="#CADDE9" intensity="0.9" />
             <AmbientOcclusion radius="0.6" intensity="0.35" />
             <ContactShadow distance="0.3" softness="0.4" intensity="0.6" />
             <ColorManagement toneMapping="aces" exposure="1.15" />
             <Model id="course" asset="canyon" scaleMode="none" scale="1" receiveShadow="true" castShadow="true" />
-            <Model id="red" asset="red_asset" position={[8.6811,0.0250,-19.1587]} scaleMode="none" scale="1" castShadow="true" receiveShadow="true" />
-            <Model id="blue" asset="blue_asset" position={[16.1294,0.0250,-24.9418]} scaleMode="none" scale="1" castShadow="true" receiveShadow="true" />
+            <Model
+              id="red"
+              asset="red_asset"
+              position={[8.6811,0.0250,-19.1587]}
+              scaleMode="none"
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="blue"
+              asset="blue_asset"
+              position={[16.1294,0.0250,-24.9418]}
+              scaleMode="none"
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
           </CompositeGroup>
         </Sequence>
       </Track>

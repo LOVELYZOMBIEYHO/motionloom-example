@@ -20,8 +20,8 @@
     "masking",
     "gpu-friendly",
     "gradients",
-    "highlights"
-    ,"texture"
+    "highlights",
+    "texture"
   ],
   "dsl": [
     "Graph",
@@ -53,11 +53,21 @@
   "teaches": [
     "Build a luminous cosmic iris entirely from editable MotionLoom scene nodes.",
     "Combine polar noise, deterministic particles, radial rays, glass refraction, dispersion, and advanced blend modes.",
-    "Keep optical effects clipped inside a feathered eye aperture while preserving independently adjustable groups."
-    ,"Use separate low-frequency displacement and cellular pore noise for procedural skin, with filled tapered eyebrow hairs and layered eye-socket shading."
+    "Keep optical effects clipped inside a feathered eye aperture while preserving independently adjustable groups.",
+    "Use separate low-frequency displacement and cellular pore noise for procedural skin, with filled tapered eyebrow hairs and layered eye-socket shading."
   ],
   "source_path": "showcase/s-000052",
   "demo_url": "",
-  "related": ["s-000051", "s-000049", "cs-000046"],
-  "requires": ["Graph", "Scene", "Timeline", "Path", "Present"]
+  "related": [
+    "s-000051",
+    "s-000049",
+    "cs-000046"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Timeline",
+    "Path",
+    "Present"
+  ]
 }

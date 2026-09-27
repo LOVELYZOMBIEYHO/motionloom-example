@@ -13,7 +13,8 @@
     "material",
     "pbr-lighting",
     "camera-3d",
-    "product-promotion"
+    "product-promotion",
+    "curve-animation"
   ],
   "dsl": [
     "Graph",
@@ -25,7 +26,7 @@
     "Assets",
     "ImageAsset",
     "MaterialAsset",
-    "PrimitiveAsset",
+    "Primitive",
     "MeshAsset",
     "Vertex",
     "Face",
@@ -40,12 +41,15 @@
     "DirectionalLight",
     "RectAreaLight",
     "Model",
-    "Present"
+    "Present",
+    "GeometryAsset"
   ],
   "teaches": [
     "Show one 3D apple mesh in textured, gray wireframe and white clay stages.",
     "Build depth-tested wire geometry from a UV-mapped MeshAsset control cage.",
-    "Animate a breakaway shell, airborne flip, impact beads, camera move and 3D hero return."
+    "Couple apple roll rotation to silhouette-based floor contact and travel distance.",
+    "Move the camera past a close peel view, look away briefly, and return to the opening composition for a loop.",
+    "Author camera-owned depth of field shared by WGPU and Weaver, keeping clay/wire shots sharp and animating surface focus for the macro loop."
   ],
   "source_path": "showcase/s-000098",
   "demo_url": "",

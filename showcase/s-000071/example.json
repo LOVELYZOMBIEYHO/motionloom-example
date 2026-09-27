@@ -14,7 +14,7 @@
   "dsl": [
     "Graph",
     "Assets",
-    "PrimitiveAsset",
+    "Primitive",
     "ImageAsset",
     "Background",
     "Scene",
@@ -36,7 +36,9 @@
     "Process",
     "Tex",
     "Pass",
-    "Present"
+    "Present",
+    "GeometryAsset",
+    "MeshAsset"
   ],
   "teaches": [
     "Use one RigidBody tag with an explicit 3D dimension and body type.",
@@ -55,7 +57,7 @@
   ],
   "requires": [
     "Graph",
-    "PrimitiveAsset",
+    "Primitive",
     "Scene",
     "Physics",
     "Model",

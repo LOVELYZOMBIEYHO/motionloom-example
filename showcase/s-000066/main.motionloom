@@ -11,9 +11,7 @@
 -->
 <Graph fps={30} duration="12s" size={[1920,1080]} renderSize={[3840,2160]}>
   <Assets>
-    <ModelAsset id="iphone_titanium_model_main3"
-                src="./assets/iphone.glb"
-                decoder="draco" />
+    <ModelAsset id="iphone_titanium_model_main3" src="./assets/iphone.glb" decoder="draco" />
   </Assets>
 
   <Background color="#030507" />
@@ -25,37 +23,38 @@
         <Sequence from="0s" duration="12s" out="hold">
           <Layer id="pocket_screen_base_layer" space="screen">
             <Rect x="0" y="0" width="430" height="932" color="#0B1220" />
-            <Ellipse x="215" y="280" radiusX="260" radiusY="220"
-                     color="#1E3A5F" opacity="0.55" />
-            <Ellipse x="320" y="620" radiusX="200" radiusY="240"
-                     color="#312E81" opacity="0.42" />
-            <Ellipse x="80" y="720" radiusX="160" radiusY="180"
-                     color="#0E7490" opacity="0.28" />
+            <Ellipse x="215" y="280" radiusX="260" radiusY="220" color="#1E3A5F" opacity="0.55" />
+            <Ellipse x="320" y="620" radiusX="200" radiusY="240" color="#312E81" opacity="0.42" />
+            <Ellipse x="80" y="720" radiusX="160" radiusY="180" color="#0E7490" opacity="0.28" />
             <Rect x="148" y="28" width="134" height="36" radius="18" color="#050505" />
-            <Text value="9:41" x="215" y="210" align="center"
-                  fontSize="78" fontWeight="300" color="#F8FAFC" />
-            <Text value="Tuesday, August 12" x="215" y="268" align="center"
-                  fontSize="18" fontWeight="500" color="#94A3B8" />
-            <Rect x="48" y="340" width="334" height="92" radius="26"
-                  color="#FFFFFF" opacity="0.08" />
-            <Text value="Photos" x="78" y="378" fontSize="17" fontWeight="700"
-                  color="#E2E8F0" />
-            <Text value="Golden hour, downtown" x="78" y="408"
-                  fontSize="14" fontWeight="500" color="#94A3B8" />
-            <Rect x="48" y="452" width="158" height="158" radius="28"
-                  color="#0EA5E9" opacity="0.88" />
-            <Rect x="224" y="452" width="158" height="158" radius="28"
-                  color="#6366F1" opacity="0.88" />
-            <Text value="Camera" x="127" y="540" align="center"
-                  fontSize="16" fontWeight="800" color="#FFFFFF" />
-            <Text value="Studio" x="303" y="540" align="center"
-                  fontSize="16" fontWeight="800" color="#FFFFFF" />
-            <Rect x="48" y="632" width="334" height="72" radius="22"
-                  color="#FFFFFF" opacity="0.07" />
-            <Text value="Pro Display · Always On" x="215" y="674" align="center"
-                  fontSize="15" fontWeight="600" color="#CBD5E1" />
-            <Rect x="168" y="880" width="94" height="5" radius="3"
-                  color="#F8FAFC" opacity="0.55" />
+            <Text value="9:41" x="215" y="210" align="center" fontSize="78" fontWeight="300" color="#F8FAFC" />
+            <Text
+              value="Tuesday, August 12"
+              x="215"
+              y="268"
+              align="center"
+              fontSize="18"
+              fontWeight="500"
+              color="#94A3B8"
+            />
+            <Rect x="48" y="340" width="334" height="92" radius="26" color="#FFFFFF" opacity="0.08" />
+            <Text value="Photos" x="78" y="378" fontSize="17" fontWeight="700" color="#E2E8F0" />
+            <Text value="Golden hour, downtown" x="78" y="408" fontSize="14" fontWeight="500" color="#94A3B8" />
+            <Rect x="48" y="452" width="158" height="158" radius="28" color="#0EA5E9" opacity="0.88" />
+            <Rect x="224" y="452" width="158" height="158" radius="28" color="#6366F1" opacity="0.88" />
+            <Text value="Camera" x="127" y="540" align="center" fontSize="16" fontWeight="800" color="#FFFFFF" />
+            <Text value="Studio" x="303" y="540" align="center" fontSize="16" fontWeight="800" color="#FFFFFF" />
+            <Rect x="48" y="632" width="334" height="72" radius="22" color="#FFFFFF" opacity="0.07" />
+            <Text
+              value="Pro Display · Always On"
+              x="215"
+              y="674"
+              align="center"
+              fontSize="15"
+              fontWeight="600"
+              color="#CBD5E1"
+            />
+            <Rect x="168" y="880" width="94" height="5" radius="3" color="#F8FAFC" opacity="0.55" />
           </Layer>
         </Sequence>
       </Track>
@@ -68,20 +67,54 @@
         <Sequence from="0s" duration="12s" out="hold">
           <Layer id="pocket_atmosphere_layer" space="screen">
             <Rect x="0" y="0" width="1920" height="1080" color="#030507" />
-            <Ellipse x={curve("0:480:linear, 5.5:830:ease_in_out, 12:620:ease_in_out")}
-                     y="190" radiusX="700" radiusY="330" color="#10252D"
-                     opacity={curve("0:0.16:linear, 1.2:0.6:ease_out, 10.8:0.52:linear, 12:0.16:ease_in")} />
-            <Ellipse x={curve("0:1480:linear, 6:1110:ease_in_out, 12:1360:ease_in_out")}
-                     y="880" radiusX="760" radiusY="390" color="#20291B"
-                     opacity={curve("0:0.12:linear, 1.4:0.52:ease_out, 10.8:0.48:linear, 12:0.12:ease_in")} />
-            <Ellipse x={curve("0:1320:linear, 4:1080:ease_in_out, 8:1420:ease_in_out, 12:1180:ease_in_out")}
-                     y="420" radiusX="260" radiusY="640" color="#143A4C" opacity="0.16" />
-            <Rect x="250" y="916" width="1420" height="1" color="#B7C1CC"
-                  opacity={curve("0:0:linear, 1.1:0.24:ease_out, 10.8:0.24:linear, 12:0:ease_in")} />
-            <Rect x={curve("0:-520:linear, 5:2120:ease_in_out, 12:2120:linear")}
-                  y="118" width="420" height="2" color="#B9FF39" opacity="0.55" />
-            <Rect x={curve("0:2200:linear, 7:-460:ease_in_out, 12:-460:linear")}
-                  y="842" width="360" height="2" color="#52E8FF" opacity="0.48" />
+            <Ellipse
+              x={curve("0:480:linear, 5.5:830:ease_in_out, 12:620:ease_in_out")}
+              y="190"
+              radiusX="700"
+              radiusY="330"
+              color="#10252D"
+              opacity={curve("0:0.16:linear, 1.2:0.6:ease_out, 10.8:0.52:linear, 12:0.16:ease_in")}
+            />
+            <Ellipse
+              x={curve("0:1480:linear, 6:1110:ease_in_out, 12:1360:ease_in_out")}
+              y="880"
+              radiusX="760"
+              radiusY="390"
+              color="#20291B"
+              opacity={curve("0:0.12:linear, 1.4:0.52:ease_out, 10.8:0.48:linear, 12:0.12:ease_in")}
+            />
+            <Ellipse
+              x={curve("0:1320:linear, 4:1080:ease_in_out, 8:1420:ease_in_out, 12:1180:ease_in_out")}
+              y="420"
+              radiusX="260"
+              radiusY="640"
+              color="#143A4C"
+              opacity="0.16"
+            />
+            <Rect
+              x="250"
+              y="916"
+              width="1420"
+              height="1"
+              color="#B7C1CC"
+              opacity={curve("0:0:linear, 1.1:0.24:ease_out, 10.8:0.24:linear, 12:0:ease_in")}
+            />
+            <Rect
+              x={curve("0:-520:linear, 5:2120:ease_in_out, 12:2120:linear")}
+              y="118"
+              width="420"
+              height="2"
+              color="#B9FF39"
+              opacity="0.55"
+            />
+            <Rect
+              x={curve("0:2200:linear, 7:-460:ease_in_out, 12:-460:linear")}
+              y="842"
+              width="360"
+              height="2"
+              color="#52E8FF"
+              opacity="0.48"
+            />
           </Layer>
         </Sequence>
       </Track>
@@ -89,28 +122,45 @@
       <Track id="pocket_identity" space="screen" compositeOrder="20">
         <Sequence from="0s" duration="12s" out="hold">
           <Layer id="pocket_identity_layer" space="screen">
-            <Group id="pocket_cold_open"
-                   opacity={curve("0:0:linear, 0.22:1:ease_out, 1.02:1:linear, 1.34:0:ease_in")}
-                   scale={curve("0:1.08:linear, 0.7:1:ease_out, 1.34:0.97:ease_in")}
-                   transformOriginX="960" transformOriginY="530">
-              <Text value="iPhone" x="960" y="500" align="center"
-                    fontSize="112" fontWeight="300" color="#F8FAFC" />
-              <Text value="TITANIUM" x="960" y="578" align="center"
-                    fontSize="22" fontWeight="700" tracking="5" color="#94A3B8" />
+            <Group
+              id="pocket_cold_open"
+              opacity={curve("0:0:linear, 0.22:1:ease_out, 1.02:1:linear, 1.34:0:ease_in")}
+              scale={curve("0:1.08:linear, 0.7:1:ease_out, 1.34:0.97:ease_in")}
+              transformOriginX="960"
+              transformOriginY="530"
+            >
+              <Text value="iPhone" x="960" y="500" align="center" fontSize="112" fontWeight="300" color="#F8FAFC" />
+              <Text
+                value="TITANIUM"
+                x="960"
+                y="578"
+                align="center"
+                fontSize="22"
+                fontWeight="700"
+                tracking="5"
+                color="#94A3B8"
+              />
             </Group>
 
-            <Group id="pocket_corner_brand"
-                   opacity={curve("0:0:linear, 1.45:0:linear, 1.85:1:ease_out, 11.25:1:linear, 12:0:ease_in")}>
-              <Text value="iPhone" x="86" y="92" fontSize="24" fontWeight="600"
-                    color="#F8FAFC" />
-              <Text value="TITANIUM / 01" x="86" y="122" fontSize="11"
-                    fontWeight="800" tracking="2" color="#8290A3" />
+            <Group
+              id="pocket_corner_brand"
+              opacity={curve("0:0:linear, 1.45:0:linear, 1.85:1:ease_out, 11.25:1:linear, 12:0:ease_in")}
+            >
+              <Text value="iPhone" x="86" y="92" fontSize="24" fontWeight="600" color="#F8FAFC" />
+              <Text value="TITANIUM / 01" x="86" y="122" fontSize="11" fontWeight="800" tracking="2" color="#8290A3" />
               <Rect x="86" y="142" width="108" height="2" color="#B9FF39" />
             </Group>
 
-            <Text value="iPhone 15 Pro Max" x="1622" y="92"
-                  fontSize="12" fontWeight="800" tracking="2" color="#8290A3"
-                  opacity={curve("0:0:linear, 1.6:1:ease_out, 11.2:1:linear, 12:0:ease_in")} />
+            <Text
+              value="iPhone 15 Pro Max"
+              x="1622"
+              y="92"
+              fontSize="12"
+              fontWeight="800"
+              tracking="2"
+              color="#8290A3"
+              opacity={curve("0:0:linear, 1.6:1:ease_out, 11.2:1:linear, 12:0:ease_in")}
+            />
           </Layer>
         </Sequence>
       </Track>
@@ -119,11 +169,17 @@
         <Sequence from="0s" duration="12s" out="hold">
           <CompositeGroup id="pocket_device_island" space="3d" depth="true" format="rgba16f">
             <Camera3D id="pocket_camera" position={[0,0.05,6.55]} target={[0,-0.12,0]} fov="35" />
-            <Model id="pocket_device" asset="iphone_titanium_model_main3"
-                   position={[0,-4.8,0.8]}
-                   rotationX="7" rotationY="-24" rotationZ="0"
-                   scaleMode="normalize_height"
-                   scale="2.7" exposure="2.05">
+            <Model
+              id="pocket_device"
+              asset="iphone_titanium_model_main3"
+              position={[0,-4.8,0.8]}
+              rotationX="7"
+              rotationY="-24"
+              rotationZ="0"
+              scaleMode="normalize_height"
+              scale="2.7"
+              exposure="2.05"
+            >
               <MaterialBinding modelSourceMaterial="pIJKfZsazmcpEiU" texture="@scene:iphone_screen_ui_main3" />
             </Model>
           </CompositeGroup>
@@ -133,43 +189,71 @@
       <Track id="pocket_story_copy" space="screen" compositeOrder="90">
         <Sequence from="1.45s" duration="2.65s" out="hide">
           <Layer id="pocket_prompt_copy_layer" space="screen">
-            <Group id="pocket_prompt_copy"
-                   x={curve("0:-46:linear, 0.38:0:ease_out, 2.25:0:linear, 2.65:-24:ease_in")}
-                   opacity={curve("0:0:linear, 0.3:1:ease_out, 2.15:1:linear, 2.65:0:ease_in")}>
-              <Text value="01 / TITANIUM" x="112" y="350" fontSize="13" fontWeight="900"
-                    tracking="3" color="#B9FF39" />
+            <Group
+              id="pocket_prompt_copy"
+              x={curve("0:-46:linear, 0.38:0:ease_out, 2.25:0:linear, 2.65:-24:ease_in")}
+              opacity={curve("0:0:linear, 0.3:1:ease_out, 2.15:1:linear, 2.65:0:ease_in")}
+            >
+              <Text value="01 / TITANIUM" x="112" y="350" fontSize="13" fontWeight="900" tracking="3" color="#B9FF39" />
               <Text value="TITANIUM DESIGN" x="112" y="430" fontSize="42" fontWeight="900" color="#F8FAFC" />
-              <Text value="Aerospace-grade. Feather-light."
-                    x="114" y="506" fontSize="17" fontWeight="500" color="#94A3B8" />
+              <Text
+                value="Aerospace-grade. Feather-light."
+                x="114"
+                y="506"
+                fontSize="17"
+                fontWeight="500"
+                color="#94A3B8"
+              />
             </Group>
           </Layer>
         </Sequence>
 
         <Sequence from="4.1s" duration="3.05s" out="hide">
           <Layer id="pocket_scene_copy_layer" space="screen">
-            <Group id="pocket_scene_copy"
-                   x={curve("0:48:linear, 0.38:0:ease_out, 2.55:0:linear, 3.05:24:ease_in")}
-                   opacity={curve("0:0:linear, 0.3:1:ease_out, 2.55:1:linear, 3.05:0:ease_in")}>
-              <Text value="02 / CAMERA" x="1330" y="350"
-                    fontSize="13" fontWeight="900" tracking="3" color="#52E8FF" />
-              <Text value="PRO CAMERA SYSTEM" x="1330" y="430"
-                    fontSize="42" fontWeight="900" color="#F8FAFC" />
-              <Text value="Capture what the eye almost misses."
-                    x="1332" y="506" fontSize="17" fontWeight="500" color="#94A3B8" />
+            <Group
+              id="pocket_scene_copy"
+              x={curve("0:48:linear, 0.38:0:ease_out, 2.55:0:linear, 3.05:24:ease_in")}
+              opacity={curve("0:0:linear, 0.3:1:ease_out, 2.55:1:linear, 3.05:0:ease_in")}
+            >
+              <Text value="02 / CAMERA" x="1330" y="350" fontSize="13" fontWeight="900" tracking="3" color="#52E8FF" />
+              <Text value="PRO CAMERA SYSTEM" x="1330" y="430" fontSize="42" fontWeight="900" color="#F8FAFC" />
+              <Text
+                value="Capture what the eye almost misses."
+                x="1332"
+                y="506"
+                fontSize="17"
+                fontWeight="500"
+                color="#94A3B8"
+              />
             </Group>
           </Layer>
         </Sequence>
 
         <Sequence from="7.15s" duration="2.5s" out="hide">
           <Layer id="pocket_gpu_copy_layer" space="screen">
-            <Group id="pocket_gpu_copy"
-                   y={curve("0:30:linear, 0.4:0:ease_out, 2.05:0:linear, 2.5:-18:ease_in")}
-                   opacity={curve("0:0:linear, 0.32:1:ease_out, 2.05:1:linear, 2.5:0:ease_in")}>
-              <Text value="03 / PERFORMANCE" x="112" y="698" fontSize="13" fontWeight="900"
-                    tracking="3" color="#B9FF39" />
+            <Group
+              id="pocket_gpu_copy"
+              y={curve("0:30:linear, 0.4:0:ease_out, 2.05:0:linear, 2.5:-18:ease_in")}
+              opacity={curve("0:0:linear, 0.32:1:ease_out, 2.05:1:linear, 2.5:0:ease_in")}
+            >
+              <Text
+                value="03 / PERFORMANCE"
+                x="112"
+                y="698"
+                fontSize="13"
+                fontWeight="900"
+                tracking="3"
+                color="#B9FF39"
+              />
               <Text value="A17 PRO PERFORMANCE" x="112" y="780" fontSize="42" fontWeight="900" color="#F8FAFC" />
-              <Text value="Console-class graphics. All day."
-                    x="114" y="854" fontSize="17" fontWeight="500" color="#94A3B8" />
+              <Text
+                value="Console-class graphics. All day."
+                x="114"
+                y="854"
+                fontSize="17"
+                fontWeight="500"
+                color="#94A3B8"
+              />
             </Group>
           </Layer>
         </Sequence>
@@ -178,13 +262,13 @@
       <Track id="pocket_end_card" space="screen" compositeOrder="120">
         <Sequence from="9.55s" duration="2.45s" out="hold">
           <Layer id="pocket_end_card_layer" space="screen">
-            <Group id="pocket_end_copy"
-                   y={curve("0:34:linear, 0.48:0:ease_out, 2.45:0:linear")}
-                   opacity={curve("0:0:linear, 0.4:1:ease_out, 2.45:1:linear")}>
-              <Text value="Designed to be held." x="144" y="438"
-                    fontSize="54" fontWeight="300" color="#F8FAFC" />
-              <Text value="iPhone 15 Pro Max" x="148" y="500" fontSize="18"
-                    fontWeight="600" color="#94A3B8" />
+            <Group
+              id="pocket_end_copy"
+              y={curve("0:34:linear, 0.48:0:ease_out, 2.45:0:linear")}
+              opacity={curve("0:0:linear, 0.4:1:ease_out, 2.45:1:linear")}
+            >
+              <Text value="Designed to be held." x="144" y="438" fontSize="54" fontWeight="300" color="#F8FAFC" />
+              <Text value="iPhone 15 Pro Max" x="148" y="500" fontSize="18" fontWeight="600" color="#94A3B8" />
             </Group>
           </Layer>
         </Sequence>
@@ -195,11 +279,27 @@
           <Layer id="pocket_frame_polish_layer" space="screen">
             <Rect x="0" y="0" width="1920" height="54" color="#000000" opacity="0.62" />
             <Rect x="0" y="1026" width="1920" height="54" color="#000000" opacity="0.62" />
-            <Text value="IPHONE / TITANIUM PRODUCT FILM"
-                  x="86" y="1054" fontSize="10" fontWeight="800" tracking="2"
-                  color="#687587" opacity="0.82" />
-            <Text value="iPhone 15 Pro Max" x="1834" y="1054" align="right"
-                  fontSize="10" fontWeight="800" tracking="2" color="#687587" opacity="0.82" />
+            <Text
+              value="IPHONE / TITANIUM PRODUCT FILM"
+              x="86"
+              y="1054"
+              fontSize="10"
+              fontWeight="800"
+              tracking="2"
+              color="#687587"
+              opacity="0.82"
+            />
+            <Text
+              value="iPhone 15 Pro Max"
+              x="1834"
+              y="1054"
+              align="right"
+              fontSize="10"
+              fontWeight="800"
+              tracking="2"
+              color="#687587"
+              opacity="0.82"
+            />
           </Layer>
         </Sequence>
       </Track>
@@ -214,12 +314,22 @@
     <Tex id="pocket_scene_tex" fmt="rgba16f" from="scene" />
     <Tex id="pocket_bloom_tex" fmt="rgba16f" />
     <Tex id="pocket_final_tex" fmt="rgba16f" />
-    <Pass id="pocket_bloom_pass" kind="compute" effect="glow_bloom"
-          in={["pocket_scene_tex"]} out={["pocket_bloom_tex"]}
-          params={{ threshold: "0.62", intensity: "0.28", sigma: "5.5" }} />
-    <Pass id="pocket_grain_pass" kind="compute" effect="film_grain"
-          in={["pocket_bloom_tex"]} out={["pocket_final_tex"]}
-          params={{ kind: "film_grain", amount: "0.012", scale: "1.0", seed: "663" }} />
+    <Pass
+      id="pocket_bloom_pass"
+      kind="compute"
+      effect="glow_bloom"
+      in={["pocket_scene_tex"]}
+      out={["pocket_bloom_tex"]}
+      params={{ threshold: "0.62", intensity: "0.28", sigma: "5.5" }}
+    />
+    <Pass
+      id="pocket_grain_pass"
+      kind="compute"
+      effect="film_grain"
+      in={["pocket_bloom_tex"]}
+      out={["pocket_final_tex"]}
+      params={{ kind: "film_grain", amount: "0.012", scale: "1.0", seed: "663" }}
+    />
   </Process>
 
   <!-- Explicit AnimationTarget channels keep the 3D choreography inspectable. -->
@@ -232,46 +342,62 @@
     <Key time="12s" value="[0.72,-1.38,0]" />
   </AnimationTarget>
   <AnimationTarget node="pocket_device" property="rotationX">
-    <Key time="0s" value="7" /><Key time="1.55s" value="1" ease="ease_out" />
-    <Key time="6s" value="-3" ease="ease_in_out" /><Key time="9.65s" value="1" ease="ease_in_out" />
+    <Key time="0s" value="7" />
+    <Key time="1.55s" value="1" ease="ease_out" />
+    <Key time="6s" value="-3" ease="ease_in_out" />
+    <Key time="9.65s" value="1" ease="ease_in_out" />
     <Key time="12s" value="0" ease="ease_in_out" />
   </AnimationTarget>
   <AnimationTarget node="pocket_device" property="rotationY">
-    <Key time="0s" value="-24" /><Key time="1.55s" value="-12" ease="ease_out" />
-    <Key time="4.1s" value="38" ease="ease_in_out" /><Key time="6.2s" value="158" ease="ease_in_out" />
-    <Key time="7.65s" value="202" ease="ease_in_out" /><Key time="9.65s" value="18" ease="ease_in_out" />
+    <Key time="0s" value="-24" />
+    <Key time="1.55s" value="-12" ease="ease_out" />
+    <Key time="4.1s" value="38" ease="ease_in_out" />
+    <Key time="6.2s" value="158" ease="ease_in_out" />
+    <Key time="7.65s" value="202" ease="ease_in_out" />
+    <Key time="9.65s" value="18" ease="ease_in_out" />
     <Key time="12s" value="-6" ease="ease_in_out" />
   </AnimationTarget>
   <AnimationTarget node="pocket_device" property="scale">
-    <Key time="0s" value="2.7" /><Key time="1.55s" value="3.3" ease="ease_out" />
-    <Key time="7.15s" value="3.46" ease="ease_in_out" /><Key time="9.65s" value="3.55" ease="ease_in_out" />
+    <Key time="0s" value="2.7" />
+    <Key time="1.55s" value="3.3" ease="ease_out" />
+    <Key time="7.15s" value="3.46" ease="ease_in_out" />
+    <Key time="9.65s" value="3.55" ease="ease_in_out" />
     <Key time="12s" value="3.62" ease="ease_in_out" />
   </AnimationTarget>
   <AnimationTarget node="pocket_device" property="exposure">
-    <Key time="0s" value="1.65" /><Key time="1.55s" value="2.2" ease="ease_out" />
-    <Key time="6.2s" value="2.45" ease="ease_in_out" /><Key time="12s" value="2.18" ease="ease_in_out" />
+    <Key time="0s" value="1.65" />
+    <Key time="1.55s" value="2.2" ease="ease_out" />
+    <Key time="6.2s" value="2.45" ease="ease_in_out" />
+    <Key time="12s" value="2.18" ease="ease_in_out" />
   </AnimationTarget>
   <AnimationTarget node="pocket_camera" property="position">
-    <Key time="0s" value="[0,0.05,6.75]" /><Key time="4.1s" value="[0.08,0.08,6.35]" ease="ease_in_out" />
+    <Key time="0s" value="[0,0.05,6.75]" />
+    <Key time="4.1s" value="[0.08,0.08,6.35]" ease="ease_in_out" />
     <Key time="7.15s" value="[-0.12,0.02,6.5]" ease="ease_in_out" />
     <Key time="12s" value="[0,0.05,6.3]" ease="ease_in_out" />
   </AnimationTarget>
   <AnimationTarget node="pocket_camera" property="target">
-    <Key time="0s" value="[0,-0.12,0]" /><Key time="6.2s" value="[0.08,-0.18,0]" ease="ease_in_out" />
+    <Key time="0s" value="[0,-0.12,0]" />
+    <Key time="6.2s" value="[0.08,-0.18,0]" ease="ease_in_out" />
     <Key time="9.65s" value="[-0.06,-0.12,0]" ease="ease_in_out" />
     <Key time="12s" value="[0,-0.12,0]" ease="ease_in_out" />
   </AnimationTarget>
   <AnimationTarget node="pocket_camera" property="fov">
-    <Key time="0s" value="37" /><Key time="1.55s" value="34" ease="ease_out" />
-    <Key time="7.15s" value="32.5" ease="ease_in_out" /><Key time="12s" value="33.5" ease="ease_in_out" />
+    <Key time="0s" value="37" />
+    <Key time="1.55s" value="34" ease="ease_out" />
+    <Key time="7.15s" value="32.5" ease="ease_in_out" />
+    <Key time="12s" value="33.5" ease="ease_in_out" />
   </AnimationTarget>
   <AnimationTarget node="pocket_bloom_pass" property="params.intensity">
-    <Key time="0s" value="0.14" /><Key time="1.55s" value="0.3" ease="ease_out" />
-    <Key time="6.2s" value="0.42" ease="ease_in_out" /><Key time="9.65s" value="0.26" ease="ease_in_out" />
+    <Key time="0s" value="0.14" />
+    <Key time="1.55s" value="0.3" ease="ease_out" />
+    <Key time="6.2s" value="0.42" ease="ease_in_out" />
+    <Key time="9.65s" value="0.26" ease="ease_in_out" />
     <Key time="12s" value="0.34" ease="ease_in_out" />
   </AnimationTarget>
   <AnimationTarget node="pocket_bloom_pass" property="params.sigma">
-    <Key time="0s" value="3.5" /><Key time="6.2s" value="7.5" ease="ease_in_out" />
+    <Key time="0s" value="3.5" />
+    <Key time="6.2s" value="7.5" ease="ease_in_out" />
     <Key time="12s" value="5.5" ease="ease_in_out" />
   </AnimationTarget>
 

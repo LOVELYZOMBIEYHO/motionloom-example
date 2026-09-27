@@ -11,14 +11,18 @@
         <Rect x="0" y="500" width="1920" height="140" color="#FFF6EA" />
         <Rect x="0" y="620" width="1920" height="260" color="#766274" />
 
-        <Path d="M 0 676 L 180 618 L 360 650 L 540 590 L 760 645 L 960 560 L 1160 632 L 1360 590 L 1550 654 L 1740 620 L 1920 672 L 1920 880 L 0 880 Z"
-              fill="#2C2028"
-              stroke="none"
-              opacity="0.88" />
-        <Path d="M 0 548 C 240 500 410 504 610 538 C 820 574 980 528 1200 506 C 1460 480 1640 510 1920 466 L 1920 610 C 1620 650 1420 608 1210 628 C 980 650 820 690 600 638 C 395 590 210 610 0 650 Z"
-              fill="#FFFFFF"
-              stroke="none"
-              opacity="0.22" />
+        <Path
+          d="M 0 676 L 180 618 L 360 650 L 540 590 L 760 645 L 960 560 L 1160 632 L 1360 590 L 1550 654 L 1740 620 L 1920 672 L 1920 880 L 0 880 Z"
+          fill="#2C2028"
+          stroke="none"
+          opacity="0.88"
+        />
+        <Path
+          d="M 0 548 C 240 500 410 504 610 538 C 820 574 980 528 1200 506 C 1460 480 1640 510 1920 466 L 1920 610 C 1620 650 1420 608 1210 628 C 980 650 820 690 600 638 C 395 590 210 610 0 650 Z"
+          fill="#FFFFFF"
+          stroke="none"
+          opacity="0.22"
+        />
       </Precompose>
 
       <Precompose id="text_matte" size={[1920,1080]}>
@@ -34,12 +38,8 @@
           <Rect x="565" y="724" width="370" height="86" color="#FFFFFF" />
 
           <!-- X -->
-          <Path d="M 970 270 L 1070 270 L 1328 810 L 1228 810 Z"
-                fill="#FFFFFF"
-                stroke="none" />
-          <Path d="M 1228 270 L 1328 270 L 1070 810 L 970 810 Z"
-                fill="#FFFFFF"
-                stroke="none" />
+          <Path d="M 970 270 L 1070 270 L 1328 810 L 1228 810 Z" fill="#FFFFFF" stroke="none" />
+          <Path d="M 1228 270 L 1328 270 L 1070 810 L 970 810 Z" fill="#FFFFFF" stroke="none" />
 
           <!-- T -->
           <Rect x="1415" y="270" width="365" height="86" color="#FFFFFF" />

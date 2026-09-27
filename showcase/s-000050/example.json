@@ -3,8 +3,38 @@
   "type": "showcase",
   "title": "Procedural Elements Lab",
   "domain": "scene",
-  "features": ["scene", "gpu-friendly", "noise", "procedural-texture", "material", "displacement", "cloud", "fire", "lava", "steam", "water"],
-  "dsl": ["Graph", "Background", "Scene", "Defs", "Noise", "Material", "LinearGradient", "Timeline", "Track", "Sequence", "Layer", "Group", "Rect", "Circle", "Path", "Text", "Present"],
+  "features": [
+    "scene",
+    "gpu-friendly",
+    "noise",
+    "procedural-texture",
+    "material",
+    "displacement",
+    "cloud",
+    "fire",
+    "lava",
+    "steam",
+    "water"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "Noise",
+    "Material",
+    "LinearGradient",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Rect",
+    "Circle",
+    "Path",
+    "Text",
+    "Present"
+  ],
   "teaches": [
     "Generate five organic effects from algorithms instead of image textures.",
     "Reuse universal Noise and Material resources with different physical-looking parameters.",
@@ -12,6 +42,15 @@
   ],
   "source_path": "showcase/s-000050",
   "demo_url": "",
-  "related": ["s-000049", "cs-000042"],
-  "requires": ["Graph", "Scene", "Noise", "Material", "Present"]
+  "related": [
+    "s-000049",
+    "cs-000042"
+  ],
+  "requires": [
+    "Graph",
+    "Scene",
+    "Noise",
+    "Material",
+    "Present"
+  ]
 }

@@ -6,54 +6,79 @@
       <Track id="arm_lab_track" space="screen" z="0">
         <Sequence from="0s" duration="4s" out="hold">
           <Layer id="arm_lab_layer">
-            <Text value="QUICK PUPPET / ARM IK" x="480" y="68"
-                  fontSize="34" fontWeight="900" color="#B9FF39" />
-            <Text value="DRAG THE WRIST CONTROL · THE ELBOW FOLLOWS" x="480" y="106"
-                  fontSize="16" color="#63D9FF" />
+            <Text value="QUICK PUPPET / ARM IK" x="480" y="68" fontSize="34" fontWeight="900" color="#B9FF39" />
+            <Text value="DRAG THE WRIST CONTROL · THE ELBOW FOLLOWS" x="480" y="106" fontSize="16" color="#63D9FF" />
 
             <!-- One isolated visual surface: no body, hair, or second arm. -->
             <Group id="character_art_arm">
-              <Circle x="270" y="220" radius="72" color="#27344F"
-                      stroke="#7183A8" strokeWidth="5" />
+              <Circle x="270" y="220" radius="72" color="#27344F" stroke="#7183A8" strokeWidth="5" />
 
               <!-- Upper arm / sleeve. -->
-              <Path d="M 270 220 C 304 284 354 354 400 410"
-                    fill="none" stroke="#3E4D70" strokeWidth="126"
-                    lineCap="round" lineJoin="round" />
-              <Path d="M 270 220 C 304 284 354 354 400 410"
-                    fill="none" stroke="#61739B" strokeWidth="92"
-                    lineCap="round" lineJoin="round" />
+              <Path
+                d="M 270 220 C 304 284 354 354 400 410"
+                fill="none"
+                stroke="#3E4D70"
+                strokeWidth="126"
+                lineCap="round"
+                lineJoin="round"
+              />
+              <Path
+                d="M 270 220 C 304 284 354 354 400 410"
+                fill="none"
+                stroke="#61739B"
+                strokeWidth="92"
+                lineCap="round"
+                lineJoin="round"
+              />
 
               <!-- Forearm. -->
-              <Path d="M 400 410 C 454 466 516 510 575 545"
-                    fill="none" stroke="#F0C7B0" strokeWidth="96"
-                    lineCap="round" lineJoin="round" />
-              <Path d="M 400 410 C 454 466 516 510 575 545"
-                    fill="none" stroke="#F8DDCC" strokeWidth="68"
-                    lineCap="round" lineJoin="round" />
+              <Path
+                d="M 400 410 C 454 466 516 510 575 545"
+                fill="none"
+                stroke="#F0C7B0"
+                strokeWidth="96"
+                lineCap="round"
+                lineJoin="round"
+              />
+              <Path
+                d="M 400 410 C 454 466 516 510 575 545"
+                fill="none"
+                stroke="#F8DDCC"
+                strokeWidth="68"
+                lineCap="round"
+                lineJoin="round"
+              />
 
               <!-- Elbow and hand make the three rig landmarks obvious. -->
-              <Circle x="400" y="410" radius="50" color="#53658C"
-                      stroke="#91A5CF" strokeWidth="5" />
-              <Path d="M 575 491
+              <Circle x="400" y="410" radius="50" color="#53658C" stroke="#91A5CF" strokeWidth="5" />
+              <Path
+                d="M 575 491
                        C 612 491 643 513 651 544
                        C 658 575 641 606 611 620
                        C 581 634 545 623 528 596
                        C 511 568 520 531 548 510
                        C 556 503 565 497 575 491 Z"
-                    fill="#F8DDCC" stroke="#5F4B49" strokeWidth="5" />
-              <Line x1="566" y1="535" x2="620" y2="552"
-                    stroke="#D79E91" strokeWidth="7" lineCap="round" />
-              <Line x1="558" y1="555" x2="611" y2="576"
-                    stroke="#D79E91" strokeWidth="7" lineCap="round" />
+                fill="#F8DDCC"
+                stroke="#5F4B49"
+                strokeWidth="5"
+              />
+              <Line x1="566" y1="535" x2="620" y2="552" stroke="#D79E91" strokeWidth="7" lineCap="round" />
+              <Line x1="558" y1="555" x2="611" y2="576" stroke="#D79E91" strokeWidth="7" lineCap="round" />
             </Group>
 
             <!-- Pre-rigged shoulder → elbow → wrist chain for Quick Puppet UI. -->
-            <PuppetWarp id="character_art_arm_puppet_warp"
-                        target="character_art_arm"
-                        solver="bones" bend="auto" stretch="0"
-                        jointSoftness="34" preserveVolume="true"
-                        width="960" height="720" density="16x16">
+            <PuppetWarp
+              id="character_art_arm_puppet_warp"
+              target="character_art_arm"
+              solver="bones"
+              bend="auto"
+              stretch="0"
+              jointSoftness="34"
+              preserveVolume="true"
+              width="960"
+              height="720"
+              density="16x16"
+            >
               <!-- Duplicate elbow seams let each rigid bone rotate without stretching the other. -->
               <MeshTopology id="character_art_arm_mesh">
                 <Vertex id="arm_mesh_sl" x="220" y="255" bone="upper" />
@@ -103,27 +128,49 @@
                 <Triangle id="arm_mesh_jt6" a="arm_mesh_jc" b="arm_mesh_j6" c="arm_mesh_j7" />
                 <Triangle id="arm_mesh_jt7" a="arm_mesh_jc" b="arm_mesh_j7" c="arm_mesh_j0" />
               </MeshTopology>
-              <PuppetPin id="character_art_arm_anchor_pin"
-                         role="anchor"
-                         vertex="arm_mesh_sc" x="270" y="220" targetX="270" targetY="220"
-                         fixed="true" radius="160" strength="8" falloff="constant" />
-              <PuppetPin id="character_art_arm_joint_pin"
-                         role="joint"
-                         vertex="arm_mesh_fec" x="400" y="410" targetX="400" targetY="410"
-                         radius="160" strength="8" falloff="constant" />
-              <PuppetPin id="character_art_arm_control_pin"
-                         role="control"
-                         vertex="arm_mesh_wc" x="575" y="545" targetX="575" targetY="545"
-                         radius="160" strength="8" falloff="constant" />
+              <PuppetPin
+                id="character_art_arm_anchor_pin"
+                role="anchor"
+                vertex="arm_mesh_sc"
+                x="270"
+                y="220"
+                targetX="270"
+                targetY="220"
+                fixed="true"
+                radius="160"
+                strength="8"
+                falloff="constant"
+              />
+              <PuppetPin
+                id="character_art_arm_joint_pin"
+                role="joint"
+                vertex="arm_mesh_fec"
+                x="400"
+                y="410"
+                targetX="400"
+                targetY="410"
+                radius="160"
+                strength="8"
+                falloff="constant"
+              />
+              <PuppetPin
+                id="character_art_arm_control_pin"
+                role="control"
+                vertex="arm_mesh_wc"
+                x="575"
+                y="545"
+                targetX="575"
+                targetY="545"
+                radius="160"
+                strength="8"
+                falloff="constant"
+              />
             </PuppetWarp>
 
             <Circle x="270" y="220" radius="9" color="#0A0E17" />
-            <Text value="SHOULDER / FIXED" x="172" y="148"
-                  fontSize="15" color="#91A5CF" />
-            <Text value="ELBOW / AUTO" x="400" y="490"
-                  fontSize="15" color="#91A5CF" />
-            <Text value="WRIST / DRAG" x="650" y="648"
-                  fontSize="15" color="#B9FF39" />
+            <Text value="SHOULDER / FIXED" x="172" y="148" fontSize="15" color="#91A5CF" />
+            <Text value="ELBOW / AUTO" x="400" y="490" fontSize="15" color="#91A5CF" />
+            <Text value="WRIST / DRAG" x="650" y="648" fontSize="15" color="#B9FF39" />
           </Layer>
         </Sequence>
       </Track>

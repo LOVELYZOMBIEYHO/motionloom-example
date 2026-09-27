@@ -4,7 +4,14 @@
     <SurfaceStyle shading="filmic_physical_v1" specular="1" roughnessBias="0" />
     <OutlineStyle enabled="false" />
     <LightingStyle ambientIntensity="0" ambientColor="#FFFFFF" shadowStyle="soft" />
-    <PostStyle toneMapping="filmic_aces_v1" exposure="1" saturation="1" contrast="1" whiteBalance="6500" bloomIntensity="0" />
+    <PostStyle
+      toneMapping="filmic_aces_v1"
+      exposure="1"
+      saturation="1"
+      contrast="1"
+      whiteBalance="6500"
+      bloomIntensity="0"
+    />
   </RenderStyle>
   <RenderStyle id="shoe_physical">
     <SurfaceStyle shading="physical" specular="1" roughnessBias="0" />
@@ -22,7 +29,14 @@
     <SurfaceStyle shading="toon" shadingSteps="3" diffuseWrap="0.2" rimLight="0.12" specular="0.05" />
     <OutlineStyle enabled="false" />
     <LightingStyle ambientIntensity="0" ambientColor="#FFFFFF" shadowStyle="soft" />
-    <PostStyle toneMapping="aces" exposure="1" saturation="1.08" contrast="1.05" whiteBalance="6500" bloomIntensity="0" />
+    <PostStyle
+      toneMapping="aces"
+      exposure="1"
+      saturation="1.08"
+      contrast="1.05"
+      whiteBalance="6500"
+      bloomIntensity="0"
+    />
   </RenderStyle>
   <RenderStyle id="shoe_clay">
     <SurfaceStyle shading="clay" specular="0.08" roughnessBias="0.18" />
@@ -31,7 +45,18 @@
     <PostStyle toneMapping="aces" exposure="1" saturation="1" contrast="1" whiteBalance="6500" bloomIntensity="0" />
   </RenderStyle>
   <RenderStyle id="shoe_cel">
-    <SurfaceStyle shading="cel" shadingSteps="2" diffuseWrap="0" rimLight="4" rimPower="0.1" specular="0" saturation="3" shadowThreshold="0.5" shadowFeather="0.001" shadowColor="#000000" />
+    <SurfaceStyle
+      shading="cel"
+      shadingSteps="2"
+      diffuseWrap="0"
+      rimLight="4"
+      rimPower="0.1"
+      specular="0"
+      saturation="3"
+      shadowThreshold="0.5"
+      shadowFeather="0.001"
+      shadowColor="#000000"
+    />
     <OutlineStyle enabled="true" color="#000000" width="12" method="geometry" distanceMode="screen" />
     <LightingStyle ambientIntensity="0" ambientColor="#FFFFFF" shadowStyle="hard" />
     <PostStyle toneMapping="aces" exposure="1" saturation="1.4" contrast="1.2" whiteBalance="6500" bloomIntensity="0" />
@@ -63,14 +88,55 @@
       <Track id="world" space="3d">
         <Sequence from="0s" duration="16s" out="hold">
           <CompositeGroup id="shoe_studio" space="3d" depth="true" format="rgba16f">
-            <Camera3D id="shoe_camera" position={[0.4,0.20,0.53]} target={[0,0.16,0]} fov="44" depthOfField="true" focusDistance="0.685" maxBlur="0" />
-            <EnvironmentLight id="meadow_ibl" asset="meadow_sky" mapping="equirectangular" rotationY="0" intensity="0.4" visible="true" backgroundIntensity="0.8" diffuseIntensity="1" specularIntensity="1" />
-            <DirectionalLight id="sun" direction={[-0.55,-0.82,-0.35]} color="#FFF1D8" intensity="3.2" castShadow="true" shadowStrength="0.7" />
+            <Camera3D
+              id="shoe_camera"
+              position={[0.4,0.20,0.53]}
+              target={[0,0.16,0]}
+              fov="44"
+              depthOfField="true"
+              focusDistance="0.685"
+              maxBlur="0"
+            />
+            <EnvironmentLight
+              id="meadow_ibl"
+              asset="meadow_sky"
+              mapping="equirectangular"
+              rotationY="0"
+              intensity="0.4"
+              visible="true"
+              backgroundIntensity="0.8"
+              diffuseIntensity="1"
+              specularIntensity="1"
+            />
+            <DirectionalLight
+              id="sun"
+              direction={[-0.55,-0.82,-0.35]}
+              color="#FFF1D8"
+              intensity="3.2"
+              castShadow="true"
+              shadowStrength="0.7"
+            />
             <AmbientOcclusion radius="0.06" intensity="0.35" />
             <ContactShadow distance="0.08" softness="0.8" intensity="0.35" />
-            <Model id="meadow" asset="meadow_asset" position={[0,0,0]} scaleMode="none" scale="1" castShadow="true" receiveShadow="true" />
+            <Model
+              id="meadow"
+              asset="meadow_asset"
+              position={[0,0,0]}
+              scaleMode="none"
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
             <!-- The source scan is about 41 units wide; 0.01 makes the pair about 41 cm. -->
-            <Model id="shoe" asset="shoe_asset" position={[-0.004,0.1163,0.0058]} scaleMode="none" scale="0.01" castShadow="true" receiveShadow="true" />
+            <Model
+              id="shoe"
+              asset="shoe_asset"
+              position={[-0.004,0.1163,0.0058]}
+              scaleMode="none"
+              scale="0.01"
+              castShadow="true"
+              receiveShadow="true"
+            />
           </CompositeGroup>
         </Sequence>
       </Track>

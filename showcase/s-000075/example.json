@@ -23,7 +23,7 @@
   "dsl": [
     "Graph",
     "Assets",
-    "PrimitiveAsset",
+    "Primitive",
     "CompoundAsset",
     "Instance",
     "MaterialAsset",
@@ -53,7 +53,9 @@
     "Process",
     "Tex",
     "Pass",
-    "Present"
+    "Present",
+    "GeometryAsset",
+    "MeshAsset"
   ],
   "teaches": [
     "Build a complete stylized humanoid from 35 typed PrimitiveAsset instances without GLB or FBX.",
@@ -64,10 +66,14 @@
   ],
   "source_path": "showcase/s-000075",
   "demo_url": "",
-  "related": ["s-000070", "s-000073", "csim-000013-rigid-body-3d"],
+  "related": [
+    "s-000070",
+    "s-000073",
+    "csim-000013-rigid-body-3d"
+  ],
   "requires": [
     "Graph",
-    "PrimitiveAsset",
+    "Primitive",
     "CompoundAsset",
     "Skeleton",
     "ActionLibrary",

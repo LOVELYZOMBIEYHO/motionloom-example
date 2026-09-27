@@ -21,7 +21,7 @@
     "Graph",
     "Background",
     "Assets",
-    "PrimitiveAsset",
+    "Primitive",
     "MaterialAsset",
     "CompoundAsset",
     "Instance",
@@ -47,7 +47,9 @@
     "AnimationTarget",
     "Key",
     "Present",
-    "Path"
+    "Path",
+    "GeometryAsset",
+    "MeshAsset"
   ],
   "teaches": [
     "Build a 60-second horror narrative with predictions that become visible events.",
@@ -63,7 +65,7 @@
   ],
   "requires": [
     "Graph",
-    "PrimitiveAsset",
+    "Primitive",
     "MaterialAsset",
     "Scene",
     "Camera3D",

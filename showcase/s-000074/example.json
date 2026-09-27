@@ -29,7 +29,7 @@
   "dsl": [
     "Graph",
     "Assets",
-    "PrimitiveAsset",
+    "Primitive",
     "CompoundAsset",
     "Instance",
     "MaterialAsset",
@@ -77,7 +77,9 @@
     "Process",
     "Tex",
     "Pass",
-    "Present"
+    "Present",
+    "GeometryAsset",
+    "MeshAsset"
   ],
   "teaches": [
     "Turn one reusable collider-owning primitive stair assembly into a cinematic rainy metro exit without introducing scene-specific DSL tags.",
@@ -105,10 +107,14 @@
   ],
   "source_path": "showcase/s-000074",
   "demo_url": "",
-  "related": ["s-000073", "s-000072", "csim-000013-rigid-body-3d"],
+  "related": [
+    "s-000073",
+    "s-000072",
+    "csim-000013-rigid-body-3d"
+  ],
   "requires": [
     "Graph",
-    "PrimitiveAsset",
+    "Primitive",
     "CompoundAsset",
     "MaterialAsset",
     "ImageAsset",

@@ -6,13 +6,57 @@
     <Defs>
       <Font id="serif" family="Times New Roman" fallback="serif" />
       <Font id="mono" family="Menlo" fallback="monospace" />
-      <RadialGradient id="paper_glow" cx="0.50" cy="0.48" r="0.88" stops="0:#2A2926, 0.45:#151515, 0.80:#090909, 1:#020202" />
-      <RadialGradient id="ink_cloud" cx="0.50" cy="0.50" r="0.70" stops="0:#000000F2, 0.40:#050505CC, 0.72:#20202044, 1:#20202000" />
-      <RadialGradient id="red_glow" cx="0.50" cy="0.50" r="0.55" stops="0:#FFFFFF, 0.12:#FF3333DD, 0.42:#B0000055, 0.76:#40000018, 1:#40000000" />
-      <RadialGradient id="petal_glow" cx="0.50" cy="0.50" r="0.50" stops="0:#FFD6E0CC, 0.32:#FF7AA244, 0.70:#AA224411, 1:#AA224400" />
-      <RadialGradient id="white_burst" cx="0.50" cy="0.50" r="0.82" stops="0:#FFFFFF, 0.14:#FFFFFFE6, 0.36:#FFBBBB88, 0.66:#CC222244, 1:#00000000" />
-      <LinearGradient id="slash_grad" x1="0" y1="0" x2="1" y2="0" stops="0:#FFFFFF00, 0.18:#FFFFFFCC, 0.50:#FFFFFF, 0.82:#FFFFFFCC, 1:#FFFFFF00" />
-      <LinearGradient id="title_red" x1="0" y1="0" x2="1" y2="0" stops="0:#FFFFFF, 0.35:#FF3333, 0.70:#FFFFFF, 1:#FF3333" />
+      <RadialGradient
+        id="paper_glow"
+        cx="0.50"
+        cy="0.48"
+        r="0.88"
+        stops="0:#2A2926, 0.45:#151515, 0.80:#090909, 1:#020202"
+      />
+      <RadialGradient
+        id="ink_cloud"
+        cx="0.50"
+        cy="0.50"
+        r="0.70"
+        stops="0:#000000F2, 0.40:#050505CC, 0.72:#20202044, 1:#20202000"
+      />
+      <RadialGradient
+        id="red_glow"
+        cx="0.50"
+        cy="0.50"
+        r="0.55"
+        stops="0:#FFFFFF, 0.12:#FF3333DD, 0.42:#B0000055, 0.76:#40000018, 1:#40000000"
+      />
+      <RadialGradient
+        id="petal_glow"
+        cx="0.50"
+        cy="0.50"
+        r="0.50"
+        stops="0:#FFD6E0CC, 0.32:#FF7AA244, 0.70:#AA224411, 1:#AA224400"
+      />
+      <RadialGradient
+        id="white_burst"
+        cx="0.50"
+        cy="0.50"
+        r="0.82"
+        stops="0:#FFFFFF, 0.14:#FFFFFFE6, 0.36:#FFBBBB88, 0.66:#CC222244, 1:#00000000"
+      />
+      <LinearGradient
+        id="slash_grad"
+        x1="0"
+        y1="0"
+        x2="1"
+        y2="0"
+        stops="0:#FFFFFF00, 0.18:#FFFFFFCC, 0.50:#FFFFFF, 0.82:#FFFFFFCC, 1:#FFFFFF00"
+      />
+      <LinearGradient
+        id="title_red"
+        x1="0"
+        y1="0"
+        x2="1"
+        y2="0"
+        stops="0:#FFFFFF, 0.35:#FF3333, 0.70:#FFFFFF, 1:#FF3333"
+      />
     </Defs>
 
     <Timeline>
@@ -21,73 +65,371 @@
           <Layer>
             <Rect x="0" y="0" width="1920" height="1080" fill="url(#paper_glow)" />
             <Repeat id="ink_dust" count="48" x="80" y="100" xStep="38" yStep="24" opacity="0.34" opacityStep="-0.003">
-              <Circle x="random(-16,16,floor($time.sec*2)+41) + 12*sin($time.sec*0.8)" y="random(-12,12,floor($time.sec*2)+63) + 10*cos($time.sec*0.6)" radius="2" color="#FFFFFF" opacity="0.16" blend="screen" />
+              <Circle
+                x="random(-16,16,floor($time.sec*2)+41) + 12*sin($time.sec*0.8)"
+                y="random(-12,12,floor($time.sec*2)+63) + 10*cos($time.sec*0.6)"
+                radius="2"
+                color="#FFFFFF"
+                opacity="0.16"
+                blend="screen"
+              />
             </Repeat>
 
             <Group id="shot_ink" opacity={curve("0:1:ease_out, 3.5:1:linear, 4.2:0:ease_in_out, 20:0:linear")}>
-              <Circle x="420" y="620" radius={curve("0:80:ease_out, 2:340:ease_in_out, 4:280:ease_in")} fill="url(#ink_cloud)" opacity="0.72" />
-              <Circle x="1220" y="520" radius={curve("0:60:ease_out, 2.2:290:ease_in_out, 4:230:ease_in")} fill="url(#ink_cloud)" opacity="0.66" />
-              <Circle x="960" y="740" radius={curve("0:120:ease_out, 2.5:430:ease_in_out, 4:360:ease_in")} fill="url(#ink_cloud)" opacity="0.58" />
+              <Circle
+                x="420"
+                y="620"
+                radius={curve("0:80:ease_out, 2:340:ease_in_out, 4:280:ease_in")}
+                fill="url(#ink_cloud)"
+                opacity="0.72"
+              />
+              <Circle
+                x="1220"
+                y="520"
+                radius={curve("0:60:ease_out, 2.2:290:ease_in_out, 4:230:ease_in")}
+                fill="url(#ink_cloud)"
+                opacity="0.66"
+              />
+              <Circle
+                x="960"
+                y="740"
+                radius={curve("0:120:ease_out, 2.5:430:ease_in_out, 4:360:ease_in")}
+                fill="url(#ink_cloud)"
+                opacity="0.58"
+              />
               <Repeat id="ink_drips" count="14" x="160" y="160" xStep="126" opacity="0.58" opacityStep="-0.018">
-                <Line x1="0" y1="0" x2="0" y2={curve("0:0:linear, 1.4:180:ease_out, 4:380:ease_in_out")} stroke="#000000" strokeWidth="5" opacity="0.62" lineCap="round" />
+                <Line
+                  x1="0"
+                  y1="0"
+                  x2="0"
+                  y2={curve("0:0:linear, 1.4:180:ease_out, 4:380:ease_in_out")}
+                  stroke="#000000"
+                  strokeWidth="5"
+                  opacity="0.62"
+                  lineCap="round"
+                />
               </Repeat>
-              <Circle x="620" y="500" radius={curve("0:0:linear, 1:50:ease_out, 3:92:ease_in_out, 4:60:ease_in")} fill="url(#red_glow)" opacity="0.42" blend="screen" />
-              <Text value="墨" x="center" y="548" font="serif" fontSize="300" renderScale="4x" color="#FFFFFF" opacity={curve("0:0:linear, 1:0.86:ease_out, 3.2:0.86:linear, 4:0:ease_in")} />
-              <Text value="INK RISES" x="76" y="82" font="mono" fontSize="20" color="#FFFFFF" opacity={curve("0:0:linear, 0.6:0.72:ease_out, 3.6:0.72:linear, 4:0:ease_in")} />
+              <Circle
+                x="620"
+                y="500"
+                radius={curve("0:0:linear, 1:50:ease_out, 3:92:ease_in_out, 4:60:ease_in")}
+                fill="url(#red_glow)"
+                opacity="0.42"
+                blend="screen"
+              />
+              <Text
+                value="墨"
+                x="center"
+                y="548"
+                font="serif"
+                fontSize="300"
+                renderScale="4x"
+                color="#FFFFFF"
+                opacity={curve("0:0:linear, 1:0.86:ease_out, 3.2:0.86:linear, 4:0:ease_in")}
+              />
+              <Text
+                value="INK RISES"
+                x="76"
+                y="82"
+                font="mono"
+                fontSize="20"
+                color="#FFFFFF"
+                opacity={curve("0:0:linear, 0.6:0.72:ease_out, 3.6:0.72:linear, 4:0:ease_in")}
+              />
             </Group>
 
-            <Group id="shot_samurai" opacity={curve("3.5:0:ease_in_out, 4.2:1:ease_out, 7.5:1:linear, 8.2:0:ease_in_out, 20:0:linear")}>
+            <Group
+              id="shot_samurai"
+              opacity={curve("3.5:0:ease_in_out, 4.2:1:ease_out, 7.5:1:linear, 8.2:0:ease_in_out, 20:0:linear")}
+            >
               <Rect x="0" y="0" width="1920" height="1080" color="#050505" opacity="0.52" />
-              <Circle x="960" y="520" radius={curve("4:0:linear, 5.2:260:ease_out, 7.8:320:ease_in_out")} fill="url(#red_glow)" opacity="0.36" blend="screen" />
-              <Group id="samurai" x="960" y="610" scale={curve("3.8:0.72:ease_out, 5:1.0:ease_out, 8:0.92:ease_in")} opacity={curve("3.8:0:linear, 4.6:0.96:ease_out, 7.6:0.96:linear, 8:0:ease_in")}>
-                <Path d="M 0 -220 C -56 -190 -82 -120 -94 -40 C -106 32 -128 104 -142 210 L 142 210 C 128 104 106 32 94 -40 C 82 -120 56 -190 0 -220 Z" fill="#000000" stroke="#FFFFFF" strokeWidth="3" opacity="0.95" />
+              <Circle
+                x="960"
+                y="520"
+                radius={curve("4:0:linear, 5.2:260:ease_out, 7.8:320:ease_in_out")}
+                fill="url(#red_glow)"
+                opacity="0.36"
+                blend="screen"
+              />
+              <Group
+                id="samurai"
+                x="960"
+                y="610"
+                scale={curve("3.8:0.72:ease_out, 5:1.0:ease_out, 8:0.92:ease_in")}
+                opacity={curve("3.8:0:linear, 4.6:0.96:ease_out, 7.6:0.96:linear, 8:0:ease_in")}
+              >
+                <Path
+                  d="M 0 -220 C -56 -190 -82 -120 -94 -40 C -106 32 -128 104 -142 210 L 142 210 C 128 104 106 32 94 -40 C 82 -120 56 -190 0 -220 Z"
+                  fill="#000000"
+                  stroke="#FFFFFF"
+                  strokeWidth="3"
+                  opacity="0.95"
+                />
                 <Circle x="0" y="-258" radius="42" fill="#000000" stroke="#FFFFFF" strokeWidth="3" />
-                <Path d="M -74 -270 C -36 -312 36 -312 74 -270 L 58 -242 L -58 -242 Z" fill="#000000" stroke="#FFFFFF" strokeWidth="3" />
-                <Line x1="-86" y1="-110" x2="-270" y2="-250" stroke="#FFFFFF" strokeWidth="5" opacity="0.88" lineCap="round" />
-                <Line x1="-270" y1="-250" x2="-300" y2="-280" stroke="#FF3333" strokeWidth="7" opacity="0.82" lineCap="round" />
+                <Path
+                  d="M -74 -270 C -36 -312 36 -312 74 -270 L 58 -242 L -58 -242 Z"
+                  fill="#000000"
+                  stroke="#FFFFFF"
+                  strokeWidth="3"
+                />
+                <Line
+                  x1="-86"
+                  y1="-110"
+                  x2="-270"
+                  y2="-250"
+                  stroke="#FFFFFF"
+                  strokeWidth="5"
+                  opacity="0.88"
+                  lineCap="round"
+                />
+                <Line
+                  x1="-270"
+                  y1="-250"
+                  x2="-300"
+                  y2="-280"
+                  stroke="#FF3333"
+                  strokeWidth="7"
+                  opacity="0.82"
+                  lineCap="round"
+                />
                 <Line x1="-76" y1="-30" x2="76" y2="-30" stroke="#FFFFFF" strokeWidth="2" opacity="0.50" />
                 <Line x1="-86" y1="50" x2="86" y2="50" stroke="#FFFFFF" strokeWidth="2" opacity="0.45" />
               </Group>
-              <Text value="侍" x="center" y="560" font="serif" fontSize="300" renderScale="4x" color="#FF3333" opacity={curve("4.2:0:linear, 5:0.46:ease_out, 7.4:0.42:linear, 8:0:ease_in")} />
-              <Text value="THE WARRIOR" x="76" y="82" font="mono" fontSize="20" color="#FF6666" opacity={curve("4:0:linear, 4.6:0.78:ease_out, 7.6:0.78:linear, 8:0:ease_in")} />
+              <Text
+                value="侍"
+                x="center"
+                y="560"
+                font="serif"
+                fontSize="300"
+                renderScale="4x"
+                color="#FF3333"
+                opacity={curve("4.2:0:linear, 5:0.46:ease_out, 7.4:0.42:linear, 8:0:ease_in")}
+              />
+              <Text
+                value="THE WARRIOR"
+                x="76"
+                y="82"
+                font="mono"
+                fontSize="20"
+                color="#FF6666"
+                opacity={curve("4:0:linear, 4.6:0.78:ease_out, 7.6:0.78:linear, 8:0:ease_in")}
+              />
             </Group>
 
-            <Group id="shot_cherry" opacity={curve("7.5:0:ease_in_out, 8.2:1:ease_out, 11.5:1:linear, 12.2:0:ease_in_out, 20:0:linear")}>
+            <Group
+              id="shot_cherry"
+              opacity={curve("7.5:0:ease_in_out, 8.2:1:ease_out, 11.5:1:linear, 12.2:0:ease_in_out, 20:0:linear")}
+            >
               <Rect x="0" y="0" width="1920" height="1080" color="#120608" opacity="0.58" />
-              <Path d="M 120 260 C 300 300 420 360 600 460 M 310 322 C 350 270 410 244 490 222 M 500 410 C 560 350 650 320 760 300" stroke="#4A2318" strokeWidth="11" fill="none" opacity="0.78" lineCap="round" trimStart={curve("8:0:linear, 9:0:ease_out")} trimEnd={curve("8:0:linear, 10:1:ease_out, 12:1:linear")} />
+              <Path
+                d="M 120 260 C 300 300 420 360 600 460 M 310 322 C 350 270 410 244 490 222 M 500 410 C 560 350 650 320 760 300"
+                stroke="#4A2318"
+                strokeWidth="11"
+                fill="none"
+                opacity="0.78"
+                lineCap="round"
+                trimStart={curve("8:0:linear, 9:0:ease_out")}
+                trimEnd={curve("8:0:linear, 10:1:ease_out, 12:1:linear")}
+              />
               <Repeat id="petals" count="58" x="42" y="-80" xStep="34" yStep="36" opacity="0.68" opacityStep="-0.004">
-                <Path d="M 0 0 C -9 -6 -12 -16 -5 -25 C 0 -17 5 -17 10 -25 C 18 -15 14 -5 0 0 Z" fill="#FF91B0" opacity="0.68" x="random(-20,20,floor($time.sec*2)+81) + 18*sin($time.sec*0.7)" y={curve("7.5:0:linear, 12:790:linear")} rotation={curve("7.5:0:linear, 12:360:linear")} />
+                <Path
+                  d="M 0 0 C -9 -6 -12 -16 -5 -25 C 0 -17 5 -17 10 -25 C 18 -15 14 -5 0 0 Z"
+                  fill="#FF91B0"
+                  opacity="0.68"
+                  x="random(-20,20,floor($time.sec*2)+81) + 18*sin($time.sec*0.7)"
+                  y={curve("7.5:0:linear, 12:790:linear")}
+                  rotation={curve("7.5:0:linear, 12:360:linear")}
+                />
               </Repeat>
-              <Circle x="360" y="300" radius={curve("8.4:0:linear, 9.4:46:ease_out, 12:34:ease_in")} fill="url(#petal_glow)" opacity="0.68" blend="screen" />
-              <Circle x="570" y="426" radius={curve("8.8:0:linear, 10:58:ease_out, 12:44:ease_in")} fill="url(#petal_glow)" opacity="0.72" blend="screen" />
-              <Text value="桜" x="center" y="548" font="serif" fontSize="300" renderScale="4x" color="#FF91B0" opacity={curve("8:0:linear, 9:0.82:ease_out, 11.2:0.82:linear, 12:0:ease_in")} />
-              <Text value="CHERRY STORM" x="76" y="82" font="mono" fontSize="20" color="#FF91B0" opacity={curve("8:0:linear, 8.6:0.78:ease_out, 11.6:0.78:linear, 12:0:ease_in")} />
+              <Circle
+                x="360"
+                y="300"
+                radius={curve("8.4:0:linear, 9.4:46:ease_out, 12:34:ease_in")}
+                fill="url(#petal_glow)"
+                opacity="0.68"
+                blend="screen"
+              />
+              <Circle
+                x="570"
+                y="426"
+                radius={curve("8.8:0:linear, 10:58:ease_out, 12:44:ease_in")}
+                fill="url(#petal_glow)"
+                opacity="0.72"
+                blend="screen"
+              />
+              <Text
+                value="桜"
+                x="center"
+                y="548"
+                font="serif"
+                fontSize="300"
+                renderScale="4x"
+                color="#FF91B0"
+                opacity={curve("8:0:linear, 9:0.82:ease_out, 11.2:0.82:linear, 12:0:ease_in")}
+              />
+              <Text
+                value="CHERRY STORM"
+                x="76"
+                y="82"
+                font="mono"
+                fontSize="20"
+                color="#FF91B0"
+                opacity={curve("8:0:linear, 8.6:0.78:ease_out, 11.6:0.78:linear, 12:0:ease_in")}
+              />
             </Group>
 
-            <Group id="shot_slash" opacity={curve("11.5:0:ease_in_out, 12.2:1:ease_out, 15.5:1:linear, 16.2:0:ease_in_out, 20:0:linear")}>
+            <Group
+              id="shot_slash"
+              opacity={curve("11.5:0:ease_in_out, 12.2:1:ease_out, 15.5:1:linear, 16.2:0:ease_in_out, 20:0:linear")}
+            >
               <Rect x="0" y="0" width="1920" height="1080" color="#030303" opacity="0.66" />
-              <Path d="M 160 820 L 1760 180" stroke="#FFFFFF" strokeWidth="7" fill="none" opacity="0.92" lineCap="round" trimStart={curve("12:0:linear, 12.2:0:ease_out")} trimEnd={curve("12:0:linear, 13:1:ease_out, 16:1:linear")} />
-              <Path d="M 280 900 L 1820 320" stroke="#FF3333" strokeWidth="5" fill="none" opacity="0.80" lineCap="round" trimStart={curve("12.4:0:linear, 12.6:0:ease_out")} trimEnd={curve("12.4:0:linear, 13.4:1:ease_out, 16:1:linear")} />
-              <Path d="M 80 700 L 1540 120" stroke="#FFFFFF" strokeWidth="4" fill="none" opacity="0.72" lineCap="round" trimStart={curve("12.8:0:linear, 13:0:ease_out")} trimEnd={curve("12.8:0:linear, 14:1:ease_out, 16:1:linear")} />
-              <Circle x="960" y="540" radius={curve("12:0:linear, 13:160:ease_out, 16:240:ease_in")} fill="url(#white_burst)" opacity="0.46" blend="screen" />
-              <Path d="M 930 520 C 980 580 1060 670 1200 780" stroke="#FF2222" strokeWidth="9" fill="none" opacity="0.62" lineCap="round" trimStart={curve("12.6:0:linear, 13:0:ease_out")} trimEnd={curve("12.6:0:linear, 14.5:1:ease_out, 16:1:linear")} />
-              <Text value="斬" x="center" y="548" font="serif" fontSize="300" renderScale="4x" color="#FFFFFF" opacity={curve("12:0:linear, 13:0.92:ease_out, 15.4:0.92:linear, 16:0:ease_in")} />
-              <Text value="KATANA SLASH" x="76" y="82" font="mono" fontSize="20" color="#FFFFFF" opacity={curve("12:0:linear, 12.6:0.78:ease_out, 15.6:0.78:linear, 16:0:ease_in")} />
+              <Path
+                d="M 160 820 L 1760 180"
+                stroke="#FFFFFF"
+                strokeWidth="7"
+                fill="none"
+                opacity="0.92"
+                lineCap="round"
+                trimStart={curve("12:0:linear, 12.2:0:ease_out")}
+                trimEnd={curve("12:0:linear, 13:1:ease_out, 16:1:linear")}
+              />
+              <Path
+                d="M 280 900 L 1820 320"
+                stroke="#FF3333"
+                strokeWidth="5"
+                fill="none"
+                opacity="0.80"
+                lineCap="round"
+                trimStart={curve("12.4:0:linear, 12.6:0:ease_out")}
+                trimEnd={curve("12.4:0:linear, 13.4:1:ease_out, 16:1:linear")}
+              />
+              <Path
+                d="M 80 700 L 1540 120"
+                stroke="#FFFFFF"
+                strokeWidth="4"
+                fill="none"
+                opacity="0.72"
+                lineCap="round"
+                trimStart={curve("12.8:0:linear, 13:0:ease_out")}
+                trimEnd={curve("12.8:0:linear, 14:1:ease_out, 16:1:linear")}
+              />
+              <Circle
+                x="960"
+                y="540"
+                radius={curve("12:0:linear, 13:160:ease_out, 16:240:ease_in")}
+                fill="url(#white_burst)"
+                opacity="0.46"
+                blend="screen"
+              />
+              <Path
+                d="M 930 520 C 980 580 1060 670 1200 780"
+                stroke="#FF2222"
+                strokeWidth="9"
+                fill="none"
+                opacity="0.62"
+                lineCap="round"
+                trimStart={curve("12.6:0:linear, 13:0:ease_out")}
+                trimEnd={curve("12.6:0:linear, 14.5:1:ease_out, 16:1:linear")}
+              />
+              <Text
+                value="斬"
+                x="center"
+                y="548"
+                font="serif"
+                fontSize="300"
+                renderScale="4x"
+                color="#FFFFFF"
+                opacity={curve("12:0:linear, 13:0.92:ease_out, 15.4:0.92:linear, 16:0:ease_in")}
+              />
+              <Text
+                value="KATANA SLASH"
+                x="76"
+                y="82"
+                font="mono"
+                fontSize="20"
+                color="#FFFFFF"
+                opacity={curve("12:0:linear, 12.6:0.78:ease_out, 15.6:0.78:linear, 16:0:ease_in")}
+              />
             </Group>
 
             <Group id="shot_final" opacity={curve("15.5:0:ease_in_out, 16.2:1:ease_out, 20:1:linear")}>
               <Rect x="0" y="0" width="1920" height="1080" color="#050505" opacity="0.76" />
-              <Repeat id="final_particles" count="72" x="50" y="60" xStep="27" yStep="24" opacity="0.58" opacityStep="-0.003">
-                <Circle x="random(-18,18,floor($time.sec*3)+211) + 14*sin($time.sec*1.0)" y="random(-16,16,floor($time.sec*3)+223) + 12*cos($time.sec*0.9)" radius="2.4" color="#FFFFFF" opacity="0.44" blend="screen" />
+              <Repeat
+                id="final_particles"
+                count="72"
+                x="50"
+                y="60"
+                xStep="27"
+                yStep="24"
+                opacity="0.58"
+                opacityStep="-0.003"
+              >
+                <Circle
+                  x="random(-18,18,floor($time.sec*3)+211) + 14*sin($time.sec*1.0)"
+                  y="random(-16,16,floor($time.sec*3)+223) + 12*cos($time.sec*0.9)"
+                  radius="2.4"
+                  color="#FFFFFF"
+                  opacity="0.44"
+                  blend="screen"
+                />
               </Repeat>
-              <Circle x="960" y="540" radius={curve("16:0:linear, 18:300:ease_out, 20:380:ease_in")} fill="url(#white_burst)" opacity="0.28" blend="screen" />
-              <Text value="SAMURAI" x="center" y="512" font="serif" fontSize="196" renderScale="4x" fill="url(#title_red)" opacity={curve("16.5:0:linear, 17.5:0.96:ease_out, 20:0.96:linear")} />
-              <Text value="INK STORM" x="center" y="640" font="serif" fontSize="60" renderScale="4x" color="#FF3333" opacity={curve("17.2:0:linear, 18.2:0.86:ease_out, 20:0.86:linear")} />
-              <Line x1={curve("17:960:ease_out, 18.4:560:ease_out, 20:560:linear")} y1="600" x2={curve("17:960:ease_out, 18.4:1360:ease_out, 20:1360:linear")} y2="600" stroke="#FFFFFF" strokeWidth="2" opacity="0.55" blend="screen" />
+              <Circle
+                x="960"
+                y="540"
+                radius={curve("16:0:linear, 18:300:ease_out, 20:380:ease_in")}
+                fill="url(#white_burst)"
+                opacity="0.28"
+                blend="screen"
+              />
+              <Text
+                value="SAMURAI"
+                x="center"
+                y="512"
+                font="serif"
+                fontSize="196"
+                renderScale="4x"
+                fill="url(#title_red)"
+                opacity={curve("16.5:0:linear, 17.5:0.96:ease_out, 20:0.96:linear")}
+              />
+              <Text
+                value="INK STORM"
+                x="center"
+                y="640"
+                font="serif"
+                fontSize="60"
+                renderScale="4x"
+                color="#FF3333"
+                opacity={curve("17.2:0:linear, 18.2:0.86:ease_out, 20:0.86:linear")}
+              />
+              <Line
+                x1={curve("17:960:ease_out, 18.4:560:ease_out, 20:560:linear")}
+                y1="600"
+                x2={curve("17:960:ease_out, 18.4:1360:ease_out, 20:1360:linear")}
+                y2="600"
+                stroke="#FFFFFF"
+                strokeWidth="2"
+                opacity="0.55"
+                blend="screen"
+              />
             </Group>
 
-            <Rect x="0" y="0" width="1920" height="1080" color="#FFFFFF" opacity={curve("3.8:0:linear, 4.0:0.15:ease_out, 4.3:0:ease_in, 7.8:0:linear, 8.0:0.15:ease_out, 8.3:0:ease_in, 11.8:0:linear, 12.0:0.15:ease_out, 12.3:0:ease_in, 15.8:0:linear, 16.0:0.15:ease_out, 16.3:0:ease_in, 20:0:linear")} blend="screen" />
-            <Rect x="0" y="0" width="1920" height="1080" color="#000000" opacity={curve("0:0.06:linear, 8:0.14:ease_in_out, 14:0.20:ease_in, 20:0.28:linear")} />
+            <Rect
+              x="0"
+              y="0"
+              width="1920"
+              height="1080"
+              color="#FFFFFF"
+              opacity={curve("3.8:0:linear, 4.0:0.15:ease_out, 4.3:0:ease_in, 7.8:0:linear, 8.0:0.15:ease_out, 8.3:0:ease_in, 11.8:0:linear, 12.0:0.15:ease_out, 12.3:0:ease_in, 15.8:0:linear, 16.0:0.15:ease_out, 16.3:0:ease_in, 20:0:linear")}
+              blend="screen"
+            />
+            <Rect
+              x="0"
+              y="0"
+              width="1920"
+              height="1080"
+              color="#000000"
+              opacity={curve("0:0.06:linear, 8:0.14:ease_in_out, 14:0.20:ease_in, 20:0.28:linear")}
+            />
           </Layer>
         </Sequence>
       </Track>
@@ -97,7 +439,14 @@
   <Process id="samurai_post">
     <Tex id="src" fmt="rgba16f" from="scene:samurai_ink_storm_20s" />
     <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
-    <Pass id="post_bloom" kind="compute" effect="bloom" in={["src"]} out={["out"]} params={{ threshold: "0.12", intensity: "2.05", sigma: "18.0" }} />
+    <Pass
+      id="post_bloom"
+      kind="compute"
+      effect="bloom"
+      in={["src"]}
+      out={["out"]}
+      params={{ threshold: "0.12", intensity: "2.05", sigma: "18.0" }}
+    />
   </Process>
 
   <Present from="samurai_post" />

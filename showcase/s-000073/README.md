@@ -1,7 +1,7 @@
 # S73 — Primitive Stair Pavilion
 
 This eight-second architectural showcase builds a complete stone stair pavilion
-from first-class typed `PrimitiveAsset` geometry, then sends the canonical
+from first-class typed `GeometryAsset` geometry, then sends the canonical
 Character 1 up all eleven steps. A Radiance HDR courtyard supplies environment
 light and reflections while simplified 3D courtyard architecture adds scale,
 parallax and shadow-receiving surfaces.

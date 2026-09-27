@@ -24,7 +24,7 @@
     "Graph",
     "Assets",
     "MaterialAsset",
-    "PrimitiveAsset",
+    "Primitive",
     "CompoundAsset",
     "Instance",
     "Background",
@@ -50,7 +50,9 @@
     "Process",
     "Tex",
     "Pass",
-    "Present"
+    "Present",
+    "GeometryAsset",
+    "MeshAsset"
   ],
   "teaches": [
     "Build ten distinct stylized creatures from reusable primitive and compound assets.",
@@ -59,6 +61,17 @@
   ],
   "source_path": "showcase/s-000079",
   "demo_url": "",
-  "related": ["s-000078", "s-000075", "s-000077"],
-  "requires": ["Graph", "PrimitiveAsset", "CompoundAsset", "Scene", "Camera3D", "Present"]
+  "related": [
+    "s-000078",
+    "s-000075",
+    "s-000077"
+  ],
+  "requires": [
+    "Graph",
+    "Primitive",
+    "CompoundAsset",
+    "Scene",
+    "Camera3D",
+    "Present"
+  ]
 }

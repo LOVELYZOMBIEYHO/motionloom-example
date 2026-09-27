@@ -18,7 +18,7 @@ and street-establishing cameras.
 
 ## What this example tests
 
-- Reuse typed `PrimitiveAsset` boxes as ten collider-owning stair treads while
+- Reuse typed `GeometryAsset` boxes as ten collider-owning stair treads while
   keeping nosings, drains, stains, posters and façade dressing non-colliding.
 - Keep one kinematic Character 1 and one continuous portable Walk Action alive
   across all three `Camera3D` shots in the official remake.

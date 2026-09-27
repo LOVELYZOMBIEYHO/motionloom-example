@@ -12,14 +12,25 @@ PURPOSE
 -->
 <Graph fps={30} duration="8s" size={[1920,1080]} renderSize={[1920,1080]}>
   <Assets>
-    <ImageAsset id="s72_courtyard_hdri"
-                src="./assets/cinematic_courtyard.hdr" />
-    <ModelAsset id="s72_character1"
-                src="../../assets/sample_assets/characters/character1/character1.glb" />
-    <PrimitiveAsset id="s72_floor" shape="box" size={[12,0.3,8]} color="#1A2130" />
-    <PrimitiveAsset id="s72_plinth" shape="box" size={[2.8,0.55,2.4]} color="#303C55" />
-    <PrimitiveAsset id="s72_warm_card" shape="box" size={[0.25,3.8,3.5]} color="#8A4938" />
-    <PrimitiveAsset id="s72_cool_card" shape="box" size={[0.25,3.2,3.2]} color="#274D78" />
+    <MaterialAsset id="geometry_default" shading="pbr" roughness="0.82" specular="1" emissiveStrength="1" />
+    <ImageAsset id="s72_courtyard_hdri" src="./assets/cinematic_courtyard.hdr" />
+    <ModelAsset id="s72_character1" src="../../assets/sample_assets/characters/character1/character1.glb" />
+    <GeometryAsset id="s72_floor_geometry">
+      <Primitive shape="box" size={[12,0.3,8]} />
+    </GeometryAsset>
+    <MeshAsset id="s72_floor" color="#1A2130" material="geometry_default" geometry="s72_floor_geometry" />
+    <GeometryAsset id="s72_plinth_geometry">
+      <Primitive shape="box" size={[2.8,0.55,2.4]} />
+    </GeometryAsset>
+    <MeshAsset id="s72_plinth" color="#303C55" material="geometry_default" geometry="s72_plinth_geometry" />
+    <GeometryAsset id="s72_warm_card_geometry">
+      <Primitive shape="box" size={[0.25,3.8,3.5]} />
+    </GeometryAsset>
+    <MeshAsset id="s72_warm_card" color="#8A4938" material="geometry_default" geometry="s72_warm_card_geometry" />
+    <GeometryAsset id="s72_cool_card_geometry">
+      <Primitive shape="box" size={[0.25,3.2,3.2]} />
+    </GeometryAsset>
+    <MeshAsset id="s72_cool_card" color="#274D78" material="geometry_default" geometry="s72_cool_card_geometry" />
   </Assets>
 
   <Background color="#050811" />
@@ -28,76 +39,100 @@ PURPOSE
     <Timeline>
       <Track id="s72_stage" space="3d" compositeOrder="30">
         <Sequence from="0s" duration="8s" out="hold">
-          <CompositeGroup id="s72_lighting_island" space="3d" depth="true"
-                          format="rgba16f">
-            <EnvironmentLight id="s72_ibl"
-                              asset="s72_courtyard_hdri"
-                              mapping="equirectangular"
-                              rotationY="-28"
-                              intensity="1.05"
-                              visible="true"
-                              backgroundIntensity="0.72"
-                              backgroundBlur="0.08"
-                              diffuseIntensity="0.82"
-                              specularIntensity="1.28" />
+          <CompositeGroup id="s72_lighting_island" space="3d" depth="true" format="rgba16f">
+            <EnvironmentLight
+              id="s72_ibl"
+              asset="s72_courtyard_hdri"
+              mapping="equirectangular"
+              rotationY="-28"
+              intensity="1.05"
+              visible="true"
+              backgroundIntensity="0.72"
+              backgroundBlur="0.08"
+              diffuseIntensity="0.82"
+              specularIntensity="1.28"
+            />
 
-            <DirectionalLight id="s72_sun"
-                              direction={[-0.48,-1,-0.32]}
-                              color="#FFE0B0"
-                              intensity="3.8"
-                              castShadow="true"
-                              shadowStrength="0.9" />
-            <PointLight id="s72_practical"
-                        position={[2.8,2.25,1.6]}
-                        color="#FF8A58"
-                        intensity="19"
-                        range="8" />
-            <SpotLight id="s72_rim"
-                       position={[-2.8,3.4,-1.4]}
-                       direction={[0.62,-0.56,0.55]}
-                       color="#74CFFF"
-                       intensity="28"
-                       range="11"
-                       innerCone="16"
-                       outerCone="34" />
-            <RectAreaLight id="s72_softbox"
-                           position={[0.8,4.2,3.1]}
-                           direction={[-0.12,-0.78,-0.62]}
-                           color="#FFF7E8"
-                           intensity="9.5"
-                           width="3.5"
-                           height="2.1" />
+            <DirectionalLight
+              id="s72_sun"
+              direction={[-0.48,-1,-0.32]}
+              color="#FFE0B0"
+              intensity="3.8"
+              castShadow="true"
+              shadowStrength="0.9"
+            />
+            <PointLight id="s72_practical" position={[2.8,2.25,1.6]} color="#FF8A58" intensity="19" range="8" />
+            <SpotLight
+              id="s72_rim"
+              position={[-2.8,3.4,-1.4]}
+              direction={[0.62,-0.56,0.55]}
+              color="#74CFFF"
+              intensity="28"
+              range="11"
+              innerCone="16"
+              outerCone="34"
+            />
+            <RectAreaLight
+              id="s72_softbox"
+              position={[0.8,4.2,3.1]}
+              direction={[-0.12,-0.78,-0.62]}
+              color="#FFF7E8"
+              intensity="9.5"
+              width="3.5"
+              height="2.1"
+            />
 
             <AmbientOcclusion id="s72_ao" intensity="0.68" radius="1.15" />
-            <ContactShadow id="s72_contact"
-                           intensity="0.82" distance="0.38" softness="0.62" />
-            <ColorManagement id="s72_grade"
-                             toneMapping="aces"
-                             exposure="1.05"
-                             whiteBalance="5700"
-                             contrast="1.08" />
+            <ContactShadow id="s72_contact" intensity="0.82" distance="0.38" softness="0.62" />
+            <ColorManagement id="s72_grade" toneMapping="aces" exposure="1.05" whiteBalance="5700" contrast="1.08" />
 
-            <Camera3D id="s72_camera"
-                      position={[7.8,4.7,9.4]}
-                      target={[0,1.45,0]}
-                      up={[0,1,0]} horizonLock="true" fov="37" />
+            <Camera3D
+              id="s72_camera"
+              position={[7.8,4.7,9.4]}
+              target={[0,1.45,0]}
+              up={[0,1,0]}
+              horizonLock="true"
+              fov="37"
+            />
 
-            <Model id="s72_floor_model" asset="s72_floor"
-                   position={[0,-0.2,0]} receiveShadow="true" exposure="1" />
-            <Model id="s72_plinth_model" asset="s72_plinth"
-                   position={[0,0.18,0]} castShadow="true"
-                   receiveShadow="true" exposure="1.05" />
-            <Model id="s72_warm_card_model" asset="s72_warm_card"
-                   position={[4.6,1.55,-1.2]} rotationY="-18"
-                   castShadow="true" receiveShadow="true" exposure="1" />
-            <Model id="s72_cool_card_model" asset="s72_cool_card"
-                   position={[-4.5,1.35,-1.7]} rotationY="22"
-                   castShadow="true" receiveShadow="true" exposure="1" />
-            <Model id="s72_hero" asset="s72_character1"
-                   position={[0,0.45,0]}
-                   rotationY="-18"
-                   scaleMode="normalize_height" scale="2.85"
-                   castShadow="true" receiveShadow="true" exposure="1.08" />
+            <Model id="s72_floor_model" asset="s72_floor" position={[0,-0.2,0]} receiveShadow="true" exposure="1" />
+            <Model
+              id="s72_plinth_model"
+              asset="s72_plinth"
+              position={[0,0.18,0]}
+              castShadow="true"
+              receiveShadow="true"
+              exposure="1.05"
+            />
+            <Model
+              id="s72_warm_card_model"
+              asset="s72_warm_card"
+              position={[4.6,1.55,-1.2]}
+              rotationY="-18"
+              castShadow="true"
+              receiveShadow="true"
+              exposure="1"
+            />
+            <Model
+              id="s72_cool_card_model"
+              asset="s72_cool_card"
+              position={[-4.5,1.35,-1.7]}
+              rotationY="22"
+              castShadow="true"
+              receiveShadow="true"
+              exposure="1"
+            />
+            <Model
+              id="s72_hero"
+              asset="s72_character1"
+              position={[0,0.45,0]}
+              rotationY="-18"
+              scaleMode="normalize_height"
+              scale="2.85"
+              castShadow="true"
+              receiveShadow="true"
+              exposure="1.08"
+            />
           </CompositeGroup>
         </Sequence>
       </Track>
@@ -105,15 +140,36 @@ PURPOSE
       <Track id="s72_titles" space="screen" compositeOrder="70">
         <Sequence from="0s" duration="8s" out="hold">
           <Layer space="screen">
-            <Rect x="52" y="44" width="650" height="112" radius="17"
-                  color="#07101CDD" stroke="#7BD8FF66" strokeWidth="2" />
-            <Text x="82" y="88" value="CINEMATIC LIGHTING / HDRI LAB"
-                  fontFamily="Arial" fontSize="29" fontWeight="800"
-                  tracking="5" color="#F5FAFF" />
-            <Text x="84" y="128"
-                  value="IBL · 4 LIGHT TYPES · SHADOW MAP · AO · ACES"
-                  fontFamily="Arial" fontSize="14" fontWeight="700"
-                  tracking="3" color="#83DFFF" />
+            <Rect
+              x="52"
+              y="44"
+              width="650"
+              height="112"
+              radius="17"
+              color="#07101CDD"
+              stroke="#7BD8FF66"
+              strokeWidth="2"
+            />
+            <Text
+              x="82"
+              y="88"
+              value="CINEMATIC LIGHTING / HDRI LAB"
+              fontFamily="Arial"
+              fontSize="29"
+              fontWeight="800"
+              tracking="5"
+              color="#F5FAFF"
+            />
+            <Text
+              x="84"
+              y="128"
+              value="IBL · 4 LIGHT TYPES · SHADOW MAP · AO · ACES"
+              fontFamily="Arial"
+              fontSize="14"
+              fontWeight="700"
+              tracking="3"
+              color="#83DFFF"
+            />
           </Layer>
         </Sequence>
       </Track>
@@ -148,12 +204,22 @@ PURPOSE
     <Tex id="s72_scene_tex" fmt="rgba16f" from="scene" />
     <Tex id="s72_bloom_tex" fmt="rgba16f" size={[1920,1080]} />
     <Tex id="s72_final_tex" fmt="rgba16f" size={[1920,1080]} />
-    <Pass id="s72_bloom" kind="compute" effect="glow_bloom"
-          in={["s72_scene_tex"]} out={["s72_bloom_tex"]}
-          params={{ threshold: "0.82", intensity: "0.12", sigma: "3.2" }} />
-    <Pass id="s72_grain" kind="compute" effect="film_grain"
-          in={["s72_bloom_tex"]} out={["s72_final_tex"]}
-          params={{ kind: "film_grain", amount: "0.005", scale: "1.0", seed: "75" }} />
+    <Pass
+      id="s72_bloom"
+      kind="compute"
+      effect="glow_bloom"
+      in={["s72_scene_tex"]}
+      out={["s72_bloom_tex"]}
+      params={{ threshold: "0.82", intensity: "0.12", sigma: "3.2" }}
+    />
+    <Pass
+      id="s72_grain"
+      kind="compute"
+      effect="film_grain"
+      in={["s72_bloom_tex"]}
+      out={["s72_final_tex"]}
+      params={{ kind: "film_grain", amount: "0.005", scale: "1.0", seed: "75" }}
+    />
   </Process>
 
   <Present from="S72CinematicLightingLab" />

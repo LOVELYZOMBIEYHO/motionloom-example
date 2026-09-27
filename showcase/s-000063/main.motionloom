@@ -5,47 +5,65 @@
       <Track id="universal_wave_track" space="screen" z="0">
         <Sequence from="0s" duration="4s" out="hold">
           <Layer id="character_layer">
-            <Text value="UNIVERSAL LAYER PUPPET" x="500" y="64"
-                  fontSize="32" fontWeight="900" color="#B9FF39" />
-            <Text value="ONE CAPTURE · LOCAL ARM IK · NO GROUP TARGET"
-                  x="500" y="98" fontSize="14" color="#63D9FF" />
+            <Text value="UNIVERSAL LAYER PUPPET" x="500" y="64" fontSize="32" fontWeight="900" color="#B9FF39" />
+            <Text value="ONE CAPTURE · LOCAL ARM IK · NO GROUP TARGET" x="500" y="98" fontSize="14" color="#63D9FF" />
 
             <!-- The complete character is ordinary Layer artwork. -->
             <Group id="complete_character_art">
-              <Circle x="145" y="112" radius="58" color="#F8DDCC"
-                      stroke="#5F4B49" strokeWidth="5" />
-              <Path d="M 92 105 C 98 42 177 31 202 98
+              <Circle x="145" y="112" radius="58" color="#F8DDCC" stroke="#5F4B49" strokeWidth="5" />
+              <Path
+                d="M 92 105 C 98 42 177 31 202 98
                        C 166 69 123 68 92 105 Z"
-                    fill="#52658A" stroke="#25334D" strokeWidth="5" />
+                fill="#52658A"
+                stroke="#25334D"
+                strokeWidth="5"
+              />
               <Circle x="126" y="110" radius="6" color="#263149" />
               <Circle x="164" y="110" radius="6" color="#263149" />
-              <Path d="M 127 139 C 140 147 153 147 166 138"
-                    fill="none" stroke="#C47A82" strokeWidth="4" lineCap="round" />
-              <Rect x="80" y="169" width="130" height="245" radius="42"
-                    color="#33425E" stroke="#7183A8" strokeWidth="5" />
-              <Rect x="105" y="212" width="80" height="157" radius="20"
-                    color="#26344D" />
-              <Line x1="111" y1="405" x2="102" y2="496"
-                    stroke="#26344D" strokeWidth="48" lineCap="round" />
-              <Line x1="179" y1="405" x2="191" y2="496"
-                    stroke="#26344D" strokeWidth="48" lineCap="round" />
+              <Path
+                d="M 127 139 C 140 147 153 147 166 138"
+                fill="none"
+                stroke="#C47A82"
+                strokeWidth="4"
+                lineCap="round"
+              />
+              <Rect
+                x="80"
+                y="169"
+                width="130"
+                height="245"
+                radius="42"
+                color="#33425E"
+                stroke="#7183A8"
+                strokeWidth="5"
+              />
+              <Rect x="105" y="212" width="80" height="157" radius="20" color="#26344D" />
+              <Line x1="111" y1="405" x2="102" y2="496" stroke="#26344D" strokeWidth="48" lineCap="round" />
+              <Line x1="179" y1="405" x2="191" y2="496" stroke="#26344D" strokeWidth="48" lineCap="round" />
 
               <!-- This arm uses the same tested geometry as the rigid IK core. -->
-              <Line x1="210" y1="95" x2="300" y2="185"
-                    stroke="#61739B" strokeWidth="64" lineCap="round" />
-              <Line x1="300" y1="185" x2="474" y2="245"
-                    stroke="#F8DDCC" strokeWidth="54" lineCap="round" />
+              <Line x1="210" y1="95" x2="300" y2="185" stroke="#61739B" strokeWidth="64" lineCap="round" />
+              <Line x1="300" y1="185" x2="474" y2="245" stroke="#F8DDCC" strokeWidth="54" lineCap="round" />
               <Circle x="300" y="185" radius="32" color="#53658C" />
               <Circle x="474" y="245" radius="30" color="#F8DDCC" />
             </Group>
 
             <!-- Universal capture: no Group id is used as the target. -->
-            <PuppetWarp id="character_layer_puppet"
-                        target="@layer" capture="before"
-                        mesh="alpha" solver="bones" bend="auto" stretch="0"
-                        jointSoftness="32" preserveVolume="true"
-                        preserveOutside="true"
-                        width="960" height="540" density="16x12">
+            <PuppetWarp
+              id="character_layer_puppet"
+              target="@layer"
+              capture="before"
+              mesh="alpha"
+              solver="bones"
+              bend="auto"
+              stretch="0"
+              jointSoftness="32"
+              preserveVolume="true"
+              preserveOutside="true"
+              width="960"
+              height="540"
+              density="16x12"
+            >
               <MeshTopology id="arm_bone_mesh">
                 <Vertex id="a_l" x="187" y="118" bone="upper" />
                 <Vertex id="a_c" x="210" y="95" bone="upper" />
@@ -109,24 +127,48 @@
                 <Triangle id="j6" a="j_c" b="j_6" c="j_7" />
                 <Triangle id="j7" a="j_c" b="j_7" c="j_0" />
               </MeshTopology>
-              <PuppetPin id="wave_shoulder" role="anchor" vertex="a_c"
-                         x="210" y="95" targetX="210" targetY="95"
-                         fixed="true" radius="48" strength="8" falloff="constant" />
-              <PuppetPin id="wave_elbow" role="joint" vertex="jf_c"
-                         x="300" y="185" targetX="300" targetY="185"
-                         radius="48" strength="8" falloff="constant" />
-              <PuppetPin id="wave_wrist" role="control" vertex="w_c"
-                         x="430" y="230"
-                         targetX={curve("0:430:linear, 2:350:ease_in_out, 4:430:ease_in_out")}
-                         targetY={curve("0:230:linear, 2:82:ease_in_out, 4:230:ease_in_out")}
-                         radius="48" strength="8" falloff="constant" />
+              <PuppetPin
+                id="wave_shoulder"
+                role="anchor"
+                vertex="a_c"
+                x="210"
+                y="95"
+                targetX="210"
+                targetY="95"
+                fixed="true"
+                radius="48"
+                strength="8"
+                falloff="constant"
+              />
+              <PuppetPin
+                id="wave_elbow"
+                role="joint"
+                vertex="jf_c"
+                x="300"
+                y="185"
+                targetX="300"
+                targetY="185"
+                radius="48"
+                strength="8"
+                falloff="constant"
+              />
+              <PuppetPin
+                id="wave_wrist"
+                role="control"
+                vertex="w_c"
+                x="430"
+                y="230"
+                targetX={curve("0:430:linear, 2:350:ease_in_out, 4:430:ease_in_out")}
+                targetY={curve("0:230:linear, 2:82:ease_in_out, 4:230:ease_in_out")}
+                radius="48"
+                strength="8"
+                falloff="constant"
+              />
             </PuppetWarp>
 
             <!-- These labels are after the capture boundary and stay static. -->
-            <Text value="@layer" x="800" y="442"
-                  fontSize="30" fontWeight="900" color="#B9FF39" />
-            <Text value="CAPTURE BEFORE" x="800" y="474"
-                  fontSize="14" color="#63D9FF" />
+            <Text value="@layer" x="800" y="442" fontSize="30" fontWeight="900" color="#B9FF39" />
+            <Text value="CAPTURE BEFORE" x="800" y="474" fontSize="14" color="#63D9FF" />
           </Layer>
         </Sequence>
       </Track>

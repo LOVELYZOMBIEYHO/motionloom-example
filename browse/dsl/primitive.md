@@ -1,4 +1,4 @@
-# DSL Pattern: primitiveasset
+# DSL Pattern: primitive
 
 | ID | Type | Domain | Title | Features | Teaches |
 |---|---|---|---|---|---|

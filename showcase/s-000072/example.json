@@ -23,7 +23,7 @@
     "Assets",
     "ImageAsset",
     "ModelAsset",
-    "PrimitiveAsset",
+    "Primitive",
     "Background",
     "Scene",
     "Timeline",
@@ -50,7 +50,9 @@
     "Process",
     "Tex",
     "Pass",
-    "Present"
+    "Present",
+    "GeometryAsset",
+    "MeshAsset"
   ],
   "teaches": [
     "Bind a Radiance HDR equirectangular image as the visible environment and IBL source.",
@@ -62,12 +64,16 @@
   ],
   "source_path": "showcase/s-000072",
   "demo_url": "",
-  "related": ["s-000066", "s-000070", "s-000071"],
+  "related": [
+    "s-000066",
+    "s-000070",
+    "s-000071"
+  ],
   "requires": [
     "Graph",
     "ImageAsset",
     "ModelAsset",
-    "PrimitiveAsset",
+    "Primitive",
     "Scene",
     "EnvironmentLight",
     "DirectionalLight",

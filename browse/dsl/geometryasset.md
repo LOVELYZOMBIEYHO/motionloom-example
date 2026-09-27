@@ -1,4 +1,4 @@
-# DSL Pattern: meshasset
+# DSL Pattern: geometryasset
 
 | ID | Type | Domain | Title | Features | Teaches |
 |---|---|---|---|---|---|

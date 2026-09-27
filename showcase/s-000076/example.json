@@ -23,7 +23,7 @@
     "Assets",
     "ModelAsset",
     "MaterialAsset",
-    "PrimitiveAsset",
+    "Primitive",
     "ActionLibrary",
     "ModelProfile",
     "Retarget",
@@ -49,7 +49,9 @@
     "Process",
     "Tex",
     "Pass",
-    "Present"
+    "Present",
+    "GeometryAsset",
+    "MeshAsset"
   ],
   "teaches": [
     "Keep authored reusable motion in a standalone MotionLoom ActionLibrary document.",
@@ -60,7 +62,11 @@
   ],
   "source_path": "showcase/s-000076",
   "demo_url": "",
-  "related": ["s-000075", "s-000070", "s-000073"],
+  "related": [
+    "s-000075",
+    "s-000070",
+    "s-000073"
+  ],
   "requires": [
     "Graph",
     "ActionLibrary",

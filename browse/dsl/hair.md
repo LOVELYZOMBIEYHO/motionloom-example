@@ -1,4 +1,4 @@
-# DSL Pattern: headasset
+# DSL Pattern: hair
 
 | ID | Type | Domain | Title | Features | Teaches |
 |---|---|---|---|---|---|

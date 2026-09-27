@@ -28,7 +28,7 @@
   "dsl": [
     "Graph",
     "Assets",
-    "PrimitiveAsset",
+    "Primitive",
     "MaterialAsset",
     "ImageAsset",
     "ModelAsset",
@@ -67,7 +67,9 @@
     "Process",
     "Tex",
     "Pass",
-    "Present"
+    "Present",
+    "GeometryAsset",
+    "MeshAsset"
   ],
   "teaches": [
     "Build a complete architectural staircase from reusable typed PrimitiveAsset geometry and first-class PBR MaterialAsset resources.",
@@ -89,10 +91,14 @@
   ],
   "source_path": "showcase/s-000073",
   "demo_url": "",
-  "related": ["s-000071", "s-000072", "csim-000013-rigid-body-3d"],
+  "related": [
+    "s-000071",
+    "s-000072",
+    "csim-000013-rigid-body-3d"
+  ],
   "requires": [
     "Graph",
-    "PrimitiveAsset",
+    "Primitive",
     "MaterialAsset",
     "ImageAsset",
     "ModelAsset",

@@ -23,7 +23,7 @@
     "Graph",
     "Assets",
     "MaterialAsset",
-    "PrimitiveAsset",
+    "Primitive",
     "CompoundAsset",
     "Instance",
     "Background",
@@ -50,7 +50,9 @@
     "Process",
     "Tex",
     "Pass",
-    "Present"
+    "Present",
+    "GeometryAsset",
+    "MeshAsset"
   ],
   "teaches": [
     "Compare reusable primitive forms by isolating one deformation or mesh-quality change at a time.",
@@ -59,6 +61,17 @@
   ],
   "source_path": "showcase/s-000078",
   "demo_url": "",
-  "related": ["s-000077", "s-000079", "s-000075"],
-  "requires": ["Graph", "PrimitiveAsset", "MaterialAsset", "Scene", "Camera3D", "Present"]
+  "related": [
+    "s-000077",
+    "s-000079",
+    "s-000075"
+  ],
+  "requires": [
+    "Graph",
+    "Primitive",
+    "MaterialAsset",
+    "Scene",
+    "Camera3D",
+    "Present"
+  ]
 }

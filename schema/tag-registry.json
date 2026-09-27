@@ -187,277 +187,295 @@
     "world",
     "water",
     "validation",
-    "zdepth"
-    ,"gravity"
-    ,"dynamic-curve"
-    ,"wind"
-    ,"turbulence"
-    ,"attraction"
-    ,"circle-collision"
-    ,"capsule-collision"
-    ,"distance-constraint"
-    ,"hinge"
-    ,"spring-chain"
-    ,"hair"
-    ,"rigid-body"
-    ,"particle-emitter"
-    ,"position-pin"
-    ,"cloth"
-    ,"cache-bake"
-    ,"deterministic-timestep"
-    ,"alignment"
-    ,"alpha-mesh"
-    ,"bend-pin"
-    ,"automatic-positioning"
-    ,"action-collider-profile"
-    ,"action-contact"
-    ,"action-crossfade"
-    ,"action-sequencing"
-    ,"bone-animation-target"
-    ,"character-turn"
-    ,"coarse-collider"
-    ,"contact-correction"
-    ,"contact-ik"
-    ,"embedded-animation-clip"
-    ,"embedded-animation-clips"
-    ,"environment-gltf"
-    ,"environment-surface"
-    ,"finite-ground-surface"
-    ,"finite-plane-collider"
-    ,"foot-lock"
-    ,"kinematic-collision"
-    ,"layered-animation"
-    ,"mesh-ground-surface"
-    ,"motion-warping"
-    ,"remote-glb"
-    ,"rig-ground-offset"
-    ,"root-choreography"
-    ,"root-debug-trace"
-    ,"scene-gravity"
-    ,"scene-physics"
-    ,"semantic-obstacle"
-    ,"semantic-surface-collision"
-    ,"stair-ascent"
-    ,"swept-collision"
-    ,"boolean-param"
-    ,"capture-before"
-    ,"chromatic-aberration"
-    ,"column"
-    ,"component-params"
-    ,"condensed-font"
-    ,"data-driven-shape"
-    ,"declarative-layout"
-    ,"derived"
-    ,"deterministic-random"
-    ,"deterministic-variation"
-    ,"drop-shadow"
-    ,"enum-param"
-    ,"gallery"
-    ,"glitch"
-    ,"grid"
-    ,"justification"
-    ,"padding"
-    ,"parametric-component"
-    ,"path-morph"
-    ,"preserve-outside"
-    ,"procedural-field"
-    ,"repeat-variation"
-    ,"reuse"
-    ,"row"
-    ,"scan-mask"
-    ,"scatter"
-    ,"seeded-random"
-    ,"slot"
-    ,"span"
-    ,"stress-test"
-    ,"subtitle"
-    ,"transparent-background"
-    ,"two-bone-ik"
-    ,"universal-layer-target"
-    ,"vary"
-    ,"weighted-variants"
-    ,"whiteout"
-    ,"action-blending"
-    ,"body-mask"
-    ,"bone-animation"
-    ,"boolean-op"
-    ,"camera-3d"
-    ,"camera-cut"
-    ,"environment-inspection"
-    ,"external-action"
-    ,"glb-environment"
-    ,"grounding"
-    ,"humanoid-action"
-    ,"humanoid-retarget"
-    ,"portable-humanoid-retargeting"
-    ,"fbx-humanoid-animation-import"
-    ,"model"
-    ,"path-offset"
-    ,"path-taper"
-    ,"path-trim"
-    ,"root-motion"
-    ,"screen-blend"
-    ,"semantic-anchor"
-    ,"semantic-surface"
-    ,"skinned-model"
-    ,"hdr-environment"
-    ,"image-based-lighting"
-    ,"pbr-lighting"
-    ,"shadow-map"
-    ,"ambient-occlusion"
-    ,"color-management"
-    ,"complete-clip-catalogue"
-    ,"storytelling"
+    "zdepth",
+    "gravity",
+    "dynamic-curve",
+    "wind",
+    "turbulence",
+    "attraction",
+    "circle-collision",
+    "capsule-collision",
+    "distance-constraint",
+    "hinge",
+    "spring-chain",
+    "hair",
+    "rigid-body",
+    "particle-emitter",
+    "position-pin",
+    "cloth",
+    "cache-bake",
+    "deterministic-timestep",
+    "alignment",
+    "alpha-mesh",
+    "bend-pin",
+    "automatic-positioning",
+    "action-collider-profile",
+    "action-contact",
+    "action-crossfade",
+    "action-sequencing",
+    "bone-animation-target",
+    "character-turn",
+    "coarse-collider",
+    "contact-correction",
+    "contact-ik",
+    "embedded-animation-clip",
+    "embedded-animation-clips",
+    "environment-gltf",
+    "environment-surface",
+    "finite-ground-surface",
+    "finite-plane-collider",
+    "foot-lock",
+    "kinematic-collision",
+    "layered-animation",
+    "mesh-ground-surface",
+    "motion-warping",
+    "remote-glb",
+    "rig-ground-offset",
+    "root-choreography",
+    "root-debug-trace",
+    "scene-gravity",
+    "scene-physics",
+    "semantic-obstacle",
+    "semantic-surface-collision",
+    "stair-ascent",
+    "swept-collision",
+    "boolean-param",
+    "capture-before",
+    "chromatic-aberration",
+    "column",
+    "component-params",
+    "condensed-font",
+    "data-driven-shape",
+    "declarative-layout",
+    "derived",
+    "deterministic-random",
+    "deterministic-variation",
+    "drop-shadow",
+    "enum-param",
+    "gallery",
+    "glitch",
+    "grid",
+    "justification",
+    "padding",
+    "parametric-component",
+    "path-morph",
+    "preserve-outside",
+    "procedural-field",
+    "repeat-variation",
+    "reuse",
+    "row",
+    "scan-mask",
+    "scatter",
+    "seeded-random",
+    "slot",
+    "span",
+    "stress-test",
+    "subtitle",
+    "transparent-background",
+    "two-bone-ik",
+    "universal-layer-target",
+    "vary",
+    "weighted-variants",
+    "whiteout",
+    "action-blending",
+    "body-mask",
+    "bone-animation",
+    "boolean-op",
+    "camera-3d",
+    "camera-cut",
+    "environment-inspection",
+    "external-action",
+    "glb-environment",
+    "grounding",
+    "humanoid-action",
+    "humanoid-retarget",
+    "portable-humanoid-retargeting",
+    "fbx-humanoid-animation-import",
+    "model",
+    "path-offset",
+    "path-taper",
+    "path-trim",
+    "root-motion",
+    "screen-blend",
+    "semantic-anchor",
+    "semantic-surface",
+    "skinned-model",
+    "hdr-environment",
+    "image-based-lighting",
+    "pbr-lighting",
+    "shadow-map",
+    "ambient-occlusion",
+    "color-management",
+    "complete-clip-catalogue",
+    "storytelling"
   ],
   "dsl_tags": [
-    "AudioClip",
-    "AudioTarget",
-    "HairAsset",
-    "HeadAsset",
-    "FacialCage",
-    "HeadProfile",
-    "HeadSection",
-    "HeadDome",
-    "FaceLayout",
     "Action",
     "ActionLibrary",
-    "Anchor",
     "Actor",
+    "AmbientOcclusion",
+    "Anchor",
     "AnimationAsset",
-    "AntiAliasingStyle",
-    "Assets",
-    "AudioAsset",
     "AnimationTarget",
+    "AntiAliasingStyle",
     "ApplyAction",
+    "Assets",
+    "AtmosphereFog",
+    "Attraction",
+    "AudioAsset",
+    "AudioClip",
+    "AudioTarget",
     "Axis",
     "Background",
     "Bone",
     "BoneAxisMap",
     "Brush",
+    "CacheBake",
     "Camera",
     "Camera3D",
     "Character",
-    "Circle",
     "ChromaticAberration",
+    "Circle",
+    "Cloth",
+    "Collider",
     "ColorBleed",
+    "ColorManagement",
+    "ColorStyle",
+    "Component",
     "CompositeGroup",
     "CompoundAsset",
-    "Component",
     "Constraint",
+    "Contact",
+    "ContactShadow",
     "Control",
+    "Curve",
     "Defs",
+    "DepthOfFieldStyle",
+    "Derived",
+    "DirectionalLight",
+    "DisplaceNoise",
+    "DistanceConstraint",
+    "DynamicCurve",
     "Edge",
     "EdgeRoughness",
     "EdgeSoftness",
-    "Effects",
     "Effect",
+    "Effects",
     "Ellipse",
-    "DirectionalLight",
-    "PointLight",
-    "SpotLight",
-    "RectAreaLight",
-    "AmbientOcclusion",
-    "ContactShadow",
-    "DepthOfFieldStyle",
-    "ColorManagement",
-    "EnvironmentLight",
-    "AtmosphereFog",
-    "RenderStyle",
-    "ColorStyle",
-    "ToneStyle",
-    "SurfaceStyle",
-    "OutlineStyle",
-    "LightingStyle",
-    "PostStyle",
     "Environment",
+    "EnvironmentDebug",
+    "EnvironmentLight",
+    "Face",
     "FaceJaw",
+    "FaceLayout",
+    "FacialCage",
+    "Fill",
     "Filter",
+    "GeometryAsset",
     "Graph",
+    "Gravity",
     "Group",
     "Guide",
+    "Hair",
+    "HairStrandField",
+    "Head",
+    "HeadDome",
+    "HeadProfile",
+    "HeadSection",
     "HighlightCompression",
+    "Hinge",
     "IK",
     "Image",
     "ImageAsset",
     "Input",
     "Instance",
     "Key",
+    "Landmark",
     "Layer",
     "Layer3D",
-    "Landmark",
-    "Line",
-    "LimbEnvelope",
+    "Layout",
     "LightStreak",
+    "LightingStyle",
+    "LimbEnvelope",
+    "Line",
     "LinearGradient",
-    "Mask",
     "Map",
+    "Mask",
     "Material",
     "MaterialAsset",
     "MaterialBinding",
     "Measure",
+    "Mesh",
     "MeshAsset",
     "MeshTopology",
     "Model",
     "ModelAsset",
-    "PrimitiveAsset",
     "ModelProfile",
     "Noise",
+    "OutlineStyle",
+    "Param",
     "Part",
+    "ParticleEmitter",
+    "ParticleField",
+    "Partition",
     "Pass",
     "Path",
-    "ParticleField",
+    "Physics",
+    "PhysicsDebug",
     "Pin",
+    "PointLight",
     "Polyline",
-    "Precompose",
     "Pose",
-    "Present",
-    "Process",
     "PostEffects",
+    "PostStyle",
+    "Precompose",
+    "Present",
+    "Primitive",
+    "Process",
     "Puppet",
     "PuppetPin",
     "PuppetWarp",
     "RadialGradient",
     "RadialRays",
-    "Rect",
-    "Retarget",
-    "Region",
+    "RadialWave",
     "Ratio",
+    "Rect",
+    "RectAreaLight",
+    "Region",
+    "RenderStyle",
     "Repeat",
+    "Retarget",
+    "Revolve",
+    "RigidBody",
     "Scene",
     "Sequence",
     "Skeleton",
+    "Slot",
+    "SpotLight",
+    "SpringChain",
+    "Style",
     "Surface",
+    "SurfaceStyle",
     "Svg",
     "Tex",
     "Text",
+    "TextAnimator",
     "Texture",
+    "ThickenSurface",
     "Timeline",
+    "ToneStyle",
     "Track",
     "Triangle",
+    "UV",
     "Use",
+    "Variants",
+    "Vary",
     "Vertex",
-    "Face",
     "Video",
     "VideoAsset",
-    "World",
-    "Curve",
-    "Gravity",
     "Wind",
-    "Attraction",
-    "Collider",
-    "SpringChain",
-    "DynamicCurve",
-    "DistanceConstraint",
-    "Hinge",
-    "RigidBody",
-    "Physics",
-    "PhysicsDebug",
-    "Contact",
-    "EnvironmentDebug",
-    "ParticleEmitter",
-    "Cloth",
-    "HairStrandField",
-    "CacheBake",
+    "Wireframe",
+    "World",
     "action",
     "actor",
     "antialias",
@@ -475,6 +493,7 @@
     "defs",
     "edgeSmoothing",
     "facejaw",
+    "fontFamily",
     "fontWeight",
     "gaussian_5tap_blur",
     "gaussian_5tap_h",
@@ -508,6 +527,10 @@
     "repeat",
     "scene",
     "sequence",
+    "shadowBlur",
+    "shadowColor",
+    "shadowX",
+    "shadowY",
     "sin",
     "softEdge",
     "text",
@@ -517,20 +540,6 @@
     "tone_map",
     "track",
     "use"
-    ,"Derived"
-    ,"Fill"
-    ,"Layout"
-    ,"Param"
-    ,"Slot"
-    ,"Style"
-    ,"TextAnimator"
-    ,"Variants"
-    ,"Vary"
-    ,"fontFamily"
-    ,"shadowBlur"
-    ,"shadowColor"
-    ,"shadowX"
-    ,"shadowY"
   ],
   "reserved_feature_tags": [
     "composition"

@@ -49,7 +49,7 @@
     "Graph",
     "Assets",
     "MaterialAsset",
-    "PrimitiveAsset",
+    "Primitive",
     "CompoundAsset",
     "Instance",
     "Background",
@@ -81,7 +81,9 @@
     "Process",
     "Tex",
     "Pass",
-    "Present"
+    "Present",
+    "GeometryAsset",
+    "MeshAsset"
   ],
   "teaches": [
     "Build a complete canal town from PrimitiveAsset and CompoundAsset kits around an imported character performance.",
@@ -99,7 +101,7 @@
   ],
   "requires": [
     "Graph",
-    "PrimitiveAsset",
+    "Primitive",
     "CompoundAsset",
     "VegetationAsset",
     "Scene",

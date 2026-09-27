@@ -4,7 +4,14 @@
     <SurfaceStyle shading="cel" shadingSteps="3" shadowColor="#ABB7B3" specular="0.06" />
     <OutlineStyle enabled="true" color="#344845" width="1.1" method="geometry" distanceMode="screen" />
     <LightingStyle ambientIntensity="0.85" ambientColor="#FFF1D6" shadowStyle="soft" />
-    <PostStyle toneMapping="aces" exposure="1.06" saturation="1.1" contrast="1.02" bloomThreshold="1.35" bloomIntensity="0.035" />
+    <PostStyle
+      toneMapping="aces"
+      exposure="1.06"
+      saturation="1.1"
+      contrast="1.02"
+      bloomThreshold="1.35"
+      bloomIntensity="0.035"
+    />
   </RenderStyle>
   <Assets>
     <MaterialAsset id="paving" baseColor="#DCCDAA" roughness="0.9" specular="0.05" />
@@ -29,13 +36,34 @@
     <AnimationAsset id="character1_clips" src="../../assets/sample_assets/characters/character1/character1.glb" />
     <ModelAsset id="artist_character1" src="./assets/character1-artist.glb" />
     <ModelAsset id="reader_character1" src="./assets/character1-reader.glb" />
-    <PrimitiveAsset id="ground" shape="box" size={[30,0.16,26]} material="grass" bevelRadius="0" />
-    <PrimitiveAsset id="path" shape="box" size={[17,0.12,4.3]} material="paving" bevelRadius="0" />
-    <PrimitiveAsset id="crosspath" shape="box" size={[3.4,0.11,22]} material="paving" bevelRadius="0" />
-    <PrimitiveAsset id="tile" shape="box" size={[1.02,0.009,0.73]} material="paver_alt" bevelRadius="0" />
-    <PrimitiveAsset id="bench_slat" shape="box" size={[2.0,0.09,0.12]} material="wood" bevelRadius="0.018" />
-    <PrimitiveAsset id="bench_leg" shape="box" size={[0.065,0.53,0.065]} material="iron" bevelRadius="0.018" />
-    <PrimitiveAsset id="bench_backpost" shape="box" size={[0.065,0.6,0.065]} material="iron" bevelRadius="0.012" />
+    <GeometryAsset id="ground_geometry">
+      <Primitive shape="box" size={[30,0.16,26]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="ground" material="grass" geometry="ground_geometry" />
+    <GeometryAsset id="path_geometry">
+      <Primitive shape="box" size={[17,0.12,4.3]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="path" material="paving" geometry="path_geometry" />
+    <GeometryAsset id="crosspath_geometry">
+      <Primitive shape="box" size={[3.4,0.11,22]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="crosspath" material="paving" geometry="crosspath_geometry" />
+    <GeometryAsset id="tile_geometry">
+      <Primitive shape="box" size={[1.02,0.009,0.73]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="tile" material="paver_alt" geometry="tile_geometry" />
+    <GeometryAsset id="bench_slat_geometry">
+      <Primitive shape="box" size={[2.0,0.09,0.12]} bevelRadius="0.018" />
+    </GeometryAsset>
+    <MeshAsset id="bench_slat" material="wood" geometry="bench_slat_geometry" />
+    <GeometryAsset id="bench_leg_geometry">
+      <Primitive shape="box" size={[0.065,0.53,0.065]} bevelRadius="0.018" />
+    </GeometryAsset>
+    <MeshAsset id="bench_leg" material="iron" geometry="bench_leg_geometry" />
+    <GeometryAsset id="bench_backpost_geometry">
+      <Primitive shape="box" size={[0.065,0.6,0.065]} bevelRadius="0.012" />
+    </GeometryAsset>
+    <MeshAsset id="bench_backpost" material="iron" geometry="bench_backpost_geometry" />
     <CompoundAsset id="bench">
       <Instance id="bench_0" asset="bench_slat" position={[0,0.48,-0.24]} rotation={[0,0,0]} scale="1" />
       <Instance id="bench_1" asset="bench_slat" position={[0,0.48,-0.08]} rotation={[0,0,0]} scale="1" />
@@ -51,41 +79,128 @@
       <Instance id="bench_11" asset="bench_leg" position={[0.83,0.23,0.19]} rotation={[0,0,0]} scale="1" />
       <Instance id="bench_12" asset="bench_backpost" position={[0.83,0.79,-0.3]} rotation={[-8,0,0]} scale="1" />
     </CompoundAsset>
-    <PrimitiveAsset id="trunk" shape="cylinder" radius="0.15" height="3.7" segments="10" material="bark" />
-    <PrimitiveAsset id="canopy0" shape="ellipsoid" radii={[1.1,0.6,0.9]} segments="12" rings="8" material="leaf1" />
-    <PrimitiveAsset id="shrub0" shape="ellipsoid" radii={[0.65,0.45,0.5]} segments="12" rings="8" material="leaf1" />
-    <PrimitiveAsset id="canopy1" shape="ellipsoid" radii={[1.1,0.6,0.9]} segments="12" rings="8" material="leaf2" />
-    <PrimitiveAsset id="shrub1" shape="ellipsoid" radii={[0.65,0.45,0.5]} segments="12" rings="8" material="leaf2" />
-    <PrimitiveAsset id="canopy2" shape="ellipsoid" radii={[1.1,0.6,0.9]} segments="12" rings="8" material="leaf3" />
-    <PrimitiveAsset id="shrub2" shape="ellipsoid" radii={[0.65,0.45,0.5]} segments="12" rings="8" material="leaf3" />
-    <PrimitiveAsset id="canopy3" shape="ellipsoid" radii={[1.1,0.6,0.9]} segments="12" rings="8" material="leaf4" />
-    <PrimitiveAsset id="shrub3" shape="ellipsoid" radii={[0.65,0.45,0.5]} segments="12" rings="8" material="leaf4" />
-    <PrimitiveAsset id="flower" shape="ellipsoid" radii={[0.055,0.045,0.055]} segments="12" rings="8" material="flower" />
-    <PrimitiveAsset id="tower" shape="box" size={[1.0,1,1]} material="building" bevelRadius="0" />
-    <PrimitiveAsset id="windowstrip" shape="box" size={[0.8,0.065,0.015]} material="window" bevelRadius="0" />
-    <PrimitiveAsset id="tower_shape0" shape="box" size={[1,2.84225,1]} material="building" bevelRadius="0" />
-    <PrimitiveAsset id="tower_shape1" shape="box" size={[1,5.1889,1]} material="building" bevelRadius="0" />
-    <PrimitiveAsset id="tower_shape2" shape="box" size={[1,5.14559,1]} material="building" bevelRadius="0" />
-    <PrimitiveAsset id="tower_shape3" shape="box" size={[1,5.14654,1]} material="building" bevelRadius="0" />
-    <PrimitiveAsset id="tower_shape4" shape="box" size={[1,3.38707,1]} material="building" bevelRadius="0" />
-    <PrimitiveAsset id="tower_shape5" shape="box" size={[1,2.81894,1]} material="building" bevelRadius="0" />
-    <PrimitiveAsset id="tower_shape6" shape="box" size={[1,4.80758,1]} material="building" bevelRadius="0" />
-    <PrimitiveAsset id="tower_shape7" shape="box" size={[1,3.23803,1]} material="building" bevelRadius="0" />
-    <PrimitiveAsset id="tower_shape8" shape="box" size={[1,4.55369,1]} material="building" bevelRadius="0" />
-    <PrimitiveAsset id="pole" shape="cylinder" radius="0.037" height="2.6" segments="10" material="iron" />
-    <PrimitiveAsset id="lampbox" shape="box" size={[0.22,0.34,0.22]} material="cream" bevelRadius="0.025" />
-    <PrimitiveAsset id="lampcap" shape="box" size={[0.33,0.065,0.33]} material="iron" bevelRadius="0.025" />
-    <PrimitiveAsset id="sheet" shape="box" size={[0.44,0.58,0.006]} material="paper" bevelRadius="0" />
-    <PrimitiveAsset id="cover" shape="box" size={[0.48,0.025,0.62]} material="iron" bevelRadius="0.008" />
-    <PrimitiveAsset id="bookcover" shape="box" size={[0.38,0.035,0.29]} material="book" bevelRadius="0.01" />
-    <PrimitiveAsset id="bookpages" shape="box" size={[0.36,0.026,0.27]} material="paper" bevelRadius="0" />
-    <PrimitiveAsset id="graphite_head" shape="ellipsoid" radii={[0.064,0.08,0.001]} segments="12" rings="8" material="pencil" />
-    <PrimitiveAsset id="portrait_face" shape="ellipsoid" radii={[0.056,0.072,0.001]} segments="12" rings="8" material="paper" />
-    <PrimitiveAsset id="graphite_body" shape="box" size={[0.12,0.15,0.002]} material="pencil" bevelRadius="0" />
-    <PrimitiveAsset id="portrait_body" shape="box" size={[0.108,0.138,0.002]} material="paper" bevelRadius="0" />
-    <PrimitiveAsset id="portrait_book" shape="box" size={[0.12,0.06,0.003]} material="book" bevelRadius="0" />
-    <PrimitiveAsset id="hatch" shape="box" size={[0.002,0.12,0.001]} material="pencil" bevelRadius="0" />
-    <PrimitiveAsset id="sketch_bench" shape="box" size={[0.25,0.003,0.001]} material="pencil" bevelRadius="0" />
+    <GeometryAsset id="trunk_geometry">
+      <Primitive shape="cylinder" radius="0.15" height="3.7" segments="10" />
+    </GeometryAsset>
+    <MeshAsset id="trunk" material="bark" geometry="trunk_geometry" />
+    <GeometryAsset id="canopy0_geometry">
+      <Primitive shape="ellipsoid" radii={[1.1,0.6,0.9]} segments="12" rings="8" />
+    </GeometryAsset>
+    <MeshAsset id="canopy0" material="leaf1" geometry="canopy0_geometry" />
+    <GeometryAsset id="shrub0_geometry">
+      <Primitive shape="ellipsoid" radii={[0.65,0.45,0.5]} segments="12" rings="8" />
+    </GeometryAsset>
+    <MeshAsset id="shrub0" material="leaf1" geometry="shrub0_geometry" />
+    <MeshAsset id="canopy1" material="leaf2" geometry="canopy0_geometry" />
+    <MeshAsset id="shrub1" material="leaf2" geometry="shrub0_geometry" />
+    <MeshAsset id="canopy2" material="leaf3" geometry="canopy0_geometry" />
+    <MeshAsset id="shrub2" material="leaf3" geometry="shrub0_geometry" />
+    <MeshAsset id="canopy3" material="leaf4" geometry="canopy0_geometry" />
+    <MeshAsset id="shrub3" material="leaf4" geometry="shrub0_geometry" />
+    <GeometryAsset id="flower_geometry">
+      <Primitive shape="ellipsoid" radii={[0.055,0.045,0.055]} segments="12" rings="8" />
+    </GeometryAsset>
+    <MeshAsset id="flower" material="flower" geometry="flower_geometry" />
+    <GeometryAsset id="tower_geometry">
+      <Primitive shape="box" size={[1.0,1,1]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="tower" material="building" geometry="tower_geometry" />
+    <GeometryAsset id="windowstrip_geometry">
+      <Primitive shape="box" size={[0.8,0.065,0.015]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="windowstrip" material="window" geometry="windowstrip_geometry" />
+    <GeometryAsset id="tower_shape0_geometry">
+      <Primitive shape="box" size={[1,2.84225,1]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="tower_shape0" material="building" geometry="tower_shape0_geometry" />
+    <GeometryAsset id="tower_shape1_geometry">
+      <Primitive shape="box" size={[1,5.1889,1]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="tower_shape1" material="building" geometry="tower_shape1_geometry" />
+    <GeometryAsset id="tower_shape2_geometry">
+      <Primitive shape="box" size={[1,5.14559,1]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="tower_shape2" material="building" geometry="tower_shape2_geometry" />
+    <GeometryAsset id="tower_shape3_geometry">
+      <Primitive shape="box" size={[1,5.14654,1]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="tower_shape3" material="building" geometry="tower_shape3_geometry" />
+    <GeometryAsset id="tower_shape4_geometry">
+      <Primitive shape="box" size={[1,3.38707,1]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="tower_shape4" material="building" geometry="tower_shape4_geometry" />
+    <GeometryAsset id="tower_shape5_geometry">
+      <Primitive shape="box" size={[1,2.81894,1]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="tower_shape5" material="building" geometry="tower_shape5_geometry" />
+    <GeometryAsset id="tower_shape6_geometry">
+      <Primitive shape="box" size={[1,4.80758,1]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="tower_shape6" material="building" geometry="tower_shape6_geometry" />
+    <GeometryAsset id="tower_shape7_geometry">
+      <Primitive shape="box" size={[1,3.23803,1]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="tower_shape7" material="building" geometry="tower_shape7_geometry" />
+    <GeometryAsset id="tower_shape8_geometry">
+      <Primitive shape="box" size={[1,4.55369,1]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="tower_shape8" material="building" geometry="tower_shape8_geometry" />
+    <GeometryAsset id="pole_geometry">
+      <Primitive shape="cylinder" radius="0.037" height="2.6" segments="10" />
+    </GeometryAsset>
+    <MeshAsset id="pole" material="iron" geometry="pole_geometry" />
+    <GeometryAsset id="lampbox_geometry">
+      <Primitive shape="box" size={[0.22,0.34,0.22]} bevelRadius="0.025" />
+    </GeometryAsset>
+    <MeshAsset id="lampbox" material="cream" geometry="lampbox_geometry" />
+    <GeometryAsset id="lampcap_geometry">
+      <Primitive shape="box" size={[0.33,0.065,0.33]} bevelRadius="0.025" />
+    </GeometryAsset>
+    <MeshAsset id="lampcap" material="iron" geometry="lampcap_geometry" />
+    <GeometryAsset id="sheet_geometry">
+      <Primitive shape="box" size={[0.44,0.58,0.006]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="sheet" material="paper" geometry="sheet_geometry" />
+    <GeometryAsset id="cover_geometry">
+      <Primitive shape="box" size={[0.48,0.025,0.62]} bevelRadius="0.008" />
+    </GeometryAsset>
+    <MeshAsset id="cover" material="iron" geometry="cover_geometry" />
+    <GeometryAsset id="bookcover_geometry">
+      <Primitive shape="box" size={[0.38,0.035,0.29]} bevelRadius="0.01" />
+    </GeometryAsset>
+    <MeshAsset id="bookcover" material="book" geometry="bookcover_geometry" />
+    <GeometryAsset id="bookpages_geometry">
+      <Primitive shape="box" size={[0.36,0.026,0.27]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="bookpages" material="paper" geometry="bookpages_geometry" />
+    <GeometryAsset id="graphite_head_geometry">
+      <Primitive shape="ellipsoid" radii={[0.064,0.08,0.001]} segments="12" rings="8" />
+    </GeometryAsset>
+    <MeshAsset id="graphite_head" material="pencil" geometry="graphite_head_geometry" />
+    <GeometryAsset id="portrait_face_geometry">
+      <Primitive shape="ellipsoid" radii={[0.056,0.072,0.001]} segments="12" rings="8" />
+    </GeometryAsset>
+    <MeshAsset id="portrait_face" material="paper" geometry="portrait_face_geometry" />
+    <GeometryAsset id="graphite_body_geometry">
+      <Primitive shape="box" size={[0.12,0.15,0.002]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="graphite_body" material="pencil" geometry="graphite_body_geometry" />
+    <GeometryAsset id="portrait_body_geometry">
+      <Primitive shape="box" size={[0.108,0.138,0.002]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="portrait_body" material="paper" geometry="portrait_body_geometry" />
+    <GeometryAsset id="portrait_book_geometry">
+      <Primitive shape="box" size={[0.12,0.06,0.003]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="portrait_book" material="book" geometry="portrait_book_geometry" />
+    <GeometryAsset id="hatch_geometry">
+      <Primitive shape="box" size={[0.002,0.12,0.001]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="hatch" material="pencil" geometry="hatch_geometry" />
+    <GeometryAsset id="sketch_bench_geometry">
+      <Primitive shape="box" size={[0.25,0.003,0.001]} bevelRadius="0" />
+    </GeometryAsset>
+    <MeshAsset id="sketch_bench" material="pencil" geometry="sketch_bench_geometry" />
     <CompoundAsset id="drawing">
       <Instance id="drawing_0" asset="sheet" position={[0,0,0]} rotation={[0,0,0]} scale="1" />
       <Instance id="drawing_1" asset="graphite_head" position={[0,0.105,0.004]} rotation={[0,0,0]} scale="1" />
@@ -104,7 +219,10 @@
       <Instance id="drawing_14" asset="sketch_bench" position={[0,-0.15,0.007]} rotation={[0,0,0]} scale="1" />
       <Instance id="drawing_15" asset="sketch_bench" position={[0,-0.17,0.007]} rotation={[0,0,0]} scale="1" />
     </CompoundAsset>
-    <PrimitiveAsset id="loose_leaf" shape="ellipsoid" radii={[0.075,0.009,0.04]} segments="12" rings="8" material="leaf2" />
+    <GeometryAsset id="loose_leaf_geometry">
+      <Primitive shape="ellipsoid" radii={[0.075,0.009,0.04]} segments="12" rings="8" />
+    </GeometryAsset>
+    <MeshAsset id="loose_leaf" material="leaf2" geometry="loose_leaf_geometry" />
   </Assets>
   <ModelProfile id="c1_profile" kind="3d" model="character1" preset="humanoid_v1">
     <Retarget preset="humanoid_v1">
@@ -138,9 +256,23 @@
       <Axis bone="upper_chest" bend="rotationX:-1" turn="rotationY:1" />
       <Axis bone="neck" bend="rotationX:-1" turn="rotationY:1" />
       <Axis bone="head" bend="rotationX:-1" turn="rotationY:1" />
-      <Axis bone="upper_arm_l" forward="rotationX:1" side="rotationZ:1" twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
+      <Axis
+        bone="upper_arm_l"
+        forward="rotationX:1"
+        side="rotationZ:1"
+        twist="rotationY:1"
+        restForward="-4.8"
+        restSide="-89.8"
+      />
       <Axis bone="forearm_l" bend="rotationX:1" twist="rotationY:1" />
-      <Axis bone="upper_arm_r" forward="rotationX:1" side="rotationZ:-1" twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
+      <Axis
+        bone="upper_arm_r"
+        forward="rotationX:1"
+        side="rotationZ:-1"
+        twist="rotationY:1"
+        restForward="-4.8"
+        restSide="-89.8"
+      />
       <Axis bone="forearm_r" bend="rotationX:1" twist="rotationY:1" />
       <Axis bone="upper_leg_l" forward="rotationX:-1" side="rotationZ:-1" twist="rotationY:1" />
       <Axis bone="lower_leg_l" bend="rotationX:-1" twist="rotationY:1" />
@@ -180,9 +312,23 @@
       <Axis bone="upper_chest" bend="rotationX:-1" turn="rotationY:1" />
       <Axis bone="neck" bend="rotationX:-1" turn="rotationY:1" />
       <Axis bone="head" bend="rotationX:-1" turn="rotationY:1" />
-      <Axis bone="upper_arm_l" forward="rotationX:1" side="rotationZ:1" twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
+      <Axis
+        bone="upper_arm_l"
+        forward="rotationX:1"
+        side="rotationZ:1"
+        twist="rotationY:1"
+        restForward="-4.8"
+        restSide="-89.8"
+      />
       <Axis bone="forearm_l" bend="rotationX:1" twist="rotationY:1" />
-      <Axis bone="upper_arm_r" forward="rotationX:1" side="rotationZ:-1" twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
+      <Axis
+        bone="upper_arm_r"
+        forward="rotationX:1"
+        side="rotationZ:-1"
+        twist="rotationY:1"
+        restForward="-4.8"
+        restSide="-89.8"
+      />
       <Axis bone="forearm_r" bend="rotationX:1" twist="rotationY:1" />
       <Axis bone="upper_leg_l" forward="rotationX:-1" side="rotationZ:-1" twist="rotationY:1" />
       <Axis bone="lower_leg_l" bend="rotationX:-1" twist="rotationY:1" />
@@ -222,9 +368,23 @@
       <Axis bone="upper_chest" bend="rotationX:-1" turn="rotationY:1" />
       <Axis bone="neck" bend="rotationX:-1" turn="rotationY:1" />
       <Axis bone="head" bend="rotationX:-1" turn="rotationY:1" />
-      <Axis bone="upper_arm_l" forward="rotationX:1" side="rotationZ:1" twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
+      <Axis
+        bone="upper_arm_l"
+        forward="rotationX:1"
+        side="rotationZ:1"
+        twist="rotationY:1"
+        restForward="-4.8"
+        restSide="-89.8"
+      />
       <Axis bone="forearm_l" bend="rotationX:1" twist="rotationY:1" />
-      <Axis bone="upper_arm_r" forward="rotationX:1" side="rotationZ:-1" twist="rotationY:1" restForward="-4.8" restSide="-89.8" />
+      <Axis
+        bone="upper_arm_r"
+        forward="rotationX:1"
+        side="rotationZ:-1"
+        twist="rotationY:1"
+        restForward="-4.8"
+        restSide="-89.8"
+      />
       <Axis bone="forearm_r" bend="rotationX:1" twist="rotationY:1" />
       <Axis bone="upper_leg_l" forward="rotationX:-1" side="rotationZ:-1" twist="rotationY:1" />
       <Axis bone="lower_leg_l" bend="rotationX:-1" twist="rotationY:1" />
@@ -232,20 +392,128 @@
       <Axis bone="lower_leg_r" bend="rotationX:-1" twist="rotationY:1" />
     </BoneAxisMap>
   </ModelProfile>
-  <Action id="sit" source="character1_clips" sourceProfile="quaternius_humanoid" clip="Sitting_Idle_Loop" skeleton="humanoid_v1" />
-  <Action id="rise" source="character1_clips" sourceProfile="quaternius_humanoid" clip="Sitting_Exit" skeleton="humanoid_v1" />
-  <Action id="run" source="character1_clips" sourceProfile="quaternius_humanoid" clip="Jog_Fwd_Loop" skeleton="humanoid_v1" />
-  <Action id="idle" source="character1_clips" sourceProfile="quaternius_humanoid" clip="Idle_Loop" skeleton="humanoid_v1" />
-  <Action id="walk" source="character1_clips" sourceProfile="quaternius_humanoid" clip="Walk_Loop" skeleton="humanoid_v1" />
-  <Action id="pick" source="character1_clips" sourceProfile="quaternius_humanoid" clip="PickUp_Table" skeleton="humanoid_v1" />
-  <ApplyAction target="artist" action="sit" at="0s" duration="14.8s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" />
-  <ApplyAction target="artist" action="rise" at="14.8s" duration="1.4s" loop="false" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" />
-  <ApplyAction target="artist" action="run" at="16.2s" duration="5.3s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" />
-  <ApplyAction target="artist" action="idle" at="21.5s" duration="8.5s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" />
-  <ApplyAction target="reader" action="sit" at="0s" duration="21.6s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" />
-  <ApplyAction target="reader" action="rise" at="21.6s" duration="1.1s" loop="false" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" />
-  <ApplyAction target="reader" action="pick" at="22.7s" duration="1.7s" loop="false" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" />
-  <ApplyAction target="reader" action="idle" at="24.4s" duration="5.6s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" />
+  <Action
+    id="sit"
+    source="character1_clips"
+    sourceProfile="quaternius_humanoid"
+    clip="Sitting_Idle_Loop"
+    skeleton="humanoid_v1"
+  />
+  <Action
+    id="rise"
+    source="character1_clips"
+    sourceProfile="quaternius_humanoid"
+    clip="Sitting_Exit"
+    skeleton="humanoid_v1"
+  />
+  <Action
+    id="run"
+    source="character1_clips"
+    sourceProfile="quaternius_humanoid"
+    clip="Jog_Fwd_Loop"
+    skeleton="humanoid_v1"
+  />
+  <Action
+    id="idle"
+    source="character1_clips"
+    sourceProfile="quaternius_humanoid"
+    clip="Idle_Loop"
+    skeleton="humanoid_v1"
+  />
+  <Action
+    id="walk"
+    source="character1_clips"
+    sourceProfile="quaternius_humanoid"
+    clip="Walk_Loop"
+    skeleton="humanoid_v1"
+  />
+  <Action
+    id="pick"
+    source="character1_clips"
+    sourceProfile="quaternius_humanoid"
+    clip="PickUp_Table"
+    skeleton="humanoid_v1"
+  />
+  <ApplyAction
+    target="artist"
+    action="sit"
+    at="0s"
+    duration="14.8s"
+    loop="true"
+    rootMotion="in_place"
+    blendIn="0.12s"
+    blendOut="0.12s"
+  />
+  <ApplyAction
+    target="artist"
+    action="rise"
+    at="14.8s"
+    duration="1.4s"
+    loop="false"
+    rootMotion="in_place"
+    blendIn="0.12s"
+    blendOut="0.12s"
+  />
+  <ApplyAction
+    target="artist"
+    action="run"
+    at="16.2s"
+    duration="5.3s"
+    loop="true"
+    rootMotion="in_place"
+    blendIn="0.12s"
+    blendOut="0.12s"
+  />
+  <ApplyAction
+    target="artist"
+    action="idle"
+    at="21.5s"
+    duration="8.5s"
+    loop="true"
+    rootMotion="in_place"
+    blendIn="0.12s"
+    blendOut="0.12s"
+  />
+  <ApplyAction
+    target="reader"
+    action="sit"
+    at="0s"
+    duration="21.6s"
+    loop="true"
+    rootMotion="in_place"
+    blendIn="0.12s"
+    blendOut="0.12s"
+  />
+  <ApplyAction
+    target="reader"
+    action="rise"
+    at="21.6s"
+    duration="1.1s"
+    loop="false"
+    rootMotion="in_place"
+    blendIn="0.12s"
+    blendOut="0.12s"
+  />
+  <ApplyAction
+    target="reader"
+    action="pick"
+    at="22.7s"
+    duration="1.7s"
+    loop="false"
+    rootMotion="in_place"
+    blendIn="0.12s"
+    blendOut="0.12s"
+  />
+  <ApplyAction
+    target="reader"
+    action="idle"
+    at="24.4s"
+    duration="5.6s"
+    loop="true"
+    rootMotion="in_place"
+    blendIn="0.12s"
+    blendOut="0.12s"
+  />
   <Action id="offer" skeleton="humanoid_v1" duration="6s">
     <Pose t="0s">
       <Bone id="upper_arm_l" forward="25" />
@@ -260,9 +528,36 @@
       <Bone id="forearm_r" bend="65" />
     </Pose>
   </Action>
-  <ApplyAction target="reader" action="offer" at="24s" duration="6s" mode="additive" mask="upper_body" blendIn="0.4s" blendOut="0s" />
-  <ApplyAction target="walker0" action="walk" at="0s" duration="30s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" />
-  <ApplyAction target="walker1" action="walk" at="0s" duration="30s" loop="true" rootMotion="in_place" blendIn="0.12s" blendOut="0.12s" />
+  <ApplyAction
+    target="reader"
+    action="offer"
+    at="24s"
+    duration="6s"
+    mode="additive"
+    mask="upper_body"
+    blendIn="0.4s"
+    blendOut="0s"
+  />
+  <ApplyAction
+    target="walker0"
+    action="walk"
+    at="0s"
+    duration="30s"
+    loop="true"
+    rootMotion="in_place"
+    blendIn="0.12s"
+    blendOut="0.12s"
+  />
+  <ApplyAction
+    target="walker1"
+    action="walk"
+    at="0s"
+    duration="30s"
+    loop="true"
+    rootMotion="in_place"
+    blendIn="0.12s"
+    blendOut="0.12s"
+  />
   <Background color="#C3E3EF" />
   <Scene id="S87WindPaper" renderStyle="morning_cel">
     <Timeline>
@@ -282,366 +577,3206 @@
             <Camera3D id="cam_S09A" position={[2.6,1.56,1.8]} target={[2.82,1.32,0.82]} fov="36" />
             <Camera3D id="cam_S09B" position={[1.9,1.52,2.1]} target={[3,1.45,0.48]} fov="34" />
             <Camera3D id="cam_S10" position={[2.1,1.5,4.7]} target={[2.3,1.1,0.55]} fov="43" />
-            <DirectionalLight direction={[.65,-1,-.4]} color="#FFF2C7" intensity="2.5" castShadow="true" shadowStrength="0.7" />
+            <DirectionalLight
+              direction={[.65,-1,-.4]}
+              color="#FFF2C7"
+              intensity="2.5"
+              castShadow="true"
+              shadowStrength="0.7"
+            />
             <DirectionalLight direction={[-.5,-.2,.8]} color="#D2E8FF" intensity="0.55" />
-            <Model id="ground_model" asset="ground" position={[0,-0.14,-3]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="path_model" asset="path" position={[0,-0.06,1.0]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="crosspath_model" asset="crosspath" position={[0,-0.07,-5]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_-8_2" asset="tile" position={[-8.0,0.006,1.13]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_-7_1" asset="tile" position={[-6.68,0.006,0.34]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_-7_4" asset="tile" position={[-7.0,0.006,2.71]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_-6_0" asset="tile" position={[-6.0,0.006,-0.45]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_-6_3" asset="tile" position={[-5.68,0.006,1.92]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_-5_2" asset="tile" position={[-5.0,0.006,1.13]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_-4_1" asset="tile" position={[-3.68,0.006,0.34]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_-4_4" asset="tile" position={[-4.0,0.006,2.71]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_-3_0" asset="tile" position={[-3.0,0.006,-0.45]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_-3_3" asset="tile" position={[-2.68,0.006,1.92]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_-2_2" asset="tile" position={[-2.0,0.006,1.13]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_-1_1" asset="tile" position={[-0.68,0.006,0.34]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_-1_4" asset="tile" position={[-1.0,0.006,2.71]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_0_0" asset="tile" position={[0.0,0.006,-0.45]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_0_3" asset="tile" position={[0.32,0.006,1.92]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_1_2" asset="tile" position={[1.0,0.006,1.13]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_2_1" asset="tile" position={[2.32,0.006,0.34]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_2_4" asset="tile" position={[2.0,0.006,2.71]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_3_0" asset="tile" position={[3.0,0.006,-0.45]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_3_3" asset="tile" position={[3.32,0.006,1.92]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_4_2" asset="tile" position={[4.0,0.006,1.13]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_5_1" asset="tile" position={[5.32,0.006,0.34]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_5_4" asset="tile" position={[5.0,0.006,2.71]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_6_0" asset="tile" position={[6.0,0.006,-0.45]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_6_3" asset="tile" position={[6.32,0.006,1.92]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_7_2" asset="tile" position={[7.0,0.006,1.13]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_8_1" asset="tile" position={[8.32,0.006,0.34]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tile_8_4" asset="tile" position={[8.0,0.006,2.71]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="bench0" asset="bench" position={[-3,0,0]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="bench1" asset="bench" position={[3,0,0]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="bench2" asset="bench" position={[-6,0,-5]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="bench3" asset="bench" position={[5,0,-6]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="trunk0" asset="trunk" position={[-5,1.82,-1.6]} rotation={[3.94111,0,7.35649]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="crown0_0" asset="canopy0" position={[-4.32922,3.31407,-1.6]} rotation={[0,0,0]} scale="1.191491200018132" castShadow="true" receiveShadow="true"  />
-            <Model id="crown0_1" asset="canopy1" position={[-4.28299,3.52554,-1.00219]} rotation={[0,0,0]} scale="1.0269939358667886" castShadow="true" receiveShadow="true"  />
-            <Model id="crown0_2" asset="canopy2" position={[-5.0,3.93853,-0.89067]} rotation={[0,0,0]} scale="0.8527316943806372" castShadow="true" receiveShadow="true"  />
-            <Model id="crown0_3" asset="canopy3" position={[-5.8708,3.84519,-1.17786]} rotation={[0,0,0]} scale="0.8355199089789875" castShadow="true" receiveShadow="true"  />
-            <Model id="crown0_4" asset="canopy0" position={[-6.22311,3.92356,-1.6]} rotation={[0,0,0]} scale="1.1760762082726333" castShadow="true" receiveShadow="true"  />
-            <Model id="crown0_5" asset="canopy1" position={[-5.80413,3.44327,-2.41248]} rotation={[0,0,0]} scale="1.167525859057402" castShadow="true" receiveShadow="true"  />
-            <Model id="crown0_6" asset="canopy2" position={[-5.0,3.28102,-2.45703]} rotation={[0,0,0]} scale="0.9528224949032026" castShadow="true" receiveShadow="true"  />
-            <Model id="crown0_7" asset="canopy3" position={[-4.17685,3.6195,-2.02293]} rotation={[0,0,0]} scale="1.006390649240342" castShadow="true" receiveShadow="true"  />
-            <Model id="trunk1" asset="trunk" position={[-1.8,1.82,-3.3]} rotation={[-5.86752,0,2.4812]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="crown1_0" asset="canopy0" position={[-0.73346,3.42205,-3.3]} rotation={[0,0,0]} scale="1.087644417576698" castShadow="true" receiveShadow="true"  />
-            <Model id="crown1_1" asset="canopy1" position={[-1.02088,3.76686,-2.66309]} rotation={[0,0,0]} scale="0.8327357970095831" castShadow="true" receiveShadow="true"  />
-            <Model id="crown1_2" asset="canopy2" position={[-1.8,3.65127,-2.52162]} rotation={[0,0,0]} scale="0.8036083916471652" castShadow="true" receiveShadow="true"  />
-            <Model id="crown1_3" asset="canopy3" position={[-2.40156,3.5086,-2.45286]} rotation={[0,0,0]} scale="0.9069498084439094" castShadow="true" receiveShadow="true"  />
-            <Model id="crown1_4" asset="canopy0" position={[-2.78652,3.80099,-3.3]} rotation={[0,0,0]} scale="0.9169194912140741" castShadow="true" receiveShadow="true"  />
-            <Model id="crown1_5" asset="canopy1" position={[-2.66342,3.86609,-3.84918]} rotation={[0,0,0]} scale="1.2011833215191028" castShadow="true" receiveShadow="true"  />
-            <Model id="crown1_6" asset="canopy2" position={[-1.8,3.21902,-3.88945]} rotation={[0,0,0]} scale="0.91644977186817" castShadow="true" receiveShadow="true"  />
-            <Model id="crown1_7" asset="canopy3" position={[-1.15183,3.65996,-3.83009]} rotation={[0,0,0]} scale="0.9769932237792198" castShadow="true" receiveShadow="true"  />
-            <Model id="trunk2" asset="trunk" position={[2,1.82,-3.4]} rotation={[-4.47409,0,-7.54945]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="crown2_0" asset="canopy0" position={[3.14723,3.24129,-3.4]} rotation={[0,0,0]} scale="1.0809029433709063" castShadow="true" receiveShadow="true"  />
-            <Model id="crown2_1" asset="canopy1" position={[2.53097,3.50554,-2.79522]} rotation={[0,0,0]} scale="0.810444567783632" castShadow="true" receiveShadow="true"  />
-            <Model id="crown2_2" asset="canopy2" position={[2.0,3.44545,-2.52591]} rotation={[0,0,0]} scale="1.2299718368562245" castShadow="true" receiveShadow="true"  />
-            <Model id="crown2_3" asset="canopy3" position={[1.25223,3.78906,-2.94094]} rotation={[0,0,0]} scale="1.1155675598561978" castShadow="true" receiveShadow="true"  />
-            <Model id="crown2_4" asset="canopy0" position={[1.20274,3.24755,-3.4]} rotation={[0,0,0]} scale="0.8804501403949874" castShadow="true" receiveShadow="true"  />
-            <Model id="crown2_5" asset="canopy1" position={[1.6142,3.77243,-3.88062]} rotation={[0,0,0]} scale="0.8898059038363464" castShadow="true" receiveShadow="true"  />
-            <Model id="crown2_6" asset="canopy2" position={[2.0,3.25287,-4.56849]} rotation={[0,0,0]} scale="0.9366971668647279" castShadow="true" receiveShadow="true"  />
-            <Model id="crown2_7" asset="canopy3" position={[2.71599,3.95448,-3.90296]} rotation={[0,0,0]} scale="1.0429410483396533" castShadow="true" receiveShadow="true"  />
-            <Model id="trunk3" asset="trunk" position={[5.5,1.82,-2.0]} rotation={[7.54367,0,-7.24065]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="crown3_0" asset="canopy0" position={[6.60083,3.72339,-2.0]} rotation={[0,0,0]} scale="1.2897065487240145" castShadow="true" receiveShadow="true"  />
-            <Model id="crown3_1" asset="canopy1" position={[6.01178,3.2334,-1.32855]} rotation={[0,0,0]} scale="1.114813102430919" castShadow="true" receiveShadow="true"  />
-            <Model id="crown3_2" asset="canopy2" position={[5.5,3.31594,-1.12824]} rotation={[0,0,0]} scale="1.1144944248060007" castShadow="true" receiveShadow="true"  />
-            <Model id="crown3_3" asset="canopy3" position={[4.73885,3.87339,-1.63828]} rotation={[0,0,0]} scale="0.9657882447346064" castShadow="true" receiveShadow="true"  />
-            <Model id="crown3_4" asset="canopy0" position={[4.2788,3.41285,-2.0]} rotation={[0,0,0]} scale="0.8364408828357757" castShadow="true" receiveShadow="true"  />
-            <Model id="crown3_5" asset="canopy1" position={[4.65042,3.66718,-2.80996]} rotation={[0,0,0]} scale="1.1809980829986741" castShadow="true" receiveShadow="true"  />
-            <Model id="crown3_6" asset="canopy2" position={[5.5,3.7184,-2.86929]} rotation={[0,0,0]} scale="0.9036238374846777" castShadow="true" receiveShadow="true"  />
-            <Model id="crown3_7" asset="canopy3" position={[5.97705,3.54824,-2.62193]} rotation={[0,0,0]} scale="0.9340425107712308" castShadow="true" receiveShadow="true"  />
-            <Model id="trunk4" asset="trunk" position={[-7,1.82,3]} rotation={[7.04398,0,4.83394]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="crown4_0" asset="canopy0" position={[-6.42769,3.50028,3.0]} rotation={[0,0,0]} scale="1.1587193371404938" castShadow="true" receiveShadow="true"  />
-            <Model id="crown4_1" asset="canopy1" position={[-6.34331,3.97927,3.4896]} rotation={[0,0,0]} scale="0.9485206179984864" castShadow="true" receiveShadow="true"  />
-            <Model id="crown4_2" asset="canopy2" position={[-7.0,3.51312,3.67129]} rotation={[0,0,0]} scale="0.9250872218401844" castShadow="true" receiveShadow="true"  />
-            <Model id="crown4_3" asset="canopy3" position={[-7.44577,3.31301,3.5129]} rotation={[0,0,0]} scale="1.1901281495861538" castShadow="true" receiveShadow="true"  />
-            <Model id="crown4_4" asset="canopy0" position={[-7.54214,3.76224,3.0]} rotation={[0,0,0]} scale="1.2076410869831284" castShadow="true" receiveShadow="true"  />
-            <Model id="crown4_5" asset="canopy1" position={[-7.73313,3.55204,2.62967]} rotation={[0,0,0]} scale="0.8103437319004585" castShadow="true" receiveShadow="true"  />
-            <Model id="crown4_6" asset="canopy2" position={[-7.0,3.53,1.8949]} rotation={[0,0,0]} scale="1.2413296729758592" castShadow="true" receiveShadow="true"  />
-            <Model id="crown4_7" asset="canopy3" position={[-6.40975,3.33976,2.41406]} rotation={[0,0,0]} scale="0.8548825421201234" castShadow="true" receiveShadow="true"  />
-            <Model id="trunk5" asset="trunk" position={[7,1.82,3]} rotation={[6.0411,0,4.39265]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="crown5_0" asset="canopy0" position={[8.10586,3.92673,3.0]} rotation={[0,0,0]} scale="1.2733629647054983" castShadow="true" receiveShadow="true"  />
-            <Model id="crown5_1" asset="canopy1" position={[7.41116,3.77598,3.56001]} rotation={[0,0,0]} scale="1.1326434225161415" castShadow="true" receiveShadow="true"  />
-            <Model id="crown5_2" asset="canopy2" position={[7.0,3.44349,3.76477]} rotation={[0,0,0]} scale="1.1088898839945067" castShadow="true" receiveShadow="true"  />
-            <Model id="crown5_3" asset="canopy3" position={[6.20985,3.27749,3.43947]} rotation={[0,0,0]} scale="0.9545138510018503" castShadow="true" receiveShadow="true"  />
-            <Model id="crown5_4" asset="canopy0" position={[6.15298,3.61665,3.0]} rotation={[0,0,0]} scale="0.8514790085848566" castShadow="true" receiveShadow="true"  />
-            <Model id="crown5_5" asset="canopy1" position={[6.3145,3.79932,2.42188]} rotation={[0,0,0]} scale="1.0182911916355781" castShadow="true" receiveShadow="true"  />
-            <Model id="crown5_6" asset="canopy2" position={[7.0,3.24331,2.39622]} rotation={[0,0,0]} scale="1.1459637774189302" castShadow="true" receiveShadow="true"  />
-            <Model id="crown5_7" asset="canopy3" position={[7.35619,3.38093,2.35561]} rotation={[0,0,0]} scale="0.8633526903672435" castShadow="true" receiveShadow="true"  />
-            <Model id="trunk6" asset="trunk" position={[-5,1.82,-8]} rotation={[7.6316,0,0.54225]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="crown6_0" asset="canopy0" position={[-3.9762,3.95258,-8.0]} rotation={[0,0,0]} scale="1.2360978873517334" castShadow="true" receiveShadow="true"  />
-            <Model id="crown6_1" asset="canopy1" position={[-4.40512,3.25597,-7.29236]} rotation={[0,0,0]} scale="1.0086997697891287" castShadow="true" receiveShadow="true"  />
-            <Model id="crown6_2" asset="canopy2" position={[-5.0,3.23662,-7.32017]} rotation={[0,0,0]} scale="1.281186915535908" castShadow="true" receiveShadow="true"  />
-            <Model id="crown6_3" asset="canopy3" position={[-5.68538,3.19163,-7.62033]} rotation={[0,0,0]} scale="1.0600071353535645" castShadow="true" receiveShadow="true"  />
-            <Model id="crown6_4" asset="canopy0" position={[-5.72201,3.61513,-8.0]} rotation={[0,0,0]} scale="1.194685119541446" castShadow="true" receiveShadow="true"  />
-            <Model id="crown6_5" asset="canopy1" position={[-5.42748,3.50746,-8.56659]} rotation={[0,0,0]} scale="1.2236380158752727" castShadow="true" receiveShadow="true"  />
-            <Model id="crown6_6" asset="canopy2" position={[-5.0,3.21909,-9.17167]} rotation={[0,0,0]} scale="1.025872306192753" castShadow="true" receiveShadow="true"  />
-            <Model id="crown6_7" asset="canopy3" position={[-4.49666,3.3244,-8.4106]} rotation={[0,0,0]} scale="1.0835757247515188" castShadow="true" receiveShadow="true"  />
-            <Model id="trunk7" asset="trunk" position={[4,1.82,-8]} rotation={[4.02369,0,-2.03682]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="crown7_0" asset="canopy0" position={[5.05787,3.81668,-8.0]} rotation={[0,0,0]} scale="1.0972372611468173" castShadow="true" receiveShadow="true"  />
-            <Model id="crown7_1" asset="canopy1" position={[4.43594,3.55177,-7.26256]} rotation={[0,0,0]} scale="1.2336945443554526" castShadow="true" receiveShadow="true"  />
-            <Model id="crown7_2" asset="canopy2" position={[4.0,3.82346,-7.34264]} rotation={[0,0,0]} scale="1.087622711982353" castShadow="true" receiveShadow="true"  />
-            <Model id="crown7_3" asset="canopy3" position={[3.294,3.45359,-7.38261]} rotation={[0,0,0]} scale="1.1331389329665507" castShadow="true" receiveShadow="true"  />
-            <Model id="crown7_4" asset="canopy0" position={[3.07795,3.21877,-8.0]} rotation={[0,0,0]} scale="0.9191023762120083" castShadow="true" receiveShadow="true"  />
-            <Model id="crown7_5" asset="canopy1" position={[3.30481,3.78362,-8.37477]} rotation={[0,0,0]} scale="0.8837380267168977" castShadow="true" receiveShadow="true"  />
-            <Model id="crown7_6" asset="canopy2" position={[4.0,3.98877,-8.77764]} rotation={[0,0,0]} scale="1.2616654037648534" castShadow="true" receiveShadow="true"  />
-            <Model id="crown7_7" asset="canopy3" position={[4.61977,3.29953,-8.79584]} rotation={[0,0,0]} scale="1.0137835298018183" castShadow="true" receiveShadow="true"  />
-            <Model id="trunk8" asset="trunk" position={[0,1.82,-9]} rotation={[4.74147,0,-4.36105]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="crown8_0" asset="canopy0" position={[0.84948,3.90664,-9.0]} rotation={[0,0,0]} scale="0.8621617055207058" castShadow="true" receiveShadow="true"  />
-            <Model id="crown8_1" asset="canopy1" position={[0.66147,3.41133,-8.34686]} rotation={[0,0,0]} scale="0.9926219007169415" castShadow="true" receiveShadow="true"  />
-            <Model id="crown8_2" asset="canopy2" position={[0.0,3.50927,-8.27391]} rotation={[0,0,0]} scale="1.184222265034365" castShadow="true" receiveShadow="true"  />
-            <Model id="crown8_3" asset="canopy3" position={[-0.67817,3.82871,-8.3841]} rotation={[0,0,0]} scale="1.2083169225430603" castShadow="true" receiveShadow="true"  />
-            <Model id="crown8_4" asset="canopy0" position={[-0.97461,3.6399,-9.0]} rotation={[0,0,0]} scale="0.8986301061881704" castShadow="true" receiveShadow="true"  />
-            <Model id="crown8_5" asset="canopy1" position={[-0.47534,3.77391,-9.71732]} rotation={[0,0,0]} scale="0.9355156431288801" castShadow="true" receiveShadow="true"  />
-            <Model id="crown8_6" asset="canopy2" position={[-0.0,3.62046,-9.79927]} rotation={[0,0,0]} scale="1.083441540527355" castShadow="true" receiveShadow="true"  />
-            <Model id="crown8_7" asset="canopy3" position={[0.67659,3.60664,-9.63855]} rotation={[0,0,0]} scale="0.8622424353290368" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub0" asset="shrub0" position={[3.7567,0.28,-10.13404]} rotation={[0,0,0]} scale="1.2650890483768165" castShadow="true" receiveShadow="true"  />
-            <Model id="fl0_0" asset="flower" position={[3.83862,0.66082,-10.21798]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl0_1" asset="flower" position={[3.67103,0.70943,-9.9323]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl0_2" asset="flower" position={[3.75311,0.78507,-10.14857]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl0_3" asset="flower" position={[3.83308,0.61057,-10.29202]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub1" asset="shrub1" position={[-3.12863,0.28,-6.93085]} rotation={[0,0,0]} scale="0.6734996733436616" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub2" asset="shrub2" position={[9.47386,0.28,-1.84397]} rotation={[0,0,0]} scale="0.7390659142415757" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub3" asset="shrub3" position={[-7.97723,0.28,-6.81005]} rotation={[0,0,0]} scale="0.6682566940192062" castShadow="true" receiveShadow="true"  />
-            <Model id="fl3_0" asset="flower" position={[-7.82883,0.62814,-6.63316]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl3_1" asset="flower" position={[-7.87823,0.72817,-6.87904]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl3_2" asset="flower" position={[-7.66462,0.79341,-6.55304]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl3_3" asset="flower" position={[-8.04504,0.58968,-6.91792]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub4" asset="shrub0" position={[-6.29247,0.28,-1.9627]} rotation={[0,0,0]} scale="0.7844571511804883" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub5" asset="shrub1" position={[4.33172,0.28,-1.57429]} rotation={[0,0,0]} scale="1.2098545173009687" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub6" asset="shrub2" position={[4.98812,0.28,-1.78471]} rotation={[0,0,0]} scale="1.2150632182654344" castShadow="true" receiveShadow="true"  />
-            <Model id="fl6_0" asset="flower" position={[5.25312,0.63112,-1.80489]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl6_1" asset="flower" position={[5.10489,0.62816,-1.77079]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl6_2" asset="flower" position={[4.6296,0.75824,-1.89557]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl6_3" asset="flower" position={[5.14694,0.77531,-1.62585]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub7" asset="shrub3" position={[-8.24151,0.28,-1.7464]} rotation={[0,0,0]} scale="0.7464056396388727" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub8" asset="shrub0" position={[-6.64856,0.28,-4.3488]} rotation={[0,0,0]} scale="0.9131394375314523" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub9" asset="shrub1" position={[8.27736,0.28,-4.34499]} rotation={[0,0,0]} scale="1.059656760430744" castShadow="true" receiveShadow="true"  />
-            <Model id="fl9_0" asset="flower" position={[8.06117,0.62614,-4.6416]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl9_1" asset="flower" position={[7.99933,0.77601,-4.26825]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl9_2" asset="flower" position={[7.88065,0.70753,-4.166]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl9_3" asset="flower" position={[8.65009,0.75137,-4.2775]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub10" asset="shrub2" position={[-3.71945,0.28,-4.55597]} rotation={[0,0,0]} scale="1.1309884340936427" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub12" asset="shrub0" position={[8.94024,0.28,-4.6929]} rotation={[0,0,0]} scale="0.9280165002017945" castShadow="true" receiveShadow="true"  />
-            <Model id="fl12_0" asset="flower" position={[9.06727,0.7891,-4.91386]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl12_1" asset="flower" position={[8.8319,0.58189,-4.67709]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl12_2" asset="flower" position={[8.66598,0.75189,-4.64664]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl12_3" asset="flower" position={[9.02177,0.73808,-4.97493]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub13" asset="shrub1" position={[4.45459,0.28,-6.86769]} rotation={[0,0,0]} scale="0.9458682568028839" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub14" asset="shrub2" position={[-4.52963,0.28,-6.71346]} rotation={[0,0,0]} scale="1.237576080768783" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub15" asset="shrub3" position={[-7.6771,0.28,-4.7783]} rotation={[0,0,0]} scale="1.077384702331628" castShadow="true" receiveShadow="true"  />
-            <Model id="fl15_0" asset="flower" position={[-7.92815,0.72306,-4.82928]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl15_1" asset="flower" position={[-7.46801,0.76008,-4.74218]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl15_2" asset="flower" position={[-7.34727,0.71581,-4.86802]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl15_3" asset="flower" position={[-7.92557,0.75491,-4.57226]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub16" asset="shrub0" position={[-3.27212,0.28,-1.57571]} rotation={[0,0,0]} scale="1.247544927070828" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub18" asset="shrub2" position={[-9.191,0.28,-1.62233]} rotation={[0,0,0]} scale="0.6717881345260742" castShadow="true" receiveShadow="true"  />
-            <Model id="fl18_0" asset="flower" position={[-9.30413,0.70468,-1.80197]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl18_1" asset="flower" position={[-9.06696,0.66834,-1.46963]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl18_2" asset="flower" position={[-9.0619,0.77254,-1.45518]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl18_3" asset="flower" position={[-9.49289,0.66091,-1.90356]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub20" asset="shrub0" position={[-2.42434,0.28,-6.99504]} rotation={[0,0,0]} scale="0.9310292818397443" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub21" asset="shrub1" position={[3.63482,0.28,-6.76906]} rotation={[0,0,0]} scale="1.2826082444970455" castShadow="true" receiveShadow="true"  />
-            <Model id="fl21_0" asset="flower" position={[3.9665,0.69118,-6.63867]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl21_1" asset="flower" position={[3.83801,0.76601,-6.78724]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl21_2" asset="flower" position={[3.95682,0.78639,-6.97725]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl21_3" asset="flower" position={[3.56707,0.6027,-7.05785]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub22" asset="shrub2" position={[8.65629,0.28,-4.7184]} rotation={[0,0,0]} scale="0.682273676831665" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub23" asset="shrub3" position={[-6.92214,0.28,-4.20978]} rotation={[0,0,0]} scale="0.9803660674136481" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub24" asset="shrub0" position={[7.29662,0.28,-1.91622]} rotation={[0,0,0]} scale="1.1037700140223148" castShadow="true" receiveShadow="true"  />
-            <Model id="fl24_0" asset="flower" position={[6.99023,0.58909,-2.11388]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl24_1" asset="flower" position={[7.05435,0.75491,-1.99615]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl24_2" asset="flower" position={[7.20799,0.77726,-1.97995]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl24_3" asset="flower" position={[7.27363,0.60472,-1.99771]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub26" asset="shrub2" position={[6.35036,0.28,-4.21886]} rotation={[0,0,0]} scale="0.9608219331671288" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub27" asset="shrub3" position={[-7.9455,0.28,-4.57416]} rotation={[0,0,0]} scale="0.8887745673085736" castShadow="true" receiveShadow="true"  />
-            <Model id="fl27_0" asset="flower" position={[-7.74698,0.60591,-4.3852]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl27_1" asset="flower" position={[-7.5895,0.79518,-4.81256]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl27_2" asset="flower" position={[-8.01345,0.62784,-4.60269]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl27_3" asset="flower" position={[-7.56665,0.63639,-4.7298]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub29" asset="shrub1" position={[-2.89666,0.28,-7.18219]} rotation={[0,0,0]} scale="1.1754317193333186" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub30" asset="shrub2" position={[6.783,0.28,-1.72021]} rotation={[0,0,0]} scale="1.1338578912340607" castShadow="true" receiveShadow="true"  />
-            <Model id="fl30_0" asset="flower" position={[7.16627,0.74224,-1.45921]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl30_1" asset="flower" position={[7.16196,0.6582,-2.00439]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl30_2" asset="flower" position={[6.39281,0.68402,-1.64141]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl30_3" asset="flower" position={[6.88178,0.62305,-1.50804]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub32" asset="shrub0" position={[-3.98642,0.28,-10.16785]} rotation={[0,0,0]} scale="0.7267683907870479" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub33" asset="shrub1" position={[5.66055,0.28,-1.57774]} rotation={[0,0,0]} scale="0.978529766935113" castShadow="true" receiveShadow="true"  />
-            <Model id="fl33_0" asset="flower" position={[5.55578,0.68308,-1.74721]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl33_1" asset="flower" position={[5.44303,0.61089,-1.73962]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl33_2" asset="flower" position={[5.64557,0.6344,-1.38874]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl33_3" asset="flower" position={[5.4547,0.6665,-1.44133]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub34" asset="shrub2" position={[6.05169,0.28,-1.59693]} rotation={[0,0,0]} scale="0.9183196272237205" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub35" asset="shrub3" position={[-2.33131,0.28,-7.18234]} rotation={[0,0,0]} scale="0.6765669922619025" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub36" asset="shrub0" position={[4.73508,0.28,-6.76732]} rotation={[0,0,0]} scale="1.2815120321506035" castShadow="true" receiveShadow="true"  />
-            <Model id="fl36_0" asset="flower" position={[4.58593,0.70105,-6.73568]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl36_1" asset="flower" position={[4.49929,0.68169,-6.97265]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl36_2" asset="flower" position={[4.42486,0.59399,-6.78981]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl36_3" asset="flower" position={[4.82899,0.76919,-6.72385]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub37" asset="shrub1" position={[2.18734,0.28,-4.747]} rotation={[0,0,0]} scale="1.187476547616531" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub38" asset="shrub2" position={[8.55195,0.28,-4.28007]} rotation={[0,0,0]} scale="0.7473647816444815" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub41" asset="shrub1" position={[-6.93063,0.28,-10.05691]} rotation={[0,0,0]} scale="1.068909436935682" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub42" asset="shrub2" position={[5.49719,0.28,-10.00454]} rotation={[0,0,0]} scale="0.8592576285746771" castShadow="true" receiveShadow="true"  />
-            <Model id="fl42_0" asset="flower" position={[5.38539,0.78026,-9.77522]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl42_1" asset="flower" position={[5.83999,0.7233,-9.78908]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl42_2" asset="flower" position={[5.72211,0.72242,-10.21416]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="fl42_3" asset="flower" position={[5.28391,0.80083,-10.28365]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub43" asset="shrub3" position={[-5.85379,0.28,-1.73234]} rotation={[0,0,0]} scale="0.8353384808360329" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub44" asset="shrub0" position={[-7.74888,0.28,-1.82907]} rotation={[0,0,0]} scale="0.7003308617686692" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub46" asset="shrub2" position={[-8.21115,0.28,-4.70661]} rotation={[0,0,0]} scale="1.1834946822436883" castShadow="true" receiveShadow="true"  />
-            <Model id="shrub47" asset="shrub3" position={[-5.9734,0.28,-4.59346]} rotation={[0,0,0]} scale="0.7799969954929405" castShadow="true" receiveShadow="true"  />
-            <Model id="tower0" asset="tower_shape0" position={[-10.0,1.42112,-13]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window0_0" asset="windowstrip" position={[-10.0,0.3,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window0_1" asset="windowstrip" position={[-10.0,0.65,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window0_2" asset="windowstrip" position={[-10.0,1.0,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window0_3" asset="windowstrip" position={[-10.0,1.35,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window0_4" asset="windowstrip" position={[-10.0,1.7,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window0_5" asset="windowstrip" position={[-10.0,2.05,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window0_6" asset="windowstrip" position={[-10.0,2.4,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window0_7" asset="windowstrip" position={[-10.0,2.75,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tower1" asset="tower_shape1" position={[-7.6,2.59445,-13]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window1_0" asset="windowstrip" position={[-7.6,0.3,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window1_1" asset="windowstrip" position={[-7.6,0.65,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window1_2" asset="windowstrip" position={[-7.6,1.0,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window1_3" asset="windowstrip" position={[-7.6,1.35,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window1_4" asset="windowstrip" position={[-7.6,1.7,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window1_5" asset="windowstrip" position={[-7.6,2.05,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window1_6" asset="windowstrip" position={[-7.6,2.4,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window1_7" asset="windowstrip" position={[-7.6,2.75,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window1_8" asset="windowstrip" position={[-7.6,3.1,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window1_9" asset="windowstrip" position={[-7.6,3.45,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window1_10" asset="windowstrip" position={[-7.6,3.8,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window1_11" asset="windowstrip" position={[-7.6,4.15,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window1_12" asset="windowstrip" position={[-7.6,4.5,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window1_13" asset="windowstrip" position={[-7.6,4.85,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tower2" asset="tower_shape2" position={[-5.2,2.5728,-13]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window2_0" asset="windowstrip" position={[-5.2,0.3,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window2_1" asset="windowstrip" position={[-5.2,0.65,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window2_2" asset="windowstrip" position={[-5.2,1.0,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window2_3" asset="windowstrip" position={[-5.2,1.35,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window2_4" asset="windowstrip" position={[-5.2,1.7,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window2_5" asset="windowstrip" position={[-5.2,2.05,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window2_6" asset="windowstrip" position={[-5.2,2.4,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window2_7" asset="windowstrip" position={[-5.2,2.75,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window2_8" asset="windowstrip" position={[-5.2,3.1,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window2_9" asset="windowstrip" position={[-5.2,3.45,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window2_10" asset="windowstrip" position={[-5.2,3.8,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window2_11" asset="windowstrip" position={[-5.2,4.15,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window2_12" asset="windowstrip" position={[-5.2,4.5,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window2_13" asset="windowstrip" position={[-5.2,4.85,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tower3" asset="tower_shape3" position={[-2.8,2.57327,-13]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window3_0" asset="windowstrip" position={[-2.8,0.3,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window3_1" asset="windowstrip" position={[-2.8,0.65,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window3_2" asset="windowstrip" position={[-2.8,1.0,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window3_3" asset="windowstrip" position={[-2.8,1.35,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window3_4" asset="windowstrip" position={[-2.8,1.7,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window3_5" asset="windowstrip" position={[-2.8,2.05,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window3_6" asset="windowstrip" position={[-2.8,2.4,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window3_7" asset="windowstrip" position={[-2.8,2.75,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window3_8" asset="windowstrip" position={[-2.8,3.1,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window3_9" asset="windowstrip" position={[-2.8,3.45,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window3_10" asset="windowstrip" position={[-2.8,3.8,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window3_11" asset="windowstrip" position={[-2.8,4.15,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window3_12" asset="windowstrip" position={[-2.8,4.5,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window3_13" asset="windowstrip" position={[-2.8,4.85,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tower4" asset="tower_shape4" position={[-0.4,1.69353,-13]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window4_0" asset="windowstrip" position={[-0.4,0.3,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window4_1" asset="windowstrip" position={[-0.4,0.65,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window4_2" asset="windowstrip" position={[-0.4,1.0,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window4_3" asset="windowstrip" position={[-0.4,1.35,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window4_4" asset="windowstrip" position={[-0.4,1.7,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window4_5" asset="windowstrip" position={[-0.4,2.05,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window4_6" asset="windowstrip" position={[-0.4,2.4,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window4_7" asset="windowstrip" position={[-0.4,2.75,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window4_8" asset="windowstrip" position={[-0.4,3.1,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tower5" asset="tower_shape5" position={[2.0,1.40947,-13]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window5_0" asset="windowstrip" position={[2.0,0.3,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window5_1" asset="windowstrip" position={[2.0,0.65,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window5_2" asset="windowstrip" position={[2.0,1.0,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window5_3" asset="windowstrip" position={[2.0,1.35,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window5_4" asset="windowstrip" position={[2.0,1.7,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window5_5" asset="windowstrip" position={[2.0,2.05,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window5_6" asset="windowstrip" position={[2.0,2.4,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window5_7" asset="windowstrip" position={[2.0,2.75,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tower6" asset="tower_shape6" position={[4.4,2.40379,-13]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window6_0" asset="windowstrip" position={[4.4,0.3,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window6_1" asset="windowstrip" position={[4.4,0.65,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window6_2" asset="windowstrip" position={[4.4,1.0,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window6_3" asset="windowstrip" position={[4.4,1.35,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window6_4" asset="windowstrip" position={[4.4,1.7,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window6_5" asset="windowstrip" position={[4.4,2.05,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window6_6" asset="windowstrip" position={[4.4,2.4,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window6_7" asset="windowstrip" position={[4.4,2.75,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window6_8" asset="windowstrip" position={[4.4,3.1,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window6_9" asset="windowstrip" position={[4.4,3.45,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window6_10" asset="windowstrip" position={[4.4,3.8,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window6_11" asset="windowstrip" position={[4.4,4.15,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window6_12" asset="windowstrip" position={[4.4,4.5,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tower7" asset="tower_shape7" position={[6.8,1.61902,-13]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window7_0" asset="windowstrip" position={[6.8,0.3,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window7_1" asset="windowstrip" position={[6.8,0.65,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window7_2" asset="windowstrip" position={[6.8,1.0,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window7_3" asset="windowstrip" position={[6.8,1.35,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window7_4" asset="windowstrip" position={[6.8,1.7,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window7_5" asset="windowstrip" position={[6.8,2.05,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window7_6" asset="windowstrip" position={[6.8,2.4,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window7_7" asset="windowstrip" position={[6.8,2.75,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window7_8" asset="windowstrip" position={[6.8,3.1,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="tower8" asset="tower_shape8" position={[9.2,2.27684,-13]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window8_0" asset="windowstrip" position={[9.2,0.3,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window8_1" asset="windowstrip" position={[9.2,0.65,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window8_2" asset="windowstrip" position={[9.2,1.0,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window8_3" asset="windowstrip" position={[9.2,1.35,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window8_4" asset="windowstrip" position={[9.2,1.7,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window8_5" asset="windowstrip" position={[9.2,2.05,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window8_6" asset="windowstrip" position={[9.2,2.4,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window8_7" asset="windowstrip" position={[9.2,2.75,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window8_8" asset="windowstrip" position={[9.2,3.1,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window8_9" asset="windowstrip" position={[9.2,3.45,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window8_10" asset="windowstrip" position={[9.2,3.8,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window8_11" asset="windowstrip" position={[9.2,4.15,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="window8_12" asset="windowstrip" position={[9.2,4.5,-12.49]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="pole0" asset="pole" position={[-1.3,1.3,-4]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="cap0" asset="lampcap" position={[-1.3,2.85,-4]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="pole1" asset="pole" position={[1.3,1.3,-8]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="lantern1" asset="lampbox" position={[1.3,2.65,-8]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="cap1" asset="lampcap" position={[1.3,2.85,-8]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="pole2" asset="pole" position={[-6,1.3,1.2]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="lantern2" asset="lampbox" position={[-6,2.65,1.2]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="cap2" asset="lampcap" position={[-6,2.85,1.2]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="pole3" asset="pole" position={[6,1.3,1.2]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="lantern3" asset="lampbox" position={[6,2.65,1.2]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="cap3" asset="lampcap" position={[6,2.85,1.2]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="sketchbook" asset="cover" position={[-3,0.63,0.35]} rotation={[8,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="paper" asset="drawing" position={[-3,0.65,0.35]} rotation={[-82,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="spare" asset="sheet" position={[-2.4,0.555,0.1]} rotation={[-90,0,12]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="book" asset="bookcover" position={[3,0.64,0.3]} rotation={[-18,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="book_pages" asset="bookpages" position={[3,0.661,0.3]} rotation={[-18,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="artist" asset="artist_character1" profile="artist_profile" position={[-3,0,0]} scaleMode="normalize_height" scale="1.72" castShadow="true" receiveShadow="true">
+            <Model
+              id="ground_model"
+              asset="ground"
+              position={[0,-0.14,-3]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="path_model"
+              asset="path"
+              position={[0,-0.06,1.0]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crosspath_model"
+              asset="crosspath"
+              position={[0,-0.07,-5]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_-8_2"
+              asset="tile"
+              position={[-8.0,0.006,1.13]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_-7_1"
+              asset="tile"
+              position={[-6.68,0.006,0.34]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_-7_4"
+              asset="tile"
+              position={[-7.0,0.006,2.71]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_-6_0"
+              asset="tile"
+              position={[-6.0,0.006,-0.45]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_-6_3"
+              asset="tile"
+              position={[-5.68,0.006,1.92]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_-5_2"
+              asset="tile"
+              position={[-5.0,0.006,1.13]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_-4_1"
+              asset="tile"
+              position={[-3.68,0.006,0.34]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_-4_4"
+              asset="tile"
+              position={[-4.0,0.006,2.71]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_-3_0"
+              asset="tile"
+              position={[-3.0,0.006,-0.45]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_-3_3"
+              asset="tile"
+              position={[-2.68,0.006,1.92]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_-2_2"
+              asset="tile"
+              position={[-2.0,0.006,1.13]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_-1_1"
+              asset="tile"
+              position={[-0.68,0.006,0.34]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_-1_4"
+              asset="tile"
+              position={[-1.0,0.006,2.71]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_0_0"
+              asset="tile"
+              position={[0.0,0.006,-0.45]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_0_3"
+              asset="tile"
+              position={[0.32,0.006,1.92]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_1_2"
+              asset="tile"
+              position={[1.0,0.006,1.13]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_2_1"
+              asset="tile"
+              position={[2.32,0.006,0.34]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_2_4"
+              asset="tile"
+              position={[2.0,0.006,2.71]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_3_0"
+              asset="tile"
+              position={[3.0,0.006,-0.45]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_3_3"
+              asset="tile"
+              position={[3.32,0.006,1.92]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_4_2"
+              asset="tile"
+              position={[4.0,0.006,1.13]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_5_1"
+              asset="tile"
+              position={[5.32,0.006,0.34]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_5_4"
+              asset="tile"
+              position={[5.0,0.006,2.71]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_6_0"
+              asset="tile"
+              position={[6.0,0.006,-0.45]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_6_3"
+              asset="tile"
+              position={[6.32,0.006,1.92]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_7_2"
+              asset="tile"
+              position={[7.0,0.006,1.13]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_8_1"
+              asset="tile"
+              position={[8.32,0.006,0.34]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tile_8_4"
+              asset="tile"
+              position={[8.0,0.006,2.71]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="bench0"
+              asset="bench"
+              position={[-3,0,0]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="bench1"
+              asset="bench"
+              position={[3,0,0]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="bench2"
+              asset="bench"
+              position={[-6,0,-5]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="bench3"
+              asset="bench"
+              position={[5,0,-6]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="trunk0"
+              asset="trunk"
+              position={[-5,1.82,-1.6]}
+              rotation={[3.94111,0,7.35649]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown0_0"
+              asset="canopy0"
+              position={[-4.32922,3.31407,-1.6]}
+              rotation={[0,0,0]}
+              scale="1.191491200018132"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown0_1"
+              asset="canopy1"
+              position={[-4.28299,3.52554,-1.00219]}
+              rotation={[0,0,0]}
+              scale="1.0269939358667886"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown0_2"
+              asset="canopy2"
+              position={[-5.0,3.93853,-0.89067]}
+              rotation={[0,0,0]}
+              scale="0.8527316943806372"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown0_3"
+              asset="canopy3"
+              position={[-5.8708,3.84519,-1.17786]}
+              rotation={[0,0,0]}
+              scale="0.8355199089789875"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown0_4"
+              asset="canopy0"
+              position={[-6.22311,3.92356,-1.6]}
+              rotation={[0,0,0]}
+              scale="1.1760762082726333"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown0_5"
+              asset="canopy1"
+              position={[-5.80413,3.44327,-2.41248]}
+              rotation={[0,0,0]}
+              scale="1.167525859057402"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown0_6"
+              asset="canopy2"
+              position={[-5.0,3.28102,-2.45703]}
+              rotation={[0,0,0]}
+              scale="0.9528224949032026"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown0_7"
+              asset="canopy3"
+              position={[-4.17685,3.6195,-2.02293]}
+              rotation={[0,0,0]}
+              scale="1.006390649240342"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="trunk1"
+              asset="trunk"
+              position={[-1.8,1.82,-3.3]}
+              rotation={[-5.86752,0,2.4812]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown1_0"
+              asset="canopy0"
+              position={[-0.73346,3.42205,-3.3]}
+              rotation={[0,0,0]}
+              scale="1.087644417576698"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown1_1"
+              asset="canopy1"
+              position={[-1.02088,3.76686,-2.66309]}
+              rotation={[0,0,0]}
+              scale="0.8327357970095831"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown1_2"
+              asset="canopy2"
+              position={[-1.8,3.65127,-2.52162]}
+              rotation={[0,0,0]}
+              scale="0.8036083916471652"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown1_3"
+              asset="canopy3"
+              position={[-2.40156,3.5086,-2.45286]}
+              rotation={[0,0,0]}
+              scale="0.9069498084439094"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown1_4"
+              asset="canopy0"
+              position={[-2.78652,3.80099,-3.3]}
+              rotation={[0,0,0]}
+              scale="0.9169194912140741"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown1_5"
+              asset="canopy1"
+              position={[-2.66342,3.86609,-3.84918]}
+              rotation={[0,0,0]}
+              scale="1.2011833215191028"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown1_6"
+              asset="canopy2"
+              position={[-1.8,3.21902,-3.88945]}
+              rotation={[0,0,0]}
+              scale="0.91644977186817"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown1_7"
+              asset="canopy3"
+              position={[-1.15183,3.65996,-3.83009]}
+              rotation={[0,0,0]}
+              scale="0.9769932237792198"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="trunk2"
+              asset="trunk"
+              position={[2,1.82,-3.4]}
+              rotation={[-4.47409,0,-7.54945]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown2_0"
+              asset="canopy0"
+              position={[3.14723,3.24129,-3.4]}
+              rotation={[0,0,0]}
+              scale="1.0809029433709063"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown2_1"
+              asset="canopy1"
+              position={[2.53097,3.50554,-2.79522]}
+              rotation={[0,0,0]}
+              scale="0.810444567783632"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown2_2"
+              asset="canopy2"
+              position={[2.0,3.44545,-2.52591]}
+              rotation={[0,0,0]}
+              scale="1.2299718368562245"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown2_3"
+              asset="canopy3"
+              position={[1.25223,3.78906,-2.94094]}
+              rotation={[0,0,0]}
+              scale="1.1155675598561978"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown2_4"
+              asset="canopy0"
+              position={[1.20274,3.24755,-3.4]}
+              rotation={[0,0,0]}
+              scale="0.8804501403949874"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown2_5"
+              asset="canopy1"
+              position={[1.6142,3.77243,-3.88062]}
+              rotation={[0,0,0]}
+              scale="0.8898059038363464"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown2_6"
+              asset="canopy2"
+              position={[2.0,3.25287,-4.56849]}
+              rotation={[0,0,0]}
+              scale="0.9366971668647279"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown2_7"
+              asset="canopy3"
+              position={[2.71599,3.95448,-3.90296]}
+              rotation={[0,0,0]}
+              scale="1.0429410483396533"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="trunk3"
+              asset="trunk"
+              position={[5.5,1.82,-2.0]}
+              rotation={[7.54367,0,-7.24065]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown3_0"
+              asset="canopy0"
+              position={[6.60083,3.72339,-2.0]}
+              rotation={[0,0,0]}
+              scale="1.2897065487240145"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown3_1"
+              asset="canopy1"
+              position={[6.01178,3.2334,-1.32855]}
+              rotation={[0,0,0]}
+              scale="1.114813102430919"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown3_2"
+              asset="canopy2"
+              position={[5.5,3.31594,-1.12824]}
+              rotation={[0,0,0]}
+              scale="1.1144944248060007"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown3_3"
+              asset="canopy3"
+              position={[4.73885,3.87339,-1.63828]}
+              rotation={[0,0,0]}
+              scale="0.9657882447346064"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown3_4"
+              asset="canopy0"
+              position={[4.2788,3.41285,-2.0]}
+              rotation={[0,0,0]}
+              scale="0.8364408828357757"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown3_5"
+              asset="canopy1"
+              position={[4.65042,3.66718,-2.80996]}
+              rotation={[0,0,0]}
+              scale="1.1809980829986741"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown3_6"
+              asset="canopy2"
+              position={[5.5,3.7184,-2.86929]}
+              rotation={[0,0,0]}
+              scale="0.9036238374846777"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown3_7"
+              asset="canopy3"
+              position={[5.97705,3.54824,-2.62193]}
+              rotation={[0,0,0]}
+              scale="0.9340425107712308"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="trunk4"
+              asset="trunk"
+              position={[-7,1.82,3]}
+              rotation={[7.04398,0,4.83394]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown4_0"
+              asset="canopy0"
+              position={[-6.42769,3.50028,3.0]}
+              rotation={[0,0,0]}
+              scale="1.1587193371404938"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown4_1"
+              asset="canopy1"
+              position={[-6.34331,3.97927,3.4896]}
+              rotation={[0,0,0]}
+              scale="0.9485206179984864"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown4_2"
+              asset="canopy2"
+              position={[-7.0,3.51312,3.67129]}
+              rotation={[0,0,0]}
+              scale="0.9250872218401844"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown4_3"
+              asset="canopy3"
+              position={[-7.44577,3.31301,3.5129]}
+              rotation={[0,0,0]}
+              scale="1.1901281495861538"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown4_4"
+              asset="canopy0"
+              position={[-7.54214,3.76224,3.0]}
+              rotation={[0,0,0]}
+              scale="1.2076410869831284"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown4_5"
+              asset="canopy1"
+              position={[-7.73313,3.55204,2.62967]}
+              rotation={[0,0,0]}
+              scale="0.8103437319004585"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown4_6"
+              asset="canopy2"
+              position={[-7.0,3.53,1.8949]}
+              rotation={[0,0,0]}
+              scale="1.2413296729758592"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown4_7"
+              asset="canopy3"
+              position={[-6.40975,3.33976,2.41406]}
+              rotation={[0,0,0]}
+              scale="0.8548825421201234"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="trunk5"
+              asset="trunk"
+              position={[7,1.82,3]}
+              rotation={[6.0411,0,4.39265]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown5_0"
+              asset="canopy0"
+              position={[8.10586,3.92673,3.0]}
+              rotation={[0,0,0]}
+              scale="1.2733629647054983"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown5_1"
+              asset="canopy1"
+              position={[7.41116,3.77598,3.56001]}
+              rotation={[0,0,0]}
+              scale="1.1326434225161415"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown5_2"
+              asset="canopy2"
+              position={[7.0,3.44349,3.76477]}
+              rotation={[0,0,0]}
+              scale="1.1088898839945067"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown5_3"
+              asset="canopy3"
+              position={[6.20985,3.27749,3.43947]}
+              rotation={[0,0,0]}
+              scale="0.9545138510018503"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown5_4"
+              asset="canopy0"
+              position={[6.15298,3.61665,3.0]}
+              rotation={[0,0,0]}
+              scale="0.8514790085848566"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown5_5"
+              asset="canopy1"
+              position={[6.3145,3.79932,2.42188]}
+              rotation={[0,0,0]}
+              scale="1.0182911916355781"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown5_6"
+              asset="canopy2"
+              position={[7.0,3.24331,2.39622]}
+              rotation={[0,0,0]}
+              scale="1.1459637774189302"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown5_7"
+              asset="canopy3"
+              position={[7.35619,3.38093,2.35561]}
+              rotation={[0,0,0]}
+              scale="0.8633526903672435"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="trunk6"
+              asset="trunk"
+              position={[-5,1.82,-8]}
+              rotation={[7.6316,0,0.54225]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown6_0"
+              asset="canopy0"
+              position={[-3.9762,3.95258,-8.0]}
+              rotation={[0,0,0]}
+              scale="1.2360978873517334"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown6_1"
+              asset="canopy1"
+              position={[-4.40512,3.25597,-7.29236]}
+              rotation={[0,0,0]}
+              scale="1.0086997697891287"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown6_2"
+              asset="canopy2"
+              position={[-5.0,3.23662,-7.32017]}
+              rotation={[0,0,0]}
+              scale="1.281186915535908"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown6_3"
+              asset="canopy3"
+              position={[-5.68538,3.19163,-7.62033]}
+              rotation={[0,0,0]}
+              scale="1.0600071353535645"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown6_4"
+              asset="canopy0"
+              position={[-5.72201,3.61513,-8.0]}
+              rotation={[0,0,0]}
+              scale="1.194685119541446"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown6_5"
+              asset="canopy1"
+              position={[-5.42748,3.50746,-8.56659]}
+              rotation={[0,0,0]}
+              scale="1.2236380158752727"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown6_6"
+              asset="canopy2"
+              position={[-5.0,3.21909,-9.17167]}
+              rotation={[0,0,0]}
+              scale="1.025872306192753"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown6_7"
+              asset="canopy3"
+              position={[-4.49666,3.3244,-8.4106]}
+              rotation={[0,0,0]}
+              scale="1.0835757247515188"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="trunk7"
+              asset="trunk"
+              position={[4,1.82,-8]}
+              rotation={[4.02369,0,-2.03682]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown7_0"
+              asset="canopy0"
+              position={[5.05787,3.81668,-8.0]}
+              rotation={[0,0,0]}
+              scale="1.0972372611468173"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown7_1"
+              asset="canopy1"
+              position={[4.43594,3.55177,-7.26256]}
+              rotation={[0,0,0]}
+              scale="1.2336945443554526"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown7_2"
+              asset="canopy2"
+              position={[4.0,3.82346,-7.34264]}
+              rotation={[0,0,0]}
+              scale="1.087622711982353"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown7_3"
+              asset="canopy3"
+              position={[3.294,3.45359,-7.38261]}
+              rotation={[0,0,0]}
+              scale="1.1331389329665507"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown7_4"
+              asset="canopy0"
+              position={[3.07795,3.21877,-8.0]}
+              rotation={[0,0,0]}
+              scale="0.9191023762120083"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown7_5"
+              asset="canopy1"
+              position={[3.30481,3.78362,-8.37477]}
+              rotation={[0,0,0]}
+              scale="0.8837380267168977"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown7_6"
+              asset="canopy2"
+              position={[4.0,3.98877,-8.77764]}
+              rotation={[0,0,0]}
+              scale="1.2616654037648534"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown7_7"
+              asset="canopy3"
+              position={[4.61977,3.29953,-8.79584]}
+              rotation={[0,0,0]}
+              scale="1.0137835298018183"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="trunk8"
+              asset="trunk"
+              position={[0,1.82,-9]}
+              rotation={[4.74147,0,-4.36105]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown8_0"
+              asset="canopy0"
+              position={[0.84948,3.90664,-9.0]}
+              rotation={[0,0,0]}
+              scale="0.8621617055207058"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown8_1"
+              asset="canopy1"
+              position={[0.66147,3.41133,-8.34686]}
+              rotation={[0,0,0]}
+              scale="0.9926219007169415"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown8_2"
+              asset="canopy2"
+              position={[0.0,3.50927,-8.27391]}
+              rotation={[0,0,0]}
+              scale="1.184222265034365"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown8_3"
+              asset="canopy3"
+              position={[-0.67817,3.82871,-8.3841]}
+              rotation={[0,0,0]}
+              scale="1.2083169225430603"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown8_4"
+              asset="canopy0"
+              position={[-0.97461,3.6399,-9.0]}
+              rotation={[0,0,0]}
+              scale="0.8986301061881704"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown8_5"
+              asset="canopy1"
+              position={[-0.47534,3.77391,-9.71732]}
+              rotation={[0,0,0]}
+              scale="0.9355156431288801"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown8_6"
+              asset="canopy2"
+              position={[-0.0,3.62046,-9.79927]}
+              rotation={[0,0,0]}
+              scale="1.083441540527355"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="crown8_7"
+              asset="canopy3"
+              position={[0.67659,3.60664,-9.63855]}
+              rotation={[0,0,0]}
+              scale="0.8622424353290368"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub0"
+              asset="shrub0"
+              position={[3.7567,0.28,-10.13404]}
+              rotation={[0,0,0]}
+              scale="1.2650890483768165"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl0_0"
+              asset="flower"
+              position={[3.83862,0.66082,-10.21798]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl0_1"
+              asset="flower"
+              position={[3.67103,0.70943,-9.9323]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl0_2"
+              asset="flower"
+              position={[3.75311,0.78507,-10.14857]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl0_3"
+              asset="flower"
+              position={[3.83308,0.61057,-10.29202]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub1"
+              asset="shrub1"
+              position={[-3.12863,0.28,-6.93085]}
+              rotation={[0,0,0]}
+              scale="0.6734996733436616"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub2"
+              asset="shrub2"
+              position={[9.47386,0.28,-1.84397]}
+              rotation={[0,0,0]}
+              scale="0.7390659142415757"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub3"
+              asset="shrub3"
+              position={[-7.97723,0.28,-6.81005]}
+              rotation={[0,0,0]}
+              scale="0.6682566940192062"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl3_0"
+              asset="flower"
+              position={[-7.82883,0.62814,-6.63316]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl3_1"
+              asset="flower"
+              position={[-7.87823,0.72817,-6.87904]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl3_2"
+              asset="flower"
+              position={[-7.66462,0.79341,-6.55304]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl3_3"
+              asset="flower"
+              position={[-8.04504,0.58968,-6.91792]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub4"
+              asset="shrub0"
+              position={[-6.29247,0.28,-1.9627]}
+              rotation={[0,0,0]}
+              scale="0.7844571511804883"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub5"
+              asset="shrub1"
+              position={[4.33172,0.28,-1.57429]}
+              rotation={[0,0,0]}
+              scale="1.2098545173009687"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub6"
+              asset="shrub2"
+              position={[4.98812,0.28,-1.78471]}
+              rotation={[0,0,0]}
+              scale="1.2150632182654344"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl6_0"
+              asset="flower"
+              position={[5.25312,0.63112,-1.80489]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl6_1"
+              asset="flower"
+              position={[5.10489,0.62816,-1.77079]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl6_2"
+              asset="flower"
+              position={[4.6296,0.75824,-1.89557]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl6_3"
+              asset="flower"
+              position={[5.14694,0.77531,-1.62585]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub7"
+              asset="shrub3"
+              position={[-8.24151,0.28,-1.7464]}
+              rotation={[0,0,0]}
+              scale="0.7464056396388727"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub8"
+              asset="shrub0"
+              position={[-6.64856,0.28,-4.3488]}
+              rotation={[0,0,0]}
+              scale="0.9131394375314523"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub9"
+              asset="shrub1"
+              position={[8.27736,0.28,-4.34499]}
+              rotation={[0,0,0]}
+              scale="1.059656760430744"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl9_0"
+              asset="flower"
+              position={[8.06117,0.62614,-4.6416]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl9_1"
+              asset="flower"
+              position={[7.99933,0.77601,-4.26825]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl9_2"
+              asset="flower"
+              position={[7.88065,0.70753,-4.166]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl9_3"
+              asset="flower"
+              position={[8.65009,0.75137,-4.2775]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub10"
+              asset="shrub2"
+              position={[-3.71945,0.28,-4.55597]}
+              rotation={[0,0,0]}
+              scale="1.1309884340936427"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub12"
+              asset="shrub0"
+              position={[8.94024,0.28,-4.6929]}
+              rotation={[0,0,0]}
+              scale="0.9280165002017945"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl12_0"
+              asset="flower"
+              position={[9.06727,0.7891,-4.91386]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl12_1"
+              asset="flower"
+              position={[8.8319,0.58189,-4.67709]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl12_2"
+              asset="flower"
+              position={[8.66598,0.75189,-4.64664]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl12_3"
+              asset="flower"
+              position={[9.02177,0.73808,-4.97493]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub13"
+              asset="shrub1"
+              position={[4.45459,0.28,-6.86769]}
+              rotation={[0,0,0]}
+              scale="0.9458682568028839"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub14"
+              asset="shrub2"
+              position={[-4.52963,0.28,-6.71346]}
+              rotation={[0,0,0]}
+              scale="1.237576080768783"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub15"
+              asset="shrub3"
+              position={[-7.6771,0.28,-4.7783]}
+              rotation={[0,0,0]}
+              scale="1.077384702331628"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl15_0"
+              asset="flower"
+              position={[-7.92815,0.72306,-4.82928]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl15_1"
+              asset="flower"
+              position={[-7.46801,0.76008,-4.74218]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl15_2"
+              asset="flower"
+              position={[-7.34727,0.71581,-4.86802]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl15_3"
+              asset="flower"
+              position={[-7.92557,0.75491,-4.57226]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub16"
+              asset="shrub0"
+              position={[-3.27212,0.28,-1.57571]}
+              rotation={[0,0,0]}
+              scale="1.247544927070828"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub18"
+              asset="shrub2"
+              position={[-9.191,0.28,-1.62233]}
+              rotation={[0,0,0]}
+              scale="0.6717881345260742"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl18_0"
+              asset="flower"
+              position={[-9.30413,0.70468,-1.80197]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl18_1"
+              asset="flower"
+              position={[-9.06696,0.66834,-1.46963]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl18_2"
+              asset="flower"
+              position={[-9.0619,0.77254,-1.45518]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl18_3"
+              asset="flower"
+              position={[-9.49289,0.66091,-1.90356]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub20"
+              asset="shrub0"
+              position={[-2.42434,0.28,-6.99504]}
+              rotation={[0,0,0]}
+              scale="0.9310292818397443"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub21"
+              asset="shrub1"
+              position={[3.63482,0.28,-6.76906]}
+              rotation={[0,0,0]}
+              scale="1.2826082444970455"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl21_0"
+              asset="flower"
+              position={[3.9665,0.69118,-6.63867]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl21_1"
+              asset="flower"
+              position={[3.83801,0.76601,-6.78724]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl21_2"
+              asset="flower"
+              position={[3.95682,0.78639,-6.97725]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl21_3"
+              asset="flower"
+              position={[3.56707,0.6027,-7.05785]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub22"
+              asset="shrub2"
+              position={[8.65629,0.28,-4.7184]}
+              rotation={[0,0,0]}
+              scale="0.682273676831665"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub23"
+              asset="shrub3"
+              position={[-6.92214,0.28,-4.20978]}
+              rotation={[0,0,0]}
+              scale="0.9803660674136481"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub24"
+              asset="shrub0"
+              position={[7.29662,0.28,-1.91622]}
+              rotation={[0,0,0]}
+              scale="1.1037700140223148"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl24_0"
+              asset="flower"
+              position={[6.99023,0.58909,-2.11388]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl24_1"
+              asset="flower"
+              position={[7.05435,0.75491,-1.99615]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl24_2"
+              asset="flower"
+              position={[7.20799,0.77726,-1.97995]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl24_3"
+              asset="flower"
+              position={[7.27363,0.60472,-1.99771]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub26"
+              asset="shrub2"
+              position={[6.35036,0.28,-4.21886]}
+              rotation={[0,0,0]}
+              scale="0.9608219331671288"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub27"
+              asset="shrub3"
+              position={[-7.9455,0.28,-4.57416]}
+              rotation={[0,0,0]}
+              scale="0.8887745673085736"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl27_0"
+              asset="flower"
+              position={[-7.74698,0.60591,-4.3852]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl27_1"
+              asset="flower"
+              position={[-7.5895,0.79518,-4.81256]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl27_2"
+              asset="flower"
+              position={[-8.01345,0.62784,-4.60269]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl27_3"
+              asset="flower"
+              position={[-7.56665,0.63639,-4.7298]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub29"
+              asset="shrub1"
+              position={[-2.89666,0.28,-7.18219]}
+              rotation={[0,0,0]}
+              scale="1.1754317193333186"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub30"
+              asset="shrub2"
+              position={[6.783,0.28,-1.72021]}
+              rotation={[0,0,0]}
+              scale="1.1338578912340607"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl30_0"
+              asset="flower"
+              position={[7.16627,0.74224,-1.45921]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl30_1"
+              asset="flower"
+              position={[7.16196,0.6582,-2.00439]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl30_2"
+              asset="flower"
+              position={[6.39281,0.68402,-1.64141]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl30_3"
+              asset="flower"
+              position={[6.88178,0.62305,-1.50804]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub32"
+              asset="shrub0"
+              position={[-3.98642,0.28,-10.16785]}
+              rotation={[0,0,0]}
+              scale="0.7267683907870479"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub33"
+              asset="shrub1"
+              position={[5.66055,0.28,-1.57774]}
+              rotation={[0,0,0]}
+              scale="0.978529766935113"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl33_0"
+              asset="flower"
+              position={[5.55578,0.68308,-1.74721]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl33_1"
+              asset="flower"
+              position={[5.44303,0.61089,-1.73962]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl33_2"
+              asset="flower"
+              position={[5.64557,0.6344,-1.38874]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl33_3"
+              asset="flower"
+              position={[5.4547,0.6665,-1.44133]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub34"
+              asset="shrub2"
+              position={[6.05169,0.28,-1.59693]}
+              rotation={[0,0,0]}
+              scale="0.9183196272237205"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub35"
+              asset="shrub3"
+              position={[-2.33131,0.28,-7.18234]}
+              rotation={[0,0,0]}
+              scale="0.6765669922619025"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub36"
+              asset="shrub0"
+              position={[4.73508,0.28,-6.76732]}
+              rotation={[0,0,0]}
+              scale="1.2815120321506035"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl36_0"
+              asset="flower"
+              position={[4.58593,0.70105,-6.73568]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl36_1"
+              asset="flower"
+              position={[4.49929,0.68169,-6.97265]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl36_2"
+              asset="flower"
+              position={[4.42486,0.59399,-6.78981]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl36_3"
+              asset="flower"
+              position={[4.82899,0.76919,-6.72385]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub37"
+              asset="shrub1"
+              position={[2.18734,0.28,-4.747]}
+              rotation={[0,0,0]}
+              scale="1.187476547616531"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub38"
+              asset="shrub2"
+              position={[8.55195,0.28,-4.28007]}
+              rotation={[0,0,0]}
+              scale="0.7473647816444815"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub41"
+              asset="shrub1"
+              position={[-6.93063,0.28,-10.05691]}
+              rotation={[0,0,0]}
+              scale="1.068909436935682"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub42"
+              asset="shrub2"
+              position={[5.49719,0.28,-10.00454]}
+              rotation={[0,0,0]}
+              scale="0.8592576285746771"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl42_0"
+              asset="flower"
+              position={[5.38539,0.78026,-9.77522]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl42_1"
+              asset="flower"
+              position={[5.83999,0.7233,-9.78908]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl42_2"
+              asset="flower"
+              position={[5.72211,0.72242,-10.21416]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="fl42_3"
+              asset="flower"
+              position={[5.28391,0.80083,-10.28365]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub43"
+              asset="shrub3"
+              position={[-5.85379,0.28,-1.73234]}
+              rotation={[0,0,0]}
+              scale="0.8353384808360329"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub44"
+              asset="shrub0"
+              position={[-7.74888,0.28,-1.82907]}
+              rotation={[0,0,0]}
+              scale="0.7003308617686692"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub46"
+              asset="shrub2"
+              position={[-8.21115,0.28,-4.70661]}
+              rotation={[0,0,0]}
+              scale="1.1834946822436883"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="shrub47"
+              asset="shrub3"
+              position={[-5.9734,0.28,-4.59346]}
+              rotation={[0,0,0]}
+              scale="0.7799969954929405"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tower0"
+              asset="tower_shape0"
+              position={[-10.0,1.42112,-13]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window0_0"
+              asset="windowstrip"
+              position={[-10.0,0.3,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window0_1"
+              asset="windowstrip"
+              position={[-10.0,0.65,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window0_2"
+              asset="windowstrip"
+              position={[-10.0,1.0,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window0_3"
+              asset="windowstrip"
+              position={[-10.0,1.35,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window0_4"
+              asset="windowstrip"
+              position={[-10.0,1.7,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window0_5"
+              asset="windowstrip"
+              position={[-10.0,2.05,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window0_6"
+              asset="windowstrip"
+              position={[-10.0,2.4,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window0_7"
+              asset="windowstrip"
+              position={[-10.0,2.75,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tower1"
+              asset="tower_shape1"
+              position={[-7.6,2.59445,-13]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window1_0"
+              asset="windowstrip"
+              position={[-7.6,0.3,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window1_1"
+              asset="windowstrip"
+              position={[-7.6,0.65,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window1_2"
+              asset="windowstrip"
+              position={[-7.6,1.0,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window1_3"
+              asset="windowstrip"
+              position={[-7.6,1.35,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window1_4"
+              asset="windowstrip"
+              position={[-7.6,1.7,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window1_5"
+              asset="windowstrip"
+              position={[-7.6,2.05,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window1_6"
+              asset="windowstrip"
+              position={[-7.6,2.4,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window1_7"
+              asset="windowstrip"
+              position={[-7.6,2.75,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window1_8"
+              asset="windowstrip"
+              position={[-7.6,3.1,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window1_9"
+              asset="windowstrip"
+              position={[-7.6,3.45,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window1_10"
+              asset="windowstrip"
+              position={[-7.6,3.8,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window1_11"
+              asset="windowstrip"
+              position={[-7.6,4.15,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window1_12"
+              asset="windowstrip"
+              position={[-7.6,4.5,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window1_13"
+              asset="windowstrip"
+              position={[-7.6,4.85,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tower2"
+              asset="tower_shape2"
+              position={[-5.2,2.5728,-13]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window2_0"
+              asset="windowstrip"
+              position={[-5.2,0.3,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window2_1"
+              asset="windowstrip"
+              position={[-5.2,0.65,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window2_2"
+              asset="windowstrip"
+              position={[-5.2,1.0,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window2_3"
+              asset="windowstrip"
+              position={[-5.2,1.35,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window2_4"
+              asset="windowstrip"
+              position={[-5.2,1.7,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window2_5"
+              asset="windowstrip"
+              position={[-5.2,2.05,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window2_6"
+              asset="windowstrip"
+              position={[-5.2,2.4,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window2_7"
+              asset="windowstrip"
+              position={[-5.2,2.75,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window2_8"
+              asset="windowstrip"
+              position={[-5.2,3.1,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window2_9"
+              asset="windowstrip"
+              position={[-5.2,3.45,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window2_10"
+              asset="windowstrip"
+              position={[-5.2,3.8,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window2_11"
+              asset="windowstrip"
+              position={[-5.2,4.15,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window2_12"
+              asset="windowstrip"
+              position={[-5.2,4.5,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window2_13"
+              asset="windowstrip"
+              position={[-5.2,4.85,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tower3"
+              asset="tower_shape3"
+              position={[-2.8,2.57327,-13]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window3_0"
+              asset="windowstrip"
+              position={[-2.8,0.3,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window3_1"
+              asset="windowstrip"
+              position={[-2.8,0.65,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window3_2"
+              asset="windowstrip"
+              position={[-2.8,1.0,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window3_3"
+              asset="windowstrip"
+              position={[-2.8,1.35,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window3_4"
+              asset="windowstrip"
+              position={[-2.8,1.7,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window3_5"
+              asset="windowstrip"
+              position={[-2.8,2.05,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window3_6"
+              asset="windowstrip"
+              position={[-2.8,2.4,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window3_7"
+              asset="windowstrip"
+              position={[-2.8,2.75,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window3_8"
+              asset="windowstrip"
+              position={[-2.8,3.1,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window3_9"
+              asset="windowstrip"
+              position={[-2.8,3.45,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window3_10"
+              asset="windowstrip"
+              position={[-2.8,3.8,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window3_11"
+              asset="windowstrip"
+              position={[-2.8,4.15,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window3_12"
+              asset="windowstrip"
+              position={[-2.8,4.5,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window3_13"
+              asset="windowstrip"
+              position={[-2.8,4.85,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tower4"
+              asset="tower_shape4"
+              position={[-0.4,1.69353,-13]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window4_0"
+              asset="windowstrip"
+              position={[-0.4,0.3,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window4_1"
+              asset="windowstrip"
+              position={[-0.4,0.65,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window4_2"
+              asset="windowstrip"
+              position={[-0.4,1.0,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window4_3"
+              asset="windowstrip"
+              position={[-0.4,1.35,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window4_4"
+              asset="windowstrip"
+              position={[-0.4,1.7,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window4_5"
+              asset="windowstrip"
+              position={[-0.4,2.05,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window4_6"
+              asset="windowstrip"
+              position={[-0.4,2.4,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window4_7"
+              asset="windowstrip"
+              position={[-0.4,2.75,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window4_8"
+              asset="windowstrip"
+              position={[-0.4,3.1,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tower5"
+              asset="tower_shape5"
+              position={[2.0,1.40947,-13]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window5_0"
+              asset="windowstrip"
+              position={[2.0,0.3,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window5_1"
+              asset="windowstrip"
+              position={[2.0,0.65,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window5_2"
+              asset="windowstrip"
+              position={[2.0,1.0,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window5_3"
+              asset="windowstrip"
+              position={[2.0,1.35,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window5_4"
+              asset="windowstrip"
+              position={[2.0,1.7,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window5_5"
+              asset="windowstrip"
+              position={[2.0,2.05,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window5_6"
+              asset="windowstrip"
+              position={[2.0,2.4,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window5_7"
+              asset="windowstrip"
+              position={[2.0,2.75,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tower6"
+              asset="tower_shape6"
+              position={[4.4,2.40379,-13]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window6_0"
+              asset="windowstrip"
+              position={[4.4,0.3,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window6_1"
+              asset="windowstrip"
+              position={[4.4,0.65,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window6_2"
+              asset="windowstrip"
+              position={[4.4,1.0,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window6_3"
+              asset="windowstrip"
+              position={[4.4,1.35,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window6_4"
+              asset="windowstrip"
+              position={[4.4,1.7,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window6_5"
+              asset="windowstrip"
+              position={[4.4,2.05,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window6_6"
+              asset="windowstrip"
+              position={[4.4,2.4,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window6_7"
+              asset="windowstrip"
+              position={[4.4,2.75,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window6_8"
+              asset="windowstrip"
+              position={[4.4,3.1,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window6_9"
+              asset="windowstrip"
+              position={[4.4,3.45,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window6_10"
+              asset="windowstrip"
+              position={[4.4,3.8,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window6_11"
+              asset="windowstrip"
+              position={[4.4,4.15,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window6_12"
+              asset="windowstrip"
+              position={[4.4,4.5,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tower7"
+              asset="tower_shape7"
+              position={[6.8,1.61902,-13]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window7_0"
+              asset="windowstrip"
+              position={[6.8,0.3,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window7_1"
+              asset="windowstrip"
+              position={[6.8,0.65,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window7_2"
+              asset="windowstrip"
+              position={[6.8,1.0,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window7_3"
+              asset="windowstrip"
+              position={[6.8,1.35,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window7_4"
+              asset="windowstrip"
+              position={[6.8,1.7,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window7_5"
+              asset="windowstrip"
+              position={[6.8,2.05,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window7_6"
+              asset="windowstrip"
+              position={[6.8,2.4,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window7_7"
+              asset="windowstrip"
+              position={[6.8,2.75,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window7_8"
+              asset="windowstrip"
+              position={[6.8,3.1,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="tower8"
+              asset="tower_shape8"
+              position={[9.2,2.27684,-13]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window8_0"
+              asset="windowstrip"
+              position={[9.2,0.3,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window8_1"
+              asset="windowstrip"
+              position={[9.2,0.65,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window8_2"
+              asset="windowstrip"
+              position={[9.2,1.0,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window8_3"
+              asset="windowstrip"
+              position={[9.2,1.35,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window8_4"
+              asset="windowstrip"
+              position={[9.2,1.7,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window8_5"
+              asset="windowstrip"
+              position={[9.2,2.05,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window8_6"
+              asset="windowstrip"
+              position={[9.2,2.4,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window8_7"
+              asset="windowstrip"
+              position={[9.2,2.75,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window8_8"
+              asset="windowstrip"
+              position={[9.2,3.1,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window8_9"
+              asset="windowstrip"
+              position={[9.2,3.45,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window8_10"
+              asset="windowstrip"
+              position={[9.2,3.8,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window8_11"
+              asset="windowstrip"
+              position={[9.2,4.15,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="window8_12"
+              asset="windowstrip"
+              position={[9.2,4.5,-12.49]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="pole0"
+              asset="pole"
+              position={[-1.3,1.3,-4]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="cap0"
+              asset="lampcap"
+              position={[-1.3,2.85,-4]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="pole1"
+              asset="pole"
+              position={[1.3,1.3,-8]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="lantern1"
+              asset="lampbox"
+              position={[1.3,2.65,-8]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="cap1"
+              asset="lampcap"
+              position={[1.3,2.85,-8]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="pole2"
+              asset="pole"
+              position={[-6,1.3,1.2]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="lantern2"
+              asset="lampbox"
+              position={[-6,2.65,1.2]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="cap2"
+              asset="lampcap"
+              position={[-6,2.85,1.2]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="pole3"
+              asset="pole"
+              position={[6,1.3,1.2]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="lantern3"
+              asset="lampbox"
+              position={[6,2.65,1.2]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="cap3"
+              asset="lampcap"
+              position={[6,2.85,1.2]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="sketchbook"
+              asset="cover"
+              position={[-3,0.63,0.35]}
+              rotation={[8,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="paper"
+              asset="drawing"
+              position={[-3,0.65,0.35]}
+              rotation={[-82,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="spare"
+              asset="sheet"
+              position={[-2.4,0.555,0.1]}
+              rotation={[-90,0,12]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="book"
+              asset="bookcover"
+              position={[3,0.64,0.3]}
+              rotation={[-18,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="book_pages"
+              asset="bookpages"
+              position={[3,0.661,0.3]}
+              rotation={[-18,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="artist"
+              asset="artist_character1"
+              profile="artist_profile"
+              position={[-3,0,0]}
+              scaleMode="normalize_height"
+              scale="1.72"
+              castShadow="true"
+              receiveShadow="true"
+            >
               <MaterialBinding modelSourceMaterial="M_Main" tint="#EEE0C6" outlineWidth="1.3" />
             </Model>
-            <Model id="reader" asset="reader_character1" profile="reader_profile" position={[3,0,0]} scaleMode="normalize_height" scale="1.72" castShadow="true" receiveShadow="true">
+            <Model
+              id="reader"
+              asset="reader_character1"
+              profile="reader_profile"
+              position={[3,0,0]}
+              scaleMode="normalize_height"
+              scale="1.72"
+              castShadow="true"
+              receiveShadow="true"
+            >
               <MaterialBinding modelSourceMaterial="M_Main" tint="#79ABA4" outlineWidth="1.3" />
             </Model>
-            <Model id="walker0" asset="character1" profile="c1_profile" position={[-5,0,-6]} scaleMode="normalize_height" scale="1.65" rotationY="90" />
-            <Model id="walker1" asset="character1" profile="c1_profile" position={[2,0,-6]} scaleMode="normalize_height" scale="1.65" rotationY="90" />
-            <Model id="leaf0" asset="loose_leaf" position={[-0.16274,1.69797,0.92871]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="leaf1" asset="loose_leaf" position={[0.50931,1.74423,1.03836]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="leaf2" asset="loose_leaf" position={[1.27457,1.82477,1.34031]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="leaf3" asset="loose_leaf" position={[0.54873,0.2168,1.52315]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="leaf4" asset="loose_leaf" position={[1.57028,1.48108,2.28434]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="leaf5" asset="loose_leaf" position={[2.87154,0.58339,0.63508]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="leaf6" asset="loose_leaf" position={[1.00006,0.65917,1.14682]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="leaf7" asset="loose_leaf" position={[2.29981,0.37297,1.04935]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="leaf8" asset="loose_leaf" position={[3.19976,1.62572,1.42278]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="leaf9" asset="loose_leaf" position={[-2.81095,1.13943,0.98503]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="leaf10" asset="loose_leaf" position={[1.76849,0.46822,1.59106]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
-            <Model id="leaf11" asset="loose_leaf" position={[-0.14572,0.62948,1.47954]} rotation={[0,0,0]} scale="1" castShadow="true" receiveShadow="true"  />
+            <Model
+              id="walker0"
+              asset="character1"
+              profile="c1_profile"
+              position={[-5,0,-6]}
+              scaleMode="normalize_height"
+              scale="1.65"
+              rotationY="90"
+            />
+            <Model
+              id="walker1"
+              asset="character1"
+              profile="c1_profile"
+              position={[2,0,-6]}
+              scaleMode="normalize_height"
+              scale="1.65"
+              rotationY="90"
+            />
+            <Model
+              id="leaf0"
+              asset="loose_leaf"
+              position={[-0.16274,1.69797,0.92871]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="leaf1"
+              asset="loose_leaf"
+              position={[0.50931,1.74423,1.03836]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="leaf2"
+              asset="loose_leaf"
+              position={[1.27457,1.82477,1.34031]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="leaf3"
+              asset="loose_leaf"
+              position={[0.54873,0.2168,1.52315]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="leaf4"
+              asset="loose_leaf"
+              position={[1.57028,1.48108,2.28434]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="leaf5"
+              asset="loose_leaf"
+              position={[2.87154,0.58339,0.63508]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="leaf6"
+              asset="loose_leaf"
+              position={[1.00006,0.65917,1.14682]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="leaf7"
+              asset="loose_leaf"
+              position={[2.29981,0.37297,1.04935]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="leaf8"
+              asset="loose_leaf"
+              position={[3.19976,1.62572,1.42278]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="leaf9"
+              asset="loose_leaf"
+              position={[-2.81095,1.13943,0.98503]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="leaf10"
+              asset="loose_leaf"
+              position={[1.76849,0.46822,1.59106]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
+            <Model
+              id="leaf11"
+              asset="loose_leaf"
+              position={[-0.14572,0.62948,1.47954]}
+              rotation={[0,0,0]}
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            />
           </CompositeGroup>
         </Sequence>
       </Track>

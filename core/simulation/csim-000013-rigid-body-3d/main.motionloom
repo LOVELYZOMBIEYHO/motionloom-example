@@ -1,7 +1,14 @@
 <Graph fps={30} duration="4s" size={[640,360]} renderSize={[640,360]}>
   <Assets>
-    <PrimitiveAsset id="floor_asset" shape="box" size={[8,0.5,5]} color="#25324A" />
-    <PrimitiveAsset id="cube_asset" shape="box" size={[1,1,1]} color="#FB7185" />
+<MaterialAsset id="geometry_default" shading="pbr" roughness="0.82" specular="1" emissiveStrength="1" />
+    <GeometryAsset id="floor_asset_geometry">
+    <Primitive shape="box" size={[8,0.5,5]} />
+    </GeometryAsset>
+    <MeshAsset id="floor_asset" color="#25324A" material="geometry_default" geometry="floor_asset_geometry" />
+    <GeometryAsset id="cube_asset_geometry">
+    <Primitive shape="box" size={[1,1,1]} />
+    </GeometryAsset>
+    <MeshAsset id="cube_asset" color="#FB7185" material="geometry_default" geometry="cube_asset_geometry" />
   </Assets>
   <Background color="#080C16" />
   <Scene id="rigid_body_3d_contract">

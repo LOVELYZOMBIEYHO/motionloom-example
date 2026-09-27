@@ -4,18 +4,18 @@
 
   <Scene id="animation_target_kinetic_shapes_showcase">
     <Defs>
-      <RadialGradient id="stage_glow" cx="0.50" cy="0.50" r="0.70"
-                      stops="0:#33415566, 0.34:#1e3a8a33, 0.72:#080b1600, 1:#080b1600" />
-      <RadialGradient id="cyan_glow" cx="0.50" cy="0.50" r="0.50"
-                      stops="0:#67e8f9cc, 0.35:#22d3ee55, 1:#22d3ee00" />
-      <RadialGradient id="rose_glow" cx="0.50" cy="0.50" r="0.50"
-                      stops="0:#fda4afcc, 0.35:#fb718555, 1:#fb718500" />
-      <RadialGradient id="amber_glow" cx="0.50" cy="0.50" r="0.50"
-                      stops="0:#fde68acc, 0.35:#f59e0b55, 1:#f59e0b00" />
-      <LinearGradient id="card_grad" x1="0" y1="0" x2="1" y2="1"
-                      stops="0:#38bdf8, 0.48:#8b5cf6, 1:#fb7185" />
-      <LinearGradient id="bar_grad" x1="0" y1="0" x2="1" y2="0"
-                      stops="0:#22d3ee, 0.50:#a78bfa, 1:#fb7185" />
+      <RadialGradient
+        id="stage_glow"
+        cx="0.50"
+        cy="0.50"
+        r="0.70"
+        stops="0:#33415566, 0.34:#1e3a8a33, 0.72:#080b1600, 1:#080b1600"
+      />
+      <RadialGradient id="cyan_glow" cx="0.50" cy="0.50" r="0.50" stops="0:#67e8f9cc, 0.35:#22d3ee55, 1:#22d3ee00" />
+      <RadialGradient id="rose_glow" cx="0.50" cy="0.50" r="0.50" stops="0:#fda4afcc, 0.35:#fb718555, 1:#fb718500" />
+      <RadialGradient id="amber_glow" cx="0.50" cy="0.50" r="0.50" stops="0:#fde68acc, 0.35:#f59e0b55, 1:#f59e0b00" />
+      <LinearGradient id="card_grad" x1="0" y1="0" x2="1" y2="1" stops="0:#38bdf8, 0.48:#8b5cf6, 1:#fb7185" />
+      <LinearGradient id="bar_grad" x1="0" y1="0" x2="1" y2="0" stops="0:#22d3ee, 0.50:#a78bfa, 1:#fb7185" />
     </Defs>
 
     <Timeline>
@@ -23,17 +23,34 @@
         <Sequence from="0s" duration="6s" out="hold">
           <Layer>
             <Circle x="640" y="360" radius="420" fill="url(#stage_glow)" blend="screen" opacity="0.86" />
-            <Text value="AnimationTarget" x="center" y="86" fontSize="54" fontWeight="900" color="#f8fafc" opacity="0.96" />
-            <Text value="dense editable keyframes driving simple shapes" x="center" y="126" fontSize="22" color="#94a3b8" opacity="0.78" />
+            <Text
+              value="AnimationTarget"
+              x="center"
+              y="86"
+              fontSize="54"
+              fontWeight="900"
+              color="#f8fafc"
+              opacity="0.96"
+            />
+            <Text
+              value="dense editable keyframes driving simple shapes"
+              x="center"
+              y="126"
+              fontSize="22"
+              color="#94a3b8"
+              opacity="0.78"
+            />
 
-            <Group id="orbit_cluster"
-                   x="640"
-                   y="360"
-                   rotation="0"
-                   scale="1"
-                   opacity="1"
-                   transformOriginX="0"
-                   transformOriginY="0">
+            <Group
+              id="orbit_cluster"
+              x="640"
+              y="360"
+              rotation="0"
+              scale="1"
+              opacity="1"
+              transformOriginX="0"
+              transformOriginY="0"
+            >
               <Circle id="cyan_orb" x="0" y="-155" radius="46" fill="#22d3ee" opacity="0.96" />
               <Circle id="rose_orb" x="134" y="-78" radius="40" fill="#fb7185" opacity="0.94" />
               <Circle id="amber_orb" x="134" y="78" radius="42" fill="#f59e0b" opacity="0.94" />
@@ -43,58 +60,83 @@
               <Circle x="0" y="0" radius="22" fill="#f8fafc" opacity="0.88" />
             </Group>
 
-            <Group id="center_card"
-                   x="640"
-                   y="360"
-                   rotation="0"
-                   scale="1"
-                   opacity="0.92"
-                   transformOriginX="0"
-                   transformOriginY="0">
+            <Group
+              id="center_card"
+              x="640"
+              y="360"
+              rotation="0"
+              scale="1"
+              opacity="0.92"
+              transformOriginX="0"
+              transformOriginY="0"
+            >
               <Rect x="-96" y="-72" width="192" height="144" radius="28" fill="url(#card_grad)" opacity="0.90" />
               <Rect x="-74" y="-50" width="148" height="100" radius="20" fill="#080b16" opacity="0.54" />
               <Line x1="-52" y1="0" x2="52" y2="0" stroke="#f8fafc" strokeWidth="8" lineCap="round" opacity="0.88" />
               <Line x1="0" y1="-42" x2="0" y2="42" stroke="#f8fafc" strokeWidth="8" lineCap="round" opacity="0.88" />
             </Group>
 
-            <Group id="cyan_sweep"
-                   x="236"
-                   y="520"
-                   rotation="-12"
-                   scale="1"
-                   opacity="0.76"
-                   transformOriginX="0"
-                   transformOriginY="0">
+            <Group
+              id="cyan_sweep"
+              x="236"
+              y="520"
+              rotation="-12"
+              scale="1"
+              opacity="0.76"
+              transformOriginX="0"
+              transformOriginY="0"
+            >
               <Rect x="-140" y="-18" width="280" height="36" radius="18" fill="url(#bar_grad)" opacity="0.78" />
               <Circle x="-144" y="0" radius="52" fill="url(#cyan_glow)" blend="screen" opacity="0.9" />
             </Group>
 
-            <Group id="rose_sweep"
-                   x="1044"
-                   y="198"
-                   rotation="16"
-                   scale="1"
-                   opacity="0.72"
-                   transformOriginX="0"
-                   transformOriginY="0">
+            <Group
+              id="rose_sweep"
+              x="1044"
+              y="198"
+              rotation="16"
+              scale="1"
+              opacity="0.72"
+              transformOriginX="0"
+              transformOriginY="0"
+            >
               <Rect x="-138" y="-16" width="276" height="32" radius="16" fill="url(#bar_grad)" opacity="0.72" />
               <Circle x="144" y="0" radius="50" fill="url(#rose_glow)" blend="screen" opacity="0.9" />
             </Group>
 
-            <Group id="pulse_square"
-                   x="160"
-                   y="178"
-                   rotation="0"
-                   scale="1"
-                   opacity="0.88"
-                   transformOriginX="0"
-                   transformOriginY="0">
-              <Rect x="-42" y="-42" width="84" height="84" radius="14" fill="#00000000" stroke="#f8fafc" strokeWidth="5" opacity="0.70" />
+            <Group
+              id="pulse_square"
+              x="160"
+              y="178"
+              rotation="0"
+              scale="1"
+              opacity="0.88"
+              transformOriginX="0"
+              transformOriginY="0"
+            >
+              <Rect
+                x="-42"
+                y="-42"
+                width="84"
+                height="84"
+                radius="14"
+                fill="#00000000"
+                stroke="#f8fafc"
+                strokeWidth="5"
+                opacity="0.70"
+              />
               <Circle x="0" y="0" radius="64" fill="url(#amber_glow)" blend="screen" opacity="0.74" />
             </Group>
 
             <Line x1="160" y1="616" x2="1120" y2="616" stroke="#334155" strokeWidth="3" opacity="0.60" />
-            <Text value="x / y / rotation / scale / opacity are all edited through AnimationTarget keys" x="center" y="656" fontSize="20" color="#94a3b8" opacity="0.76" />
+            <Text
+              value="x / y / rotation / scale / opacity are all edited through AnimationTarget keys"
+              x="center"
+              y="656"
+              fontSize="20"
+              color="#94a3b8"
+              opacity="0.76"
+            />
           </Layer>
         </Sequence>
       </Track>

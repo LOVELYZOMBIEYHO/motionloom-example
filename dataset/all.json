@@ -6279,7 +6279,7 @@
         "Assets",
         "ImageAsset",
         "ModelAsset",
-        "PrimitiveAsset",
+        "Primitive",
         "Background",
         "Scene",
         "Timeline",
@@ -6306,7 +6306,9 @@
         "Process",
         "Tex",
         "Pass",
-        "Present"
+        "Present",
+        "GeometryAsset",
+        "MeshAsset"
       ],
       "teaches": [
         "Bind a Radiance HDR equirectangular image as the visible environment and IBL source.",
@@ -6327,7 +6329,7 @@
         "Graph",
         "ImageAsset",
         "ModelAsset",
-        "PrimitiveAsset",
+        "Primitive",
         "Scene",
         "EnvironmentLight",
         "DirectionalLight",
@@ -6369,7 +6371,7 @@
       "dsl": [
         "Graph",
         "Assets",
-        "PrimitiveAsset",
+        "Primitive",
         "MaterialAsset",
         "ImageAsset",
         "ModelAsset",
@@ -6408,7 +6410,9 @@
         "Process",
         "Tex",
         "Pass",
-        "Present"
+        "Present",
+        "GeometryAsset",
+        "MeshAsset"
       ],
       "teaches": [
         "Build a complete architectural staircase from reusable typed PrimitiveAsset geometry and first-class PBR MaterialAsset resources.",
@@ -6437,7 +6441,7 @@
       ],
       "requires": [
         "Graph",
-        "PrimitiveAsset",
+        "Primitive",
         "MaterialAsset",
         "ImageAsset",
         "ModelAsset",
@@ -6485,7 +6489,7 @@
       "dsl": [
         "Graph",
         "Assets",
-        "PrimitiveAsset",
+        "Primitive",
         "CompoundAsset",
         "Instance",
         "MaterialAsset",
@@ -6533,7 +6537,9 @@
         "Process",
         "Tex",
         "Pass",
-        "Present"
+        "Present",
+        "GeometryAsset",
+        "MeshAsset"
       ],
       "teaches": [
         "Turn one reusable collider-owning primitive stair assembly into a cinematic rainy metro exit without introducing scene-specific DSL tags.",
@@ -6568,7 +6574,7 @@
       ],
       "requires": [
         "Graph",
-        "PrimitiveAsset",
+        "Primitive",
         "CompoundAsset",
         "MaterialAsset",
         "ImageAsset",
@@ -6613,7 +6619,7 @@
       "dsl": [
         "Graph",
         "Assets",
-        "PrimitiveAsset",
+        "Primitive",
         "CompoundAsset",
         "Instance",
         "MaterialAsset",
@@ -6643,7 +6649,9 @@
         "Process",
         "Tex",
         "Pass",
-        "Present"
+        "Present",
+        "GeometryAsset",
+        "MeshAsset"
       ],
       "teaches": [
         "Build a complete stylized humanoid from 35 typed PrimitiveAsset instances without GLB or FBX.",
@@ -6661,7 +6669,7 @@
       ],
       "requires": [
         "Graph",
-        "PrimitiveAsset",
+        "Primitive",
         "CompoundAsset",
         "Skeleton",
         "ActionLibrary",
@@ -6698,7 +6706,7 @@
         "Assets",
         "ModelAsset",
         "MaterialAsset",
-        "PrimitiveAsset",
+        "Primitive",
         "ActionLibrary",
         "ModelProfile",
         "Retarget",
@@ -6724,7 +6732,9 @@
         "Process",
         "Tex",
         "Pass",
-        "Present"
+        "Present",
+        "GeometryAsset",
+        "MeshAsset"
       ],
       "teaches": [
         "Keep authored reusable motion in a standalone MotionLoom ActionLibrary document.",
@@ -6777,7 +6787,7 @@
         "Graph",
         "Assets",
         "MaterialAsset",
-        "PrimitiveAsset",
+        "Primitive",
         "CompoundAsset",
         "Instance",
         "Background",
@@ -6804,7 +6814,9 @@
         "Process",
         "Tex",
         "Pass",
-        "Present"
+        "Present",
+        "GeometryAsset",
+        "MeshAsset"
       ],
       "teaches": [
         "Compare reusable primitive forms by isolating one deformation or mesh-quality change at a time.",
@@ -6820,7 +6832,7 @@
       ],
       "requires": [
         "Graph",
-        "PrimitiveAsset",
+        "Primitive",
         "MaterialAsset",
         "Scene",
         "Camera3D",
@@ -6854,7 +6866,7 @@
         "Graph",
         "Assets",
         "MaterialAsset",
-        "PrimitiveAsset",
+        "Primitive",
         "CompoundAsset",
         "Instance",
         "Background",
@@ -6880,7 +6892,9 @@
         "Process",
         "Tex",
         "Pass",
-        "Present"
+        "Present",
+        "GeometryAsset",
+        "MeshAsset"
       ],
       "teaches": [
         "Build ten distinct stylized creatures from reusable primitive and compound assets.",
@@ -6896,7 +6910,7 @@
       ],
       "requires": [
         "Graph",
-        "PrimitiveAsset",
+        "Primitive",
         "CompoundAsset",
         "Scene",
         "Camera3D",
@@ -6927,7 +6941,7 @@
         "Background",
         "Assets",
         "MaterialAsset",
-        "PrimitiveAsset",
+        "Primitive",
         "CompoundAsset",
         "Instance",
         "Scene",
@@ -6944,7 +6958,9 @@
         "Text",
         "AnimationTarget",
         "Key",
-        "Present"
+        "Present",
+        "GeometryAsset",
+        "MeshAsset"
       ],
       "teaches": [
         "Compare twenty authored RenderStyle recipes over shared geometry, camera and lighting.",
@@ -6989,7 +7005,7 @@
         "Graph",
         "Background",
         "Assets",
-        "PrimitiveAsset",
+        "Primitive",
         "MaterialAsset",
         "CompoundAsset",
         "Instance",
@@ -7015,7 +7031,9 @@
         "AnimationTarget",
         "Key",
         "Present",
-        "Path"
+        "Path",
+        "GeometryAsset",
+        "MeshAsset"
       ],
       "teaches": [
         "Build a 60-second horror narrative with predictions that become visible events.",
@@ -7031,7 +7049,7 @@
       ],
       "requires": [
         "Graph",
-        "PrimitiveAsset",
+        "Primitive",
         "MaterialAsset",
         "Scene",
         "Camera3D",
@@ -7195,7 +7213,7 @@
         "ModelAsset",
         "AnimationAsset",
         "MaterialAsset",
-        "PrimitiveAsset",
+        "Primitive",
         "ModelProfile",
         "Retarget",
         "Map",
@@ -7216,7 +7234,9 @@
         "Text",
         "AnimationTarget",
         "Key",
-        "Present"
+        "Present",
+        "GeometryAsset",
+        "MeshAsset"
       ],
       "teaches": [
         "Compare physical, toon and cel surface recipes over the same Character1 geometry and camera path.",
@@ -7264,7 +7284,7 @@
         "Graph",
         "Assets",
         "MaterialAsset",
-        "PrimitiveAsset",
+        "Primitive",
         "Background",
         "Scene",
         "Timeline",
@@ -7282,7 +7302,9 @@
         "Text",
         "AnimationTarget",
         "Key",
-        "Present"
+        "Present",
+        "GeometryAsset",
+        "MeshAsset"
       ],
       "teaches": [
         "Inspect one continuous procedural HeadAsset from front, three-quarter, profile and rear views.",
@@ -7297,7 +7319,7 @@
       ],
       "requires": [
         "Graph",
-        "HeadAsset",
+        "Head",
         "Scene",
         "Camera3D",
         "Present"
@@ -7331,9 +7353,9 @@
         "RenderStyle",
         "Assets",
         "MaterialAsset",
-        "PrimitiveAsset",
-        "HairAsset",
-        "HeadAsset",
+        "Primitive",
+        "Hair",
+        "Head",
         "FacialCage",
         "HeadProfile",
         "HeadSection",
@@ -7350,7 +7372,9 @@
         "Model",
         "AnimationTarget",
         "Key",
-        "Present"
+        "Present",
+        "GeometryAsset",
+        "MeshAsset"
       ],
       "teaches": [
         "Author a compact, versioned facial control cage in Rust from HeadProfile, HeadDome, and FaceLayout.",
@@ -7365,9 +7389,9 @@
       ],
       "requires": [
         "Graph",
-        "HeadAsset",
+        "Head",
         "FacialCage",
-        "HairAsset",
+        "Hair",
         "Scene",
         "Camera3D",
         "Present"
@@ -7404,7 +7428,7 @@
         "MaterialAsset",
         "ModelAsset",
         "AnimationAsset",
-        "PrimitiveAsset",
+        "Primitive",
         "CompoundAsset",
         "Instance",
         "ModelProfile",
@@ -7428,7 +7452,9 @@
         "MaterialBinding",
         "AnimationTarget",
         "Key",
-        "Present"
+        "Present",
+        "GeometryAsset",
+        "MeshAsset"
       ],
       "teaches": [
         "Build a 30-second silent CEL animatic around a single Character1 model, a park, a drawing and a wind-driven paper handoff.",
@@ -7633,7 +7659,7 @@
         "Graph",
         "Assets",
         "MaterialAsset",
-        "PrimitiveAsset",
+        "Primitive",
         "CompoundAsset",
         "Instance",
         "Background",
@@ -7665,7 +7691,9 @@
         "Process",
         "Tex",
         "Pass",
-        "Present"
+        "Present",
+        "GeometryAsset",
+        "MeshAsset"
       ],
       "teaches": [
         "Build a complete canal town from PrimitiveAsset and CompoundAsset kits around an imported character performance.",
@@ -7683,7 +7711,7 @@
       ],
       "requires": [
         "Graph",
-        "PrimitiveAsset",
+        "Primitive",
         "CompoundAsset",
         "VegetationAsset",
         "Scene",
@@ -7747,7 +7775,7 @@
         "Image",
         "ModelAsset",
         "MaterialAsset",
-        "PrimitiveAsset",
+        "Primitive",
         "CompoundAsset",
         "Instance",
         "ModelProfile",
@@ -7789,7 +7817,9 @@
         "Process",
         "Tex",
         "Pass",
-        "Present"
+        "Present",
+        "GeometryAsset",
+        "MeshAsset"
       ],
       "teaches": [
         "Model hero props (baton, finish arch, banner) purely from MeshAsset catmull-clark cages: swept 8-vertex rings, ngon end caps and pinned vertices that keep tips and column joints crisp under subdivision.",
@@ -7907,7 +7937,8 @@
         "material",
         "pbr-lighting",
         "camera-3d",
-        "product-promotion"
+        "product-promotion",
+        "curve-animation"
       ],
       "dsl": [
         "Graph",
@@ -7919,7 +7950,7 @@
         "Assets",
         "ImageAsset",
         "MaterialAsset",
-        "PrimitiveAsset",
+        "Primitive",
         "MeshAsset",
         "Vertex",
         "Face",
@@ -7934,12 +7965,15 @@
         "DirectionalLight",
         "RectAreaLight",
         "Model",
-        "Present"
+        "Present",
+        "GeometryAsset"
       ],
       "teaches": [
         "Show one 3D apple mesh in textured, gray wireframe and white clay stages.",
         "Build depth-tested wire geometry from a UV-mapped MeshAsset control cage.",
-        "Animate a breakaway shell, airborne flip, impact beads, camera move and 3D hero return."
+        "Couple apple roll rotation to silhouette-based floor contact and travel distance.",
+        "Move the camera past a close peel view, look away briefly, and return to the opening composition for a loop.",
+        "Author camera-owned depth of field shared by WGPU and Weaver, keeping clay/wire shots sharp and animating surface focus for the macro loop."
       ],
       "source_path": "showcase/s-000098",
       "demo_url": "",
@@ -9849,11 +9883,13 @@
       ],
       "dsl": [
         "Assets",
-        "PrimitiveAsset",
+        "Primitive",
         "Physics",
         "RigidBody",
         "CompositeGroup",
-        "Model"
+        "Model",
+        "GeometryAsset",
+        "MeshAsset"
       ],
       "teaches": [
         "Declare typed primitive geometry and derive static or dynamic 3D colliders with shape=auto."
@@ -9864,7 +9900,7 @@
         "csim-000009"
       ],
       "requires": [
-        "PrimitiveAsset",
+        "Primitive",
         "RigidBody",
         "Physics"
       ],
@@ -9886,7 +9922,7 @@
       "dsl": [
         "Graph",
         "Assets",
-        "PrimitiveAsset",
+        "Primitive",
         "ImageAsset",
         "Background",
         "Scene",
@@ -9908,7 +9944,9 @@
         "Process",
         "Tex",
         "Pass",
-        "Present"
+        "Present",
+        "GeometryAsset",
+        "MeshAsset"
       ],
       "teaches": [
         "Use one RigidBody tag with an explicit 3D dimension and body type.",
@@ -9927,7 +9965,7 @@
       ],
       "requires": [
         "Graph",
-        "PrimitiveAsset",
+        "Primitive",
         "Scene",
         "Physics",
         "Model",

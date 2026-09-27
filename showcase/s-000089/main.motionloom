@@ -5,7 +5,14 @@
     <OutlineStyle enabled="false" />
     <DepthOfFieldStyle preset="filmic_bokeh_v1" aperture="0.00032" maxBlur="0.0025" />
     <LightingStyle ambientIntensity="0" ambientColor="#FFFFFF" shadowStyle="soft" />
-    <PostStyle toneMapping="filmic_aces_v1" exposure="0.97" saturation="1" contrast="1" whiteBalance="6500" bloomIntensity="0" />
+    <PostStyle
+      toneMapping="filmic_aces_v1"
+      exposure="0.97"
+      saturation="1"
+      contrast="1"
+      whiteBalance="6500"
+      bloomIntensity="0"
+    />
   </RenderStyle>
   <RenderStyle id="courtyard_physical">
     <SurfaceStyle shading="physical" specular="1" roughnessBias="0" />
@@ -36,7 +43,18 @@
     <PostStyle toneMapping="aces" exposure="0.97" saturation="1" contrast="1" whiteBalance="6500" bloomIntensity="0" />
   </RenderStyle>
   <RenderStyle id="courtyard_cel">
-    <SurfaceStyle shading="cel" shadingSteps="2" diffuseWrap="0" rimLight="4" rimPower="0.1" specular="0" saturation="3" shadowThreshold="0.5" shadowFeather="0.001" shadowColor="#000000" />
+    <SurfaceStyle
+      shading="cel"
+      shadingSteps="2"
+      diffuseWrap="0"
+      rimLight="4"
+      rimPower="0.1"
+      specular="0"
+      saturation="3"
+      shadowThreshold="0.5"
+      shadowFeather="0.001"
+      shadowColor="#000000"
+    />
     <OutlineStyle enabled="true" color="#000000" width="12" method="geometry" distanceMode="screen" />
     <LightingStyle ambientIntensity="0" ambientColor="#FFFFFF" shadowStyle="hard" />
     <PostStyle toneMapping="aces" exposure="1" saturation="1.4" contrast="1.2" whiteBalance="6500" bloomIntensity="0" />
@@ -59,7 +77,15 @@
   <RenderStyle id="detail_physical">
     <SurfaceStyle shading="physical" specular="1" roughnessBias="0" />
     <LightingStyle ambientIntensity="0.48" ambientColor="#D9E5F2" shadowStyle="soft" />
-    <PostStyle toneMapping="aces" exposure="1.15" saturation="1.0" contrast="1.05" whiteBalance="5700" bloomThreshold="1.5" bloomIntensity="0.018" />
+    <PostStyle
+      toneMapping="aces"
+      exposure="1.15"
+      saturation="1.0"
+      contrast="1.05"
+      whiteBalance="5700"
+      bloomThreshold="1.5"
+      bloomIntensity="0.018"
+    />
   </RenderStyle>
   <Assets>
     <ImageAsset id="sky_asset" src="../s-000090/assets/meadow_daylight.exr" />
@@ -73,15 +99,46 @@
       <Track id="world" space="3d">
         <Sequence from="0s" duration="16s" out="hold">
           <CompositeGroup id="s89_stage" space="3d" depth="true" format="rgba16f">
-            <Camera3D id="s89_camera" position={[1.25,2.35,9]} target={[0,2.9,-13]} fov="57" depthOfField="true" focusDistance="16.2" maxBlur="0" />
-            <EnvironmentLight id="sky" asset="sky_asset" mapping="equirectangular" intensity="0.9" visible="true" backgroundIntensity="0.65" diffuseIntensity="1" specularIntensity="1" />
-            <DirectionalLight id="sun" direction={[-.9,-.65,-.3]} color="#FFE3BC" intensity="3.75" castShadow="true" shadowStrength="1" />
+            <Camera3D
+              id="s89_camera"
+              position={[1.25,2.35,9]}
+              target={[0,2.9,-13]}
+              fov="57"
+              depthOfField="true"
+              focusDistance="16.2"
+              maxBlur="0"
+            />
+            <EnvironmentLight
+              id="sky"
+              asset="sky_asset"
+              mapping="equirectangular"
+              intensity="0.9"
+              visible="true"
+              backgroundIntensity="0.65"
+              diffuseIntensity="1"
+              specularIntensity="1"
+            />
+            <DirectionalLight
+              id="sun"
+              direction={[-.9,-.65,-.3]}
+              color="#FFE3BC"
+              intensity="3.75"
+              castShadow="true"
+              shadowStrength="1"
+            />
             <DirectionalLight id="sky_fill" direction={[.35,-.45,-.8]} color="#CBDDEB" intensity="0.45" />
             <PointLight id="lantern_fill" position={[-2.8,4.2,-1.9]} color="#FFD196" intensity="12" range="4" />
             <AmbientOcclusion radius="0.35" intensity="0" />
             <ContactShadow distance="0.2" softness="0.85" intensity="0" />
             <AtmosphereFog id="courtyard_mist" scatteringColor="#C6D1D2" density="0.018" affectEnvironment="false" />
-            <Model id="courtyard" asset="courtyard_asset" scaleMode="none" scale="1" castShadow="true" receiveShadow="true">
+            <Model
+              id="courtyard"
+              asset="courtyard_asset"
+              scaleMode="none"
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            >
               <MaterialBinding modelSourceMaterial="porcelain pink petals" definition="s89_petal_pink" />
               <MaterialBinding modelSourceMaterial="limestone 0" roughness="0.2" />
               <MaterialBinding modelSourceMaterial="limestone 1" roughness="0.2" />
@@ -99,15 +156,53 @@
         </Sequence>
         <Sequence from="16s" duration="8s" out="hold">
           <CompositeGroup id="s89_detail_stage" space="3d" depth="true" format="rgba16f">
-            <Camera3D id="s89_detail_camera" position={[-0.3,2.6,3.8]} target={[-3.8,2.75,-1.9]} fov="52" depthOfField="true" focusDistance="6.7" fStop="4" maxBlur="2.2" />
-            <EnvironmentLight id="s89_detail_sky" asset="sky_asset" mapping="equirectangular" intensity="0.9" visible="true" backgroundIntensity="0.65" diffuseIntensity="1" specularIntensity="1" />
-            <DirectionalLight id="s89_detail_sun" direction={[-.9,-.65,-.3]} color="#FFE3BC" intensity="3.75" castShadow="true" shadowStrength="1" />
+            <Camera3D
+              id="s89_detail_camera"
+              position={[-0.3,2.6,3.8]}
+              target={[-3.8,2.75,-1.9]}
+              fov="52"
+              depthOfField="true"
+              focusDistance="6.7"
+              fStop="4"
+              maxBlur="2.2"
+            />
+            <EnvironmentLight
+              id="s89_detail_sky"
+              asset="sky_asset"
+              mapping="equirectangular"
+              intensity="0.9"
+              visible="true"
+              backgroundIntensity="0.65"
+              diffuseIntensity="1"
+              specularIntensity="1"
+            />
+            <DirectionalLight
+              id="s89_detail_sun"
+              direction={[-.9,-.65,-.3]}
+              color="#FFE3BC"
+              intensity="3.75"
+              castShadow="true"
+              shadowStrength="1"
+            />
             <DirectionalLight id="s89_detail_sky_fill" direction={[.35,-.45,-.8]} color="#CBDDEB" intensity="0.45" />
-            <PointLight id="s89_detail_lantern_fill" position={[-2.8,4.2,-1.9]} color="#FFD196" intensity="12" range="4" />
+            <PointLight
+              id="s89_detail_lantern_fill"
+              position={[-2.8,4.2,-1.9]}
+              color="#FFD196"
+              intensity="12"
+              range="4"
+            />
             <AmbientOcclusion radius="0.45" intensity="0.55" />
             <ContactShadow distance="0.25" softness="0.5" intensity="0.7" />
             <AtmosphereFog id="s89_detail_mist" scatteringColor="#C6D1D2" density="0.018" affectEnvironment="false" />
-            <Model id="s89_detail_courtyard" asset="courtyard_asset" scaleMode="none" scale="1" castShadow="true" receiveShadow="true">
+            <Model
+              id="s89_detail_courtyard"
+              asset="courtyard_asset"
+              scaleMode="none"
+              scale="1"
+              castShadow="true"
+              receiveShadow="true"
+            >
               <MaterialBinding modelSourceMaterial="porcelain pink petals" definition="s89_petal_pink" />
               <MaterialBinding modelSourceMaterial="limestone 0" roughness="0.2" />
               <MaterialBinding modelSourceMaterial="limestone 1" roughness="0.2" />

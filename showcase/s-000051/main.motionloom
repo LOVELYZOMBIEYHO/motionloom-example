@@ -3,27 +3,74 @@
 
   <Scene id="anime_inferno_eye">
     <Defs>
-      <LinearGradient id="upper_lid_ink" x1="0" y1="0" x2="1" y2="1"
-                      stops="0:#17131f, 0.44:#302536, 0.76:#513445, 1:#7a2631" />
-      <LinearGradient id="sclera_soft" x1="0" y1="0" x2="0" y2="1"
-                      stops="0:#fffefe, 0.58:#fffdfb, 0.84:#fff2e8, 1:#eacfc7" />
-      <RadialGradient id="iris_fire" cx="0.48" cy="0.40" r="0.68"
-                      stops="0:#ff3b12, 0.32:#ff5b12, 0.66:#ff8f17, 0.86:#ffc04a, 1:#f3d68d" />
-      <LinearGradient id="iris_lower_gold" x1="0" y1="0" x2="0" y2="1"
-                      stops="0:#ff9f1a00, 0.30:#ffb52a66, 0.70:#ffd574dd, 1:#fff0b8" />
-      <LinearGradient id="flame_hot" x1="0" y1="1" x2="0" y2="0"
-                      stops="0:#ffbf18, 0.42:#ff5b0b, 0.76:#f0240a, 1:#b70c09" />
-      <LinearGradient id="cornea_shade" x1="0" y1="0" x2="1" y2="1"
-                      stops="0:#31243b88, 0.38:#401d2860, 0.70:#7a1f2628, 1:#00000000" />
-      <RadialGradient id="iris_glow" cx="0.50" cy="0.48" r="0.68"
-                      stops="0:#ff8a0038, 0.58:#ff4a1028, 1:#ff220000" />
+      <LinearGradient
+        id="upper_lid_ink"
+        x1="0"
+        y1="0"
+        x2="1"
+        y2="1"
+        stops="0:#17131f, 0.44:#302536, 0.76:#513445, 1:#7a2631"
+      />
+      <LinearGradient
+        id="sclera_soft"
+        x1="0"
+        y1="0"
+        x2="0"
+        y2="1"
+        stops="0:#fffefe, 0.58:#fffdfb, 0.84:#fff2e8, 1:#eacfc7"
+      />
+      <RadialGradient
+        id="iris_fire"
+        cx="0.48"
+        cy="0.40"
+        r="0.68"
+        stops="0:#ff3b12, 0.32:#ff5b12, 0.66:#ff8f17, 0.86:#ffc04a, 1:#f3d68d"
+      />
+      <LinearGradient
+        id="iris_lower_gold"
+        x1="0"
+        y1="0"
+        x2="0"
+        y2="1"
+        stops="0:#ff9f1a00, 0.30:#ffb52a66, 0.70:#ffd574dd, 1:#fff0b8"
+      />
+      <LinearGradient
+        id="flame_hot"
+        x1="0"
+        y1="1"
+        x2="0"
+        y2="0"
+        stops="0:#ffbf18, 0.42:#ff5b0b, 0.76:#f0240a, 1:#b70c09"
+      />
+      <LinearGradient
+        id="cornea_shade"
+        x1="0"
+        y1="0"
+        x2="1"
+        y2="1"
+        stops="0:#31243b88, 0.38:#401d2860, 0.70:#7a1f2628, 1:#00000000"
+      />
+      <RadialGradient id="iris_glow" cx="0.50" cy="0.48" r="0.68" stops="0:#ff8a0038, 0.58:#ff4a1028, 1:#ff220000" />
 
-      <Noise id="iris_flame_noise" type="flow" scale="14" octaves="4" seed="51"
-             contrast="1.46" evolution={curve("0:0:linear, 5:3.5:linear")} />
-      <Material id="iris_flame_material"
-                texture="iris_flame_noise" textureAmount="0.20"
-                displacement="iris_flame_noise" displacementAmount="4"
-                roughness="0.28" specular="0.42" opacity="1" />
+      <Noise
+        id="iris_flame_noise"
+        type="flow"
+        scale="14"
+        octaves="4"
+        seed="51"
+        contrast="1.46"
+        evolution={curve("0:0:linear, 5:3.5:linear")}
+      />
+      <Material
+        id="iris_flame_material"
+        texture="iris_flame_noise"
+        textureAmount="0.20"
+        displacement="iris_flame_noise"
+        displacementAmount="4"
+        roughness="0.28"
+        specular="0.42"
+        opacity="1"
+      />
 
       <Filter id="soft_shadow_blur">
         <Blur radius="12" />
@@ -38,9 +85,11 @@
       </Filter>
 
       <Precompose id="eye_aperture_mask" size={[1200,900]}>
-        <Path id="eye_aperture_mask_path"
-              d="M 202 484 C 314 310 510 266 704 292 C 846 312 954 380 1040 438 C 900 546 730 616 532 614 C 380 612 270 558 202 484 Z"
-              fill="#FFFFFF" />
+        <Path
+          id="eye_aperture_mask_path"
+          d="M 202 484 C 314 310 510 266 704 292 C 846 312 954 380 1040 438 C 900 546 730 616 532 614 C 380 612 270 558 202 484 Z"
+          fill="#FFFFFF"
+        />
       </Precompose>
     </Defs>
 
@@ -48,124 +97,245 @@
       <Track id="anime_fire_eye_track" space="screen" z="10">
         <Sequence from="0s" duration="5s" out="hold">
           <Layer id="anime_fire_eye_layer">
-            <Group id="eye_all_group" x="0" y="0" rotation="0" scale="1"
-                   effects={["hand_drawn_edge_treatment"]}
-                   transformOriginX="620" transformOriginY="450">
-              <Group id="eye_contents_group" maskFrom="eye_aperture_mask" maskMode="alpha"
-                     maskExpansion="-1" maskFeather="1.8">
+            <Group
+              id="eye_all_group"
+              x="0"
+              y="0"
+              rotation="0"
+              scale="1"
+              effects={["hand_drawn_edge_treatment"]}
+              transformOriginX="620"
+              transformOriginY="450"
+            >
+              <Group
+                id="eye_contents_group"
+                maskFrom="eye_aperture_mask"
+                maskMode="alpha"
+                maskExpansion="-1"
+                maskFeather="1.8"
+              >
                 <Group id="sclera_group">
-                  <Path id="sclera_shape"
-                        d="M 202 484 C 314 310 510 266 704 292 C 846 312 954 380 1040 438 C 900 546 730 616 532 614 C 380 612 270 558 202 484 Z"
-                        fill="url(#sclera_soft)" />
-                  <Path id="sclera_upper_shadow"
-                        d="M 198 480 C 334 304 534 276 720 306 C 870 330 970 398 1044 442 C 882 366 736 348 578 354 C 420 360 300 408 198 480 Z"
-                        fill="#796373" opacity="0.18" />
-                  <Path id="sclera_lower_warmth"
-                        d="M 224 500 C 362 588 514 606 680 580 C 824 558 928 504 1012 450 C 904 572 738 634 540 636 C 374 634 266 574 224 500 Z"
-                        fill="#efb5a6" opacity="0.16" />
+                  <Path
+                    id="sclera_shape"
+                    d="M 202 484 C 314 310 510 266 704 292 C 846 312 954 380 1040 438 C 900 546 730 616 532 614 C 380 612 270 558 202 484 Z"
+                    fill="url(#sclera_soft)"
+                  />
+                  <Path
+                    id="sclera_upper_shadow"
+                    d="M 198 480 C 334 304 534 276 720 306 C 870 330 970 398 1044 442 C 882 366 736 348 578 354 C 420 360 300 408 198 480 Z"
+                    fill="#796373"
+                    opacity="0.18"
+                  />
+                  <Path
+                    id="sclera_lower_warmth"
+                    d="M 224 500 C 362 588 514 606 680 580 C 824 558 928 504 1012 450 C 904 572 738 634 540 636 C 374 634 266 574 224 500 Z"
+                    fill="#efb5a6"
+                    opacity="0.16"
+                  />
                 </Group>
 
-                <Group id="iris_group" material="iris_flame_material"
-                       x="0" y="0" rotation="0" scale="1"
-                       transformOriginX="648" transformOriginY="454">
-                  <Circle id="iris_outer_ring" x="648" y="454" radius="206"
-                          color="#7b1716" opacity="0.98" />
-                  <Circle id="iris_color_disc" x="648" y="454" radius="193"
-                          fill="url(#iris_fire)" />
-                  <Path id="iris_lower_gold_layer"
-                        d="M 474 478 C 522 590 770 612 824 474 C 782 646 512 650 474 478 Z"
-                        fill="url(#iris_lower_gold)" opacity="0.92" />
+                <Group
+                  id="iris_group"
+                  material="iris_flame_material"
+                  x="0"
+                  y="0"
+                  rotation="0"
+                  scale="1"
+                  transformOriginX="648"
+                  transformOriginY="454"
+                >
+                  <Circle id="iris_outer_ring" x="648" y="454" radius="206" color="#7b1716" opacity="0.98" />
+                  <Circle id="iris_color_disc" x="648" y="454" radius="193" fill="url(#iris_fire)" />
+                  <Path
+                    id="iris_lower_gold_layer"
+                    d="M 474 478 C 522 590 770 612 824 474 C 782 646 512 650 474 478 Z"
+                    fill="url(#iris_lower_gold)"
+                    opacity="0.92"
+                  />
 
-                  <Group id="iris_flame_pattern_group"
-                         y={curve("0:0:ease_in_out, 1.2:-4:ease_in_out, 2.5:2:ease_in_out, 3.8:-3:ease_in_out, 5:0:ease_in_out")}>
-                    <Path id="flame_band_left"
-                          d="M 472 452 C 490 420 502 390 508 354 C 526 378 532 406 526 430 C 548 408 558 374 560 338 C 588 376 592 416 574 454 C 548 486 504 486 472 452 Z"
-                          fill="url(#flame_hot)" opacity="0.86" />
-                    <Path id="flame_band_mid_left"
-                          d="M 548 456 C 570 420 580 382 582 340 C 604 364 616 396 610 428 C 638 396 650 354 648 316 C 680 356 684 406 664 454 C 634 492 580 494 548 456 Z"
-                          fill="url(#flame_hot)" opacity="0.92" />
-                    <Path id="flame_band_mid_right"
-                          d="M 642 454 C 666 416 678 376 676 332 C 704 366 714 404 704 434 C 732 406 748 366 750 330 C 778 374 776 418 756 458 C 720 490 674 488 642 454 Z"
-                          fill="url(#flame_hot)" opacity="0.88" />
-                    <Path id="flame_band_right"
-                          d="M 734 458 C 754 428 766 396 768 362 C 790 388 798 414 790 438 C 812 420 824 392 830 366 C 848 408 840 446 814 474 C 784 494 754 486 734 458 Z"
-                          fill="url(#flame_hot)" opacity="0.82" />
+                  <Group
+                    id="iris_flame_pattern_group"
+                    y={curve("0:0:ease_in_out, 1.2:-4:ease_in_out, 2.5:2:ease_in_out, 3.8:-3:ease_in_out, 5:0:ease_in_out")}
+                  >
+                    <Path
+                      id="flame_band_left"
+                      d="M 472 452 C 490 420 502 390 508 354 C 526 378 532 406 526 430 C 548 408 558 374 560 338 C 588 376 592 416 574 454 C 548 486 504 486 472 452 Z"
+                      fill="url(#flame_hot)"
+                      opacity="0.86"
+                    />
+                    <Path
+                      id="flame_band_mid_left"
+                      d="M 548 456 C 570 420 580 382 582 340 C 604 364 616 396 610 428 C 638 396 650 354 648 316 C 680 356 684 406 664 454 C 634 492 580 494 548 456 Z"
+                      fill="url(#flame_hot)"
+                      opacity="0.92"
+                    />
+                    <Path
+                      id="flame_band_mid_right"
+                      d="M 642 454 C 666 416 678 376 676 332 C 704 366 714 404 704 434 C 732 406 748 366 750 330 C 778 374 776 418 756 458 C 720 490 674 488 642 454 Z"
+                      fill="url(#flame_hot)"
+                      opacity="0.88"
+                    />
+                    <Path
+                      id="flame_band_right"
+                      d="M 734 458 C 754 428 766 396 768 362 C 790 388 798 414 790 438 C 812 420 824 392 830 366 C 848 408 840 446 814 474 C 784 494 754 486 734 458 Z"
+                      fill="url(#flame_hot)"
+                      opacity="0.82"
+                    />
                   </Group>
 
                   <Group id="pupil_group">
-                    <Path id="vertical_pupil"
-                          d="M 648 354 C 682 388 686 432 648 494 C 610 438 614 390 648 354 Z"
-                          fill="#140708" opacity="0.98" />
-                    <Path id="pupil_inner_glint"
-                          d="M 650 374 C 662 402 660 430 648 454 C 640 426 640 400 650 374 Z"
-                          fill="#4d1710" opacity="0.54" />
+                    <Path
+                      id="vertical_pupil"
+                      d="M 648 354 C 682 388 686 432 648 494 C 610 438 614 390 648 354 Z"
+                      fill="#140708"
+                      opacity="0.98"
+                    />
+                    <Path
+                      id="pupil_inner_glint"
+                      d="M 650 374 C 662 402 660 430 648 454 C 640 426 640 400 650 374 Z"
+                      fill="#4d1710"
+                      opacity="0.54"
+                    />
                   </Group>
 
                   <Group id="iris_glow_group" effects={["iris_glow_blur"]}>
-                    <Circle id="iris_soft_glow" x="648" y="454" radius="174"
-                            fill="url(#iris_glow)"
-                            opacity={curve("0:0.34:ease_in_out, 1.25:0.48:ease_in_out, 2.5:0.32:ease_in_out, 3.75:0.46:ease_in_out, 5:0.34:ease_in_out")}
-                            blend="screen" />
+                    <Circle
+                      id="iris_soft_glow"
+                      x="648"
+                      y="454"
+                      radius="174"
+                      fill="url(#iris_glow)"
+                      opacity={curve("0:0.34:ease_in_out, 1.25:0.48:ease_in_out, 2.5:0.32:ease_in_out, 3.75:0.46:ease_in_out, 5:0.34:ease_in_out")}
+                      blend="screen"
+                    />
                   </Group>
                 </Group>
 
                 <Group id="cornea_highlight_group">
-                  <Path id="main_white_highlight"
-                        d="M 568 330 C 600 300 650 294 684 314 C 674 344 648 370 618 376 C 590 370 570 354 568 330 Z"
-                        fill="#FFFFFF" opacity="0.96" blend="screen" />
-                  <Path id="secondary_white_highlight"
-                        d="M 690 322 C 714 318 736 328 746 346 C 734 362 714 370 696 362 C 686 350 684 334 690 322 Z"
-                        fill="#fff8e9" opacity="0.92" blend="screen" />
-                  <Circle id="small_highlight" x="548" y="366" radius="12"
-                          color="#FFFFFF" opacity="0.88" blend="screen" />
-                  <Path id="cornea_shade_overlay"
-                        d="M 202 484 C 314 310 510 266 704 292 C 846 312 954 380 1040 438 C 900 410 760 390 620 398 C 460 406 330 438 202 484 Z"
-                        fill="url(#cornea_shade)" opacity="0.42" />
+                  <Path
+                    id="main_white_highlight"
+                    d="M 568 330 C 600 300 650 294 684 314 C 674 344 648 370 618 376 C 590 370 570 354 568 330 Z"
+                    fill="#FFFFFF"
+                    opacity="0.96"
+                    blend="screen"
+                  />
+                  <Path
+                    id="secondary_white_highlight"
+                    d="M 690 322 C 714 318 736 328 746 346 C 734 362 714 370 696 362 C 686 350 684 334 690 322 Z"
+                    fill="#fff8e9"
+                    opacity="0.92"
+                    blend="screen"
+                  />
+                  <Circle
+                    id="small_highlight"
+                    x="548"
+                    y="366"
+                    radius="12"
+                    color="#FFFFFF"
+                    opacity="0.88"
+                    blend="screen"
+                  />
+                  <Path
+                    id="cornea_shade_overlay"
+                    d="M 202 484 C 314 310 510 266 704 292 C 846 312 954 380 1040 438 C 900 410 760 390 620 398 C 460 406 330 438 202 484 Z"
+                    fill="url(#cornea_shade)"
+                    opacity="0.42"
+                  />
                 </Group>
               </Group>
 
               <Group id="eyelid_frame_group">
                 <Group id="upper_lid_shadow_group" effects={["soft_shadow_blur"]}>
-                  <Path id="upper_lid_soft_shadow"
-                        d="M 164 464 C 286 220 574 188 802 254 C 916 286 1016 354 1084 420 C 918 318 754 278 594 286 C 414 294 280 358 164 464 Z"
-                        fill="#17131f" opacity="0.30" />
+                  <Path
+                    id="upper_lid_soft_shadow"
+                    d="M 164 464 C 286 220 574 188 802 254 C 916 286 1016 354 1084 420 C 918 318 754 278 594 286 C 414 294 280 358 164 464 Z"
+                    fill="#17131f"
+                    opacity="0.30"
+                  />
                 </Group>
-                <Path id="upper_lid_mass"
-                      d="M 170 466 C 284 238 554 206 790 260 C 922 290 1022 358 1082 420 C 1010 398 958 402 914 430 C 826 354 716 322 590 324 C 426 326 300 380 210 492 C 190 486 176 478 170 466 Z"
-                      fill="url(#upper_lid_ink)" />
-                <Path id="upper_lash_tip"
-                      d="M 914 430 C 988 390 1054 386 1114 406 C 1074 422 1044 446 1026 474 C 990 456 954 442 914 430 Z"
-                      fill="#6f1e2a" opacity="0.94" />
+                <Path
+                  id="upper_lid_mass"
+                  d="M 170 466 C 284 238 554 206 790 260 C 922 290 1022 358 1082 420 C 1010 398 958 402 914 430 C 826 354 716 322 590 324 C 426 326 300 380 210 492 C 190 486 176 478 170 466 Z"
+                  fill="url(#upper_lid_ink)"
+                />
+                <Path
+                  id="upper_lash_tip"
+                  d="M 914 430 C 988 390 1054 386 1114 406 C 1074 422 1044 446 1026 474 C 990 456 954 442 914 430 Z"
+                  fill="#6f1e2a"
+                  opacity="0.94"
+                />
                 <Group id="outer_lashes_group" opacity="0.72">
-                  <Path id="outer_lash_01" d="M 930 356 C 1000 324 1050 316 1094 322"
-                        fill="none" stroke="#402431" strokeWidth="7"
-                        strokeWidthStart="0.78" strokeWidthEnd="0.05"
-                        lineCap="round" normalize="true" />
-                  <Path id="outer_lash_02" d="M 954 378 C 1020 354 1072 352 1112 360"
-                        fill="none" stroke="#402431" strokeWidth="6"
-                        strokeWidthStart="0.72" strokeWidthEnd="0.04"
-                        lineCap="round" normalize="true" />
+                  <Path
+                    id="outer_lash_01"
+                    d="M 930 356 C 1000 324 1050 316 1094 322"
+                    fill="none"
+                    stroke="#402431"
+                    strokeWidth="7"
+                    strokeWidthStart="0.78"
+                    strokeWidthEnd="0.05"
+                    lineCap="round"
+                    normalize="true"
+                  />
+                  <Path
+                    id="outer_lash_02"
+                    d="M 954 378 C 1020 354 1072 352 1112 360"
+                    fill="none"
+                    stroke="#402431"
+                    strokeWidth="6"
+                    strokeWidthStart="0.72"
+                    strokeWidthEnd="0.04"
+                    lineCap="round"
+                    normalize="true"
+                  />
                 </Group>
-                <Path id="upper_lid_line"
-                      d="M 202 484 C 314 310 510 266 704 292 C 846 312 954 380 1040 438"
-                      fill="none" stroke="#17131f" strokeWidth="22"
-                      strokeWidthStart="0.65" strokeWidthEnd="1.12"
-                      lineCap="round" normalize="true" opacity="0.94" />
-                <Path id="upper_crease_line"
-                      d="M 250 348 C 412 224 650 224 826 286"
-                      fill="none" stroke="#6c5d68" strokeWidth="8"
-                      strokeWidthStart="0.12" strokeWidthEnd="0.72"
-                      lineCap="round" normalize="true" opacity="0.48" />
-                <Path id="lower_lid_line"
-                      d="M 202 484 C 380 650 760 664 1040 438"
-                      fill="none" stroke="#c98f86" strokeWidth="8"
-                      strokeWidthStart="0.25" strokeWidthEnd="0.78"
-                      lineCap="round" normalize="true" opacity="0.62" />
-                <Path id="lower_lid_accent"
-                      d="M 542 646 C 650 670 750 656 826 616"
-                      fill="none" stroke="#3e2b31" strokeWidth="11"
-                      strokeWidthStart="0.12" strokeWidthEnd="0.66"
-                      lineCap="round" normalize="true" opacity="0.82" />
+                <Path
+                  id="upper_lid_line"
+                  d="M 202 484 C 314 310 510 266 704 292 C 846 312 954 380 1040 438"
+                  fill="none"
+                  stroke="#17131f"
+                  strokeWidth="22"
+                  strokeWidthStart="0.65"
+                  strokeWidthEnd="1.12"
+                  lineCap="round"
+                  normalize="true"
+                  opacity="0.94"
+                />
+                <Path
+                  id="upper_crease_line"
+                  d="M 250 348 C 412 224 650 224 826 286"
+                  fill="none"
+                  stroke="#6c5d68"
+                  strokeWidth="8"
+                  strokeWidthStart="0.12"
+                  strokeWidthEnd="0.72"
+                  lineCap="round"
+                  normalize="true"
+                  opacity="0.48"
+                />
+                <Path
+                  id="lower_lid_line"
+                  d="M 202 484 C 380 650 760 664 1040 438"
+                  fill="none"
+                  stroke="#c98f86"
+                  strokeWidth="8"
+                  strokeWidthStart="0.25"
+                  strokeWidthEnd="0.78"
+                  lineCap="round"
+                  normalize="true"
+                  opacity="0.62"
+                />
+                <Path
+                  id="lower_lid_accent"
+                  d="M 542 646 C 650 670 750 656 826 616"
+                  fill="none"
+                  stroke="#3e2b31"
+                  strokeWidth="11"
+                  strokeWidthStart="0.12"
+                  strokeWidthEnd="0.66"
+                  lineCap="round"
+                  normalize="true"
+                  opacity="0.82"
+                />
               </Group>
             </Group>
           </Layer>

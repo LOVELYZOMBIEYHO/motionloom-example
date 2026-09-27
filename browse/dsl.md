@@ -69,6 +69,7 @@
 | [gaussian-5tap-blur](dsl/gaussian-5tap-blur.md) | 1 |
 | [gaussian-5tap-h](dsl/gaussian-5tap-h.md) | 1 |
 | [gaussian-5tap-v](dsl/gaussian-5tap-v.md) | 1 |
+| [geometryasset](dsl/geometryasset.md) | 18 |
 | [glow](dsl/glow.md) | 1 |
 | [glow-bloom](dsl/glow-bloom.md) | 1 |
 | [glow-stack](dsl/glow-stack.md) | 1 |
@@ -76,8 +77,8 @@
 | [gravity](dsl/gravity.md) | 1 |
 | [group](dsl/group.md) | 92 |
 | [guide](dsl/guide.md) | 1 |
-| [hairasset](dsl/hairasset.md) | 1 |
-| [headasset](dsl/headasset.md) | 1 |
+| [hair](dsl/hair.md) | 1 |
+| [head](dsl/head.md) | 1 |
 | [headdome](dsl/headdome.md) | 1 |
 | [headprofile](dsl/headprofile.md) | 1 |
 | [headsection](dsl/headsection.md) | 1 |
@@ -109,7 +110,7 @@
 | [materialbinding](dsl/materialbinding.md) | 3 |
 | [matte](dsl/matte.md) | 1 |
 | [measure](dsl/measure.md) | 1 |
-| [meshasset](dsl/meshasset.md) | 1 |
+| [meshasset](dsl/meshasset.md) | 18 |
 | [meshtopology](dsl/meshtopology.md) | 9 |
 | [model](dsl/model.md) | 27 |
 | [modelasset](dsl/modelasset.md) | 16 |
@@ -133,7 +134,7 @@
 | [poststyle](dsl/poststyle.md) | 2 |
 | [precompose](dsl/precompose.md) | 2 |
 | [present](dsl/present.md) | 136 |
-| [primitiveasset](dsl/primitiveasset.md) | 18 |
+| [primitive](dsl/primitive.md) | 18 |
 | [process](dsl/process.md) | 57 |
 | [puppet](dsl/puppet.md) | 4 |
 | [puppetpin](dsl/puppetpin.md) | 12 |

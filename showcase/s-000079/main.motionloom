@@ -14,45 +14,109 @@
     <MaterialAsset id="s79_owl" shading="pbr" baseColor="#8A6145" metallic="0.02" roughness="0.54" specular="0.5" />
     <MaterialAsset id="s79_gold" shading="pbr" baseColor="#D59A3E" metallic="0.8" roughness="0.2" specular="0.96" />
     <MaterialAsset id="s79_steel" shading="pbr" baseColor="#52657B" metallic="0.88" roughness="0.18" specular="0.98" />
-    <MaterialAsset id="s79_dark_metal" shading="pbr" baseColor="#151E2D" metallic="0.9" roughness="0.22" specular="0.94" />
-    <MaterialAsset id="s79_glow" shading="pbr" baseColor="#78F0FF" metallic="0.05" roughness="0.12" specular="0.94"
-                   emissive="#42DFFF" emissiveStrength="4.5" />
-    <MaterialAsset id="s79_floor_mat" shading="pbr" baseColor="#11192A" metallic="0.3" roughness="0.32" specular="0.76" />
-    <MaterialAsset id="s79_plinth_mat" shading="pbr" baseColor="#1A2942" metallic="0.62" roughness="0.2" specular="0.92" />
+    <MaterialAsset
+      id="s79_dark_metal"
+      shading="pbr"
+      baseColor="#151E2D"
+      metallic="0.9"
+      roughness="0.22"
+      specular="0.94"
+    />
+    <MaterialAsset
+      id="s79_glow"
+      shading="pbr"
+      baseColor="#78F0FF"
+      metallic="0.05"
+      roughness="0.12"
+      specular="0.94"
+      emissive="#42DFFF"
+      emissiveStrength="4.5"
+    />
+    <MaterialAsset
+      id="s79_floor_mat"
+      shading="pbr"
+      baseColor="#11192A"
+      metallic="0.3"
+      roughness="0.32"
+      specular="0.76"
+    />
+    <MaterialAsset
+      id="s79_plinth_mat"
+      shading="pbr"
+      baseColor="#1A2942"
+      metallic="0.62"
+      roughness="0.2"
+      specular="0.92"
+    />
 
     <!-- Shared eyes, feet, stage and mechanical joints. -->
-    <PrimitiveAsset id="s79_eye_white" shape="sphere" radius="0.115" segments="20" rings="10" material="s79_white" />
-    <PrimitiveAsset id="s79_eye_dark" shape="sphere" radius="0.055" segments="16" rings="8" material="s79_black" />
-    <PrimitiveAsset id="s79_eye_glow" shape="sphere" radius="0.075" segments="18" rings="9" material="s79_glow" />
-    <PrimitiveAsset id="s79_joint" shape="sphere" radius="0.12" segments="18" rings="9" material="s79_glow" />
-    <PrimitiveAsset id="s79_floor" shape="roundedBox" size={[15,0.28,13]} radius="0.12" segments="4"
-                    material="s79_floor_mat" collision="solid" collider="box" />
-    <PrimitiveAsset id="s79_plinth" shape="roundedBox" size={[4.0,0.42,3.5]} radius="0.18" segments="5" material="s79_plinth_mat">
+    <GeometryAsset id="s79_eye_white_geometry">
+      <Primitive shape="sphere" radius="0.115" segments="20" rings="10" />
+    </GeometryAsset>
+    <MeshAsset id="s79_eye_white" material="s79_white" geometry="s79_eye_white_geometry" />
+    <GeometryAsset id="s79_eye_dark_geometry">
+      <Primitive shape="sphere" radius="0.055" segments="16" rings="8" />
+    </GeometryAsset>
+    <MeshAsset id="s79_eye_dark" material="s79_black" geometry="s79_eye_dark_geometry" />
+    <GeometryAsset id="s79_eye_glow_geometry">
+      <Primitive shape="sphere" radius="0.075" segments="18" rings="9" />
+    </GeometryAsset>
+    <MeshAsset id="s79_eye_glow" material="s79_glow" geometry="s79_eye_glow_geometry" />
+    <GeometryAsset id="s79_joint_geometry">
+      <Primitive shape="sphere" radius="0.12" segments="18" rings="9" />
+    </GeometryAsset>
+    <MeshAsset id="s79_joint" material="s79_glow" geometry="s79_joint_geometry" />
+    <GeometryAsset id="s79_floor_geometry">
+      <Primitive shape="roundedBox" size={[15,0.28,13]} radius="0.12" segments="4" />
+    </GeometryAsset>
+    <MeshAsset id="s79_floor" material="s79_floor_mat" collision="solid" collider="box" geometry="s79_floor_geometry" />
+    <GeometryAsset id="s79_plinth_geometry">
+      <Primitive shape="roundedBox" size={[4.0,0.42,3.5]} radius="0.18" segments="5" />
       <Modifiers>
         <WeightedNormals strength="1" keepSharpEdges="true" />
       </Modifiers>
       <MeshBuild topology="quads" quality="high" maxTriangles="10000" />
       <LOD mode="auto" levels="3" preserveSilhouette="true" />
-    </PrimitiveAsset>
+    </GeometryAsset>
+    <MeshAsset id="s79_plinth" material="s79_plinth_mat" geometry="s79_plinth_geometry" />
 
     <!-- 01 Penguin. -->
-    <PrimitiveAsset id="s79_penguin_body" shape="ellipsoid" radii={[0.62,0.95,0.48]} segments="28" rings="14" material="s79_black">
+    <GeometryAsset id="s79_penguin_body_geometry">
+      <Primitive shape="ellipsoid" radii={[0.62,0.95,0.48]} segments="28" rings="14" />
       <Modifiers>
         <Taper axis="y" start="1.12" end="0.74" />
         <Smooth angle="180" />
       </Modifiers>
-    </PrimitiveAsset>
-    <PrimitiveAsset id="s79_penguin_belly" shape="ellipsoid" radii={[0.45,0.7,0.13]} segments="24" rings="12" material="s79_white" />
-    <PrimitiveAsset id="s79_penguin_head" shape="sphere" radius="0.49" segments="26" rings="13" material="s79_black" />
-    <PrimitiveAsset id="s79_penguin_face" shape="ellipsoid" radii={[0.35,0.27,0.12]} segments="22" rings="11" material="s79_white" />
-    <PrimitiveAsset id="s79_penguin_beak" shape="cone" radius="0.15" height="0.34" segments="20" material="s79_orange" />
-    <PrimitiveAsset id="s79_penguin_wing" shape="ellipsoid" radii={[0.15,0.68,0.075]} segments="22" rings="11" material="s79_black">
+    </GeometryAsset>
+    <MeshAsset id="s79_penguin_body" material="s79_black" geometry="s79_penguin_body_geometry" />
+    <GeometryAsset id="s79_penguin_belly_geometry">
+      <Primitive shape="ellipsoid" radii={[0.45,0.7,0.13]} segments="24" rings="12" />
+    </GeometryAsset>
+    <MeshAsset id="s79_penguin_belly" material="s79_white" geometry="s79_penguin_belly_geometry" />
+    <GeometryAsset id="s79_penguin_head_geometry">
+      <Primitive shape="sphere" radius="0.49" segments="26" rings="13" />
+    </GeometryAsset>
+    <MeshAsset id="s79_penguin_head" material="s79_black" geometry="s79_penguin_head_geometry" />
+    <GeometryAsset id="s79_penguin_face_geometry">
+      <Primitive shape="ellipsoid" radii={[0.35,0.27,0.12]} segments="22" rings="11" />
+    </GeometryAsset>
+    <MeshAsset id="s79_penguin_face" material="s79_white" geometry="s79_penguin_face_geometry" />
+    <GeometryAsset id="s79_penguin_beak_geometry">
+      <Primitive shape="cone" radius="0.15" height="0.34" segments="20" />
+    </GeometryAsset>
+    <MeshAsset id="s79_penguin_beak" material="s79_orange" geometry="s79_penguin_beak_geometry" />
+    <GeometryAsset id="s79_penguin_wing_geometry">
+      <Primitive shape="ellipsoid" radii={[0.15,0.68,0.075]} segments="22" rings="11" />
       <Modifiers>
         <Taper axis="y" start="1.16" end="0.3" />
         <Bend axis="y" angle="22" pivot={[0,-0.3,0]} />
       </Modifiers>
-    </PrimitiveAsset>
-    <PrimitiveAsset id="s79_penguin_foot" shape="ellipsoid" radii={[0.24,0.08,0.34]} segments="18" rings="9" material="s79_orange" />
+    </GeometryAsset>
+    <MeshAsset id="s79_penguin_wing" material="s79_black" geometry="s79_penguin_wing_geometry" />
+    <GeometryAsset id="s79_penguin_foot_geometry">
+      <Primitive shape="ellipsoid" radii={[0.24,0.08,0.34]} segments="18" rings="9" />
+    </GeometryAsset>
+    <MeshAsset id="s79_penguin_foot" material="s79_orange" geometry="s79_penguin_foot_geometry" />
     <CompoundAsset id="s79_penguin" materialSeed="7901">
       <Instance id="body" asset="s79_penguin_body" position={[0,1.12,0]} />
       <Instance id="belly" asset="s79_penguin_belly" position={[0,1.05,0.43]} />
@@ -68,20 +132,33 @@
     </CompoundAsset>
 
     <!-- 02 Seal. -->
-    <PrimitiveAsset id="s79_seal_body" shape="ellipsoid" radii={[0.68,0.55,1.18]} segments="28" rings="14" material="s79_seal">
+    <GeometryAsset id="s79_seal_body_geometry">
+      <Primitive shape="ellipsoid" radii={[0.68,0.55,1.18]} segments="28" rings="14" />
       <Modifiers>
         <Taper axis="z" start="0.62" end="1.08" />
         <Smooth angle="180" />
       </Modifiers>
-    </PrimitiveAsset>
-    <PrimitiveAsset id="s79_seal_head" shape="ellipsoid" radii={[0.53,0.48,0.5]} segments="24" rings="12" material="s79_seal" />
-    <PrimitiveAsset id="s79_seal_muzzle" shape="ellipsoid" radii={[0.34,0.2,0.16]} segments="20" rings="10" material="s79_white" />
-    <PrimitiveAsset id="s79_seal_flipper" shape="ellipsoid" radii={[0.22,0.1,0.62]} segments="20" rings="10" material="s79_seal">
+    </GeometryAsset>
+    <MeshAsset id="s79_seal_body" material="s79_seal" geometry="s79_seal_body_geometry" />
+    <GeometryAsset id="s79_seal_head_geometry">
+      <Primitive shape="ellipsoid" radii={[0.53,0.48,0.5]} segments="24" rings="12" />
+    </GeometryAsset>
+    <MeshAsset id="s79_seal_head" material="s79_seal" geometry="s79_seal_head_geometry" />
+    <GeometryAsset id="s79_seal_muzzle_geometry">
+      <Primitive shape="ellipsoid" radii={[0.34,0.2,0.16]} segments="20" rings="10" />
+    </GeometryAsset>
+    <MeshAsset id="s79_seal_muzzle" material="s79_white" geometry="s79_seal_muzzle_geometry" />
+    <GeometryAsset id="s79_seal_flipper_geometry">
+      <Primitive shape="ellipsoid" radii={[0.22,0.1,0.62]} segments="20" rings="10" />
       <Modifiers>
         <Taper axis="z" start="0.3" end="1.12" />
       </Modifiers>
-    </PrimitiveAsset>
-    <PrimitiveAsset id="s79_seal_nose" shape="sphere" radius="0.1" segments="18" rings="9" material="s79_black" />
+    </GeometryAsset>
+    <MeshAsset id="s79_seal_flipper" material="s79_seal" geometry="s79_seal_flipper_geometry" />
+    <GeometryAsset id="s79_seal_nose_geometry">
+      <Primitive shape="sphere" radius="0.1" segments="18" rings="9" />
+    </GeometryAsset>
+    <MeshAsset id="s79_seal_nose" material="s79_black" geometry="s79_seal_nose_geometry" />
     <CompoundAsset id="s79_seal_character" materialSeed="7902">
       <Instance id="body" asset="s79_seal_body" position={[0,0.72,-0.2]} rotation={[-8,0,0]} />
       <Instance id="head" asset="s79_seal_head" position={[0,1.05,0.9]} />
@@ -96,24 +173,33 @@
     </CompoundAsset>
 
     <!-- 03 Dolphin. -->
-    <PrimitiveAsset id="s79_dolphin_body" shape="ellipsoid" radii={[0.52,0.48,1.45]} segments="30" rings="15" material="s79_blue">
+    <GeometryAsset id="s79_dolphin_body_geometry">
+      <Primitive shape="ellipsoid" radii={[0.52,0.48,1.45]} segments="30" rings="15" />
       <Modifiers>
         <Taper axis="z" start="0.34" end="1.02" />
         <Bend axis="z" angle="-10" pivot={[0,0,0]} />
         <Smooth angle="180" />
       </Modifiers>
-    </PrimitiveAsset>
-    <PrimitiveAsset id="s79_dolphin_snout" shape="ellipsoid" radii={[0.2,0.14,0.55]} segments="20" rings="10" material="s79_blue" />
-    <PrimitiveAsset id="s79_dolphin_fin" shape="ellipsoid" radii={[0.13,0.5,0.42]} segments="20" rings="10" material="s79_blue">
+    </GeometryAsset>
+    <MeshAsset id="s79_dolphin_body" material="s79_blue" geometry="s79_dolphin_body_geometry" />
+    <GeometryAsset id="s79_dolphin_snout_geometry">
+      <Primitive shape="ellipsoid" radii={[0.2,0.14,0.55]} segments="20" rings="10" />
+    </GeometryAsset>
+    <MeshAsset id="s79_dolphin_snout" material="s79_blue" geometry="s79_dolphin_snout_geometry" />
+    <GeometryAsset id="s79_dolphin_fin_geometry">
+      <Primitive shape="ellipsoid" radii={[0.13,0.5,0.42]} segments="20" rings="10" />
       <Modifiers>
         <Taper axis="y" start="1.1" end="0.18" />
       </Modifiers>
-    </PrimitiveAsset>
-    <PrimitiveAsset id="s79_dolphin_fluke" shape="ellipsoid" radii={[0.6,0.1,0.26]} segments="20" rings="10" material="s79_blue">
+    </GeometryAsset>
+    <MeshAsset id="s79_dolphin_fin" material="s79_blue" geometry="s79_dolphin_fin_geometry" />
+    <GeometryAsset id="s79_dolphin_fluke_geometry">
+      <Primitive shape="ellipsoid" radii={[0.6,0.1,0.26]} segments="20" rings="10" />
       <Modifiers>
         <Taper axis="x" start="0.2" end="1.1" />
       </Modifiers>
-    </PrimitiveAsset>
+    </GeometryAsset>
+    <MeshAsset id="s79_dolphin_fluke" material="s79_blue" geometry="s79_dolphin_fluke_geometry" />
     <CompoundAsset id="s79_dolphin" materialSeed="7903">
       <Instance id="body" asset="s79_dolphin_body" position={[0,1.25,0]} rotation={[-5,0,0]} />
       <Instance id="snout" asset="s79_dolphin_snout" position={[0,1.2,1.62]} />
@@ -127,22 +213,28 @@
     </CompoundAsset>
 
     <!-- 04 Fish. -->
-    <PrimitiveAsset id="s79_fish_body" shape="ellipsoid" radii={[1.05,0.62,0.42]} segments="26" rings="13" material="s79_fish">
+    <GeometryAsset id="s79_fish_body_geometry">
+      <Primitive shape="ellipsoid" radii={[1.05,0.62,0.42]} segments="26" rings="13" />
       <Modifiers>
         <Taper axis="x" start="0.56" end="1.02" />
         <Smooth angle="180" />
       </Modifiers>
-    </PrimitiveAsset>
-    <PrimitiveAsset id="s79_fish_fin" shape="ellipsoid" radii={[0.46,0.08,0.34]} segments="18" rings="9" material="s79_orange">
+    </GeometryAsset>
+    <MeshAsset id="s79_fish_body" material="s79_fish" geometry="s79_fish_body_geometry" />
+    <GeometryAsset id="s79_fish_fin_geometry">
+      <Primitive shape="ellipsoid" radii={[0.46,0.08,0.34]} segments="18" rings="9" />
       <Modifiers>
         <Taper axis="x" start="0.22" end="1.1" />
       </Modifiers>
-    </PrimitiveAsset>
-    <PrimitiveAsset id="s79_fish_tail" shape="ellipsoid" radii={[0.52,0.72,0.12]} segments="20" rings="10" material="s79_orange">
+    </GeometryAsset>
+    <MeshAsset id="s79_fish_fin" material="s79_orange" geometry="s79_fish_fin_geometry" />
+    <GeometryAsset id="s79_fish_tail_geometry">
+      <Primitive shape="ellipsoid" radii={[0.52,0.72,0.12]} segments="20" rings="10" />
       <Modifiers>
         <Taper axis="y" start="0.25" end="1.05" />
       </Modifiers>
-    </PrimitiveAsset>
+    </GeometryAsset>
+    <MeshAsset id="s79_fish_tail" material="s79_orange" geometry="s79_fish_tail_geometry" />
     <CompoundAsset id="s79_fish_character" materialSeed="7904">
       <Instance id="body" asset="s79_fish_body" position={[0,1.2,0]} rotation={[0,-10,0]} />
       <Instance id="eye_l" asset="s79_eye_white" position={[0.68,1.4,0.35]} />
@@ -156,9 +248,18 @@
     </CompoundAsset>
 
     <!-- 05 Snake. -->
-    <PrimitiveAsset id="s79_snake_segment" shape="capsule" radius="0.23" height="0.92" segments="20" rings="10" material="s79_snake" />
-    <PrimitiveAsset id="s79_snake_head" shape="ellipsoid" radii={[0.4,0.3,0.5]} segments="22" rings="11" material="s79_snake" />
-    <PrimitiveAsset id="s79_snake_tongue" shape="capsule" radius="0.025" height="0.34" segments="12" rings="6" material="s79_orange" />
+    <GeometryAsset id="s79_snake_segment_geometry">
+      <Primitive shape="capsule" radius="0.23" height="0.92" segments="20" rings="10" />
+    </GeometryAsset>
+    <MeshAsset id="s79_snake_segment" material="s79_snake" geometry="s79_snake_segment_geometry" />
+    <GeometryAsset id="s79_snake_head_geometry">
+      <Primitive shape="ellipsoid" radii={[0.4,0.3,0.5]} segments="22" rings="11" />
+    </GeometryAsset>
+    <MeshAsset id="s79_snake_head" material="s79_snake" geometry="s79_snake_head_geometry" />
+    <GeometryAsset id="s79_snake_tongue_geometry">
+      <Primitive shape="capsule" radius="0.025" height="0.34" segments="12" rings="6" />
+    </GeometryAsset>
+    <MeshAsset id="s79_snake_tongue" material="s79_orange" geometry="s79_snake_tongue_geometry" />
     <CompoundAsset id="s79_snake_character" materialSeed="7905">
       <Instance id="segment_0" asset="s79_snake_segment" position={[-0.95,0.35,-0.25]} rotation={[90,0,70]} />
       <Instance id="segment_1" asset="s79_snake_segment" position={[-0.35,0.35,0.05]} rotation={[90,0,105]} />
@@ -172,19 +273,29 @@
     </CompoundAsset>
 
     <!-- 06 Turtle. -->
-    <PrimitiveAsset id="s79_turtle_shell" shape="ellipsoid" radii={[1.0,0.42,0.82]} segments="28" rings="14" material="s79_shell">
+    <GeometryAsset id="s79_turtle_shell_geometry">
+      <Primitive shape="ellipsoid" radii={[1.0,0.42,0.82]} segments="28" rings="14" />
       <Modifiers>
         <Smooth angle="180" />
         <WeightedNormals strength="0.7" keepSharpEdges="false" />
       </Modifiers>
-    </PrimitiveAsset>
-    <PrimitiveAsset id="s79_turtle_shell_top" shape="ellipsoid" radii={[0.85,0.34,0.68]} segments="24" rings="12" material="s79_snake" />
-    <PrimitiveAsset id="s79_turtle_head" shape="ellipsoid" radii={[0.34,0.3,0.42]} segments="22" rings="11" material="s79_snake" />
-    <PrimitiveAsset id="s79_turtle_leg" shape="ellipsoid" radii={[0.22,0.14,0.48]} segments="18" rings="9" material="s79_snake">
+    </GeometryAsset>
+    <MeshAsset id="s79_turtle_shell" material="s79_shell" geometry="s79_turtle_shell_geometry" />
+    <GeometryAsset id="s79_turtle_shell_top_geometry">
+      <Primitive shape="ellipsoid" radii={[0.85,0.34,0.68]} segments="24" rings="12" />
+    </GeometryAsset>
+    <MeshAsset id="s79_turtle_shell_top" material="s79_snake" geometry="s79_turtle_shell_top_geometry" />
+    <GeometryAsset id="s79_turtle_head_geometry">
+      <Primitive shape="ellipsoid" radii={[0.34,0.3,0.42]} segments="22" rings="11" />
+    </GeometryAsset>
+    <MeshAsset id="s79_turtle_head" material="s79_snake" geometry="s79_turtle_head_geometry" />
+    <GeometryAsset id="s79_turtle_leg_geometry">
+      <Primitive shape="ellipsoid" radii={[0.22,0.14,0.48]} segments="18" rings="9" />
       <Modifiers>
         <Taper axis="z" start="0.35" end="1.05" />
       </Modifiers>
-    </PrimitiveAsset>
+    </GeometryAsset>
+    <MeshAsset id="s79_turtle_leg" material="s79_snake" geometry="s79_turtle_leg_geometry" />
     <CompoundAsset id="s79_turtle" materialSeed="7906">
       <Instance id="shell" asset="s79_turtle_shell" position={[0,0.75,0]} />
       <Instance id="shell_top" asset="s79_turtle_shell_top" position={[0,0.94,0]} />
@@ -198,12 +309,30 @@
     </CompoundAsset>
 
     <!-- 07 Frog. -->
-    <PrimitiveAsset id="s79_frog_body" shape="ellipsoid" radii={[0.72,0.62,0.5]} segments="24" rings="12" material="s79_frog" />
-    <PrimitiveAsset id="s79_frog_head" shape="ellipsoid" radii={[0.68,0.48,0.48]} segments="24" rings="12" material="s79_frog" />
-    <PrimitiveAsset id="s79_frog_eye" shape="sphere" radius="0.2" segments="18" rings="9" material="s79_frog" />
-    <PrimitiveAsset id="s79_frog_thigh" shape="ellipsoid" radii={[0.44,0.24,0.58]} segments="20" rings="10" material="s79_frog" />
-    <PrimitiveAsset id="s79_frog_shin" shape="capsule" radius="0.14" height="0.7" segments="18" rings="9" material="s79_frog" />
-    <PrimitiveAsset id="s79_frog_foot" shape="ellipsoid" radii={[0.26,0.08,0.5]} segments="18" rings="9" material="s79_orange" />
+    <GeometryAsset id="s79_frog_body_geometry">
+      <Primitive shape="ellipsoid" radii={[0.72,0.62,0.5]} segments="24" rings="12" />
+    </GeometryAsset>
+    <MeshAsset id="s79_frog_body" material="s79_frog" geometry="s79_frog_body_geometry" />
+    <GeometryAsset id="s79_frog_head_geometry">
+      <Primitive shape="ellipsoid" radii={[0.68,0.48,0.48]} segments="24" rings="12" />
+    </GeometryAsset>
+    <MeshAsset id="s79_frog_head" material="s79_frog" geometry="s79_frog_head_geometry" />
+    <GeometryAsset id="s79_frog_eye_geometry">
+      <Primitive shape="sphere" radius="0.2" segments="18" rings="9" />
+    </GeometryAsset>
+    <MeshAsset id="s79_frog_eye" material="s79_frog" geometry="s79_frog_eye_geometry" />
+    <GeometryAsset id="s79_frog_thigh_geometry">
+      <Primitive shape="ellipsoid" radii={[0.44,0.24,0.58]} segments="20" rings="10" />
+    </GeometryAsset>
+    <MeshAsset id="s79_frog_thigh" material="s79_frog" geometry="s79_frog_thigh_geometry" />
+    <GeometryAsset id="s79_frog_shin_geometry">
+      <Primitive shape="capsule" radius="0.14" height="0.7" segments="18" rings="9" />
+    </GeometryAsset>
+    <MeshAsset id="s79_frog_shin" material="s79_frog" geometry="s79_frog_shin_geometry" />
+    <GeometryAsset id="s79_frog_foot_geometry">
+      <Primitive shape="ellipsoid" radii={[0.26,0.08,0.5]} segments="18" rings="9" />
+    </GeometryAsset>
+    <MeshAsset id="s79_frog_foot" material="s79_orange" geometry="s79_frog_foot_geometry" />
     <CompoundAsset id="s79_frog_character" materialSeed="7907">
       <Instance id="body" asset="s79_frog_body" position={[0,0.88,0]} />
       <Instance id="head" asset="s79_frog_head" position={[0,1.45,0.28]} />
@@ -222,21 +351,34 @@
     </CompoundAsset>
 
     <!-- 08 Owl. -->
-    <PrimitiveAsset id="s79_owl_body" shape="ellipsoid" radii={[0.7,0.95,0.52]} segments="28" rings="14" material="s79_owl">
+    <GeometryAsset id="s79_owl_body_geometry">
+      <Primitive shape="ellipsoid" radii={[0.7,0.95,0.52]} segments="28" rings="14" />
       <Modifiers>
         <Taper axis="y" start="1.12" end="0.72" />
         <Smooth angle="180" />
       </Modifiers>
-    </PrimitiveAsset>
-    <PrimitiveAsset id="s79_owl_head" shape="sphere" radius="0.62" segments="26" rings="13" material="s79_owl" />
-    <PrimitiveAsset id="s79_owl_disc" shape="ellipsoid" radii={[0.28,0.3,0.1]} segments="20" rings="10" material="s79_white" />
-    <PrimitiveAsset id="s79_owl_beak" shape="cone" radius="0.13" height="0.34" segments="18" material="s79_orange" />
-    <PrimitiveAsset id="s79_owl_wing" shape="ellipsoid" radii={[0.25,0.78,0.12]} segments="22" rings="11" material="s79_black">
+    </GeometryAsset>
+    <MeshAsset id="s79_owl_body" material="s79_owl" geometry="s79_owl_body_geometry" />
+    <GeometryAsset id="s79_owl_head_geometry">
+      <Primitive shape="sphere" radius="0.62" segments="26" rings="13" />
+    </GeometryAsset>
+    <MeshAsset id="s79_owl_head" material="s79_owl" geometry="s79_owl_head_geometry" />
+    <GeometryAsset id="s79_owl_disc_geometry">
+      <Primitive shape="ellipsoid" radii={[0.28,0.3,0.1]} segments="20" rings="10" />
+    </GeometryAsset>
+    <MeshAsset id="s79_owl_disc" material="s79_white" geometry="s79_owl_disc_geometry" />
+    <GeometryAsset id="s79_owl_beak_geometry">
+      <Primitive shape="cone" radius="0.13" height="0.34" segments="18" />
+    </GeometryAsset>
+    <MeshAsset id="s79_owl_beak" material="s79_orange" geometry="s79_owl_beak_geometry" />
+    <GeometryAsset id="s79_owl_wing_geometry">
+      <Primitive shape="ellipsoid" radii={[0.25,0.78,0.12]} segments="22" rings="11" />
       <Modifiers>
         <Taper axis="y" start="1.12" end="0.28" />
         <Bend axis="y" angle="18" pivot={[0,-0.35,0]} />
       </Modifiers>
-    </PrimitiveAsset>
+    </GeometryAsset>
+    <MeshAsset id="s79_owl_wing" material="s79_black" geometry="s79_owl_wing_geometry" />
     <CompoundAsset id="s79_owl_character" materialSeed="7908">
       <Instance id="body" asset="s79_owl_body" position={[0,1.05,0]} />
       <Instance id="head" asset="s79_owl_head" position={[0,1.9,0]} />
@@ -252,18 +394,38 @@
     </CompoundAsset>
 
     <!-- 09 Mechanical dog. -->
-    <PrimitiveAsset id="s79_dog_torso" shape="roundedBox" size={[1.45,0.72,0.72]} radius="0.18" segments="5" material="s79_steel">
+    <GeometryAsset id="s79_dog_torso_geometry">
+      <Primitive shape="roundedBox" size={[1.45,0.72,0.72]} radius="0.18" segments="5" />
       <Modifiers>
         <Taper axis="x" start="0.82" end="1.08" />
         <WeightedNormals strength="1" keepSharpEdges="true" />
       </Modifiers>
-    </PrimitiveAsset>
-    <PrimitiveAsset id="s79_dog_head" shape="roundedBox" size={[0.72,0.68,0.7]} radius="0.15" segments="5" material="s79_gold" />
-    <PrimitiveAsset id="s79_dog_snout" shape="frustum" topSize={[0.36,0.3]} bottomSize={[0.58,0.48]} height="0.58" material="s79_dark_metal" />
-    <PrimitiveAsset id="s79_dog_leg" shape="capsule" radius="0.11" height="0.72" segments="18" rings="9" material="s79_steel" />
-    <PrimitiveAsset id="s79_dog_foot" shape="roundedBox" size={[0.3,0.18,0.48]} radius="0.06" segments="3" material="s79_dark_metal" />
-    <PrimitiveAsset id="s79_dog_ear" shape="frustum" topSize={[0.08,0.08]} bottomSize={[0.28,0.2]} height="0.55" material="s79_gold" />
-    <PrimitiveAsset id="s79_dog_tail" shape="capsule" radius="0.08" height="0.8" segments="16" rings="8" material="s79_gold" />
+    </GeometryAsset>
+    <MeshAsset id="s79_dog_torso" material="s79_steel" geometry="s79_dog_torso_geometry" />
+    <GeometryAsset id="s79_dog_head_geometry">
+      <Primitive shape="roundedBox" size={[0.72,0.68,0.7]} radius="0.15" segments="5" />
+    </GeometryAsset>
+    <MeshAsset id="s79_dog_head" material="s79_gold" geometry="s79_dog_head_geometry" />
+    <GeometryAsset id="s79_dog_snout_geometry">
+      <Primitive shape="frustum" topSize={[0.36,0.3]} bottomSize={[0.58,0.48]} height="0.58" />
+    </GeometryAsset>
+    <MeshAsset id="s79_dog_snout" material="s79_dark_metal" geometry="s79_dog_snout_geometry" />
+    <GeometryAsset id="s79_dog_leg_geometry">
+      <Primitive shape="capsule" radius="0.11" height="0.72" segments="18" rings="9" />
+    </GeometryAsset>
+    <MeshAsset id="s79_dog_leg" material="s79_steel" geometry="s79_dog_leg_geometry" />
+    <GeometryAsset id="s79_dog_foot_geometry">
+      <Primitive shape="roundedBox" size={[0.3,0.18,0.48]} radius="0.06" segments="3" />
+    </GeometryAsset>
+    <MeshAsset id="s79_dog_foot" material="s79_dark_metal" geometry="s79_dog_foot_geometry" />
+    <GeometryAsset id="s79_dog_ear_geometry">
+      <Primitive shape="frustum" topSize={[0.08,0.08]} bottomSize={[0.28,0.2]} height="0.55" />
+    </GeometryAsset>
+    <MeshAsset id="s79_dog_ear" material="s79_gold" geometry="s79_dog_ear_geometry" />
+    <GeometryAsset id="s79_dog_tail_geometry">
+      <Primitive shape="capsule" radius="0.08" height="0.8" segments="16" rings="8" />
+    </GeometryAsset>
+    <MeshAsset id="s79_dog_tail" material="s79_gold" geometry="s79_dog_tail_geometry" />
     <CompoundAsset id="s79_mech_dog" materialSeed="7909">
       <Instance id="torso" asset="s79_dog_torso" position={[0,1.25,0]} />
       <Instance id="head" asset="s79_dog_head" position={[0,1.55,0.92]} />
@@ -288,14 +450,38 @@
     </CompoundAsset>
 
     <!-- 10 Armored humanoid. -->
-    <PrimitiveAsset id="s79_human_pelvis" shape="roundedBox" size={[0.58,0.35,0.38]} radius="0.1" segments="4" material="s79_dark_metal" />
-    <PrimitiveAsset id="s79_human_chest" shape="frustum" topSize={[0.82,0.42]} bottomSize={[0.55,0.32]} height="0.72" material="s79_steel" />
-    <PrimitiveAsset id="s79_human_head" shape="roundedBox" size={[0.38,0.48,0.38]} radius="0.13" segments="5" material="s79_gold" />
-    <PrimitiveAsset id="s79_human_limb" shape="capsule" radius="0.105" height="0.62" segments="18" rings="9" material="s79_steel" />
-    <PrimitiveAsset id="s79_human_thigh" shape="capsule" radius="0.14" height="0.72" segments="20" rings="10" material="s79_dark_metal" />
-    <PrimitiveAsset id="s79_human_boot" shape="roundedBox" size={[0.28,0.22,0.48]} radius="0.07" segments="3" material="s79_gold" />
-    <PrimitiveAsset id="s79_human_guard" shape="sphere" radius="0.19" segments="20" rings="10" material="s79_gold" />
-    <PrimitiveAsset id="s79_human_core" shape="ellipsoid" radii={[0.12,0.16,0.06]} segments="18" rings="9" material="s79_glow" />
+    <GeometryAsset id="s79_human_pelvis_geometry">
+      <Primitive shape="roundedBox" size={[0.58,0.35,0.38]} radius="0.1" segments="4" />
+    </GeometryAsset>
+    <MeshAsset id="s79_human_pelvis" material="s79_dark_metal" geometry="s79_human_pelvis_geometry" />
+    <GeometryAsset id="s79_human_chest_geometry">
+      <Primitive shape="frustum" topSize={[0.82,0.42]} bottomSize={[0.55,0.32]} height="0.72" />
+    </GeometryAsset>
+    <MeshAsset id="s79_human_chest" material="s79_steel" geometry="s79_human_chest_geometry" />
+    <GeometryAsset id="s79_human_head_geometry">
+      <Primitive shape="roundedBox" size={[0.38,0.48,0.38]} radius="0.13" segments="5" />
+    </GeometryAsset>
+    <MeshAsset id="s79_human_head" material="s79_gold" geometry="s79_human_head_geometry" />
+    <GeometryAsset id="s79_human_limb_geometry">
+      <Primitive shape="capsule" radius="0.105" height="0.62" segments="18" rings="9" />
+    </GeometryAsset>
+    <MeshAsset id="s79_human_limb" material="s79_steel" geometry="s79_human_limb_geometry" />
+    <GeometryAsset id="s79_human_thigh_geometry">
+      <Primitive shape="capsule" radius="0.14" height="0.72" segments="20" rings="10" />
+    </GeometryAsset>
+    <MeshAsset id="s79_human_thigh" material="s79_dark_metal" geometry="s79_human_thigh_geometry" />
+    <GeometryAsset id="s79_human_boot_geometry">
+      <Primitive shape="roundedBox" size={[0.28,0.22,0.48]} radius="0.07" segments="3" />
+    </GeometryAsset>
+    <MeshAsset id="s79_human_boot" material="s79_gold" geometry="s79_human_boot_geometry" />
+    <GeometryAsset id="s79_human_guard_geometry">
+      <Primitive shape="sphere" radius="0.19" segments="20" rings="10" />
+    </GeometryAsset>
+    <MeshAsset id="s79_human_guard" material="s79_gold" geometry="s79_human_guard_geometry" />
+    <GeometryAsset id="s79_human_core_geometry">
+      <Primitive shape="ellipsoid" radii={[0.12,0.16,0.06]} segments="18" rings="9" />
+    </GeometryAsset>
+    <MeshAsset id="s79_human_core" material="s79_glow" geometry="s79_human_core_geometry" />
     <CompoundAsset id="s79_armored_humanoid" materialSeed="7910">
       <Instance id="pelvis" asset="s79_human_pelvis" position={[0,1.22,0]} />
       <Instance id="chest" asset="s79_human_chest" position={[0,1.78,0]} />
@@ -324,8 +510,23 @@
       <Track id="s79_stage" space="3d" compositeOrder="30">
         <Sequence from="0s" duration="4s" out="hide">
           <CompositeGroup id="s79_world_1" space="3d" depth="true" format="rgba16f">
-            <DirectionalLight id="s79_key_1" direction={[-0.48,-1,-0.32]} color="#FFD6B4" intensity="5" castShadow="true" shadowStrength="0.92" />
-            <RectAreaLight id="s79_fill_1" position={[4.6,4.8,5.5]} direction={[-0.6,-0.7,-0.5]} width="5" height="3" color="#77DCFF" intensity="6.5" />
+            <DirectionalLight
+              id="s79_key_1"
+              direction={[-0.48,-1,-0.32]}
+              color="#FFD6B4"
+              intensity="5"
+              castShadow="true"
+              shadowStrength="0.92"
+            />
+            <RectAreaLight
+              id="s79_fill_1"
+              position={[4.6,4.8,5.5]}
+              direction={[-0.6,-0.7,-0.5]}
+              width="5"
+              height="3"
+              color="#77DCFF"
+              intensity="6.5"
+            />
             <PointLight id="s79_rim_1" position={[-4.5,2.8,-2.8]} color="#B576FF" intensity="24" range="10" />
             <AmbientOcclusion id="s79_ao_1" radius="0.72" intensity="0.8" />
             <ContactShadow id="s79_contact_1" distance="0.2" softness="0.4" intensity="0.9" />
@@ -334,14 +535,41 @@
             <Model id="s79_floor_1" asset="s79_floor" position={[0,-0.22,0]} />
             <Model id="s79_plinth_1_l" asset="s79_plinth" position={[-2.5,0.08,0]} />
             <Model id="s79_plinth_1_r" asset="s79_plinth" position={[2.5,0.08,0]} />
-            <Model id="s79_penguin_model" asset="s79_penguin" position={[-2.5,0.28,0]} rotationY="8" castShadow="true" />
-            <Model id="s79_seal_model" asset="s79_seal_character" position={[2.5,0.28,-0.2]} rotationY="-8" castShadow="true" />
+            <Model
+              id="s79_penguin_model"
+              asset="s79_penguin"
+              position={[-2.5,0.28,0]}
+              rotationY="8"
+              castShadow="true"
+            />
+            <Model
+              id="s79_seal_model"
+              asset="s79_seal_character"
+              position={[2.5,0.28,-0.2]}
+              rotationY="-8"
+              castShadow="true"
+            />
           </CompositeGroup>
         </Sequence>
         <Sequence from="4s" duration="4s" out="hide">
           <CompositeGroup id="s79_world_2" space="3d" depth="true" format="rgba16f">
-            <DirectionalLight id="s79_key_2" direction={[-0.48,-1,-0.32]} color="#FFD6B4" intensity="5" castShadow="true" shadowStrength="0.92" />
-            <RectAreaLight id="s79_fill_2" position={[4.6,4.8,5.5]} direction={[-0.6,-0.7,-0.5]} width="5" height="3" color="#77DCFF" intensity="6.5" />
+            <DirectionalLight
+              id="s79_key_2"
+              direction={[-0.48,-1,-0.32]}
+              color="#FFD6B4"
+              intensity="5"
+              castShadow="true"
+              shadowStrength="0.92"
+            />
+            <RectAreaLight
+              id="s79_fill_2"
+              position={[4.6,4.8,5.5]}
+              direction={[-0.6,-0.7,-0.5]}
+              width="5"
+              height="3"
+              color="#77DCFF"
+              intensity="6.5"
+            />
             <PointLight id="s79_rim_2" position={[-4.5,2.8,-2.8]} color="#B576FF" intensity="24" range="10" />
             <AmbientOcclusion id="s79_ao_2" radius="0.72" intensity="0.8" />
             <ContactShadow id="s79_contact_2" distance="0.2" softness="0.4" intensity="0.9" />
@@ -350,14 +578,41 @@
             <Model id="s79_floor_2" asset="s79_floor" position={[0,-0.22,0]} />
             <Model id="s79_plinth_2_l" asset="s79_plinth" position={[-2.5,0.08,0]} />
             <Model id="s79_plinth_2_r" asset="s79_plinth" position={[2.5,0.08,0]} />
-            <Model id="s79_dolphin_model" asset="s79_dolphin" position={[-2.5,0.45,0]} rotationY="8" castShadow="true" />
-            <Model id="s79_fish_model" asset="s79_fish_character" position={[2.5,0.4,0]} rotationY="-8" castShadow="true" />
+            <Model
+              id="s79_dolphin_model"
+              asset="s79_dolphin"
+              position={[-2.5,0.45,0]}
+              rotationY="8"
+              castShadow="true"
+            />
+            <Model
+              id="s79_fish_model"
+              asset="s79_fish_character"
+              position={[2.5,0.4,0]}
+              rotationY="-8"
+              castShadow="true"
+            />
           </CompositeGroup>
         </Sequence>
         <Sequence from="8s" duration="4s" out="hide">
           <CompositeGroup id="s79_world_3" space="3d" depth="true" format="rgba16f">
-            <DirectionalLight id="s79_key_3" direction={[-0.48,-1,-0.32]} color="#FFD6B4" intensity="5" castShadow="true" shadowStrength="0.92" />
-            <RectAreaLight id="s79_fill_3" position={[4.6,4.8,5.5]} direction={[-0.6,-0.7,-0.5]} width="5" height="3" color="#77DCFF" intensity="6.5" />
+            <DirectionalLight
+              id="s79_key_3"
+              direction={[-0.48,-1,-0.32]}
+              color="#FFD6B4"
+              intensity="5"
+              castShadow="true"
+              shadowStrength="0.92"
+            />
+            <RectAreaLight
+              id="s79_fill_3"
+              position={[4.6,4.8,5.5]}
+              direction={[-0.6,-0.7,-0.5]}
+              width="5"
+              height="3"
+              color="#77DCFF"
+              intensity="6.5"
+            />
             <PointLight id="s79_rim_3" position={[-4.5,2.8,-2.8]} color="#B576FF" intensity="24" range="10" />
             <AmbientOcclusion id="s79_ao_3" radius="0.72" intensity="0.8" />
             <ContactShadow id="s79_contact_3" distance="0.2" softness="0.4" intensity="0.9" />
@@ -366,14 +621,35 @@
             <Model id="s79_floor_3" asset="s79_floor" position={[0,-0.22,0]} />
             <Model id="s79_plinth_3_l" asset="s79_plinth" position={[-2.5,0.08,0]} />
             <Model id="s79_plinth_3_r" asset="s79_plinth" position={[2.5,0.08,0]} />
-            <Model id="s79_snake_model" asset="s79_snake_character" position={[-2.5,0.28,0]} rotationY="8" castShadow="true" />
+            <Model
+              id="s79_snake_model"
+              asset="s79_snake_character"
+              position={[-2.5,0.28,0]}
+              rotationY="8"
+              castShadow="true"
+            />
             <Model id="s79_turtle_model" asset="s79_turtle" position={[2.5,0.28,0]} rotationY="-8" castShadow="true" />
           </CompositeGroup>
         </Sequence>
         <Sequence from="12s" duration="4s" out="hide">
           <CompositeGroup id="s79_world_4" space="3d" depth="true" format="rgba16f">
-            <DirectionalLight id="s79_key_4" direction={[-0.48,-1,-0.32]} color="#FFD6B4" intensity="5" castShadow="true" shadowStrength="0.92" />
-            <RectAreaLight id="s79_fill_4" position={[4.6,4.8,5.5]} direction={[-0.6,-0.7,-0.5]} width="5" height="3" color="#77DCFF" intensity="6.5" />
+            <DirectionalLight
+              id="s79_key_4"
+              direction={[-0.48,-1,-0.32]}
+              color="#FFD6B4"
+              intensity="5"
+              castShadow="true"
+              shadowStrength="0.92"
+            />
+            <RectAreaLight
+              id="s79_fill_4"
+              position={[4.6,4.8,5.5]}
+              direction={[-0.6,-0.7,-0.5]}
+              width="5"
+              height="3"
+              color="#77DCFF"
+              intensity="6.5"
+            />
             <PointLight id="s79_rim_4" position={[-4.5,2.8,-2.8]} color="#B576FF" intensity="24" range="10" />
             <AmbientOcclusion id="s79_ao_4" radius="0.72" intensity="0.8" />
             <ContactShadow id="s79_contact_4" distance="0.2" softness="0.4" intensity="0.9" />
@@ -382,14 +658,41 @@
             <Model id="s79_floor_4" asset="s79_floor" position={[0,-0.22,0]} />
             <Model id="s79_plinth_4_l" asset="s79_plinth" position={[-2.5,0.08,0]} />
             <Model id="s79_plinth_4_r" asset="s79_plinth" position={[2.5,0.08,0]} />
-            <Model id="s79_frog_model" asset="s79_frog_character" position={[-2.5,0.28,0]} rotationY="8" castShadow="true" />
-            <Model id="s79_owl_model" asset="s79_owl_character" position={[2.5,0.28,0]} rotationY="-8" castShadow="true" />
+            <Model
+              id="s79_frog_model"
+              asset="s79_frog_character"
+              position={[-2.5,0.28,0]}
+              rotationY="8"
+              castShadow="true"
+            />
+            <Model
+              id="s79_owl_model"
+              asset="s79_owl_character"
+              position={[2.5,0.28,0]}
+              rotationY="-8"
+              castShadow="true"
+            />
           </CompositeGroup>
         </Sequence>
         <Sequence from="16s" duration="4s" out="hide">
           <CompositeGroup id="s79_world_5" space="3d" depth="true" format="rgba16f">
-            <DirectionalLight id="s79_key_5" direction={[-0.48,-1,-0.32]} color="#FFD6B4" intensity="5" castShadow="true" shadowStrength="0.92" />
-            <RectAreaLight id="s79_fill_5" position={[4.6,4.8,5.5]} direction={[-0.6,-0.7,-0.5]} width="5" height="3" color="#77DCFF" intensity="6.5" />
+            <DirectionalLight
+              id="s79_key_5"
+              direction={[-0.48,-1,-0.32]}
+              color="#FFD6B4"
+              intensity="5"
+              castShadow="true"
+              shadowStrength="0.92"
+            />
+            <RectAreaLight
+              id="s79_fill_5"
+              position={[4.6,4.8,5.5]}
+              direction={[-0.6,-0.7,-0.5]}
+              width="5"
+              height="3"
+              color="#77DCFF"
+              intensity="6.5"
+            />
             <PointLight id="s79_rim_5" position={[-4.5,2.8,-2.8]} color="#B576FF" intensity="24" range="10" />
             <AmbientOcclusion id="s79_ao_5" radius="0.72" intensity="0.8" />
             <ContactShadow id="s79_contact_5" distance="0.2" softness="0.4" intensity="0.9" />
@@ -398,8 +701,20 @@
             <Model id="s79_floor_5" asset="s79_floor" position={[0,-0.22,0]} />
             <Model id="s79_plinth_5_l" asset="s79_plinth" position={[-2.5,0.08,0]} />
             <Model id="s79_plinth_5_r" asset="s79_plinth" position={[2.5,0.08,0]} />
-            <Model id="s79_mech_dog_model" asset="s79_mech_dog" position={[-2.5,0.28,0]} rotationY="8" castShadow="true" />
-            <Model id="s79_humanoid_model" asset="s79_armored_humanoid" position={[2.5,0.28,0]} rotationY="-8" castShadow="true" />
+            <Model
+              id="s79_mech_dog_model"
+              asset="s79_mech_dog"
+              position={[-2.5,0.28,0]}
+              rotationY="8"
+              castShadow="true"
+            />
+            <Model
+              id="s79_humanoid_model"
+              asset="s79_armored_humanoid"
+              position={[2.5,0.28,0]}
+              rotationY="-8"
+              castShadow="true"
+            />
           </CompositeGroup>
         </Sequence>
       </Track>
@@ -407,37 +722,172 @@
       <Track id="s79_labels" space="screen" compositeOrder="70">
         <Sequence from="0s" duration="4s" out="hide">
           <Layer space="screen">
-          <Text x="68" y="78" value="01–02 · ORGANIC SILHOUETTES" fontFamily="Arial" fontSize="28" fontWeight="800" tracking="3" color="#74E7FF" />
-          <Text x="290" y="936" value="PENGUIN" fontFamily="Arial" fontSize="25" fontWeight="800" tracking="3" color="#FFFFFF" />
-          <Text x="1245" y="936" value="SEAL" fontFamily="Arial" fontSize="25" fontWeight="800" tracking="3" color="#FFFFFF" />
+            <Text
+              x="68"
+              y="78"
+              value="01–02 · ORGANIC SILHOUETTES"
+              fontFamily="Arial"
+              fontSize="28"
+              fontWeight="800"
+              tracking="3"
+              color="#74E7FF"
+            />
+            <Text
+              x="290"
+              y="936"
+              value="PENGUIN"
+              fontFamily="Arial"
+              fontSize="25"
+              fontWeight="800"
+              tracking="3"
+              color="#FFFFFF"
+            />
+            <Text
+              x="1245"
+              y="936"
+              value="SEAL"
+              fontFamily="Arial"
+              fontSize="25"
+              fontWeight="800"
+              tracking="3"
+              color="#FFFFFF"
+            />
           </Layer>
         </Sequence>
         <Sequence from="4s" duration="4s" out="hide">
           <Layer space="screen">
-          <Text x="68" y="78" value="03–04 · AQUATIC FORMS" fontFamily="Arial" fontSize="28" fontWeight="800" tracking="3" color="#74E7FF" />
-          <Text x="290" y="936" value="DOLPHIN" fontFamily="Arial" fontSize="25" fontWeight="800" tracking="3" color="#FFFFFF" />
-          <Text x="1245" y="936" value="FISH" fontFamily="Arial" fontSize="25" fontWeight="800" tracking="3" color="#FFFFFF" />
+            <Text
+              x="68"
+              y="78"
+              value="03–04 · AQUATIC FORMS"
+              fontFamily="Arial"
+              fontSize="28"
+              fontWeight="800"
+              tracking="3"
+              color="#74E7FF"
+            />
+            <Text
+              x="290"
+              y="936"
+              value="DOLPHIN"
+              fontFamily="Arial"
+              fontSize="25"
+              fontWeight="800"
+              tracking="3"
+              color="#FFFFFF"
+            />
+            <Text
+              x="1245"
+              y="936"
+              value="FISH"
+              fontFamily="Arial"
+              fontSize="25"
+              fontWeight="800"
+              tracking="3"
+              color="#FFFFFF"
+            />
           </Layer>
         </Sequence>
         <Sequence from="8s" duration="4s" out="hide">
           <Layer space="screen">
-          <Text x="68" y="78" value="05–06 · GROUND CREATURES" fontFamily="Arial" fontSize="28" fontWeight="800" tracking="3" color="#74E7FF" />
-          <Text x="290" y="936" value="SNAKE" fontFamily="Arial" fontSize="25" fontWeight="800" tracking="3" color="#FFFFFF" />
-          <Text x="1245" y="936" value="TURTLE" fontFamily="Arial" fontSize="25" fontWeight="800" tracking="3" color="#FFFFFF" />
+            <Text
+              x="68"
+              y="78"
+              value="05–06 · GROUND CREATURES"
+              fontFamily="Arial"
+              fontSize="28"
+              fontWeight="800"
+              tracking="3"
+              color="#74E7FF"
+            />
+            <Text
+              x="290"
+              y="936"
+              value="SNAKE"
+              fontFamily="Arial"
+              fontSize="25"
+              fontWeight="800"
+              tracking="3"
+              color="#FFFFFF"
+            />
+            <Text
+              x="1245"
+              y="936"
+              value="TURTLE"
+              fontFamily="Arial"
+              fontSize="25"
+              fontWeight="800"
+              tracking="3"
+              color="#FFFFFF"
+            />
           </Layer>
         </Sequence>
         <Sequence from="12s" duration="4s" out="hide">
           <Layer space="screen">
-          <Text x="68" y="78" value="07–08 · CHARACTER SHAPES" fontFamily="Arial" fontSize="28" fontWeight="800" tracking="3" color="#74E7FF" />
-          <Text x="290" y="936" value="FROG" fontFamily="Arial" fontSize="25" fontWeight="800" tracking="3" color="#FFFFFF" />
-          <Text x="1245" y="936" value="OWL" fontFamily="Arial" fontSize="25" fontWeight="800" tracking="3" color="#FFFFFF" />
+            <Text
+              x="68"
+              y="78"
+              value="07–08 · CHARACTER SHAPES"
+              fontFamily="Arial"
+              fontSize="28"
+              fontWeight="800"
+              tracking="3"
+              color="#74E7FF"
+            />
+            <Text
+              x="290"
+              y="936"
+              value="FROG"
+              fontFamily="Arial"
+              fontSize="25"
+              fontWeight="800"
+              tracking="3"
+              color="#FFFFFF"
+            />
+            <Text
+              x="1245"
+              y="936"
+              value="OWL"
+              fontFamily="Arial"
+              fontSize="25"
+              fontWeight="800"
+              tracking="3"
+              color="#FFFFFF"
+            />
           </Layer>
         </Sequence>
         <Sequence from="16s" duration="4s" out="hide">
           <Layer space="screen">
-          <Text x="68" y="78" value="09–10 · HARD-SURFACE SWEET SPOT" fontFamily="Arial" fontSize="28" fontWeight="800" tracking="3" color="#74E7FF" />
-          <Text x="250" y="936" value="MECHANICAL DOG" fontFamily="Arial" fontSize="25" fontWeight="800" tracking="3" color="#FFFFFF" />
-          <Text x="1130" y="936" value="ARMORED HUMANOID" fontFamily="Arial" fontSize="25" fontWeight="800" tracking="3" color="#FFFFFF" />
+            <Text
+              x="68"
+              y="78"
+              value="09–10 · HARD-SURFACE SWEET SPOT"
+              fontFamily="Arial"
+              fontSize="28"
+              fontWeight="800"
+              tracking="3"
+              color="#74E7FF"
+            />
+            <Text
+              x="250"
+              y="936"
+              value="MECHANICAL DOG"
+              fontFamily="Arial"
+              fontSize="25"
+              fontWeight="800"
+              tracking="3"
+              color="#FFFFFF"
+            />
+            <Text
+              x="1130"
+              y="936"
+              value="ARMORED HUMANOID"
+              fontFamily="Arial"
+              fontSize="25"
+              fontWeight="800"
+              tracking="3"
+              color="#FFFFFF"
+            />
           </Layer>
         </Sequence>
       </Track>
@@ -459,10 +909,22 @@
     <Tex id="src" fmt="rgba16f" from="scene" />
     <Tex id="bloom" fmt="rgba16f" size={[1920,1080]} />
     <Tex id="out" fmt="rgba16f" size={[1920,1080]} />
-    <Pass id="s79_bloom" kind="compute" effect="glow_bloom" in={["src"]} out={["bloom"]}
-          params={{ threshold: "0.9", intensity: "0.1", sigma: "3.2" }} />
-    <Pass id="s79_grain" kind="compute" effect="film_grain" in={["bloom"]} out={["out"]}
-          params={{ kind: "film_grain", amount: "0.0025", scale: "1", seed: "79" }} />
+    <Pass
+      id="s79_bloom"
+      kind="compute"
+      effect="glow_bloom"
+      in={["src"]}
+      out={["bloom"]}
+      params={{ threshold: "0.9", intensity: "0.1", sigma: "3.2" }}
+    />
+    <Pass
+      id="s79_grain"
+      kind="compute"
+      effect="film_grain"
+      in={["bloom"]}
+      out={["out"]}
+      params={{ kind: "film_grain", amount: "0.0025", scale: "1", seed: "79" }}
+    />
   </Process>
   <Present from="S79TenProceduralCreatures" />
 </Graph>

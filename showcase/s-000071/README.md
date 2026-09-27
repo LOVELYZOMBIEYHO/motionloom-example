@@ -42,6 +42,6 @@ so every rendered frame reads the prepared simulation result directly.
 - Use `PhysicsDebug` for collider, contact-manifold, sweep and correction evidence.
 - Avoid assigning animation and dynamic physics to the same transform.
 
-All visible 3D assets use first-class typed `PrimitiveAsset` declarations. The
+All visible 3D assets use first-class typed `GeometryAsset` declarations. The
 environment light uses an inline one-pixel data URI, so the Showcase remains
 self-contained and requires no network asset download.

@@ -18,9 +18,14 @@
   <Process id="BloomAliasProcess">
     <Tex id="src" fmt="rgba16f" from="scene:S74AnicaStationLogoEmissiveSource" />
     <Tex id="out" fmt="rgba16f" size={[1600,240]} />
-    <Pass id="post_bloom" kind="compute" effect="bloom"
-          in={["src"]} out={["out"]}
-          params={{ threshold: "0.72", intensity: "1.45", sigma: "18.0" }} />
+    <Pass
+      id="post_bloom"
+      kind="compute"
+      effect="bloom"
+      in={["src"]}
+      out={["out"]}
+      params={{ threshold: "0.72", intensity: "1.45", sigma: "18.0" }}
+    />
   </Process>
   <Present from="BloomAliasProcess" />
 </Graph>

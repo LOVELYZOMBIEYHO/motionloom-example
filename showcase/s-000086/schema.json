@@ -506,21 +506,26 @@
           ],
           "recognized": true,
           "supportsAnimationTarget": false
-        },
+        }
+      ]
+    },
+    {
+      "tag": "GeometryAsset",
+      "occurrences": 16,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "id"
+      ],
+      "attributes": [
         {
-          "name": "subdivision",
-          "occurrences": 1,
+          "name": "id",
+          "occurrences": 16,
           "examples": [
-            "\"1\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "uvMode",
-          "occurrences": 1,
-          "examples": [
-            "\"frontBack\""
+            "\"bob_cap_geometry\"",
+            "\"bob_crown_geometry\"",
+            "\"bob_flyaways_geometry\"",
+            "\"bob_fringe_geometry\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -568,36 +573,11 @@
       ]
     },
     {
-      "tag": "HairAsset",
+      "tag": "Hair",
       "occurrences": 6,
       "recognized": true,
       "validationCoverage": "strict",
-      "requiredAttributes": [
-        "id",
-        "material"
-      ],
       "attributes": [
-        {
-          "name": "id",
-          "occurrences": 6,
-          "examples": [
-            "\"bob_crown\"",
-            "\"bob_flyaways\"",
-            "\"bob_fringe\"",
-            "\"bob_parting\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "material",
-          "occurrences": 6,
-          "examples": [
-            "\"s86_hair\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
         {
           "name": "space",
           "occurrences": 6,
@@ -881,13 +861,11 @@
       "attributes": []
     },
     {
-      "tag": "HeadAsset",
+      "tag": "Head",
       "occurrences": 1,
       "recognized": true,
       "validationCoverage": "strict",
       "requiredAttributes": [
-        "id",
-        "material",
         "archetype"
       ],
       "attributes": [
@@ -896,24 +874,6 @@
           "occurrences": 1,
           "examples": [
             "\"humanoid\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "id",
-          "occurrences": 1,
-          "examples": [
-            "\"s86_head\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "material",
-          "occurrences": 1,
-          "examples": [
-            "\"s86_skin\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1442,13 +1402,13 @@
     },
     {
       "tag": "Loft",
-      "occurrences": 4,
+      "occurrences": 3,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
           "name": "capEnd",
-          "occurrences": 4,
+          "occurrences": 3,
           "examples": [
             "\"true\""
           ],
@@ -1457,7 +1417,7 @@
         },
         {
           "name": "capStart",
-          "occurrences": 4,
+          "occurrences": 3,
           "examples": [
             "\"true\""
           ],
@@ -1466,7 +1426,7 @@
         },
         {
           "name": "closed",
-          "occurrences": 4,
+          "occurrences": 3,
           "examples": [
             "\"true\""
           ],
@@ -1475,7 +1435,7 @@
         },
         {
           "name": "segments",
-          "occurrences": 4,
+          "occurrences": 3,
           "examples": [
             "\"48\"",
             "\"80\"",
@@ -1562,15 +1522,6 @@
           "supportsAnimationTarget": false
         },
         {
-          "name": "mapping",
-          "occurrences": 1,
-          "examples": [
-            "\"uv\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
           "name": "metallic",
           "occurrences": 3,
           "examples": [
@@ -1652,6 +1603,54 @@
       ]
     },
     {
+      "tag": "MeshAsset",
+      "occurrences": 19,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "id",
+        "geometry",
+        "material"
+      ],
+      "attributes": [
+        {
+          "name": "geometry",
+          "occurrences": 19,
+          "examples": [
+            "\"bob_cap_geometry\"",
+            "\"bob_crown_geometry\"",
+            "\"bob_flyaways_geometry\"",
+            "\"bob_fringe_geometry\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 19,
+          "examples": [
+            "\"bob_cap\"",
+            "\"bob_crown\"",
+            "\"bob_flyaways\"",
+            "\"bob_fringe\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "material",
+          "occurrences": 19,
+          "examples": [
+            "\"s86_hair\"",
+            "\"s86_skin\"",
+            "\"s86_skin_recess\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
       "tag": "Model",
       "occurrences": 19,
       "recognized": true,
@@ -1707,6 +1706,13 @@
           "supportsAnimationTarget": true
         }
       ]
+    },
+    {
+      "tag": "Modifiers",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": []
     },
     {
       "tag": "Mouth",
@@ -2039,47 +2045,27 @@
       ]
     },
     {
-      "tag": "PrimitiveAsset",
-      "occurrences": 12,
+      "tag": "Primitive",
+      "occurrences": 2,
       "recognized": true,
       "validationCoverage": "strict",
       "requiredAttributes": [
-        "id",
         "shape"
       ],
       "discriminator": "shape",
       "variants": {
         "box": {
           "required": [
-            "id",
             "shape",
             "size"
           ],
           "optional": [
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "capsule": {
           "required": [
-            "id",
             "shape",
             "radius",
             "height"
@@ -2087,292 +2073,108 @@
           "optional": [
             "segments",
             "rings",
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "cone": {
           "required": [
-            "id",
             "shape",
             "radius",
             "height"
           ],
           "optional": [
             "segments",
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "cylinder": {
           "required": [
-            "id",
             "shape",
             "radius",
             "height"
           ],
           "optional": [
             "segments",
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "ellipsoid": {
           "required": [
-            "id",
             "shape",
             "radii"
           ],
           "optional": [
             "segments",
             "rings",
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "frustum": {
           "required": [
-            "id",
             "shape",
             "topSize",
             "bottomSize",
             "height"
           ],
           "optional": [
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "plane": {
           "required": [
-            "id",
             "shape",
             "size"
           ],
           "optional": [
             "segments",
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "roundedBox": {
           "required": [
-            "id",
             "shape",
             "size",
             "radius"
           ],
           "optional": [
             "segments",
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "sphere": {
           "required": [
-            "id",
             "shape",
             "radius"
           ],
           "optional": [
             "segments",
             "rings",
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "wedge": {
           "required": [
-            "id",
             "shape",
             "size"
           ],
           "optional": [
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         }
       },
       "attributes": [
         {
-          "name": "id",
-          "occurrences": 12,
-          "examples": [
-            "\"bob_cap\"",
-            "\"clay_antihelix_l\"",
-            "\"clay_antihelix_r\"",
-            "\"clay_concha_l\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "material",
-          "occurrences": 12,
-          "examples": [
-            "\"s86_hair\"",
-            "\"s86_skin\"",
-            "\"s86_skin_recess\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
           "name": "radii",
-          "occurrences": 4,
+          "occurrences": 2,
           "examples": [
             "{[0.006,0.046,0.028]}",
             "{[0.009,0.024,0.013]}"
@@ -2382,7 +2184,7 @@
         },
         {
           "name": "rings",
-          "occurrences": 4,
+          "occurrences": 2,
           "examples": [
             "\"24\"",
             "\"32\""
@@ -2392,7 +2194,7 @@
         },
         {
           "name": "segments",
-          "occurrences": 4,
+          "occurrences": 2,
           "examples": [
             "\"40\"",
             "\"48\""
@@ -2402,11 +2204,9 @@
         },
         {
           "name": "shape",
-          "occurrences": 12,
+          "occurrences": 2,
           "examples": [
-            "\"ellipsoid\"",
-            "\"loft\"",
-            "\"ribbon\""
+            "\"ellipsoid\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -2612,7 +2412,7 @@
     },
     {
       "tag": "Section",
-      "occurrences": 74,
+      "occurrences": 67,
       "recognized": true,
       "validationCoverage": "strict",
       "requiredAttributes": [
@@ -2623,7 +2423,7 @@
       "attributes": [
         {
           "name": "at",
-          "occurrences": 74,
+          "occurrences": 67,
           "examples": [
             "\"-0.075\"",
             "\"-0.130\"",
@@ -2635,7 +2435,7 @@
         },
         {
           "name": "depth",
-          "occurrences": 74,
+          "occurrences": 67,
           "examples": [
             "\"0.00733\"",
             "\"0.046\"",
@@ -2647,7 +2447,7 @@
         },
         {
           "name": "offset",
-          "occurrences": 74,
+          "occurrences": 67,
           "examples": [
             "{[0,-0.002]}",
             "{[0,-0.006]}",
@@ -2659,7 +2459,7 @@
         },
         {
           "name": "profile",
-          "occurrences": 74,
+          "occurrences": 67,
           "examples": [
             "\"ellipse\""
           ],
@@ -2668,7 +2468,7 @@
         },
         {
           "name": "width",
-          "occurrences": 74,
+          "occurrences": 67,
           "examples": [
             "\"0.00716\"",
             "\"0.046\"",
@@ -2693,6 +2493,36 @@
           "occurrences": 2,
           "examples": [
             "\"20s\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "Subdivision",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "levels",
+        "scheme"
+      ],
+      "attributes": [
+        {
+          "name": "levels",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "scheme",
+          "occurrences": 1,
+          "examples": [
+            "\"catmullClark\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false

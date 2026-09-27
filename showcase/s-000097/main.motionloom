@@ -16,88 +16,244 @@
     <ImageAsset id="s97_bark_color" src="assets/materials/bark-basecolor.png" colorSpace="srgb" />
     <ImageAsset id="s97_foliage_color" src="assets/materials/foliage-basecolor.png" colorSpace="srgb" />
 
-    <MaterialAsset id="s97_ground_mat" shading="pbr" baseColor="#B8B3A6"
-                   baseColorTexture="s97_ground_color" metallic="0" roughness="0.92" specular="0.14"
-                   mapping="triplanar" textureScale={[0.55,0.55]} variationAmount={[0.08,0.05]} />
-    <MaterialAsset id="s97_asphalt_mat" shading="pbr" baseColor="#D6D8D9"
-                   baseColorTexture="s97_asphalt_color" metallicRoughnessTexture="s97_asphalt_roughness"
-                   metallic="0" roughness="1" roughnessChannel="luminance" specular="0.2"
-                   mapping="uv" textureScale={[2.2,0.24]} variationAmount={[0.04,0.03]} />
+    <MaterialAsset
+      id="s97_ground_mat"
+      shading="pbr"
+      baseColor="#B8B3A6"
+      baseColorTexture="s97_ground_color"
+      metallic="0"
+      roughness="0.92"
+      specular="0.14"
+      textureScale={[0.55,0.55]}
+      variationAmount={[0.08,0.05]}
+    />
+    <MaterialAsset
+      id="s97_asphalt_mat"
+      shading="pbr"
+      baseColor="#D6D8D9"
+      baseColorTexture="s97_asphalt_color"
+      metallicRoughnessTexture="s97_asphalt_roughness"
+      metallic="0"
+      roughness="1"
+      roughnessChannel="luminance"
+      specular="0.2"
+      textureScale={[2.2,0.24]}
+      variationAmount={[0.04,0.03]}
+    />
     <MaterialAsset id="s97_paint_mat" shading="pbr" baseColor="#F2F3F4" metallic="0" roughness="0.6" specular="0.25" />
-    <MaterialAsset id="s97_guardrail_mat" shading="pbr" baseColor="#C7CBCC" metallic="0.68" roughness="0.34" specular="0.8" />
+    <MaterialAsset
+      id="s97_guardrail_mat"
+      shading="pbr"
+      baseColor="#C7CBCC"
+      metallic="0.68"
+      roughness="0.34"
+      specular="0.8"
+    />
     <MaterialAsset id="s97_rock_mat" shading="pbr" baseColor="#A69D8F" metallic="0" roughness="0.94" specular="0.12" />
-    <MaterialAsset id="s97_trunk_mat" shading="pbr" baseColor="#D7C9B6"
-                   baseColorTexture="s97_bark_color" metallic="0" roughness="0.9" specular="0.16"
-                   mapping="uv" textureScale={[1.2,2.8]} variationAmount={[0.06,0.04]} />
-    <MaterialAsset id="s97_leaf_a" shading="pbr" baseColor="#E2EAD8" baseColorTexture="s97_foliage_color"
-                   metallic="0" roughness="0.9" specular="0.09" mapping="triplanar" textureScale={[1.6,1.6]} />
-    <MaterialAsset id="s97_leaf_b" shading="pbr" baseColor="#EEF0D8" baseColorTexture="s97_foliage_color"
-                   metallic="0" roughness="0.91" specular="0.08" mapping="triplanar" textureScale={[1.45,1.45]} />
-    <MaterialAsset id="s97_leaf_c" shading="pbr" baseColor="#E4EDC8" baseColorTexture="s97_foliage_color"
-                   metallic="0" roughness="0.92" specular="0.08" mapping="triplanar" textureScale={[1.3,1.3]} />
-    <MaterialAsset id="s97_leaf_d" shading="pbr" baseColor="#F0F2D6" baseColorTexture="s97_foliage_color"
-                   metallic="0" roughness="0.92" specular="0.07" mapping="triplanar" textureScale={[1.2,1.2]} />
+    <MaterialAsset
+      id="s97_trunk_mat"
+      shading="pbr"
+      baseColor="#D7C9B6"
+      baseColorTexture="s97_bark_color"
+      metallic="0"
+      roughness="0.9"
+      specular="0.16"
+      textureScale={[1.2,2.8]}
+      variationAmount={[0.06,0.04]}
+    />
+    <MaterialAsset
+      id="s97_leaf_a"
+      shading="pbr"
+      baseColor="#E2EAD8"
+      baseColorTexture="s97_foliage_color"
+      metallic="0"
+      roughness="0.9"
+      specular="0.09"
+      textureScale={[1.6,1.6]}
+    />
+    <MaterialAsset
+      id="s97_leaf_b"
+      shading="pbr"
+      baseColor="#EEF0D8"
+      baseColorTexture="s97_foliage_color"
+      metallic="0"
+      roughness="0.91"
+      specular="0.08"
+      textureScale={[1.45,1.45]}
+    />
+    <MaterialAsset
+      id="s97_leaf_c"
+      shading="pbr"
+      baseColor="#E4EDC8"
+      baseColorTexture="s97_foliage_color"
+      metallic="0"
+      roughness="0.92"
+      specular="0.08"
+      textureScale={[1.3,1.3]}
+    />
+    <MaterialAsset
+      id="s97_leaf_d"
+      shading="pbr"
+      baseColor="#F0F2D6"
+      baseColorTexture="s97_foliage_color"
+      metallic="0"
+      roughness="0.92"
+      specular="0.07"
+      textureScale={[1.2,1.2]}
+    />
 
-    <TerrainAsset id="s97_terrain" heightMap="s97_height" size={[15.9000,8.9500]}
-                  heightScale="5.85390" heightOffset="-2.95000"
-                  material="s97_ground_mat" chunks={[8,5]} lod="full" collision="none" />
+    <TerrainAsset
+      id="s97_terrain"
+      heightMap="s97_height"
+      size={[15.9000,8.9500]}
+      heightScale="5.85390"
+      heightOffset="-2.95000"
+      material="s97_ground_mat"
+      chunks={[8,5]}
+      lod="full"
+      collision="none"
+    />
 
-    <PrimitiveAsset id="s97_rock_a" shape="ellipsoid" radii={[0.05750,0.03100,0.04100]}
-                    segments="10" rings="6" material="s97_rock_mat" collision="none" />
-    <PrimitiveAsset id="s97_rock_b" shape="ellipsoid" radii={[0.03900,0.02400,0.06400]}
-                    segments="10" rings="6" material="s97_rock_mat" collision="none" />
-    <PrimitiveAsset id="s97_rock_c" shape="wedge" size={[0.07500,0.04000,0.05000]}
-                    material="s97_rock_mat" collision="none" />
+    <GeometryAsset id="s97_rock_a_geometry">
+      <Primitive shape="ellipsoid" radii={[0.05750,0.03100,0.04100]} segments="10" rings="6" />
+    </GeometryAsset>
+    <MeshAsset id="s97_rock_a" material="s97_rock_mat" collision="none" geometry="s97_rock_a_geometry" />
+    <GeometryAsset id="s97_rock_b_geometry">
+      <Primitive shape="ellipsoid" radii={[0.03900,0.02400,0.06400]} segments="10" rings="6" />
+    </GeometryAsset>
+    <MeshAsset id="s97_rock_b" material="s97_rock_mat" collision="none" geometry="s97_rock_b_geometry" />
+    <GeometryAsset id="s97_rock_c_geometry">
+      <Primitive shape="wedge" size={[0.07500,0.04000,0.05000]} />
+    </GeometryAsset>
+    <MeshAsset id="s97_rock_c" material="s97_rock_mat" collision="none" geometry="s97_rock_c_geometry" />
 
-    <PrimitiveAsset id="s97_trunk_a" shape="cylinder" radius="0.015000" height="0.150000" segments="8" material="s97_trunk_mat" collision="none" />
-    <PrimitiveAsset id="s97_cone1_a" shape="cone" radius="0.120000" height="0.320000" segments="12" material="s97_leaf_a" collision="none" />
-    <PrimitiveAsset id="s97_cone2_a" shape="cone" radius="0.085000" height="0.300000" segments="12" material="s97_leaf_a" collision="none" />
+    <GeometryAsset id="s97_trunk_a_geometry">
+      <Primitive shape="cylinder" radius="0.015000" height="0.150000" segments="8" />
+    </GeometryAsset>
+    <MeshAsset id="s97_trunk_a" material="s97_trunk_mat" collision="none" geometry="s97_trunk_a_geometry" />
+    <GeometryAsset id="s97_cone1_a_geometry">
+      <Primitive shape="cone" radius="0.120000" height="0.320000" segments="12" />
+      <UV mode="box" />
+    </GeometryAsset>
+    <MeshAsset id="s97_cone1_a" material="s97_leaf_a" collision="none" geometry="s97_cone1_a_geometry" />
+    <GeometryAsset id="s97_cone2_a_geometry">
+      <Primitive shape="cone" radius="0.085000" height="0.300000" segments="12" />
+      <UV mode="box" />
+    </GeometryAsset>
+    <MeshAsset id="s97_cone2_a" material="s97_leaf_a" collision="none" geometry="s97_cone2_a_geometry" />
     <CompoundAsset id="s97_tree_a">
       <Instance id="trunk" asset="s97_trunk_a" position={[0.00000,0.07500,0.00000]} />
       <Instance id="cone1" asset="s97_cone1_a" position={[0.00000,0.23000,0.00000]} />
       <Instance id="cone2" asset="s97_cone2_a" position={[0.00000,0.45000,0.00000]} />
     </CompoundAsset>
-    <PrimitiveAsset id="s97_trunk_b" shape="cylinder" radius="0.013000" height="0.120000" segments="8" material="s97_trunk_mat" collision="none" />
-    <PrimitiveAsset id="s97_cone1_b" shape="cone" radius="0.145000" height="0.260000" segments="12" material="s97_leaf_a" collision="none" />
-    <PrimitiveAsset id="s97_cone2_b" shape="cone" radius="0.110000" height="0.220000" segments="12" material="s97_leaf_a" collision="none" />
-    <PrimitiveAsset id="s97_cone3_b" shape="cone" radius="0.075000" height="0.140000" segments="12" material="s97_leaf_a" collision="none" />
+    <GeometryAsset id="s97_trunk_b_geometry">
+      <Primitive shape="cylinder" radius="0.013000" height="0.120000" segments="8" />
+    </GeometryAsset>
+    <MeshAsset id="s97_trunk_b" material="s97_trunk_mat" collision="none" geometry="s97_trunk_b_geometry" />
+    <GeometryAsset id="s97_cone1_b_geometry">
+      <Primitive shape="cone" radius="0.145000" height="0.260000" segments="12" />
+      <UV mode="box" />
+    </GeometryAsset>
+    <MeshAsset id="s97_cone1_b" material="s97_leaf_a" collision="none" geometry="s97_cone1_b_geometry" />
+    <GeometryAsset id="s97_cone2_b_geometry">
+      <Primitive shape="cone" radius="0.110000" height="0.220000" segments="12" />
+      <UV mode="box" />
+    </GeometryAsset>
+    <MeshAsset id="s97_cone2_b" material="s97_leaf_a" collision="none" geometry="s97_cone2_b_geometry" />
+    <GeometryAsset id="s97_cone3_b_geometry">
+      <Primitive shape="cone" radius="0.075000" height="0.140000" segments="12" />
+      <UV mode="box" />
+    </GeometryAsset>
+    <MeshAsset id="s97_cone3_b" material="s97_leaf_a" collision="none" geometry="s97_cone3_b_geometry" />
     <CompoundAsset id="s97_tree_b">
       <Instance id="trunk" asset="s97_trunk_b" position={[0.00000,0.06000,0.00000]} />
       <Instance id="cone1" asset="s97_cone1_b" position={[0.00000,0.20500,0.00000]} />
       <Instance id="cone2" asset="s97_cone2_b" position={[0.00000,0.37000,0.00000]} />
       <Instance id="cone3" asset="s97_cone3_b" position={[0.00000,0.49500,0.00000]} />
     </CompoundAsset>
-    <PrimitiveAsset id="s97_trunk_c" shape="cylinder" radius="0.015000" height="0.140000" segments="8" material="s97_trunk_mat" collision="none" />
-    <PrimitiveAsset id="s97_cone1_c" shape="cone" radius="0.160000" height="0.250000" segments="12" material="s97_leaf_b" collision="none" />
-    <PrimitiveAsset id="s97_cone2_c" shape="cone" radius="0.120000" height="0.230000" segments="12" material="s97_leaf_b" collision="none" />
-    <PrimitiveAsset id="s97_cone3_c" shape="cone" radius="0.075000" height="0.160000" segments="12" material="s97_leaf_b" collision="none" />
+    <GeometryAsset id="s97_trunk_c_geometry">
+      <Primitive shape="cylinder" radius="0.015000" height="0.140000" segments="8" />
+    </GeometryAsset>
+    <MeshAsset id="s97_trunk_c" material="s97_trunk_mat" collision="none" geometry="s97_trunk_c_geometry" />
+    <GeometryAsset id="s97_cone1_c_geometry">
+      <Primitive shape="cone" radius="0.160000" height="0.250000" segments="12" />
+      <UV mode="box" />
+    </GeometryAsset>
+    <MeshAsset id="s97_cone1_c" material="s97_leaf_b" collision="none" geometry="s97_cone1_c_geometry" />
+    <GeometryAsset id="s97_cone2_c_geometry">
+      <Primitive shape="cone" radius="0.120000" height="0.230000" segments="12" />
+      <UV mode="box" />
+    </GeometryAsset>
+    <MeshAsset id="s97_cone2_c" material="s97_leaf_b" collision="none" geometry="s97_cone2_c_geometry" />
+    <GeometryAsset id="s97_cone3_c_geometry">
+      <Primitive shape="cone" radius="0.075000" height="0.160000" segments="12" />
+      <UV mode="box" />
+    </GeometryAsset>
+    <MeshAsset id="s97_cone3_c" material="s97_leaf_b" collision="none" geometry="s97_cone3_c_geometry" />
     <CompoundAsset id="s97_tree_c">
       <Instance id="trunk" asset="s97_trunk_c" position={[0.00000,0.07000,0.00000]} />
       <Instance id="cone1" asset="s97_cone1_c" position={[0.00000,0.20000,0.00000]} />
       <Instance id="cone2" asset="s97_cone2_c" position={[0.00000,0.38000,0.00000]} />
       <Instance id="cone3" asset="s97_cone3_c" position={[0.00000,0.52000,0.00000]} />
     </CompoundAsset>
-    <PrimitiveAsset id="s97_trunk_d" shape="cylinder" radius="0.021000" height="0.200000" segments="8" material="s97_trunk_mat" collision="none" />
-    <PrimitiveAsset id="s97_blob1_d" shape="sphere" radius="0.145000" segments="14" rings="9" material="s97_leaf_c" collision="none" />
-    <PrimitiveAsset id="s97_blob2_d" shape="sphere" radius="0.105000" segments="12" rings="8" material="s97_leaf_c" collision="none" />
+    <GeometryAsset id="s97_trunk_d_geometry">
+      <Primitive shape="cylinder" radius="0.021000" height="0.200000" segments="8" />
+    </GeometryAsset>
+    <MeshAsset id="s97_trunk_d" material="s97_trunk_mat" collision="none" geometry="s97_trunk_d_geometry" />
+    <GeometryAsset id="s97_blob1_d_geometry">
+      <Primitive shape="sphere" radius="0.145000" segments="14" rings="9" />
+      <UV mode="box" />
+    </GeometryAsset>
+    <MeshAsset id="s97_blob1_d" material="s97_leaf_c" collision="none" geometry="s97_blob1_d_geometry" />
+    <GeometryAsset id="s97_blob2_d_geometry">
+      <Primitive shape="sphere" radius="0.105000" segments="12" rings="8" />
+      <UV mode="box" />
+    </GeometryAsset>
+    <MeshAsset id="s97_blob2_d" material="s97_leaf_c" collision="none" geometry="s97_blob2_d_geometry" />
     <CompoundAsset id="s97_tree_d">
       <Instance id="trunk" asset="s97_trunk_d" position={[0.00000,0.10000,0.00000]} />
       <Instance id="blob1" asset="s97_blob1_d" position={[0.00000,0.28000,0.00000]} />
       <Instance id="blob2" asset="s97_blob2_d" position={[0.09000,0.35000,0.04500]} />
     </CompoundAsset>
-    <PrimitiveAsset id="s97_trunk_e" shape="cylinder" radius="0.023000" height="0.220000" segments="8" material="s97_trunk_mat" collision="none" />
-    <PrimitiveAsset id="s97_blob1_e" shape="sphere" radius="0.160000" segments="14" rings="9" material="s97_leaf_d" collision="none" />
-    <PrimitiveAsset id="s97_blob2_e" shape="sphere" radius="0.130000" segments="12" rings="8" material="s97_leaf_d" collision="none" />
-    <PrimitiveAsset id="s97_blob3_e" shape="sphere" radius="0.110000" segments="12" rings="8" material="s97_leaf_d" collision="none" />
+    <GeometryAsset id="s97_trunk_e_geometry">
+      <Primitive shape="cylinder" radius="0.023000" height="0.220000" segments="8" />
+    </GeometryAsset>
+    <MeshAsset id="s97_trunk_e" material="s97_trunk_mat" collision="none" geometry="s97_trunk_e_geometry" />
+    <GeometryAsset id="s97_blob1_e_geometry">
+      <Primitive shape="sphere" radius="0.160000" segments="14" rings="9" />
+      <UV mode="box" />
+    </GeometryAsset>
+    <MeshAsset id="s97_blob1_e" material="s97_leaf_d" collision="none" geometry="s97_blob1_e_geometry" />
+    <GeometryAsset id="s97_blob2_e_geometry">
+      <Primitive shape="sphere" radius="0.130000" segments="12" rings="8" />
+      <UV mode="box" />
+    </GeometryAsset>
+    <MeshAsset id="s97_blob2_e" material="s97_leaf_d" collision="none" geometry="s97_blob2_e_geometry" />
+    <GeometryAsset id="s97_blob3_e_geometry">
+      <Primitive shape="sphere" radius="0.110000" segments="12" rings="8" />
+      <UV mode="box" />
+    </GeometryAsset>
+    <MeshAsset id="s97_blob3_e" material="s97_leaf_d" collision="none" geometry="s97_blob3_e_geometry" />
     <CompoundAsset id="s97_tree_e">
       <Instance id="trunk" asset="s97_trunk_e" position={[0.00000,0.11000,0.00000]} />
       <Instance id="blob1" asset="s97_blob1_e" position={[0.00000,0.31000,0.00000]} />
       <Instance id="blob2" asset="s97_blob2_e" position={[-0.10000,0.40000,0.05500]} />
       <Instance id="blob3" asset="s97_blob3_e" position={[0.09500,0.39000,-0.06500]} />
     </CompoundAsset>
-    <PrimitiveAsset id="s97_trunk_f" shape="cylinder" radius="0.026000" height="0.300000" segments="8" material="s97_trunk_mat" collision="none" />
-    <PrimitiveAsset id="s97_blob1_f" shape="sphere" radius="0.135000" segments="14" rings="9" material="s97_leaf_d" collision="none" />
-    <PrimitiveAsset id="s97_blob2_f" shape="sphere" radius="0.115000" segments="12" rings="8" material="s97_leaf_d" collision="none" />
+    <GeometryAsset id="s97_trunk_f_geometry">
+      <Primitive shape="cylinder" radius="0.026000" height="0.300000" segments="8" />
+    </GeometryAsset>
+    <MeshAsset id="s97_trunk_f" material="s97_trunk_mat" collision="none" geometry="s97_trunk_f_geometry" />
+    <GeometryAsset id="s97_blob1_f_geometry">
+      <Primitive shape="sphere" radius="0.135000" segments="14" rings="9" />
+      <UV mode="box" />
+    </GeometryAsset>
+    <MeshAsset id="s97_blob1_f" material="s97_leaf_d" collision="none" geometry="s97_blob1_f_geometry" />
+    <GeometryAsset id="s97_blob2_f_geometry">
+      <Primitive shape="sphere" radius="0.115000" segments="12" rings="8" />
+      <UV mode="box" />
+    </GeometryAsset>
+    <MeshAsset id="s97_blob2_f" material="s97_leaf_d" collision="none" geometry="s97_blob2_f_geometry" />
     <CompoundAsset id="s97_tree_f">
       <Instance id="trunk" asset="s97_trunk_f" position={[0.00000,0.15000,0.00000]} />
       <Instance id="blob1" asset="s97_blob1_f" position={[0.00000,0.40000,0.00000]} />
@@ -281,49 +437,90 @@
       <CurvePoint position={[6.13825,-1.97560,3.07927]} />
       <CurvePoint position={[6.18084,-1.98510,3.20406]} />
     </CurveAsset>
-    <SweepAsset id="s97_asphalt" curve="s97_road_curve" material="s97_asphalt_mat" frame="worldUp" uvMode="distance" uvScale={[1,2]} capStart="true" capEnd="true" collision="none" smoothProfile="true">
-      <Profile closed="false">
-        <ProfilePoint position={[-0.137500,0.002500]} />
-        <ProfilePoint position={[-0.070000,0.006204]} />
-        <ProfilePoint position={[0.000000,0.007500]} />
-        <ProfilePoint position={[0.070000,0.006204]} />
-        <ProfilePoint position={[0.137500,0.002500]} />
-      </Profile>
-    </SweepAsset>
-    <SweepAsset id="s97_line_left" curve="s97_road_curve" material="s97_paint_mat" frame="worldUp" uvMode="distance" uvScale={[1,2]} capStart="true" capEnd="true" collision="none" smoothProfile="true">
-      <Profile closed="false">
-        <ProfilePoint position={[-0.126000,0.012801]} />
-        <ProfilePoint position={[-0.115000,0.013502]} />
-      </Profile>
-    </SweepAsset>
-    <SweepAsset id="s97_line_right" curve="s97_road_curve" material="s97_paint_mat" frame="worldUp" uvMode="distance" uvScale={[1,2]} capStart="true" capEnd="true" collision="none" smoothProfile="true">
-      <Profile closed="false">
-        <ProfilePoint position={[0.115000,0.013502]} />
-        <ProfilePoint position={[0.126000,0.012801]} />
-      </Profile>
-    </SweepAsset>
-    <SweepAsset id="s97_line_center" curve="s97_road_curve" material="s97_paint_mat" frame="worldUp" uvMode="distance" uvScale={[1,2]} capStart="true" capEnd="true" collision="none" smoothProfile="true" dash={[0.11000,0.14000]}>
-      <Profile closed="false">
-        <ProfilePoint position={[-0.004000,0.017496]} />
-        <ProfilePoint position={[0.004000,0.017496]} />
-      </Profile>
-    </SweepAsset>
-    <SweepAsset id="s97_guardrail_left" curve="s97_road_curve" material="s97_guardrail_mat" frame="worldUp" uvMode="distance" uvScale={[1,2]} capStart="true" capEnd="true" collision="none">
-      <Profile closed="true">
-        <ProfilePoint position={[-0.153000,0.021000]} />
-        <ProfilePoint position={[-0.147000,0.021000]} />
-        <ProfilePoint position={[-0.147000,0.046000]} />
-        <ProfilePoint position={[-0.153000,0.046000]} />
-      </Profile>
-    </SweepAsset>
-    <SweepAsset id="s97_guardrail_right" curve="s97_road_curve" material="s97_guardrail_mat" frame="worldUp" uvMode="distance" uvScale={[1,2]} capStart="true" capEnd="true" collision="none">
-      <Profile closed="true">
-        <ProfilePoint position={[0.147000,0.021000]} />
-        <ProfilePoint position={[0.153000,0.021000]} />
-        <ProfilePoint position={[0.153000,0.046000]} />
-        <ProfilePoint position={[0.147000,0.046000]} />
-      </Profile>
-    </SweepAsset>
+    <GeometryAsset id="s97_asphalt_geometry">
+      <Sweep curve="s97_road_curve" frame="worldUp" capStart="true" capEnd="true" smoothProfile="true">
+        <Profile closed="false">
+          <ProfilePoint position={[-0.137500,0.002500]} />
+          <ProfilePoint position={[-0.070000,0.006204]} />
+          <ProfilePoint position={[0.000000,0.007500]} />
+          <ProfilePoint position={[0.070000,0.006204]} />
+          <ProfilePoint position={[0.137500,0.002500]} />
+        </Profile>
+      </Sweep>
+      <UV mode="distance" scale={[1,2]} />
+    </GeometryAsset>
+    <MeshAsset id="s97_asphalt" material="s97_asphalt_mat" collision="none" geometry="s97_asphalt_geometry" />
+    <GeometryAsset id="s97_line_left_geometry">
+      <Sweep curve="s97_road_curve" frame="worldUp" capStart="true" capEnd="true" smoothProfile="true">
+        <Profile closed="false">
+          <ProfilePoint position={[-0.126000,0.012801]} />
+          <ProfilePoint position={[-0.115000,0.013502]} />
+        </Profile>
+      </Sweep>
+      <UV mode="distance" scale={[1,2]} />
+    </GeometryAsset>
+    <MeshAsset id="s97_line_left" material="s97_paint_mat" collision="none" geometry="s97_line_left_geometry" />
+    <GeometryAsset id="s97_line_right_geometry">
+      <Sweep curve="s97_road_curve" frame="worldUp" capStart="true" capEnd="true" smoothProfile="true">
+        <Profile closed="false">
+          <ProfilePoint position={[0.115000,0.013502]} />
+          <ProfilePoint position={[0.126000,0.012801]} />
+        </Profile>
+      </Sweep>
+      <UV mode="distance" scale={[1,2]} />
+    </GeometryAsset>
+    <MeshAsset id="s97_line_right" material="s97_paint_mat" collision="none" geometry="s97_line_right_geometry" />
+    <GeometryAsset id="s97_line_center_geometry">
+      <Sweep
+        curve="s97_road_curve"
+        frame="worldUp"
+        capStart="true"
+        capEnd="true"
+        smoothProfile="true"
+        dash={[0.11000,0.14000]}
+      >
+        <Profile closed="false">
+          <ProfilePoint position={[-0.004000,0.017496]} />
+          <ProfilePoint position={[0.004000,0.017496]} />
+        </Profile>
+      </Sweep>
+      <UV mode="distance" scale={[1,2]} />
+    </GeometryAsset>
+    <MeshAsset id="s97_line_center" material="s97_paint_mat" collision="none" geometry="s97_line_center_geometry" />
+    <GeometryAsset id="s97_guardrail_left_geometry">
+      <Sweep curve="s97_road_curve" frame="worldUp" capStart="true" capEnd="true">
+        <Profile closed="true">
+          <ProfilePoint position={[-0.153000,0.021000]} />
+          <ProfilePoint position={[-0.147000,0.021000]} />
+          <ProfilePoint position={[-0.147000,0.046000]} />
+          <ProfilePoint position={[-0.153000,0.046000]} />
+        </Profile>
+      </Sweep>
+      <UV mode="distance" scale={[1,2]} />
+    </GeometryAsset>
+    <MeshAsset
+      id="s97_guardrail_left"
+      material="s97_guardrail_mat"
+      collision="none"
+      geometry="s97_guardrail_left_geometry"
+    />
+    <GeometryAsset id="s97_guardrail_right_geometry">
+      <Sweep curve="s97_road_curve" frame="worldUp" capStart="true" capEnd="true">
+        <Profile closed="true">
+          <ProfilePoint position={[0.147000,0.021000]} />
+          <ProfilePoint position={[0.153000,0.021000]} />
+          <ProfilePoint position={[0.153000,0.046000]} />
+          <ProfilePoint position={[0.147000,0.046000]} />
+        </Profile>
+      </Sweep>
+      <UV mode="distance" scale={[1,2]} />
+    </GeometryAsset>
+    <MeshAsset
+      id="s97_guardrail_right"
+      material="s97_guardrail_mat"
+      collision="none"
+      geometry="s97_guardrail_right_geometry"
+    />
   </Assets>
 
   <Background color="#C7D6E2" />
@@ -333,28 +530,56 @@
       <Track id="s97_world" space="3d" compositeOrder="30">
         <Sequence from="0s" duration="12s" out="hold">
           <CompositeGroup id="s97_island" space="3d" depth="true" format="rgba16f">
-            <DirectionalLight id="s97_sun" direction={[-0.5,-0.74,0.45]}
-                              color="#FFF4E2" intensity="4.4" castShadow="true" shadowStrength="0.78" />
-            <DirectionalLight id="s97_fill" direction={[0.55,-0.62,-0.55]}
-                              color="#C9DCEA" intensity="0.72" castShadow="false" />
+            <DirectionalLight
+              id="s97_sun"
+              direction={[-0.5,-0.74,0.45]}
+              color="#FFF4E2"
+              intensity="4.4"
+              castShadow="true"
+              shadowStrength="0.78"
+            />
+            <DirectionalLight
+              id="s97_fill"
+              direction={[0.55,-0.62,-0.55]}
+              color="#C9DCEA"
+              intensity="0.72"
+              castShadow="false"
+            />
             <AmbientOcclusion id="s97_ao" intensity="0.38" radius="0.08000" />
             <AtmosphereFog id="s97_aerial_haze" scatteringColor="#C8D2D3" density="0.003" affectEnvironment="false" />
-            <Camera3D id="s97_aerial" position={[curve("0.0:0.00000:linear, 1.5:0.00067:linear, 3.0:0.00256:linear, 4.5:0.00540:linear, 6.0:0.00875:linear, 7.5:0.01210:linear, 9.0:0.01494:linear, 10.5:0.01683:linear, 12.0:0.01750:linear"),curve("0.0:40.21140:linear, 1.5:40.17773:linear, 3.0:40.08184:linear, 4.5:39.93834:linear, 6.0:39.76907:linear, 7.5:39.59980:linear, 9.0:39.45630:linear, 10.5:39.36042:linear, 12.0:39.32675:linear"),curve("0.0:3.51804:linear, 1.5:3.51510:linear, 3.0:3.50671:linear, 4.5:3.49415:linear, 6.0:3.47934:linear, 7.5:3.46453:linear, 9.0:3.45198:linear, 10.5:3.44359:linear, 12.0:3.44064:linear")]} target={[curve("0.0:0.00000:linear, 1.5:0.00057:linear, 3.0:0.00220:linear, 4.5:0.00463:linear, 6.0:0.00750:linear, 7.5:0.01037:linear, 9.0:0.01280:linear, 10.5:0.01443:linear, 12.0:0.01500:linear"),curve("0.0:0.00000:linear, 1.5:0.00000:linear, 3.0:0.00000:linear, 4.5:0.00000:linear, 6.0:0.00000:linear, 7.5:0.00000:linear, 9.0:0.00000:linear, 10.5:0.00000:linear, 12.0:0.00000:linear"),curve("0.0:0.00000:linear, 1.5:-0.00019:linear, 3.0:-0.00073:linear, 4.5:-0.00154:linear, 6.0:-0.00250:linear, 7.5:-0.00346:linear, 9.0:-0.00427:linear, 10.5:-0.00481:linear, 12.0:-0.00500:linear")]} fov="10.0" />
+            <Camera3D
+              id="s97_aerial"
+              position={[curve("0.0:0.00000:linear, 1.5:0.00067:linear, 3.0:0.00256:linear, 4.5:0.00540:linear, 6.0:0.00875:linear, 7.5:0.01210:linear, 9.0:0.01494:linear, 10.5:0.01683:linear, 12.0:0.01750:linear"),curve("0.0:40.21140:linear, 1.5:40.17773:linear, 3.0:40.08184:linear, 4.5:39.93834:linear, 6.0:39.76907:linear, 7.5:39.59980:linear, 9.0:39.45630:linear, 10.5:39.36042:linear, 12.0:39.32675:linear"),curve("0.0:3.51804:linear, 1.5:3.51510:linear, 3.0:3.50671:linear, 4.5:3.49415:linear, 6.0:3.47934:linear, 7.5:3.46453:linear, 9.0:3.45198:linear, 10.5:3.44359:linear, 12.0:3.44064:linear")]}
+              target={[curve("0.0:0.00000:linear, 1.5:0.00057:linear, 3.0:0.00220:linear, 4.5:0.00463:linear, 6.0:0.00750:linear, 7.5:0.01037:linear, 9.0:0.01280:linear, 10.5:0.01443:linear, 12.0:0.01500:linear"),curve("0.0:0.00000:linear, 1.5:0.00000:linear, 3.0:0.00000:linear, 4.5:0.00000:linear, 6.0:0.00000:linear, 7.5:0.00000:linear, 9.0:0.00000:linear, 10.5:0.00000:linear, 12.0:0.00000:linear"),curve("0.0:0.00000:linear, 1.5:-0.00019:linear, 3.0:-0.00073:linear, 4.5:-0.00154:linear, 6.0:-0.00250:linear, 7.5:-0.00346:linear, 9.0:-0.00427:linear, 10.5:-0.00481:linear, 12.0:-0.00500:linear")]}
+              fov="10.0"
+            />
 
-            <Model id="s97_terrain_model" asset="s97_terrain" position={[0,0,0]}
-                   castShadow="true" receiveShadow="true" />
+            <Model
+              id="s97_terrain_model"
+              asset="s97_terrain"
+              position={[0,0,0]}
+              castShadow="true"
+              receiveShadow="true"
+            />
             <Model id="s97_asphalt_model" asset="s97_asphalt" castShadow="true" receiveShadow="true" />
             <Model id="s97_line_left_model" asset="s97_line_left" receiveShadow="true" />
             <Model id="s97_line_right_model" asset="s97_line_right" receiveShadow="true" />
             <Model id="s97_line_center_model" asset="s97_line_center" receiveShadow="true" />
             <Model id="s97_guardrail_left_model" asset="s97_guardrail_left" castShadow="true" receiveShadow="true" />
             <Model id="s97_guardrail_right_model" asset="s97_guardrail_right" castShadow="true" receiveShadow="true" />
-            <Scatter id="s97_forest" surface="s97_terrain_model"
-                     count="10760" seed="97"
-                     exclusionMap="s97_forest_exclusion"
-                     slopeRange={[0,90]} scaleRange={[0.42,0.86]}
-                     rotationYRange={[0,360]} surfaceOffset="-0.01250"
-                     castShadow="true" receiveShadow="true">
+            <Scatter
+              id="s97_forest"
+              surface="s97_terrain_model"
+              count="10760"
+              seed="97"
+              exclusionMap="s97_forest_exclusion"
+              slopeRange={[0,90]}
+              scaleRange={[0.42,0.86]}
+              rotationYRange={[0,360]}
+              surfaceOffset="-0.01250"
+              castShadow="true"
+              receiveShadow="true"
+            >
               <Variant asset="s97_tree_a" weight="24" />
               <Variant asset="s97_tree_b" weight="24" />
               <Variant asset="s97_tree_c" weight="20" />
@@ -362,12 +587,20 @@
               <Variant asset="s97_tree_e" weight="12" />
               <Variant asset="s97_tree_f" weight="6" />
             </Scatter>
-            <Scatter id="s97_cut_rocks" surface="s97_terrain_model"
-                     count="720" seed="197" densityMap="s97_rock_density"
-                     exclusionMap="s97_forest_exclusion"
-                     slopeRange={[0,90]} scaleRange={[0.55,1.45]}
-                     rotationYRange={[0,360]} surfaceOffset="-0.00600"
-                     castShadow="true" receiveShadow="true">
+            <Scatter
+              id="s97_cut_rocks"
+              surface="s97_terrain_model"
+              count="720"
+              seed="197"
+              densityMap="s97_rock_density"
+              exclusionMap="s97_forest_exclusion"
+              slopeRange={[0,90]}
+              scaleRange={[0.55,1.45]}
+              rotationYRange={[0,360]}
+              surfaceOffset="-0.00600"
+              castShadow="true"
+              receiveShadow="true"
+            >
               <Variant asset="s97_rock_a" weight="42" />
               <Variant asset="s97_rock_b" weight="36" />
               <Variant asset="s97_rock_c" weight="22" />

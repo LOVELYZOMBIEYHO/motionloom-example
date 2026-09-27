@@ -6,25 +6,50 @@
       <Font id="serif" family="Times New Roman" fallback="serif" />
       <Font id="mono" family="Arial" fallback="sans-serif" />
 
-      <LinearGradient id="museum_wall" x1="0" y1="0" x2="1" y2="1"
-                      stops="0:#160B06, 0.38:#2B170B, 0.72:#100706, 1:#060303" />
-      <LinearGradient id="floor_gold" x1="0" y1="0" x2="0" y2="1"
-                      stops="0:#2A160A, 0.42:#1A0B05, 1:#060303" />
-      <LinearGradient id="case_glass" x1="0" y1="0" x2="1" y2="1"
-                      stops="0:#FFFFFF20, 0.28:#D4AF3744, 0.62:#42230D22, 1:#00000000" />
-      <LinearGradient id="gold_line" x1="0" y1="0" x2="1" y2="0"
-                      stops="0:#D4AF3700, 0.18:#D4AF37, 0.50:#FFF1A8, 0.82:#D4AF37, 1:#D4AF3700" />
-      <LinearGradient id="time_beam" x1="0" y1="0" x2="1" y2="0"
-                      stops="0:#00FFFF00, 0.35:#77FFFF66, 0.50:#FFFFFFCC, 0.65:#FFD70077, 1:#FFD70000" />
+      <LinearGradient
+        id="museum_wall"
+        x1="0"
+        y1="0"
+        x2="1"
+        y2="1"
+        stops="0:#160B06, 0.38:#2B170B, 0.72:#100706, 1:#060303"
+      />
+      <LinearGradient id="floor_gold" x1="0" y1="0" x2="0" y2="1" stops="0:#2A160A, 0.42:#1A0B05, 1:#060303" />
+      <LinearGradient
+        id="case_glass"
+        x1="0"
+        y1="0"
+        x2="1"
+        y2="1"
+        stops="0:#FFFFFF20, 0.28:#D4AF3744, 0.62:#42230D22, 1:#00000000"
+      />
+      <LinearGradient
+        id="gold_line"
+        x1="0"
+        y1="0"
+        x2="1"
+        y2="0"
+        stops="0:#D4AF3700, 0.18:#D4AF37, 0.50:#FFF1A8, 0.82:#D4AF37, 1:#D4AF3700"
+      />
+      <LinearGradient
+        id="time_beam"
+        x1="0"
+        y1="0"
+        x2="1"
+        y2="0"
+        stops="0:#00FFFF00, 0.35:#77FFFF66, 0.50:#FFFFFFCC, 0.65:#FFD70077, 1:#FFD70000"
+      />
 
-      <RadialGradient id="center_glow" cx="0.50" cy="0.50" r="0.58"
-                      stops="0:#FFF2B8DD, 0.20:#FFD75EAA, 0.52:#8A4A1844, 1:#00000000" />
-      <RadialGradient id="blue_glow" cx="0.50" cy="0.50" r="0.58"
-                      stops="0:#BFFAFFAA, 0.35:#32D6FF55, 1:#32D6FF00" />
-      <RadialGradient id="red_glow" cx="0.50" cy="0.50" r="0.58"
-                      stops="0:#FFD6AA99, 0.36:#FF7A3355, 1:#FF7A3300" />
-      <RadialGradient id="dust_dot" cx="0.50" cy="0.50" r="0.50"
-                      stops="0:#FFF3D5AA, 0.45:#FFF3D544, 1:#FFF3D500" />
+      <RadialGradient
+        id="center_glow"
+        cx="0.50"
+        cy="0.50"
+        r="0.58"
+        stops="0:#FFF2B8DD, 0.20:#FFD75EAA, 0.52:#8A4A1844, 1:#00000000"
+      />
+      <RadialGradient id="blue_glow" cx="0.50" cy="0.50" r="0.58" stops="0:#BFFAFFAA, 0.35:#32D6FF55, 1:#32D6FF00" />
+      <RadialGradient id="red_glow" cx="0.50" cy="0.50" r="0.58" stops="0:#FFD6AA99, 0.36:#FF7A3355, 1:#FF7A3300" />
+      <RadialGradient id="dust_dot" cx="0.50" cy="0.50" r="0.50" stops="0:#FFF3D5AA, 0.45:#FFF3D544, 1:#FFF3D500" />
     </Defs>
 
     <Timeline>
@@ -35,7 +60,17 @@
             <Rect x="0" y="760" width="1920" height="320" fill="url(#floor_gold)" />
 
             <Rect x="180" y="130" width="1560" height="690" radius="36" color="#000000" opacity="0.30" />
-            <Rect x="240" y="185" width="1440" height="560" radius="24" color="#090505" stroke="#D4AF3733" strokeWidth="2" opacity="0.82" />
+            <Rect
+              x="240"
+              y="185"
+              width="1440"
+              height="560"
+              radius="24"
+              color="#090505"
+              stroke="#D4AF3733"
+              strokeWidth="2"
+              opacity="0.82"
+            />
 
             <Repeat id="floor_depth_lines" count="13" x="360" y="835" yStep="18" opacity="0.34" opacityStep="-0.018">
               <Line x1="-260" y1="0" x2="1180" y2="0" stroke="#D4AF37" strokeWidth="1" opacity="0.20" />
@@ -45,14 +80,26 @@
               <Rect x="0" y="0" width="52" height="8" fill="#D4AF37" opacity="0.24" />
             </Repeat>
 
-            <Text value="THE INFINITE MUSEUM OF TIME"
-                  x="960" y="92" font="serif" fontSize="54" renderScale="4x"
-                  color="#F8E7B8"
-                  opacity={curve("0:0:linear, 0.45:1:ease_out, 4.7:1:linear, 5:0:ease_in")} />
-            <Text value="one machine keeps every century moving"
-                  x="960" y="137" font="mono" fontSize="24" renderScale="4x"
-                  color="#BFA76F"
-                  opacity={curve("0:0:linear, 0.65:0.82:ease_out, 4.7:0.82:linear, 5:0:ease_in")} />
+            <Text
+              value="THE INFINITE MUSEUM OF TIME"
+              x="960"
+              y="92"
+              font="serif"
+              fontSize="54"
+              renderScale="4x"
+              color="#F8E7B8"
+              opacity={curve("0:0:linear, 0.45:1:ease_out, 4.7:1:linear, 5:0:ease_in")}
+            />
+            <Text
+              value="one machine keeps every century moving"
+              x="960"
+              y="137"
+              font="mono"
+              fontSize="24"
+              renderScale="4x"
+              color="#BFA76F"
+              opacity={curve("0:0:linear, 0.65:0.82:ease_out, 4.7:0.82:linear, 5:0:ease_in")}
+            />
           </Layer>
         </Sequence>
       </Track>
@@ -60,32 +107,110 @@
       <Track id="side_cases" z="-70">
         <Sequence from="0s" duration="5s" out="hold">
           <Layer>
-            <Group id="ancient_case" x="310" y="300"
-                   opacity={curve("0:0:linear, 0.35:0.92:ease_out, 4.4:0.92:linear, 5:0.20:ease_in")}
-                   scale={curve("0:0.92:ease_out, 1.4:1.0:ease_in_out, 5:1.02:linear")}
-                   transformOriginX="0" transformOriginY="0">
-              <Rect x="-150" y="-80" width="300" height="430" radius="28" fill="url(#case_glass)" stroke="#D4AF3755" strokeWidth="2" />
-              <Text value="ANCIENT" x="0" y="-22" font="serif" fontSize="28" renderScale="4x" color="#FFD47A" opacity="0.78" />
+            <Group
+              id="ancient_case"
+              x="310"
+              y="300"
+              opacity={curve("0:0:linear, 0.35:0.92:ease_out, 4.4:0.92:linear, 5:0.20:ease_in")}
+              scale={curve("0:0.92:ease_out, 1.4:1.0:ease_in_out, 5:1.02:linear")}
+              transformOriginX="0"
+              transformOriginY="0"
+            >
+              <Rect
+                x="-150"
+                y="-80"
+                width="300"
+                height="430"
+                radius="28"
+                fill="url(#case_glass)"
+                stroke="#D4AF3755"
+                strokeWidth="2"
+              />
+              <Text
+                value="ANCIENT"
+                x="0"
+                y="-22"
+                font="serif"
+                fontSize="28"
+                renderScale="4x"
+                color="#FFD47A"
+                opacity="0.78"
+              />
               <Circle x="0" y="150" radius="105" fill="#1A0D06" stroke="#D4AF37" strokeWidth="4" opacity="0.96" />
               <Repeat id="ancient_marks" count="12" x="0" y="150" rotationStep="30" opacity="1" opacityStep="0">
                 <Line x1="0" y1="-86" x2="0" y2="-72" stroke="#D4AF37" strokeWidth="2" opacity="0.75" />
               </Repeat>
-              <Line x1="0" y1="150" x2="0" y2="86" stroke="#FFD47A" strokeWidth="5"
-                    rotation={curve("0:-40:linear, 2.2:60:ease_in_out, 4.6:210:ease_in_out, 5:260:linear")} />
-              <Line x1="0" y1="150" x2="62" y2="150" stroke="#FFD47A" strokeWidth="3"
-                    rotation={curve("0:110:linear, 2.2:300:ease_in_out, 4.6:80:ease_in_out, 5:120:linear")} />
+              <Line
+                x1="0"
+                y1="150"
+                x2="0"
+                y2="86"
+                stroke="#FFD47A"
+                strokeWidth="5"
+                rotation={curve("0:-40:linear, 2.2:60:ease_in_out, 4.6:210:ease_in_out, 5:260:linear")}
+              />
+              <Line
+                x1="0"
+                y1="150"
+                x2="62"
+                y2="150"
+                stroke="#FFD47A"
+                strokeWidth="3"
+                rotation={curve("0:110:linear, 2.2:300:ease_in_out, 4.6:80:ease_in_out, 5:120:linear")}
+              />
               <Circle x="0" y="150" radius="8" color="#FFD47A" />
             </Group>
 
-            <Group id="future_case" x="1610" y="300"
-                   opacity={curve("0:0:linear, 0.55:0.88:ease_out, 4.4:0.88:linear, 5:0.20:ease_in")}
-                   scale={curve("0:0.92:ease_out, 1.4:1.0:ease_in_out, 5:1.02:linear")}
-                   transformOriginX="0" transformOriginY="0">
-              <Rect x="-150" y="-80" width="300" height="430" radius="28" fill="url(#case_glass)" stroke="#32D6FF55" strokeWidth="2" />
-              <Text value="FUTURE" x="0" y="-22" font="mono" fontSize="28" renderScale="4x" color="#9AFBFF" opacity="0.78" />
-              <Rect x="-102" y="92" width="204" height="116" radius="18" color="#020908" stroke="#32D6FF" strokeWidth="3" opacity="0.96" />
-              <Text value="00:00" x="0" y="162" font="mono" fontSize="44" renderScale="4x" color="#8CFFB8"
-                    opacity={curve("0:0.55:linear, 1.0:0.92:ease_out, 3.6:0.92:linear, 4.2:0.40:ease_in_out, 5:1:linear")} />
+            <Group
+              id="future_case"
+              x="1610"
+              y="300"
+              opacity={curve("0:0:linear, 0.55:0.88:ease_out, 4.4:0.88:linear, 5:0.20:ease_in")}
+              scale={curve("0:0.92:ease_out, 1.4:1.0:ease_in_out, 5:1.02:linear")}
+              transformOriginX="0"
+              transformOriginY="0"
+            >
+              <Rect
+                x="-150"
+                y="-80"
+                width="300"
+                height="430"
+                radius="28"
+                fill="url(#case_glass)"
+                stroke="#32D6FF55"
+                strokeWidth="2"
+              />
+              <Text
+                value="FUTURE"
+                x="0"
+                y="-22"
+                font="mono"
+                fontSize="28"
+                renderScale="4x"
+                color="#9AFBFF"
+                opacity="0.78"
+              />
+              <Rect
+                x="-102"
+                y="92"
+                width="204"
+                height="116"
+                radius="18"
+                color="#020908"
+                stroke="#32D6FF"
+                strokeWidth="3"
+                opacity="0.96"
+              />
+              <Text
+                value="00:00"
+                x="0"
+                y="162"
+                font="mono"
+                fontSize="44"
+                renderScale="4x"
+                color="#8CFFB8"
+                opacity={curve("0:0.55:linear, 1.0:0.92:ease_out, 3.6:0.92:linear, 4.2:0.40:ease_in_out, 5:1:linear")}
+              />
               <Circle x="0" y="150" radius="150" fill="url(#blue_glow)" opacity="0.32" blend="screen" />
               <Repeat id="future_rings" count="4" x="0" y="150" opacity="0.42" opacityStep="-0.07">
                 <Circle x="0" y="0" radius="68" stroke="#32D6FF" strokeWidth="1.5" fill="#00000000" />
@@ -98,10 +223,15 @@
       <Track id="time_engine" z="-30">
         <Sequence from="0s" duration="5s" out="hold">
           <Layer>
-            <Group id="engine" x="960" y="515"
-                   scale={curve("0:0.78:ease_out, 0.8:1.03:ease_out, 1.2:1.0:ease_in_out, 4.55:1.10:ease_in_out, 5:0.92:ease_in")}
-                   opacity={curve("0:0:linear, 0.28:1:ease_out, 4.8:1:linear, 5:0.85:linear")}
-                   transformOriginX="0" transformOriginY="0">
+            <Group
+              id="engine"
+              x="960"
+              y="515"
+              scale={curve("0:0.78:ease_out, 0.8:1.03:ease_out, 1.2:1.0:ease_in_out, 4.55:1.10:ease_in_out, 5:0.92:ease_in")}
+              opacity={curve("0:0:linear, 0.28:1:ease_out, 4.8:1:linear, 5:0.85:linear")}
+              transformOriginX="0"
+              transformOriginY="0"
+            >
               <Circle x="0" y="0" radius="290" fill="url(#center_glow)" opacity="0.58" blend="screen" />
               <Circle x="0" y="0" radius="224" color="#120906" stroke="#D4AF37" strokeWidth="8" opacity="0.98" />
               <Circle x="0" y="0" radius="190" color="#00000000" stroke="#F8E7B8" strokeWidth="2" opacity="0.46" />
@@ -110,24 +240,64 @@
               <Repeat id="engine_hour_marks" count="12" x="0" y="0" rotationStep="30" opacity="1" opacityStep="0">
                 <Line x1="0" y1="-198" x2="0" y2="-172" stroke="#F8E7B8" strokeWidth="5" opacity="0.82" />
               </Repeat>
-              <Repeat id="engine_minor_marks" count="60" x="0" y="0" rotationStep="6" opacity="0.62" opacityStep="-0.002">
+              <Repeat
+                id="engine_minor_marks"
+                count="60"
+                x="0"
+                y="0"
+                rotationStep="6"
+                opacity="0.62"
+                opacityStep="-0.002"
+              >
                 <Line x1="0" y1="-198" x2="0" y2="-188" stroke="#D4AF37" strokeWidth="1" opacity="0.52" />
               </Repeat>
 
-              <Line x1="0" y1="0" x2="0" y2="-132" stroke="#FFF1A8" strokeWidth="12" lineCap="round"
-                    rotation={curve("0:10:linear, 1.7:140:ease_in_out, 3.6:305:ease_in_out, 4.7:720:ease_in, 5:900:linear")} />
-              <Line x1="0" y1="0" x2="106" y2="0" stroke="#FFD47A" strokeWidth="7" lineCap="round"
-                    rotation={curve("0:80:linear, 1.7:-80:ease_in_out, 3.6:-300:ease_in_out, 4.7:-900:ease_in, 5:-1260:linear")} />
+              <Line
+                x1="0"
+                y1="0"
+                x2="0"
+                y2="-132"
+                stroke="#FFF1A8"
+                strokeWidth="12"
+                lineCap="round"
+                rotation={curve("0:10:linear, 1.7:140:ease_in_out, 3.6:305:ease_in_out, 4.7:720:ease_in, 5:900:linear")}
+              />
+              <Line
+                x1="0"
+                y1="0"
+                x2="106"
+                y2="0"
+                stroke="#FFD47A"
+                strokeWidth="7"
+                lineCap="round"
+                rotation={curve("0:80:linear, 1.7:-80:ease_in_out, 3.6:-300:ease_in_out, 4.7:-900:ease_in, 5:-1260:linear")}
+              />
               <Circle x="0" y="0" radius="18" color="#FFF1A8" />
               <Circle x="0" y="0" radius="56" color="#00000000" stroke="#FFD47A" strokeWidth="2" opacity="0.55" />
 
-              <Text value="TIME ENGINE" x="0" y="320" font="mono" fontWeight="900" fontSize="58" renderScale="4x" color="#FFF1A8"
-                    opacity={curve("0:0:linear, 0.8:1:ease_out, 4.65:1:linear, 5:0:ease_in")} />
+              <Text
+                value="TIME ENGINE"
+                x="0"
+                y="320"
+                font="mono"
+                fontWeight="900"
+                fontSize="58"
+                renderScale="4x"
+                color="#FFF1A8"
+                opacity={curve("0:0:linear, 0.8:1:ease_out, 4.65:1:linear, 5:0:ease_in")}
+              />
             </Group>
 
-            <Rect x={curve("0:-460:linear, 1.2:-460:linear, 2.0:1920:ease_in_out, 5:2300:linear")}
-                  y="480" width="460" height="62" radius="31"
-                  fill="url(#time_beam)" opacity="0.72" blend="screen" />
+            <Rect
+              x={curve("0:-460:linear, 1.2:-460:linear, 2.0:1920:ease_in_out, 5:2300:linear")}
+              y="480"
+              width="460"
+              height="62"
+              radius="31"
+              fill="url(#time_beam)"
+              opacity="0.72"
+              blend="screen"
+            />
           </Layer>
         </Sequence>
       </Track>
@@ -135,10 +305,15 @@
       <Track id="orbiting_relics" z="-10">
         <Sequence from="0s" duration="5s" out="hold">
           <Layer>
-            <Group id="orbit" x="960" y="515"
-                   opacity={curve("0:0:linear, 1.1:0:linear, 1.55:1:ease_out, 4.7:1:linear, 5:0:ease_in")}
-                   rotation={curve("0:0:linear, 5:110:linear")}
-                   transformOriginX="0" transformOriginY="0">
+            <Group
+              id="orbit"
+              x="960"
+              y="515"
+              opacity={curve("0:0:linear, 1.1:0:linear, 1.55:1:ease_out, 4.7:1:linear, 5:0:ease_in")}
+              rotation={curve("0:0:linear, 5:110:linear")}
+              transformOriginX="0"
+              transformOriginY="0"
+            >
               <Repeat id="relic_repeat" count="10" x="0" y="0" rotationStep="36" opacity="0.88" opacityStep="-0.018">
                 <Group x="330" y="0" rotation={curve("0:0:linear, 5:-360:linear")} scale="0.82">
                   <Circle x="0" y="0" radius="34" color="#120906" stroke="#D4AF37" strokeWidth="2" opacity="0.90" />
@@ -149,8 +324,24 @@
               </Repeat>
             </Group>
 
-            <Repeat id="museum_dust" count="36" x="120" y="190" xStep="48" yStep="23" opacity="0.42" opacityStep="-0.006">
-              <Circle x="18*sin($time.sec*0.8)" y="12*cos($time.sec*0.7)" radius="2" fill="url(#dust_dot)" opacity="0.32" blend="screen" />
+            <Repeat
+              id="museum_dust"
+              count="36"
+              x="120"
+              y="190"
+              xStep="48"
+              yStep="23"
+              opacity="0.42"
+              opacityStep="-0.006"
+            >
+              <Circle
+                x="18*sin($time.sec*0.8)"
+                y="12*cos($time.sec*0.7)"
+                radius="2"
+                fill="url(#dust_dot)"
+                opacity="0.32"
+                blend="screen"
+              />
             </Repeat>
           </Layer>
         </Sequence>
@@ -159,13 +350,38 @@
       <Track id="final_freeze" z="10">
         <Sequence from="0s" duration="5s" out="hold">
           <Layer>
-            <Group id="freeze_stamp" x="960" y="515"
-                   opacity={curve("0:0:linear, 4.28:0:linear, 4.55:1:ease_out, 5:1:linear")}
-                   scale={curve("0:0.6:linear, 4.28:0.6:linear, 4.55:1.0:ease_out, 5:1.0:linear")}
-                   transformOriginX="0" transformOriginY="0">
+            <Group
+              id="freeze_stamp"
+              x="960"
+              y="515"
+              opacity={curve("0:0:linear, 4.28:0:linear, 4.55:1:ease_out, 5:1:linear")}
+              scale={curve("0:0.6:linear, 4.28:0.6:linear, 4.55:1.0:ease_out, 5:1.0:linear")}
+              transformOriginX="0"
+              transformOriginY="0"
+            >
               <Circle x="0" y="0" radius="360" fill="url(#center_glow)" opacity="0.34" blend="screen" />
-              <Text value="00:00" x="0" y="-28" font="mono" fontWeight="900" fontSize="128" renderScale="4x" color="#FFD700" opacity="0.96" />
-              <Text value="TIME STOPS" x="0" y="92" font="mono" fontWeight="900" fontSize="34" renderScale="4x" color="#F8E7B8" opacity="0.84" />
+              <Text
+                value="00:00"
+                x="0"
+                y="-28"
+                font="mono"
+                fontWeight="900"
+                fontSize="128"
+                renderScale="4x"
+                color="#FFD700"
+                opacity="0.96"
+              />
+              <Text
+                value="TIME STOPS"
+                x="0"
+                y="92"
+                font="mono"
+                fontWeight="900"
+                fontSize="34"
+                renderScale="4x"
+                color="#F8E7B8"
+                opacity="0.84"
+              />
               <Line x1="-280" y1="-92" x2="-180" y2="-92" stroke="#D4AF37" strokeWidth="4" />
               <Line x1="180" y1="-92" x2="280" y2="-92" stroke="#D4AF37" strokeWidth="4" />
               <Line x1="-280" y1="132" x2="-180" y2="132" stroke="#D4AF37" strokeWidth="4" />
@@ -182,22 +398,32 @@
     <Tex id="hsla_src" fmt="rgba16f" size={[1920,1080]} />
     <Tex id="bloom_src" fmt="rgba16f" size={[1920,1080]} />
 
-    <Pass id="post_hsla" kind="compute" effect="hsla_overlay"
-          in={["scene_src"]} out={["hsla_src"]}
-          params={{
+    <Pass
+      id="post_hsla"
+      kind="compute"
+      effect="hsla_overlay"
+      in={["scene_src"]}
+      out={["hsla_src"]}
+      params={{
             hue: "36",
             saturation: "0.16",
             lightness: "-0.02",
             alpha: "0.24"
-          }} />
+          }}
+    />
 
-    <Pass id="post_bloom" kind="compute" effect="glow_bloom"
-          in={["hsla_src"]} out={["bloom_src"]}
-          params={{
+    <Pass
+      id="post_bloom"
+      kind="compute"
+      effect="glow_bloom"
+      in={["hsla_src"]}
+      out={["bloom_src"]}
+      params={{
             threshold: "0.34",
             intensity: "1.25",
             sigma: "10.0"
-          }} />
+          }}
+    />
   </Process>
 
   <Present from="museum_post" />

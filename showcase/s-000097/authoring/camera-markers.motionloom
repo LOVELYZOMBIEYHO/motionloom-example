@@ -1,16 +1,84 @@
 <!-- S97 camera calibration markers -->
 <Graph fps={24} duration="1s" size={[1920,1080]} renderSize={[1920,1080]}>
   <Assets>
-    <PrimitiveAsset id="s97_marker_red_shape" shape="sphere" radius="0.10000" segments="16" rings="10" color="#FF0000" material="s97_marker_red_mat" collision="none" />
-    <MaterialAsset id="s97_marker_red_mat" shading="pbr" baseColor="#FF0000" emissive="#FF0000" emissiveStrength="4" roughness="0.9" />
-    <PrimitiveAsset id="s97_marker_green_shape" shape="sphere" radius="0.10000" segments="16" rings="10" color="#00FF00" material="s97_marker_green_mat" collision="none" />
-    <MaterialAsset id="s97_marker_green_mat" shading="pbr" baseColor="#00FF00" emissive="#00FF00" emissiveStrength="4" roughness="0.9" />
-    <PrimitiveAsset id="s97_marker_blue_shape" shape="sphere" radius="0.10000" segments="16" rings="10" color="#0000FF" material="s97_marker_blue_mat" collision="none" />
-    <MaterialAsset id="s97_marker_blue_mat" shading="pbr" baseColor="#0000FF" emissive="#0000FF" emissiveStrength="4" roughness="0.9" />
-    <PrimitiveAsset id="s97_marker_yellow_shape" shape="sphere" radius="0.10000" segments="16" rings="10" color="#FFFF00" material="s97_marker_yellow_mat" collision="none" />
-    <MaterialAsset id="s97_marker_yellow_mat" shading="pbr" baseColor="#FFFF00" emissive="#FFFF00" emissiveStrength="4" roughness="0.9" />
-    <PrimitiveAsset id="s97_marker_magenta_shape" shape="sphere" radius="0.10000" segments="16" rings="10" color="#FF00FF" material="s97_marker_magenta_mat" collision="none" />
-    <MaterialAsset id="s97_marker_magenta_mat" shading="pbr" baseColor="#FF00FF" emissive="#FF00FF" emissiveStrength="4" roughness="0.9" />
+    <GeometryAsset id="s97_marker_red_shape_geometry">
+      <Primitive shape="sphere" radius="0.10000" segments="16" rings="10" />
+    </GeometryAsset>
+    <MeshAsset
+      id="s97_marker_red_shape"
+      color="#FF0000"
+      material="s97_marker_red_mat"
+      collision="none"
+      geometry="s97_marker_red_shape_geometry"
+    />
+    <MaterialAsset
+      id="s97_marker_red_mat"
+      shading="pbr"
+      baseColor="#FF0000"
+      emissive="#FF0000"
+      emissiveStrength="4"
+      roughness="0.9"
+    />
+    <MeshAsset
+      id="s97_marker_green_shape"
+      color="#00FF00"
+      material="s97_marker_green_mat"
+      collision="none"
+      geometry="s97_marker_red_shape_geometry"
+    />
+    <MaterialAsset
+      id="s97_marker_green_mat"
+      shading="pbr"
+      baseColor="#00FF00"
+      emissive="#00FF00"
+      emissiveStrength="4"
+      roughness="0.9"
+    />
+    <MeshAsset
+      id="s97_marker_blue_shape"
+      color="#0000FF"
+      material="s97_marker_blue_mat"
+      collision="none"
+      geometry="s97_marker_red_shape_geometry"
+    />
+    <MaterialAsset
+      id="s97_marker_blue_mat"
+      shading="pbr"
+      baseColor="#0000FF"
+      emissive="#0000FF"
+      emissiveStrength="4"
+      roughness="0.9"
+    />
+    <MeshAsset
+      id="s97_marker_yellow_shape"
+      color="#FFFF00"
+      material="s97_marker_yellow_mat"
+      collision="none"
+      geometry="s97_marker_red_shape_geometry"
+    />
+    <MaterialAsset
+      id="s97_marker_yellow_mat"
+      shading="pbr"
+      baseColor="#FFFF00"
+      emissive="#FFFF00"
+      emissiveStrength="4"
+      roughness="0.9"
+    />
+    <MeshAsset
+      id="s97_marker_magenta_shape"
+      color="#FF00FF"
+      material="s97_marker_magenta_mat"
+      collision="none"
+      geometry="s97_marker_red_shape_geometry"
+    />
+    <MaterialAsset
+      id="s97_marker_magenta_mat"
+      shading="pbr"
+      baseColor="#FF00FF"
+      emissive="#FF00FF"
+      emissiveStrength="4"
+      roughness="0.9"
+    />
   </Assets>
   <Background color="#000000" />
   <Scene id="S97Markers">

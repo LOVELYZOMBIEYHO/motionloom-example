@@ -414,6 +414,29 @@
       ]
     },
     {
+      "tag": "GeometryAsset",
+      "occurrences": 30,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "id"
+      ],
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 30,
+          "examples": [
+            "\"s97_asphalt_geometry\"",
+            "\"s97_blob1_d_geometry\"",
+            "\"s97_blob1_e_geometry\"",
+            "\"s97_blob1_f_geometry\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
       "tag": "Graph",
       "occurrences": 1,
       "recognized": true,
@@ -637,16 +660,6 @@
           "supportsAnimationTarget": false
         },
         {
-          "name": "mapping",
-          "occurrences": 7,
-          "examples": [
-            "\"triplanar\"",
-            "\"uv\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
           "name": "metallic",
           "occurrences": 10,
           "examples": [
@@ -728,6 +741,64 @@
             "{[0.04,0.03]}",
             "{[0.06,0.04]}",
             "{[0.08,0.05]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "MeshAsset",
+      "occurrences": 30,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "id",
+        "geometry",
+        "material"
+      ],
+      "attributes": [
+        {
+          "name": "collision",
+          "occurrences": 30,
+          "examples": [
+            "\"none\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "geometry",
+          "occurrences": 30,
+          "examples": [
+            "\"s97_asphalt_geometry\"",
+            "\"s97_blob1_d_geometry\"",
+            "\"s97_blob1_e_geometry\"",
+            "\"s97_blob1_f_geometry\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 30,
+          "examples": [
+            "\"s97_asphalt\"",
+            "\"s97_blob1_d\"",
+            "\"s97_blob1_e\"",
+            "\"s97_blob1_f\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "material",
+          "occurrences": 30,
+          "examples": [
+            "\"s97_asphalt_mat\"",
+            "\"s97_guardrail_mat\"",
+            "\"s97_leaf_a\"",
+            "\"s97_leaf_b\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -874,47 +945,27 @@
       ]
     },
     {
-      "tag": "PrimitiveAsset",
+      "tag": "Primitive",
       "occurrences": 24,
       "recognized": true,
       "validationCoverage": "strict",
       "requiredAttributes": [
-        "id",
         "shape"
       ],
       "discriminator": "shape",
       "variants": {
         "box": {
           "required": [
-            "id",
             "shape",
             "size"
           ],
           "optional": [
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "capsule": {
           "required": [
-            "id",
             "shape",
             "radius",
             "height"
@@ -922,275 +973,105 @@
           "optional": [
             "segments",
             "rings",
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "cone": {
           "required": [
-            "id",
             "shape",
             "radius",
             "height"
           ],
           "optional": [
             "segments",
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "cylinder": {
           "required": [
-            "id",
             "shape",
             "radius",
             "height"
           ],
           "optional": [
             "segments",
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "ellipsoid": {
           "required": [
-            "id",
             "shape",
             "radii"
           ],
           "optional": [
             "segments",
             "rings",
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "frustum": {
           "required": [
-            "id",
             "shape",
             "topSize",
             "bottomSize",
             "height"
           ],
           "optional": [
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "plane": {
           "required": [
-            "id",
             "shape",
             "size"
           ],
           "optional": [
             "segments",
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "roundedBox": {
           "required": [
-            "id",
             "shape",
             "size",
             "radius"
           ],
           "optional": [
             "segments",
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "sphere": {
           "required": [
-            "id",
             "shape",
             "radius"
           ],
           "optional": [
             "segments",
             "rings",
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         },
         "wedge": {
           "required": [
-            "id",
             "shape",
             "size"
           ],
           "optional": [
-            "color",
-            "material",
             "bevelRadius",
-            "bevelSegments",
-            "materialSeed",
-            "collision",
-            "collider",
-            "colliderSize",
-            "colliderRadius",
-            "colliderHeight",
-            "colliderScale",
-            "colliderOffset",
-            "colliderRotation",
-            "colliderMargin",
-            "collisionGroup",
-            "collisionMask",
-            "friction",
-            "restitution",
-            "density"
+            "bevelSegments"
           ]
         }
       },
       "attributes": [
-        {
-          "name": "collision",
-          "occurrences": 24,
-          "examples": [
-            "\"none\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
         {
           "name": "height",
           "occurrences": 14,
@@ -1204,30 +1085,6 @@
           "valueType": "number",
           "supportsInlineExpression": true,
           "supportsAnimationTarget": true
-        },
-        {
-          "name": "id",
-          "occurrences": 24,
-          "examples": [
-            "\"s97_blob1_d\"",
-            "\"s97_blob1_e\"",
-            "\"s97_blob1_f\"",
-            "\"s97_blob2_d\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "material",
-          "occurrences": 24,
-          "examples": [
-            "\"s97_leaf_a\"",
-            "\"s97_leaf_b\"",
-            "\"s97_leaf_c\"",
-            "\"s97_leaf_d\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
         },
         {
           "name": "radii",
@@ -1580,12 +1437,11 @@
       ]
     },
     {
-      "tag": "SweepAsset",
+      "tag": "Sweep",
       "occurrences": 6,
       "recognized": true,
       "validationCoverage": "strict",
       "requiredAttributes": [
-        "id",
         "curve"
       ],
       "attributes": [
@@ -1603,15 +1459,6 @@
           "occurrences": 6,
           "examples": [
             "\"true\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "collision",
-          "occurrences": 6,
-          "examples": [
-            "\"none\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1644,51 +1491,10 @@
           "supportsAnimationTarget": false
         },
         {
-          "name": "id",
-          "occurrences": 6,
-          "examples": [
-            "\"s97_asphalt\"",
-            "\"s97_guardrail_left\"",
-            "\"s97_guardrail_right\"",
-            "\"s97_line_center\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "material",
-          "occurrences": 6,
-          "examples": [
-            "\"s97_asphalt_mat\"",
-            "\"s97_guardrail_mat\"",
-            "\"s97_paint_mat\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
           "name": "smoothProfile",
           "occurrences": 4,
           "examples": [
             "\"true\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "uvMode",
-          "occurrences": 6,
-          "examples": [
-            "\"distance\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "uvScale",
-          "occurrences": 6,
-          "examples": [
-            "{[1,2]}"
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1828,6 +1634,38 @@
           ],
           "recognized": true,
           "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "UV",
+      "occurrences": 21,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "mode"
+      ],
+      "attributes": [
+        {
+          "name": "mode",
+          "occurrences": 21,
+          "examples": [
+            "\"box\"",
+            "\"distance\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "scale",
+          "occurrences": 6,
+          "examples": [
+            "{[1,2]}"
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
         }
       ]
     },

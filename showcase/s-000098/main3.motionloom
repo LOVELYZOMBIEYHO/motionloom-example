@@ -1,5 +1,5 @@
 <!-- S98 | Realistic red apple | authored geometry + ImageGen peel albedo | Weaver-ready -->
-<Graph fps={24} duration="20s" size={[1080,1920]} renderSize={[1080,1920]}>
+<Graph fps={24} duration="20s" size={[1920,1080]} renderSize={[1920,1080]}>
   <RenderStyle id="s98_studio_physical">
     <SurfaceStyle shading="physical" />
     <LightingStyle ambientIntensity="0.19" ambientColor="#DDE7ED" shadowStyle="soft" />
@@ -50,6 +50,216 @@
       emissiveStrength="0.12"
     />
     <MaterialAsset id="s98_calyx" shading="pbr" baseColor="#80543A" metallic="0" roughness="0.91" specular="0.10" />
+    <MaterialAsset id="s98_table" shading="pbr" baseColor="#000000" metallic="0" roughness="1" specular="0" />
+    <GeometryAsset id="s98_studio_cyclorama_geometry">
+      <Mesh>
+        <Vertex position={[-100,-0.005370,100.000000]} />
+        <Vertex position={[100,-0.005370,100.000000]} />
+        <Vertex position={[-100,-0.005370,-10.000000]} />
+        <Vertex position={[100,-0.005370,-10.000000]} />
+        <Vertex position={[-100,-0.001756,-10.294495]} />
+        <Vertex position={[100,-0.001756,-10.294495]} />
+        <Vertex position={[-100,0.009085,-10.588812]} />
+        <Vertex position={[100,0.009085,-10.588812]} />
+        <Vertex position={[-100,0.027145,-10.882775]} />
+        <Vertex position={[100,0.027145,-10.882775]} />
+        <Vertex position={[-100,0.052413,-11.176206]} />
+        <Vertex position={[100,0.052413,-11.176206]} />
+        <Vertex position={[-100,0.084876,-11.468928]} />
+        <Vertex position={[100,0.084876,-11.468928]} />
+        <Vertex position={[-100,0.124512,-11.760766]} />
+        <Vertex position={[100,0.124512,-11.760766]} />
+        <Vertex position={[-100,0.171298,-12.051543]} />
+        <Vertex position={[100,0.171298,-12.051543]} />
+        <Vertex position={[-100,0.225207,-12.341084]} />
+        <Vertex position={[100,0.225207,-12.341084]} />
+        <Vertex position={[-100,0.286204,-12.629215]} />
+        <Vertex position={[100,0.286204,-12.629215]} />
+        <Vertex position={[-100,0.354255,-12.915762]} />
+        <Vertex position={[100,0.354255,-12.915762]} />
+        <Vertex position={[-100,0.429317,-13.200553]} />
+        <Vertex position={[100,0.429317,-13.200553]} />
+        <Vertex position={[-100,0.511346,-13.483416]} />
+        <Vertex position={[100,0.511346,-13.483416]} />
+        <Vertex position={[-100,0.600292,-13.764181]} />
+        <Vertex position={[100,0.600292,-13.764181]} />
+        <Vertex position={[-100,0.696101,-14.042678]} />
+        <Vertex position={[100,0.696101,-14.042678]} />
+        <Vertex position={[-100,0.798716,-14.318740]} />
+        <Vertex position={[100,0.798716,-14.318740]} />
+        <Vertex position={[-100,0.908076,-14.592201]} />
+        <Vertex position={[100,0.908076,-14.592201]} />
+        <Vertex position={[-100,1.024113,-14.862896]} />
+        <Vertex position={[100,1.024113,-14.862896]} />
+        <Vertex position={[-100,1.146758,-15.130661]} />
+        <Vertex position={[100,1.146758,-15.130661]} />
+        <Vertex position={[-100,1.275938,-15.395336]} />
+        <Vertex position={[100,1.275938,-15.395336]} />
+        <Vertex position={[-100,1.411575,-15.656761]} />
+        <Vertex position={[100,1.411575,-15.656761]} />
+        <Vertex position={[-100,1.553586,-15.914778]} />
+        <Vertex position={[100,1.553586,-15.914778]} />
+        <Vertex position={[-100,1.701887,-16.169233]} />
+        <Vertex position={[100,1.701887,-16.169233]} />
+        <Vertex position={[-100,1.856387,-16.419971]} />
+        <Vertex position={[100,1.856387,-16.419971]} />
+        <Vertex position={[-100,2.016995,-16.666843]} />
+        <Vertex position={[100,2.016995,-16.666843]} />
+        <Vertex position={[-100,2.183612,-16.909698]} />
+        <Vertex position={[100,2.183612,-16.909698]} />
+        <Vertex position={[-100,2.356140,-17.148392]} />
+        <Vertex position={[100,2.356140,-17.148392]} />
+        <Vertex position={[-100,2.534473,-17.382779]} />
+        <Vertex position={[100,2.534473,-17.382779]} />
+        <Vertex position={[-100,2.718505,-17.612719]} />
+        <Vertex position={[100,2.718505,-17.612719]} />
+        <Vertex position={[-100,2.908124,-17.838074]} />
+        <Vertex position={[100,2.908124,-17.838074]} />
+        <Vertex position={[-100,3.103216,-18.058707]} />
+        <Vertex position={[100,3.103216,-18.058707]} />
+        <Vertex position={[-100,3.303665,-18.274487]} />
+        <Vertex position={[100,3.303665,-18.274487]} />
+        <Vertex position={[-100,3.509349,-18.485281]} />
+        <Vertex position={[100,3.509349,-18.485281]} />
+        <Vertex position={[-100,3.720143,-18.690965]} />
+        <Vertex position={[100,3.720143,-18.690965]} />
+        <Vertex position={[-100,3.935923,-18.891414]} />
+        <Vertex position={[100,3.935923,-18.891414]} />
+        <Vertex position={[-100,4.156556,-19.086506]} />
+        <Vertex position={[100,4.156556,-19.086506]} />
+        <Vertex position={[-100,4.381911,-19.276125]} />
+        <Vertex position={[100,4.381911,-19.276125]} />
+        <Vertex position={[-100,4.611851,-19.460157]} />
+        <Vertex position={[100,4.611851,-19.460157]} />
+        <Vertex position={[-100,4.846238,-19.638490]} />
+        <Vertex position={[100,4.846238,-19.638490]} />
+        <Vertex position={[-100,5.084932,-19.811018]} />
+        <Vertex position={[100,5.084932,-19.811018]} />
+        <Vertex position={[-100,5.327787,-19.977635]} />
+        <Vertex position={[100,5.327787,-19.977635]} />
+        <Vertex position={[-100,5.574659,-20.138243]} />
+        <Vertex position={[100,5.574659,-20.138243]} />
+        <Vertex position={[-100,5.825397,-20.292743]} />
+        <Vertex position={[100,5.825397,-20.292743]} />
+        <Vertex position={[-100,6.079852,-20.441044]} />
+        <Vertex position={[100,6.079852,-20.441044]} />
+        <Vertex position={[-100,6.337869,-20.583055]} />
+        <Vertex position={[100,6.337869,-20.583055]} />
+        <Vertex position={[-100,6.599294,-20.718692]} />
+        <Vertex position={[100,6.599294,-20.718692]} />
+        <Vertex position={[-100,6.863969,-20.847872]} />
+        <Vertex position={[100,6.863969,-20.847872]} />
+        <Vertex position={[-100,7.131734,-20.970517]} />
+        <Vertex position={[100,7.131734,-20.970517]} />
+        <Vertex position={[-100,7.402429,-21.086554]} />
+        <Vertex position={[100,7.402429,-21.086554]} />
+        <Vertex position={[-100,7.675890,-21.195914]} />
+        <Vertex position={[100,7.675890,-21.195914]} />
+        <Vertex position={[-100,7.951952,-21.298529]} />
+        <Vertex position={[100,7.951952,-21.298529]} />
+        <Vertex position={[-100,8.230449,-21.394338]} />
+        <Vertex position={[100,8.230449,-21.394338]} />
+        <Vertex position={[-100,8.511214,-21.483284]} />
+        <Vertex position={[100,8.511214,-21.483284]} />
+        <Vertex position={[-100,8.794077,-21.565313]} />
+        <Vertex position={[100,8.794077,-21.565313]} />
+        <Vertex position={[-100,9.078868,-21.640375]} />
+        <Vertex position={[100,9.078868,-21.640375]} />
+        <Vertex position={[-100,9.365415,-21.708426]} />
+        <Vertex position={[100,9.365415,-21.708426]} />
+        <Vertex position={[-100,9.653546,-21.769423]} />
+        <Vertex position={[100,9.653546,-21.769423]} />
+        <Vertex position={[-100,9.943087,-21.823332]} />
+        <Vertex position={[100,9.943087,-21.823332]} />
+        <Vertex position={[-100,10.233864,-21.870118]} />
+        <Vertex position={[100,10.233864,-21.870118]} />
+        <Vertex position={[-100,10.525702,-21.909754]} />
+        <Vertex position={[100,10.525702,-21.909754]} />
+        <Vertex position={[-100,10.818424,-21.942217]} />
+        <Vertex position={[100,10.818424,-21.942217]} />
+        <Vertex position={[-100,11.111855,-21.967485]} />
+        <Vertex position={[100,11.111855,-21.967485]} />
+        <Vertex position={[-100,11.405818,-21.985545]} />
+        <Vertex position={[100,11.405818,-21.985545]} />
+        <Vertex position={[-100,11.700135,-21.996386]} />
+        <Vertex position={[100,11.700135,-21.996386]} />
+        <Vertex position={[-100,11.994630,-22.000000]} />
+        <Vertex position={[100,11.994630,-22.000000]} />
+        <Vertex position={[-100,50.000000,-22.000000]} />
+        <Vertex position={[100,50.000000,-22.000000]} />
+        <Face indices={[0,1,3,2]} />
+        <Face indices={[2,3,5,4]} />
+        <Face indices={[4,5,7,6]} />
+        <Face indices={[6,7,9,8]} />
+        <Face indices={[8,9,11,10]} />
+        <Face indices={[10,11,13,12]} />
+        <Face indices={[12,13,15,14]} />
+        <Face indices={[14,15,17,16]} />
+        <Face indices={[16,17,19,18]} />
+        <Face indices={[18,19,21,20]} />
+        <Face indices={[20,21,23,22]} />
+        <Face indices={[22,23,25,24]} />
+        <Face indices={[24,25,27,26]} />
+        <Face indices={[26,27,29,28]} />
+        <Face indices={[28,29,31,30]} />
+        <Face indices={[30,31,33,32]} />
+        <Face indices={[32,33,35,34]} />
+        <Face indices={[34,35,37,36]} />
+        <Face indices={[36,37,39,38]} />
+        <Face indices={[38,39,41,40]} />
+        <Face indices={[40,41,43,42]} />
+        <Face indices={[42,43,45,44]} />
+        <Face indices={[44,45,47,46]} />
+        <Face indices={[46,47,49,48]} />
+        <Face indices={[48,49,51,50]} />
+        <Face indices={[50,51,53,52]} />
+        <Face indices={[52,53,55,54]} />
+        <Face indices={[54,55,57,56]} />
+        <Face indices={[56,57,59,58]} />
+        <Face indices={[58,59,61,60]} />
+        <Face indices={[60,61,63,62]} />
+        <Face indices={[62,63,65,64]} />
+        <Face indices={[64,65,67,66]} />
+        <Face indices={[66,67,69,68]} />
+        <Face indices={[68,69,71,70]} />
+        <Face indices={[70,71,73,72]} />
+        <Face indices={[72,73,75,74]} />
+        <Face indices={[74,75,77,76]} />
+        <Face indices={[76,77,79,78]} />
+        <Face indices={[78,79,81,80]} />
+        <Face indices={[80,81,83,82]} />
+        <Face indices={[82,83,85,84]} />
+        <Face indices={[84,85,87,86]} />
+        <Face indices={[86,87,89,88]} />
+        <Face indices={[88,89,91,90]} />
+        <Face indices={[90,91,93,92]} />
+        <Face indices={[92,93,95,94]} />
+        <Face indices={[94,95,97,96]} />
+        <Face indices={[96,97,99,98]} />
+        <Face indices={[98,99,101,100]} />
+        <Face indices={[100,101,103,102]} />
+        <Face indices={[102,103,105,104]} />
+        <Face indices={[104,105,107,106]} />
+        <Face indices={[106,107,109,108]} />
+        <Face indices={[108,109,111,110]} />
+        <Face indices={[110,111,113,112]} />
+        <Face indices={[112,113,115,114]} />
+        <Face indices={[114,115,117,116]} />
+        <Face indices={[116,117,119,118]} />
+        <Face indices={[118,119,121,120]} />
+        <Face indices={[120,121,123,122]} />
+        <Face indices={[122,123,125,124]} />
+        <Face indices={[124,125,127,126]} />
+        <Face indices={[126,127,129,128]} />
+        <Face indices={[128,129,131,130]} />
+        <Face indices={[130,131,133,132]} />
+      </Mesh>
+    </GeometryAsset>
+    <MeshAsset id="s98_studio_cyclorama" material="s98_table" geometry="s98_studio_cyclorama_geometry" />
+    <GeometryAsset id="s98_table_top_geometry">
+      <Primitive shape="box" size={[200,0.10,200]} />
+    </GeometryAsset>
+    <MeshAsset id="s98_table_top" material="s98_table" geometry="s98_table_top_geometry" />
     <GeometryAsset id="s98_calyx_recess_geometry">
       <Primitive shape="ellipsoid" radii={[0.125,0.022,0.125]} segments="24" rings="10" />
     </GeometryAsset>
@@ -7301,6 +7511,8 @@
       specular="0"
       doubleSided="true"
     />
+    <MaterialAsset id="s98_stage_bg" shading="pbr" baseColor="#000000" metallic="0" roughness="1" specular="0" />
+    <MeshAsset id="s98_stage_table_top" material="s98_stage_bg" geometry="s98_table_top_geometry" />
     <MeshAsset id="s98_gray_body" material="s98_gray_clay" geometry="s98_apple_body_geometry" />
     <MeshAsset id="s98_gray_stem" material="s98_gray_clay" geometry="s98_apple_stem_geometry" />
     <MeshAsset id="s98_gray_calyx" material="s98_gray_clay" geometry="s98_calyx_recess_geometry" />
@@ -25597,18 +25809,13 @@
       <Track id="s98_product" space="3d" compositeOrder="30">
         <Sequence from="0s" duration="2s" out="hide">
           <CompositeGroup id="s98_apple_studio" space="3d" depth="true" format="rgba16f">
-            <Camera3D
-              id="s98_camera"
-              position={[0.20,3.15,5.7]}
-              target={[0,0.90,0]}
-              up={[0,1,0]}
-              fov="37.851349"
-              depthOfField="true"
-              focalLength="50"
-              fStop="8"
-              focusOffset="-1.004754"
-              maxBlur="24"
+            <Model
+              id="s98_apple_studio_support_backdrop"
+              asset="s98_studio_cyclorama"
+              castShadow="false"
+              receiveShadow="true"
             />
+            <Camera3D id="s98_camera" position={[0.20,3.15,5.7]} target={[0,0.90,0]} up={[0,1,0]} fov="21" />
             <EnvironmentLight
               id="s98_white_studio"
               asset="s98_white_environment"
@@ -25664,14 +25871,13 @@
       <Track id="s98_gray_stage" space="3d" compositeOrder="30">
         <Sequence from="2s" duration="2s" out="hide">
           <CompositeGroup id="s98_gray_studio" space="3d" depth="true" format="rgba16f">
-            <Camera3D
-              id="s98_gray_camera"
-              position={[0.20,3.15,5.7]}
-              target={[0,0.90,0]}
-              up={[0,1,0]}
-              fov="37.851349"
-              depthOfField="false"
+            <Model
+              id="s98_gray_studio_support_backdrop"
+              asset="s98_studio_cyclorama"
+              castShadow="false"
+              receiveShadow="true"
             />
+            <Camera3D id="s98_gray_camera" position={[0.20,3.15,5.7]} target={[0,0.90,0]} up={[0,1,0]} fov="21" />
             <EnvironmentLight
               id="s98_gray_env"
               asset="s98_white_environment"
@@ -25733,14 +25939,13 @@
       <Track id="s98_white_stage" space="3d" compositeOrder="30">
         <Sequence from="4s" duration="2s" out="hide">
           <CompositeGroup id="s98_white_studio" space="3d" depth="true" format="rgba16f">
-            <Camera3D
-              id="s98_white_camera"
-              position={[0.20,3.15,5.7]}
-              target={[0,0.90,0]}
-              up={[0,1,0]}
-              fov="37.851349"
-              depthOfField="false"
+            <Model
+              id="s98_white_studio_support_backdrop"
+              asset="s98_studio_cyclorama"
+              castShadow="false"
+              receiveShadow="true"
             />
+            <Camera3D id="s98_white_camera" position={[0.20,3.15,5.7]} target={[0,0.90,0]} up={[0,1,0]} fov="21" />
             <EnvironmentLight
               id="s98_white_env"
               asset="s98_white_environment"
@@ -25801,17 +26006,18 @@
       <Track id="s98_action" space="3d" compositeOrder="30">
         <Sequence from="6s" duration="6s" out="hide">
           <CompositeGroup id="s98_action_studio" space="3d" depth="true" format="rgba16f">
+            <Model
+              id="s98_action_studio_support_backdrop"
+              asset="s98_studio_cyclorama"
+              castShadow="false"
+              receiveShadow="true"
+            />
             <Camera3D
               id="s98_action_camera"
               position={[curve("0:0.20000:linear, 1.2:1.45000:linear, 2.2:2.30000:linear, 3.15:0.75000:linear, 4.4:0.95000:linear, 5.1:0.48000:linear, 5.48:0.20000:linear, 6:0.20000:linear"),curve("0:3.15000:linear, 1.2:3.10000:linear, 2.2:2.90000:linear, 3.15:3.05000:linear, 4.4:2.75000:linear, 5.1:2.90000:linear, 5.48:3.15000:linear, 6:3.15000:linear"),curve("0:5.70000:linear, 1.2:5.40000:linear, 2.2:4.80000:linear, 3.15:5.30000:linear, 4.4:4.85000:linear, 5.1:4.00000:linear, 5.48:5.70000:linear, 6:5.70000:linear")]}
               target={[0,curve("0:0.90000:linear, 1.2:1.45000:linear, 2.2:1.70000:linear, 3.15:0.90000:linear, 4.4:0.90000:linear, 5.1:1.20000:linear, 5.48:0.90000:linear, 6:0.90000:linear"),0]}
               up={[0,1,0]}
-              fov={curve("0:37.851349:linear, 0.6:46.255252:linear, 1.6:44.600514:linear, 2.5:44.600514:linear, 3.15:39.557532:linear, 4.4:41.251345:linear, 5.1:36.133161:linear, 5.48:37.851349:linear, 6:37.851349:linear")}
-              depthOfField="true"
-              focalLength="50"
-              fStop="8"
-              focusOffset="-1.004754"
-              maxBlur="24"
+              fov={curve("0:21.00000:linear, 0.6:26.00000:linear, 1.6:25.00000:linear, 2.5:25.00000:linear, 3.15:22.00000:linear, 4.4:23.00000:linear, 5.1:20.00000:linear, 5.48:21.00000:linear, 6:21.00000:linear")}
             />
             <EnvironmentLight
               id="s98_action_env"
@@ -26137,12 +26343,7 @@
               position={[curve("0.00000:0.200000:linear, 0.04167:0.200000:linear, 0.08333:0.200000:linear, 0.12500:0.200000:linear, 0.16667:0.200000:linear, 0.20833:0.200000:linear, 0.25000:0.200000:linear, 0.29167:0.200000:linear, 0.33333:0.200000:linear, 0.37500:0.200000:linear, 0.41667:0.200000:linear, 0.45833:0.200000:linear, 0.50000:0.200000:linear, 0.54167:0.200000:linear, 0.58333:0.200000:linear, 0.62500:0.200000:linear, 0.66667:0.200000:linear, 0.70833:0.200000:linear, 0.75000:0.200000:linear, 0.79167:0.200000:linear, 0.83333:0.209554:linear, 0.87500:0.245562:linear, 0.91667:0.303450:linear, 0.95833:0.377987:linear, 1.00000:0.464000:linear, 1.04167:0.556264:linear, 1.08333:0.649548:linear, 1.12500:0.738687:linear, 1.16667:0.818450:linear, 1.20833:0.883614:linear, 1.25000:0.929000:linear, 1.29167:0.949382:linear, 1.33333:0.956370:linear, 1.37500:0.979519:linear, 1.41667:1.014818:linear, 1.45833:1.057193:linear, 1.50000:1.101603:linear, 1.54167:1.142976:linear, 1.58333:1.176242:linear, 1.62500:1.196356:linear, 1.66667:1.200659:linear, 1.70833:1.207407:linear, 1.75000:1.219825:linear, 1.79167:1.235888:linear, 1.83333:1.253567:linear, 1.87500:1.270845:linear, 1.91667:1.285694:linear, 1.95833:1.296085:linear, 2.00000:1.300000:linear, 2.04167:1.317986:linear, 2.08333:1.368100:linear, 2.12500:1.444628:linear, 2.16667:1.541821:linear, 2.20833:1.653909:linear, 2.25000:1.775207:linear, 2.29167:1.899949:linear, 2.33333:2.022366:linear, 2.37500:2.136777:linear, 2.41667:2.237412:linear, 2.45833:2.318513:linear, 2.50000:2.374380:linear, 2.54167:2.399251:linear, 2.58333:2.400000:linear, 2.62500:2.400000:linear, 2.66667:2.400000:linear, 2.70833:2.400000:linear, 2.75000:2.400000:linear, 2.79167:2.400000:linear, 2.83333:2.400000:linear, 2.87500:2.400000:linear, 2.91667:2.400000:linear, 2.95833:2.400000:linear, 3.00000:2.400000:linear, 3.04167:2.400000:linear, 3.08333:2.400000:linear, 3.12500:2.400000:linear, 3.16667:2.400000:linear, 3.20833:2.400000:linear, 3.25000:2.400000:linear, 3.29167:2.400000:linear, 3.33333:2.400000:linear, 3.37500:2.400000:linear, 3.41667:2.400000:linear, 3.45833:2.400000:linear, 3.50000:2.400000:linear, 3.54167:2.400000:linear, 3.58333:2.400000:linear, 3.62500:2.400000:linear, 3.66667:2.400000:linear, 3.70833:2.400000:linear, 3.75000:2.400000:linear, 3.79167:2.400000:linear, 3.83333:2.427541:linear, 3.87500:2.529199:linear, 3.91667:2.687833:linear, 3.95833:2.884398:linear, 4.00000:3.100000:linear, 4.04167:3.315602:linear, 4.08333:3.512167:linear, 4.12500:3.670801:linear, 4.16667:3.772459:linear, 4.20833:3.799789:linear, 4.25000:3.792711:linear, 4.29167:3.776521:linear, 4.33333:3.752491:linear, 4.37500:3.721875:linear, 4.41667:3.685943:linear, 4.45833:3.645972:linear, 4.50000:3.603207:linear, 4.54167:3.558923:linear, 4.58333:3.514397:linear, 4.62500:3.470873:linear, 4.66667:3.429626:linear, 4.70833:3.391932:linear, 4.75000:3.359038:linear, 4.79167:3.332218:linear, 4.83333:3.312743:linear, 4.87500:3.301868:linear, 4.91667:3.298997:linear, 4.95833:3.287940:linear, 5.00000:3.265186:linear, 5.04167:3.231392:linear, 5.08333:3.187228:linear, 5.12500:3.133331:linear, 5.16667:3.070365:linear, 5.20833:2.999007:linear, 5.25000:2.919879:linear, 5.29167:2.833655:linear, 5.33333:2.741014:linear, 5.37500:2.642570:linear, 5.41667:2.539000:linear, 5.45833:2.430989:linear, 5.50000:2.319141:linear, 5.54167:2.204139:linear, 5.58333:2.086668:linear, 5.62500:1.967330:linear, 5.66667:1.846809:linear, 5.70833:1.725792:linear, 5.75000:1.604877:linear, 5.79167:1.484750:linear, 5.83333:1.366097:linear, 5.87500:1.249519:linear, 5.91667:1.135700:linear, 5.95833:1.025323:linear, 6.00000:0.918994:linear, 6.04167:0.817396:linear, 6.08333:0.721208:linear, 6.12500:0.631042:linear, 6.16667:0.547578:linear, 6.20833:0.471490:linear, 6.25000:0.403400:linear, 6.29167:0.343983:linear, 6.33333:0.293907:linear, 6.37500:0.253806:linear, 6.41667:0.224350:linear, 6.45833:0.206198:linear, 6.50000:0.200000:linear, 6.54167:0.200000:linear, 6.58333:0.200000:linear, 6.62500:0.200000:linear, 6.66667:0.200000:linear, 6.70833:0.200000:linear, 6.75000:0.200000:linear, 6.79167:0.200000:linear, 6.83333:0.200000:linear, 6.87500:0.200000:linear, 6.91667:0.200000:linear, 6.95833:0.200000:linear, 7.00000:0.200000:linear, 7.04167:0.200000:linear, 7.08333:0.200000:linear, 7.12500:0.200000:linear, 7.16667:0.200000:linear, 7.20833:0.200000:linear, 7.25000:0.200000:linear, 7.29167:0.200000:linear, 7.33333:0.200000:linear, 7.37500:0.200000:linear, 7.41667:0.200000:linear, 7.45833:0.200000:linear, 7.50000:0.200000:linear, 7.54167:0.200000:linear, 7.58333:0.200000:linear, 7.62500:0.200000:linear, 7.66667:0.200000:linear, 7.70833:0.200000:linear, 7.75000:0.200000:linear, 7.79167:0.200000:linear, 7.83333:0.200000:linear, 7.87500:0.200000:linear, 7.91667:0.200000:linear, 7.95833:0.200000:linear, 8.00000:0.200000:linear"),curve("0.00000:3.150000:linear, 0.04167:3.153601:linear, 0.08333:3.161895:linear, 0.12500:3.170359:linear, 0.16667:3.175388:linear, 0.20833:3.173685:linear, 0.25000:3.164310:linear, 0.29167:3.150212:linear, 0.33333:3.165499:linear, 0.37500:3.177003:linear, 0.41667:3.182704:linear, 0.45833:3.179120:linear, 0.50000:3.170063:linear, 0.54167:3.158061:linear, 0.58333:3.153826:linear, 0.62500:3.161840:linear, 0.66667:3.162899:linear, 0.70833:3.158916:linear, 0.75000:3.153429:linear, 0.79167:3.150118:linear, 0.83333:3.126344:linear, 0.87500:3.037326:linear, 0.91667:2.894651:linear, 0.95833:2.711329:linear, 1.00000:2.500251:linear, 1.04167:2.274557:linear, 1.08333:2.048686:linear, 1.12500:1.834143:linear, 1.16667:1.643681:linear, 1.20833:1.491905:linear, 1.25000:1.390167:linear, 1.29167:1.350958:linear, 1.33333:1.355720:linear, 1.37500:1.348683:linear, 1.41667:1.329989:linear, 1.45833:1.304849:linear, 1.50000:1.276850:linear, 1.54167:1.247519:linear, 1.58333:1.221980:linear, 1.62500:1.202644:linear, 1.66667:1.192843:linear, 1.70833:1.180953:linear, 1.75000:1.164724:linear, 1.79167:1.144726:linear, 1.83333:1.122069:linear, 1.87500:1.108764:linear, 1.91667:1.105004:linear, 1.95833:1.100454:linear, 2.00000:1.096448:linear, 2.04167:1.096494:linear, 2.08333:1.101490:linear, 2.12500:1.122074:linear, 2.16667:1.151938:linear, 2.20833:1.183888:linear, 2.25000:1.214220:linear, 2.29167:1.240375:linear, 2.33333:1.261510:linear, 2.37500:1.277081:linear, 2.41667:1.286251:linear, 2.45833:1.286715:linear, 2.50000:1.279837:linear, 2.54167:1.266194:linear, 2.58333:1.275829:linear, 2.62500:1.301024:linear, 2.66667:1.315145:linear, 2.70833:1.319311:linear, 2.75000:1.316200:linear, 2.79167:1.302220:linear, 2.83333:1.277574:linear, 2.87500:1.265116:linear, 2.91667:1.275356:linear, 2.95833:1.283263:linear, 3.00000:1.289542:linear, 3.04167:1.294246:linear, 3.08333:1.293269:linear, 3.12500:1.287235:linear, 3.16667:1.276464:linear, 3.20833:1.263189:linear, 3.25000:1.249067:linear, 3.29167:1.235008:linear, 3.33333:1.240241:linear, 3.37500:1.245582:linear, 3.41667:1.252436:linear, 3.45833:1.258665:linear, 3.50000:1.261983:linear, 3.54167:1.270351:linear, 3.58333:1.288910:linear, 3.62500:1.306113:linear, 3.66667:1.320806:linear, 3.70833:1.333043:linear, 3.75000:1.342524:linear, 3.79167:1.348703:linear, 3.83333:1.356534:linear, 3.87500:1.379069:linear, 3.91667:1.412505:linear, 3.95833:1.454524:linear, 4.00000:1.502978:linear, 4.04167:1.554445:linear, 4.08333:1.605213:linear, 4.12500:1.653057:linear, 4.16667:1.693521:linear, 4.20833:1.723619:linear, 4.25000:1.741494:linear, 4.29167:1.743617:linear, 4.33333:1.739153:linear, 4.37500:1.753081:linear, 4.41667:1.784197:linear, 4.45833:1.829102:linear, 4.50000:1.885518:linear, 4.54167:1.951194:linear, 4.58333:2.023629:linear, 4.62500:2.101044:linear, 4.66667:2.182769:linear, 4.70833:2.263547:linear, 4.75000:2.337755:linear, 4.79167:2.400307:linear, 4.83333:2.448351:linear, 4.87500:2.480916:linear, 4.91667:2.496990:linear, 4.95833:2.503431:linear, 5.00000:2.509492:linear, 5.04167:2.514337:linear, 5.08333:2.519595:linear, 5.12500:2.526172:linear, 5.16667:2.534836:linear, 5.20833:2.550183:linear, 5.25000:2.566605:linear, 5.29167:2.583588:linear, 5.33333:2.601811:linear, 5.37500:2.621297:linear, 5.41667:2.642056:linear, 5.45833:2.664097:linear, 5.50000:2.687444:linear, 5.54167:2.711831:linear, 5.58333:2.736878:linear, 5.62500:2.762446:linear, 5.66667:2.788378:linear, 5.70833:2.814516:linear, 5.75000:2.840720:linear, 5.79167:2.866834:linear, 5.83333:2.892699:linear, 5.87500:2.918177:linear, 5.91667:2.943108:linear, 5.95833:2.967337:linear, 6.00000:2.990724:linear, 6.04167:3.013110:linear, 6.08333:3.034339:linear, 6.12500:3.054271:linear, 6.16667:3.072747:linear, 6.20833:3.089614:linear, 6.25000:3.104726:linear, 6.29167:3.117930:linear, 6.33333:3.129069:linear, 6.37500:3.138000:linear, 6.41667:3.144566:linear, 6.45833:3.148616:linear, 6.50000:3.150000:linear, 6.54167:3.150000:linear, 6.58333:3.150000:linear, 6.62500:3.150000:linear, 6.66667:3.150000:linear, 6.70833:3.150000:linear, 6.75000:3.150000:linear, 6.79167:3.150000:linear, 6.83333:3.150000:linear, 6.87500:3.150000:linear, 6.91667:3.150000:linear, 6.95833:3.150000:linear, 7.00000:3.150000:linear, 7.04167:3.150000:linear, 7.08333:3.150000:linear, 7.12500:3.150000:linear, 7.16667:3.150000:linear, 7.20833:3.150000:linear, 7.25000:3.150000:linear, 7.29167:3.150000:linear, 7.33333:3.150000:linear, 7.37500:3.150000:linear, 7.41667:3.150000:linear, 7.45833:3.150000:linear, 7.50000:3.150000:linear, 7.54167:3.150000:linear, 7.58333:3.150000:linear, 7.62500:3.150000:linear, 7.66667:3.150000:linear, 7.70833:3.150000:linear, 7.75000:3.150000:linear, 7.79167:3.150000:linear, 7.83333:3.150000:linear, 7.87500:3.150000:linear, 7.91667:3.150000:linear, 7.95833:3.150000:linear, 8.00000:3.150000:linear"),curve("0.00000:5.700000:linear, 0.04167:5.691390:linear, 0.08333:5.671714:linear, 0.12500:5.650329:linear, 0.16667:5.636890:linear, 0.20833:5.641499:linear, 0.25000:5.665758:linear, 0.29167:5.700507:linear, 0.33333:5.737087:linear, 0.37500:5.766888:linear, 0.41667:5.780357:linear, 0.45833:5.771969:linear, 0.50000:5.748713:linear, 0.54167:5.718986:linear, 0.58333:5.690868:linear, 0.62500:5.671846:linear, 0.66667:5.669261:linear, 0.70833:5.678911:linear, 0.75000:5.691790:linear, 0.79167:5.699718:linear, 0.83333:5.649718:linear, 0.87500:5.460535:linear, 0.91667:5.157186:linear, 0.95833:4.767876:linear, 1.00000:4.320503:linear, 1.04167:3.843279:linear, 1.08333:3.364470:linear, 1.12500:2.911985:linear, 1.16667:2.514094:linear, 1.20833:2.199020:linear, 1.25000:1.994756:linear, 1.29167:1.929500:linear, 1.33333:1.946876:linear, 1.37500:1.897646:linear, 1.41667:1.798758:linear, 1.45833:1.672431:linear, 1.50000:1.540734:linear, 1.54167:1.425769:linear, 1.58333:1.349541:linear, 1.62500:1.333943:linear, 1.66667:1.391500:linear, 1.70833:1.451841:linear, 1.75000:1.499618:linear, 1.79167:1.539531:linear, 1.83333:1.576297:linear, 1.87500:1.614908:linear, 1.91667:1.661393:linear, 1.95833:1.720892:linear, 2.00000:1.798113:linear, 2.04167:1.874080:linear, 2.08333:1.928844:linear, 2.12500:1.965976:linear, 2.16667:1.989950:linear, 2.20833:2.004111:linear, 2.25000:2.011534:linear, 2.29167:2.015091:linear, 2.33333:2.017554:linear, 2.37500:2.021599:linear, 2.41667:2.029899:linear, 2.45833:2.045054:linear, 2.50000:2.069703:linear, 2.54167:2.106674:linear, 2.58333:2.159714:linear, 2.62500:2.235929:linear, 2.66667:2.335874:linear, 2.70833:2.438865:linear, 2.75000:2.539096:linear, 2.79167:2.635720:linear, 2.83333:2.727757:linear, 2.87500:2.814803:linear, 2.91667:2.899961:linear, 2.95833:2.983809:linear, 3.00000:3.066336:linear, 3.04167:3.147474:linear, 3.08333:3.226990:linear, 3.12500:3.304481:linear, 3.16667:3.379623:linear, 3.20833:3.452165:linear, 3.25000:3.522083:linear, 3.29167:3.589499:linear, 3.33333:3.655581:linear, 3.37500:3.721310:linear, 3.41667:3.786943:linear, 3.45833:3.852574:linear, 3.50000:3.918080:linear, 3.54167:3.983620:linear, 3.58333:4.050188:linear, 3.62500:4.118098:linear, 3.66667:4.187237:linear, 3.70833:4.257466:linear, 3.75000:4.328647:linear, 3.79167:4.400631:linear, 3.83333:4.489422:linear, 3.87500:4.623027:linear, 3.91667:4.792859:linear, 3.95833:4.989208:linear, 4.00000:5.202610:linear, 4.04167:5.423554:linear, 4.08333:5.642491:linear, 4.12500:5.850086:linear, 4.16667:6.036854:linear, 4.20833:6.193345:linear, 4.25000:6.310236:linear, 4.29167:6.378161:linear, 4.33333:6.430266:linear, 4.37500:6.545028:linear, 4.41667:6.716028:linear, 4.45833:6.934095:linear, 4.50000:7.190196:linear, 4.54167:7.475149:linear, 4.58333:7.779720:linear, 4.62500:8.098103:linear, 4.66667:8.431383:linear, 4.70833:8.765016:linear, 4.75000:9.082923:linear, 4.79167:9.368800:linear, 4.83333:9.612444:linear, 4.87500:9.809332:linear, 4.91667:9.954602:linear, 4.95833:10.043302:linear, 5.00000:10.070408:linear, 5.04167:10.074064:linear, 5.08333:10.090910:linear, 5.12500:10.117888:linear, 5.16667:10.152621:linear, 5.20833:10.192772:linear, 5.25000:10.236003:linear, 5.29167:10.282312:linear, 5.33333:10.333192:linear, 5.37500:10.388576:linear, 5.41667:10.448358:linear, 5.45833:10.512431:linear, 5.50000:10.580732:linear, 5.54167:10.652492:linear, 5.58333:10.726679:linear, 5.62500:10.802838:linear, 5.66667:10.880463:linear, 5.70833:10.959047:linear, 5.75000:11.038139:linear, 5.79167:11.117231:linear, 5.83333:11.195815:linear, 5.87500:11.273440:linear, 5.91667:11.349599:linear, 5.95833:11.423786:linear, 6.00000:11.495546:linear, 6.04167:11.564375:linear, 6.08333:11.629766:linear, 6.12500:11.691264:linear, 6.16667:11.748363:linear, 6.20833:11.800562:linear, 6.25000:11.847398:linear, 6.29167:11.888369:linear, 6.33333:11.922979:linear, 6.37500:11.950755:linear, 6.41667:11.971199:linear, 6.45833:11.983822:linear, 6.50000:11.988139:linear, 6.54167:11.988139:linear, 6.58333:11.988139:linear, 6.62500:11.988139:linear, 6.66667:11.988139:linear, 6.70833:11.988139:linear, 6.75000:11.988139:linear, 6.79167:11.988139:linear, 6.83333:11.988139:linear, 6.87500:11.988139:linear, 6.91667:11.988139:linear, 6.95833:11.988139:linear, 7.00000:11.988139:linear, 7.04167:11.988139:linear, 7.08333:11.988139:linear, 7.12500:11.988139:linear, 7.16667:11.988139:linear, 7.20833:11.988139:linear, 7.25000:11.988139:linear, 7.29167:11.988139:linear, 7.33333:11.988139:linear, 7.37500:11.988139:linear, 7.41667:11.988139:linear, 7.45833:11.988139:linear, 7.50000:11.988139:linear, 7.54167:11.988139:linear, 7.58333:11.988139:linear, 7.62500:11.988139:linear, 7.66667:11.988139:linear, 7.70833:11.988139:linear, 7.75000:11.988139:linear, 7.79167:11.988139:linear, 7.83333:11.988139:linear, 7.87500:11.988139:linear, 7.91667:11.988139:linear, 7.95833:11.988139:linear, 8.00000:11.988139:linear")]}
               target={[curve("0.00000:0.000000:linear, 0.04167:0.000000:linear, 0.08333:0.000000:linear, 0.12500:0.000000:linear, 0.16667:0.000000:linear, 0.20833:0.000000:linear, 0.25000:0.000000:linear, 0.29167:0.000000:linear, 0.33333:0.000000:linear, 0.37500:0.000000:linear, 0.41667:0.000000:linear, 0.45833:0.000000:linear, 0.50000:0.000000:linear, 0.54167:0.000000:linear, 0.58333:0.000000:linear, 0.62500:0.000000:linear, 0.66667:0.000000:linear, 0.70833:0.000000:linear, 0.75000:0.000000:linear, 0.79167:0.000000:linear, 0.83333:0.005095:linear, 0.87500:0.024300:linear, 0.91667:0.055173:linear, 0.95833:0.094926:linear, 1.00000:0.140800:linear, 1.04167:0.190008:linear, 1.08333:0.239759:linear, 1.12500:0.287300:linear, 1.16667:0.329840:linear, 1.20833:0.364594:linear, 1.25000:0.388800:linear, 1.29167:0.399671:linear, 1.33333:0.405096:linear, 1.37500:0.423615:linear, 1.41667:0.451854:linear, 1.45833:0.485755:linear, 1.50000:0.521283:linear, 1.54167:0.554381:linear, 1.58333:0.580994:linear, 1.62500:0.597085:linear, 1.66667:0.600659:linear, 1.70833:0.607407:linear, 1.75000:0.619825:linear, 1.79167:0.635888:linear, 1.83333:0.653567:linear, 1.87500:0.670845:linear, 1.91667:0.685694:linear, 1.95833:0.696085:linear, 2.00000:0.700000:linear, 2.04167:0.727796:linear, 2.08333:0.805246:linear, 2.12500:0.923516:linear, 2.16667:1.073723:linear, 2.20833:1.246950:linear, 2.25000:1.434410:linear, 2.29167:1.627194:linear, 2.33333:1.816383:linear, 2.37500:1.993201:linear, 2.41667:2.148727:linear, 2.45833:2.274065:linear, 2.50000:2.360406:linear, 2.54167:2.398842:linear, 2.58333:2.400000:linear, 2.62500:2.400000:linear, 2.66667:2.400000:linear, 2.70833:2.400000:linear, 2.75000:2.400000:linear, 2.79167:2.400000:linear, 2.83333:2.400000:linear, 2.87500:2.400000:linear, 2.91667:2.400000:linear, 2.95833:2.400000:linear, 3.00000:2.400000:linear, 3.04167:2.400000:linear, 3.08333:2.400000:linear, 3.12500:2.400000:linear, 3.16667:2.400000:linear, 3.20833:2.400000:linear, 3.25000:2.400000:linear, 3.29167:2.400000:linear, 3.33333:2.400000:linear, 3.37500:2.400000:linear, 3.41667:2.400000:linear, 3.45833:2.400000:linear, 3.50000:2.400000:linear, 3.54167:2.400000:linear, 3.58333:2.400000:linear, 3.62500:2.400000:linear, 3.66667:2.400000:linear, 3.70833:2.400000:linear, 3.75000:2.400000:linear, 3.79167:2.400000:linear, 3.83333:2.379617:linear, 3.87500:2.305539:linear, 3.91667:2.192582:linear, 3.95833:2.056981:linear, 4.00000:1.914869:linear, 4.04167:1.782476:linear, 4.08333:1.676025:linear, 4.12500:1.611662:linear, 4.16667:1.594783:linear, 4.20833:1.539755:linear, 4.25000:1.433600:linear, 4.29167:1.287439:linear, 4.33333:1.112430:linear, 4.37500:0.919600:linear, 4.41667:0.720103:linear, 4.45833:0.525097:linear, 4.50000:0.345600:linear, 4.54167:0.192774:linear, 4.58333:0.077756:linear, 4.62500:0.011600:linear, 4.66667:0.000000:linear, 4.70833:0.000000:linear, 4.75000:0.000000:linear, 4.79167:0.000000:linear, 4.83333:0.000000:linear, 4.87500:0.000000:linear, 4.91667:0.000000:linear, 4.95833:0.000000:linear, 5.00000:0.000000:linear, 5.04167:0.000000:linear, 5.08333:0.000000:linear, 5.12500:0.000000:linear, 5.16667:0.000000:linear, 5.20833:0.000000:linear, 5.25000:0.000000:linear, 5.29167:0.000000:linear, 5.33333:0.000000:linear, 5.37500:0.000000:linear, 5.41667:0.000000:linear, 5.45833:0.000000:linear, 5.50000:0.000000:linear, 5.54167:0.000000:linear, 5.58333:0.000000:linear, 5.62500:0.000000:linear, 5.66667:0.000000:linear, 5.70833:0.000000:linear, 5.75000:0.000000:linear, 5.79167:0.000000:linear, 5.83333:0.000000:linear, 5.87500:0.000000:linear, 5.91667:0.000000:linear, 5.95833:0.000000:linear, 6.00000:0.000000:linear, 6.04167:0.000000:linear, 6.08333:0.000000:linear, 6.12500:0.000000:linear, 6.16667:0.000000:linear, 6.20833:0.000000:linear, 6.25000:0.000000:linear, 6.29167:0.000000:linear, 6.33333:0.000000:linear, 6.37500:0.000000:linear, 6.41667:0.000000:linear, 6.45833:0.000000:linear, 6.50000:0.000000:linear, 6.54167:0.000000:linear, 6.58333:0.000000:linear, 6.62500:0.000000:linear, 6.66667:0.000000:linear, 6.70833:0.000000:linear, 6.75000:0.000000:linear, 6.79167:0.000000:linear, 6.83333:0.000000:linear, 6.87500:0.000000:linear, 6.91667:0.000000:linear, 6.95833:0.000000:linear, 7.00000:0.000000:linear, 7.04167:0.000000:linear, 7.08333:0.000000:linear, 7.12500:0.000000:linear, 7.16667:0.000000:linear, 7.20833:0.000000:linear, 7.25000:0.000000:linear, 7.29167:0.000000:linear, 7.33333:0.000000:linear, 7.37500:0.000000:linear, 7.41667:0.000000:linear, 7.45833:0.000000:linear, 7.50000:0.000000:linear, 7.54167:0.000000:linear, 7.58333:0.000000:linear, 7.62500:0.000000:linear, 7.66667:0.000000:linear, 7.70833:0.000000:linear, 7.75000:0.000000:linear, 7.79167:0.000000:linear, 7.83333:0.000000:linear, 7.87500:0.000000:linear, 7.91667:0.000000:linear, 7.95833:0.000000:linear, 8.00000:0.000000:linear"),curve("0.00000:0.900000:linear, 0.04167:0.903601:linear, 0.08333:0.911895:linear, 0.12500:0.920359:linear, 0.16667:0.925388:linear, 0.20833:0.923685:linear, 0.25000:0.914310:linear, 0.29167:0.900212:linear, 0.33333:0.915499:linear, 0.37500:0.927003:linear, 0.41667:0.932704:linear, 0.45833:0.929120:linear, 0.50000:0.920063:linear, 0.54167:0.908061:linear, 0.58333:0.903826:linear, 0.62500:0.911840:linear, 0.66667:0.912899:linear, 0.70833:0.908916:linear, 0.75000:0.903429:linear, 0.79167:0.900118:linear, 0.83333:0.899018:linear, 0.87500:0.895461:linear, 0.91667:0.890172:linear, 0.95833:0.883751:linear, 1.00000:0.876811:linear, 1.04167:0.870091:linear, 1.08333:0.865613:linear, 1.12500:0.862628:linear, 1.16667:0.861470:linear, 1.20833:0.864347:linear, 1.25000:0.870327:linear, 1.29167:0.879492:linear, 1.33333:0.888777:linear, 1.37500:0.892852:linear, 1.41667:0.891102:linear, 1.45833:0.886302:linear, 1.50000:0.879619:linear, 1.54167:0.870147:linear, 1.58333:0.860576:linear, 1.62500:0.850895:linear, 1.66667:0.842052:linear, 1.70833:0.822065:linear, 1.75000:0.790934:linear, 1.79167:0.751660:linear, 1.83333:0.707788:linear, 1.87500:0.673750:linear, 1.91667:0.652171:linear, 1.95833:0.635152:linear, 2.00000:0.626448:linear, 2.04167:0.617470:linear, 2.08333:0.597275:linear, 2.12500:0.579300:linear, 2.16667:0.560052:linear, 2.20833:0.535162:linear, 2.25000:0.503709:linear, 2.29167:0.465960:linear, 2.33333:0.423894:linear, 2.37500:0.379752:linear, 2.41667:0.335520:linear, 2.45833:0.291713:linear, 2.50000:0.252486:linear, 2.54167:0.221239:linear, 2.58333:0.226238:linear, 2.62500:0.251024:linear, 2.66667:0.265145:linear, 2.70833:0.269311:linear, 2.75000:0.266200:linear, 2.79167:0.252220:linear, 2.83333:0.227574:linear, 2.87500:0.215116:linear, 2.91667:0.225356:linear, 2.95833:0.233263:linear, 3.00000:0.239542:linear, 3.04167:0.244246:linear, 3.08333:0.243269:linear, 3.12500:0.237235:linear, 3.16667:0.226464:linear, 3.20833:0.213189:linear, 3.25000:0.199067:linear, 3.29167:0.185008:linear, 3.33333:0.190241:linear, 3.37500:0.195582:linear, 3.41667:0.202436:linear, 3.45833:0.208665:linear, 3.50000:0.211983:linear, 3.54167:0.220351:linear, 3.58333:0.238910:linear, 3.62500:0.256113:linear, 3.66667:0.270806:linear, 3.70833:0.283043:linear, 3.75000:0.292524:linear, 3.79167:0.298703:linear, 3.83333:0.307051:linear, 3.87500:0.330994:linear, 3.91667:0.365497:linear, 3.95833:0.406966:linear, 4.00000:0.451978:linear, 4.04167:0.495836:linear, 4.08333:0.533556:linear, 4.12500:0.561633:linear, 4.16667:0.574335:linear, 4.20833:0.568282:linear, 4.25000:0.569211:linear, 4.29167:0.587064:linear, 4.33333:0.617594:linear, 4.37500:0.658017:linear, 4.41667:0.705026:linear, 4.45833:0.753941:linear, 4.50000:0.801204:linear, 4.54167:0.843281:linear, 4.58333:0.876398:linear, 4.62500:0.897477:linear, 4.66667:0.906262:linear, 4.70833:0.913078:linear, 4.75000:0.918365:linear, 4.79167:0.919583:linear, 4.83333:0.916421:linear, 4.87500:0.910411:linear, 4.91667:0.903084:linear, 4.95833:0.903375:linear, 5.00000:0.907507:linear, 5.04167:0.907785:linear, 5.08333:0.905994:linear, 5.12500:0.903186:linear, 5.16667:0.900283:linear, 5.20833:0.902036:linear, 5.25000:0.902982:linear, 5.29167:0.902761:linear, 5.33333:0.902209:linear, 5.37500:0.901491:linear, 5.41667:0.900773:linear, 5.45833:0.900221:linear, 5.50000:0.900000:linear, 5.54167:0.900000:linear, 5.58333:0.900000:linear, 5.62500:0.900000:linear, 5.66667:0.900000:linear, 5.70833:0.900000:linear, 5.75000:0.900000:linear, 5.79167:0.900000:linear, 5.83333:0.900000:linear, 5.87500:0.900000:linear, 5.91667:0.900000:linear, 5.95833:0.900000:linear, 6.00000:0.900000:linear, 6.04167:0.900000:linear, 6.08333:0.900000:linear, 6.12500:0.900000:linear, 6.16667:0.900000:linear, 6.20833:0.900000:linear, 6.25000:0.900000:linear, 6.29167:0.900000:linear, 6.33333:0.900000:linear, 6.37500:0.900000:linear, 6.41667:0.900000:linear, 6.45833:0.900000:linear, 6.50000:0.900000:linear, 6.54167:0.900000:linear, 6.58333:0.900000:linear, 6.62500:0.900000:linear, 6.66667:0.900000:linear, 6.70833:0.900000:linear, 6.75000:0.900000:linear, 6.79167:0.900000:linear, 6.83333:0.900000:linear, 6.87500:0.900000:linear, 6.91667:0.900000:linear, 6.95833:0.900000:linear, 7.00000:0.900000:linear, 7.04167:0.900000:linear, 7.08333:0.900000:linear, 7.12500:0.900000:linear, 7.16667:0.900000:linear, 7.20833:0.900000:linear, 7.25000:0.900000:linear, 7.29167:0.900000:linear, 7.33333:0.900000:linear, 7.37500:0.900000:linear, 7.41667:0.900000:linear, 7.45833:0.900000:linear, 7.50000:0.900000:linear, 7.54167:0.900000:linear, 7.58333:0.900000:linear, 7.62500:0.900000:linear, 7.66667:0.900000:linear, 7.70833:0.900000:linear, 7.75000:0.900000:linear, 7.79167:0.900000:linear, 7.83333:0.900000:linear, 7.87500:0.900000:linear, 7.91667:0.900000:linear, 7.95833:0.900000:linear, 8.00000:0.900000:linear"),curve("0.00000:0.000000:linear, 0.04167:-0.008610:linear, 0.08333:-0.028286:linear, 0.12500:-0.049671:linear, 0.16667:-0.063110:linear, 0.20833:-0.058501:linear, 0.25000:-0.034242:linear, 0.29167:0.000507:linear, 0.33333:0.037087:linear, 0.37500:0.066888:linear, 0.41667:0.080357:linear, 0.45833:0.071969:linear, 0.50000:0.048713:linear, 0.54167:0.018986:linear, 0.58333:-0.009132:linear, 0.62500:-0.028154:linear, 0.66667:-0.030739:linear, 0.70833:-0.021089:linear, 0.75000:-0.008210:linear, 0.79167:-0.000282:linear, 0.83333:0.004492:linear, 0.87500:0.021760:linear, 0.91667:0.050298:linear, 0.95833:0.088332:linear, 1.00000:0.134103:linear, 1.04167:0.185862:linear, 1.08333:0.241879:linear, 1.12500:0.300460:linear, 1.16667:0.359876:linear, 1.20833:0.418405:linear, 1.25000:0.474356:linear, 1.29167:0.525959:linear, 1.33333:0.579997:linear, 1.37500:0.651145:linear, 1.41667:0.735811:linear, 1.45833:0.829836:linear, 1.50000:0.929072:linear, 1.54167:1.029245:linear, 1.58333:1.126000:linear, 1.62500:1.214993:linear, 1.66667:1.290841:linear, 1.70833:1.344435:linear, 1.75000:1.379793:linear, 1.79167:1.403642:linear, 1.83333:1.422730:linear, 1.87500:1.444062:linear, 1.91667:1.475699:linear, 1.95833:1.524807:linear, 2.00000:1.598113:linear, 2.04167:1.622706:linear, 2.08333:1.534744:linear, 2.12500:1.354762:linear, 2.16667:1.104291:linear, 2.20833:0.803788:linear, 2.25000:0.473206:linear, 2.29167:0.132522:linear, 2.33333:-0.198381:linear, 2.37500:-0.499957:linear, 2.41667:-0.752419:linear, 2.45833:-0.936093:linear, 2.50000:-1.031406:linear, 2.54167:-1.018442:linear, 2.58333:-0.922626:linear, 2.62500:-0.825869:linear, 2.66667:-0.731032:linear, 2.70833:-0.638999:linear, 2.75000:-0.550381:linear, 2.79167:-0.465942:linear, 2.83333:-0.386575:linear, 2.87500:-0.312606:linear, 2.91667:-0.240848:linear, 2.95833:-0.170637:linear, 3.00000:-0.101905:linear, 3.04167:-0.034637:linear, 3.08333:0.031022:linear, 3.12500:0.094744:linear, 3.16667:0.156292:linear, 3.20833:0.215499:linear, 3.25000:0.272421:linear, 3.29167:0.327263:linear, 3.33333:0.381280:linear, 3.37500:0.435530:linear, 3.41667:0.490355:linear, 3.45833:0.545935:linear, 3.50000:0.602225:linear, 3.54167:0.659469:linear, 3.58333:0.718745:linear, 3.62500:0.780447:linear, 3.66667:0.844547:linear, 3.70833:0.910988:linear, 3.75000:0.979715:linear, 3.79167:1.050661:linear, 3.83333:1.196979:linear, 3.87500:1.541699:linear, 3.91667:2.037909:linear, 3.95833:2.633627:linear, 4.00000:3.277410:linear, 4.04167:3.917483:linear, 4.08333:4.502044:linear, 4.12500:4.979765:linear, 4.16667:5.298890:linear, 4.20833:5.413551:linear, 4.25000:5.472042:linear, 4.29167:5.554584:linear, 4.33333:5.654497:linear, 4.37500:5.765158:linear, 4.41667:5.879919:linear, 4.45833:5.992084:linear, 4.50000:6.095012:linear, 4.54167:6.181982:linear, 4.58333:6.246268:linear, 4.62500:6.284391:linear, 4.66667:6.302883:linear, 4.70833:6.319208:linear, 4.75000:6.332486:linear, 4.79167:6.335603:linear, 4.83333:6.327526:linear, 4.87500:6.312721:linear, 4.91667:6.295505:linear, 4.95833:6.280055:linear, 5.00000:6.270408:linear, 5.04167:6.269746:linear, 5.08333:6.273970:linear, 5.12500:6.280504:linear, 5.16667:6.287461:linear, 5.20833:6.293002:linear, 5.25000:6.295263:linear, 5.29167:6.294735:linear, 5.33333:6.293416:linear, 5.37500:6.291701:linear, 5.41667:6.289986:linear, 5.45833:6.288667:linear, 5.50000:6.288139:linear, 5.54167:6.288139:linear, 5.58333:6.288139:linear, 5.62500:6.288139:linear, 5.66667:6.288139:linear, 5.70833:6.288139:linear, 5.75000:6.288139:linear, 5.79167:6.288139:linear, 5.83333:6.288139:linear, 5.87500:6.288139:linear, 5.91667:6.288139:linear, 5.95833:6.288139:linear, 6.00000:6.288139:linear, 6.04167:6.288139:linear, 6.08333:6.288139:linear, 6.12500:6.288139:linear, 6.16667:6.288139:linear, 6.20833:6.288139:linear, 6.25000:6.288139:linear, 6.29167:6.288139:linear, 6.33333:6.288139:linear, 6.37500:6.288139:linear, 6.41667:6.288139:linear, 6.45833:6.288139:linear, 6.50000:6.288139:linear, 6.54167:6.288139:linear, 6.58333:6.288139:linear, 6.62500:6.288139:linear, 6.66667:6.288139:linear, 6.70833:6.288139:linear, 6.75000:6.288139:linear, 6.79167:6.288139:linear, 6.83333:6.288139:linear, 6.87500:6.288139:linear, 6.91667:6.288139:linear, 6.95833:6.288139:linear, 7.00000:6.288139:linear, 7.04167:6.288139:linear, 7.08333:6.288139:linear, 7.12500:6.288139:linear, 7.16667:6.288139:linear, 7.20833:6.288139:linear, 7.25000:6.288139:linear, 7.29167:6.288139:linear, 7.33333:6.288139:linear, 7.37500:6.288139:linear, 7.41667:6.288139:linear, 7.45833:6.288139:linear, 7.50000:6.288139:linear, 7.54167:6.288139:linear, 7.58333:6.288139:linear, 7.62500:6.288139:linear, 7.66667:6.288139:linear, 7.70833:6.288139:linear, 7.75000:6.288139:linear, 7.79167:6.288139:linear, 7.83333:6.288139:linear, 7.87500:6.288139:linear, 7.91667:6.288139:linear, 7.95833:6.288139:linear, 8.00000:6.288139:linear")]}
               up={[0,1,0]}
-              fov={curve("0.00000:37.851349:linear, 0.04167:37.851349:linear, 0.08333:37.851349:linear, 0.12500:37.851349:linear, 0.16667:37.851349:linear, 0.20833:37.851349:linear, 0.25000:37.851349:linear, 0.29167:37.851349:linear, 0.33333:37.851349:linear, 0.37500:37.851349:linear, 0.41667:37.851349:linear, 0.45833:37.851349:linear, 0.50000:37.851349:linear, 0.54167:37.851349:linear, 0.58333:37.851349:linear, 0.62500:37.851349:linear, 0.66667:37.851349:linear, 0.70833:37.851349:linear, 0.75000:37.851349:linear, 0.79167:37.851349:linear, 0.83333:37.920577:linear, 0.87500:38.189868:linear, 0.91667:38.641303:linear, 0.95833:39.252190:linear, 1.00000:39.999688:linear, 1.04167:40.860930:linear, 1.08333:41.813141:linear, 1.12500:42.833745:linear, 1.16667:43.900444:linear, 1.20833:44.991299:linear, 1.25000:46.084780:linear, 1.29167:47.159805:linear, 1.33333:48.195751:linear, 1.37500:49.172441:linear, 1.41667:50.070103:linear, 1.45833:50.869319:linear, 1.50000:51.550911:linear, 1.54167:52.095842:linear, 1.58333:52.485059:linear, 1.62500:52.699332:linear, 1.66667:52.739017:linear, 1.70833:52.774165:linear, 1.75000:52.844918:linear, 1.79167:52.947449:linear, 1.83333:53.077918:linear, 1.87500:53.232482:linear, 1.91667:53.407300:linear, 1.95833:53.598537:linear, 2.00000:53.802374:linear, 2.04167:54.014998:linear, 2.08333:54.232618:linear, 2.12500:54.451463:linear, 2.16667:54.667775:linear, 2.20833:54.877823:linear, 2.25000:55.077885:linear, 2.29167:55.264266:linear, 2.33333:55.433275:linear, 2.37500:55.581238:linear, 2.41667:55.704485:linear, 2.45833:55.799349:linear, 2.50000:55.862155:linear, 2.54167:55.889221:linear, 2.58333:55.890020:linear, 2.62500:55.890020:linear, 2.66667:55.890020:linear, 2.70833:55.890020:linear, 2.75000:55.890020:linear, 2.79167:55.890020:linear, 2.83333:55.890020:linear, 2.87500:55.890020:linear, 2.91667:55.890020:linear, 2.95833:55.890020:linear, 3.00000:55.890020:linear, 3.04167:55.890020:linear, 3.08333:55.890020:linear, 3.12500:55.890020:linear, 3.16667:55.890020:linear, 3.20833:55.890020:linear, 3.25000:55.890020:linear, 3.29167:55.890020:linear, 3.33333:55.890020:linear, 3.37500:55.890020:linear, 3.41667:55.890020:linear, 3.45833:55.890020:linear, 3.50000:55.890020:linear, 3.54167:55.890020:linear, 3.58333:55.890020:linear, 3.62500:55.890020:linear, 3.66667:55.890020:linear, 3.70833:55.890020:linear, 3.75000:55.890020:linear, 3.79167:55.890020:linear, 3.83333:55.861937:linear, 3.87500:55.752578:linear, 3.91667:55.568814:linear, 3.95833:55.319264:linear, 4.00000:55.012513:linear, 4.04167:54.657152:linear, 4.08333:54.261797:linear, 4.12500:53.835120:linear, 4.16667:53.385860:linear, 4.20833:52.922846:linear, 4.25000:52.454993:linear, 4.29167:51.991316:linear, 4.33333:51.540920:linear, 4.37500:51.113004:linear, 4.41667:50.716843:linear, 4.45833:50.361770:linear, 4.50000:50.057169:linear, 4.54167:49.812444:linear, 4.58333:49.636988:linear, 4.62500:49.540160:linear, 4.66667:49.520926:linear, 4.70833:49.490549:linear, 4.75000:49.427810:linear, 4.79167:49.334234:linear, 4.83333:49.211331:linear, 4.87500:49.060603:linear, 4.91667:48.883542:linear, 4.95833:48.681638:linear, 5.00000:48.456377:linear, 5.04167:48.209243:linear, 5.08333:47.941719:linear, 5.12500:47.655292:linear, 5.16667:47.351459:linear, 5.20833:47.031712:linear, 5.25000:46.697558:linear, 5.29167:46.350508:linear, 5.33333:45.992085:linear, 5.37500:45.623818:linear, 5.41667:45.247251:linear, 5.45833:44.863937:linear, 5.50000:44.475440:linear, 5.54167:44.083337:linear, 5.58333:43.689220:linear, 5.62500:43.294687:linear, 5.66667:42.901351:linear, 5.70833:42.510837:linear, 5.75000:42.124784:linear, 5.79167:41.744835:linear, 5.83333:41.372651:linear, 5.87500:41.009898:linear, 5.91667:40.658250:linear, 5.95833:40.319392:linear, 6.00000:39.995015:linear, 6.04167:39.686815:linear, 6.08333:39.396492:linear, 6.12500:39.125752:linear, 6.16667:38.876300:linear, 6.20833:38.649844:linear, 6.25000:38.448092:linear, 6.29167:38.272745:linear, 6.33333:38.125504:linear, 6.37500:38.008062:linear, 6.41667:37.922108:linear, 6.45833:37.869315:linear, 6.50000:37.851349:linear, 6.54167:37.851349:linear, 6.58333:37.851349:linear, 6.62500:37.851349:linear, 6.66667:37.851349:linear, 6.70833:37.851349:linear, 6.75000:37.851349:linear, 6.79167:37.851349:linear, 6.83333:37.851349:linear, 6.87500:37.851349:linear, 6.91667:37.851349:linear, 6.95833:37.851349:linear, 7.00000:37.851349:linear, 7.04167:37.851349:linear, 7.08333:37.851349:linear, 7.12500:37.851349:linear, 7.16667:37.851349:linear, 7.20833:37.851349:linear, 7.25000:37.851349:linear, 7.29167:37.851349:linear, 7.33333:37.851349:linear, 7.37500:37.851349:linear, 7.41667:37.851349:linear, 7.45833:37.851349:linear, 7.50000:37.851349:linear, 7.54167:37.851349:linear, 7.58333:37.851349:linear, 7.62500:37.851349:linear, 7.66667:37.851349:linear, 7.70833:37.851349:linear, 7.75000:37.851349:linear, 7.79167:37.851349:linear, 7.83333:37.851349:linear, 7.87500:37.851349:linear, 7.91667:37.851349:linear, 7.95833:37.851349:linear, 8.00000:37.851349:linear")}
-              depthOfField="true"
-              focalLength="50"
-              fStop={curve("0:8:linear, 0.8:8:linear, 1.3:16:ease_in_out, 2.1:16:linear, 4.3:16:linear, 5:8:ease_in_out, 8:8:linear")}
-              focusDistance={curve("0.00000:5.126518:linear, 0.04167:5.128295:linear, 0.08333:5.131974:linear, 0.12500:5.136101:linear, 0.16667:5.138987:linear, 0.20833:5.138025:linear, 0.25000:5.132985:linear, 0.29167:5.126411:linear, 0.33333:5.119723:linear, 0.37500:5.114100:linear, 0.41667:5.111680:linear, 0.45833:5.113024:linear, 0.50000:5.117660:linear, 0.54167:5.122617:linear, 0.58333:5.128399:linear, 0.62500:5.131950:linear, 0.66667:5.132396:linear, 0.70833:5.130688:linear, 0.75000:5.128214:linear, 0.79167:5.126578:linear, 0.83333:5.070222:linear, 0.87500:4.858147:linear, 0.91667:4.517467:linear, 0.95833:4.086168:linear, 1.00000:3.592602:linear, 1.04167:3.073773:linear, 1.08333:2.558917:linear, 1.12500:2.076700:linear, 1.16667:1.655518:linear, 1.20833:1.321273:linear, 1.25000:1.097063:linear, 1.29167:0.995740:linear, 1.33333:0.965436:linear, 1.37500:0.882897:linear, 1.41667:0.765602:linear, 1.45833:0.637057:linear, 1.50000:0.520811:linear, 1.54167:0.433885:linear, 1.58333:0.383201:linear, 1.62500:0.361093:linear, 1.66667:0.350928:linear, 1.70833:0.343339:linear, 1.75000:0.337079:linear, 1.79167:0.340380:linear, 1.83333:0.350127:linear, 1.87500:0.366899:linear, 1.91667:0.384518:linear, 1.95833:0.397080:linear, 2.00000:0.401652:linear, 2.04167:0.431965:linear, 2.08333:0.548185:linear, 2.12500:0.597066:linear, 2.16667:0.645946:linear, 2.20833:0.694827:linear, 2.25000:0.743707:linear, 2.29167:0.792587:linear, 2.33333:0.841468:linear, 2.37500:0.890348:linear, 2.41667:0.939229:linear, 2.45833:0.988109:linear, 2.50000:1.036990:linear, 2.54167:1.085870:linear, 2.58333:1.134751:linear, 2.62500:1.183631:linear, 2.66667:1.232512:linear, 2.70833:1.281392:linear, 2.75000:1.330272:linear, 2.79167:1.379153:linear, 2.83333:1.428033:linear, 2.87500:1.476914:linear, 2.91667:1.525794:linear, 2.95833:1.574675:linear, 3.00000:1.623555:linear, 3.04167:1.672436:linear, 3.08333:1.721316:linear, 3.12500:1.770197:linear, 3.16667:1.819077:linear, 3.20833:1.867957:linear, 3.25000:1.916838:linear, 3.29167:1.965718:linear, 3.33333:2.014599:linear, 3.37500:2.063479:linear, 3.41667:2.112360:linear, 3.45833:2.161240:linear, 3.50000:2.210121:linear, 3.54167:2.259001:linear, 3.58333:2.307882:linear, 3.62500:2.356762:linear, 3.66667:2.405642:linear, 3.70833:2.454523:linear, 3.75000:2.503403:linear, 3.79167:2.552284:linear, 3.83333:2.601164:linear, 3.87500:2.650045:linear, 3.91667:2.698925:linear, 3.95833:2.747806:linear, 4.00000:2.796686:linear, 4.04167:2.845567:linear, 4.08333:2.894447:linear, 4.12500:2.943327:linear, 4.16667:2.992208:linear, 4.20833:3.041088:linear, 4.25000:3.089969:linear, 4.29167:3.138849:linear, 4.33333:3.187730:linear, 4.37500:3.236610:linear, 4.41667:3.022159:linear, 4.45833:2.912305:linear, 4.50000:2.869476:linear, 4.54167:2.888456:linear, 4.58333:2.964466:linear, 4.62500:3.081591:linear, 4.66667:3.226464:linear, 4.70833:3.390118:linear, 4.75000:3.565210:linear, 4.79167:3.744689:linear, 4.83333:3.915076:linear, 4.87500:4.068726:linear, 4.91667:4.192432:linear, 4.95833:4.264947:linear, 5.00000:4.279399:linear, 5.04167:4.262974:linear, 5.08333:4.247015:linear, 5.12500:4.231790:linear, 5.16667:4.217804:linear, 5.20833:4.205705:linear, 5.25000:4.196202:linear, 5.29167:4.189661:linear, 5.33333:4.186449:linear, 5.37500:4.187414:linear, 5.41667:4.191904:linear, 5.45833:4.200116:linear, 5.50000:4.212554:linear, 5.54167:4.229770:linear, 5.58333:4.251207:linear, 5.62500:4.276777:linear, 5.66667:4.307656:linear, 5.70833:4.342593:linear, 5.75000:4.381229:linear, 5.79167:4.424037:linear, 5.83333:4.471040:linear, 5.87500:4.520313:linear, 5.91667:4.571415:linear, 5.95833:4.625470:linear, 6.00000:4.681058:linear, 6.04167:4.736297:linear, 6.08333:4.790483:linear, 6.12500:4.842929:linear, 6.16667:4.894875:linear, 6.20833:4.943749:linear, 6.25000:4.988350:linear, 6.29167:5.027940:linear, 6.33333:5.061800:linear, 6.37500:5.089233:linear, 6.41667:5.109571:linear, 6.45833:5.122192:linear, 6.50000:5.126518:linear, 6.54167:5.126518:linear, 6.58333:5.126518:linear, 6.62500:5.126518:linear, 6.66667:5.126518:linear, 6.70833:5.126518:linear, 6.75000:5.126518:linear, 6.79167:5.126518:linear, 6.83333:5.126518:linear, 6.87500:5.126518:linear, 6.91667:5.126518:linear, 6.95833:5.126518:linear, 7.00000:5.126518:linear, 7.04167:5.126518:linear, 7.08333:5.126518:linear, 7.12500:5.126518:linear, 7.16667:5.126518:linear, 7.20833:5.126518:linear, 7.25000:5.126518:linear, 7.29167:5.126518:linear, 7.33333:5.126518:linear, 7.37500:5.126518:linear, 7.41667:5.126518:linear, 7.45833:5.126518:linear, 7.50000:5.126518:linear, 7.54167:5.126518:linear, 7.58333:5.126518:linear, 7.62500:5.126518:linear, 7.66667:5.126518:linear, 7.70833:5.126518:linear, 7.75000:5.126518:linear, 7.79167:5.126518:linear, 7.83333:5.126518:linear, 7.87500:5.126518:linear, 7.91667:5.126518:linear, 7.95833:5.126518:linear, 8.00000:5.126518:linear")}
-              maxBlur="24"
+              fov={curve("0.00000:21.000000:linear, 0.04167:21.000000:linear, 0.08333:21.000000:linear, 0.12500:21.000000:linear, 0.16667:21.000000:linear, 0.20833:21.000000:linear, 0.25000:21.000000:linear, 0.29167:21.000000:linear, 0.33333:21.000000:linear, 0.37500:21.000000:linear, 0.41667:21.000000:linear, 0.45833:21.000000:linear, 0.50000:21.000000:linear, 0.54167:21.000000:linear, 0.58333:21.000000:linear, 0.62500:21.000000:linear, 0.66667:21.000000:linear, 0.70833:21.000000:linear, 0.75000:21.000000:linear, 0.79167:21.000000:linear, 0.83333:21.040437:linear, 0.87500:21.197842:linear, 0.91667:21.462107:linear, 0.95833:21.820510:linear, 1.00000:22.260330:linear, 1.04167:22.768845:linear, 1.08333:23.333333:linear, 1.12500:23.941075:linear, 1.16667:24.579347:linear, 1.20833:25.235430:linear, 1.25000:25.896601:linear, 1.29167:26.550139:linear, 1.33333:27.183323:linear, 1.37500:27.783432:linear, 1.41667:28.337743:linear, 1.45833:28.833537:linear, 1.50000:29.258091:linear, 1.54167:29.598684:linear, 1.58333:29.842594:linear, 1.62500:29.977102:linear, 1.66667:30.002032:linear, 1.70833:30.024117:linear, 1.75000:30.068587:linear, 1.79167:30.133062:linear, 1.83333:30.215160:linear, 1.87500:30.312500:linear, 1.91667:30.422700:linear, 1.95833:30.543378:linear, 2.00000:30.672154:linear, 2.04167:30.806645:linear, 2.08333:30.944470:linear, 2.12500:31.083248:linear, 2.16667:31.220596:linear, 2.20833:31.354135:linear, 2.25000:31.481481:linear, 2.29167:31.600255:linear, 2.33333:31.708073:linear, 2.37500:31.802555:linear, 2.41667:31.881319:linear, 2.45833:31.941984:linear, 2.50000:31.982167:linear, 2.54167:31.999489:linear, 2.58333:32.000000:linear, 2.62500:32.000000:linear, 2.66667:32.000000:linear, 2.70833:32.000000:linear, 2.75000:32.000000:linear, 2.79167:32.000000:linear, 2.83333:32.000000:linear, 2.87500:32.000000:linear, 2.91667:32.000000:linear, 2.95833:32.000000:linear, 3.00000:32.000000:linear, 3.04167:32.000000:linear, 3.08333:32.000000:linear, 3.12500:32.000000:linear, 3.16667:32.000000:linear, 3.20833:32.000000:linear, 3.25000:32.000000:linear, 3.29167:32.000000:linear, 3.33333:32.000000:linear, 3.37500:32.000000:linear, 3.41667:32.000000:linear, 3.45833:32.000000:linear, 3.50000:32.000000:linear, 3.54167:32.000000:linear, 3.58333:32.000000:linear, 3.62500:32.000000:linear, 3.66667:32.000000:linear, 3.70833:32.000000:linear, 3.75000:32.000000:linear, 3.79167:32.000000:linear, 3.83333:31.982028:linear, 3.87500:31.912070:linear, 3.91667:31.794619:linear, 3.95833:31.635329:linear, 4.00000:31.439853:linear, 4.04167:31.213847:linear, 4.08333:30.962963:linear, 4.12500:30.692856:linear, 4.16667:30.409179:linear, 4.20833:30.117587:linear, 4.25000:29.823733:linear, 4.29167:29.533272:linear, 4.33333:29.251856:linear, 4.37500:28.985141:linear, 4.41667:28.738781:linear, 4.45833:28.518428:linear, 4.50000:28.329737:linear, 4.54167:28.178363:linear, 4.58333:28.069958:linear, 4.62500:28.010177:linear, 4.66667:27.998306:linear, 4.70833:27.979560:linear, 4.75000:27.940852:linear, 4.79167:27.883143:linear, 4.83333:27.807392:linear, 4.87500:27.714558:linear, 4.91667:27.605601:linear, 4.95833:27.481481:linear, 5.00000:27.343158:linear, 5.04167:27.191592:linear, 5.08333:27.027741:linear, 5.12500:26.852565:linear, 5.16667:26.667026:linear, 5.20833:26.472081:linear, 5.25000:26.268691:linear, 5.29167:26.057815:linear, 5.33333:25.840414:linear, 5.37500:25.617446:linear, 5.41667:25.389872:linear, 5.45833:25.158651:linear, 5.50000:24.924743:linear, 5.54167:24.689107:linear, 5.58333:24.452704:linear, 5.62500:24.216493:linear, 5.66667:23.981433:linear, 5.70833:23.748484:linear, 5.75000:23.518607:linear, 5.79167:23.292760:linear, 5.83333:23.071904:linear, 5.87500:22.856998:linear, 5.91667:22.649001:linear, 5.95833:22.448874:linear, 6.00000:22.257576:linear, 6.04167:22.076067:linear, 6.08333:21.905306:linear, 6.12500:21.746254:linear, 6.16667:21.599869:linear, 6.20833:21.467112:linear, 6.25000:21.348943:linear, 6.29167:21.246320:linear, 6.33333:21.160204:linear, 6.37500:21.091554:linear, 6.41667:21.041331:linear, 6.45833:21.010493:linear, 6.50000:21.000000:linear, 6.54167:21.000000:linear, 6.58333:21.000000:linear, 6.62500:21.000000:linear, 6.66667:21.000000:linear, 6.70833:21.000000:linear, 6.75000:21.000000:linear, 6.79167:21.000000:linear, 6.83333:21.000000:linear, 6.87500:21.000000:linear, 6.91667:21.000000:linear, 6.95833:21.000000:linear, 7.00000:21.000000:linear, 7.04167:21.000000:linear, 7.08333:21.000000:linear, 7.12500:21.000000:linear, 7.16667:21.000000:linear, 7.20833:21.000000:linear, 7.25000:21.000000:linear, 7.29167:21.000000:linear, 7.33333:21.000000:linear, 7.37500:21.000000:linear, 7.41667:21.000000:linear, 7.45833:21.000000:linear, 7.50000:21.000000:linear, 7.54167:21.000000:linear, 7.58333:21.000000:linear, 7.62500:21.000000:linear, 7.66667:21.000000:linear, 7.70833:21.000000:linear, 7.75000:21.000000:linear, 7.79167:21.000000:linear, 7.83333:21.000000:linear, 7.87500:21.000000:linear, 7.91667:21.000000:linear, 7.95833:21.000000:linear, 8.00000:21.000000:linear")}
             />
             <EnvironmentLight
               id="s98_roll_environment"
@@ -26171,6 +26372,7 @@
               color="#F4F7FF"
               intensity="0.65"
             />
+            <Model id="s98_roll_table_backdrop" asset="s98_studio_cyclorama" castShadow="false" receiveShadow="true" />
             <Model
               id="s98_roll_body"
               asset="s98_apple_body"

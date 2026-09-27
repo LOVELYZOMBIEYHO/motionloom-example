@@ -14,7 +14,7 @@ Great Sword Casting routine.
   the Character1 rig. The result is a MotionLoom `Action`
   (`assets/actions/great_sword_casting.motionloom`, 513 canonical poses) and is
   scheduled through `ActionLibrary`.
-- **Sword**: the prop is built entirely from MotionLoom `PrimitiveAsset`
+- **Sword**: the prop is built entirely from MotionLoom `GeometryAsset`
   geometry: bevelled blade and edge strips, a four-sided point, bronze guard,
   wrapped grip and pommel. One Graph-level `Attachment` aligns the sword's
   primary `main_grip` Socket with Character1's canonical `hand_r`, then the

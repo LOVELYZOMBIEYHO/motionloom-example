@@ -1,1 +1,32 @@
-{"id":"csim-000013","type":"core","title":"Rigid Body 3D Contract","domain":"simulation","features":["rigid-body"],"dsl":["Assets","PrimitiveAsset","Physics","RigidBody","CompositeGroup","Model"],"teaches":["Declare typed primitive geometry and derive static or dynamic 3D colliders with shape=auto."],"source_path":"core/simulation/csim-000013-rigid-body-3d","demo_url":"","related":["csim-000009"],"requires":["PrimitiveAsset","RigidBody","Physics"]}
+{
+  "id": "csim-000013",
+  "type": "core",
+  "title": "Rigid Body 3D Contract",
+  "domain": "simulation",
+  "features": [
+    "rigid-body"
+  ],
+  "dsl": [
+    "Assets",
+    "Primitive",
+    "Physics",
+    "RigidBody",
+    "CompositeGroup",
+    "Model",
+    "GeometryAsset",
+    "MeshAsset"
+  ],
+  "teaches": [
+    "Declare typed primitive geometry and derive static or dynamic 3D colliders with shape=auto."
+  ],
+  "source_path": "core/simulation/csim-000013-rigid-body-3d",
+  "demo_url": "",
+  "related": [
+    "csim-000009"
+  ],
+  "requires": [
+    "Primitive",
+    "RigidBody",
+    "Physics"
+  ]
+}

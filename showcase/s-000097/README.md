@@ -3,7 +3,7 @@
 `main.motionloom` is a 12-second, 1920×1080, 24 fps aerial drift rebuilt from
 `reference/reference.png` (a photo of hairpin switchbacks cut into a forested
 mountainside). Everything is authored from primitives — a heightfield
-`TerrainAsset`, a shared `CurveAsset` with six `SweepAsset` results, and `CompoundAsset`
+`TerrainAsset`, a shared `CurveAsset` with six `GeometryAsset/Sweep` results, and `CompoundAsset`
 trees — with no imported GLBs. Four generated base-color textures provide the
 first authored-material checkpoint; geometry, placement, lighting and camera
 remain entirely MotionLoom-authored.
@@ -36,7 +36,7 @@ all ratios are preserved.
   contract used by native/WASM preview and Weaver.
 - Road — one 175-control-point `CurveAsset`, simplified from 899 dense fitted
   samples with a maximum 0.004 scene-unit centreline deviation, drives six
-  reusable `SweepAsset` definitions: crowned
+  reusable `GeometryAsset/Sweep` definitions: crowned
   asphalt (#63696F, 5.5 m wide), two painted edge lines, a broken centre line,
   and raised metallic guardrails. Paint is lifted 0.24 m so the renderer can
   resolve it at this viewing distance.
