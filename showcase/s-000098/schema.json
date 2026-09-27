@@ -328,6 +328,41 @@
       ]
     },
     {
+      "tag": "DisplaceNoise",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "amplitude",
+          "occurrences": 1,
+          "examples": [
+            "\"0.003\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "frequency",
+          "occurrences": 1,
+          "examples": [
+            "\"3.5\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "seed",
+          "occurrences": 1,
+          "examples": [
+            "\"98\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
       "tag": "EnvironmentLight",
       "occurrences": 5,
       "recognized": true,
@@ -420,7 +455,7 @@
     },
     {
       "tag": "Face",
-      "occurrences": 9152,
+      "occurrences": 80,
       "recognized": true,
       "validationCoverage": "strict",
       "requiredAttributes": [
@@ -429,12 +464,12 @@
       "attributes": [
         {
           "name": "indices",
-          "occurrences": 9152,
+          "occurrences": 80,
           "examples": [
-            "{[0,1,2,3]}",
             "{[0,17,18,1]}",
-            "{[0,65,66,1]}",
-            "{[0,9,10,1]}"
+            "{[1,18,19,2]}",
+            "{[10,27,28,11]}",
+            "{[11,28,29,12]}"
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -455,9 +490,19 @@
           "occurrences": 30,
           "examples": [
             "\"s98_apple_body_geometry\"",
+            "\"s98_apple_profile_geometry\"",
             "\"s98_apple_stem_geometry\"",
-            "\"s98_calyx_recess_geometry\"",
-            "\"s98_clay_shard_0_0_geometry\""
+            "\"s98_calyx_recess_geometry\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "source",
+          "occurrences": 26,
+          "examples": [
+            "\"s98_apple_body_geometry\"",
+            "\"s98_apple_profile_geometry\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -761,7 +806,7 @@
     },
     {
       "tag": "Mesh",
-      "occurrences": 28,
+      "occurrences": 1,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": []
@@ -809,6 +854,39 @@
             "\"s98_calyx\"",
             "\"s98_gray_clay\"",
             "\"s98_peel\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "MeshTransform",
+      "occurrences": 26,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "scale",
+          "occurrences": 26,
+          "examples": [
+            "{[1.004,1.004,1.004]}",
+            "{[1.006,1.006,1.006]}",
+            "{[1.017,1,0.983]}"
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "translate",
+          "occurrences": 26,
+          "examples": [
+            "{[-0.117750,-1.601080,0.280740]}",
+            "{[-0.118670,-1.593510,-0.284230]}",
+            "{[-0.206440,-0.103070,0.479260]}",
+            "{[-0.208960,-0.102980,-0.485020]}"
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -930,6 +1008,48 @@
           "valueType": "number",
           "supportsInlineExpression": true,
           "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Modifiers",
+      "occurrences": 27,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": []
+    },
+    {
+      "tag": "Partition",
+      "occurrences": 24,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "uRange",
+        "vRange"
+      ],
+      "attributes": [
+        {
+          "name": "uRange",
+          "occurrences": 24,
+          "examples": [
+            "{[0.200000,0.325000]}",
+            "{[0.325000,0.450000]}",
+            "{[0.450000,0.575000]}",
+            "{[0.575000,0.700000]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "vRange",
+          "occurrences": 24,
+          "examples": [
+            "{[0.000000,0.333333]}",
+            "{[0.333333,0.666667]}",
+            "{[0.666667,1.000000]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
         }
       ]
     },
@@ -1170,6 +1290,101 @@
       ]
     },
     {
+      "tag": "Profile",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "interpolation",
+          "occurrences": 1,
+          "examples": [
+            "\"linear\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "ProfilePoint",
+      "occurrences": 55,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "position"
+      ],
+      "attributes": [
+        {
+          "name": "position",
+          "occurrences": 55,
+          "examples": [
+            "{[0.007648,1.450000]}",
+            "{[0.009560,0.105000]}",
+            "{[0.046101,1.447963]}",
+            "{[0.068689,0.075557]}"
+          ],
+          "recognized": true,
+          "valueType": "vector3",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "RadialWave",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "amplitude",
+          "occurrences": 1,
+          "examples": [
+            "\"0.008\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "axis",
+          "occurrences": 1,
+          "examples": [
+            "\"y\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "cycles",
+          "occurrences": 1,
+          "examples": [
+            "\"5\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "falloff",
+          "occurrences": 1,
+          "examples": [
+            "\"0.12\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "heightRange",
+          "occurrences": 1,
+          "examples": [
+            "{[1.5,1.78]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
       "tag": "RectAreaLight",
       "occurrences": 13,
       "recognized": true,
@@ -1286,6 +1501,41 @@
       ]
     },
     {
+      "tag": "Revolve",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "axis",
+          "occurrences": 1,
+          "examples": [
+            "\"y\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "samples",
+          "occurrences": 1,
+          "examples": [
+            "\"28\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "segments",
+          "occurrences": 1,
+          "examples": [
+            "\"32\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
       "tag": "Scene",
       "occurrences": 1,
       "recognized": true,
@@ -1347,6 +1597,36 @@
           "occurrences": 5,
           "examples": [
             "\"hide\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "Subdivision",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "levels",
+        "scheme"
+      ],
+      "attributes": [
+        {
+          "name": "levels",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "scheme",
+          "occurrences": 1,
+          "examples": [
+            "\"linear\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1417,19 +1697,48 @@
       ]
     },
     {
+      "tag": "UV",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "mode"
+      ],
+      "attributes": [
+        {
+          "name": "mode",
+          "occurrences": 1,
+          "examples": [
+            "\"profileParameter\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "offset",
+          "occurrences": 1,
+          "examples": [
+            "{[0.2,0]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
       "tag": "Vertex",
-      "occurrences": 16203,
+      "occurrences": 102,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
           "name": "position",
-          "occurrences": 16203,
+          "occurrences": 102,
           "examples": [
-            "{[-0.000000,0.105000,-0.009560]}",
             "{[-0.000000,1.454000,-0.035520]}",
-            "{[-0.000031,1.452265,0.008033]}",
-            "{[-0.000037,1.452314,0.008036]}"
+            "{[-0.001034,1.701000,0.018638]}",
+            "{[-0.001721,1.701000,-0.036298]}",
+            "{[-0.009408,1.582000,0.025542]}"
           ],
           "recognized": true,
           "valueType": "vector3",
@@ -1438,12 +1747,71 @@
         },
         {
           "name": "uv",
-          "occurrences": 3677,
+          "occurrences": 102,
           "examples": [
             "{[0.000000,0.000000]}",
             "{[0.000000,0.200000]}",
             "{[0.000000,0.400000]}",
             "{[0.000000,0.600000]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "WeightedNormals",
+      "occurrences": 25,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "keepSharpEdges",
+          "occurrences": 25,
+          "examples": [
+            "\"false\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "strength",
+          "occurrences": 25,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "Wireframe",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "requiredAttributes": [
+        "radius"
+      ],
+      "attributes": [
+        {
+          "name": "radius",
+          "occurrences": 1,
+          "examples": [
+            "\"0.0018\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "segments",
+          "occurrences": 1,
+          "examples": [
+            "\"3\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false

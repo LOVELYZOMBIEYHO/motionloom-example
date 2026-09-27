@@ -7938,7 +7938,8 @@
         "pbr-lighting",
         "camera-3d",
         "product-promotion",
-        "curve-animation"
+        "curve-animation",
+        "procedural"
       ],
       "dsl": [
         "Graph",
@@ -7966,11 +7967,23 @@
         "RectAreaLight",
         "Model",
         "Present",
-        "GeometryAsset"
+        "GeometryAsset",
+        "Revolve",
+        "Profile",
+        "ProfilePoint",
+        "Modifiers",
+        "RadialWave",
+        "DisplaceNoise",
+        "UV",
+        "Subdivision",
+        "WeightedNormals",
+        "Wireframe",
+        "Partition",
+        "MeshTransform"
       ],
       "teaches": [
         "Show one 3D apple mesh in textured, gray wireframe and white clay stages.",
-        "Build depth-tested wire geometry from a UV-mapped MeshAsset control cage.",
+        "Generate the apple from a shared profile, seeded shape noise and radial lobes; derive wireframe and breakaway pieces from its geometry without repeating vertices.",
         "Couple apple roll rotation to silhouette-based floor contact and travel distance.",
         "Move the camera past a close peel view, look away briefly, and return to the opening composition for a loop.",
         "Author camera-owned depth of field shared by WGPU and Weaver, keeping clay/wire shots sharp and animating surface focus for the macro loop."

@@ -50,6 +50,7 @@
 | [depthoffieldstyle](dsl/depthoffieldstyle.md) | 1 |
 | [derived](dsl/derived.md) | 1 |
 | [directionallight](dsl/directionallight.md) | 19 |
+| [displacenoise](dsl/displacenoise.md) | 1 |
 | [edge](dsl/edge.md) | 1 |
 | [edgeroughness](dsl/edgeroughness.md) | 2 |
 | [edgesmoothing](dsl/edgesmoothing.md) | 1 |
@@ -112,9 +113,11 @@
 | [measure](dsl/measure.md) | 1 |
 | [meshasset](dsl/meshasset.md) | 18 |
 | [meshtopology](dsl/meshtopology.md) | 9 |
+| [meshtransform](dsl/meshtransform.md) | 1 |
 | [model](dsl/model.md) | 27 |
 | [modelasset](dsl/modelasset.md) | 16 |
 | [modelprofile](dsl/modelprofile.md) | 9 |
+| [modifiers](dsl/modifiers.md) | 1 |
 | [noise](dsl/noise.md) | 4 |
 | [opacity](dsl/opacity.md) | 3 |
 | [outlinestyle](dsl/outlinestyle.md) | 1 |
@@ -122,6 +125,7 @@
 | [part](dsl/part.md) | 5 |
 | [particleemitter](dsl/particleemitter.md) | 2 |
 | [particlefield](dsl/particlefield.md) | 3 |
+| [partition](dsl/partition.md) | 1 |
 | [pass](dsl/pass.md) | 56 |
 | [path](dsl/path.md) | 65 |
 | [physics](dsl/physics.md) | 3 |
@@ -136,11 +140,14 @@
 | [present](dsl/present.md) | 136 |
 | [primitive](dsl/primitive.md) | 18 |
 | [process](dsl/process.md) | 57 |
+| [profile](dsl/profile.md) | 1 |
+| [profilepoint](dsl/profilepoint.md) | 1 |
 | [puppet](dsl/puppet.md) | 4 |
 | [puppetpin](dsl/puppetpin.md) | 12 |
 | [puppetwarp](dsl/puppetwarp.md) | 12 |
 | [radialgradient](dsl/radialgradient.md) | 57 |
 | [radialrays](dsl/radialrays.md) | 2 |
+| [radialwave](dsl/radialwave.md) | 1 |
 | [random](dsl/random.md) | 3 |
 | [ratio](dsl/ratio.md) | 1 |
 | [rect](dsl/rect.md) | 109 |
@@ -150,6 +157,7 @@
 | [renderstyle](dsl/renderstyle.md) | 4 |
 | [repeat](dsl/repeat.md) | 30 |
 | [retarget](dsl/retarget.md) | 9 |
+| [revolve](dsl/revolve.md) | 1 |
 | [rigidbody](dsl/rigidbody.md) | 4 |
 | [scene](dsl/scene.md) | 143 |
 | [sequence](dsl/sequence.md) | 142 |
@@ -164,6 +172,7 @@
 | [spotlight](dsl/spotlight.md) | 3 |
 | [springchain](dsl/springchain.md) | 10 |
 | [style](dsl/style.md) | 1 |
+| [subdivision](dsl/subdivision.md) | 1 |
 | [surface](dsl/surface.md) | 4 |
 | [surfacestyle](dsl/surfacestyle.md) | 3 |
 | [tex](dsl/tex.md) | 56 |
@@ -178,7 +187,10 @@
 | [track](dsl/track.md) | 142 |
 | [triangle](dsl/triangle.md) | 9 |
 | [use](dsl/use.md) | 9 |
+| [uv](dsl/uv.md) | 1 |
 | [variants](dsl/variants.md) | 1 |
 | [vary](dsl/vary.md) | 1 |
 | [vertex](dsl/vertex.md) | 10 |
+| [weightednormals](dsl/weightednormals.md) | 1 |
 | [wind](dsl/wind.md) | 3 |
+| [wireframe](dsl/wireframe.md) | 1 |

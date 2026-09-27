@@ -11,7 +11,7 @@
 - 15.8–18.5 seconds: the camera turns back toward the apple as it completes its roll and settles.
 - 18.5–20 seconds: hold the opening camera composition for the loop.
 
-The apple body and stem are UV-mapped meshes authored directly in the DSL. The five images in `assets/` supply peel color, peel normal detail, peel roughness, stem color, and an invisible soft studio environment. The visible background is pure black. No enclosing backdrop geometry blocks the environment or directional lights, keeping WGPU Preview and Weaver lighting close.
+The apple body is generated from one reusable `Revolve/Profile` definition. `RadialWave` adds five shoulder lobes, and `DisplaceNoise` adds subtle shape variation with fixed seed `98`. The stem keeps its compact authored mesh. `UV mode="profileParameter"` retains the peel rows and angular offset when profile widths are edited. The five images in `assets/` supply peel color, peel normal detail, peel roughness, stem color, and an invisible soft studio environment. The visible background is pure black. No enclosing backdrop geometry blocks the environment or directional lights, keeping WGPU Preview and Weaver lighting close.
 
 The ending uses a single rigid apple. Rotation, travel and vertical position are sampled from its body and stem silhouette so the model follows its original ground contact trajectory. Camera and fill light translate with the fruit, ending at the opening view relative to its new position. There are no water beads or replacement apples.
 
@@ -25,3 +25,9 @@ to the visible peel and stops down to f/16; its last focus value matches the
 opening shot. FOV, camera movement, geometry and textures retain the approved
 composition. `maxBlur="24"` is the WGPU preview radius budget; Weaver traces
 the physical aperture. Export without focus flags to follow these settings.
+
+## Shared parametric geometry
+
+The profile is sampled into a 32-segment control surface. The textured, gray and white bodies share its subdivided geometry. `Wireframe` derives the gray grid from the same control surface. All 24 breakaway pieces use `Partition` to select regions of the body, then `MeshTransform` restores each original animation pivot. The white stem shell reuses the stem geometry. Materials, lights, camera curves and animation IDs are unchanged.
+
+`main.motionloom`, `main2.motionloom` and `main3.motionloom` use this same geometry pipeline; alternate camera/timeline versions remain separate.
