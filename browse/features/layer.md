@@ -4,4 +4,6 @@
 |---|---|---|---|---|---|
 | [cs-000009](../../core/scene/cs-000009/) | core | scene | DSL Layer Basic | layer | Use the basic <Layer> pattern in MotionLoom. |
 | [cs-000027](../../core/scene/cs-000027/) | core | scene | Pinwheel Layer zDepth Logo | zdepth, layer, shape, curve-animation, logo-motion | zDepth uses camera-space depth: negative is closer, positive is farther.<br>Use Layer zDepth for 3D-style ordering: larger positive values are farther and draw first. |
+| [cs-000063](../../core/scene/cs-000063/) | core | scene | Precompose Layer Text | scene, text, layer, defs, edge-smoothing | Define reusable text artwork in a Precompose resource.<br>Render that source through a Layer and compare it with direct text. |
+| [cs-000065](../../core/scene/cs-000065/) | core | scene | Luma Matte Text | scene, text, luma-matte, gradient, layer | Use a Precompose as a luma matte for another Layer source.<br>Combine a gradient ramp and a circle to reveal text. |
 | [s-000001](../../showcase/s-000001/) | showcase | scene | Pinwheel zDepth Layer Sorting 4s | scene, zdepth, layer, shape, curve-animation | Demonstrate layer zDepth ordering with four overlapping pinwheel blades.<br>Use separate layers and subtle curve animation to make depth sorting visible. |

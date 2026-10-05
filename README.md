@@ -151,7 +151,7 @@ After editing or adding showcases from this workspace, regenerate all learning
 schemas with:
 
 ```sh
-cargo run -p motionloom --example build_showcase_schemas -- ../motionloom-example/showcase
+cargo run --manifest-path ../motionloom/Cargo.toml -p motionloom --example build_showcase_schemas -- ../motionloom-example/showcase
 ```
 
 For generated DSL, separately call `motionloom_analyze_script_json()` after

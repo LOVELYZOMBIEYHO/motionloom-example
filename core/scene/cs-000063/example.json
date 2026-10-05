@@ -1,0 +1,55 @@
+{
+  "id": "cs-000063",
+  "type": "core",
+  "title": "Precompose Layer Text",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "text",
+    "layer",
+    "defs",
+    "edge-smoothing"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "Precompose",
+    "Rect",
+    "Text",
+    "Line",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Present"
+  ],
+  "teaches": [
+    "Define reusable text artwork in a Precompose resource.",
+    "Render that source through a Layer and compare it with direct text."
+  ],
+  "source_path": "core/scene/cs-000063",
+  "demo_url": "",
+  "related": [
+    "cs-000062",
+    "cs-000064",
+    "cs-000065",
+    "cs-000066"
+  ],
+  "requires": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "Precompose",
+    "Rect",
+    "Text",
+    "Line",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Present"
+  ]
+}

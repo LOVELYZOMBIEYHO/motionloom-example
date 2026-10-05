@@ -1,9 +1,9 @@
 {
-  "example_count": 199,
-  "core_count": 107,
+  "example_count": 204,
+  "core_count": 112,
   "showcase_count": 92,
   "domain_counts": {
-    "scene": 148,
+    "scene": 153,
     "world": 6,
     "process": 13,
     "process_with_time": 3,
@@ -2487,6 +2487,276 @@
         "Present"
       ],
       "path": "core/scene/cs-000060/"
+    },
+    {
+      "id": "cs-000062",
+      "type": "core",
+      "title": "Direct Scene Text",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "text",
+        "line",
+        "edge-smoothing"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Line",
+        "Present"
+      ],
+      "teaches": [
+        "Render large and small text directly inside a Scene Layer.",
+        "Compare text edges with a thin primitive line."
+      ],
+      "source_path": "core/scene/cs-000062",
+      "demo_url": "",
+      "related": [
+        "cs-000063",
+        "cs-000064",
+        "cs-000065",
+        "cs-000066"
+      ],
+      "requires": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Text",
+        "Line",
+        "Present"
+      ],
+      "path": "core/scene/cs-000062/"
+    },
+    {
+      "id": "cs-000063",
+      "type": "core",
+      "title": "Precompose Layer Text",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "text",
+        "layer",
+        "defs",
+        "edge-smoothing"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Precompose",
+        "Rect",
+        "Text",
+        "Line",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Present"
+      ],
+      "teaches": [
+        "Define reusable text artwork in a Precompose resource.",
+        "Render that source through a Layer and compare it with direct text."
+      ],
+      "source_path": "core/scene/cs-000063",
+      "demo_url": "",
+      "related": [
+        "cs-000062",
+        "cs-000064",
+        "cs-000065",
+        "cs-000066"
+      ],
+      "requires": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Precompose",
+        "Rect",
+        "Text",
+        "Line",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Present"
+      ],
+      "path": "core/scene/cs-000063/"
+    },
+    {
+      "id": "cs-000064",
+      "type": "core",
+      "title": "Hard and Feathered Text Masks",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "text",
+        "mask",
+        "group-mask",
+        "soft-edge"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Mask",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Text",
+        "Present"
+      ],
+      "teaches": [
+        "Apply an alpha mask to a text Group.",
+        "Compare a hard rectangular mask with a rounded feathered mask."
+      ],
+      "source_path": "core/scene/cs-000064",
+      "demo_url": "",
+      "related": [
+        "cs-000062",
+        "cs-000063",
+        "cs-000065",
+        "cs-000066"
+      ],
+      "requires": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "Mask",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Group",
+        "Text",
+        "Present"
+      ],
+      "path": "core/scene/cs-000064/"
+    },
+    {
+      "id": "cs-000065",
+      "type": "core",
+      "title": "Luma Matte Text",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "text",
+        "luma-matte",
+        "gradient",
+        "layer",
+        "defs"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "LinearGradient",
+        "Precompose",
+        "Rect",
+        "Text",
+        "Circle",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Present"
+      ],
+      "teaches": [
+        "Use a Precompose as a luma matte for another Layer source.",
+        "Combine a gradient ramp and a circle to reveal text."
+      ],
+      "source_path": "core/scene/cs-000065",
+      "demo_url": "",
+      "related": [
+        "cs-000062",
+        "cs-000063",
+        "cs-000064",
+        "cs-000066"
+      ],
+      "requires": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Defs",
+        "LinearGradient",
+        "Precompose",
+        "Rect",
+        "Text",
+        "Circle",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Present"
+      ],
+      "path": "core/scene/cs-000065/"
+    },
+    {
+      "id": "cs-000066",
+      "type": "core",
+      "title": "Primitive Edge Baseline",
+      "domain": "scene",
+      "features": [
+        "scene",
+        "circle",
+        "line",
+        "path",
+        "edge-smoothing"
+      ],
+      "dsl": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Circle",
+        "Line",
+        "Path",
+        "Present"
+      ],
+      "teaches": [
+        "Render filled circles, diagonal lines and cubic Bezier paths.",
+        "Compare thin and thick strokes with round line caps."
+      ],
+      "source_path": "core/scene/cs-000066",
+      "demo_url": "",
+      "related": [
+        "cs-000062",
+        "cs-000063",
+        "cs-000064",
+        "cs-000065"
+      ],
+      "requires": [
+        "Graph",
+        "Background",
+        "Scene",
+        "Timeline",
+        "Track",
+        "Sequence",
+        "Layer",
+        "Circle",
+        "Line",
+        "Path",
+        "Present"
+      ],
+      "path": "core/scene/cs-000066/"
     },
     {
       "id": "s-000001",
@@ -7931,6 +8201,7 @@
         "scene",
         "true-3d",
         "assets",
+        "audio",
         "mesh-topology",
         "image-asset",
         "pbr",
@@ -7950,6 +8221,8 @@
         "AntiAliasingStyle",
         "Assets",
         "ImageAsset",
+        "AudioAsset",
+        "AudioClip",
         "MaterialAsset",
         "Primitive",
         "MeshAsset",
@@ -7986,7 +8259,8 @@
         "Generate the apple from a shared profile, seeded shape noise and radial lobes; derive wireframe and breakaway pieces from its geometry without repeating vertices.",
         "Couple apple roll rotation to silhouette-based floor contact and travel distance.",
         "Move the camera past a close peel view, look away briefly, and return to the opening composition for a loop.",
-        "Author camera-owned depth of field shared by WGPU and Weaver, keeping clay/wire shots sharp and animating surface focus for the macro loop."
+        "Author camera-owned depth of field shared by WGPU and Weaver, keeping clay/wire shots sharp and animating surface focus for the macro loop.",
+        "Sync an original synthesized music cue and foley to the apple material changes, breakaway, camera pass, and final roll."
       ],
       "source_path": "showcase/s-000098",
       "demo_url": "",

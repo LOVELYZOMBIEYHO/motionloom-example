@@ -4,6 +4,7 @@
 |---|---|---|---|---|---|
 | [cs-000002](../../core/scene/cs-000002/) | core | scene | DSL Circle Basic | circle | Use the basic <Circle> pattern in MotionLoom. |
 | [cs-000032](../../core/scene/cs-000032/) | core | scene | Single Eye Left Turn Morph | scene, shape, path, polyline, line | Use path morphing to reshape an eye as it turns in perspective.<br>Combine scale, skew, and deformGrid to sell a side-facing eye rotation. |
+| [cs-000066](../../core/scene/cs-000066/) | core | scene | Primitive Edge Baseline | scene, circle, line, path, edge-smoothing | Render filled circles, diagonal lines and cubic Bezier paths.<br>Compare thin and thick strokes with round line caps. |
 | [s-000003](../../showcase/s-000003/) | showcase | scene | Rainbow Spin 4s | scene, circle, group, curve-animation, shape | Create a simple orbiting shape animation with one rotating group.<br>Use a small scene-only graph as a fast parser and preview sanity check. |
 | [s-000021](../../showcase/s-000021/) | showcase | scene | Card Animation Layout | scene, component, layout, rect, circle | Animate a field of floating content cards with staggered opacity and layout variation.<br>Use grouped card components with text, circles, rounded rectangles, shadows, and simple time expressions. |
 | [s-000022](../../showcase/s-000022/) | showcase | scene | Animated Path And Polyline | scene, path, polyline, line, circle | Compare animated Polyline and Path strokes in one compact scene.<br>Use trimStart/trimEnd, smoothstep expressions, labels, and endpoint markers. |

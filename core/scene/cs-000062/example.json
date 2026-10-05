@@ -1,0 +1,48 @@
+{
+  "id": "cs-000062",
+  "type": "core",
+  "title": "Direct Scene Text",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "text",
+    "line",
+    "edge-smoothing"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Text",
+    "Line",
+    "Present"
+  ],
+  "teaches": [
+    "Render large and small text directly inside a Scene Layer.",
+    "Compare text edges with a thin primitive line."
+  ],
+  "source_path": "core/scene/cs-000062",
+  "demo_url": "",
+  "related": [
+    "cs-000063",
+    "cs-000064",
+    "cs-000065",
+    "cs-000066"
+  ],
+  "requires": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Text",
+    "Line",
+    "Present"
+  ]
+}

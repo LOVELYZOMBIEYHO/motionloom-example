@@ -1,7 +1,7 @@
 # MotionLoom Example Guide for LLMs
 
 Read the canonical crate guide first:
-[`../anica/crates/motionloom/LLM_AUTHORING.md`](../anica/crates/motionloom/LLM_AUTHORING.md).
+[`../motionloom/docs/LLM_AUTHORING.md`](../motionloom/docs/LLM_AUTHORING.md).
 
 ## Choosing an Example Family
 
@@ -35,17 +35,17 @@ Read the canonical crate guide first:
 
 ## Validation
 
-From the `anica` repository:
+From the `motionloom` repository:
 
 ```sh
-cargo run -p motionloom --example render_file_frame -- \
+cargo run --manifest-path ../motionloom/Cargo.toml -p motionloom --example render_file_frame -- \
   ../motionloom-example/path/to/main.motionloom /tmp/frame.png 0 cpu
 ```
 
 For GPU-specific behavior:
 
 ```sh
-cargo run --release -p motionloom --example wgpu_live_preview -- \
+cargo run --manifest-path ../motionloom/Cargo.toml --release -p motionloom --example wgpu_live_preview -- \
   ../motionloom-example/path/to/main.motionloom
 ```
 

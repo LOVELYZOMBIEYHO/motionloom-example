@@ -13,6 +13,11 @@ This directory contains small sample assets used by MotionLoom examples and test
   - License: CC0.
   - Use: canonical MotionLoom sample humanoid, named Character 1.
 
+- `characters/character2/character2.glb`
+  - Source: Quaternius Universal Animation Library 2 [Standard], `Female Mannequin/Unreal-Godot/Mannequin_F.glb` (CC0). This file is byte-identical to the original; `character2-base.glb` is a preserved duplicate.
+  - Use: unmodified Character 2 Female Mannequin. It shares Character 1's humanoid rig and has no embedded animation clips.
+
+
 ## Background Images
 
 - `backgrounds/forest_path_static.png`

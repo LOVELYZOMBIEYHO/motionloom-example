@@ -1,0 +1,53 @@
+{
+  "id": "cs-000064",
+  "type": "core",
+  "title": "Hard and Feathered Text Masks",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "text",
+    "mask",
+    "group-mask",
+    "soft-edge"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "Mask",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Text",
+    "Present"
+  ],
+  "teaches": [
+    "Apply an alpha mask to a text Group.",
+    "Compare a hard rectangular mask with a rounded feathered mask."
+  ],
+  "source_path": "core/scene/cs-000064",
+  "demo_url": "",
+  "related": [
+    "cs-000062",
+    "cs-000063",
+    "cs-000065",
+    "cs-000066"
+  ],
+  "requires": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Defs",
+    "Mask",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Group",
+    "Text",
+    "Present"
+  ]
+}

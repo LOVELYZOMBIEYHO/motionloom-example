@@ -18,7 +18,7 @@
 | [antialias](features/antialias.md) | 1 |
 | [assets](features/assets.md) | 24 |
 | [attraction](features/attraction.md) | 1 |
-| [audio](features/audio.md) | 1 |
+| [audio](features/audio.md) | 2 |
 | [audio-editing](features/audio-editing.md) | 1 |
 | [audio-reactive](features/audio-reactive.md) | 4 |
 | [aura-rings](features/aura-rings.md) | 1 |
@@ -46,7 +46,7 @@
 | [character-action](features/character-action.md) | 7 |
 | [character-rig](features/character-rig.md) | 14 |
 | [chromatic-aberration](features/chromatic-aberration.md) | 1 |
-| [circle](features/circle.md) | 7 |
+| [circle](features/circle.md) | 8 |
 | [circle-collision](features/circle-collision.md) | 1 |
 | [cloth](features/cloth.md) | 1 |
 | [cloud](features/cloud.md) | 2 |
@@ -68,7 +68,7 @@
 | [declarative-layout](features/declarative-layout.md) | 1 |
 | [deform-grid](features/deform-grid.md) | 1 |
 | [deformation](features/deformation.md) | 13 |
-| [defs](features/defs.md) | 9 |
+| [defs](features/defs.md) | 11 |
 | [derived](features/derived.md) | 1 |
 | [deterministic-random](features/deterministic-random.md) | 1 |
 | [deterministic-timestep](features/deterministic-timestep.md) | 1 |
@@ -79,7 +79,7 @@
 | [drop-shadow](features/drop-shadow.md) | 1 |
 | [dynamic-curve](features/dynamic-curve.md) | 2 |
 | [edge](features/edge.md) | 5 |
-| [edge-smoothing](features/edge-smoothing.md) | 4 |
+| [edge-smoothing](features/edge-smoothing.md) | 7 |
 | [editor-overlay](features/editor-overlay.md) | 2 |
 | [effect-scope](features/effect-scope.md) | 1 |
 | [embedded-animation-clips](features/embedded-animation-clips.md) | 1 |
@@ -109,7 +109,7 @@
 | [gltf](features/gltf.md) | 2 |
 | [gpu-friendly](features/gpu-friendly.md) | 22 |
 | [gpu-pipeline](features/gpu-pipeline.md) | 20 |
-| [gradient](features/gradient.md) | 31 |
+| [gradient](features/gradient.md) | 32 |
 | [gradients](features/gradients.md) | 8 |
 | [grading](features/grading.md) | 3 |
 | [graph](features/graph.md) | 1 |
@@ -117,7 +117,7 @@
 | [grid](features/grid.md) | 2 |
 | [grounding](features/grounding.md) | 2 |
 | [group](features/group.md) | 4 |
-| [group-mask](features/group-mask.md) | 2 |
+| [group-mask](features/group-mask.md) | 3 |
 | [hair](features/hair.md) | 4 |
 | [hdr-environment](features/hdr-environment.md) | 3 |
 | [highlight](features/highlight.md) | 2 |
@@ -139,7 +139,7 @@
 | [kinematic-collision](features/kinematic-collision.md) | 3 |
 | [landmarks](features/landmarks.md) | 1 |
 | [lava](features/lava.md) | 1 |
-| [layer](features/layer.md) | 3 |
+| [layer](features/layer.md) | 5 |
 | [layer-fx](features/layer-fx.md) | 6 |
 | [layer3d](features/layer3d.md) | 4 |
 | [layout](features/layout.md) | 20 |
@@ -147,12 +147,12 @@
 | [light-streak](features/light-streak.md) | 2 |
 | [light-sweep](features/light-sweep.md) | 2 |
 | [limb-envelope](features/limb-envelope.md) | 1 |
-| [line](features/line.md) | 5 |
+| [line](features/line.md) | 7 |
 | [lineargradient](features/lineargradient.md) | 1 |
 | [logo-motion](features/logo-motion.md) | 2 |
 | [luma-mask](features/luma-mask.md) | 1 |
-| [luma-matte](features/luma-matte.md) | 1 |
-| [mask](features/mask.md) | 3 |
+| [luma-matte](features/luma-matte.md) | 2 |
+| [mask](features/mask.md) | 4 |
 | [masking](features/masking.md) | 7 |
 | [material](features/material.md) | 13 |
 | [material-binding](features/material-binding.md) | 3 |
@@ -171,7 +171,7 @@
 | [particle-emitter](features/particle-emitter.md) | 2 |
 | [particles](features/particles.md) | 5 |
 | [pass-mask](features/pass-mask.md) | 1 |
-| [path](features/path.md) | 29 |
+| [path](features/path.md) | 30 |
 | [path-morph](features/path-morph.md) | 2 |
 | [path-offset](features/path-offset.md) | 1 |
 | [path-taper](features/path-taper.md) | 1 |
@@ -218,7 +218,7 @@
 | [scan-mask](features/scan-mask.md) | 1 |
 | [scanlines](features/scanlines.md) | 3 |
 | [scatter](features/scatter.md) | 2 |
-| [scene](features/scene.md) | 113 |
+| [scene](features/scene.md) | 118 |
 | [scene-gravity](features/scene-gravity.md) | 2 |
 | [scene-physics](features/scene-physics.md) | 2 |
 | [screen-blend](features/screen-blend.md) | 1 |
@@ -231,7 +231,7 @@
 | [skeleton](features/skeleton.md) | 2 |
 | [skinned-model](features/skinned-model.md) | 7 |
 | [slot](features/slot.md) | 1 |
-| [soft-edge](features/soft-edge.md) | 4 |
+| [soft-edge](features/soft-edge.md) | 5 |
 | [span](features/span.md) | 1 |
 | [specular](features/specular.md) | 1 |
 | [spring-chain](features/spring-chain.md) | 4 |
@@ -243,7 +243,7 @@
 | [stress-test](features/stress-test.md) | 1 |
 | [subtitle](features/subtitle.md) | 1 |
 | [svg-path](features/svg-path.md) | 1 |
-| [text](features/text.md) | 51 |
+| [text](features/text.md) | 55 |
 | [text-box](features/text-box.md) | 1 |
 | [text-gap](features/text-gap.md) | 11 |
 | [text-render-scale](features/text-render-scale.md) | 2 |

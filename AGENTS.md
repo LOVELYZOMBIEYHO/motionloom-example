@@ -26,7 +26,7 @@ These rules apply to all MotionLoom example scripts in this directory.
 ## Before Submitting an Example
 
 - Prefer validating with:
-  `cargo run -p motionloom --example render_file_frame -- <script> /tmp/frame.png 0 cpu`
+  `cargo run --manifest-path ../motionloom/Cargo.toml -p motionloom --example render_file_frame -- <script> /tmp/frame.png 0 cpu`
 - If the example needs the GPU path, also test with:
-  `cargo run --release -p motionloom --example wgpu_live_preview -- <script>`
+  `cargo run --manifest-path ../motionloom/Cargo.toml --release -p motionloom --example wgpu_live_preview -- <script>`
 

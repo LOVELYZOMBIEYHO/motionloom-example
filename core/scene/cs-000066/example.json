@@ -1,0 +1,51 @@
+{
+  "id": "cs-000066",
+  "type": "core",
+  "title": "Primitive Edge Baseline",
+  "domain": "scene",
+  "features": [
+    "scene",
+    "circle",
+    "line",
+    "path",
+    "edge-smoothing"
+  ],
+  "dsl": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Circle",
+    "Line",
+    "Path",
+    "Present"
+  ],
+  "teaches": [
+    "Render filled circles, diagonal lines and cubic Bezier paths.",
+    "Compare thin and thick strokes with round line caps."
+  ],
+  "source_path": "core/scene/cs-000066",
+  "demo_url": "",
+  "related": [
+    "cs-000062",
+    "cs-000063",
+    "cs-000064",
+    "cs-000065"
+  ],
+  "requires": [
+    "Graph",
+    "Background",
+    "Scene",
+    "Timeline",
+    "Track",
+    "Sequence",
+    "Layer",
+    "Circle",
+    "Line",
+    "Path",
+    "Present"
+  ]
+}

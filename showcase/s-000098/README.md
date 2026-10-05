@@ -30,4 +30,26 @@ the physical aperture. Export without focus flags to follow these settings.
 
 The profile is sampled into a 32-segment control surface. The textured, gray and white bodies share its subdivided geometry. `Wireframe` derives the gray grid from the same control surface. All 24 breakaway pieces use `Partition` to select regions of the body, then `MeshTransform` restores each original animation pivot. The white stem shell reuses the stem geometry. Materials, lights, camera curves and animation IDs are unchanged.
 
-`main.motionloom`, `main2.motionloom` and `main3.motionloom` use this same geometry pipeline; alternate camera/timeline versions remain separate.
+`main.motionloom` and `main2.motionloom` use this same geometry pipeline.
+
+## Original audio for the 20-second Short
+
+The two `AudioClip` tracks in both scripts pair a quiet, 120 BPM electronic
+score with separate synchronized foley. The score follows the material-study
+cuts; the foley marks the wireframe at 2s, clay at 4s, shell release at 6s,
+camera sweep and rolling motion after 12s, and final settle around 18.2s.
+Both tracks fade at the loop seam. The audio is stereo, 48 kHz Ogg Vorbis and
+is included when MotionLoom exports the composition with audio enabled.
+`assets/audio/s98-preview-mix.ogg` is a standalone listening copy at the same
+relative levels as the two DSL clips; it is not loaded by the scene.
+
+`assets/audio/generate.py` is the complete source for both audio files. It
+synthesizes every tone and sound effect from mathematical oscillators and
+seeded noise; no third-party recording, sample, song, or sound library is used.
+The included tracks may be used with this S98 video on YouTube Shorts without
+third-party music attribution or licensing. This provenance avoids relying on
+an online track labeled “no copyright”; YouTube can still make a mistaken
+Content ID match, so check the upload in Studio before publishing.
+
+To regenerate the files, run `python3 assets/audio/generate.py` using a Python
+environment with NumPy and FFmpeg with `libvorbis` available on `PATH`.

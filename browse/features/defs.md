@@ -4,6 +4,8 @@
 |---|---|---|---|---|---|
 | [cs-000005](../../core/scene/cs-000005/) | core | scene | DSL Defs Basic | defs | Use the basic <Defs> pattern in MotionLoom. |
 | [cs-000025](../../core/scene/cs-000025/) | core | scene | Audio Spectrum | audio-reactive, random-animation, component, gradient, glow | Combine multiple MotionLoom features into a polished demo.<br>Use this as a reference for YouTube Short or promo-style output. |
+| [cs-000063](../../core/scene/cs-000063/) | core | scene | Precompose Layer Text | scene, text, layer, defs, edge-smoothing | Define reusable text artwork in a Precompose resource.<br>Render that source through a Layer and compare it with direct text. |
+| [cs-000065](../../core/scene/cs-000065/) | core | scene | Luma Matte Text | scene, text, luma-matte, gradient, layer | Use a Precompose as a luma matte for another Layer source.<br>Combine a gradient ramp and a circle to reveal text. |
 | [s-000020](../../showcase/s-000020/) | showcase | scene | Business Bar Chart Animated | scene, component, defs, gradient, rect | Create a polished business bar chart with reusable gradients and animated values.<br>Use Defs, grid lines, grouped bars, labels, and curve-driven bar growth. |
 | [s-000038](../../showcase/s-000038/) | showcase | scene | Anica Agent UI Zoom Transition 10s | transition, timeline, layout, defs, text | Combine multiple MotionLoom features into a polished demo.<br>Use this as a reference for YouTube Short or promo-style output. |
 | [s-000039](../../showcase/s-000039/) | showcase | scene | Anica Motionloom Fancy Pip 20s | layout, timeline, text, shape, audio-reactive | Combine multiple MotionLoom features into a polished demo.<br>Use this as a reference for YouTube Short or promo-style output. |

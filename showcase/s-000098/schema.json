@@ -59,6 +59,90 @@
       "attributes": []
     },
     {
+      "tag": "AudioAsset",
+      "occurrences": 2,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 2,
+          "examples": [
+            "\"s98_original_foley\"",
+            "\"s98_original_score\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "src",
+          "occurrences": 2,
+          "examples": [
+            "\"assets/audio/s98-original-foley.ogg\"",
+            "\"assets/audio/s98-original-score.ogg\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "AudioClip",
+      "occurrences": 2,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "asset",
+          "occurrences": 2,
+          "examples": [
+            "\"s98_original_foley\"",
+            "\"s98_original_score\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "duration",
+          "occurrences": 2,
+          "examples": [
+            "\"20s\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "from",
+          "occurrences": 2,
+          "examples": [
+            "\"0s\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "gainDb",
+          "occurrences": 2,
+          "examples": [
+            "\"5.5\"",
+            "\"7.5\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "id",
+          "occurrences": 2,
+          "examples": [
+            "\"s98_music\"",
+            "\"s98_sfx\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
       "tag": "Background",
       "occurrences": 1,
       "recognized": true,
@@ -1821,6 +1905,7 @@
   ],
   "animationProperties": [],
   "assetKinds": [
+    "audio",
     "image",
     "material",
     "primitive"

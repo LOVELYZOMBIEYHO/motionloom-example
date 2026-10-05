@@ -1,5 +1,5 @@
 <!-- S98 | Realistic red apple | parametric geometry + ImageGen peel albedo | Weaver-ready -->
-<Graph fps={24} duration="20s" size={[1080,1920]} renderSize={[1080,1920]}>
+<Graph fps={60} duration="20s" size={[1080,1920]} renderSize={[1080,1920]}>
   <RenderStyle id="s98_studio_physical">
     <SurfaceStyle shading="physical" />
     <LightingStyle ambientIntensity="0.19" ambientColor="#DDE7ED" shadowStyle="soft" />
@@ -7,6 +7,8 @@
     <AntiAliasingStyle method="taa" quality="ultra" fallback="smaa" sharpness="0.025" />
   </RenderStyle>
   <Assets>
+    <AudioAsset id="s98_original_score" src="assets/audio/s98-original-score.ogg" />
+    <AudioAsset id="s98_original_foley" src="assets/audio/s98-original-foley.ogg" />
     <ImageAsset id="s98_peel_color" src="assets/apple-peel-albedo.png" colorSpace="srgb" />
     <ImageAsset id="s98_peel_normal" src="assets/apple-peel-normal.png" colorSpace="linear" />
     <ImageAsset id="s98_peel_roughness" src="assets/apple-peel-roughness.png" colorSpace="linear" />
@@ -1174,5 +1176,7 @@
       </Track>
     </Timeline>
   </Scene>
+  <AudioClip id="s98_music" asset="s98_original_score" from="0s" duration="20s" gainDb="5.5" />
+  <AudioClip id="s98_sfx" asset="s98_original_foley" from="0s" duration="20s" gainDb="7.5" />
   <Present from="S98RealisticApple" />
 </Graph>
