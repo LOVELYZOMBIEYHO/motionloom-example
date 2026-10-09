@@ -1,0 +1,243 @@
+{
+  "sourceCage": "assets/trees/s99-street-tree.motionloom",
+  "sourceCageSha256": "6674be9a10864fda2fdeab09624c6ee9c282d1ef7433c8a5d3b5fee4e225cc81",
+  "textures": {
+    "bark": {
+      "path": "assets/materials/bark-basecolor.png",
+      "sha256": "3cb786ce049cc060cf878d675f5c956a0a8c26c993f799a9d47267a6b897aff9",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "bytes": 3538171
+    },
+    "leaf": {
+      "path": "assets/materials/s97-leaf-detail.png",
+      "sha256": "c9f79fe25c129563fef738d12825788018c74403e80488e13ea5ab19102bcff6",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "bytes": 3368901
+    }
+  },
+  "parts": [
+    {
+      "part": "tree_bark",
+      "sourceGlbSha256": "5959c357c4a1875b2555601ff327ecf83ee9f6e60f837f97bf35c3ff73991e51",
+      "sourceCageVertices": 704,
+      "sourceCageFaces": 804,
+      "connectedCageComponents": 17,
+      "componentRows": {
+        "3": 5,
+        "4": 11,
+        "8": 1
+      },
+      "outputVertices": 4020,
+      "triangles": 1340,
+      "sideUVSeamTriangles": 100,
+      "planarCapTriangles": 268,
+      "trianglePositionSha256": "bd7b9b9993920938341feb01918d719ecc2e005de16bc3f7a5990f14eda46756",
+      "triangleNormalSha256": "a65a84350c9e882d375194516eb8cf0bfea2317dfee3a811565137034d27ad9d",
+      "bounds": [
+        [
+          -1.1855800151824951,
+          -0.241224005818367,
+          -1.4240859746932983
+        ],
+        [
+          1.394670009613037,
+          4.010711193084717,
+          1.4471969604492188
+        ]
+      ]
+    },
+    {
+      "part": "young_bark",
+      "sourceGlbSha256": "c81ec80e9792d31a613e403adec125a6b7c2fd5eadc6c2997eb6357123d775ad",
+      "sourceCageVertices": 22880,
+      "sourceCageFaces": 23320,
+      "connectedCageComponents": 2530,
+      "componentRows": {
+        "2": 2200,
+        "3": 330
+      },
+      "outputVertices": 106920,
+      "triangles": 35640,
+      "sideUVSeamTriangles": 5720,
+      "planarCapTriangles": 11000,
+      "trianglePositionSha256": "0f22bcea113005a1b108b756b2b170bfb109db5f5f8369bed2b506d2e766152b",
+      "triangleNormalSha256": "d05f38084ee0fc60801003f49ffadf04d46d218f4c3b2dbdc0925a3a6708a6c6",
+      "bounds": [
+        [
+          -1.584144949913025,
+          1.8776459693908691,
+          -1.8518329858779907
+        ],
+        [
+          1.959236979484558,
+          4.170628070831299,
+          1.748432993888855
+        ]
+      ]
+    },
+    {
+      "part": "foliage_deep",
+      "sourceGlbSha256": "f87305ece48eddaac2ae981fdbf0c868ea3975283a1804be60f21c9129221c9b",
+      "sourceCageVertices": 6606,
+      "sourceCageFaces": 3670,
+      "connectedCageComponents": 367,
+      "componentRows": {
+        "6": 367
+      },
+      "outputVertices": 22020,
+      "triangles": 7340,
+      "sideUVSeamTriangles": 0,
+      "planarCapTriangles": 0,
+      "trianglePositionSha256": "25c4ea9dc3e086af7b526d7c8c304b33dec91106d3ff1771a1467fa4f9001d3d",
+      "triangleNormalSha256": "4b9b6bf9a9d8728c3de16fbca3dd8782e4d7d5b2067f6ed2a6004c05dabc8307",
+      "bounds": [
+        [
+          -1.680556058883667,
+          2.0238089561462402,
+          -1.772294044494629
+        ],
+        [
+          1.9634089469909668,
+          4.17995023727417,
+          1.8276729583740234
+        ]
+      ]
+    },
+    {
+      "part": "foliage_green",
+      "sourceGlbSha256": "e71df3641450de36d1c16fac2d022e9a82ccd9e8a98b431bc7adce936a0c564d",
+      "sourceCageVertices": 16056,
+      "sourceCageFaces": 8920,
+      "connectedCageComponents": 892,
+      "componentRows": {
+        "6": 892
+      },
+      "outputVertices": 53520,
+      "triangles": 17840,
+      "sideUVSeamTriangles": 0,
+      "planarCapTriangles": 0,
+      "trianglePositionSha256": "b6b0209eb32c8ead97356383708ed553c343c55847d834feaebb5d2749163b65",
+      "triangleNormalSha256": "1dd8ce79c8c87759e7e6dfc7e0eb5d2248afb7d01cea65ae4a39c8ee721e4654",
+      "bounds": [
+        [
+          -1.5440720319747925,
+          1.9977240562438965,
+          -1.8780699968338013
+        ],
+        [
+          2.0812649726867676,
+          4.201076984405518,
+          1.7999860048294067
+        ]
+      ]
+    },
+    {
+      "part": "foliage_mid",
+      "sourceGlbSha256": "f8fa9b997968a9b949fb1fdf7f7bc3f41f0d1a49f69d1cd3e1ebdf2af2fd3a8a",
+      "sourceCageVertices": 13320,
+      "sourceCageFaces": 7400,
+      "connectedCageComponents": 740,
+      "componentRows": {
+        "6": 740
+      },
+      "outputVertices": 44400,
+      "triangles": 14800,
+      "sideUVSeamTriangles": 0,
+      "planarCapTriangles": 0,
+      "trianglePositionSha256": "c97f3ce2cb013bc9d1afbb423023e9f018bcfce95030a13ae775305efd7fd94c",
+      "triangleNormalSha256": "7d26f7108442bfb68e2cbfad8eaf601e58edc55bf4ee6d5917de819a3e09f59e",
+      "bounds": [
+        [
+          -1.6013840436935425,
+          1.9916000366210938,
+          -1.7751829624176025
+        ],
+        [
+          1.9043469429016113,
+          4.174441814422607,
+          1.8620929718017578
+        ]
+      ]
+    },
+    {
+      "part": "foliage_tip",
+      "sourceGlbSha256": "bbad48fa49136440e87e179c256f1f039a2f0acdf66eb0f05e0aea3627438d79",
+      "sourceCageVertices": 3618,
+      "sourceCageFaces": 2010,
+      "connectedCageComponents": 201,
+      "componentRows": {
+        "6": 201
+      },
+      "outputVertices": 12060,
+      "triangles": 4020,
+      "sideUVSeamTriangles": 0,
+      "planarCapTriangles": 0,
+      "trianglePositionSha256": "bc6c35532832fa8f62f208bdacaaf43b28fb31a78b3bbe3f73bfaaec1d763023",
+      "triangleNormalSha256": "8e58a15ef9c5e0387adeec587411ada144a4ba66999f5c2d82fed5c4f0f680f1",
+      "bounds": [
+        [
+          -1.4039700031280518,
+          1.9923850297927856,
+          -1.7504719495773315
+        ],
+        [
+          1.7552779912948608,
+          4.102711200714111,
+          1.6878199577331543
+        ]
+      ]
+    }
+  ],
+  "geometryMethod": "Indexed source GLB triangle positions and normals are retained exactly; UV seams use duplicate triangle corners. No whole-tree image cards or canopy proxy geometry.",
+  "barkUV": "One circular wrap per disconnected tube; V is cumulative ring-center distance / 0.65 m. Closing side triangles unwrap U=0 to U=1; end caps use radial planar UVs.",
+  "leafUV": "Each independent 18-vertex, 10-quad curved leaf cage has six 3-vertex rows. U=0/.5/1 maps left/midrib/right; V=1 at petiole/base and V=0 at tip follows normalized center-column arclength. Texture base belongs at image bottom.",
+  "leafColorFactors": {
+    "foliage_deep": [
+      0.68,
+      0.77,
+      0.64,
+      1
+    ],
+    "foliage_green": [
+      0.85,
+      0.94,
+      0.8,
+      1
+    ],
+    "foliage_mid": [
+      0.93,
+      1,
+      0.87,
+      1
+    ],
+    "foliage_tip": [
+      1,
+      1,
+      0.96,
+      1
+    ]
+  },
+  "units": "Original S99 metres; no normalization or transform. Existing S97 hero scale 0.10111124813556671 remains applicable.",
+  "output": "assets/trees/s97-near-tree-textured.glb",
+  "outputSha256": "83ee44bd8b1443f9ea9a5bc27528f49c07ce262befba8af5f6b5132f72ae66c1",
+  "outputBytes": 15660668,
+  "triangles": 80980,
+  "leaves": 2200,
+  "verification": {
+    "glbHeaderAndChunkLengths": "passed",
+    "trianglePositionsAndNormalsByteExact": "passed",
+    "triangles": 80980,
+    "outputVertices": 242940,
+    "embeddedPngPayloadsByteExact": "passed",
+    "uvFiniteAndLeafEndpoints": "passed",
+    "materialsOpaqueAndLeavesDoubleSided": "passed",
+    "nodeTransforms": "identity"
+  },
+  "status": "passed geometry/UV/embedded-texture verification; visual review pending"
+}

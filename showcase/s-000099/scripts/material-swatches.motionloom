@@ -1,0 +1,96 @@
+<Graph fps="24" duration="4s" size={[1600,900]}>
+  <RenderStyle id="swatch_style">
+    <SurfaceStyle shading="physical" />
+    <LightingStyle ambientIntensity="0.1" />
+    <PostStyle toneMapping="aces" exposure="1.08" />
+    <AntiAliasingStyle method="taa" quality="high" fallback="smaa" sharpness="0.04" />
+  </RenderStyle>
+  <Assets>
+    <ImageAsset id="s99_oak_color" src="../assets/pbr-v2/white_oak_veneer/white_oak_veneer_diff_2k.jpg" colorSpace="srgb" />
+    <ImageAsset id="s99_oak_normal" src="../assets/pbr-v2/white_oak_veneer/white_oak_veneer_nor_gl_2k.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s99_oak_arm" src="../assets/pbr-v2/white_oak_veneer/white_oak_veneer_arm_2k.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s99_walnut_color" src="../assets/pbr-v2/walnut_veneer_02/walnut_veneer_02_diff_1k.jpg" colorSpace="srgb" />
+    <ImageAsset id="s99_walnut_normal" src="../assets/pbr-v2/walnut_veneer_02/walnut_veneer_02_nor_gl_1k.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s99_walnut_arm" src="../assets/pbr-v2/walnut_veneer_02/walnut_veneer_02_arm_1k.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s99_stone_color" src="../assets/pbr-v2/marble_01/marble_01_diff_1k.jpg" colorSpace="srgb" />
+    <ImageAsset id="s99_stone_normal" src="../assets/pbr-v2/marble_01/marble_01_nor_gl_1k.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s99_stone_arm" src="../assets/pbr-v2/marble_01/marble_01_arm_1k.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s99_plaster_color" src="../assets/pbr-v2/white_plaster_02/white_plaster_02_diff_1k.jpg" colorSpace="srgb" />
+    <ImageAsset id="s99_plaster_normal" src="../assets/pbr-v2/white_plaster_02/white_plaster_02_nor_gl_1k.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s99_plaster_arm" src="../assets/pbr-v2/white_plaster_02/white_plaster_02_arm_1k.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s99_weave_color" src="../assets/pbr-v2/terlenka/terlenka_diff_1k.jpg" colorSpace="srgb" />
+    <ImageAsset id="s99_weave_normal" src="../assets/pbr-v2/terlenka/terlenka_nor_gl_1k.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s99_weave_arm" src="../assets/pbr-v2/terlenka/terlenka_arm_1k.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s99_worktop_color" src="../assets/pbr-v2/marble012/Marble012_2K-PNG_Color.png" colorSpace="srgb" />
+    <ImageAsset id="s99_worktop_normal" src="../assets/pbr-v2/marble012/Marble012_2K-PNG_NormalGL.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s99_worktop_rough" src="../assets/pbr-v2/marble012/Marble012_2K-PNG_Roughness.png" colorSpace="linear-srgb" />
+    <ImageAsset id="s99_environment" src="../assets/environment-v2/kloofendal_overcast_puresky_2k.hdr" colorSpace="linear-srgb" />
+    <MaterialAsset id="oak" shading="pbr" baseColor="#FFFFFF" baseColorTexture="s99_oak_color" normalTexture="s99_oak_normal" normalScale="0.28" metallicRoughnessTexture="s99_oak_arm" roughnessChannel="g" metallicChannel="b" occlusionTexture="s99_oak_arm" occlusionChannel="r" occlusionStrength="0.2" metallic="0" roughness="1" specular="0.7" textureScale={[2,2]} />
+    <MaterialAsset id="oak_floor" shading="pbr" baseColor="#FFFFFF" baseColorTexture="s99_oak_color" normalTexture="s99_oak_normal" normalScale="0.32" metallicRoughnessTexture="s99_oak_arm" roughnessChannel="g" metallicChannel="b" occlusionTexture="s99_oak_arm" occlusionChannel="r" occlusionStrength="0.2" metallic="0" roughness="1" specular="0.7" textureScale={[2,2]} />
+    <MaterialAsset id="walnut" shading="pbr" baseColor="#FFFFFF" baseColorTexture="s99_walnut_color" normalTexture="s99_walnut_normal" normalScale="0.22" metallicRoughnessTexture="s99_walnut_arm" roughnessChannel="g" metallicChannel="b" occlusionTexture="s99_walnut_arm" occlusionChannel="r" occlusionStrength="0.2" metallic="0" roughness="1" specular="0.7" textureScale={[1,1]} />
+    <MaterialAsset id="vertical_oak_joinery" shading="pbr" baseColor="#D8BCA3" baseColorTexture="s99_oak_color" normalTexture="s99_oak_normal" normalScale="0.22" metallicRoughnessTexture="s99_oak_arm" roughnessChannel="g" metallicChannel="b" occlusionTexture="s99_oak_arm" occlusionChannel="r" occlusionStrength="0.2" metallic="0" roughness="1" specular="0.7" textureScale={[2,2]} />
+    <MaterialAsset id="stone" shading="pbr" baseColor="#FFFFFF" baseColorTexture="s99_stone_color" normalTexture="s99_stone_normal" normalScale="0.25" metallicRoughnessTexture="s99_stone_arm" roughnessChannel="g" metallicChannel="b" occlusionTexture="s99_stone_arm" occlusionChannel="r" occlusionStrength="0.2" metallic="0" roughness="1" specular="0.7" textureScale={[0.66667,0.66667]} />
+    <MaterialAsset id="stone_interior" shading="pbr" baseColor="#FFFFFF" baseColorTexture="s99_stone_color" normalTexture="s99_stone_normal" normalScale="0.18" metallicRoughnessTexture="s99_stone_arm" roughnessChannel="g" metallicChannel="b" occlusionTexture="s99_stone_arm" occlusionChannel="r" occlusionStrength="0.2" metallic="0" roughness="1" specular="0.85" textureScale={[0.66667,0.66667]} />
+    <MaterialAsset id="plaster" shading="pbr" baseColor="#E8E3D8" normalTexture="s99_plaster_normal" normalScale="0.12" metallicRoughnessTexture="s99_plaster_arm" roughnessChannel="g" metallicChannel="b" occlusionTexture="s99_plaster_arm" occlusionChannel="r" occlusionStrength="0.1" metallic="0" roughness="1" specular="0.55" textureScale={[1,1]} />
+    <MaterialAsset id="ceiling" shading="pbr" baseColor="#F3EEE4" normalTexture="s99_plaster_normal" normalScale="0.08" metallicRoughnessTexture="s99_plaster_arm" roughnessChannel="g" metallicChannel="b" occlusionTexture="s99_plaster_arm" occlusionChannel="r" occlusionStrength="0.08" metallic="0" roughness="1" specular="0.45" textureScale={[1,1]} />
+    <MaterialAsset id="linen_upholstery" shading="pbr" baseColor="#FFF9EF" baseColorTexture="s99_weave_color" normalTexture="s99_weave_normal" normalScale="0.45" metallicRoughnessTexture="s99_weave_arm" roughnessChannel="g" metallicChannel="b" occlusionTexture="s99_weave_arm" occlusionChannel="r" occlusionStrength="0.18" metallic="0" roughness="1" specular="0.6" textureScale={[3.7594,3.7594]} />
+    <MaterialAsset id="sage_fabric" shading="pbr" baseColor="#A1B298" baseColorTexture="s99_weave_color" normalTexture="s99_weave_normal" normalScale="0.45" metallicRoughnessTexture="s99_weave_arm" roughnessChannel="g" metallicChannel="b" occlusionTexture="s99_weave_arm" occlusionChannel="r" occlusionStrength="0.18" metallic="0" roughness="1" specular="0.6" textureScale={[3.7594,3.7594]} />
+    <MaterialAsset id="clay_fabric" shading="pbr" baseColor="#D9A381" baseColorTexture="s99_weave_color" normalTexture="s99_weave_normal" normalScale="0.45" metallicRoughnessTexture="s99_weave_arm" roughnessChannel="g" metallicChannel="b" occlusionTexture="s99_weave_arm" occlusionChannel="r" occlusionStrength="0.18" metallic="0" roughness="1" specular="0.6" textureScale={[3.7594,3.7594]} />
+    <MaterialAsset id="woven_rug" shading="pbr" baseColor="#F1E7D4" baseColorTexture="s99_weave_color" normalTexture="s99_weave_normal" normalScale="0.6" metallicRoughnessTexture="s99_weave_arm" roughnessChannel="g" metallicChannel="b" occlusionTexture="s99_weave_arm" occlusionChannel="r" occlusionStrength="0.22" metallic="0" roughness="1" specular="0.35" textureScale={[5.5,5.5]} />
+    <MaterialAsset id="bedding_fabric" shading="pbr" baseColor="#FFFAF1" baseColorTexture="s99_weave_color" normalTexture="s99_weave_normal" normalScale="0.32" metallicRoughnessTexture="s99_weave_arm" roughnessChannel="g" metallicChannel="b" occlusionTexture="s99_weave_arm" occlusionChannel="r" occlusionStrength="0.15" metallic="0" roughness="1" specular="0.45" textureScale={[3.7594,3.7594]} />
+    <MaterialAsset id="towel_fabric" shading="pbr" baseColor="#F1ECE1" baseColorTexture="s99_weave_color" normalTexture="s99_weave_normal" normalScale="0.6" metallicRoughnessTexture="s99_weave_arm" roughnessChannel="g" metallicChannel="b" occlusionTexture="s99_weave_arm" occlusionChannel="r" occlusionStrength="0.2" metallic="0" roughness="1" specular="0.35" textureScale={[6,6]} />
+    <MaterialAsset id="shade_fabric" shading="pbr" baseColor="#FFF5DF" baseColorTexture="s99_weave_color" normalTexture="s99_weave_normal" normalScale="0.2" metallicRoughnessTexture="s99_weave_arm" roughnessChannel="g" metallicChannel="b" occlusionTexture="s99_weave_arm" occlusionChannel="r" occlusionStrength="0.12" metallic="0" roughness="1" specular="0.4" textureScale={[3.7594,3.7594]} />
+    <MaterialAsset id="worktop" shading="pbr" baseColor="#FFFFFF" baseColorTexture="s99_worktop_color" normalTexture="s99_worktop_normal" normalScale="0.18" metallicRoughnessTexture="s99_worktop_rough" roughnessChannel="r" metallic="0" roughness="1" specular="1" textureScale={[0.55,0.55]} />
+    <MaterialAsset id="sage_joinery" shading="pbr" baseColor="#91A08A" roughness="0.52" specular="1" />
+    <MaterialAsset id="book_cream" shading="pbr" baseColor="#EAE2D3" roughness="0.9" specular="0.2" />
+    <MaterialAsset id="book_sage" shading="pbr" baseColor="#7C8974" roughness="0.85" specular="0.2" />
+    <MaterialAsset id="art_canvas" shading="pbr" baseColor="#EAE2D3" roughness="0.94" specular="0.12" />
+    <MaterialAsset id="linen" shading="pbr" baseColor="#EAE2D3" roughness="0.94" specular="0.12" />
+    <MaterialAsset id="sage" shading="pbr" baseColor="#7C8974" roughness="0.91" specular="0.15" />
+    <MaterialAsset id="clay" shading="pbr" baseColor="#B56745" roughness="0.87" />
+    <MaterialAsset id="terracotta" shading="pbr" baseColor="#A47256" roughness="0.91" />
+    <MaterialAsset id="metal" shading="pbr" baseColor="#292E2B" metallic="0.72" roughness="0.36" />
+    <MaterialAsset id="brass" shading="pbr" baseColor="#B59758" metallic="0.82" roughness="0.3" />
+    <MaterialAsset id="glass" shading="pbr" baseColor="#EBF1EE" roughness="0.09" transmission="0.94" ior="1.52" thickness="0.012" attenuationColor="#CCDBD6" attenuationDistance="6" depthWrite="auto" doubleSided="true" />
+    <MaterialAsset id="ceramic" shading="pbr" baseColor="#E9E5DC" roughness="0.24" specular="0.65" />
+    <MaterialAsset id="light" shading="pbr" baseColor="#FFF2CF" roughness="0.5" emissive="#FFD09A" emissiveStrength="3" />
+    <MaterialAsset id="soil" shading="pbr" baseColor="#393729" roughness="1" />
+    <MaterialAsset id="leaf" shading="pbr" baseColor="#59684A" roughness="0.83" doubleSided="true" />
+    <MaterialAsset id="bark" shading="pbr" baseColor="#655744" roughness="0.97" />
+    <MaterialAsset id="grass" shading="pbr" baseColor="#8A9475" roughness="0.95" />
+    <MaterialAsset id="road" shading="pbr" baseColor="#686D67" roughness="0.98" />
+    <MaterialAsset id="context" shading="pbr" baseColor="#B7BCAF" roughness="0.96" />
+    <MaterialAsset id="bookblue" shading="pbr" baseColor="#667E82" roughness="0.85" />
+    <GeometryAsset id="patch0_geometry"><Primitive shape="box" size={[1.15,0.95,0.12]} bevelRadius="0.018" bevelSegments="3" /><UV mode="box" /></GeometryAsset>
+    <MeshAsset id="patch0" geometry="patch0_geometry" material="oak" />
+    <GeometryAsset id="patch1_geometry"><Primitive shape="box" size={[1.15,0.95,0.12]} bevelRadius="0.018" bevelSegments="3" /><UV mode="box" /></GeometryAsset>
+    <MeshAsset id="patch1" geometry="patch1_geometry" material="worktop" />
+    <GeometryAsset id="patch2_geometry"><Primitive shape="box" size={[1.15,0.95,0.12]} bevelRadius="0.018" bevelSegments="3" /><UV mode="box" /></GeometryAsset>
+    <MeshAsset id="patch2" geometry="patch2_geometry" material="linen_upholstery" />
+    <GeometryAsset id="patch3_geometry"><Primitive shape="box" size={[1.15,0.95,0.12]} bevelRadius="0.018" bevelSegments="3" /><UV mode="box" /></GeometryAsset>
+    <MeshAsset id="patch3" geometry="patch3_geometry" material="plaster" />
+    <MaterialAsset id="swatch_floor_material" baseColor="#CCC6BB" roughness="0.9" />
+    <GeometryAsset id="swatch_floor_geometry"><Primitive shape="box" size={[7,0.05,2]} /></GeometryAsset>
+    <MeshAsset id="swatch_floor" geometry="swatch_floor_geometry" material="swatch_floor_material" />
+  </Assets>
+  <Scene id="material_review" renderStyle="swatch_style">
+    <Timeline><Track space="3d"><Sequence from="0s" duration="4s"><CompositeGroup space="3d" depth="true">
+      <Camera3D id="swatch_camera" position={[0.6,1.6,6.8]} target={[0,0.75,0]} fov="48" />
+      <Camera3D id="fabric_camera" position={[0.7,0.8,0.55]} target={[0.7,0.8,0]} fov="35" />
+      <EnvironmentLight asset="s99_environment" visible="false" intensity="0.5" diffuseIntensity="0.7" specularIntensity="0.4" rotationY="-90.33" />
+      <DirectionalLight id="raking_light" direction={[curve("0:-0.8,1:0.8:linear,2:-0.8:linear,3:0.8:linear"),-0.35,-0.3]} intensity="3" color="#FFF0DC" castShadow="true" />
+      <AmbientOcclusion intensity="0.3" radius="0.12" />
+      <ContactShadow intensity="0.5" distance="0.15" softness="0.6" />
+      <Model id="swatch_floor_model" asset="swatch_floor" position={[0,0.25,0]} />
+            <Model id="patch_model0" asset="patch0" position={[-2.1,0.8,0]} castShadow="true" receiveShadow="true" />
+            <Model id="patch_model1" asset="patch1" position={[-0.7,0.8,0]} castShadow="true" receiveShadow="true" />
+            <Model id="patch_model2" asset="patch2" position={[0.7,0.8,0]} castShadow="true" receiveShadow="true" />
+            <Model id="patch_model3" asset="patch3" position={[2.1,0.8,0]} castShadow="true" receiveShadow="true" />
+    </CompositeGroup></Sequence></Track></Timeline>
+  </Scene>
+  <AnimationTarget node="material_review" property="activeCamera">
+    <Key time="0s" value="swatch_camera" />
+    <Key time="2s" value="fabric_camera" />
+  </AnimationTarget>
+  <Present from="material_review" />
+</Graph>

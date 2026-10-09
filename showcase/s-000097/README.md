@@ -1,111 +1,185 @@
 # S97 — Winding Mountain Road
 
-`main.motionloom` is a 12-second, 1920×1080, 24 fps aerial drift rebuilt from
-`reference/reference.png` (a photo of hairpin switchbacks cut into a forested
-mountainside). Everything is authored from primitives — a heightfield
-`TerrainAsset`, a shared `CurveAsset` with six `GeometryAsset/Sweep` results, and `CompoundAsset`
-trees — with no imported GLBs. Four generated base-color textures provide the
-first authored-material checkpoint; geometry, placement, lighting and camera
-remain entirely MotionLoom-authored.
+`main.motionloom` is a 24-second, 1920×1080, 24 fps forest exploration. It
+keeps S97's road, carved mountain slope and existing camera route, using S96
+as the material-quality reference. Every runtime asset is local to S97;
+S96 and S99 source files are unchanged.
 
-## Why the document is authored at 1:20
+## Forest and surface detail
 
-The scene is built in "site metres" (a 254×143 m footprint) but emitted at
-`SCALE = 0.05`. The engine's directional-light shadow volume is a fixed 28 m
-box that only auto-fits rigid scenes under 14 m, and `Camera3D` clamps its
-field of view to a 10° minimum, which forces the aerial camera ~41 m away. At
-1:20 everything stays inside the shadow volume, AO and shadow texels stay
-crisp, and the projection, framing and depth resolution are unchanged because
-all ratios are preserved.
+- **38 full 3D roadside trees** keep the S99 tapered branches, petioles and
+  2,200 curved leaves per tree. Bark has a local circular UV wrap and the
+  leaves have individual surface UVs with fine venation. Geometry and normals
+  match the prior S99-derived GLBs exactly; detailed texture data replaces
+  their plain colors.
+- **6,029 distant trees** retain S96's alpha-masked whole-tree crossed cards
+  and add three curved, tilted foliage layers using the same species texture.
+  Transparent branch edges provide overhead coverage without solid crown caps.
+  These are simplified distant trees, not detailed individual leaves or
+  automatic runtime LOD. The original 2,048 core tree transforms
+  are preserved; another 4,019 trees extend coverage beyond the old terrain edge.
+- **16,000 grass tufts** use the two original S96 alpha-masked grass textures,
+  positioned with the native Scatter sampling rules and the original exclusion
+  map. The road remains clear. The grass and distant trees are static material
+  batches rather than thousands of small runtime draws.
+- **Smooth float32 terrain** keeps the carved road bench and slope while
+  removing the old RGBA8 heightmap's visible staircase. All 2,978 shared
+  boundary vertices, normals and UVs match the surrounding terrain ring.
+  Original S96 grass-ground color and normal textures repeat every five
+  site metres, with a restrained material tint. The invisible quarter-LOD
+  TerrainAsset remains only as the
+  placement surface for the rock Scatter.
+- **Mossy rock textures** and dry asphalt with square texture tiles replace
+  the plain ground and boulders. Warm sunlight, an open sky environment and
+  restrained aerial haze supply the current illumination.
 
-## Contents
+The distant forest contains 1,326,380 triangles in three material primitives;
+the understory contains 64,000 triangles in two. The near trees contain
+3,077,240 triangles in total. Static batching reduces draw submissions; it
+does not remove geometry or establish a measured realtime/browser frame rate.
 
-- `assets/terrain/s97-height.png` — 954×537 heightmap (8-bit RGBA, `lod="full"`,
-  chunks `[8,5]`). The generator bakes the carved road bench, cut and fill
-  blends into the map.
-- `assets/terrain/s97-rock-density.png` — linear placement mask derived from
-  distance to the road cut and cut-bank height; it concentrates authored rock
-  variants around exposed slopes without storing hundreds of Model nodes.
-- `assets/materials/*-basecolor.png` — ImageGen-assisted, source-neutral
-  forest ground, asphalt, bark and foliage albedo references. They contain no
-  baked lighting by design. They are base color only, not fabricated normal,
-  displacement, roughness or AO measurements.
-- `assets/materials/asphalt-roughness.png` — an explicitly authored linear
-  grayscale roughness mask derived from the asphalt study. The road selects
-  `roughnessChannel="luminance"`, exercising the same typed channel-remap
-  contract used by native/WASM preview and Weaver.
-- Road — one 175-control-point `CurveAsset`, simplified from 899 dense fitted
-  samples with a maximum 0.004 scene-unit centreline deviation, drives six
-  reusable `GeometryAsset/Sweep` definitions: crowned
-  asphalt (#63696F, 5.5 m wide), two painted edge lines, a broken centre line,
-  and raised metallic guardrails. Paint is lifted 0.24 m so the renderer can
-  resolve it at this viewing distance.
-- Forest — six tree assemblies (narrow/tall/widow conifers, two-blob and
-  three-blob broadleaves) combining cylinder trunks with low-resolution cone
-  and sphere foliage. One deterministic `Scatter` places 10,760 weighted
-  variants on the TerrainAsset, using a generated linear exclusion mask to
-  keep the road corridor clear. Generated instances have runtime identities;
-  the document does not contain 10,760 authored `Model` ids.
-- Cut banks — three low-poly rock variants use a second deterministic Scatter
-  driven by the generated density map. This adds 720 pieces of slope detail
-  without a second explicit object list.
-- Lighting — warm sun with shadows (0.82 strength), cool fill, AO 0.55,
-  ambient 0.21, subtle linear aerial haze, ACES tone mapping, and ultra TAA
-  with SMAA fallback. The Scene explicitly selects `s97_forest_pbr`; the
-  declared style is not left as an unused resource.
+## Camera exploration
 
-## Authoring pipeline (`authoring/`)
+| Time | View |
+| --- | --- |
+| 0–4 s | Aerial overview descending to an oblique forest view |
+| 4–11 s | Approach the selected roadside tree and surrounding grove |
+| 11–20 s | Orbit across the road-facing side to inspect trunk, branches and crown |
+| 20–24 s | Move toward the upper branches and individual leaves |
 
-- `analyze_reference.py` — dependency-free PNG codec, brightness masks,
-  largest-component filtering, chamfer distance transform and a ridge walk
-  that traces the road centreline from the photo (`trace`/`mask` CLI).
-- `road-path.json` — the 105 traced waypoints in image pixels plus measured
-  half-widths; `road-offsets.json` holds per-waypoint corrections.
-- `build_scene.py` — generates the heightmap and forest-exclusion mask, carves
-  the bench, simplifies the fitted 3D centreline, emits shared curve/profile
-  sweeps, and writes the compact Scatter-based
-  `main.motionloom`. It also has `probe` and `markers` modes for calibration.
-- `fit_road.py` — renders the probe ribbon, measures its offset from the
-  traced centreline, and iterates the per-waypoint corrections back into
-  `road-offsets.json` (currently 3.5 px mean residual at 1920×1080).
-- `camera.json` — fitted camera parameters (distance 807.3 site m → 40.4 m
-  scaled, fov 10°, 5° tilt).
+The camera's position, target and FOV curves are unchanged from the previous
+24-second exploration. The selected tree is original seed-97 placement 107.
+`authoring/camera-exploration.json` records that earlier route and source
+fingerprint. The current forest detail selection is recorded separately in
+`authoring/s96-forest-layout.json` and `authoring/s96-tree-layout.json`.
 
-Rebuild and render:
+Current lighting captures and analysis are in `evidence/lighting/`.
+The earlier material study remains in `evidence/s96-quality/`; earlier route
+captures in `evidence/camera-exploration/` and tree trials in
+`evidence/tree-replacement/` refer to their own source fingerprints.
+Each `source-before.motionloom` is a historical snapshot relative to the S97
+root, not a standalone scene in its evidence folder. DSL analysis confirms
+syntax and supported behavior; visual review is separate.
+
+## Shared daylight lighting
+
+The same main DSL supplies both WGPU Preview and Weaver:
+
+- `DirectionalLight s97_sun` emits warm sunlight along `[-0.56,-0.66,-0.50]`
+  at intensity `3.2`. Preview shadow strength is `0.80`; Weaver uses physical
+  shadow occlusion.
+- `EnvironmentLight s97_daylight` uses the local
+  `assets/environment/sunny-forest-sky.png` for visible sky and environment
+  illumination at intensity `0.32`. Rotation `-116.5` approximately aligns
+  the image's sun azimuth with the directional key light. This is an LDR
+  panorama, not calibrated HDR solar radiance.
+- Bounded `AtmosphereFog` at density `0.008` adds aerial depth without fogging
+  the sky background. `AmbientOcclusion` strengthens preview contact shading;
+  Weaver derives occlusion from traced rays and ignores preview-only AO.
+  Volumetric shafts are omitted: the current preview implementation produced
+  excessive additive haze in this scene.
+- `filmic_physical_v1` and `filmic_aces_v1` retain neutral style specular,
+  ambient color and white balance, so Weaver can accept the authored style
+  explicitly. Imported material roughness and specular factors still apply.
+
+There is no closed sky sphere in the main scene. An opaque emissive sphere
+blocks external environment and sun rays in Weaver even when preview omits
+its shadow. The original extracted sky asset is retained only for historical
+study. Both renderers consume the same lighting, but preview approximates
+indirect illumination while Weaver traces it; their pixels and shadow softness
+are not expected to match exactly.
+
+Use the native `cinematic` profile to enable preview screen-space GI,
+reflections and a 2048-pixel shadow map. It is a host setting, separate from
+DSL anti-aliasing quality. Weaver smoke evidence is a low-sample compatibility
+check, not a converged offline beauty render.
+
+## Rebuild local assets
+
+Run from this S97 directory, in this order:
 
 ```sh
-python3 motionloom-example/showcase/s-000097/authoring/build_scene.py
-anica/target/release/examples/render_file_frame \
-  motionloom-example/showcase/s-000097/main.motionloom /tmp/frame.png 0 gpu
+python3 assets/reference-forest/extract_reference_forest.py
+python3 authoring/s96_terrain.py
+python3 authoring/s96_near_tree.py
+python3 authoring/s96_understory.py
+python3 authoring/s96_forest.py
+python3 authoring/s96_tree_batch.py
 ```
 
-`authoring_report` (below) validates the DSL; it does not judge reference
-likeness.
+The first two scripts read S96's licensed GLB to extract source data; they
+never modify it. Playback needs no sibling showcase. The near-tree script
+uses only S97's local preserved S99 cages, derived GLBs and texture images.
+`tree-layout-source.json` preserves the original 2,048 seed-97 transforms.
+`--near-radius` on `s96_forest.py` controls the authored roadside detail area;
+rebuild the static tree batch afterward. This is an authoring choice, not
+camera-driven runtime LOD.
 
-This revision is the S97-B base-color checkpoint for the native outdoor-quality
-ladder. S97-A established compact deterministic placement; S97-B adds reusable
-albedo detail while keeping honest scalar roughness values. The next visual
-checkpoint should use measured or deliberately authored normal/ORM data rather
-than deriving fake physical maps from color.
-
-The Scatter migration first reduced `main.motionloom` from 24,352 lines /
-2,686,806 bytes / 10,764 authored Models to 17,451 lines. The subsequent
-CurveAsset/SweepAsset migration reduces it again to 383 lines while retaining
-seven authored Models and two Scatters. Asphalt, edge paint, exact-distance
-dashes and both guardrails now reference one spatial curve; the DSL contains
-no expanded road vertices, faces or duplicated guardrail paths.
-
-The four base-color prompts requested seamless, orthographic material studies
-under diffuse neutral lighting: mossy forest soil with leaf litter, weathered
-mountain asphalt, mature conifer bark, and dense mixed forest foliage. ImageGen
-outputs were copied into `assets/materials/`; the original generated files are
-retained outside the repository by the authoring environment.
-The asphalt roughness pass reused the asphalt image as a spatial reference,
-requested flat grayscale data with a roughly 0.72–0.92 dry-road range, and was
-iterated once after inspection; its measured channel mean is approximately
-0.775. It is deliberately authored data, not a claimed physical scan.
+From the workspace root:
 
 ```sh
-anica/target/release/examples/authoring_report \
+motionloom/target/debug/examples/authoring_report \
+  motionloom-example/showcase/s-000097/main.motionloom wasm-webgpu
+cargo run --manifest-path motionloom/Cargo.toml --release -p motionloom \
+  --example wgpu_live_preview -- --profile cinematic \
   motionloom-example/showcase/s-000097/main.motionloom
 ```
+
+To render the same scene offline, from the workspace root:
+
+```sh
+cargo run --manifest-path motionloom/Cargo.toml --release -p motionloom \
+  --features weaver --example weaver_frame -- \
+  motionloom-example/showcase/s-000097/main.motionloom \
+  --scene-id S97WindingRoad --style s97_forest_pbr --frame 192 \
+  --size 640x360 --samples 64 --out /tmp/s97-weaver
+```
+
+## Asset credits and authoring evidence
+
+S96-derived tree, grass, ground, rock and historical sky images come from
+**"landscape forest & mountains" by dasy444**, licensed
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Source:
+[Sketchfab model](https://sketchfab.com/3d-models/landscape-forest-mountains-94809d21d7aa4cfe9b658a111b35a42c).
+Extraction, normalization, placement, added foliage geometry and static batching
+are S97 changes. Original embedded image bytes remain unchanged. Detailed
+credits, material mappings and preservation checks live in
+`assets/reference-forest/README.md`, `provenance.json` and `validation.json`.
+
+The current sunny sky is reused byte-for-byte from MotionLoom showcase S77.
+Embedded C2PA metadata identifies AI generation by gpt-image 2.0 / OpenAI
+Media Service API, dated 2026-08-30. This metadata was inspected, not
+cryptographically verified. The asset is separate from the S96 CC BY credit;
+its source and fingerprint are recorded in `authoring/lighting-source.json`.
+
+The new opaque leaf-surface texture `assets/materials/s97-leaf-detail.png`
+was generated with the built-in image_gen tool. Its prompt asks for a flat,
+edge-to-edge broadleaf surface with a vertical central midrib, fine secondary
+veins and natural moss/olive-green variation under diffuse neutral light;
+the 3D mesh supplies the leaf outline and curvature. The prompt and output
+fingerprint are in `authoring/leaf-texture-provenance.json`. Existing S97 bark
+and asphalt images remain unchanged. No texture is described as a measured
+physical scan.
+
+Geometry, texture and UV checks are recorded in
+`authoring/s97-near-tree-textured-report.json`,
+`authoring/s96-terrain-provenance.json`,
+`authoring/s96-understory-report.json` and
+`authoring/s96-tree-batch-report.json`.
+
+## Earlier trials
+
+`aerial-comparison.motionloom` retains the 12-second aerial trial of 2,048
+full S99 trees. `stress-10760.motionloom` retains the 10,760-tree full-detail
+stress scene, with 871,344,800 tree triangles and the previous aerial camera.
+`main2.motionloom` retains the earlier primitive-crown version. These comparison
+files are unchanged by the S96 material study.
+
+The exact local S99 cages are preserved in
+`assets/trees/s99-street-tree.motionloom`; six original derived GLBs were
+exported with MotionLoom's `extract_scene_geometry()` and
+`export_scene_glb()` APIs. `authoring/s99-tree-provenance.json` records that
+trial. Its reproduction script `authoring/s99_forest.py` is historical and
+replaces the tree setup when run; use a separate output document to preserve
+the current S96-based main scene. The older camera/road fitting tools and
+reference image remain available under `authoring/` and `reference/`.

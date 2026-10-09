@@ -1,0 +1,141 @@
+{
+  "sceneId": "SHOWCASE99",
+  "dayFrame": 528,
+  "duskFrame": 1032,
+  "volumes": [
+    {
+      "id": "public",
+      "boundsMin": [
+        -5.82,
+        0.12,
+        -3.8
+      ],
+      "boundsMax": [
+        1.34,
+        2.82,
+        3.8
+      ],
+      "counts": [
+        8,
+        3,
+        8
+      ],
+      "reflectionPositions": [
+        [
+          -2.8,
+          1.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "id": "hall",
+      "boundsMin": [
+        1.66,
+        0.12,
+        -3.8
+      ],
+      "boundsMax": [
+        2.54,
+        2.82,
+        3.8
+      ],
+      "counts": [
+        2,
+        3,
+        8
+      ],
+      "reflectionPositions": [
+        [
+          2.1,
+          1.5,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "guest",
+      "boundsMin": [
+        2.86,
+        0.12,
+        -3.8
+      ],
+      "boundsMax": [
+        5.82,
+        2.82,
+        -1.46
+      ],
+      "counts": [
+        4,
+        3,
+        4
+      ],
+      "reflectionPositions": [
+        [
+          4.2,
+          1.5,
+          -2.5
+        ]
+      ]
+    },
+    {
+      "id": "bath",
+      "boundsMin": [
+        2.86,
+        0.12,
+        -1.14
+      ],
+      "boundsMax": [
+        5.82,
+        2.82,
+        0.94
+      ],
+      "counts": [
+        4,
+        3,
+        4
+      ],
+      "reflectionPositions": [
+        [
+          3.5,
+          1.5,
+          0.3
+        ]
+      ]
+    },
+    {
+      "id": "primary",
+      "boundsMin": [
+        2.86,
+        0.12,
+        1.26
+      ],
+      "boundsMax": [
+        5.82,
+        2.82,
+        3.8
+      ],
+      "counts": [
+        4,
+        3,
+        4
+      ],
+      "reflectionPositions": [
+        [
+          4.1,
+          1.5,
+          2.4
+        ]
+      ]
+    }
+  ],
+  "raysPerProbe": 512,
+  "specularResolution": [
+    256,
+    128
+  ],
+  "specularSamplesPerPixel": 2,
+  "maxBounces": 3,
+  "seed": 99,
+  "maxRayDistance": 100
+}

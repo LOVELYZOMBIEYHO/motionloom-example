@@ -1,0 +1,112 @@
+<Layer space="screen">
+  <!-- Native, dimensionally coordinated plan. Map x,z to 1200+70*x,510+70*z. -->
+  <Rect x="0" y="0" width="1920" height="1080" color="#F3EFE6" />
+  <Path d="M 80 91 L 1840 91 M 580 140 L 580 941 M 80 960 L 1840 960" fill="none" stroke="#C7C3B7" strokeWidth="1" />
+  <Text x="80" y="63" value="MOTIONLOOM  /  SHOWCASE 99" fontSize="18" fontWeight="600" color="#66736A" />
+  <Text x="1700" y="63" value="CITY STUDIES" fontSize="18" color="#66736A" />
+  <Text x="80" y="207" value="CITY /" fontSize="65" fontWeight="700" color="#263A32" />
+  <Text x="80" y="278" value="HOUSE 99" fontSize="65" fontWeight="700" color="#263A32" />
+  <Rect x="82" y="365" width="66" height="4" color="#B5704B" />
+  <Text x="80" y="405" value="01 / PLAN" fontSize="25" fontWeight="600" color="#B5704B" />
+  <Text x="80" y="450" value="A quiet home within the city." fontSize="23" color="#536257" />
+  <Text x="80" y="488" value="An open living core and" fontSize="23" color="#536257" />
+  <Text x="80" y="526" value="a sheltered private wing." fontSize="23" color="#536257" />
+  <Path d="M 81 583 L 503 583" fill="none" stroke="#C7C3B7" strokeWidth="1" />
+  <Text x="80" y="631" value="96 m2 / 12 x 8 m" fontSize="27" fontWeight="600" color="#263A32" />
+  <Text x="80" y="675" value="1.2 m private hall" fontSize="23" color="#536257" />
+  <Text x="80" y="712" value="0.9 m room doors" fontSize="23" color="#536257" />
+  <Path d="M 81 792 L 121 792" fill="none" stroke="#668A71" strokeWidth="5" />
+  <Text x="137" y="783" value="PUBLIC ROUTE" fontSize="18" color="#536257" />
+  <Path d="M 81 834 L 121 834" fill="none" stroke="#B5704B" strokeWidth="5" />
+  <Text x="137" y="825" value="PRIVATE ROUTE" fontSize="18" color="#536257" />
+  <Text x="80" y="900" value="Concept / assumed dimensions" fontSize="19" color="#737C70" />
+  <Text x="80" y="930" value="No compliance determination" fontSize="19" color="#737C70" />
+
+  <!-- Footprint, public floor and private room fields. -->
+  <Rect x="780" y="230" width="840" height="560" color="#E4E8DC" />
+  <Rect x="1305" y="230" width="84" height="560" color="#EAE3D6" />
+  <Rect x="1389" y="230" width="231" height="189" color="#E8DFD0" />
+  <Rect x="1389" y="419" width="231" height="168" color="#DCE5DD" />
+  <Rect x="1389" y="587" width="231" height="203" color="#E8DFD0" />
+  <Path d="M 780 230 L 829 230 M 1088 230 L 1431 230 M 1585 230 L 1620 230 M 780 230 L 780 461 M 780 657 L 780 790 M 1620 230 L 1620 454 M 1620 552 L 1620 629 M 1620 741 L 1620 790" fill="none" stroke="#314338" strokeWidth="12.6" />
+  <Path d="M 780 790 L 829 790 M 1144 790 L 1210.5 790 M 1287.5 790 L 1427.5 790 M 1585 790 L 1620 790" fill="none" stroke="#314338" strokeWidth="12.6" />
+  <Path d="M 1305 230 L 1305 475 M 1305 552 L 1305 790 M 1389 230 L 1389 300 M 1389 363 L 1389 464.5 M 1389 527.5 L 1389 615 M 1389 678 L 1389 790 M 1389 419 L 1620 419 M 1389 587 L 1620 587" fill="none" stroke="#314338" strokeWidth="12.6" />
+  <!-- North kitchen / guest glazing, west living glazing, east bath / primary glazing. -->
+  <Path d="M 829 226 L 1088 226 M 829 234 L 1088 234 M 1431 226 L 1585 226 M 1431 234 L 1585 234 M 776 461 L 776 657 M 784 461 L 784 657 M 1616 454 L 1616 552 M 1624 454 L 1624 552 M 1616 629 L 1616 741 M 1624 629 L 1624 741" fill="none" stroke="#83A4A0" strokeWidth="2" />
+  <!-- South facade sliding glass, entry threshold and bedroom window. -->
+  <Path d="M 829 786 L 1144 786 M 829 794 L 1144 794 M 986.5 783 L 986.5 797 M 1210.5 786 L 1287.5 786 M 1427.5 786 L 1585 786 M 1427.5 794 L 1585 794" fill="none" stroke="#83A4A0" strokeWidth="2" />
+  <Path d="M 1210.5 790 L 1210.5 867 M 1210.5 867 Q 1287.5 867 1287.5 790" fill="none" stroke="#7D8B7B" strokeWidth="1.5" />
+  <!-- Three 0.9m door leaves and swing arcs. -->
+  <Path d="M 1389 300 L 1452 300 M 1452 300 Q 1452 363 1389 363 M 1389 464.5 L 1452 464.5 M 1452 464.5 Q 1452 527.5 1389 527.5 M 1389 615 L 1452 615 M 1452 615 Q 1452 678 1389 678" fill="none" stroke="#9C866D" strokeWidth="1.6" />
+
+  <!-- Kitchen run, sinks, hob, storage modules and island. -->
+  <Rect x="794" y="244" width="294" height="45.5" color="#B6C2B0" stroke="#657462" strokeWidth="1.5" />
+  <Path d="M 845 244 L 845 289.5 M 894 244 L 894 289.5 M 943 244 L 943 289.5 M 992 244 L 992 289.5 M 1041 244 L 1041 289.5" fill="none" stroke="#7F8F77" strokeWidth="1" />
+  <Rect x="855" y="254" width="29" height="24" radius="3" color="#E4E8DC" stroke="#7F8F77" strokeWidth="1.2" />
+  <Rect x="955" y="250" width="32" height="32" color="#596F5F" />
+  <Path d="M 963 254 L 963 278 M 979 254 L 979 278 M 959 259 L 983 259 M 959 274 L 983 274" fill="none" stroke="#BBC7B7" strokeWidth="2" />
+  <Rect x="846.5" y="345.5" width="175" height="70" radius="3" color="#BAA58B" stroke="#736E5D" strokeWidth="1.5" />
+  <Rect x="858" y="402" width="30" height="29" radius="4" color="#E9E2D5" stroke="#8A8A74" strokeWidth="1" />
+  <Rect x="916" y="402" width="30" height="29" radius="4" color="#E9E2D5" stroke="#8A8A74" strokeWidth="1" />
+  <Text x="813" y="321" value="KITCHEN" fontSize="18" fontWeight="600" color="#536257" />
+  <!-- Dining table and four chairs. -->
+  <Rect x="1109" y="340.25" width="112" height="59.5" radius="6" color="#BAA58B" stroke="#736E5D" strokeWidth="1.5" />
+  <Rect x="1119" y="316" width="31" height="23" radius="4" color="#F1E9DB" stroke="#92917D" strokeWidth="1" />
+  <Rect x="1179" y="316" width="31" height="23" radius="4" color="#F1E9DB" stroke="#92917D" strokeWidth="1" />
+  <Rect x="1119" y="402" width="31" height="23" radius="4" color="#F1E9DB" stroke="#92917D" strokeWidth="1" />
+  <Rect x="1179" y="402" width="31" height="23" radius="4" color="#F1E9DB" stroke="#92917D" strokeWidth="1" />
+  <Text x="1110" y="283" value="DINING" fontSize="18" fontWeight="600" color="#536257" />
+  <!-- Living rug, sofa, coffee table and low media cabinet. -->
+  <Rect x="811" y="560" width="242" height="205" radius="3" color="#D2D9C9" />
+  <Rect x="829" y="580" width="196" height="70" radius="7" color="#879A83" stroke="#5B725E" strokeWidth="1.5" />
+  <Rect x="838" y="588" width="178" height="13" radius="3" color="#6C836C" />
+  <Path d="M 894 602 L 894 640 M 960 602 L 960 640" fill="none" stroke="#5B725E" strokeWidth="1" />
+  <Rect x="883.25" y="683.25" width="87.5" height="45.5" radius="6" color="#BCA68A" stroke="#81765F" strokeWidth="1.5" />
+  <Rect x="925" y="690" width="17" height="22" color="#EAE4D5" />
+  <Rect x="793" y="651" width="13" height="99" color="#9A997E" />
+  <Text x="825" y="532" value="LIVING" fontSize="18" fontWeight="600" color="#536257" />
+  <!-- Guest / work room. -->
+  <Rect x="1483.5" y="244" width="77" height="133" radius="3" color="#B7A78F" stroke="#8C7F69" strokeWidth="1.5" />
+  <Rect x="1489.5" y="250" width="65" height="121" radius="3" color="#F1E9DB" />
+  <Rect x="1495" y="253" width="54" height="24" radius="4" color="#D6CCBB" />
+  <Rect x="1407.9" y="323.45" width="39.2" height="94.5" color="#BAA58B" stroke="#736E5D" strokeWidth="1" />
+  <Rect x="1452" y="353" width="24" height="31" radius="4" color="#E6DFD0" stroke="#92917D" strokeWidth="1" />
+  <Text x="1400" y="390" value="STUDY / GUEST" fontSize="16" fontWeight="600" color="#536257" />
+  <!-- Bath: shower, basin and toilet. -->
+  <Rect x="1536" y="429.5" width="70" height="70" color="#C4D5CA" stroke="#7E9685" strokeWidth="1.5" />
+  <Path d="M 1536 429.5 L 1606 499.5 M 1606 429.5 L 1536 499.5" fill="none" stroke="#A2BAAA" strokeWidth="1" />
+  <Rect x="1410" y="429.5" width="49" height="28" radius="5" color="#B8CBBF" stroke="#7E9685" strokeWidth="1.2" />
+  <Rect x="1416" y="434" width="37" height="19" radius="6" color="#F2F2E9" />
+  <Rect x="1486" y="538" width="29" height="20" radius="3" color="#EDF0E7" stroke="#7E9685" strokeWidth="1" />
+  <Rect x="1490" y="513" width="22" height="31" radius="10" color="#EDF0E7" stroke="#7E9685" strokeWidth="1" />
+  <Text x="1410" y="547" value="BATH" fontSize="18" fontWeight="600" color="#536257" />
+  <!-- Primary bedroom: 2.1m x 1.6m bed rotated with headboard to east. -->
+  <Rect x="1445" y="653.5" width="147" height="112" radius="3" color="#B7A78F" stroke="#8C7F69" strokeWidth="1.5" />
+  <Rect x="1451" y="659.5" width="135" height="100" radius="3" color="#F2EADC" />
+  <Rect x="1557" y="666.5" width="25" height="40" radius="5" color="#D5CAB9" />
+  <Rect x="1557" y="713" width="25" height="40" radius="5" color="#D5CAB9" />
+  <Rect x="1459" y="659.5" width="38" height="100" color="#A9B6A1" />
+  <Rect x="1565" y="610.5" width="27" height="21" color="#BAA58B" />
+  <Rect x="1565" y="759.5" width="27" height="21" color="#BAA58B" />
+  <Rect x="1469.5" y="592.6" width="91" height="25.2" color="#C6B8A0" stroke="#8C7F69" strokeWidth="1" />
+  <Text x="1400" y="598" value="PRIMARY" fontSize="16" fontWeight="600" color="#536257" />
+
+  <!-- Circulation: main entry to public core, then a separate private spine. -->
+  <Path d="M 1249 852 L 1249 682 L 1100 682 L 1100 470 L 1150 470" fill="none" stroke="#668A71" strokeWidth="3.5" opacity="0.87" />
+  <Path d="M 1141 463 L 1150 470 L 1141 477" fill="none" stroke="#668A71" strokeWidth="3.5" />
+  <Path d="M 1249 742 L 1249 514 L 1347 514 L 1347 335 L 1370 335 M 1347 514 L 1347 647 L 1370 647" fill="none" stroke="#B5704B" strokeWidth="3" opacity="0.9" />
+  <Path d="M 1362 329 L 1370 335 L 1362 341 M 1362 641 L 1370 647 L 1362 653" fill="none" stroke="#B5704B" strokeWidth="3" />
+  <Text x="1283" y="874" value="ENTRY" fontSize="18" color="#536257" />
+  <Text x="877" y="840" value="SOUTH / GARDEN" fontSize="18" color="#737C70" />
+  <!-- Overall dimensions, 1.2m hall width and north arrow. -->
+  <Path d="M 780 196 L 1620 196 M 780 185 L 780 217 M 1620 185 L 1620 217 M 1660 230 L 1660 790 M 1648 230 L 1672 230 M 1648 790 L 1672 790" fill="none" stroke="#8D9789" strokeWidth="1.2" />
+  <Text x="1154" y="164" value="12.0 m" fontSize="22" color="#66736A" />
+  <Text x="1690" y="521" value="8.0 m" fontSize="22" color="#66736A" />
+  <Path d="M 1314 746 L 1380 746 M 1314 740 L 1314 752 M 1380 740 L 1380 752" fill="none" stroke="#9E8C75" strokeWidth="1.2" />
+  <Text x="1316" y="754" value="1.2 m" fontSize="17" color="#8A735B" />
+  <Path d="M 1778 289 L 1778 209 M 1778 209 L 1769 230 M 1778 209 L 1787 230" fill="none" stroke="#314338" strokeWidth="2" />
+  <Text x="1771" y="170" value="N" fontSize="23" fontWeight="600" color="#314338" />
+  <Text x="665" y="925" value="Open public core / compact private wing / south-facing daylight" fontSize="20" color="#737C70" />
+  <Text x="80" y="1009" value="ARCHITECTURE THROUGH MOTION" fontSize="17" fontWeight="600" color="#66736A" />
+  <Text x="1415" y="1009" value="NATIVE DSL / 01 OF 03" fontSize="17" color="#66736A" />
+</Layer>

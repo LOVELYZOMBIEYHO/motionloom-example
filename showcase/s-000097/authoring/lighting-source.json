@@ -1,0 +1,42 @@
+{
+  "sourceBeforeSha256": "49dd616a93df4a3564d6ad7ddebe4f4ac0c84dff092aeed97f86609b1226ed8f",
+  "outsideS97TrackedDiffSha256": "a84b63fc7b0aad883010cf0f7e1082123000822741a97bf38ae5f5d4546f6270",
+  "environment": {
+    "file": "assets/environment/sunny-forest-sky.png",
+    "source": "../s-000077/assets/environment/sunny-forest-sky.png",
+    "sourceSha256": "13ad6297102cea6b695bec268a978dac281c80177c78a5ed35cfeb349b23e005",
+    "copiedByteExact": true,
+    "use": "Existing project LDR panoramic image, copied locally; source showcase unchanged",
+    "sunAlignment": "Approximate azimuth alignment, not a calibrated HDR solar emitter",
+    "embeddedMetadata": {
+      "generator": "gpt-image",
+      "version": "2.0",
+      "service": "OpenAI Media Service API",
+      "created": "2026-08-30",
+      "digitalSourceType": "trainedAlgorithmicMedia",
+      "cryptographicSignatureVerified": false
+    }
+  },
+  "lighting": {
+    "directionalSun": {
+      "direction": [
+        -0.56,
+        -0.66,
+        -0.5
+      ],
+      "color": "#FFF1DC",
+      "intensity": 3.2,
+      "shadowStrength": 0.8
+    },
+    "environment": {
+      "intensity": 0.32,
+      "rotationY": -116.5,
+      "backgroundIntensity": 0.8
+    },
+    "aerialFogDensity": 0.008,
+    "volumetricScattering": false,
+    "nativeProfile": "Cinematic",
+    "style": "s97_forest_pbr",
+    "closedSkyRemoved": "Opaque sky geometry blocks path-traced external sun/environment; infinite EnvironmentLight is shared by both renderers."
+  }
+}

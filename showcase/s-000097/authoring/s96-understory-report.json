@@ -1,0 +1,202 @@
+{
+  "output": "assets/reference-forest/s97-understory-batched.glb",
+  "outputSha256": "62bfc4c7220ce9034c33437ac2d271aa2c70c2e8158047c198b5c6a1e69a16f4",
+  "outputBytes": 6396108,
+  "placement": {
+    "seed": 96097,
+    "count": 16000,
+    "slopeRange": [
+      0,
+      58
+    ],
+    "scaleRange": [
+      0.035,
+      0.067
+    ],
+    "rotationYRange": [
+      0,
+      360
+    ],
+    "surfaceOffset": -0.01,
+    "variantWeights": [
+      45,
+      55
+    ],
+    "heightMapSha256": "ad24c004e6c66e56d89dfb4edfa35e7cb0681a7e9f4e559b466bb10847f4262e",
+    "exclusionMapSha256": "c068e405acfb0f706b80bd3e24c0f3472f6cfc21a4e5ea3a23da3c4e982d8f96",
+    "acceptedAttempts": 17233,
+    "rejectedByExclusionMap": 1196,
+    "rejectedBySlope": 37,
+    "maximumAcceptedSlope": 57.700660705566406,
+    "terrainSize": [
+      15.899999618530273,
+      8.949999809265137
+    ],
+    "heightScale": 5.853899955749512,
+    "heightOffset": -2.950000047683716,
+    "method": "Port of native Scatter integer hash, float32 irrational sequence, nearest red exclusion lookup, bilinear height and neighboring-height slope. Position literals round to native six decimals. Float32 trig/hypot/atan use rounded Python libm; no native bitwise-equivalence claim."
+  },
+  "batches": [
+    {
+      "source": "assets/reference-forest/grass-long-blades.glb",
+      "sourceSha256": "4a67036a81e86d10e0063ad3faa62c0e12a6bb1dc2e29820a680984c79ba45bd",
+      "tufts": 7130,
+      "vertices": 57040,
+      "triangles": 28520,
+      "textureSha256": "14fbbc3373bf12fd8393eed00ca19f76a3f5b49d2ddd7e3397df64a8d7205456",
+      "embeddedTextureBytes": 915653,
+      "textureBytesPreserved": true,
+      "originalMaterial": {
+        "alphaCutoff": 0.4976831282573631,
+        "alphaMode": "MASK",
+        "doubleSided": true,
+        "name": "Material.002",
+        "pbrMetallicRoughness": {
+          "baseColorTexture": {
+            "index": 0
+          },
+          "metallicFactor": 0.0,
+          "roughnessFactor": 0.8211145618000169
+        }
+      },
+      "bounds": {
+        "min": [
+          -7.979176998138428,
+          -2.799304962158203,
+          -4.505218982696533
+        ],
+        "max": [
+          7.972291469573975,
+          2.8216161727905273,
+          4.505799293518066
+        ]
+      }
+    },
+    {
+      "source": "assets/reference-forest/grass-compact-tuft.glb",
+      "sourceSha256": "8cb7fce57fc80428a5abb35a855c3c3de2519f863bb5304b9861a33557b20037",
+      "tufts": 8870,
+      "vertices": 70960,
+      "triangles": 35480,
+      "textureSha256": "06b8db2179e5466aed7a79fd54deee376e6637d96bcfe5c11a95a8bce33bad9b",
+      "embeddedTextureBytes": 613795,
+      "textureBytesPreserved": true,
+      "originalMaterial": {
+        "alphaCutoff": 0.6191433227151344,
+        "alphaMode": "MASK",
+        "doubleSided": true,
+        "name": "Material.003",
+        "pbrMetallicRoughness": {
+          "baseColorTexture": {
+            "index": 0
+          },
+          "metallicFactor": 0.0,
+          "roughnessFactor": 0.8211145618000169
+        }
+      },
+      "bounds": {
+        "min": [
+          -7.975469589233398,
+          -2.745410919189453,
+          -4.497319221496582
+        ],
+        "max": [
+          7.963980674743652,
+          2.8134377002716064,
+          4.497464656829834
+        ]
+      }
+    }
+  ],
+  "tufts": 16000,
+  "vertices": 128000,
+  "triangles": 64000,
+  "materialPrimitives": 2,
+  "integration": "Replace only the 16,000-tuft Scatter with one identity Model: scale=1, scaleMode=none, castShadow=false, receiveShadow=true. Original grass textures and alpha-mask materials are unchanged.",
+  "placementFingerprint": "7c6cb88f040e21d0e0b861e0c89e27c361b8040735222c4be360dd750d546c54",
+  "placementSamples": [
+    {
+      "attempt": 0,
+      "species": 0,
+      "position": [
+        7.345602035522461,
+        -0.12340400367975235,
+        -4.09824800491333
+      ],
+      "scale": 0.03665700554847717,
+      "rotationY": 59.496238708496094,
+      "slope": 36.15515899658203
+    },
+    {
+      "attempt": 1,
+      "species": 1,
+      "position": [
+        3.448158025741577,
+        -0.8020920157432556,
+        1.0018219947814941
+      ],
+      "scale": 0.05834727734327316,
+      "rotationY": 84.08122253417969,
+      "slope": 0.0
+    },
+    {
+      "attempt": 2,
+      "species": 1,
+      "position": [
+        -0.449288010597229,
+        0.9196439981460571,
+        -2.8481059074401855
+      ],
+      "scale": 0.04659935086965561,
+      "rotationY": 297.0536804199219,
+      "slope": 0.0
+    },
+    {
+      "attempt": 17230,
+      "species": 1,
+      "position": [
+        0.07763700187206268,
+        0.16208000481128693,
+        -0.978905975818634
+      ],
+      "scale": 0.04546600580215454,
+      "rotationY": 126.84419250488281,
+      "slope": 19.988924026489258
+    },
+    {
+      "attempt": 17231,
+      "species": 0,
+      "position": [
+        -3.81972599029541,
+        -0.42420700192451477,
+        4.116650104522705
+      ],
+      "scale": 0.04018089175224304,
+      "rotationY": 189.5432586669922,
+      "slope": 34.50497055053711
+    },
+    {
+      "attempt": 17232,
+      "species": 0,
+      "position": [
+        -7.717090129852295,
+        1.3558160066604614,
+        0.27094700932502747
+      ],
+      "scale": 0.036185283213853836,
+      "rotationY": 136.4762420654297,
+      "slope": 0.0
+    }
+  ],
+  "verification": {
+    "headerAndChunks": "passed",
+    "indicesFiniteGeometryAndBounds": "passed",
+    "originalUVRange": "passed",
+    "originalEmbeddedTextureBytes": "passed",
+    "alphaMaskAndDoubleSided": "passed",
+    "normalUnitMaxError": 6.118681383782132e-08,
+    "vertices": 128000,
+    "triangles": 64000
+  },
+  "status": "passed binary/geometry/texture verification; native GPU visual validation pending"
+}

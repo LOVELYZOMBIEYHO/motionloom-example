@@ -1,33 +1,35 @@
-<!-- S98 | Realistic red apple | parametric geometry + ImageGen peel albedo | Weaver-ready -->
+<!-- S98 | Realistic red apple | refined crown + ImageGen peel v2 | HDR studio lighting + thin wax coat -->
 <Graph fps={60} duration="20s" size={[1080,1920]} renderSize={[1080,1920]}>
   <RenderStyle id="s98_studio_physical">
     <SurfaceStyle shading="physical" />
-    <LightingStyle ambientIntensity="0.19" ambientColor="#DDE7ED" shadowStyle="soft" />
+    <LightingStyle ambientIntensity="0.025" ambientColor="#DDE7ED" shadowStyle="soft" shadowMode="perLight" />
     <PostStyle toneMapping="aces" exposure="1.0" contrast="1.015" saturation="1.015" />
     <AntiAliasingStyle method="taa" quality="ultra" fallback="smaa" sharpness="0.025" />
   </RenderStyle>
   <Assets>
     <AudioAsset id="s98_original_score" src="assets/audio/s98-original-score.ogg" />
     <AudioAsset id="s98_original_foley" src="assets/audio/s98-original-foley.ogg" />
-    <ImageAsset id="s98_peel_color" src="assets/apple-peel-albedo.png" colorSpace="srgb" />
-    <ImageAsset id="s98_peel_normal" src="assets/apple-peel-normal.png" colorSpace="linear" />
-    <ImageAsset id="s98_peel_roughness" src="assets/apple-peel-roughness.png" colorSpace="linear" />
+    <ImageAsset id="s98_peel_color" src="assets/peel-v2/albedo.png" colorSpace="srgb" />
+    <ImageAsset id="s98_peel_normal" src="assets/peel-v2/normal.png" colorSpace="linear" />
+    <ImageAsset id="s98_peel_roughness" src="assets/peel-v2/roughness.png" colorSpace="linear" />
     <ImageAsset id="s98_stem_color" src="assets/apple-stem-bark-albedo.png" colorSpace="srgb" />
-    <ImageAsset id="s98_white_environment" src="assets/studio-natural-environment.png" colorSpace="srgb" />
+    <ImageAsset id="s98_white_environment" src="assets/environment-v2/studio_small_03_2k.hdr" colorSpace="linear" />
     <MaterialAsset
       id="s98_peel"
       shading="pbr"
       baseColor="#FFFFFF"
       baseColorTexture="s98_peel_color"
       metallic="0"
-      roughness="0.66"
+      roughness="0.80"
       metallicRoughnessTexture="s98_peel_roughness"
       specular="1"
-      ior="1.65"
+      ior="1.45"
       normalTexture="s98_peel_normal"
-      normalScale="0.14"
+      normalScale="0.32"
       textureScale={[1,1]}
       doubleSided="false"
+      clearcoat="0.16"
+      clearcoatRoughness="0.24"
     />
     <MaterialAsset
       id="s98_stem_bark"
@@ -37,8 +39,6 @@
       metallic="0"
       roughness="0.86"
       specular="0.13"
-      emissive="#9A603A"
-      emissiveStrength="0.05"
       textureScale={[1,1.5]}
     />
     <MaterialAsset
@@ -48,12 +48,10 @@
       metallic="0"
       roughness="0.91"
       specular="0.08"
-      emissive="#B07D4A"
-      emissiveStrength="0.12"
     />
     <MaterialAsset id="s98_calyx" shading="pbr" baseColor="#80543A" metallic="0" roughness="0.91" specular="0.10" />
     <GeometryAsset id="s98_calyx_recess_geometry">
-      <Primitive shape="ellipsoid" radii={[0.125,0.022,0.125]} segments="24" rings="10" />
+      <Primitive shape="ellipsoid" radii={[0.075,0.022,0.075]} segments="24" rings="10" />
     </GeometryAsset>
     <MeshAsset id="s98_calyx_recess" material="s98_calyx" geometry="s98_calyx_recess_geometry" />
     <GeometryAsset id="s98_stem_cut_end_geometry">
@@ -62,74 +60,75 @@
     <MeshAsset id="s98_stem_cut_end" material="s98_stem_cut" geometry="s98_stem_cut_end_geometry" />
     <GeometryAsset id="s98_apple_profile_geometry">
       <Revolve axis="y" segments="32" samples="28">
-        <Profile interpolation="linear">
+        <Profile interpolation="catmullRom">
           <ProfilePoint position={[0.009560,0.105000]} />
-          <ProfilePoint position={[0.068689,0.075557]} />
-          <ProfilePoint position={[0.153314,0.035000]} />
-          <ProfilePoint position={[0.238998,0.005001]} />
-          <ProfilePoint position={[0.321925,-0.005370]} />
-          <ProfilePoint position={[0.405909,-0.005185]} />
-          <ProfilePoint position={[0.478000,0.000000]} />
-          <ProfilePoint position={[0.531535,0.009074]} />
-          <ProfilePoint position={[0.573175,0.023148]} />
-          <ProfilePoint position={[0.609927,0.040000]} />
-          <ProfilePoint position={[0.642291,0.057407]} />
-          <ProfilePoint position={[0.669766,0.077593]} />
-          <ProfilePoint position={[0.697880,0.105000]} />
-          <ProfilePoint position={[0.728897,0.140925]} />
-          <ProfilePoint position={[0.760552,0.184075]} />
-          <ProfilePoint position={[0.791568,0.234999]} />
-          <ProfilePoint position={[0.821559,0.295186]} />
-          <ProfilePoint position={[0.850911,0.363147]} />
-          <ProfilePoint position={[0.879521,0.435001]} />
-          <ProfilePoint position={[0.909510,0.510925]} />
-          <ProfilePoint position={[0.938757,0.590743]} />
-          <ProfilePoint position={[0.960780,0.670000]} />
-          <ProfilePoint position={[0.972571,0.748150]} />
-          <ProfilePoint position={[0.977138,0.825741]} />
-          <ProfilePoint position={[0.977032,0.900002]} />
-          <ProfilePoint position={[0.971650,0.969444]} />
-          <ProfilePoint position={[0.961594,1.035558]} />
-          <ProfilePoint position={[0.951220,1.100000]} />
-          <ProfilePoint position={[0.943289,1.162961]} />
-          <ProfilePoint position={[0.935039,1.224259]} />
-          <ProfilePoint position={[0.922541,1.284999]} />
-          <ProfilePoint position={[0.904660,1.347037]} />
-          <ProfilePoint position={[0.882531,1.408517]} />
-          <ProfilePoint position={[0.855620,1.465000]} />
-          <ProfilePoint position={[0.824108,1.514814]} />
-          <ProfilePoint position={[0.787815,1.559630]} />
-          <ProfilePoint position={[0.745681,1.599999]} />
-          <ProfilePoint position={[0.694693,1.637037]} />
-          <ProfilePoint position={[0.639351,1.668777]} />
-          <ProfilePoint position={[0.608037,1.683463]} />
-          <ProfilePoint position={[0.579367,1.696475]} />
-          <ProfilePoint position={[0.559233,1.704307]} />
-          <ProfilePoint position={[0.539099,1.712138]} />
-          <ProfilePoint position={[0.520435,1.717531]} />
-          <ProfilePoint position={[0.502255,1.722124]} />
-          <ProfilePoint position={[0.483692,1.725857]} />
-          <ProfilePoint position={[0.463289,1.725459]} />
-          <ProfilePoint position={[0.442885,1.725061]} />
-          <ProfilePoint position={[0.416040,1.716435]} />
-          <ProfilePoint position={[0.386583,1.704940]} />
-          <ProfilePoint position={[0.336098,1.673556]} />
-          <ProfilePoint position={[0.224660,1.570834]} />
-          <ProfilePoint position={[0.123643,1.478704]} />
-          <ProfilePoint position={[0.046101,1.447963]} />
+          <ProfilePoint position={[0.063695,0.077996]} />
+          <ProfilePoint position={[0.117896,0.051126]} />
+          <ProfilePoint position={[0.173295,0.026865]} />
+          <ProfilePoint position={[0.230464,0.007178]} />
+          <ProfilePoint position={[0.290012,-0.003037]} />
+          <ProfilePoint position={[0.350404,-0.006276]} />
+          <ProfilePoint position={[0.410882,-0.005001]} />
+          <ProfilePoint position={[0.471218,-0.000738]} />
+          <ProfilePoint position={[0.530892,0.008918]} />
+          <ProfilePoint position={[0.587750,0.029349]} />
+          <ProfilePoint position={[0.641551,0.056945]} />
+          <ProfilePoint position={[0.688346,0.095043]} />
+          <ProfilePoint position={[0.728422,0.140326]} />
+          <ProfilePoint position={[0.763971,0.189248]} />
+          <ProfilePoint position={[0.794928,0.241199]} />
+          <ProfilePoint position={[0.821681,0.295449]} />
+          <ProfilePoint position={[0.845823,0.350916]} />
+          <ProfilePoint position={[0.868494,0.407002]} />
+          <ProfilePoint position={[0.890792,0.463238]} />
+          <ProfilePoint position={[0.912815,0.519582]} />
+          <ProfilePoint position={[0.933912,0.576278]} />
+          <ProfilePoint position={[0.951858,0.634042]} />
+          <ProfilePoint position={[0.965207,0.693019]} />
+          <ProfilePoint position={[0.973061,0.752991]} />
+          <ProfilePoint position={[0.976743,0.813365]} />
+          <ProfilePoint position={[0.977652,0.873849]} />
+          <ProfilePoint position={[0.975038,0.934277]} />
+          <ProfilePoint position={[0.968262,0.994378]} />
+          <ProfilePoint position={[0.958589,1.054095]} />
+          <ProfilePoint position={[0.949332,1.113875]} />
+          <ProfilePoint position={[0.941903,1.173913]} />
+          <ProfilePoint position={[0.933373,1.233794]} />
+          <ProfilePoint position={[0.920540,1.292898]} />
+          <ProfilePoint position={[0.903402,1.350906]} />
+          <ProfilePoint position={[0.882835,1.407783]} />
+          <ProfilePoint position={[0.857006,1.462459]} />
+          <ProfilePoint position={[0.824909,1.513693]} />
+          <ProfilePoint position={[0.786857,1.560668]} />
+          <ProfilePoint position={[0.742969,1.602232]} />
+          <ProfilePoint position={[0.693893,1.637554]} />
+          <ProfilePoint position={[0.641502,1.667741]} />
+          <ProfilePoint position={[0.584264,1.687067]} />
+          <ProfilePoint position={[0.525975,1.703123]} />
+          <ProfilePoint position={[0.466392,1.713561]} />
+          <ProfilePoint position={[0.406404,1.721341]} />
+          <ProfilePoint position={[0.346085,1.725806]} />
+          <ProfilePoint position={[0.285694,1.724381]} />
+          <ProfilePoint position={[0.230604,1.700813]} />
+          <ProfilePoint position={[0.194594,1.652709]} />
+          <ProfilePoint position={[0.170364,1.597290]} />
+          <ProfilePoint position={[0.146359,1.541769]} />
+          <ProfilePoint position={[0.116536,1.489247]} />
+          <ProfilePoint position={[0.067667,1.455734]} />
           <ProfilePoint position={[0.007648,1.450000]} />
         </Profile>
       </Revolve>
       <Modifiers>
         <MeshTransform translate={[0.007,0,0]} scale={[1.017,1,0.983]} />
-        <RadialWave axis="y" cycles="5" amplitude="0.008" heightRange={[1.5,1.78]} falloff="0.12" />
+        <RadialWave axis="y" cycles="5" amplitude="0.012" heightRange={[1.47,1.78]} falloff="0.10" />
         <DisplaceNoise amplitude="0.003" frequency="3.5" seed="98" />
       </Modifiers>
+      <!-- Uniform meridian control spacing reduces V stretching without changing angular seam or UV partitions. -->
       <UV mode="profileParameter" offset={[0.2,0]} />
     </GeometryAsset>
     <GeometryAsset id="s98_apple_body_geometry" source="s98_apple_profile_geometry">
       <Modifiers>
-        <Subdivision levels="1" scheme="linear" />
+        <Subdivision levels="2" scheme="catmullClark" />
         <WeightedNormals strength="1" keepSharpEdges="false" />
       </Modifiers>
     </GeometryAsset>
@@ -581,19 +580,21 @@
               id="s98_white_studio"
               asset="s98_white_environment"
               mapping="equirectangular"
-              intensity="1.0"
+              intensity="0.75"
               visible="false"
               backgroundIntensity="0"
-              diffuseIntensity="0.18"
-              specularIntensity="0.85"
+              diffuseIntensity="0.25"
+              specularIntensity="0.10"
+              rotationY="25"
             />
             <DirectionalLight
               id="s98_shadow_key"
               direction={[0.48,-0.37,-0.80]}
               color="#FFF8F0"
-              intensity="1.75"
+              intensity="0.25"
               castShadow="true"
-              shadowStrength="0.45"
+              shadowStrength="1"
+              angularDiameter="6"
             />
             <RectAreaLight
               id="s98_key_softbox"
@@ -602,7 +603,8 @@
               width="2.4"
               height="3.0"
               color="#FFF7EE"
-              intensity="0"
+              intensity="4.2"
+              castShadow="true"
             />
             <RectAreaLight
               id="s98_fill_softbox"
@@ -611,16 +613,18 @@
               width="2.8"
               height="3.5"
               color="#F4F7FF"
-              intensity="0.65"
+              intensity=".65"
+              castShadow="true"
             />
             <RectAreaLight
               id="s98_front_reflection"
-              position={[-2.2,2.2,4.1]}
-              direction={[0.4,-0.25,-0.9]}
-              width="3.5"
-              height="3.5"
-              color="#FFF8F2"
-              intensity="0"
+              position={[-2.8,2.9,-2.3]}
+              direction={[0.75,-0.50,0.65]}
+              width="1.2"
+              height="3.2"
+              color="#FFF7EE"
+              intensity=".8"
+              castShadow="true"
             />
             <Model id="s98_apple" asset="s98_apple_body" castShadow="true" receiveShadow="true" />
             <Model id="s98_calyx_model" asset="s98_calyx_recess" position={[0,1.450,0]} castShadow="true" />
@@ -644,19 +648,21 @@
               id="s98_gray_env"
               asset="s98_white_environment"
               mapping="equirectangular"
-              intensity="1.0"
+              intensity="0.75"
               visible="false"
               backgroundIntensity="0"
-              diffuseIntensity="0.18"
-              specularIntensity="0.85"
+              diffuseIntensity="0.25"
+              specularIntensity="0.10"
+              rotationY="25"
             />
             <DirectionalLight
               id="s98_gray_shadow"
               direction={[0.48,-0.37,-0.80]}
               color="#FFF8F0"
-              intensity="1.75"
+              intensity="0.25"
               castShadow="true"
-              shadowStrength="0.45"
+              shadowStrength="1"
+              angularDiameter="6"
             />
             <RectAreaLight
               id="s98_gray_key"
@@ -665,7 +671,8 @@
               width="2.4"
               height="3.0"
               color="#FFF7EE"
-              intensity="0"
+              intensity="4.2"
+              castShadow="true"
             />
             <RectAreaLight
               id="s98_gray_fill"
@@ -674,16 +681,18 @@
               width="2.8"
               height="3.5"
               color="#F4F7FF"
-              intensity="0.65"
+              intensity=".65"
+              castShadow="true"
             />
             <RectAreaLight
               id="s98_gray_front_reflection"
-              position={[-2.2,2.2,4.1]}
-              direction={[0.4,-0.25,-0.9]}
-              width="3.5"
-              height="3.5"
-              color="#FFF8F2"
-              intensity="0"
+              position={[-2.8,2.9,-2.3]}
+              direction={[0.75,-0.50,0.65]}
+              width="1.2"
+              height="3.2"
+              color="#FFF7EE"
+              intensity=".8"
+              castShadow="true"
             />
             <Model id="s98_gray_apple" asset="s98_gray_body" castShadow="true" receiveShadow="true" />
             <Model id="s98_gray_calyx_model" asset="s98_gray_calyx" position={[0,1.450,0]} castShadow="true" />
@@ -713,19 +722,21 @@
               id="s98_white_env"
               asset="s98_white_environment"
               mapping="equirectangular"
-              intensity="1.0"
+              intensity="0.75"
               visible="false"
               backgroundIntensity="0"
-              diffuseIntensity="0.18"
-              specularIntensity="0.85"
+              diffuseIntensity="0.25"
+              specularIntensity="0.10"
+              rotationY="25"
             />
             <DirectionalLight
               id="s98_white_shadow"
               direction={[0.48,-0.37,-0.80]}
               color="#FFF8F0"
-              intensity="1.75"
+              intensity="0.25"
               castShadow="true"
-              shadowStrength="0.45"
+              shadowStrength="1"
+              angularDiameter="6"
             />
             <RectAreaLight
               id="s98_white_key"
@@ -734,7 +745,8 @@
               width="2.4"
               height="3.0"
               color="#FFF7EE"
-              intensity="0"
+              intensity="4.2"
+              castShadow="true"
             />
             <RectAreaLight
               id="s98_white_fill"
@@ -743,16 +755,18 @@
               width="2.8"
               height="3.5"
               color="#F4F7FF"
-              intensity="0.65"
+              intensity=".65"
+              castShadow="true"
             />
             <RectAreaLight
               id="s98_white_front_reflection"
-              position={[-2.2,2.2,4.1]}
-              direction={[0.4,-0.25,-0.9]}
-              width="3.5"
-              height="3.5"
-              color="#FFF8F2"
-              intensity="0"
+              position={[-2.8,2.9,-2.3]}
+              direction={[0.75,-0.50,0.65]}
+              width="1.2"
+              height="3.2"
+              color="#FFF7EE"
+              intensity=".8"
+              castShadow="true"
             />
             <Model id="s98_white_apple" asset="s98_white_body" castShadow="true" receiveShadow="true" />
             <Model id="s98_white_calyx_model" asset="s98_white_calyx" position={[0,1.450,0]} castShadow="true" />
@@ -785,19 +799,21 @@
               id="s98_action_env"
               asset="s98_white_environment"
               mapping="equirectangular"
-              intensity="1.0"
+              intensity="0.75"
               visible="false"
               backgroundIntensity="0"
-              diffuseIntensity="0.18"
-              specularIntensity="0.85"
+              diffuseIntensity="0.25"
+              specularIntensity="0.10"
+              rotationY="25"
             />
             <DirectionalLight
               id="s98_action_shadow"
               direction={[0.48,-0.37,-0.80]}
               color="#FFF8F0"
-              intensity="1.75"
+              intensity="0.25"
               castShadow="true"
-              shadowStrength="0.45"
+              shadowStrength="1"
+              angularDiameter="6"
             />
             <RectAreaLight
               id="s98_action_key"
@@ -806,7 +822,8 @@
               width="2.4"
               height="3.0"
               color="#FFF7EE"
-              intensity="0"
+              intensity="4.2"
+              castShadow="true"
             />
             <RectAreaLight
               id="s98_action_fill"
@@ -815,16 +832,18 @@
               width="2.8"
               height="3.5"
               color="#F4F7FF"
-              intensity="0.65"
+              intensity=".65"
+              castShadow="true"
             />
             <RectAreaLight
               id="s98_action_front_reflection"
-              position={[-2.2,2.2,4.1]}
-              direction={[0.4,-0.25,-0.9]}
-              width="3.5"
-              height="3.5"
-              color="#FFF8F2"
-              intensity="0"
+              position={[-2.8,2.9,-2.3]}
+              direction={[0.75,-0.50,0.65]}
+              width="1.2"
+              height="3.2"
+              color="#FFF7EE"
+              intensity=".8"
+              castShadow="true"
             />
             <Model
               id="s98_action_apple"
@@ -1116,19 +1135,21 @@
               id="s98_roll_environment"
               asset="s98_white_environment"
               mapping="equirectangular"
-              intensity="1.0"
+              intensity="0.75"
               visible="false"
               backgroundIntensity="0"
-              diffuseIntensity="0.18"
-              specularIntensity="0.85"
+              diffuseIntensity="0.25"
+              specularIntensity="0.10"
+              rotationY="25"
             />
             <DirectionalLight
               id="s98_roll_key"
               direction={[0.48,-0.37,-0.80]}
               color="#FFF8F0"
-              intensity="1.75"
+              intensity="0.25"
               castShadow="true"
-              shadowStrength="0.45"
+              shadowStrength="1"
+              angularDiameter="6"
             />
             <RectAreaLight
               id="s98_roll_fill"
@@ -1137,7 +1158,28 @@
               width="2.8"
               height="3.5"
               color="#F4F7FF"
-              intensity="0.65"
+              intensity=".65"
+              castShadow="true"
+            />
+            <RectAreaLight
+              id="s98_roll_softbox"
+              position={[curve("0.00000:-2.600000:linear, 0.04167:-2.600000:linear, 0.08333:-2.600000:linear, 0.12500:-2.600000:linear, 0.16667:-2.600000:linear, 0.20833:-2.600000:linear, 0.25000:-2.600000:linear, 0.29167:-2.600000:linear, 0.33333:-2.600000:linear, 0.37500:-2.600000:linear, 0.41667:-2.600000:linear, 0.45833:-2.600000:linear, 0.50000:-2.600000:linear, 0.54167:-2.600000:linear, 0.58333:-2.600000:linear, 0.62500:-2.600000:linear, 0.66667:-2.600000:linear, 0.70833:-2.600000:linear, 0.75000:-2.600000:linear, 0.79167:-2.600000:linear, 0.83333:-2.600000:linear, 0.87500:-2.600000:linear, 0.91667:-2.600000:linear, 0.95833:-2.600000:linear, 1.00000:-2.600000:linear, 1.04167:-2.600000:linear, 1.08333:-2.600000:linear, 1.12500:-2.600000:linear, 1.16667:-2.600000:linear, 1.20833:-2.600000:linear, 1.25000:-2.600000:linear, 1.29167:-2.600000:linear, 1.33333:-2.600000:linear, 1.37500:-2.600000:linear, 1.41667:-2.600000:linear, 1.45833:-2.600000:linear, 1.50000:-2.600000:linear, 1.54167:-2.600000:linear, 1.58333:-2.600000:linear, 1.62500:-2.600000:linear, 1.66667:-2.600000:linear, 1.70833:-2.600000:linear, 1.75000:-2.600000:linear, 1.79167:-2.600000:linear, 1.83333:-2.600000:linear, 1.87500:-2.600000:linear, 1.91667:-2.600000:linear, 1.95833:-2.600000:linear, 2.00000:-2.600000:linear, 2.04167:-2.600000:linear, 2.08333:-2.600000:linear, 2.12500:-2.600000:linear, 2.16667:-2.600000:linear, 2.20833:-2.600000:linear, 2.25000:-2.600000:linear, 2.29167:-2.600000:linear, 2.33333:-2.600000:linear, 2.37500:-2.600000:linear, 2.41667:-2.600000:linear, 2.45833:-2.600000:linear, 2.50000:-2.600000:linear, 2.54167:-2.600000:linear, 2.58333:-2.600000:linear, 2.62500:-2.600000:linear, 2.66667:-2.600000:linear, 2.70833:-2.600000:linear, 2.75000:-2.600000:linear, 2.79167:-2.600000:linear, 2.83333:-2.600000:linear, 2.87500:-2.600000:linear, 2.91667:-2.600000:linear, 2.95833:-2.600000:linear, 3.00000:-2.600000:linear, 3.04167:-2.600000:linear, 3.08333:-2.600000:linear, 3.12500:-2.600000:linear, 3.16667:-2.600000:linear, 3.20833:-2.600000:linear, 3.25000:-2.600000:linear, 3.29167:-2.600000:linear, 3.33333:-2.600000:linear, 3.37500:-2.600000:linear, 3.41667:-2.600000:linear, 3.45833:-2.600000:linear, 3.50000:-2.600000:linear, 3.54167:-2.600000:linear, 3.58333:-2.600000:linear, 3.62500:-2.600000:linear, 3.66667:-2.600000:linear, 3.70833:-2.600000:linear, 3.75000:-2.600000:linear, 3.79167:-2.600000:linear, 3.83333:-2.600000:linear, 3.87500:-2.600000:linear, 3.91667:-2.600000:linear, 3.95833:-2.600000:linear, 4.00000:-2.600000:linear, 4.04167:-2.600000:linear, 4.08333:-2.600000:linear, 4.12500:-2.600000:linear, 4.16667:-2.600000:linear, 4.20833:-2.600000:linear, 4.25000:-2.600000:linear, 4.29167:-2.600000:linear, 4.33333:-2.600000:linear, 4.37500:-2.600000:linear, 4.41667:-2.600000:linear, 4.45833:-2.600000:linear, 4.50000:-2.600000:linear, 4.54167:-2.600000:linear, 4.58333:-2.600000:linear, 4.62500:-2.600000:linear, 4.66667:-2.600000:linear, 4.70833:-2.600000:linear, 4.75000:-2.600000:linear, 4.79167:-2.600000:linear, 4.83333:-2.600000:linear, 4.87500:-2.600000:linear, 4.91667:-2.600000:linear, 4.95833:-2.600000:linear, 5.00000:-2.600000:linear, 5.04167:-2.600000:linear, 5.08333:-2.600000:linear, 5.12500:-2.600000:linear, 5.16667:-2.600000:linear, 5.20833:-2.600000:linear, 5.25000:-2.600000:linear, 5.29167:-2.600000:linear, 5.33333:-2.600000:linear, 5.37500:-2.600000:linear, 5.41667:-2.600000:linear, 5.45833:-2.600000:linear, 5.50000:-2.600000:linear, 5.54167:-2.600000:linear, 5.58333:-2.600000:linear, 5.62500:-2.600000:linear, 5.66667:-2.600000:linear, 5.70833:-2.600000:linear, 5.75000:-2.600000:linear, 5.79167:-2.600000:linear, 5.83333:-2.600000:linear, 5.87500:-2.600000:linear, 5.91667:-2.600000:linear, 5.95833:-2.600000:linear, 6.00000:-2.600000:linear, 6.04167:-2.600000:linear, 6.08333:-2.600000:linear, 6.12500:-2.600000:linear, 6.16667:-2.600000:linear, 6.20833:-2.600000:linear, 6.25000:-2.600000:linear, 6.29167:-2.600000:linear, 6.33333:-2.600000:linear, 6.37500:-2.600000:linear, 6.41667:-2.600000:linear, 6.45833:-2.600000:linear, 6.50000:-2.600000:linear, 6.54167:-2.600000:linear, 6.58333:-2.600000:linear, 6.62500:-2.600000:linear, 6.66667:-2.600000:linear, 6.70833:-2.600000:linear, 6.75000:-2.600000:linear, 6.79167:-2.600000:linear, 6.83333:-2.600000:linear, 6.87500:-2.600000:linear, 6.91667:-2.600000:linear, 6.95833:-2.600000:linear, 7.00000:-2.600000:linear, 7.04167:-2.600000:linear, 7.08333:-2.600000:linear, 7.12500:-2.600000:linear, 7.16667:-2.600000:linear, 7.20833:-2.600000:linear, 7.25000:-2.600000:linear, 7.29167:-2.600000:linear, 7.33333:-2.600000:linear, 7.37500:-2.600000:linear, 7.41667:-2.600000:linear, 7.45833:-2.600000:linear, 7.50000:-2.600000:linear, 7.54167:-2.600000:linear, 7.58333:-2.600000:linear, 7.62500:-2.600000:linear, 7.66667:-2.600000:linear, 7.70833:-2.600000:linear, 7.75000:-2.600000:linear, 7.79167:-2.600000:linear, 7.83333:-2.600000:linear, 7.87500:-2.600000:linear, 7.91667:-2.600000:linear, 7.95833:-2.600000:linear, 8.00000:-2.600000:linear"),curve("0.00000:4.500000:linear, 0.04167:4.503602:linear, 0.08333:4.511894:linear, 0.12500:4.520359:linear, 0.16667:4.525388:linear, 0.20833:4.523685:linear, 0.25000:4.514310:linear, 0.29167:4.500212:linear, 0.33333:4.515499:linear, 0.37500:4.527003:linear, 0.41667:4.532704:linear, 0.45833:4.529120:linear, 0.50000:4.520063:linear, 0.54167:4.508060:linear, 0.58333:4.503826:linear, 0.62500:4.511840:linear, 0.66667:4.512899:linear, 0.70833:4.508917:linear, 0.75000:4.503429:linear, 0.79167:4.500118:linear, 0.83333:4.500548:linear, 0.87500:4.502752:linear, 0.91667:4.506724:linear, 0.95833:4.512228:linear, 1.00000:4.519051:linear, 1.04167:4.527094:linear, 1.08333:4.537541:linear, 1.12500:4.548817:linear, 1.16667:4.560422:linear, 1.20833:4.573726:linear, 1.25000:4.586967:linear, 1.29167:4.599394:linear, 1.33333:4.610815:linear, 1.37500:4.622298:linear, 1.41667:4.631844:linear, 1.45833:4.640603:linear, 1.50000:4.648133:linear, 1.54167:4.651899:linear, 1.58333:4.652973:linear, 1.62500:4.649728:linear, 1.66667:4.643041:linear, 1.70833:4.633175:linear, 1.75000:4.620671:linear, 1.79167:4.605493:linear, 1.83333:4.588139:linear, 1.87500:4.580017:linear, 1.91667:4.580711:linear, 1.95833:4.579279:linear, 2.00000:4.576448:linear, 2.04167:4.574011:linear, 2.08333:4.572038:linear, 2.12500:4.581891:linear, 2.16667:4.597987:linear, 2.20833:4.613856:linear, 2.25000:4.626512:linear, 2.29167:4.634122:linear, 2.33333:4.636573:linear, 2.37500:4.634034:linear, 2.41667:4.626397:linear, 2.45833:4.612081:linear, 2.50000:4.593170:linear, 2.54167:4.570966:linear, 2.58333:4.576238:linear, 2.62500:4.601024:linear, 2.66667:4.615145:linear, 2.70833:4.619311:linear, 2.75000:4.616200:linear, 2.79167:4.602220:linear, 2.83333:4.577574:linear, 2.87500:4.565116:linear, 2.91667:4.575356:linear, 2.95833:4.583263:linear, 3.00000:4.589542:linear, 3.04167:4.594246:linear, 3.08333:4.593269:linear, 3.12500:4.587236:linear, 3.16667:4.576464:linear, 3.20833:4.563189:linear, 3.25000:4.549068:linear, 3.29167:4.535008:linear, 3.33333:4.540240:linear, 3.37500:4.545583:linear, 3.41667:4.552435:linear, 3.45833:4.558665:linear, 3.50000:4.561983:linear, 3.54167:4.570351:linear, 3.58333:4.588910:linear, 3.62500:4.606112:linear, 3.66667:4.620805:linear, 3.70833:4.633043:linear, 3.75000:4.642523:linear, 3.79167:4.648703:linear, 3.83333:4.650165:linear, 3.87500:4.648694:linear, 3.91667:4.643539:linear, 3.95833:4.635866:linear, 4.00000:4.626978:linear, 4.04167:4.616935:linear, 4.08333:4.605515:linear, 4.12500:4.593933:linear, 4.16667:4.581221:linear, 4.20833:4.567876:linear, 4.25000:4.555494:linear, 4.29167:4.544029:linear, 4.33333:4.533058:linear, 4.37500:4.523586:linear, 4.41667:4.516128:linear, 4.45833:4.509827:linear, 4.50000:4.504908:linear, 4.54167:4.501664:linear, 4.58333:4.500137:linear, 4.62500:4.501044:linear, 4.66667:4.506261:linear, 4.70833:4.513078:linear, 4.75000:4.518364:linear, 4.79167:4.519583:linear, 4.83333:4.516421:linear, 4.87500:4.510411:linear, 4.91667:4.503084:linear, 4.95833:4.503375:linear, 5.00000:4.507507:linear, 5.04167:4.507785:linear, 5.08333:4.505993:linear, 5.12500:4.503186:linear, 5.16667:4.500283:linear, 5.20833:4.502036:linear, 5.25000:4.502982:linear, 5.29167:4.502761:linear, 5.33333:4.502209:linear, 5.37500:4.501491:linear, 5.41667:4.500773:linear, 5.45833:4.500221:linear, 5.50000:4.500000:linear, 5.54167:4.500000:linear, 5.58333:4.500000:linear, 5.62500:4.500000:linear, 5.66667:4.500000:linear, 5.70833:4.500000:linear, 5.75000:4.500000:linear, 5.79167:4.500000:linear, 5.83333:4.500000:linear, 5.87500:4.500000:linear, 5.91667:4.500000:linear, 5.95833:4.500000:linear, 6.00000:4.500000:linear, 6.04167:4.500000:linear, 6.08333:4.500000:linear, 6.12500:4.500000:linear, 6.16667:4.500000:linear, 6.20833:4.500000:linear, 6.25000:4.500000:linear, 6.29167:4.500000:linear, 6.33333:4.500000:linear, 6.37500:4.500000:linear, 6.41667:4.500000:linear, 6.45833:4.500000:linear, 6.50000:4.500000:linear, 6.54167:4.500000:linear, 6.58333:4.500000:linear, 6.62500:4.500000:linear, 6.66667:4.500000:linear, 6.70833:4.500000:linear, 6.75000:4.500000:linear, 6.79167:4.500000:linear, 6.83333:4.500000:linear, 6.87500:4.500000:linear, 6.91667:4.500000:linear, 6.95833:4.500000:linear, 7.00000:4.500000:linear, 7.04167:4.500000:linear, 7.08333:4.500000:linear, 7.12500:4.500000:linear, 7.16667:4.500000:linear, 7.20833:4.500000:linear, 7.25000:4.500000:linear, 7.29167:4.500000:linear, 7.33333:4.500000:linear, 7.37500:4.500000:linear, 7.41667:4.500000:linear, 7.45833:4.500000:linear, 7.50000:4.500000:linear, 7.54167:4.500000:linear, 7.58333:4.500000:linear, 7.62500:4.500000:linear, 7.66667:4.500000:linear, 7.70833:4.500000:linear, 7.75000:4.500000:linear, 7.79167:4.500000:linear, 7.83333:4.500000:linear, 7.87500:4.500000:linear, 7.91667:4.500000:linear, 7.95833:4.500000:linear, 8.00000:4.500000:linear"),curve("0.00000:3.500000:linear, 0.04167:3.491389:linear, 0.08333:3.471713:linear, 0.12500:3.450328:linear, 0.16667:3.436890:linear, 0.20833:3.441499:linear, 0.25000:3.465758:linear, 0.29167:3.500507:linear, 0.33333:3.537087:linear, 0.37500:3.566888:linear, 0.41667:3.580357:linear, 0.45833:3.571969:linear, 0.50000:3.548713:linear, 0.54167:3.518986:linear, 0.58333:3.490868:linear, 0.62500:3.471847:linear, 0.66667:3.469261:linear, 0.70833:3.478912:linear, 0.75000:3.491791:linear, 0.79167:3.499718:linear, 0.83333:3.501308:linear, 0.87500:3.506572:linear, 0.91667:3.515815:linear, 0.95833:3.529003:linear, 1.00000:3.546103:linear, 1.04167:3.567107:linear, 1.08333:3.592030:linear, 1.12500:3.620898:linear, 1.16667:3.653726:linear, 1.20833:3.690534:linear, 1.25000:3.731356:linear, 1.29167:3.776165:linear, 1.33333:3.824902:linear, 1.37500:3.877530:linear, 1.41667:3.933957:linear, 1.45833:3.994081:linear, 1.50000:4.057789:linear, 1.54167:4.124864:linear, 1.58333:4.195006:linear, 1.62500:4.267908:linear, 1.66667:4.343147:linear, 1.70833:4.420358:linear, 1.75000:4.499180:linear, 1.79167:4.579252:linear, 1.83333:4.660216:linear, 1.87500:4.742021:linear, 1.91667:4.825627:linear, 1.95833:4.911106:linear, 2.00000:4.998113:linear, 2.04167:5.086473:linear, 2.08333:5.176190:linear, 2.12500:5.267535:linear, 2.16667:5.361655:linear, 2.20833:5.458555:linear, 2.25000:5.558029:linear, 2.29167:5.659613:linear, 2.33333:5.762733:linear, 2.37500:5.866797:linear, 2.41667:5.971132:linear, 2.45833:6.074998:linear, 2.50000:6.177760:linear, 2.54167:6.278901:linear, 2.58333:6.378841:linear, 2.62500:6.481388:linear, 2.66667:6.586124:linear, 2.70833:6.691848:linear, 2.75000:6.797644:linear, 2.79167:6.902436:linear, 2.83333:7.005013:linear, 2.87500:7.104747:linear, 2.91667:7.204512:linear, 2.95833:7.304652:linear, 3.00000:7.404937:linear, 3.04167:7.505065:linear, 3.08333:7.604571:linear, 3.12500:7.702833:linear, 3.16667:7.799295:linear, 3.20833:7.893470:linear, 3.25000:7.985119:linear, 3.29167:8.074128:linear, 3.33333:8.161433:linear, 3.37500:8.247796:linear, 3.41667:8.333240:linear, 3.45833:8.417629:linear, 3.50000:8.500619:linear, 3.54167:8.582136:linear, 3.58333:8.662941:linear, 3.62500:8.743128:linear, 3.66667:8.822354:linear, 3.70833:8.900247:linear, 3.75000:8.976444:linear, 3.79167:9.050568:linear, 3.83333:9.122225:linear, 3.87500:9.191015:linear, 3.91667:9.256649:linear, 3.95833:9.318833:linear, 4.00000:9.377410:linear, 4.04167:9.432279:linear, 4.08333:9.483304:linear, 4.12500:9.530448:linear, 4.16667:9.573644:linear, 4.20833:9.612840:linear, 4.25000:9.648037:linear, 4.29167:9.679272:linear, 4.33333:9.706559:linear, 4.37500:9.729904:linear, 4.41667:9.749347:linear, 4.45833:9.764883:linear, 4.50000:9.776493:linear, 4.54167:9.784151:linear, 4.58333:9.787811:linear, 4.62500:9.790633:linear, 4.66667:9.802882:linear, 4.70833:9.819208:linear, 4.75000:9.832486:linear, 4.79167:9.835604:linear, 4.83333:9.827526:linear, 4.87500:9.812722:linear, 4.91667:9.795505:linear, 4.95833:9.780055:linear, 5.00000:9.770407:linear, 5.04167:9.769746:linear, 5.08333:9.773970:linear, 5.12500:9.780503:linear, 5.16667:9.787461:linear, 5.20833:9.793002:linear, 5.25000:9.795263:linear, 5.29167:9.794735:linear, 5.33333:9.793416:linear, 5.37500:9.791701:linear, 5.41667:9.789986:linear, 5.45833:9.788667:linear, 5.50000:9.788139:linear, 5.54167:9.788139:linear, 5.58333:9.788139:linear, 5.62500:9.788139:linear, 5.66667:9.788139:linear, 5.70833:9.788139:linear, 5.75000:9.788139:linear, 5.79167:9.788139:linear, 5.83333:9.788139:linear, 5.87500:9.788139:linear, 5.91667:9.788139:linear, 5.95833:9.788139:linear, 6.00000:9.788139:linear, 6.04167:9.788139:linear, 6.08333:9.788139:linear, 6.12500:9.788139:linear, 6.16667:9.788139:linear, 6.20833:9.788139:linear, 6.25000:9.788139:linear, 6.29167:9.788139:linear, 6.33333:9.788139:linear, 6.37500:9.788139:linear, 6.41667:9.788139:linear, 6.45833:9.788139:linear, 6.50000:9.788139:linear, 6.54167:9.788139:linear, 6.58333:9.788139:linear, 6.62500:9.788139:linear, 6.66667:9.788139:linear, 6.70833:9.788139:linear, 6.75000:9.788139:linear, 6.79167:9.788139:linear, 6.83333:9.788139:linear, 6.87500:9.788139:linear, 6.91667:9.788139:linear, 6.95833:9.788139:linear, 7.00000:9.788139:linear, 7.04167:9.788139:linear, 7.08333:9.788139:linear, 7.12500:9.788139:linear, 7.16667:9.788139:linear, 7.20833:9.788139:linear, 7.25000:9.788139:linear, 7.29167:9.788139:linear, 7.33333:9.788139:linear, 7.37500:9.788139:linear, 7.41667:9.788139:linear, 7.45833:9.788139:linear, 7.50000:9.788139:linear, 7.54167:9.788139:linear, 7.58333:9.788139:linear, 7.62500:9.788139:linear, 7.66667:9.788139:linear, 7.70833:9.788139:linear, 7.75000:9.788139:linear, 7.79167:9.788139:linear, 7.83333:9.788139:linear, 7.87500:9.788139:linear, 7.91667:9.788139:linear, 7.95833:9.788139:linear, 8.00000:9.788139:linear")]}
+              direction={[0.50,-0.70,-0.52]}
+              width="2.4"
+              height="3.0"
+              color="#FFF7EE"
+              intensity="4.2"
+              castShadow="true"
+            />
+            <RectAreaLight
+              id="s98_roll_rim"
+              position={[curve("0.00000:-2.800000:linear, 0.04167:-2.800000:linear, 0.08333:-2.800000:linear, 0.12500:-2.800000:linear, 0.16667:-2.800000:linear, 0.20833:-2.800000:linear, 0.25000:-2.800000:linear, 0.29167:-2.800000:linear, 0.33333:-2.800000:linear, 0.37500:-2.800000:linear, 0.41667:-2.800000:linear, 0.45833:-2.800000:linear, 0.50000:-2.800000:linear, 0.54167:-2.800000:linear, 0.58333:-2.800000:linear, 0.62500:-2.800000:linear, 0.66667:-2.800000:linear, 0.70833:-2.800000:linear, 0.75000:-2.800000:linear, 0.79167:-2.800000:linear, 0.83333:-2.800000:linear, 0.87500:-2.800000:linear, 0.91667:-2.800000:linear, 0.95833:-2.800000:linear, 1.00000:-2.800000:linear, 1.04167:-2.800000:linear, 1.08333:-2.800000:linear, 1.12500:-2.800000:linear, 1.16667:-2.800000:linear, 1.20833:-2.800000:linear, 1.25000:-2.800000:linear, 1.29167:-2.800000:linear, 1.33333:-2.800000:linear, 1.37500:-2.800000:linear, 1.41667:-2.800000:linear, 1.45833:-2.800000:linear, 1.50000:-2.800000:linear, 1.54167:-2.800000:linear, 1.58333:-2.800000:linear, 1.62500:-2.800000:linear, 1.66667:-2.800000:linear, 1.70833:-2.800000:linear, 1.75000:-2.800000:linear, 1.79167:-2.800000:linear, 1.83333:-2.800000:linear, 1.87500:-2.800000:linear, 1.91667:-2.800000:linear, 1.95833:-2.800000:linear, 2.00000:-2.800000:linear, 2.04167:-2.800000:linear, 2.08333:-2.800000:linear, 2.12500:-2.800000:linear, 2.16667:-2.800000:linear, 2.20833:-2.800000:linear, 2.25000:-2.800000:linear, 2.29167:-2.800000:linear, 2.33333:-2.800000:linear, 2.37500:-2.800000:linear, 2.41667:-2.800000:linear, 2.45833:-2.800000:linear, 2.50000:-2.800000:linear, 2.54167:-2.800000:linear, 2.58333:-2.800000:linear, 2.62500:-2.800000:linear, 2.66667:-2.800000:linear, 2.70833:-2.800000:linear, 2.75000:-2.800000:linear, 2.79167:-2.800000:linear, 2.83333:-2.800000:linear, 2.87500:-2.800000:linear, 2.91667:-2.800000:linear, 2.95833:-2.800000:linear, 3.00000:-2.800000:linear, 3.04167:-2.800000:linear, 3.08333:-2.800000:linear, 3.12500:-2.800000:linear, 3.16667:-2.800000:linear, 3.20833:-2.800000:linear, 3.25000:-2.800000:linear, 3.29167:-2.800000:linear, 3.33333:-2.800000:linear, 3.37500:-2.800000:linear, 3.41667:-2.800000:linear, 3.45833:-2.800000:linear, 3.50000:-2.800000:linear, 3.54167:-2.800000:linear, 3.58333:-2.800000:linear, 3.62500:-2.800000:linear, 3.66667:-2.800000:linear, 3.70833:-2.800000:linear, 3.75000:-2.800000:linear, 3.79167:-2.800000:linear, 3.83333:-2.800000:linear, 3.87500:-2.800000:linear, 3.91667:-2.800000:linear, 3.95833:-2.800000:linear, 4.00000:-2.800000:linear, 4.04167:-2.800000:linear, 4.08333:-2.800000:linear, 4.12500:-2.800000:linear, 4.16667:-2.800000:linear, 4.20833:-2.800000:linear, 4.25000:-2.800000:linear, 4.29167:-2.800000:linear, 4.33333:-2.800000:linear, 4.37500:-2.800000:linear, 4.41667:-2.800000:linear, 4.45833:-2.800000:linear, 4.50000:-2.800000:linear, 4.54167:-2.800000:linear, 4.58333:-2.800000:linear, 4.62500:-2.800000:linear, 4.66667:-2.800000:linear, 4.70833:-2.800000:linear, 4.75000:-2.800000:linear, 4.79167:-2.800000:linear, 4.83333:-2.800000:linear, 4.87500:-2.800000:linear, 4.91667:-2.800000:linear, 4.95833:-2.800000:linear, 5.00000:-2.800000:linear, 5.04167:-2.800000:linear, 5.08333:-2.800000:linear, 5.12500:-2.800000:linear, 5.16667:-2.800000:linear, 5.20833:-2.800000:linear, 5.25000:-2.800000:linear, 5.29167:-2.800000:linear, 5.33333:-2.800000:linear, 5.37500:-2.800000:linear, 5.41667:-2.800000:linear, 5.45833:-2.800000:linear, 5.50000:-2.800000:linear, 5.54167:-2.800000:linear, 5.58333:-2.800000:linear, 5.62500:-2.800000:linear, 5.66667:-2.800000:linear, 5.70833:-2.800000:linear, 5.75000:-2.800000:linear, 5.79167:-2.800000:linear, 5.83333:-2.800000:linear, 5.87500:-2.800000:linear, 5.91667:-2.800000:linear, 5.95833:-2.800000:linear, 6.00000:-2.800000:linear, 6.04167:-2.800000:linear, 6.08333:-2.800000:linear, 6.12500:-2.800000:linear, 6.16667:-2.800000:linear, 6.20833:-2.800000:linear, 6.25000:-2.800000:linear, 6.29167:-2.800000:linear, 6.33333:-2.800000:linear, 6.37500:-2.800000:linear, 6.41667:-2.800000:linear, 6.45833:-2.800000:linear, 6.50000:-2.800000:linear, 6.54167:-2.800000:linear, 6.58333:-2.800000:linear, 6.62500:-2.800000:linear, 6.66667:-2.800000:linear, 6.70833:-2.800000:linear, 6.75000:-2.800000:linear, 6.79167:-2.800000:linear, 6.83333:-2.800000:linear, 6.87500:-2.800000:linear, 6.91667:-2.800000:linear, 6.95833:-2.800000:linear, 7.00000:-2.800000:linear, 7.04167:-2.800000:linear, 7.08333:-2.800000:linear, 7.12500:-2.800000:linear, 7.16667:-2.800000:linear, 7.20833:-2.800000:linear, 7.25000:-2.800000:linear, 7.29167:-2.800000:linear, 7.33333:-2.800000:linear, 7.37500:-2.800000:linear, 7.41667:-2.800000:linear, 7.45833:-2.800000:linear, 7.50000:-2.800000:linear, 7.54167:-2.800000:linear, 7.58333:-2.800000:linear, 7.62500:-2.800000:linear, 7.66667:-2.800000:linear, 7.70833:-2.800000:linear, 7.75000:-2.800000:linear, 7.79167:-2.800000:linear, 7.83333:-2.800000:linear, 7.87500:-2.800000:linear, 7.91667:-2.800000:linear, 7.95833:-2.800000:linear, 8.00000:-2.800000:linear"),curve("0.00000:2.900000:linear, 0.04167:2.903602:linear, 0.08333:2.911894:linear, 0.12500:2.920359:linear, 0.16667:2.925388:linear, 0.20833:2.923685:linear, 0.25000:2.914310:linear, 0.29167:2.900212:linear, 0.33333:2.915499:linear, 0.37500:2.927003:linear, 0.41667:2.932704:linear, 0.45833:2.929120:linear, 0.50000:2.920063:linear, 0.54167:2.908060:linear, 0.58333:2.903826:linear, 0.62500:2.911840:linear, 0.66667:2.912899:linear, 0.70833:2.908917:linear, 0.75000:2.903429:linear, 0.79167:2.900118:linear, 0.83333:2.900548:linear, 0.87500:2.902752:linear, 0.91667:2.906724:linear, 0.95833:2.912228:linear, 1.00000:2.919051:linear, 1.04167:2.927094:linear, 1.08333:2.937541:linear, 1.12500:2.948817:linear, 1.16667:2.960422:linear, 1.20833:2.973726:linear, 1.25000:2.986967:linear, 1.29167:2.999394:linear, 1.33333:3.010815:linear, 1.37500:3.022298:linear, 1.41667:3.031844:linear, 1.45833:3.040603:linear, 1.50000:3.048133:linear, 1.54167:3.051899:linear, 1.58333:3.052973:linear, 1.62500:3.049728:linear, 1.66667:3.043041:linear, 1.70833:3.033175:linear, 1.75000:3.020671:linear, 1.79167:3.005493:linear, 1.83333:2.988139:linear, 1.87500:2.980017:linear, 1.91667:2.980711:linear, 1.95833:2.979279:linear, 2.00000:2.976448:linear, 2.04167:2.974011:linear, 2.08333:2.972038:linear, 2.12500:2.981891:linear, 2.16667:2.997987:linear, 2.20833:3.013856:linear, 2.25000:3.026512:linear, 2.29167:3.034122:linear, 2.33333:3.036573:linear, 2.37500:3.034034:linear, 2.41667:3.026397:linear, 2.45833:3.012081:linear, 2.50000:2.993170:linear, 2.54167:2.970966:linear, 2.58333:2.976238:linear, 2.62500:3.001024:linear, 2.66667:3.015145:linear, 2.70833:3.019311:linear, 2.75000:3.016200:linear, 2.79167:3.002220:linear, 2.83333:2.977574:linear, 2.87500:2.965116:linear, 2.91667:2.975356:linear, 2.95833:2.983263:linear, 3.00000:2.989542:linear, 3.04167:2.994246:linear, 3.08333:2.993269:linear, 3.12500:2.987236:linear, 3.16667:2.976464:linear, 3.20833:2.963189:linear, 3.25000:2.949068:linear, 3.29167:2.935008:linear, 3.33333:2.940240:linear, 3.37500:2.945583:linear, 3.41667:2.952435:linear, 3.45833:2.958665:linear, 3.50000:2.961983:linear, 3.54167:2.970351:linear, 3.58333:2.988910:linear, 3.62500:3.006112:linear, 3.66667:3.020805:linear, 3.70833:3.033043:linear, 3.75000:3.042523:linear, 3.79167:3.048703:linear, 3.83333:3.050165:linear, 3.87500:3.048694:linear, 3.91667:3.043539:linear, 3.95833:3.035866:linear, 4.00000:3.026978:linear, 4.04167:3.016935:linear, 4.08333:3.005515:linear, 4.12500:2.993933:linear, 4.16667:2.981221:linear, 4.20833:2.967876:linear, 4.25000:2.955494:linear, 4.29167:2.944029:linear, 4.33333:2.933058:linear, 4.37500:2.923586:linear, 4.41667:2.916128:linear, 4.45833:2.909827:linear, 4.50000:2.904908:linear, 4.54167:2.901664:linear, 4.58333:2.900137:linear, 4.62500:2.901044:linear, 4.66667:2.906261:linear, 4.70833:2.913078:linear, 4.75000:2.918364:linear, 4.79167:2.919583:linear, 4.83333:2.916421:linear, 4.87500:2.910411:linear, 4.91667:2.903084:linear, 4.95833:2.903375:linear, 5.00000:2.907507:linear, 5.04167:2.907785:linear, 5.08333:2.905993:linear, 5.12500:2.903186:linear, 5.16667:2.900283:linear, 5.20833:2.902036:linear, 5.25000:2.902982:linear, 5.29167:2.902761:linear, 5.33333:2.902209:linear, 5.37500:2.901491:linear, 5.41667:2.900773:linear, 5.45833:2.900221:linear, 5.50000:2.900000:linear, 5.54167:2.900000:linear, 5.58333:2.900000:linear, 5.62500:2.900000:linear, 5.66667:2.900000:linear, 5.70833:2.900000:linear, 5.75000:2.900000:linear, 5.79167:2.900000:linear, 5.83333:2.900000:linear, 5.87500:2.900000:linear, 5.91667:2.900000:linear, 5.95833:2.900000:linear, 6.00000:2.900000:linear, 6.04167:2.900000:linear, 6.08333:2.900000:linear, 6.12500:2.900000:linear, 6.16667:2.900000:linear, 6.20833:2.900000:linear, 6.25000:2.900000:linear, 6.29167:2.900000:linear, 6.33333:2.900000:linear, 6.37500:2.900000:linear, 6.41667:2.900000:linear, 6.45833:2.900000:linear, 6.50000:2.900000:linear, 6.54167:2.900000:linear, 6.58333:2.900000:linear, 6.62500:2.900000:linear, 6.66667:2.900000:linear, 6.70833:2.900000:linear, 6.75000:2.900000:linear, 6.79167:2.900000:linear, 6.83333:2.900000:linear, 6.87500:2.900000:linear, 6.91667:2.900000:linear, 6.95833:2.900000:linear, 7.00000:2.900000:linear, 7.04167:2.900000:linear, 7.08333:2.900000:linear, 7.12500:2.900000:linear, 7.16667:2.900000:linear, 7.20833:2.900000:linear, 7.25000:2.900000:linear, 7.29167:2.900000:linear, 7.33333:2.900000:linear, 7.37500:2.900000:linear, 7.41667:2.900000:linear, 7.45833:2.900000:linear, 7.50000:2.900000:linear, 7.54167:2.900000:linear, 7.58333:2.900000:linear, 7.62500:2.900000:linear, 7.66667:2.900000:linear, 7.70833:2.900000:linear, 7.75000:2.900000:linear, 7.79167:2.900000:linear, 7.83333:2.900000:linear, 7.87500:2.900000:linear, 7.91667:2.900000:linear, 7.95833:2.900000:linear, 8.00000:2.900000:linear"),curve("0.00000:-2.300000:linear, 0.04167:-2.308611:linear, 0.08333:-2.328287:linear, 0.12500:-2.349672:linear, 0.16667:-2.363110:linear, 0.20833:-2.358501:linear, 0.25000:-2.334242:linear, 0.29167:-2.299493:linear, 0.33333:-2.262913:linear, 0.37500:-2.233112:linear, 0.41667:-2.219643:linear, 0.45833:-2.228031:linear, 0.50000:-2.251287:linear, 0.54167:-2.281014:linear, 0.58333:-2.309132:linear, 0.62500:-2.328153:linear, 0.66667:-2.330739:linear, 0.70833:-2.321088:linear, 0.75000:-2.308209:linear, 0.79167:-2.300282:linear, 0.83333:-2.298692:linear, 0.87500:-2.293428:linear, 0.91667:-2.284185:linear, 0.95833:-2.270997:linear, 1.00000:-2.253897:linear, 1.04167:-2.232893:linear, 1.08333:-2.207970:linear, 1.12500:-2.179102:linear, 1.16667:-2.146274:linear, 1.20833:-2.109466:linear, 1.25000:-2.068644:linear, 1.29167:-2.023835:linear, 1.33333:-1.975098:linear, 1.37500:-1.922470:linear, 1.41667:-1.866043:linear, 1.45833:-1.805919:linear, 1.50000:-1.742211:linear, 1.54167:-1.675136:linear, 1.58333:-1.604994:linear, 1.62500:-1.532092:linear, 1.66667:-1.456853:linear, 1.70833:-1.379642:linear, 1.75000:-1.300820:linear, 1.79167:-1.220748:linear, 1.83333:-1.139784:linear, 1.87500:-1.057979:linear, 1.91667:-0.974373:linear, 1.95833:-0.888894:linear, 2.00000:-0.801887:linear, 2.04167:-0.713527:linear, 2.08333:-0.623810:linear, 2.12500:-0.532465:linear, 2.16667:-0.438345:linear, 2.20833:-0.341445:linear, 2.25000:-0.241971:linear, 2.29167:-0.140387:linear, 2.33333:-0.037267:linear, 2.37500:0.066797:linear, 2.41667:0.171132:linear, 2.45833:0.274998:linear, 2.50000:0.377760:linear, 2.54167:0.478901:linear, 2.58333:0.578841:linear, 2.62500:0.681388:linear, 2.66667:0.786124:linear, 2.70833:0.891848:linear, 2.75000:0.997644:linear, 2.79167:1.102436:linear, 2.83333:1.205013:linear, 2.87500:1.304747:linear, 2.91667:1.404512:linear, 2.95833:1.504652:linear, 3.00000:1.604937:linear, 3.04167:1.705065:linear, 3.08333:1.804571:linear, 3.12500:1.902833:linear, 3.16667:1.999295:linear, 3.20833:2.093470:linear, 3.25000:2.185119:linear, 3.29167:2.274128:linear, 3.33333:2.361433:linear, 3.37500:2.447796:linear, 3.41667:2.533240:linear, 3.45833:2.617629:linear, 3.50000:2.700619:linear, 3.54167:2.782136:linear, 3.58333:2.862941:linear, 3.62500:2.943128:linear, 3.66667:3.022354:linear, 3.70833:3.100247:linear, 3.75000:3.176444:linear, 3.79167:3.250568:linear, 3.83333:3.322225:linear, 3.87500:3.391015:linear, 3.91667:3.456649:linear, 3.95833:3.518833:linear, 4.00000:3.577410:linear, 4.04167:3.632279:linear, 4.08333:3.683304:linear, 4.12500:3.730448:linear, 4.16667:3.773644:linear, 4.20833:3.812840:linear, 4.25000:3.848037:linear, 4.29167:3.879272:linear, 4.33333:3.906559:linear, 4.37500:3.929904:linear, 4.41667:3.949347:linear, 4.45833:3.964883:linear, 4.50000:3.976493:linear, 4.54167:3.984151:linear, 4.58333:3.987811:linear, 4.62500:3.990633:linear, 4.66667:4.002882:linear, 4.70833:4.019208:linear, 4.75000:4.032486:linear, 4.79167:4.035604:linear, 4.83333:4.027526:linear, 4.87500:4.012722:linear, 4.91667:3.995505:linear, 4.95833:3.980055:linear, 5.00000:3.970407:linear, 5.04167:3.969746:linear, 5.08333:3.973970:linear, 5.12500:3.980503:linear, 5.16667:3.987461:linear, 5.20833:3.993002:linear, 5.25000:3.995263:linear, 5.29167:3.994735:linear, 5.33333:3.993416:linear, 5.37500:3.991701:linear, 5.41667:3.989986:linear, 5.45833:3.988667:linear, 5.50000:3.988139:linear, 5.54167:3.988139:linear, 5.58333:3.988139:linear, 5.62500:3.988139:linear, 5.66667:3.988139:linear, 5.70833:3.988139:linear, 5.75000:3.988139:linear, 5.79167:3.988139:linear, 5.83333:3.988139:linear, 5.87500:3.988139:linear, 5.91667:3.988139:linear, 5.95833:3.988139:linear, 6.00000:3.988139:linear, 6.04167:3.988139:linear, 6.08333:3.988139:linear, 6.12500:3.988139:linear, 6.16667:3.988139:linear, 6.20833:3.988139:linear, 6.25000:3.988139:linear, 6.29167:3.988139:linear, 6.33333:3.988139:linear, 6.37500:3.988139:linear, 6.41667:3.988139:linear, 6.45833:3.988139:linear, 6.50000:3.988139:linear, 6.54167:3.988139:linear, 6.58333:3.988139:linear, 6.62500:3.988139:linear, 6.66667:3.988139:linear, 6.70833:3.988139:linear, 6.75000:3.988139:linear, 6.79167:3.988139:linear, 6.83333:3.988139:linear, 6.87500:3.988139:linear, 6.91667:3.988139:linear, 6.95833:3.988139:linear, 7.00000:3.988139:linear, 7.04167:3.988139:linear, 7.08333:3.988139:linear, 7.12500:3.988139:linear, 7.16667:3.988139:linear, 7.20833:3.988139:linear, 7.25000:3.988139:linear, 7.29167:3.988139:linear, 7.33333:3.988139:linear, 7.37500:3.988139:linear, 7.41667:3.988139:linear, 7.45833:3.988139:linear, 7.50000:3.988139:linear, 7.54167:3.988139:linear, 7.58333:3.988139:linear, 7.62500:3.988139:linear, 7.66667:3.988139:linear, 7.70833:3.988139:linear, 7.75000:3.988139:linear, 7.79167:3.988139:linear, 7.83333:3.988139:linear, 7.87500:3.988139:linear, 7.91667:3.988139:linear, 7.95833:3.988139:linear, 8.00000:3.988139:linear")]}
+              direction={[0.75,-0.50,0.65]}
+              width="1.2"
+              height="3.2"
+              color="#FFF7EE"
+              intensity=".8"
+              castShadow="true"
             />
             <Model
               id="s98_roll_body"

@@ -1,0 +1,188 @@
+{
+  "durationSeconds": 24,
+  "fps": 24,
+  "mainTrees": 2048,
+  "scatterSeed": 97,
+  "subject": {
+    "index": 107,
+    "attempt": 112,
+    "position": [
+      3.8244574069976807,
+      -1.1259823529411765,
+      2.165529489517212
+    ],
+    "scale": 0.10111124813556671,
+    "rotationY": 306.3316583633423
+  },
+  "roadPoint": [
+    3.9203498289567302,
+    -1.090148287323743,
+    1.8644211864785496
+  ],
+  "shots": [
+    {
+      "from": 0,
+      "to": 4,
+      "purpose": "Aerial overview and diagonal descent"
+    },
+    {
+      "from": 4,
+      "to": 11,
+      "purpose": "Approach the roadside tree from an oblique angle"
+    },
+    {
+      "from": 11,
+      "to": 20,
+      "purpose": "Show trunk, branches and crown from a 60-degree orbit"
+    },
+    {
+      "from": 20,
+      "to": 24,
+      "purpose": "Approach curved individual leaves and twig attachments"
+    }
+  ],
+  "cameraKeys": [
+    {
+      "time": 0,
+      "position": [
+        0,
+        40.2114,
+        3.51804
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "fov": 10
+    },
+    {
+      "time": 4,
+      "position": [
+        6,
+        8,
+        7
+      ],
+      "target": [
+        1,
+        -0.3,
+        0.3
+      ],
+      "fov": 40
+    },
+    {
+      "time": 8,
+      "position": [
+        2.3537964304459065,
+        0.3240176470588234,
+        0.8101121028618019
+      ],
+      "target": [
+        3.8244574069976807,
+        -0.9559823529411765,
+        2.165529489517212
+      ],
+      "fov": 50
+    },
+    {
+      "time": 11,
+      "position": [
+        3.162659967549382,
+        -0.40598235294117657,
+        1.5555916655222775
+      ],
+      "target": [
+        3.8244574069976807,
+        -0.9159823529411766,
+        2.165529489517212
+      ],
+      "fov": 48
+    },
+    {
+      "time": 14,
+      "position": [
+        3.471498772625255,
+        -0.6859823529411766,
+        1.8402293167199135
+      ],
+      "target": [
+        3.8244574069976807,
+        -0.9159823529411766,
+        2.165529489517212
+      ],
+      "fov": 55
+    },
+    {
+      "time": 16,
+      "position": [
+        3.6040439945592375,
+        -0.6859823529411766,
+        1.7391283548831202
+      ],
+      "target": [
+        3.8244574069976807,
+        -0.9159823529411766,
+        2.165529489517212
+      ],
+      "fov": 55
+    },
+    {
+      "time": 18,
+      "position": [
+        3.7631743269888145,
+        -0.6859823529411766,
+        1.6894576628937212
+      ],
+      "target": [
+        3.8244574069976807,
+        -0.9159823529411766,
+        2.165529489517212
+      ],
+      "fov": 55
+    },
+    {
+      "time": 20,
+      "position": [
+        3.9296963033093957,
+        -0.6859823529411766,
+        1.6972082592669786
+      ],
+      "target": [
+        3.8244574069976807,
+        -0.9159823529411766,
+        2.165529489517212
+      ],
+      "fov": 55
+    },
+    {
+      "time": 22,
+      "position": [
+        3.9670332140908218,
+        -0.7359823529411765,
+        1.8241028660214167
+      ],
+      "target": [
+        3.8244574069976807,
+        -0.8359823529411765,
+        2.165529489517212
+      ],
+      "fov": 50
+    },
+    {
+      "time": 24,
+      "position": [
+        3.9554730135157024,
+        -0.7559823529411765,
+        1.851786105764319
+      ],
+      "target": [
+        3.8244574069976807,
+        -0.8109823529411766,
+        2.165529489517212
+      ],
+      "fov": 45
+    }
+  ],
+  "sourceSha256": "e81ef1dcc7e1e7275c925ec2ab05ac62e9ca8cc2e9a3f0f9c1ab347d55c05883",
+  "evidenceNote": "Subject coordinates follow the current deterministic Scatter placement and terrain. Numeric camera coordinates are authored in DSL, not dependent on generated runtime model IDs. Clearance checks are heightmap/crown-bound approximations and must be accompanied by visual review."
+}

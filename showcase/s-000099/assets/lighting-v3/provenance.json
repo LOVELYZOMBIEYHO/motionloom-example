@@ -1,0 +1,382 @@
+{
+  "authoringFingerprint": "f69c2ac1023cb177a2187b3e56baf695c72861a335895b7e64f4224212591f30",
+  "bakerVersion": "diffuse-probes-v2",
+  "files": [
+    {
+      "bytes": 130602,
+      "path": "reflections/day-bath-000.hdr",
+      "sha256": "8d7b5ee0a6ce6de19a9e5cc7f8e350b379268cb9b70952d978c2cb1497a59197"
+    },
+    {
+      "bytes": 81181,
+      "path": "reflections/day-guest-000.hdr",
+      "sha256": "9d641abe8a263c0ade8594e8849c918b073f000e8e3ed578b27eda366a45b575"
+    },
+    {
+      "bytes": 118345,
+      "path": "reflections/day-hall-000.hdr",
+      "sha256": "6c03286e3c6eddc86e19daaba3cde2c43fe342142aa5befba62b71896598158f"
+    },
+    {
+      "bytes": 126854,
+      "path": "reflections/day-primary-000.hdr",
+      "sha256": "6ef72078f018acd1ac0cd8b6045c8ac461425bbc44a8aa839010e52197a2a87a"
+    },
+    {
+      "bytes": 130625,
+      "path": "reflections/day-public-000.hdr",
+      "sha256": "6dc8fa7b0a7b6371f7b4237399b1bddb2bfab45a8c18418e0235abb971423672"
+    },
+    {
+      "bytes": 130183,
+      "path": "reflections/dusk-bath-000.hdr",
+      "sha256": "a323a3502677e333454c03292b5308b88ea309b7c74c58b3852d95f6fca5d668"
+    },
+    {
+      "bytes": 81213,
+      "path": "reflections/dusk-guest-000.hdr",
+      "sha256": "1cc36e80d98ccd4f975f31042a75d535b93bed24034d5920ecb4447ccece9b72"
+    },
+    {
+      "bytes": 118293,
+      "path": "reflections/dusk-hall-000.hdr",
+      "sha256": "3486d634c18ded7f47e083305d8834dc1643b94e3138708f01c92bd4ffe74414"
+    },
+    {
+      "bytes": 126949,
+      "path": "reflections/dusk-primary-000.hdr",
+      "sha256": "2ebe3c2998ef90c3ec354865bd1a1a3e90efabf9235ebc2d5251b354f7181fa0"
+    },
+    {
+      "bytes": 128766,
+      "path": "reflections/dusk-public-000.hdr",
+      "sha256": "16a1f2581118eec09e7e7011daa646b66cb6d4fe24da1aef24cff5f6046241e8"
+    },
+    {
+      "bytes": 6840440,
+      "path": "s99-lighting.json",
+      "sha256": "2bcfff37ddc38d1f21d9141093d797cf92d238c4cc072527ea5ab69d1b088b5e"
+    }
+  ],
+  "fingerprint": {
+    "combined": "5ba079179936ab76be0fead9e0c6dcf67eedb895bb7a0d2dc69bd071f32b9517",
+    "environments": "d99f93737c33c5408e76260474cb558568fb6b5f410d2d3eabbad356687d384f",
+    "geometry": "4f6f652e0f0c139ed231e979a1e6fa50f0068283513ce9e699f342e7e5765f2f",
+    "lighting": "425ee341ac0a83aec7fcc666b11b92ea1bdda41fdba66ed756137a2b6b78211c",
+    "materials": "dc47e180457d5065e9329d0aef795a7aec4b3868a874351fe7df0052ef41f737",
+    "settings": "3c78266a6d13dc1688fa3b43882e3e139639f14de6950586d64adad92354faaf",
+    "textures": "6d0bdce1177015ca24348189adec9c25cbd47a3ec1152953752e181865886236"
+  },
+  "format": "s99-generated-lighting-v1",
+  "inputProvenance": [
+    "../pbr-v2/provenance.json",
+    "../environment-v2/manifest.json"
+  ],
+  "limitations": [
+    "Deterministic CPU BVH; 3 diffuse bounces. SH stores cosine-convolved irradiance E; Lambert use E/PI.",
+    "Actual geometry occludes every light/environment ray. Visibility/depth moments are camera independent. Straight thin-sheet transmission includes Fresnel and Beer attenuation; solid refraction and caustics are not solved.",
+    "Irradiance includes visibility-filtered environment and bounced surface radiance, but no directly sampled delta lights at probes. Keep analytic direct lighting separate. Local reflection images are linear radiance, without exposure/tone mapping.",
+    "Finite sun disks and projected point/spot source disks are sampled when authored; zero-size sources retain delta-light behavior. Rectangular sources sample their full area.",
+    "The solver traces diffuse transport and local HDR captures; it does not solve glossy interreflection, caustics or moving geometry. Material-layer energy attenuation is an approximation for diffuse bounce transport."
+  ],
+  "options": {
+    "dayFrame": 528,
+    "duskFrame": 1032,
+    "maxBounces": 3,
+    "maxRayDistance": 100,
+    "raysPerProbe": 512,
+    "sceneId": "SHOWCASE99",
+    "seed": 99,
+    "specularResolution": [
+      256,
+      128
+    ],
+    "specularSamplesPerPixel": 2,
+    "volumes": [
+      {
+        "boundsMax": [
+          1.34,
+          2.82,
+          3.8
+        ],
+        "boundsMin": [
+          -5.82,
+          0.12,
+          -3.8
+        ],
+        "counts": [
+          8,
+          3,
+          8
+        ],
+        "id": "public",
+        "reflectionPositions": [
+          [
+            -2.8,
+            1.5,
+            0.5
+          ]
+        ]
+      },
+      {
+        "boundsMax": [
+          2.54,
+          2.82,
+          3.8
+        ],
+        "boundsMin": [
+          1.66,
+          0.12,
+          -3.8
+        ],
+        "counts": [
+          2,
+          3,
+          8
+        ],
+        "id": "hall",
+        "reflectionPositions": [
+          [
+            2.1,
+            1.5,
+            0
+          ]
+        ]
+      },
+      {
+        "boundsMax": [
+          5.82,
+          2.82,
+          -1.46
+        ],
+        "boundsMin": [
+          2.86,
+          0.12,
+          -3.8
+        ],
+        "counts": [
+          4,
+          3,
+          4
+        ],
+        "id": "guest",
+        "reflectionPositions": [
+          [
+            4.2,
+            1.5,
+            -2.5
+          ]
+        ]
+      },
+      {
+        "boundsMax": [
+          5.82,
+          2.82,
+          0.94
+        ],
+        "boundsMin": [
+          2.86,
+          0.12,
+          -1.14
+        ],
+        "counts": [
+          4,
+          3,
+          4
+        ],
+        "id": "bath",
+        "reflectionPositions": [
+          [
+            3.5,
+            1.5,
+            0.3
+          ]
+        ]
+      },
+      {
+        "boundsMax": [
+          5.82,
+          2.82,
+          3.8
+        ],
+        "boundsMin": [
+          2.86,
+          0.12,
+          1.26
+        ],
+        "counts": [
+          4,
+          3,
+          4
+        ],
+        "id": "primary",
+        "reflectionPositions": [
+          [
+            4.1,
+            1.5,
+            2.4
+          ]
+        ]
+      }
+    ]
+  },
+  "optionsSha256": "8944133930a341efa449d5c04a7799b52a72b3bccedb5c6044c48e76ea113a8c",
+  "origin": "Deterministic CPU bake of authored S99 geometry, fixed lights and existing CC0 inputs; no new download or ImageGen asset.",
+  "sceneId": "SHOWCASE99",
+  "schemaVersion": 1,
+  "sourceSha256": "0c4f8f209235e6ea132d85905e6d6a1977bf70634786911eb5515fbb6488f000",
+  "states": [
+    {
+      "frame": 528,
+      "name": "day",
+      "volumes": [
+        {
+          "capturePaths": [
+            "reflections/day-public-000.hdr"
+          ],
+          "counts": [
+            8,
+            3,
+            8
+          ],
+          "id": "public",
+          "localCaptures": 1,
+          "probes": 192,
+          "validProbes": 185
+        },
+        {
+          "capturePaths": [
+            "reflections/day-hall-000.hdr"
+          ],
+          "counts": [
+            2,
+            3,
+            8
+          ],
+          "id": "hall",
+          "localCaptures": 1,
+          "probes": 48,
+          "validProbes": 48
+        },
+        {
+          "capturePaths": [
+            "reflections/day-guest-000.hdr"
+          ],
+          "counts": [
+            4,
+            3,
+            4
+          ],
+          "id": "guest",
+          "localCaptures": 1,
+          "probes": 48,
+          "validProbes": 45
+        },
+        {
+          "capturePaths": [
+            "reflections/day-bath-000.hdr"
+          ],
+          "counts": [
+            4,
+            3,
+            4
+          ],
+          "id": "bath",
+          "localCaptures": 1,
+          "probes": 48,
+          "validProbes": 48
+        },
+        {
+          "capturePaths": [
+            "reflections/day-primary-000.hdr"
+          ],
+          "counts": [
+            4,
+            3,
+            4
+          ],
+          "id": "primary",
+          "localCaptures": 1,
+          "probes": 48,
+          "validProbes": 42
+        }
+      ]
+    },
+    {
+      "frame": 1032,
+      "name": "dusk",
+      "volumes": [
+        {
+          "capturePaths": [
+            "reflections/dusk-public-000.hdr"
+          ],
+          "counts": [
+            8,
+            3,
+            8
+          ],
+          "id": "public",
+          "localCaptures": 1,
+          "probes": 192,
+          "validProbes": 185
+        },
+        {
+          "capturePaths": [
+            "reflections/dusk-hall-000.hdr"
+          ],
+          "counts": [
+            2,
+            3,
+            8
+          ],
+          "id": "hall",
+          "localCaptures": 1,
+          "probes": 48,
+          "validProbes": 48
+        },
+        {
+          "capturePaths": [
+            "reflections/dusk-guest-000.hdr"
+          ],
+          "counts": [
+            4,
+            3,
+            4
+          ],
+          "id": "guest",
+          "localCaptures": 1,
+          "probes": 48,
+          "validProbes": 45
+        },
+        {
+          "capturePaths": [
+            "reflections/dusk-bath-000.hdr"
+          ],
+          "counts": [
+            4,
+            3,
+            4
+          ],
+          "id": "bath",
+          "localCaptures": 1,
+          "probes": 48,
+          "validProbes": 48
+        },
+        {
+          "capturePaths": [
+            "reflections/dusk-primary-000.hdr"
+          ],
+          "counts": [
+            4,
+            3,
+            4
+          ],
+          "id": "primary",
+          "localCaptures": 1,
+          "probes": 48,
+          "validProbes": 42
+        }
+      ]
+    }
+  ]
+}

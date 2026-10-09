@@ -1,0 +1,51 @@
+{
+  "asset_set": "S98 apple peel v2",
+  "created_utc": "2026-10-07 02:47:53 UTC",
+  "generation_mode": "Built-in image_gen.imagegen tool",
+  "external_source_assets": [],
+  "files": {
+    "albedo.png": {
+      "role": "Diffuse/base-color apple peel atlas",
+      "prompt": "albedo-prompt.txt",
+      "generated_source": "/Users/winghoyim/.codex/generated_images/01a1143f-3133-73c1-ae72-9aed68e89fae/exec-234ab011-4ad9-46f2-ac14-c4cf3a53efb9.png",
+      "inputs": [],
+      "requested_aspect_ratio": "2:1",
+      "actual_dimensions": [
+        1774,
+        887
+      ]
+    },
+    "normal.png": {
+      "role": "Tangent-space OpenGL normal map",
+      "prompt": "normal-prompt.txt",
+      "generated_source": "/Users/winghoyim/.codex/generated_images/01a1143f-3133-73c1-ae72-9aed68e89fae/exec-f92dd51f-96d6-4313-a6ca-191e4a132361.png",
+      "inputs": [
+        "albedo.png"
+      ],
+      "actual_dimensions": [
+        1774,
+        887
+      ]
+    },
+    "roughness.png": {
+      "role": "Roughness map, green channel consumed by MotionLoom",
+      "prompt": "roughness-prompt.txt",
+      "generated_source": "/Users/winghoyim/.codex/generated_images/01a1143f-3133-73c1-ae72-9aed68e89fae/exec-f47915b6-68bc-4d39-81ae-ef486623c392.png",
+      "inputs": [
+        "albedo.png"
+      ],
+      "actual_dimensions": [
+        1774,
+        887
+      ]
+    }
+  },
+  "processing": "Selected outputs copied without modifying pixels. metrics.json computed by read-only image analysis.",
+  "limitations": [
+    "Built-in generation returned 1774x887 despite a request for a higher-resolution 2:1 atlas.",
+    "AI-generated edges are approximately continuous; exact seamless pixel equality is not guaranteed. Measured horizontal seam error is approximately 1.7 to 2 times adjacent-pixel error.",
+    "Companion maps are generated independently against the same coordinate reference. Feature registration is visually close but not a deterministic pixel-perfect reconstruction.",
+    "Roughness map green-channel median is approximately 0.588 rather than the requested 0.69; adjust material roughness factor if preserving previous effective roughness.",
+    "Normal map has a small mean tangent-space bias and strong outlier slopes around some lenticels. Use restrained normalScale."
+  ]
+}

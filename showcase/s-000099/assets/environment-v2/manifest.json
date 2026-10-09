@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "asset": {
+    "id": "kloofendal_overcast_puresky",
+    "name": "Kloofendal Overcast (Pure Sky)",
+    "provider": "Poly Haven",
+    "author": "Greg Zaal",
+    "assetPage": "https://polyhaven.com/a/kloofendal_overcast_puresky",
+    "metadataUrl": "https://api.polyhaven.com/info/kloofendal_overcast_puresky",
+    "filesUrl": "https://api.polyhaven.com/files/kloofendal_overcast_puresky",
+    "downloadUrl": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/kloofendal_overcast_puresky_2k.hdr",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://polyhaven.com/license",
+    "legalCodeUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "localFile": "kloofendal_overcast_puresky_2k.hdr",
+    "downloadedOn": "2026-10-05",
+    "modified": false,
+    "bytes": 4335717,
+    "sha256": "312b1b04b7f10057a4f1418abc59d1166c8933cc93fc72051502edaf8d6b2fcd",
+    "providerMd5": "26462123fc5ce757a331553d05e4db37",
+    "format": "Radiance RGBE HDR",
+    "mapping": "equirectangular",
+    "width": 2048,
+    "height": 1024,
+    "colorSpace": "linear-radiance",
+    "whiteBalanceKelvin": 5303,
+    "selectionReason": "Sky-only outdoor overcast daylight with soft low-contrast illumination and gentle reflections; avoids foreign interiors, buildings and strong colored ground contaminating house reflections. Retain an authored warm directional key for the sunny reference mood."
+  },
+  "validation": {
+    "method": "Decoded all Radiance per-channel RLE scanlines to float32 RGB, checked full byte consumption and provider MD5.",
+    "finite": true,
+    "minimum": 0.14453125,
+    "maximum": 6.6875,
+    "pixelsWithAnyComponentAbove1": 960184,
+    "luminancePercentiles": {
+      "0": 0.15993008017539978,
+      "1": 0.3041175603866577,
+      "50": 0.7836046814918518,
+      "90": 1.5126609802246094,
+      "95": 1.8444702625274658,
+      "99": 2.6324405670166016,
+      "100": 5.980050086975098
+    },
+    "meanRgb": [
+      0.7906181812286377,
+      0.8636953830718994,
+      1.009543776512146
+    ],
+    "upperHemisphereMeanLuminance": 1.202343225479126,
+    "peakPixel": [
+      1191,
+      380
+    ],
+    "upperBrightOnePercentCentroidDirection": [
+      0.7340973515820087,
+      0.38689410099336935,
+      0.558044830651457
+    ]
+  },
+  "integrationAdvice": {
+    "imageAssetColorSpace": "linear-srgb (HDR source is already linear; renderer detects float RGB and skips gamma decoding)",
+    "backgroundVisible": false,
+    "initialRotationYDegrees": -90.33,
+    "rotationMethod": "MotionLoom samples theta=atan2(z,x)+rotationY. The broad upper-sky brightest 1% centroid is aligned approximately toward the source of the existing direction=[.5,-.8,-.65] light, namely [-.5,.8,.65]. Low contrast overcast sky has no hard sun; fine tune rotation from rendered surfaces.",
+    "trialDayIntensity": 0.75,
+    "trialDiffuseIntensity": 0.85,
+    "trialSpecularIntensity": 0.65,
+    "trialDuskIntensity": 0.2,
+    "lightingAdvice": "These are starting points, not visually certified final values. The source upper-hemisphere mean radiance is measured below. Compare the same camera/profile before changing exposure; reduce warm point/window fill if the HDR lifts interiors. Keep the authored warm sun as a separate artistic key and avoid increasing its intensity simultaneously.",
+    "limitation": "Environment lighting is global. This HDR does not add local occlusion, reflection probes or multi-bounce indoor GI."
+  },
+  "preview": {
+    "file": "kloofendal_overcast_puresky_preview.png",
+    "purpose": "Display-only inspection",
+    "conversion": "linear RGB -> RGB/(1+RGB) -> gamma 1/2.2, downsample to 1024x512. HDR source preserved byte-for-byte."
+  }
+}

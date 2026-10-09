@@ -22,7 +22,7 @@
           "name": "intensity",
           "occurrences": 1,
           "examples": [
-            "\"0.38\""
+            "\"0.22\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -33,7 +33,7 @@
           "name": "radius",
           "occurrences": 1,
           "examples": [
-            "\"0.08000\""
+            "\"0.025\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -113,10 +113,72 @@
           "supportsAnimationTarget": false
         },
         {
+          "name": "anisotropy",
+          "occurrences": 1,
+          "examples": [
+            "\"0.35\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "baseHeight",
+          "occurrences": 1,
+          "examples": [
+            "\"-1\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "boundsMax",
+          "occurrences": 1,
+          "examples": [
+            "{[16,7.5,14]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "boundsMin",
+          "occurrences": 1,
+          "examples": [
+            "{[-16,-7,-14]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
           "name": "density",
           "occurrences": 1,
           "examples": [
-            "\"0.003\""
+            "\"0.008\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "edgeFeather",
+          "occurrences": 1,
+          "examples": [
+            "\"0.5\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "heightFalloff",
+          "occurrences": 1,
+          "examples": [
+            "\"0.35\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -136,7 +198,7 @@
           "name": "scatteringColor",
           "occurrences": 1,
           "examples": [
-            "\"#C8D2D3\""
+            "{[0.76,0.82,0.90]}"
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -172,7 +234,7 @@
           "name": "fov",
           "occurrences": 1,
           "examples": [
-            "\"10.0\""
+            "{curve(\"0.0:10.00000:ease_in_out, 4.0:40.00000:ease_in_out, 8.0:50.00000:ease_in_out, 11.0:48.00000:ease_in_out, 14.0:5…"
           ],
           "recognized": true,
           "valueType": "number",
@@ -192,7 +254,7 @@
           "name": "position",
           "occurrences": 1,
           "examples": [
-            "{[curve(\"0.0:0.00000:linear, 1.5:0.00067:linear, 3.0:0.00256:linear, 4.5:0.00540:linear, 6.0:0.00875:linear, 7.5:0.0121…"
+            "{[curve(\"0.0:0.00000:ease_in_out, 4.0:6.00000:ease_in_out, 8.0:2.35380:ease_in_out, 11.0:3.16266:ease_in_out, 14.0:3.47…"
           ],
           "recognized": true,
           "valueType": "vector3",
@@ -203,7 +265,7 @@
           "name": "target",
           "occurrences": 1,
           "examples": [
-            "{[curve(\"0.0:0.00000:linear, 1.5:0.00057:linear, 3.0:0.00220:linear, 4.5:0.00463:linear, 6.0:0.00750:linear, 7.5:0.0103…"
+            "{[curve(\"0.0:0.00000:ease_in_out, 4.0:1.00000:ease_in_out, 8.0:3.82446:ease_in_out, 11.0:3.82446:ease_in_out, 14.0:3.82…"
           ],
           "recognized": true,
           "valueType": "vector3",
@@ -250,29 +312,6 @@
           "occurrences": 1,
           "examples": [
             "\"3d\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        }
-      ]
-    },
-    {
-      "tag": "CompoundAsset",
-      "occurrences": 6,
-      "recognized": true,
-      "validationCoverage": "strict",
-      "requiredAttributes": [
-        "id"
-      ],
-      "attributes": [
-        {
-          "name": "id",
-          "occurrences": 6,
-          "examples": [
-            "\"s97_tree_a\"",
-            "\"s97_tree_b\"",
-            "\"s97_tree_c\"",
-            "\"s97_tree_d\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -344,15 +383,14 @@
     },
     {
       "tag": "DirectionalLight",
-      "occurrences": 2,
+      "occurrences": 1,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
           "name": "castShadow",
-          "occurrences": 2,
+          "occurrences": 1,
           "examples": [
-            "\"false\"",
             "\"true\""
           ],
           "recognized": true,
@@ -360,10 +398,9 @@
         },
         {
           "name": "color",
-          "occurrences": 2,
+          "occurrences": 1,
           "examples": [
-            "\"#C9DCEA\"",
-            "\"#FFF4E2\""
+            "\"#FFF1DC\""
           ],
           "recognized": true,
           "valueType": "color",
@@ -372,19 +409,17 @@
         },
         {
           "name": "direction",
-          "occurrences": 2,
+          "occurrences": 1,
           "examples": [
-            "{[-0.5,-0.74,0.45]}",
-            "{[0.55,-0.62,-0.55]}"
+            "{[-0.56,-0.66,-0.50]}"
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "id",
-          "occurrences": 2,
+          "occurrences": 1,
           "examples": [
-            "\"s97_fill\"",
             "\"s97_sun\""
           ],
           "recognized": true,
@@ -392,10 +427,9 @@
         },
         {
           "name": "intensity",
-          "occurrences": 2,
+          "occurrences": 1,
           "examples": [
-            "\"0.72\"",
-            "\"4.4\""
+            "\"3.2\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -406,7 +440,106 @@
           "name": "shadowStrength",
           "occurrences": 1,
           "examples": [
-            "\"0.78\""
+            "\"0.80\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "EnvironmentLight",
+      "occurrences": 1,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "asset",
+          "occurrences": 1,
+          "examples": [
+            "\"s97_daylight_radiance\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "backgroundIntensity",
+          "occurrences": 1,
+          "examples": [
+            "\"0.8\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "diffuseIntensity",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "id",
+          "occurrences": 1,
+          "examples": [
+            "\"s97_daylight\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "intensity",
+          "occurrences": 1,
+          "examples": [
+            "\"0.32\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "mapping",
+          "occurrences": 1,
+          "examples": [
+            "\"equirectangular\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "rotationY",
+          "occurrences": 1,
+          "examples": [
+            "\"-116.5\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "specularIntensity",
+          "occurrences": 1,
+          "examples": [
+            "\"1\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "visible",
+          "occurrences": 1,
+          "examples": [
+            "\"true\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -415,7 +548,7 @@
     },
     {
       "tag": "GeometryAsset",
-      "occurrences": 30,
+      "occurrences": 9,
       "recognized": true,
       "validationCoverage": "strict",
       "requiredAttributes": [
@@ -424,12 +557,12 @@
       "attributes": [
         {
           "name": "id",
-          "occurrences": 30,
+          "occurrences": 9,
           "examples": [
             "\"s97_asphalt_geometry\"",
-            "\"s97_blob1_d_geometry\"",
-            "\"s97_blob1_e_geometry\"",
-            "\"s97_blob1_f_geometry\""
+            "\"s97_guardrail_left_geometry\"",
+            "\"s97_guardrail_right_geometry\"",
+            "\"s97_line_center_geometry\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -451,7 +584,7 @@
           "name": "duration",
           "occurrences": 1,
           "examples": [
-            "\"12s\""
+            "\"24s\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -487,13 +620,13 @@
     },
     {
       "tag": "ImageAsset",
-      "occurrences": 8,
+      "occurrences": 9,
       "recognized": true,
       "validationCoverage": "strict",
       "attributes": [
         {
           "name": "colorSpace",
-          "occurrences": 8,
+          "occurrences": 9,
           "examples": [
             "\"linear-srgb\"",
             "\"srgb\""
@@ -503,76 +636,27 @@
         },
         {
           "name": "id",
-          "occurrences": 8,
+          "occurrences": 9,
           "examples": [
             "\"s97_asphalt_color\"",
             "\"s97_asphalt_roughness\"",
-            "\"s97_bark_color\"",
-            "\"s97_foliage_color\""
+            "\"s97_daylight_radiance\"",
+            "\"s97_forest_exclusion\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "src",
-          "occurrences": 8,
+          "occurrences": 9,
           "examples": [
+            "\"assets/environment/sunny-forest-sky.png\"",
             "\"assets/materials/asphalt-basecolor.png\"",
             "\"assets/materials/asphalt-roughness.png\"",
-            "\"assets/materials/bark-basecolor.png\"",
-            "\"assets/materials/foliage-basecolor.png\""
+            "\"assets/materials/forest-ground-basecolor.png\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
-        }
-      ]
-    },
-    {
-      "tag": "Instance",
-      "occurrences": 21,
-      "recognized": true,
-      "validationCoverage": "strict",
-      "requiredAttributes": [
-        "asset"
-      ],
-      "attributes": [
-        {
-          "name": "asset",
-          "occurrences": 21,
-          "examples": [
-            "\"s97_blob1_d\"",
-            "\"s97_blob1_e\"",
-            "\"s97_blob1_f\"",
-            "\"s97_blob2_d\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "id",
-          "occurrences": 21,
-          "examples": [
-            "\"blob1\"",
-            "\"blob2\"",
-            "\"blob3\"",
-            "\"cone1\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "position",
-          "occurrences": 21,
-          "examples": [
-            "{[-0.10000,0.40000,0.05500]}",
-            "{[0.00000,0.06000,0.00000]}",
-            "{[0.00000,0.07000,0.00000]}",
-            "{[0.00000,0.07500,0.00000]}"
-          ],
-          "recognized": true,
-          "valueType": "vector3",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
         }
       ]
     },
@@ -586,7 +670,7 @@
           "name": "ambientColor",
           "occurrences": 1,
           "examples": [
-            "\"#E4EDF6\""
+            "\"#FFFFFF\""
           ],
           "recognized": true,
           "supportsInlineExpression": false,
@@ -596,7 +680,7 @@
           "name": "ambientIntensity",
           "occurrences": 1,
           "examples": [
-            "\"0.42\""
+            "\"1\""
           ],
           "recognized": true,
           "supportsInlineExpression": false,
@@ -616,7 +700,7 @@
     },
     {
       "tag": "MaterialAsset",
-      "occurrences": 10,
+      "occurrences": 5,
       "recognized": true,
       "validationCoverage": "strict",
       "requiredAttributes": [
@@ -624,44 +708,60 @@
       ],
       "attributes": [
         {
-          "name": "baseColor",
-          "occurrences": 10,
+          "name": "alphaCutoff",
+          "occurrences": 1,
           "examples": [
-            "\"#A69D8F\"",
-            "\"#B8B3A6\"",
-            "\"#C7CBCC\"",
-            "\"#D6D8D9\""
+            "\"0.5\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "alphaMode",
+          "occurrences": 1,
+          "examples": [
+            "\"mask\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "baseColor",
+          "occurrences": 5,
+          "examples": [
+            "\"#00000000\"",
+            "\"#969A9A\"",
+            "\"#C4C0AA\"",
+            "\"#C7CBCC\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "baseColorTexture",
-          "occurrences": 7,
+          "occurrences": 2,
           "examples": [
             "\"s97_asphalt_color\"",
-            "\"s97_bark_color\"",
-            "\"s97_foliage_color\"",
-            "\"s97_ground_color\""
+            "\"s97_moss_rock_color\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "id",
-          "occurrences": 10,
+          "occurrences": 5,
           "examples": [
             "\"s97_asphalt_mat\"",
             "\"s97_ground_mat\"",
             "\"s97_guardrail_mat\"",
-            "\"s97_leaf_a\""
+            "\"s97_paint_mat\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "metallic",
-          "occurrences": 10,
+          "occurrences": 4,
           "examples": [
             "\"0\"",
             "\"0.68\""
@@ -670,38 +770,38 @@
           "supportsAnimationTarget": false
         },
         {
-          "name": "metallicRoughnessTexture",
+          "name": "normalScale",
           "occurrences": 1,
           "examples": [
-            "\"s97_asphalt_roughness\""
+            "\"0.5\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "normalTexture",
+          "occurrences": 1,
+          "examples": [
+            "\"s97_moss_rock_normal\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "roughness",
-          "occurrences": 10,
+          "occurrences": 5,
           "examples": [
             "\"0.34\"",
             "\"0.6\"",
-            "\"0.9\"",
-            "\"0.91\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "roughnessChannel",
-          "occurrences": 1,
-          "examples": [
-            "\"luminance\""
+            "\"0.98\"",
+            "\"1\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "shading",
-          "occurrences": 10,
+          "occurrences": 5,
           "examples": [
             "\"pbr\""
           ],
@@ -710,24 +810,21 @@
         },
         {
           "name": "specular",
-          "occurrences": 10,
+          "occurrences": 5,
           "examples": [
-            "\"0.07\"",
+            "\"0\"",
+            "\"0.05\"",
             "\"0.08\"",
-            "\"0.09\"",
-            "\"0.12\""
+            "\"0.25\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "textureScale",
-          "occurrences": 7,
+          "occurrences": 1,
           "examples": [
-            "{[0.55,0.55]}",
-            "{[1.2,1.2]}",
-            "{[1.2,2.8]}",
-            "{[1.3,1.3]}"
+            "{[5.5,10]}"
           ],
           "recognized": true,
           "valueType": "number",
@@ -736,11 +833,44 @@
         },
         {
           "name": "variationAmount",
-          "occurrences": 3,
+          "occurrences": 1,
           "examples": [
-            "{[0.04,0.03]}",
-            "{[0.06,0.04]}",
-            "{[0.08,0.05]}"
+            "{[0.025,0.02]}"
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "MaterialBinding",
+      "occurrences": 2,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "modelSourceMaterial",
+          "occurrences": 2,
+          "examples": [
+            "\"S97_S96_GrassGround\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "tint",
+          "occurrences": 2,
+          "examples": [
+            "\"#A099A6\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "tintAmount",
+          "occurrences": 2,
+          "examples": [
+            "\"1\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -749,7 +879,7 @@
     },
     {
       "tag": "MeshAsset",
-      "occurrences": 30,
+      "occurrences": 9,
       "recognized": true,
       "validationCoverage": "strict",
       "requiredAttributes": [
@@ -760,7 +890,7 @@
       "attributes": [
         {
           "name": "collision",
-          "occurrences": 30,
+          "occurrences": 9,
           "examples": [
             "\"none\""
           ],
@@ -769,51 +899,19 @@
         },
         {
           "name": "geometry",
-          "occurrences": 30,
+          "occurrences": 9,
           "examples": [
             "\"s97_asphalt_geometry\"",
-            "\"s97_blob1_d_geometry\"",
-            "\"s97_blob1_e_geometry\"",
-            "\"s97_blob1_f_geometry\""
+            "\"s97_guardrail_left_geometry\"",
+            "\"s97_guardrail_right_geometry\"",
+            "\"s97_line_center_geometry\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "id",
-          "occurrences": 30,
-          "examples": [
-            "\"s97_asphalt\"",
-            "\"s97_blob1_d\"",
-            "\"s97_blob1_e\"",
-            "\"s97_blob1_f\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        },
-        {
-          "name": "material",
-          "occurrences": 30,
-          "examples": [
-            "\"s97_asphalt_mat\"",
-            "\"s97_guardrail_mat\"",
-            "\"s97_leaf_a\"",
-            "\"s97_leaf_b\""
-          ],
-          "recognized": true,
-          "supportsAnimationTarget": false
-        }
-      ]
-    },
-    {
-      "tag": "Model",
-      "occurrences": 7,
-      "recognized": true,
-      "validationCoverage": "strict",
-      "attributes": [
-        {
-          "name": "asset",
-          "occurrences": 7,
+          "occurrences": 9,
           "examples": [
             "\"s97_asphalt\"",
             "\"s97_guardrail_left\"",
@@ -824,9 +922,42 @@
           "supportsAnimationTarget": false
         },
         {
-          "name": "castShadow",
-          "occurrences": 4,
+          "name": "material",
+          "occurrences": 9,
           "examples": [
+            "\"s97_asphalt_mat\"",
+            "\"s97_guardrail_mat\"",
+            "\"s97_paint_mat\"",
+            "\"s97_rock_mat\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        }
+      ]
+    },
+    {
+      "tag": "Model",
+      "occurrences": 49,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "asset",
+          "occurrences": 49,
+          "examples": [
+            "\"s97_asphalt\"",
+            "\"s97_forest_batch\"",
+            "\"s97_ground_surround\"",
+            "\"s97_guardrail_left\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "castShadow",
+          "occurrences": 46,
+          "examples": [
+            "\"false\"",
             "\"true\""
           ],
           "recognized": true,
@@ -834,21 +965,24 @@
         },
         {
           "name": "id",
-          "occurrences": 7,
+          "occurrences": 49,
           "examples": [
             "\"s97_asphalt_model\"",
+            "\"s97_distant_forest_model\"",
             "\"s97_guardrail_left_model\"",
-            "\"s97_guardrail_right_model\"",
-            "\"s97_line_center_model\""
+            "\"s97_guardrail_right_model\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "position",
-          "occurrences": 1,
+          "occurrences": 39,
           "examples": [
-            "{[0,0,0]}"
+            "{[0,0,0]}",
+            "{[2.90652466,-1.01120000,2.19816899]}",
+            "{[2.97930908,-1.10339442,2.39154649]}",
+            "{[3.00745225,-1.23100735,2.70100546]}"
           ],
           "recognized": true,
           "valueType": "vector3",
@@ -857,9 +991,70 @@
         },
         {
           "name": "receiveShadow",
-          "occurrences": 7,
+          "occurrences": 49,
           "examples": [
+            "\"false\"",
             "\"true\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "rotationY",
+          "occurrences": 38,
+          "examples": [
+            "\"120.846283\"",
+            "\"122.140235\"",
+            "\"13.618294\"",
+            "\"134.035403\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        },
+        {
+          "name": "scale",
+          "occurrences": 38,
+          "examples": [
+            "\"0.05072437\"",
+            "\"0.05166985\"",
+            "\"0.05229452\"",
+            "\"0.05394366\""
+          ],
+          "recognized": true,
+          "valueType": "number",
+          "supportsInlineExpression": true,
+          "supportsAnimationTarget": true
+        }
+      ]
+    },
+    {
+      "tag": "ModelAsset",
+      "occurrences": 5,
+      "recognized": true,
+      "validationCoverage": "strict",
+      "attributes": [
+        {
+          "name": "id",
+          "occurrences": 5,
+          "examples": [
+            "\"s97_forest_batch\"",
+            "\"s97_ground_surround\"",
+            "\"s97_near_tree\"",
+            "\"s97_understory_batch\""
+          ],
+          "recognized": true,
+          "supportsAnimationTarget": false
+        },
+        {
+          "name": "src",
+          "occurrences": 5,
+          "examples": [
+            "\"assets/reference-forest/s97-forest-batched.glb\"",
+            "\"assets/reference-forest/s97-understory-batched.glb\"",
+            "\"assets/terrain/s97-smooth-terrain.glb\"",
+            "\"assets/terrain/s97-terrain-surround.glb\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -876,7 +1071,7 @@
           "name": "contrast",
           "occurrences": 1,
           "examples": [
-            "\"1.03\""
+            "\"1.02\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -887,7 +1082,7 @@
           "name": "exposure",
           "occurrences": 1,
           "examples": [
-            "\"1.12\""
+            "\"0.97\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -898,7 +1093,7 @@
           "name": "saturation",
           "occurrences": 1,
           "examples": [
-            "\"1.04\""
+            "\"1.0\""
           ],
           "recognized": true,
           "supportsInlineExpression": false,
@@ -908,7 +1103,7 @@
           "name": "toneMapping",
           "occurrences": 1,
           "examples": [
-            "\"aces\""
+            "\"filmic_aces_v1\""
           ],
           "recognized": true,
           "supportsInlineExpression": false,
@@ -918,7 +1113,7 @@
           "name": "whiteBalance",
           "occurrences": 1,
           "examples": [
-            "\"6100\""
+            "\"6500\""
           ],
           "recognized": true,
           "valueType": "number",
@@ -946,7 +1141,7 @@
     },
     {
       "tag": "Primitive",
-      "occurrences": 24,
+      "occurrences": 3,
       "recognized": true,
       "validationCoverage": "strict",
       "requiredAttributes": [
@@ -1073,20 +1268,6 @@
       },
       "attributes": [
         {
-          "name": "height",
-          "occurrences": 14,
-          "examples": [
-            "\"0.120000\"",
-            "\"0.140000\"",
-            "\"0.150000\"",
-            "\"0.160000\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
           "name": "radii",
           "occurrences": 2,
           "examples": [
@@ -1097,50 +1278,29 @@
           "supportsAnimationTarget": false
         },
         {
-          "name": "radius",
-          "occurrences": 21,
-          "examples": [
-            "\"0.013000\"",
-            "\"0.015000\"",
-            "\"0.021000\"",
-            "\"0.023000\""
-          ],
-          "recognized": true,
-          "valueType": "number",
-          "supportsInlineExpression": true,
-          "supportsAnimationTarget": true
-        },
-        {
           "name": "rings",
-          "occurrences": 9,
+          "occurrences": 2,
           "examples": [
-            "\"6\"",
-            "\"8\"",
-            "\"9\""
+            "\"6\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "segments",
-          "occurrences": 23,
+          "occurrences": 2,
           "examples": [
-            "\"10\"",
-            "\"12\"",
-            "\"14\"",
-            "\"8\""
+            "\"10\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "shape",
-          "occurrences": 24,
+          "occurrences": 3,
           "examples": [
-            "\"cone\"",
-            "\"cylinder\"",
             "\"ellipsoid\"",
-            "\"sphere\""
+            "\"wedge\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1222,7 +1382,7 @@
     },
     {
       "tag": "Scatter",
-      "occurrences": 2,
+      "occurrences": 1,
       "recognized": true,
       "validationCoverage": "strict",
       "requiredAttributes": [
@@ -1232,7 +1392,7 @@
       "attributes": [
         {
           "name": "castShadow",
-          "occurrences": 2,
+          "occurrences": 1,
           "examples": [
             "\"true\""
           ],
@@ -1241,10 +1401,9 @@
         },
         {
           "name": "count",
-          "occurrences": 2,
+          "occurrences": 1,
           "examples": [
-            "\"10760\"",
-            "\"720\""
+            "\"360\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1260,7 +1419,7 @@
         },
         {
           "name": "exclusionMap",
-          "occurrences": 2,
+          "occurrences": 1,
           "examples": [
             "\"s97_forest_exclusion\""
           ],
@@ -1269,17 +1428,16 @@
         },
         {
           "name": "id",
-          "occurrences": 2,
+          "occurrences": 1,
           "examples": [
-            "\"s97_cut_rocks\"",
-            "\"s97_forest\""
+            "\"s97_cut_rocks\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "receiveShadow",
-          "occurrences": 2,
+          "occurrences": 1,
           "examples": [
             "\"true\""
           ],
@@ -1288,7 +1446,7 @@
         },
         {
           "name": "rotationYRange",
-          "occurrences": 2,
+          "occurrences": 1,
           "examples": [
             "{[0,360]}"
           ],
@@ -1297,27 +1455,25 @@
         },
         {
           "name": "scaleRange",
-          "occurrences": 2,
+          "occurrences": 1,
           "examples": [
-            "{[0.42,0.86]}",
-            "{[0.55,1.45]}"
+            "{[0.40,1.05]}"
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "seed",
-          "occurrences": 2,
+          "occurrences": 1,
           "examples": [
-            "\"197\"",
-            "\"97\""
+            "\"197\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "slopeRange",
-          "occurrences": 2,
+          "occurrences": 1,
           "examples": [
             "{[0,90]}"
           ],
@@ -1326,7 +1482,7 @@
         },
         {
           "name": "surface",
-          "occurrences": 2,
+          "occurrences": 1,
           "examples": [
             "\"s97_terrain_model\""
           ],
@@ -1335,10 +1491,9 @@
         },
         {
           "name": "surfaceOffset",
-          "occurrences": 2,
+          "occurrences": 1,
           "examples": [
-            "\"-0.00600\"",
-            "\"-0.01250\""
+            "\"-0.00600\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1383,7 +1538,7 @@
           "name": "duration",
           "occurrences": 1,
           "examples": [
-            "\"12s\""
+            "\"24s\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1418,7 +1573,7 @@
           "name": "shading",
           "occurrences": 1,
           "examples": [
-            "\"physical\""
+            "\"filmic_physical_v1\""
           ],
           "recognized": true,
           "supportsInlineExpression": false,
@@ -1428,7 +1583,7 @@
           "name": "specular",
           "occurrences": 1,
           "examples": [
-            "\"0.22\""
+            "\"1\""
           ],
           "recognized": true,
           "supportsInlineExpression": false,
@@ -1570,7 +1725,7 @@
           "name": "lod",
           "occurrences": 1,
           "examples": [
-            "\"full\""
+            "\"quarter\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1639,7 +1794,7 @@
     },
     {
       "tag": "UV",
-      "occurrences": 21,
+      "occurrences": 6,
       "recognized": true,
       "validationCoverage": "strict",
       "requiredAttributes": [
@@ -1648,9 +1803,8 @@
       "attributes": [
         {
           "name": "mode",
-          "occurrences": 21,
+          "occurrences": 6,
           "examples": [
-            "\"box\"",
             "\"distance\""
           ],
           "recognized": true,
@@ -1671,7 +1825,7 @@
     },
     {
       "tag": "Variant",
-      "occurrences": 9,
+      "occurrences": 3,
       "recognized": true,
       "validationCoverage": "strict",
       "requiredAttributes": [
@@ -1680,24 +1834,22 @@
       "attributes": [
         {
           "name": "asset",
-          "occurrences": 9,
+          "occurrences": 3,
           "examples": [
             "\"s97_rock_a\"",
             "\"s97_rock_b\"",
-            "\"s97_rock_c\"",
-            "\"s97_tree_a\""
+            "\"s97_rock_c\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
         },
         {
           "name": "weight",
-          "occurrences": 9,
+          "occurrences": 3,
           "examples": [
-            "\"12\"",
-            "\"14\"",
-            "\"20\"",
-            "\"22\""
+            "\"22\"",
+            "\"36\"",
+            "\"42\""
           ],
           "recognized": true,
           "supportsAnimationTarget": false
@@ -1707,10 +1859,10 @@
   ],
   "animationProperties": [],
   "assetKinds": [
-    "compound",
     "curve",
     "image",
     "material",
+    "model",
     "primitive",
     "sweep",
     "terrain"

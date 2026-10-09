@@ -1,0 +1,267 @@
+{
+  "reportVersion": 1,
+  "output": "assets/terrain/s97-smooth-terrain.glb",
+  "outputSha256": "2e33ccbbb206cec1813bddf18605681c0f2bb8f1afb03c1ec7acd07f1cbecc2a",
+  "source": "s-000096/assets/landscape_forest__mountains.glb",
+  "sourceSha256": "bedf24a5bf9a6307e4debbdff046b82c095f29135329cb1174afd4b6213674ab",
+  "sourceImages": [
+    {
+      "index": 0,
+      "mimeType": "image/jpeg",
+      "sha256": "b181466834ea472684f27fe6c33a65296b40ac7b38332bba7b3586740bd1a140",
+      "byteLength": 1113647,
+      "bytePreserved": true
+    },
+    {
+      "index": 1,
+      "mimeType": "image/png",
+      "sha256": "db03168a08c8c8ec5a1e8c7258f98bb75e9b1b221c5142d8da2090bdce6a9aa9",
+      "byteLength": 1132762,
+      "bytePreserved": true
+    }
+  ],
+  "originalHeightmapSha256": "ad24c004e6c66e56d89dfb4edfa35e7cb0681a7e9f4e559b466bb10847f4262e",
+  "originalBuilderSha256": "12670562c406beedc64f52d9934578416f885cbaee1fb8e6101aa6a662f52647",
+  "roadPathSha256": "3e6b7bf623c6f3333b1c757564b1b223c7fab81ae3f71b63a4487897a6025f5d",
+  "roadOffsetsSha256": "502f6cb69aab4a60fb88445e2f9947ab67d250d216cdf5d108ef6ec1bf9494d0",
+  "grid": [
+    954,
+    537
+  ],
+  "vertices": 512298,
+  "triangles": 1021616,
+  "boundsWorldUnits": {
+    "min": [
+      -7.949999809265137,
+      -2.801764488220215,
+      -4.474999904632568
+    ],
+    "max": [
+      7.949999809265137,
+      2.8021397590637207,
+      4.474999904632568
+    ]
+  },
+  "siteScale": 0.05,
+  "textureTileSiteMetres": 5.0,
+  "uvRepeats": [
+    63.6,
+    35.8
+  ],
+  "material": {
+    "name": "S97_S96_GrassGround",
+    "pbrMetallicRoughness": {
+      "baseColorFactor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "baseColorTexture": {
+        "index": 0
+      },
+      "metallicFactor": 0,
+      "roughnessFactor": 1
+    },
+    "normalTexture": {
+      "index": 1,
+      "scale": 0.85
+    },
+    "extensions": {
+      "KHR_materials_specular": {
+        "specularFactor": 0.12
+      }
+    },
+    "doubleSided": false,
+    "alphaMode": "OPAQUE"
+  },
+  "surround": {
+    "output": "assets/terrain/s97-terrain-surround.glb",
+    "outputSha256": "dd9bd48b9664b0bd0e1907f9f5c56640c13a0ec8299076b156c1c65e66e33ff5",
+    "vertices": 138998,
+    "triangles": 271700,
+    "boundsWorldUnits": {
+      "min": [
+        -15.899999618530273,
+        -6.703611850738525,
+        -13.425000190734863
+      ],
+      "max": [
+        15.899999618530273,
+        6.759642124176025,
+        13.425000190734863
+      ]
+    },
+    "outerStepSiteMetres": 4,
+    "boundaryBlendSiteMetres": 8,
+    "exactSharedBoundaryVertices": 2978,
+    "coreInteriorFaces": 0,
+    "seam": "Identical float32 positions, normals and UVs at every original perimeter sample"
+  },
+  "originalHeightStepWorldUnits": 0.022956470588235297,
+  "heightDeltaWorldUnits": {
+    "min": -0.011477064203284648,
+    "max": 0.011480966459621822,
+    "meanAbsolute": 0.005736300470912706,
+    "rms": 0.006621892797855388
+  },
+  "samples": [
+    {
+      "label": "heroRoot",
+      "xz": [
+        3.8244574069976807,
+        2.165529489517212
+      ],
+      "originalScatterHeight": -1.1134823529411766,
+      "smoothRenderedHeight": -1.1219323461470143,
+      "deltaWorldUnits": -0.008449993205837725
+    },
+    {
+      "label": "heroRoadPoint",
+      "xz": [
+        3.9203498289567302,
+        1.8644211864785496
+      ],
+      "originalScatterHeight": -1.1134823529411766,
+      "smoothRenderedHeight": -1.104596853220554,
+      "deltaWorldUnits": 0.008885499720622692
+    },
+    {
+      "label": "cameraAt0s",
+      "xz": [
+        0,
+        3.51804
+      ],
+      "originalScatterHeight": -0.9298305882352942,
+      "smoothRenderedHeight": -0.9261813056626346,
+      "deltaWorldUnits": 0.003649282572659618
+    },
+    {
+      "label": "cameraAt4s",
+      "xz": [
+        6,
+        7
+      ],
+      "originalScatterHeight": -2.4248165926748055,
+      "smoothRenderedHeight": -2.4290019907620084,
+      "deltaWorldUnits": -0.004185398087202863
+    },
+    {
+      "label": "cameraAt8s",
+      "xz": [
+        2.3537964304459065,
+        0.8101121028618019
+      ],
+      "originalScatterHeight": -0.6543529411764708,
+      "smoothRenderedHeight": -0.648082390781395,
+      "deltaWorldUnits": 0.006270550395075847
+    },
+    {
+      "label": "cameraAt11s",
+      "xz": [
+        3.162659967549382,
+        1.5555916655222775
+      ],
+      "originalScatterHeight": -0.9987000000000001,
+      "smoothRenderedHeight": -0.9971836008817455,
+      "deltaWorldUnits": 0.00151639911825463
+    },
+    {
+      "label": "cameraAt14s",
+      "xz": [
+        3.471498772625255,
+        1.8402293167199135
+      ],
+      "originalScatterHeight": -1.0216564705882354,
+      "smoothRenderedHeight": -1.0310224507091612,
+      "deltaWorldUnits": -0.009365980120925821
+    },
+    {
+      "label": "cameraAt16s",
+      "xz": [
+        3.6040439945592375,
+        1.7391283548831202
+      ],
+      "originalScatterHeight": -1.0446129411764706,
+      "smoothRenderedHeight": -1.0466669853331902,
+      "deltaWorldUnits": -0.0020540441567196144
+    },
+    {
+      "label": "cameraAt18s",
+      "xz": [
+        3.7631743269888145,
+        1.6894576628937212
+      ],
+      "originalScatterHeight": -1.0675694117647059,
+      "smoothRenderedHeight": -1.0678177323636429,
+      "deltaWorldUnits": -0.00024832059893697966
+    },
+    {
+      "label": "cameraAt20s",
+      "xz": [
+        3.9296963033093957,
+        1.6972082592669786
+      ],
+      "originalScatterHeight": -1.0905258823529413,
+      "smoothRenderedHeight": -1.0969426093909915,
+      "deltaWorldUnits": -0.006416727038050185
+    },
+    {
+      "label": "cameraAt22s",
+      "xz": [
+        3.9670332140908218,
+        1.8241028660214167
+      ],
+      "originalScatterHeight": -1.1134823529411766,
+      "smoothRenderedHeight": -1.111192859205993,
+      "deltaWorldUnits": 0.002289493735183612
+    },
+    {
+      "label": "cameraAt24s",
+      "xz": [
+        3.9554730135157024,
+        1.851786105764319
+      ],
+      "originalScatterHeight": -1.1134823529411766,
+      "smoothRenderedHeight": -1.1105576478971093,
+      "deltaWorldUnits": 0.0029247050440672773
+    }
+  ],
+  "integration": {
+    "modelScale": 1,
+    "modelScaleMode": "none",
+    "scatterSurfaceRequiresTerrainAsset": true,
+    "preserveOriginalPlacementProxy": true,
+    "proxyMaterial": "Zero-alpha MASK material; castShadow=false; receiveShadow=false",
+    "proxyRenderLOD": "quarter",
+    "originalRoadVegetationCameraFilesChanged": false
+  },
+  "assetValidation": {
+    "core": {
+      "vertices": 512298,
+      "triangles": 1021616,
+      "finitePositionsNormalsUVs": true,
+      "indicesInRange": true,
+      "boundsMatchVertices": true,
+      "upwardTriangleWinding": true,
+      "minimumTriangleDoubleArea": 0.0002785844262689352,
+      "normalUnitMaxError": 5.960464477539063e-08,
+      "sourceImageBytesUnchanged": true
+    },
+    "surround": {
+      "vertices": 138998,
+      "triangles": 271700,
+      "finitePositionsNormalsUVs": true,
+      "indicesInRange": true,
+      "boundsMatchVertices": true,
+      "upwardTriangleWinding": true,
+      "minimumTriangleDoubleArea": 0.003318828297778964,
+      "normalUnitMaxError": 5.960464477539063e-08,
+      "sourceImageBytesUnchanged": true
+    },
+    "seam": {
+      "sharedVerticesChecked": 2978,
+      "positionsNormalsUVsExactlyMatch": true
+    }
+  }
+}

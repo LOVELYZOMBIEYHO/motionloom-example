@@ -1,0 +1,29 @@
+<Graph fps={24} duration="1s" size={[1280,720]} renderSize={[1280,720]}>
+  <Assets>
+    <ModelAsset id="dark_tree" src="tree-dark-green-canopy.glb" />
+    <ModelAsset id="blue_tree" src="tree-blue-green-canopy.glb" />
+    <ModelAsset id="light_tree" src="tree-light-green-canopy.glb" />
+    <ModelAsset id="long_grass" src="grass-long-blades.glb" />
+    <ModelAsset id="compact_grass" src="grass-compact-tuft.glb" />
+  </Assets>
+  <Background color="#889CA6" />
+  <Scene id="S97ReferenceForestAssets">
+    <Timeline>
+      <Track id="assets" space="3d">
+        <Sequence from="0s" duration="1s" out="hold">
+          <CompositeGroup id="asset_island" space="3d" depth="true">
+            <Camera3D position={[curve("0:19,0.5:-1,1:-1"),curve("0:13,0.5:35,1:35"),curve("0:28,0.5:0.05,1:0.05")]} target={[-1,4,0]} fov="43" />
+            <DirectionalLight direction={[-0.5,-0.7,-0.35]} color="#FFF4E2" intensity="3.2" />
+            <DirectionalLight direction={[0.6,-0.4,0.7]} color="#CBDDEC" intensity="0.4" />
+            <Model id="dark" asset="dark_tree" position={[-9,0,0]} />
+            <Model id="blue" asset="blue_tree" position={[-1,0,0]} />
+            <Model id="light" asset="light_tree" position={[7,0,0]} />
+            <Model id="grass_a" asset="long_grass" position={[-2,0,3]} />
+            <Model id="grass_b" asset="compact_grass" position={[2,0,3]} />
+          </CompositeGroup>
+        </Sequence>
+      </Track>
+    </Timeline>
+  </Scene>
+  <Present from="S97ReferenceForestAssets" />
+</Graph>

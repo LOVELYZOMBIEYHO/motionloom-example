@@ -1,9 +1,9 @@
-<!-- S97 - winding mountain road - textured PBR checkpoint rebuilt from reference/reference.png -->
-<Graph fps={24} duration="12s" size={[1920,1080]} renderSize={[1920,1080]}>
+<!-- S97 - S96 texture study, detailed roadside trees and a mountain forest -->
+<Graph fps={24} duration="24s" size={[1920,1080]} renderSize={[1920,1080]}>
   <RenderStyle id="s97_forest_pbr">
-    <SurfaceStyle shading="physical" specular="0.22" />
-    <LightingStyle ambientIntensity="0.42" ambientColor="#E4EDF6" shadowStyle="soft" />
-    <PostStyle toneMapping="aces" exposure="1.12" contrast="1.03" saturation="1.04" whiteBalance="6100" />
+    <SurfaceStyle shading="filmic_physical_v1" specular="1" />
+    <LightingStyle ambientIntensity="1" ambientColor="#FFFFFF" shadowStyle="soft" />
+    <PostStyle toneMapping="filmic_aces_v1" exposure="0.97" contrast="1.02" saturation="1.0" whiteBalance="6500" />
     <AntiAliasingStyle method="taa" quality="ultra" fallback="smaa" sharpness="0.04" />
   </RenderStyle>
   <Assets>
@@ -13,32 +13,12 @@
     <ImageAsset id="s97_ground_color" src="assets/materials/forest-ground-basecolor.png" colorSpace="srgb" />
     <ImageAsset id="s97_asphalt_color" src="assets/materials/asphalt-basecolor.png" colorSpace="srgb" />
     <ImageAsset id="s97_asphalt_roughness" src="assets/materials/asphalt-roughness.png" colorSpace="linear-srgb" />
-    <ImageAsset id="s97_bark_color" src="assets/materials/bark-basecolor.png" colorSpace="srgb" />
-    <ImageAsset id="s97_foliage_color" src="assets/materials/foliage-basecolor.png" colorSpace="srgb" />
 
+    <MaterialAsset id="s97_ground_mat" shading="pbr" baseColor="#00000000" alphaMode="mask" alphaCutoff="0.5" roughness="1" specular="0" />
     <MaterialAsset
-      id="s97_ground_mat"
-      shading="pbr"
-      baseColor="#B8B3A6"
-      baseColorTexture="s97_ground_color"
-      metallic="0"
-      roughness="0.92"
-      specular="0.14"
-      textureScale={[0.55,0.55]}
-      variationAmount={[0.08,0.05]}
-    />
-    <MaterialAsset
-      id="s97_asphalt_mat"
-      shading="pbr"
-      baseColor="#D6D8D9"
-      baseColorTexture="s97_asphalt_color"
-      metallicRoughnessTexture="s97_asphalt_roughness"
-      metallic="0"
-      roughness="1"
-      roughnessChannel="luminance"
-      specular="0.2"
-      textureScale={[2.2,0.24]}
-      variationAmount={[0.04,0.03]}
+      id="s97_asphalt_mat" shading="pbr" baseColor="#969A9A"
+      baseColorTexture="s97_asphalt_color" metallic="0" roughness="0.98"
+      specular="0.05" textureScale={[5.5,10]} variationAmount={[0.025,0.02]}
     />
     <MaterialAsset id="s97_paint_mat" shading="pbr" baseColor="#F2F3F4" metallic="0" roughness="0.6" specular="0.25" />
     <MaterialAsset
@@ -49,59 +29,11 @@
       roughness="0.34"
       specular="0.8"
     />
-    <MaterialAsset id="s97_rock_mat" shading="pbr" baseColor="#A69D8F" metallic="0" roughness="0.94" specular="0.12" />
     <MaterialAsset
-      id="s97_trunk_mat"
-      shading="pbr"
-      baseColor="#D7C9B6"
-      baseColorTexture="s97_bark_color"
-      metallic="0"
-      roughness="0.9"
-      specular="0.16"
-      textureScale={[1.2,2.8]}
-      variationAmount={[0.06,0.04]}
+      id="s97_rock_mat" shading="pbr" baseColor="#C4C0AA"
+      baseColorTexture="s97_moss_rock_color" normalTexture="s97_moss_rock_normal"
+      normalScale="0.5" metallic="0" roughness="1" specular="0.08"
     />
-    <MaterialAsset
-      id="s97_leaf_a"
-      shading="pbr"
-      baseColor="#E2EAD8"
-      baseColorTexture="s97_foliage_color"
-      metallic="0"
-      roughness="0.9"
-      specular="0.09"
-      textureScale={[1.6,1.6]}
-    />
-    <MaterialAsset
-      id="s97_leaf_b"
-      shading="pbr"
-      baseColor="#EEF0D8"
-      baseColorTexture="s97_foliage_color"
-      metallic="0"
-      roughness="0.91"
-      specular="0.08"
-      textureScale={[1.45,1.45]}
-    />
-    <MaterialAsset
-      id="s97_leaf_c"
-      shading="pbr"
-      baseColor="#E4EDC8"
-      baseColorTexture="s97_foliage_color"
-      metallic="0"
-      roughness="0.92"
-      specular="0.08"
-      textureScale={[1.3,1.3]}
-    />
-    <MaterialAsset
-      id="s97_leaf_d"
-      shading="pbr"
-      baseColor="#F0F2D6"
-      baseColorTexture="s97_foliage_color"
-      metallic="0"
-      roughness="0.92"
-      specular="0.07"
-      textureScale={[1.2,1.2]}
-    />
-
     <TerrainAsset
       id="s97_terrain"
       heightMap="s97_height"
@@ -110,7 +42,7 @@
       heightOffset="-2.95000"
       material="s97_ground_mat"
       chunks={[8,5]}
-      lod="full"
+      lod="quarter"
       collision="none"
     />
 
@@ -127,139 +59,16 @@
     </GeometryAsset>
     <MeshAsset id="s97_rock_c" material="s97_rock_mat" collision="none" geometry="s97_rock_c_geometry" />
 
-    <GeometryAsset id="s97_trunk_a_geometry">
-      <Primitive shape="cylinder" radius="0.015000" height="0.150000" segments="8" />
-    </GeometryAsset>
-    <MeshAsset id="s97_trunk_a" material="s97_trunk_mat" collision="none" geometry="s97_trunk_a_geometry" />
-    <GeometryAsset id="s97_cone1_a_geometry">
-      <Primitive shape="cone" radius="0.120000" height="0.320000" segments="12" />
-      <UV mode="box" />
-    </GeometryAsset>
-    <MeshAsset id="s97_cone1_a" material="s97_leaf_a" collision="none" geometry="s97_cone1_a_geometry" />
-    <GeometryAsset id="s97_cone2_a_geometry">
-      <Primitive shape="cone" radius="0.085000" height="0.300000" segments="12" />
-      <UV mode="box" />
-    </GeometryAsset>
-    <MeshAsset id="s97_cone2_a" material="s97_leaf_a" collision="none" geometry="s97_cone2_a_geometry" />
-    <CompoundAsset id="s97_tree_a">
-      <Instance id="trunk" asset="s97_trunk_a" position={[0.00000,0.07500,0.00000]} />
-      <Instance id="cone1" asset="s97_cone1_a" position={[0.00000,0.23000,0.00000]} />
-      <Instance id="cone2" asset="s97_cone2_a" position={[0.00000,0.45000,0.00000]} />
-    </CompoundAsset>
-    <GeometryAsset id="s97_trunk_b_geometry">
-      <Primitive shape="cylinder" radius="0.013000" height="0.120000" segments="8" />
-    </GeometryAsset>
-    <MeshAsset id="s97_trunk_b" material="s97_trunk_mat" collision="none" geometry="s97_trunk_b_geometry" />
-    <GeometryAsset id="s97_cone1_b_geometry">
-      <Primitive shape="cone" radius="0.145000" height="0.260000" segments="12" />
-      <UV mode="box" />
-    </GeometryAsset>
-    <MeshAsset id="s97_cone1_b" material="s97_leaf_a" collision="none" geometry="s97_cone1_b_geometry" />
-    <GeometryAsset id="s97_cone2_b_geometry">
-      <Primitive shape="cone" radius="0.110000" height="0.220000" segments="12" />
-      <UV mode="box" />
-    </GeometryAsset>
-    <MeshAsset id="s97_cone2_b" material="s97_leaf_a" collision="none" geometry="s97_cone2_b_geometry" />
-    <GeometryAsset id="s97_cone3_b_geometry">
-      <Primitive shape="cone" radius="0.075000" height="0.140000" segments="12" />
-      <UV mode="box" />
-    </GeometryAsset>
-    <MeshAsset id="s97_cone3_b" material="s97_leaf_a" collision="none" geometry="s97_cone3_b_geometry" />
-    <CompoundAsset id="s97_tree_b">
-      <Instance id="trunk" asset="s97_trunk_b" position={[0.00000,0.06000,0.00000]} />
-      <Instance id="cone1" asset="s97_cone1_b" position={[0.00000,0.20500,0.00000]} />
-      <Instance id="cone2" asset="s97_cone2_b" position={[0.00000,0.37000,0.00000]} />
-      <Instance id="cone3" asset="s97_cone3_b" position={[0.00000,0.49500,0.00000]} />
-    </CompoundAsset>
-    <GeometryAsset id="s97_trunk_c_geometry">
-      <Primitive shape="cylinder" radius="0.015000" height="0.140000" segments="8" />
-    </GeometryAsset>
-    <MeshAsset id="s97_trunk_c" material="s97_trunk_mat" collision="none" geometry="s97_trunk_c_geometry" />
-    <GeometryAsset id="s97_cone1_c_geometry">
-      <Primitive shape="cone" radius="0.160000" height="0.250000" segments="12" />
-      <UV mode="box" />
-    </GeometryAsset>
-    <MeshAsset id="s97_cone1_c" material="s97_leaf_b" collision="none" geometry="s97_cone1_c_geometry" />
-    <GeometryAsset id="s97_cone2_c_geometry">
-      <Primitive shape="cone" radius="0.120000" height="0.230000" segments="12" />
-      <UV mode="box" />
-    </GeometryAsset>
-    <MeshAsset id="s97_cone2_c" material="s97_leaf_b" collision="none" geometry="s97_cone2_c_geometry" />
-    <GeometryAsset id="s97_cone3_c_geometry">
-      <Primitive shape="cone" radius="0.075000" height="0.160000" segments="12" />
-      <UV mode="box" />
-    </GeometryAsset>
-    <MeshAsset id="s97_cone3_c" material="s97_leaf_b" collision="none" geometry="s97_cone3_c_geometry" />
-    <CompoundAsset id="s97_tree_c">
-      <Instance id="trunk" asset="s97_trunk_c" position={[0.00000,0.07000,0.00000]} />
-      <Instance id="cone1" asset="s97_cone1_c" position={[0.00000,0.20000,0.00000]} />
-      <Instance id="cone2" asset="s97_cone2_c" position={[0.00000,0.38000,0.00000]} />
-      <Instance id="cone3" asset="s97_cone3_c" position={[0.00000,0.52000,0.00000]} />
-    </CompoundAsset>
-    <GeometryAsset id="s97_trunk_d_geometry">
-      <Primitive shape="cylinder" radius="0.021000" height="0.200000" segments="8" />
-    </GeometryAsset>
-    <MeshAsset id="s97_trunk_d" material="s97_trunk_mat" collision="none" geometry="s97_trunk_d_geometry" />
-    <GeometryAsset id="s97_blob1_d_geometry">
-      <Primitive shape="sphere" radius="0.145000" segments="14" rings="9" />
-      <UV mode="box" />
-    </GeometryAsset>
-    <MeshAsset id="s97_blob1_d" material="s97_leaf_c" collision="none" geometry="s97_blob1_d_geometry" />
-    <GeometryAsset id="s97_blob2_d_geometry">
-      <Primitive shape="sphere" radius="0.105000" segments="12" rings="8" />
-      <UV mode="box" />
-    </GeometryAsset>
-    <MeshAsset id="s97_blob2_d" material="s97_leaf_c" collision="none" geometry="s97_blob2_d_geometry" />
-    <CompoundAsset id="s97_tree_d">
-      <Instance id="trunk" asset="s97_trunk_d" position={[0.00000,0.10000,0.00000]} />
-      <Instance id="blob1" asset="s97_blob1_d" position={[0.00000,0.28000,0.00000]} />
-      <Instance id="blob2" asset="s97_blob2_d" position={[0.09000,0.35000,0.04500]} />
-    </CompoundAsset>
-    <GeometryAsset id="s97_trunk_e_geometry">
-      <Primitive shape="cylinder" radius="0.023000" height="0.220000" segments="8" />
-    </GeometryAsset>
-    <MeshAsset id="s97_trunk_e" material="s97_trunk_mat" collision="none" geometry="s97_trunk_e_geometry" />
-    <GeometryAsset id="s97_blob1_e_geometry">
-      <Primitive shape="sphere" radius="0.160000" segments="14" rings="9" />
-      <UV mode="box" />
-    </GeometryAsset>
-    <MeshAsset id="s97_blob1_e" material="s97_leaf_d" collision="none" geometry="s97_blob1_e_geometry" />
-    <GeometryAsset id="s97_blob2_e_geometry">
-      <Primitive shape="sphere" radius="0.130000" segments="12" rings="8" />
-      <UV mode="box" />
-    </GeometryAsset>
-    <MeshAsset id="s97_blob2_e" material="s97_leaf_d" collision="none" geometry="s97_blob2_e_geometry" />
-    <GeometryAsset id="s97_blob3_e_geometry">
-      <Primitive shape="sphere" radius="0.110000" segments="12" rings="8" />
-      <UV mode="box" />
-    </GeometryAsset>
-    <MeshAsset id="s97_blob3_e" material="s97_leaf_d" collision="none" geometry="s97_blob3_e_geometry" />
-    <CompoundAsset id="s97_tree_e">
-      <Instance id="trunk" asset="s97_trunk_e" position={[0.00000,0.11000,0.00000]} />
-      <Instance id="blob1" asset="s97_blob1_e" position={[0.00000,0.31000,0.00000]} />
-      <Instance id="blob2" asset="s97_blob2_e" position={[-0.10000,0.40000,0.05500]} />
-      <Instance id="blob3" asset="s97_blob3_e" position={[0.09500,0.39000,-0.06500]} />
-    </CompoundAsset>
-    <GeometryAsset id="s97_trunk_f_geometry">
-      <Primitive shape="cylinder" radius="0.026000" height="0.300000" segments="8" />
-    </GeometryAsset>
-    <MeshAsset id="s97_trunk_f" material="s97_trunk_mat" collision="none" geometry="s97_trunk_f_geometry" />
-    <GeometryAsset id="s97_blob1_f_geometry">
-      <Primitive shape="sphere" radius="0.135000" segments="14" rings="9" />
-      <UV mode="box" />
-    </GeometryAsset>
-    <MeshAsset id="s97_blob1_f" material="s97_leaf_d" collision="none" geometry="s97_blob1_f_geometry" />
-    <GeometryAsset id="s97_blob2_f_geometry">
-      <Primitive shape="sphere" radius="0.115000" segments="12" rings="8" />
-      <UV mode="box" />
-    </GeometryAsset>
-    <MeshAsset id="s97_blob2_f" material="s97_leaf_d" collision="none" geometry="s97_blob2_f_geometry" />
-    <CompoundAsset id="s97_tree_f">
-      <Instance id="trunk" asset="s97_trunk_f" position={[0.00000,0.15000,0.00000]} />
-      <Instance id="blob1" asset="s97_blob1_f" position={[0.00000,0.40000,0.00000]} />
-      <Instance id="blob2" asset="s97_blob2_f" position={[0.06000,0.56000,-0.04000]} />
-    </CompoundAsset>
-
+<!-- BEGIN S97 QUALITY ASSETS -->
+    <ImageAsset id="s97_daylight_radiance" src="assets/environment/sunny-forest-sky.png" colorSpace="srgb" />
+    <ImageAsset id="s97_moss_rock_color" src="assets/reference-forest/textures/s96-image-09.jpg" colorSpace="srgb" />
+    <ImageAsset id="s97_moss_rock_normal" src="assets/reference-forest/textures/s96-image-10.png" colorSpace="linear-srgb" />
+    <ModelAsset id="s97_visible_ground" src="assets/terrain/s97-smooth-terrain.glb" />
+    <ModelAsset id="s97_ground_surround" src="assets/terrain/s97-terrain-surround.glb" />
+    <ModelAsset id="s97_near_tree" src="assets/trees/s97-near-tree-textured.glb" />
+    <ModelAsset id="s97_understory_batch" src="assets/reference-forest/s97-understory-batched.glb" />
+    <ModelAsset id="s97_forest_batch" src="assets/reference-forest/s97-forest-batched.glb" />
+<!-- END S97 QUALITY ASSETS -->
     <CurveAsset id="s97_road_curve" interpolation="linear" maxSegmentLength="0.02500">
       <CurvePoint position={[-6.18481,2.12839,-3.65175]} />
       <CurvePoint position={[-6.04719,2.10633,-3.46489]} />
@@ -528,74 +337,105 @@
   <Scene id="S97WindingRoad" renderStyle="s97_forest_pbr">
     <Timeline>
       <Track id="s97_world" space="3d" compositeOrder="30">
-        <Sequence from="0s" duration="12s" out="hold">
+        <Sequence from="0s" duration="24s" out="hold">
           <CompositeGroup id="s97_island" space="3d" depth="true" format="rgba16f">
-            <DirectionalLight
-              id="s97_sun"
-              direction={[-0.5,-0.74,0.45]}
-              color="#FFF4E2"
-              intensity="4.4"
-              castShadow="true"
-              shadowStrength="0.78"
-            />
-            <DirectionalLight
-              id="s97_fill"
-              direction={[0.55,-0.62,-0.55]}
-              color="#C9DCEA"
-              intensity="0.72"
-              castShadow="false"
-            />
-            <AmbientOcclusion id="s97_ao" intensity="0.38" radius="0.08000" />
-            <AtmosphereFog id="s97_aerial_haze" scatteringColor="#C8D2D3" density="0.003" affectEnvironment="false" />
+
+
+
+
+<!-- BEGIN S97 SHARED LIGHTING -->
+            <DirectionalLight id="s97_sun" direction={[-0.56,-0.66,-0.50]}
+              color="#FFF1DC" intensity="3.2" castShadow="true" shadowStrength="0.80" />
+            <EnvironmentLight id="s97_daylight" asset="s97_daylight_radiance"
+              mapping="equirectangular" rotationY="-116.5" intensity="0.32"
+              visible="true" backgroundIntensity="0.8"
+              diffuseIntensity="1" specularIntensity="1" />
+            <AmbientOcclusion id="s97_ao" intensity="0.22" radius="0.025" />
+            <AtmosphereFog id="s97_aerial_haze" density="0.008" anisotropy="0.35"
+              scatteringColor={[0.76,0.82,0.90]} baseHeight="-1" heightFalloff="0.35"
+              boundsMin={[-16,-7,-14]} boundsMax={[16,7.5,14]} edgeFeather="0.5"
+              affectEnvironment="false" />
+<!-- END S97 SHARED LIGHTING -->
+            <!-- Full-site descent, roadside orbit, then leaf-level inspection. -->
             <Camera3D
               id="s97_aerial"
-              position={[curve("0.0:0.00000:linear, 1.5:0.00067:linear, 3.0:0.00256:linear, 4.5:0.00540:linear, 6.0:0.00875:linear, 7.5:0.01210:linear, 9.0:0.01494:linear, 10.5:0.01683:linear, 12.0:0.01750:linear"),curve("0.0:40.21140:linear, 1.5:40.17773:linear, 3.0:40.08184:linear, 4.5:39.93834:linear, 6.0:39.76907:linear, 7.5:39.59980:linear, 9.0:39.45630:linear, 10.5:39.36042:linear, 12.0:39.32675:linear"),curve("0.0:3.51804:linear, 1.5:3.51510:linear, 3.0:3.50671:linear, 4.5:3.49415:linear, 6.0:3.47934:linear, 7.5:3.46453:linear, 9.0:3.45198:linear, 10.5:3.44359:linear, 12.0:3.44064:linear")]}
-              target={[curve("0.0:0.00000:linear, 1.5:0.00057:linear, 3.0:0.00220:linear, 4.5:0.00463:linear, 6.0:0.00750:linear, 7.5:0.01037:linear, 9.0:0.01280:linear, 10.5:0.01443:linear, 12.0:0.01500:linear"),curve("0.0:0.00000:linear, 1.5:0.00000:linear, 3.0:0.00000:linear, 4.5:0.00000:linear, 6.0:0.00000:linear, 7.5:0.00000:linear, 9.0:0.00000:linear, 10.5:0.00000:linear, 12.0:0.00000:linear"),curve("0.0:0.00000:linear, 1.5:-0.00019:linear, 3.0:-0.00073:linear, 4.5:-0.00154:linear, 6.0:-0.00250:linear, 7.5:-0.00346:linear, 9.0:-0.00427:linear, 10.5:-0.00481:linear, 12.0:-0.00500:linear")]}
-              fov="10.0"
+              position={[curve("0.0:0.00000:ease_in_out, 4.0:6.00000:ease_in_out, 8.0:2.35380:ease_in_out, 11.0:3.16266:ease_in_out, 14.0:3.47150:ease_in_out, 16.0:3.60404:ease_in_out, 18.0:3.76317:ease_in_out, 20.0:3.92970:ease_in_out, 22.0:3.96703:ease_in_out, 24.0:3.95547:ease_in_out"),curve("0.0:40.21140:ease_in_out, 4.0:8.00000:ease_in_out, 8.0:0.32402:ease_in_out, 11.0:-0.40598:ease_in_out, 14.0:-0.68598:ease_in_out, 16.0:-0.68598:ease_in_out, 18.0:-0.68598:ease_in_out, 20.0:-0.68598:ease_in_out, 22.0:-0.73598:ease_in_out, 24.0:-0.75598:ease_in_out"),curve("0.0:3.51804:ease_in_out, 4.0:7.00000:ease_in_out, 8.0:0.81011:ease_in_out, 11.0:1.55559:ease_in_out, 14.0:1.84023:ease_in_out, 16.0:1.73913:ease_in_out, 18.0:1.68946:ease_in_out, 20.0:1.69721:ease_in_out, 22.0:1.82410:ease_in_out, 24.0:1.85179:ease_in_out")]}
+              target={[curve("0.0:0.00000:ease_in_out, 4.0:1.00000:ease_in_out, 8.0:3.82446:ease_in_out, 11.0:3.82446:ease_in_out, 14.0:3.82446:ease_in_out, 16.0:3.82446:ease_in_out, 18.0:3.82446:ease_in_out, 20.0:3.82446:ease_in_out, 22.0:3.82446:ease_in_out, 24.0:3.82446:ease_in_out"),curve("0.0:0.00000:ease_in_out, 4.0:-0.30000:ease_in_out, 8.0:-0.95598:ease_in_out, 11.0:-0.91598:ease_in_out, 14.0:-0.91598:ease_in_out, 16.0:-0.91598:ease_in_out, 18.0:-0.91598:ease_in_out, 20.0:-0.91598:ease_in_out, 22.0:-0.83598:ease_in_out, 24.0:-0.81098:ease_in_out"),curve("0.0:0.00000:ease_in_out, 4.0:0.30000:ease_in_out, 8.0:2.16553:ease_in_out, 11.0:2.16553:ease_in_out, 14.0:2.16553:ease_in_out, 16.0:2.16553:ease_in_out, 18.0:2.16553:ease_in_out, 20.0:2.16553:ease_in_out, 22.0:2.16553:ease_in_out, 24.0:2.16553:ease_in_out")]}
+              fov={curve("0.0:10.00000:ease_in_out, 4.0:40.00000:ease_in_out, 8.0:50.00000:ease_in_out, 11.0:48.00000:ease_in_out, 14.0:55.00000:ease_in_out, 16.0:55.00000:ease_in_out, 18.0:55.00000:ease_in_out, 20.0:55.00000:ease_in_out, 22.0:50.00000:ease_in_out, 24.0:45.00000:ease_in_out")}
             />
 
             <Model
-              id="s97_terrain_model"
-              asset="s97_terrain"
-              position={[0,0,0]}
-              castShadow="true"
-              receiveShadow="true"
+              id="s97_terrain_model" asset="s97_terrain" position={[0,0,0]}
+              castShadow="false" receiveShadow="false"
             />
+<!-- BEGIN S97 QUALITY GROUND -->
+            <!-- The transparent TerrainAsset remains the deterministic Scatter placement surface. -->
+            <Model id="s97_visible_ground_model" asset="s97_visible_ground" castShadow="true" receiveShadow="true">
+              <MaterialBinding modelSourceMaterial="S97_S96_GrassGround" tint="#A099A6" tintAmount="1" />
+            </Model>
+            <Model id="s97_surround_model" asset="s97_ground_surround" castShadow="true" receiveShadow="true">
+              <MaterialBinding modelSourceMaterial="S97_S96_GrassGround" tint="#A099A6" tintAmount="1" />
+            </Model>
+<!-- END S97 QUALITY GROUND -->
             <Model id="s97_asphalt_model" asset="s97_asphalt" castShadow="true" receiveShadow="true" />
             <Model id="s97_line_left_model" asset="s97_line_left" receiveShadow="true" />
             <Model id="s97_line_right_model" asset="s97_line_right" receiveShadow="true" />
             <Model id="s97_line_center_model" asset="s97_line_center" receiveShadow="true" />
             <Model id="s97_guardrail_left_model" asset="s97_guardrail_left" castShadow="true" receiveShadow="true" />
             <Model id="s97_guardrail_right_model" asset="s97_guardrail_right" castShadow="true" receiveShadow="true" />
-            <Scatter
-              id="s97_forest"
-              surface="s97_terrain_model"
-              count="10760"
-              seed="97"
-              exclusionMap="s97_forest_exclusion"
-              slopeRange={[0,90]}
-              scaleRange={[0.42,0.86]}
-              rotationYRange={[0,360]}
-              surfaceOffset="-0.01250"
-              castShadow="true"
-              receiveShadow="true"
-            >
-              <Variant asset="s97_tree_a" weight="24" />
-              <Variant asset="s97_tree_b" weight="24" />
-              <Variant asset="s97_tree_c" weight="20" />
-              <Variant asset="s97_tree_d" weight="14" />
-              <Variant asset="s97_tree_e" weight="12" />
-              <Variant asset="s97_tree_f" weight="6" />
-            </Scatter>
+<!-- BEGIN S97 QUALITY FOREST -->
+            <Model id="s97_distant_forest_model" asset="s97_forest_batch" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_0059" asset="s97_near_tree" position={[3.99938273,-1.44934031,2.86208534]} scale="0.10157718" rotationY="120.846283" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_0107" asset="s97_near_tree" position={[3.82445741,-1.12598235,2.16552949]} scale="0.10111125" rotationY="306.331658" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_0150" asset="s97_near_tree" position={[3.64965343,-0.94233059,1.46904218]} scale="0.06481835" rotationY="358.202190" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_0247" asset="s97_near_tree" position={[3.61034989,-1.26970075,2.57632065]} scale="0.08858246" rotationY="252.205861" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_0351" asset="s97_near_tree" position={[4.50195932,-1.32827230,2.23435903]} scale="0.08832964" rotationY="261.626508" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_0385" asset="s97_near_tree" position={[3.39612103,-1.35663712,2.98697495]} scale="0.05889734" rotationY="76.436788" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_0396" asset="s97_near_tree" position={[4.32679129,-1.10302588,1.53787148]} scale="0.06026304" rotationY="174.334059" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_0430" asset="s97_near_tree" position={[3.22143841,-1.12598235,2.29021454]} scale="0.05550808" rotationY="212.840710" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_0488" asset="s97_near_tree" position={[4.28748751,-1.42441647,2.64501333]} scale="0.09706283" rotationY="134.035403" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_0569" asset="s97_near_tree" position={[3.00745225,-1.23100735,2.70100546]} scale="0.07480389" rotationY="153.492061" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_0581" asset="s97_near_tree" position={[3.93812251,-0.94233059,1.25176537]} scale="0.09346084" rotationY="246.106582" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_0632" asset="s97_near_tree" position={[4.07301617,-1.53898018,3.05553126]} scale="0.05229452" rotationY="285.602238" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_0680" asset="s97_near_tree" position={[3.89833355,-1.21780824,2.35904384]} scale="0.06646381" rotationY="199.664927" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_0819" asset="s97_near_tree" position={[3.68386221,-1.35554706,2.76983476]} scale="0.07815783" rotationY="96.402830" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_0865" asset="s97_near_tree" position={[3.50917959,-1.08006941,2.07362056]} scale="0.05394366" rotationY="216.885653" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_0908" asset="s97_near_tree" position={[3.33449697,-0.89641765,1.37713313]} scale="0.09548420" rotationY="203.138859" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_0923" asset="s97_near_tree" position={[4.57571411,-1.44409754,2.42814636]} scale="0.05166985" rotationY="75.717146" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_1001" asset="s97_near_tree" position={[3.29470825,-1.19485176,2.48441148]} scale="0.06824784" rotationY="349.601398" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_1060" asset="s97_near_tree" position={[4.36124277,-1.53695306,2.83893728]} scale="0.08416335" rotationY="315.345190" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_1107" asset="s97_near_tree" position={[4.18656015,-1.17189529,2.14244986]} scale="0.06098741" rotationY="227.227306" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_1140" asset="s97_near_tree" position={[3.08120728,-1.32044702,2.89465642]} scale="0.10154086" rotationY="13.618294" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_1151" asset="s97_near_tree" position={[4.01187754,-1.01120000,1.44596255]} scale="0.08793120" rotationY="211.009705" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_1188" asset="s97_near_tree" position={[2.90652466,-1.01120000,2.19816899]} scale="0.05753613" rotationY="148.933775" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_1251" asset="s97_near_tree" position={[3.97208858,-1.30963412,2.55324101]} scale="0.08089428" rotationY="339.173613" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_1344" asset="s97_near_tree" position={[3.62175274,-0.85651716,1.15971982]} scale="0.06815220" rotationY="37.684168" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_1359" asset="s97_near_tree" position={[4.86394024,-1.41132391,2.21127915]} scale="0.07012835" rotationY="335.871770" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_1394" asset="s97_near_tree" position={[3.75761700,-1.42441647,2.96348572]} scale="0.09969987" rotationY="308.596537" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_1441" asset="s97_near_tree" position={[3.58293438,-1.14893882,2.26699829]} scale="0.08384360" rotationY="154.610263" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_1499" asset="s97_near_tree" position={[4.64849854,-1.53919882,2.62152410]} scale="0.09085239" rotationY="345.492661" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_1579" asset="s97_near_tree" position={[3.36943340,-1.27217279,2.67778921]} scale="0.07239243" rotationY="122.140235" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_1625" asset="s97_near_tree" position={[3.19475079,-1.01120000,1.98130178]} scale="0.09892355" rotationY="249.561031" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_1686" asset="s97_near_tree" position={[4.26031494,-1.30925319,2.33582759]} scale="0.05072437" rotationY="190.081394" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_1729" asset="s97_near_tree" position={[4.08563232,-1.08338734,1.63879395]} scale="0.07007780" rotationY="337.708783" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_1765" asset="s97_near_tree" position={[2.97930908,-1.10339442,2.39154649]} scale="0.07758967" rotationY="216.986825" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_1824" asset="s97_near_tree" position={[4.04681396,-1.41121195,2.74552608]} scale="0.07395095" rotationY="283.867471" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_1916" asset="s97_near_tree" position={[3.69744873,-0.91937924,1.35255122]} scale="0.08065356" rotationY="299.784665" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_1966" asset="s97_near_tree" position={[3.83137202,-1.51624235,3.15631700]} scale="0.09477198" rotationY="37.553456" castShadow="true" receiveShadow="true" />
+            <Model id="s97_tree_2010" asset="s97_near_tree" position={[3.65668941,-1.22578926,2.46037602]} scale="0.07284612" rotationY="35.913515" castShadow="true" receiveShadow="true" />
+<!-- END S97 QUALITY FOREST -->
+<!-- BEGIN S97 QUALITY UNDERSTORY -->
+            <Model id="s97_understory_model" asset="s97_understory_batch" castShadow="false" receiveShadow="true" />
+<!-- END S97 QUALITY UNDERSTORY -->
             <Scatter
               id="s97_cut_rocks"
               surface="s97_terrain_model"
-              count="720"
+              count="360"
               seed="197"
               densityMap="s97_rock_density"
               exclusionMap="s97_forest_exclusion"
               slopeRange={[0,90]}
-              scaleRange={[0.55,1.45]}
+              scaleRange={[0.40,1.05]}
               rotationYRange={[0,360]}
               surfaceOffset="-0.00600"
               castShadow="true"

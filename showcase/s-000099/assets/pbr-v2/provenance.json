@@ -1,0 +1,563 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-05",
+  "purpose": "Matching CC0 PBR material sets for Showcase99 material and lighting improvement. Geometry, camera and scene source changes are authored separately.",
+  "assetPolicy": "Downloaded maps are unmodified provider bytes. Original assets/textures files are retained. No ImageGen was needed. Downloadable texture assets are CC0; provider logo/website/preview metadata is not redistributed here.",
+  "channelContract": {
+    "PolyHavenARM": "R AO, G perceptual roughness, B metallic. The same ImageAsset can bind to metallicRoughnessTexture and occlusionTexture.",
+    "baseColor": "Use ImageAsset colorSpace=srgb.",
+    "data": "Use ImageAsset colorSpace=linear-srgb for normal, ARM and roughness.",
+    "roughnessFactor": "MotionLoom multiplies the scalar roughness by the selected texture channel, so start with roughness=1 for source maps.",
+    "nonmetals": "Use metallic=0 for all sets in this manifest.",
+    "uvScale": "For GeometryAsset UV mode=box at default scale, source coordinates are local metre coordinates: final repeats/metre = UV.scale \u00d7 MaterialAsset.textureScale. Suggested textureScale is inverse physical tile size only when UV.scale is 1.",
+    "orientation": "Apply UV orientation on geometry and check tangent frame for normals. Oak grain source is along image V; walnut grain is along image U.",
+    "performance": "2K pale oak and worktop are hero sets; walnut, floor stone, plaster and woven upholstery maps are 1K secondary sets. Share ImageAssets across tint/finish variants."
+  },
+  "verification": {
+    "matchingSetSource": true,
+    "providerMd5CheckedForPolyHaven": true,
+    "zipCrcAndExtractedBytesCheckedForAmbientCG": true,
+    "imageDimensionsAndSignaturesChecked": true,
+    "pngChunksCrcChecked": true,
+    "visualDiffuseReview": "Reviewed the downloaded diffuse images for all six sets. Rejected red/weathered oak, blue linen and tile grout for worktop purposes.",
+    "sceneRenderVerification": "Not performed by asset sourcing; rendering is part of scene integration."
+  },
+  "sets": [
+    {
+      "provider": "Poly Haven",
+      "assetId": "white_oak_veneer",
+      "sourcePage": "https://polyhaven.com/a/white_oak_veneer",
+      "sourceMetadata": "https://api.polyhaven.com/info/white_oak_veneer",
+      "sourceFilesMetadata": "https://api.polyhaven.com/files/white_oak_veneer",
+      "license": "CC0-1.0",
+      "licenseSource": "https://polyhaven.com/license",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "authors": {
+        "Jenelle van Heerden": "All"
+      },
+      "providerDimensionsMm": [
+        500,
+        500
+      ],
+      "physicalTileMeters": [
+        0.5,
+        0.5
+      ],
+      "physicalTileBasis": "Poly Haven API dimensions in millimetres, converted to metres; corroborated by asset page width. These are source capture dimensions, not a guarantee of object finish.",
+      "suggestedTextureScaleForUnitBoxUV": [
+        2.0,
+        2.0
+      ],
+      "scalarContract": {
+        "metallic": 0,
+        "roughness": 1,
+        "roughnessChannel": "g",
+        "occlusionChannel": "r",
+        "metallicChannel": "b",
+        "normalScale": "calibrate below 1 for subtle wood/wall/cloth relief",
+        "occlusionStrength": "calibrate conservatively; AO affects ambient contribution"
+      },
+      "uses": [
+        "oak joinery",
+        "oak floorboards",
+        "oak table/chairs"
+      ],
+      "grainAxisInImage": "V",
+      "note": "Natural pale oak with subtle pores. Direction and physical scale should be authored per object; floorboard and joinery finishes may use different scalar response.",
+      "maps": [
+        {
+          "role": "baseColor",
+          "file": "white_oak_veneer/white_oak_veneer_diff_2k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/2k/white_oak_veneer/white_oak_veneer_diff_2k.jpg",
+          "providerMd5": "38d61468709c2bcd17ae9efbef8b0ad0",
+          "providerMd5Verified": true,
+          "sha256": "00e09e2f901fb76c6d206e7a0197f257f8a9d5f662d3cd863c2258c9b287131e",
+          "byteSize": 2537257,
+          "width": 2048,
+          "height": 2048,
+          "sourceBitDepth": 8,
+          "format": "JPEG",
+          "colorSpace": "srgb",
+          "channels": "RGB base color; opaque alpha"
+        },
+        {
+          "role": "normalGL",
+          "file": "white_oak_veneer/white_oak_veneer_nor_gl_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/white_oak_veneer/white_oak_veneer_nor_gl_2k.png",
+          "providerMd5": "81a4262f8fffa5262c20af3b4ca0fa3b",
+          "providerMd5Verified": true,
+          "sha256": "95b1e3df1db240ac44a8e33574a178539293e0a972f78ead17fcab8fd8a8c745",
+          "byteSize": 21125813,
+          "width": 2048,
+          "height": 2048,
+          "sourceBitDepth": 16,
+          "format": "PNG",
+          "pngCrcVerified": true,
+          "colorSpace": "linear-srgb",
+          "channels": "RGB tangent-space OpenGL +Y normal"
+        },
+        {
+          "role": "ORM",
+          "file": "white_oak_veneer/white_oak_veneer_arm_2k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/white_oak_veneer/white_oak_veneer_arm_2k.png",
+          "providerMd5": "ef2c1d41bad592ea01bf9758a8f65e88",
+          "providerMd5Verified": true,
+          "sha256": "12268183ce5ba79a58b7b2a3003c5ac498add4dbbb958178c51808b67253c7dd",
+          "byteSize": 16818888,
+          "width": 2048,
+          "height": 2048,
+          "sourceBitDepth": 16,
+          "format": "PNG",
+          "pngCrcVerified": true,
+          "colorSpace": "linear-srgb",
+          "channels": "R ambient occlusion, G perceptual roughness, B metallic"
+        }
+      ]
+    },
+    {
+      "provider": "Poly Haven",
+      "assetId": "walnut_veneer_02",
+      "sourcePage": "https://polyhaven.com/a/walnut_veneer_02",
+      "sourceMetadata": "https://api.polyhaven.com/info/walnut_veneer_02",
+      "sourceFilesMetadata": "https://api.polyhaven.com/files/walnut_veneer_02",
+      "license": "CC0-1.0",
+      "licenseSource": "https://polyhaven.com/license",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "authors": {
+        "Jenelle van Heerden": "All"
+      },
+      "providerDimensionsMm": [
+        1000,
+        1000
+      ],
+      "physicalTileMeters": [
+        1.0,
+        1.0
+      ],
+      "physicalTileBasis": "Poly Haven API dimensions in millimetres, converted to metres; corroborated by asset page width. These are source capture dimensions, not a guarantee of object finish.",
+      "suggestedTextureScaleForUnitBoxUV": [
+        1.0,
+        1.0
+      ],
+      "scalarContract": {
+        "metallic": 0,
+        "roughness": 1,
+        "roughnessChannel": "g",
+        "occlusionChannel": "r",
+        "metallicChannel": "b",
+        "normalScale": "calibrate below 1 for subtle wood/wall/cloth relief",
+        "occlusionStrength": "calibrate conservatively; AO affects ambient contribution"
+      },
+      "uses": [
+        "walnut joinery",
+        "walnut sofa base",
+        "walnut accent slats"
+      ],
+      "grainAxisInImage": "U",
+      "note": "Fine walnut veneer with warm neutral grain, replacing the former tinted oak reuse.",
+      "maps": [
+        {
+          "role": "baseColor",
+          "file": "walnut_veneer_02/walnut_veneer_02_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/walnut_veneer_02/walnut_veneer_02_diff_1k.jpg",
+          "providerMd5": "5f1198a623856d828387febc07a1811d",
+          "providerMd5Verified": true,
+          "sha256": "0e066c9876dc2517f2571f3d177e892b5631020d27b16cfd385a80a69493fdea",
+          "byteSize": 592833,
+          "width": 1024,
+          "height": 1024,
+          "sourceBitDepth": 8,
+          "format": "JPEG",
+          "colorSpace": "srgb",
+          "channels": "RGB base color; opaque alpha"
+        },
+        {
+          "role": "normalGL",
+          "file": "walnut_veneer_02/walnut_veneer_02_nor_gl_1k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/walnut_veneer_02/walnut_veneer_02_nor_gl_1k.png",
+          "providerMd5": "e8aa37f008d89e7c4699cbb16b774054",
+          "providerMd5Verified": true,
+          "sha256": "c14fde8c287ea3b14766d6cd5a5c032451f11fc1be2b5f1c0c7645a3fc668d7b",
+          "byteSize": 4703928,
+          "width": 1024,
+          "height": 1024,
+          "sourceBitDepth": 16,
+          "format": "PNG",
+          "pngCrcVerified": true,
+          "colorSpace": "linear-srgb",
+          "channels": "RGB tangent-space OpenGL +Y normal"
+        },
+        {
+          "role": "ORM",
+          "file": "walnut_veneer_02/walnut_veneer_02_arm_1k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/walnut_veneer_02/walnut_veneer_02_arm_1k.png",
+          "providerMd5": "c742422ae63ac4c045cab0b9c6eccef8",
+          "providerMd5Verified": true,
+          "sha256": "17ea8d3fded48e530d7987b7e368ba22710b9e1ed61bcf6ef152ba2bf12e4b4b",
+          "byteSize": 4280861,
+          "width": 1024,
+          "height": 1024,
+          "sourceBitDepth": 16,
+          "format": "PNG",
+          "pngCrcVerified": true,
+          "colorSpace": "linear-srgb",
+          "channels": "R ambient occlusion, G perceptual roughness, B metallic"
+        }
+      ]
+    },
+    {
+      "provider": "Poly Haven",
+      "assetId": "marble_01",
+      "sourcePage": "https://polyhaven.com/a/marble_01",
+      "sourceMetadata": "https://api.polyhaven.com/info/marble_01",
+      "sourceFilesMetadata": "https://api.polyhaven.com/files/marble_01",
+      "license": "CC0-1.0",
+      "licenseSource": "https://polyhaven.com/license",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "authors": {
+        "Rob Tuytel": "All"
+      },
+      "providerDimensionsMm": [
+        1500,
+        1500
+      ],
+      "physicalTileMeters": [
+        1.5,
+        1.5
+      ],
+      "physicalTileBasis": "Poly Haven API dimensions in millimetres, converted to metres; corroborated by asset page width. These are source capture dimensions, not a guarantee of object finish.",
+      "suggestedTextureScaleForUnitBoxUV": [
+        0.666667,
+        0.666667
+      ],
+      "scalarContract": {
+        "metallic": 0,
+        "roughness": 1,
+        "roughnessChannel": "g",
+        "occlusionChannel": "r",
+        "metallicChannel": "b",
+        "normalScale": "calibrate below 1 for subtle wood/wall/cloth relief",
+        "occlusionStrength": "calibrate conservatively; AO affects ambient contribution"
+      },
+      "uses": [
+        "indoor stone floor",
+        "terrace stone"
+      ],
+      "note": "Cream stone tiles with grout. Use on tiled surfaces; do not use on a continuous worktop.",
+      "maps": [
+        {
+          "role": "baseColor",
+          "file": "marble_01/marble_01_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/marble_01/marble_01_diff_1k.jpg",
+          "providerMd5": "04325ced5018eb8a2e598a4ef69cb176",
+          "providerMd5Verified": true,
+          "sha256": "b10dabea976d68baa976a0d4e8dac58789df8d26a1b50697f320106f1b00a229",
+          "byteSize": 305029,
+          "width": 1024,
+          "height": 1024,
+          "sourceBitDepth": 8,
+          "format": "JPEG",
+          "colorSpace": "srgb",
+          "channels": "RGB base color; opaque alpha"
+        },
+        {
+          "role": "normalGL",
+          "file": "marble_01/marble_01_nor_gl_1k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/marble_01/marble_01_nor_gl_1k.png",
+          "providerMd5": "795c424f8a8e24be7229d08c6d66fe21",
+          "providerMd5Verified": true,
+          "sha256": "fc704b82aaff2634ebadd1939c8e675cd6cc8280953c1d28db7f66b4c6b6dbab",
+          "byteSize": 638341,
+          "width": 1024,
+          "height": 1024,
+          "sourceBitDepth": 8,
+          "format": "PNG",
+          "pngCrcVerified": true,
+          "colorSpace": "linear-srgb",
+          "channels": "RGB tangent-space OpenGL +Y normal"
+        },
+        {
+          "role": "ORM",
+          "file": "marble_01/marble_01_arm_1k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/marble_01/marble_01_arm_1k.png",
+          "providerMd5": "1dd2e9f27f28b3e09ed1991c087684b1",
+          "providerMd5Verified": true,
+          "sha256": "cb7082108641396d149ca722fefa34a1cacdc62f07905cd5dcc8629587bee6f2",
+          "byteSize": 817496,
+          "width": 1024,
+          "height": 1024,
+          "sourceBitDepth": 8,
+          "format": "PNG",
+          "pngCrcVerified": true,
+          "colorSpace": "linear-srgb",
+          "channels": "R ambient occlusion, G perceptual roughness, B metallic"
+        }
+      ]
+    },
+    {
+      "provider": "Poly Haven",
+      "assetId": "white_plaster_02",
+      "sourcePage": "https://polyhaven.com/a/white_plaster_02",
+      "sourceMetadata": "https://api.polyhaven.com/info/white_plaster_02",
+      "sourceFilesMetadata": "https://api.polyhaven.com/files/white_plaster_02",
+      "license": "CC0-1.0",
+      "licenseSource": "https://polyhaven.com/license",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "authors": {
+        "Rob Tuytel": "All"
+      },
+      "providerDimensionsMm": [
+        1000,
+        1000
+      ],
+      "physicalTileMeters": [
+        1.0,
+        1.0
+      ],
+      "physicalTileBasis": "Poly Haven API dimensions in millimetres, converted to metres; corroborated by asset page width. These are source capture dimensions, not a guarantee of object finish.",
+      "suggestedTextureScaleForUnitBoxUV": [
+        1.0,
+        1.0
+      ],
+      "scalarContract": {
+        "metallic": 0,
+        "roughness": 1,
+        "roughnessChannel": "g",
+        "occlusionChannel": "r",
+        "metallicChannel": "b",
+        "normalScale": "calibrate below 1 for subtle wood/wall/cloth relief",
+        "occlusionStrength": "calibrate conservatively; AO affects ambient contribution"
+      },
+      "uses": [
+        "wall plaster microdetail"
+      ],
+      "note": "The source diffuse is neutral gray with subtle dirt and trowel variation. For the established clean cream plaster palette, use the coherent normal/ORM maps with authored baseColor rather than darkening the walls using its diffuse map.",
+      "maps": [
+        {
+          "role": "baseColor",
+          "file": "white_plaster_02/white_plaster_02_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/white_plaster_02/white_plaster_02_diff_1k.jpg",
+          "providerMd5": "7b10c2686bcfd76d1f309a20fd06b57e",
+          "providerMd5Verified": true,
+          "sha256": "a1ebbe091bd1ae93d2abd5de8d69f9003a8d0ee6532bcf9a87c2492c97051f23",
+          "byteSize": 527219,
+          "width": 1024,
+          "height": 1024,
+          "sourceBitDepth": 8,
+          "format": "JPEG",
+          "colorSpace": "srgb",
+          "channels": "RGB base color; opaque alpha"
+        },
+        {
+          "role": "normalGL",
+          "file": "white_plaster_02/white_plaster_02_nor_gl_1k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/white_plaster_02/white_plaster_02_nor_gl_1k.png",
+          "providerMd5": "576d036eb85d0887c7613f8d3f5e13df",
+          "providerMd5Verified": true,
+          "sha256": "36ac2eec35a5678eda0c1ccfd81f6ab8a2e2fed0ca3e77d6e1d44e372e130450",
+          "byteSize": 6075625,
+          "width": 1024,
+          "height": 1024,
+          "sourceBitDepth": 16,
+          "format": "PNG",
+          "pngCrcVerified": true,
+          "colorSpace": "linear-srgb",
+          "channels": "RGB tangent-space OpenGL +Y normal"
+        },
+        {
+          "role": "ORM",
+          "file": "white_plaster_02/white_plaster_02_arm_1k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/white_plaster_02/white_plaster_02_arm_1k.png",
+          "providerMd5": "34dbaff0cc3be928160c3da3f11a406f",
+          "providerMd5Verified": true,
+          "sha256": "8d25adc17bf2a2c477114ecbfde19aa1df1c2ec8504d01e562a2d45dee1a9a8d",
+          "byteSize": 4610344,
+          "width": 1024,
+          "height": 1024,
+          "sourceBitDepth": 16,
+          "format": "PNG",
+          "pngCrcVerified": true,
+          "colorSpace": "linear-srgb",
+          "channels": "R ambient occlusion, G perceptual roughness, B metallic"
+        }
+      ]
+    },
+    {
+      "provider": "Poly Haven",
+      "assetId": "terlenka",
+      "sourcePage": "https://polyhaven.com/a/terlenka",
+      "sourceMetadata": "https://api.polyhaven.com/info/terlenka",
+      "sourceFilesMetadata": "https://api.polyhaven.com/files/terlenka",
+      "license": "CC0-1.0",
+      "licenseSource": "https://polyhaven.com/license",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "authors": {
+        "colormass": "Photography",
+        "Rico Cilliers": "Processing"
+      },
+      "providerDimensionsMm": [
+        265.70814767607123,
+        266.2999927997589
+      ],
+      "physicalTileMeters": [
+        0.26570815,
+        0.26629999
+      ],
+      "physicalTileBasis": "Poly Haven API dimensions in millimetres, converted to metres; corroborated by asset page width. These are source capture dimensions, not a guarantee of object finish.",
+      "suggestedTextureScaleForUnitBoxUV": [
+        3.763528,
+        3.755163
+      ],
+      "scalarContract": {
+        "metallic": 0,
+        "roughness": 1,
+        "roughnessChannel": "g",
+        "occlusionChannel": "r",
+        "metallicChannel": "b",
+        "normalScale": "calibrate below 1 for subtle wood/wall/cloth relief",
+        "occlusionStrength": "calibrate conservatively; AO affects ambient contribution"
+      },
+      "uses": [
+        "woven upholstery",
+        "sage/cream textile",
+        "woven rug approximation"
+      ],
+      "note": "This is a real fine beige polyester weave, not a measured linen scan. Shared physical microdetail may be tinted for upholstery variants; a rug can reuse the set as an authored approximation with restrained normal strength.",
+      "maps": [
+        {
+          "role": "baseColor",
+          "file": "terlenka/terlenka_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/terlenka/terlenka_diff_1k.jpg",
+          "providerMd5": "202624e89023d9ace2845b372015490c",
+          "providerMd5Verified": true,
+          "sha256": "74c4333ed05e133928b0cf6d52e732135c8c0ce6dc8623efa590fb31b90f15c0",
+          "byteSize": 691195,
+          "width": 1024,
+          "height": 1026,
+          "sourceBitDepth": 8,
+          "format": "JPEG",
+          "colorSpace": "srgb",
+          "channels": "RGB base color; opaque alpha"
+        },
+        {
+          "role": "normalGL",
+          "file": "terlenka/terlenka_nor_gl_1k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/terlenka/terlenka_nor_gl_1k.png",
+          "providerMd5": "8492239981146c7da24061a2b628c961",
+          "providerMd5Verified": true,
+          "sha256": "0e37deb6bdd98c4b00b27045189452fe2d6a2e673a48b3037652d48882d82490",
+          "byteSize": 5820756,
+          "width": 1024,
+          "height": 1026,
+          "sourceBitDepth": 16,
+          "format": "PNG",
+          "pngCrcVerified": true,
+          "colorSpace": "linear-srgb",
+          "channels": "RGB tangent-space OpenGL +Y normal"
+        },
+        {
+          "role": "ORM",
+          "file": "terlenka/terlenka_arm_1k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/terlenka/terlenka_arm_1k.png",
+          "providerMd5": "683a6c1dbf233ca7be4833f98f13639d",
+          "providerMd5Verified": true,
+          "sha256": "822f1a60061fa11432868f81ed2d5edd4466e4b284fe0c963ada0245cb43dda1",
+          "byteSize": 6190427,
+          "width": 1024,
+          "height": 1026,
+          "sourceBitDepth": 16,
+          "format": "PNG",
+          "pngCrcVerified": true,
+          "colorSpace": "linear-srgb",
+          "channels": "R ambient occlusion, G perceptual roughness, B metallic"
+        }
+      ]
+    },
+    {
+      "provider": "ambientCG",
+      "assetId": "Marble012",
+      "sourcePage": "https://ambientcg.com/view?id=Marble012",
+      "sourceMetadata": "https://ambientcg.com/api/v2/full_json?include=downloadData&id=Marble012",
+      "license": "CC0-1.0",
+      "licenseSource": "https://docs.ambientcg.com/license/",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "author": "Lennart Demes / ambientCG",
+      "creationMethodMetadata": "PBRProcedural",
+      "physicalTileMeters": null,
+      "physicalTileBasis": "Provider API dimensions are zero/unspecified; no measured source scale is claimed.",
+      "suggestedAuthoredTileMeters": [
+        1.5,
+        1.5
+      ],
+      "suggestedTextureScaleForUnitBoxUV": [
+        0.666667,
+        0.666667
+      ],
+      "uses": [
+        "continuous kitchen worktop",
+        "continuous backsplash"
+      ],
+      "note": "Visually inspected seamless pale white/gray mottled marble without tile joints. Tile size is an art-direction estimate and can be changed for the worktop composition. No AO file is supplied in the downloaded set.",
+      "sourceArchive": {
+        "url": "https://ambientcg.com/get?file=Marble012_2K-PNG.zip",
+        "sha256": "969c795f2fcb0ce2dd793a3bac31f2f07f70911bb6692cbcda794efebb88678b",
+        "byteSize": 49387235,
+        "zipCrcVerified": true
+      },
+      "scalarContract": {
+        "metallic": 0,
+        "roughness": 1,
+        "roughnessChannel": "r",
+        "normalScale": "start subtle",
+        "occlusionTexture": null
+      },
+      "maps": [
+        {
+          "role": "baseColor",
+          "file": "marble012/Marble012_2K-PNG_Color.png",
+          "archiveMember": "Marble012_2K-PNG_Color.png",
+          "sourceArchiveUrl": "https://ambientcg.com/get?file=Marble012_2K-PNG.zip",
+          "sha256": "d9b41efdaea457857e428151b9c731e455ed1c2911c543fc9ff159a626cf9493",
+          "byteSize": 8515096,
+          "width": 2048,
+          "height": 2048,
+          "sourceBitDepth": 8,
+          "format": "PNG",
+          "pngCrcVerified": true,
+          "colorSpace": "srgb",
+          "channels": "RGB base color"
+        },
+        {
+          "role": "normalGL",
+          "file": "marble012/Marble012_2K-PNG_NormalGL.png",
+          "archiveMember": "Marble012_2K-PNG_NormalGL.png",
+          "sourceArchiveUrl": "https://ambientcg.com/get?file=Marble012_2K-PNG.zip",
+          "sha256": "233673baeac961ee941373d161ca5a4d006f89e1da39b7fbd73ac73aa9224a30",
+          "byteSize": 14808159,
+          "width": 2048,
+          "height": 2048,
+          "sourceBitDepth": 16,
+          "format": "PNG",
+          "pngCrcVerified": true,
+          "colorSpace": "linear-srgb",
+          "channels": "RGB tangent-space OpenGL +Y normal"
+        },
+        {
+          "role": "roughness",
+          "file": "marble012/Marble012_2K-PNG_Roughness.png",
+          "archiveMember": "Marble012_2K-PNG_Roughness.png",
+          "sourceArchiveUrl": "https://ambientcg.com/get?file=Marble012_2K-PNG.zip",
+          "sha256": "ab08c1af4ee81408bed70d483c6d5a753fd166a4341bfe2e748dc2697bd259fa",
+          "byteSize": 2008206,
+          "width": 2048,
+          "height": 2048,
+          "sourceBitDepth": 8,
+          "format": "PNG",
+          "pngCrcVerified": true,
+          "colorSpace": "linear-srgb",
+          "channels": "grayscale perceptual roughness, read R"
+        }
+      ]
+    }
+  ]
+}
